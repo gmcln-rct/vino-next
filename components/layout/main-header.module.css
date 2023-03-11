@@ -1,0 +1,17 @@
+.header a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+    padding: 2vh 0;
+    
+    color: #fff;
+    border-bottom: 1px solid #e6e6e6;
+    background-color: rgb(161, 1, 1);
+
+    text-decoration: none;
+
+    font-family: 'Jost', sans-serif;
+    font-size: 3rem;
+    font-weight: bold;
+}
