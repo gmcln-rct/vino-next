@@ -3,7 +3,7 @@
     align-items: center;
     justify-content: center;
     margin: 0;
-    padding: 2vh 0;
+    padding: 1vh 0;
     
     color: #fff;
     border-bottom: 1px solid #e6e6e6;
@@ -12,7 +12,7 @@
     text-decoration: none;
 
     font-family: 'Jost', sans-serif;
-    font-size: calc(18px + (48 - 18) * ((100vw - 300px) / (1600 - 300)));
+    font-size: clamp(18px, 4vw, 48px);
     font-weight: bold;
     font-display: swap;
 }
