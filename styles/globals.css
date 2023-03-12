@@ -98,16 +98,18 @@ meter {
   all: revert;
 }
 
+/* END RESET */
+
 /* Main CSS variables */
 /* main */
-.home {
+main {
   display: flex;
   flex-direction: column;
   justify-content:center;
   align-items: center;
 }
 
-.home h1 {
+main h1 {
   font-size: 2rem;
   font-weight: 700;
   color: #000;
@@ -115,7 +117,7 @@ meter {
   margin: 1rem 0;
 }
 
-.home a {
+main a {
   font-size: 1.5rem;
   margin: 1rem 0;
 }
