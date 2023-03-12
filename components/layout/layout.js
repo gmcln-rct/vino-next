@@ -13,7 +13,7 @@ function Layout(props) {
   return (
     <>
       <MainHeader />
-      <main>{props.children}</main>
+      {/* <main>{props.children}</main> */}
     </>
   );
 }

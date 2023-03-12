@@ -12,6 +12,7 @@
     text-decoration: none;
 
     font-family: 'Jost', sans-serif;
-    font-size: 3rem;
+    font-size: calc(18px + (48 - 18) * ((100vw - 300px) / (1600 - 300)));
     font-weight: bold;
+    font-display: swap;
 }
