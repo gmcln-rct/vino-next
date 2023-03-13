@@ -1,16 +1,15 @@
 const DUMMY_EVENTS = [
     {
-      id: 'e1',
+      id: 'cabernetsauvignon',
       grapeName: 'Cabernet Sauvignon',
-      regions:
+      notableRegions:
         ['Bordeaux', 'Tuscany', 'Napa Valley', 'Sonoma County', 'Australia', 'South Africa', 'Friuli'],
-      regions: 'Somestreet 25, 12345 San Somewhereo',
       wineColor: 'red',
       link: 'https://en.wikipedia.org/wiki/Cabernet_Sauvignon',
       isFeatured: false,
     },
     {
-      id: 'e2',
+      id: 'pinotnoir',
       title: 'Networking for introverts',
       description:
         "We know: Networking is no fun if you are an introvert person. That's why we came up with this event - it'll be so much easier. Promised!",
