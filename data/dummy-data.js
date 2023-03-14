@@ -1,34 +1,173 @@
 const DUMMY_EVENTS = [
-    {
-      id: 'cabernetsauvignon',
-      grapeName: 'Cabernet Sauvignon',
-      notableRegions:
-        ['Bordeaux', 'Tuscany', 'Napa Valley', 'Sonoma County', 'Australia', 'South Africa', 'Friuli'],
-      wineColor: 'red',
-      link: 'https://en.wikipedia.org/wiki/Cabernet_Sauvignon',
-      isFeatured: false,
-    },
-    {
-      id: 'pinotnoir',
-      title: 'Networking for introverts',
-      description:
-        "We know: Networking is no fun if you are an introvert person. That's why we came up with this event - it'll be so much easier. Promised!",
-      location: 'New Wall Street 5, 98765 New Work',
-      date: '2021-05-30',
-      image: 'images/introvert-event.jpg',
-      isFeatured: true,
-    },
-    {
-      id: 'e3',
-      title: 'Networking for extroverts',
-      description:
-        'You probably need no help with networking in general. But focusing your energy correctly - that is something where most people can improve.',
-      location: 'My Street 12, 10115 Broke City',
-      date: '2022-04-10',
-      image: 'images/extrovert-event.jpg',
-      isFeatured: true,
-    },
-  ];
+  {
+      id: "cabernet-sauvignon",
+      itemName: "Cabernet Sauvignon",
+      category: "R",
+      altNames: "[]",
+      link: "https://en.wikipedia.org/wiki/Cabernet_Sauvignon",
+      isFeaured: "FALSE"
+  },
+  {
+      id: "merlot",
+      itemName: "Merlot",
+      category: "R",
+      altNames: "[]",
+      link: "https://en.wikipedia.org/wiki/Merlot",
+      isFeaured: "FALSE"
+  },
+  {
+      id: "tempranillo",
+      itemName: "Tempranillo",
+      category: "R",
+      altNames: "[]",
+      link: "https://en.wikipedia.org/wiki/Tempranillo",
+      isFeaured: "FALSE"
+  },
+  {
+      id: "airén",
+      itemName: "Airén",
+      category: "W",
+      altNames: "['Airen']",
+      link: "https://en.wikipedia.org/wiki/Air%C3%A9n",
+      isFeaured: "FALSE"
+  },
+  {
+      id: "chardonnay",
+      itemName: "Chardonnay",
+      category: "W",
+      altNames: "[]",
+      link: "https://en.wikipedia.org/wiki/Chardonnay",
+      isFeaured: "FALSE"
+  },
+  {
+      id: "syrah",
+      itemName: "Syrah",
+      category: "R",
+      altNames: "['Shiraz']",
+      link: "https://en.wikipedia.org/wiki/Syrah",
+      isFeaured: "FALSE"
+  },
+  {
+      id: "garnacha-tinta",
+      itemName: "Garnacha Tinta",
+      category: "R",
+      altNames: "['Grenache']",
+      link: "https://en.wikipedia.org/wiki/Grenache",
+      isFeaured: "FALSE"
+  },
+  {
+      id: "sauvignon-blanc",
+      itemName: "Sauvignon Blanc",
+      category: "W",
+      altNames: "[]",
+      link: "https://en.wikipedia.org/wiki/Sauvignon_blanc",
+      isFeaured: "FALSE"
+  },
+  {
+      id: "trebbiano-toscano",
+      itemName: "Trebbiano Toscano",
+      category: "W",
+      altNames: "[]",
+      link: "https://en.wikipedia.org/wiki/Trebbiano_Toscano",
+      isFeaured: "FALSE"
+  },
+  {
+      id: "pinot-noir",
+      itemName: "Pinot Noir",
+      category: "R",
+      altNames: "[]",
+      link: "https://en.wikipedia.org/wiki/Pinot_noir",
+      isFeaured: "FALSE"
+  },
+  {
+      id: "sangiovese",
+      itemName: "Sangiovese",
+      category: "R",
+      altNames: "[]",
+      link: "https://en.wikipedia.org/wiki/Sangiovese",
+      isFeaured: "FALSE"
+  },
+  {
+      id: "riesling",
+      itemName: "Riesling",
+      category: "W",
+      altNames: "[]",
+      link: "https://en.wikipedia.org/wiki/Riesling",
+      isFeaured: "FALSE"
+  },
+  {
+      id: "bobal",
+      itemName: "Bobal",
+      category: "R",
+      altNames: "[]",
+      link: "https://en.wikipedia.org/wiki/Bobal",
+      isFeaured: "FALSE"
+  },
+  {
+      id: "cabernet-franc",
+      itemName: "Cabernet Franc",
+      category: "R",
+      altNames: "[]",
+      link: "https://en.wikipedia.org/wiki/Cabernet_Franc",
+      isFeaured: "FALSE"
+  },
+  {
+      id: "côt",
+      itemName: "Côt",
+      category: "R",
+      altNames: "['Malbec']",
+      link: "https://en.wikipedia.org/wiki/Cot_(grape)",
+      isFeaured: "FALSE"
+  },
+  {
+      id: "monastrell",
+      itemName: "Monastrell",
+      category: "R",
+      altNames: "['Mourvedre', 'Mourvèdre', 'Monastrell', 'Mourvèdre']",
+      link: "https://en.wikipedia.org/wiki/Monastrell",
+      isFeaured: "FALSE"
+  },
+  {
+      id: "rkatsiteli",
+      itemName: "Rkatsiteli",
+      category: "W",
+      altNames: "[]",
+      link: "https://en.wikipedia.org/wiki/Rkatsiteli",
+      isFeaured: "FALSE"
+  },
+  {
+      id: "pinot-gris",
+      itemName: "Pinot Gris",
+      category: "G",
+      altNames: "['Pinot Grigio']",
+      link: "https://en.wikipedia.org/wiki/Pinot_gris",
+      isFeaured: "FALSE"
+  },
+  {
+      id: "mazuelo",
+      itemName: "Mazuelo",
+      category: "R",
+      altNames: "[]",
+      link: "https://en.wikipedia.org/wiki/Mazuelo",
+      isFeaured: "FALSE"
+  },
+  {
+      id: "macabeo",
+      itemName: "Macabeo",
+      category: "W",
+      altNames: "[]",
+      link: "https://en.wikipedia.org/wiki/Macabeo",
+      isFeaured: "FALSE"
+  },
+  {
+      id: "cayetana-blanca",
+      itemName: "Cayetana Blanca",
+      category: "W",
+      altNames: "[]",
+      link: "https://en.wikipedia.org/wiki/Cayetana_Blanca",
+      isFeaured: "FALSE"
+  }
+]
   
   export function getFeaturedEvents() {
     return DUMMY_EVENTS.filter((event) => event.isFeatured);
