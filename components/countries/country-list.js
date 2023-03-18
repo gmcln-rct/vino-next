@@ -6,14 +6,13 @@ function CountryList(props) {
   const { items } = props;
 
   return (
-    <ul>
+    <ul className={classes.list}>
       {items.map((country) => (
         <CountryItem
           key={country.id}
           id={country.id}
           countryName={country.itemName}
           category={country.category}
-          className={classes.list}
         />
       ))}
     </ul>
