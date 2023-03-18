@@ -1,10 +1,8 @@
 import Link from 'next/link';
 
-const { id, itemName, category } = props;
-
-const exploreLink = `/countries/${id}`;
-
 function CountryItem(props) {
+    const { id, itemName, category } = props;
+    const exploreLink = `/countries/${id}`;
   return (
     <li>
         <div>

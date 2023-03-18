@@ -3,14 +3,20 @@
 // import { Inter } from 'next/font/google'
 // import styles from '@/styles/Home.module.css'
 
+import { getFeaturedCountries } from "@/data/country-data";
+
+import CountryList from "@/components/countries/country-list";
+
 // MAIN HOMEPAGE
 
 function HomePage() {
+
+  const featuredCountries = getFeaturedCountries();
   return (
     <>
       <h1>Homepage</h1>
       <div>
-        <p>Main Section</p>
+        <CountryList items={ featuredCountries }/>
       </div>
     </>
   );

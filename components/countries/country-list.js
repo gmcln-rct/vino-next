@@ -1,4 +1,4 @@
-import CountryItem from './grape-item';
+import CountryItem from './country-item';
 
 function CountryList(props) {
 
@@ -6,7 +6,14 @@ function CountryList(props) {
 
     return (
         <ul>
-            {items.map((country) => (<CountryItem key={country.id} countryName={country.itemName} category={country.category}/>))}
+            {items.map((country) => (
+            <CountryItem 
+                key={country.id}
+                id={country.id}
+                countryName={country.itemName}
+                category={country.category}
+                />
+                ))}
         </ul>
     );
 }
