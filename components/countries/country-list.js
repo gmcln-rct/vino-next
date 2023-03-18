@@ -6,7 +6,7 @@ function CountryList(props) {
 
     return (
         <ul>
-            {items.map((country) => (<CountryItem key={country.id} country={grape} />))}
+            {items.map((country) => (<CountryItem key={country.id} country={country} />))}
         </ul>
     );
 }

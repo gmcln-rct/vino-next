@@ -5,7 +5,7 @@ function CountryItem(props) {
     <li>
         <div>
             <div>
-                <h2>TITLE</h2>
+                <h2>COUNTRY NAME</h2>
             </div>
             <div>
                 <p>DESCRIPTION</p>
