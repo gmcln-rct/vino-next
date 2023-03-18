@@ -16,7 +16,7 @@ const COUNTRIES_DATA = [
       "Lazio",
     ],
     link: "https://en.wikipedia.org/wiki/Italian_wine",
-    isFeatured: false,
+    isFeatured: true,
   },
   {
     id: "australia",
@@ -35,7 +35,7 @@ const COUNTRIES_DATA = [
       "Langhorne Creek",
     ],
     link: "https://en.wikipedia.org/wiki/Australian_wine",
-    isFeatured: false,
+    isFeatured: true,
   },
   {
     id: "spain",
