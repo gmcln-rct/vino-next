@@ -1,7 +1,7 @@
 function CounryIndex() {
     return (
       <div>
-          <h1>Counry Index</h1>
+          <h1>Country Index</h1>
       </div>
     )
   }
