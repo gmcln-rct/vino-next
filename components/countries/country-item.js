@@ -14,15 +14,11 @@ function CountryItem(props) {
         <li 
             className={classes.item}>
             <div className={classes.content}>
-                <div cla>
-                    <h2>Country: { countryName }</h2>
-                </div>
-                <div>
-                    <p>Category: { categoryName }</p>
-                </div>
+                <h2>Country: { countryName }</h2>
+                <p>Category: { categoryName }</p>
             </div>
             <div className={classes.actions}>
-                <Button link={exploreLink}>Explore { countryName } Wine</Button>
+                <Button link={exploreLink}>Explore</Button>
             </div>
         </li>
     );
