@@ -2,6 +2,8 @@ import Link from 'next/link';
 
 import classes from './country-item.module.css';
 
+import Button from '../ui/button';
+
 function CountryItem(props) {
     const { id, countryName, category } = props;
     const exploreLink = `/countries/${id}`;
@@ -18,7 +20,7 @@ function CountryItem(props) {
                 </div>
             </div>
             <div className={classes.actions}>
-                <Link href={exploreLink} >Explore Country's Wine</Link>
+                <Button link={exploreLink}>Explore Country's Wine</Button>
             </div>
         </li>
     );
