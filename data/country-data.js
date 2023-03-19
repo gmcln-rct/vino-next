@@ -54,7 +54,7 @@ const COUNTRIES_DATA = [
       "Penedès",
     ],
     link: "https://en.wikipedia.org/wiki/Spanish_wine",
-    isFeatured: false,
+    isFeatured: true,
   },
   {
     id: "france",
