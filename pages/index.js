@@ -15,9 +15,7 @@ function HomePage() {
   return (
     <>
       <h1>Homepage</h1>
-      <div>
         <CountryList items={ featuredCountries }/>
-      </div>
     </>
   );
 }
