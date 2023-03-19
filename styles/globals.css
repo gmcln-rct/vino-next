@@ -101,6 +101,11 @@ meter {
 /* END RESET */
 
 /* Global CSS variables */
+
+body {
+  background-color: #ecf0f1;
+
+}
 /* main */
 main {
   display: flex;
