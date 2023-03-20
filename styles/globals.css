@@ -98,13 +98,14 @@ meter {
   all: revert;
 }
 
-/* END RESET */
+/******************************* END RESET ***************************************/
 
 /* Global CSS variables */
 
 body {
   background-color: #edf4f5;
 }
+
 /* main */
 main {
   display: flex;
@@ -113,7 +114,7 @@ main {
   align-items: center;
 }
 
-main h1 {
+main h1, main .header {
   font-size: 2rem;
   font-weight: 700;
   color: #000;
@@ -132,8 +133,6 @@ main a {
 .placeholder {
   background: #ecf0f1;
 }
-
-
 
 .Timeline {
   height: 300px;

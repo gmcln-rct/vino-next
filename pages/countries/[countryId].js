@@ -13,10 +13,9 @@ function CountryDetailPage() {
   console.log('pageId', params, country);
 
   return <>
-    <h2>Detail page for Country: {country.itemName}</h2>;
-    <a href={country.link} target="_blank">Info about Wine Region</a>
+    <h2 class="header">Detail page for Country: {country.itemName}</h2>
+    <a href={country.link} target="_blank">More about Wine Region</a>
   </>
-  
   
 }
 
