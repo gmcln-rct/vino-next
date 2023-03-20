@@ -1,7 +1,7 @@
 import { useEffect, useState , useRef } from 'react';
 import * as d3 from "d3"
 
-const TestPage3 = () => {
+const BarGraph = () => {
 
     //  1] Setup Initial data and settings ------------//
 
@@ -33,15 +33,11 @@ const TestPage3 = () => {
             .style('overflow', 'visible')
           
           // Set up scales
-            //xscales
-            const xScale = d3.scaleLinear()
-              .domain([0, chartData.length - 1])
-              .range([0, w])
-
-            //yscales
+            const xScale = d3.scaleBand()
+                .range([0, w]).padding(0.2);
             const yScale = d3.scaleLinear()
-              .domain([0, h] )
-              .range([h, 0])
+                .range([h, 0]);
+
 
             const generateScaledLine = d3.line()
               .x( (d,i) => xScale(i) )
@@ -60,17 +56,26 @@ const TestPage3 = () => {
             // move xaxis to the bottom of the svg
             .attr("transform", `translate(0, ${h})`)
 
-          svg.append("g")
-            .call(yAxis)
 
           // draw line
-          svg.selectAll('.line')
+          svg.selectAll('.bar')
             .data([chartData])
-            .join('path')
-            .attr('d', (value) => generateScaledLine(value))
-            .attr('fill', 'none')
-            .attr('stroke', '#000')
-            
+            .enter()
+            .append('rect')
+            .attr('class', 'bar')
+            .attr('x', (d,i) => xScale(i) )
+            .attr('y', (d) => yScale(d) )
+            .attr('width', xScale.bandwidth())
+            .attr('height', (d) => h - yScale(d) )
+            .attr('fill', 'red');
+
+        svg.append("g")
+            .call(yAxis)
+            .attr("transform", `translate(0, 0)`)
+            .attr("class", "yAxis");
+
+
+    
 
         },[chartData]
       )
@@ -88,4 +93,4 @@ const TestPage3 = () => {
 }
 
 
-export default TestPage3;
+export default BarGraph;
