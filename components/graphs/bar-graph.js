@@ -7,9 +7,28 @@ const BarGraph = () => {
 
     // const initialData = [4,50,43,40, 99,50];
 
-    const dataSource = d3.csv("https://raw.githubusercontent.com/holtzy/data_to_viz/master/Example_dataset/7_OneCatOneNum_header.csv", d3.autoType)
+    // const dataSource = d3.csv("https://raw.githubusercontent.com/holtzy/data_to_viz/master/Example_dataset/7_OneCatOneNum_header.csv", d3.autoType)
+
+    const [data, setData] = useState([
+    {
+      name: "A",
+      value: 50,
+    },
+    {
+      name: "B",
+      value: 20,
+    },
+    {
+      name: "C",
+      value: 40,
+    },
+    {
+      name: "D",
+      value: 70,
+    },
+  ]);
  
-    const [chartData] = useState(dataSource)
+    const [chartData] = useState(data)
  
     const svgRef= useRef()
 
@@ -74,7 +93,14 @@ const BarGraph = () => {
             .attr("transform", `translate(0, 0)`)
             .attr("class", "yAxis");
 
-
+        svg.append('g')
+            .attr('class', 'line')
+            .append('path')
+            .attr('d', generateScaledLine(chartData))
+            .attr('fill', 'none')
+            .attr('stroke', 'blue')
+            .attr('stroke-width', 2)
+            
     
 
         },[chartData]

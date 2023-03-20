@@ -7,7 +7,7 @@ import BarGraph from '@/components/graphs/bar-graph';
 function CountryDetailPage() {
   const router = useRouter();
   
-  const [params] = router.query.countryId.split('-'); 
+  const [params] = router.query.countryId.split('-');
   // const { pageId } = router.query;
 
   const country = getCountryById(params);
