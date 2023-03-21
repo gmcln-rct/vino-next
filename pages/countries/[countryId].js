@@ -2,12 +2,19 @@ import { useRouter } from 'next/router';
 
 import { getCountryById } from '@/data/country-data';
 
-import BarGraph from '@/components/graphs/bar-graph';
+import {getDataItemById} from '@/data/utils';
+
+import { COUNTRIES_WINE_DATA } from '@/data/country-wine-data-2016';
+
+import BarChart from '@/components/graphs/bar-chart';
 
 function CountryDetailPage() {
   const router = useRouter();
+  console.log('router', router.query)
   
   const [params] = router.query.countryId.split('-');
+
+  const countryWineData = getDataItemById(params, COUNTRIES_WINE_DATA);
   // const { pageId } = router.query;
 
   const country = getCountryById(params);
@@ -15,9 +22,12 @@ function CountryDetailPage() {
   console.log('pageId', params, country);
 
   return <>
-    <h2 class="header">Detail page for Country: {country.itemName}</h2>
-    <a href={country.link} target="_blank">More about Wine Region</a>
-    <BarGraph />
+    <h2 class="header">{country.itemName} Detail Page</h2>
+    <BarChart redGrapeData={countryWineData.redGrapeData} whiteGrapeData={countryWineData.whiteGrapeData} />
+    <div>
+
+      <a href={country.link} target="_blank">More about Wine Region</a>
+    </div>
   </>
   
 }

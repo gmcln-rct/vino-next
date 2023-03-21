@@ -2,26 +2,33 @@ import { useEffect, useState, useRef } from "react";
 
 import * as d3 from "d3";
 
-const BarGraph = () => {
+const BarChart = (props) => {
   const svgRef = useRef();
 
-  const [data, setData] = useState([
-      { grape: "Cabernet Sauvignon", value: 46555 },
-      { grape: "Merlot", value: 108483 },
-      { grape: "Syrah", value: 62211 },
-      { grape: "Garnacha Tinta", value: 78631 },
-      { grape: "Pinot Noir", value: 31602 },
-      { grape: "Cabernet Franc", value: 32327 },
-      { grape: "Côt", value: 6100 },
-      { grape: "Monastrell", value: 8754 },
-      { grape: "Mazuelo", value: 31760 },
-      { grape: "Alicante Henri Bouschet", value: 2607 },
-      { grape: "Gamay Noir", value: 24095 },
-      { grape: "Cinsaut", value: 15930 }
-    ]);
+  const { redGrapeData, whiteGrapeData } = props;
+
+  console.log("redGrapeData", redGrapeData);
+
+  // const [data, setData] = useState([
+  //     { grape: "Cabernet Sauvignon", value: 46555 },
+  //     { grape: "Merlot", value: 108483 },
+  //     { grape: "Syrah", value: 62211 },
+  //     { grape: "Garnacha Tinta", value: 78631 },
+  //     { grape: "Pinot Noir", value: 31602 },
+  //     { grape: "Cabernet Franc", value: 32327 },
+  //     { grape: "Côt", value: 6100 },
+  //     { grape: "Monastrell", value: 8754 },
+  //     { grape: "Mazuelo", value: 31760 },
+  //     { grape: "Alicante Henri Bouschet", value: 2607 },
+  //     { grape: "Gamay Noir", value: 24095 },
+  //     { grape: "Cinsaut", value: 15930 }
+  //   ]);
+
+  const [selectedGrapeType, setSelectedGrapeType] = useState("red");
+
+  const data = selectedGrapeType === "red" ? redGrapeData : whiteGrapeData;
 
   useEffect(() => {
-
     const margin = { top: 20, right: 20, bottom: 50, left: 10 };
     const widthCalc = svgRef.current.clientWidth - margin.left - margin.right;
     const width = widthCalc < 320 ? 400 : widthCalc;
@@ -67,29 +74,33 @@ const BarGraph = () => {
       .attr("fill", "#69b3a2")
       .on("mouseover", function (d) {
         d3.select(this).transition().duration(300).attr("fill", "#F9D90A");
-        svg.append('text')
-        .attr('class', 'value')
-        .attr('x', xScale(d.grape) + xScale.bandwidth() / 2)
-        .attr('y', yScale(d.value) - 5)
-        .attr('text-anchor', 'top')
-        .text(d.value)
-        .attr('fill', 'black')
-        .attr('font-size', '12px');
+        svg
+          .append("text")
+          .attr("class", "value")
+          .attr("x", xScale(d.grape) + xScale.bandwidth() / 2)
+          .attr("y", yScale(d.value) - 5)
+          .attr("text-anchor", "top")
+          .text(d.value)
+          .attr("fill", "black")
+          .attr("font-size", "12px");
       })
       .on("mouseout", function () {
         d3.select(this).transition().duration(300).attr("fill", "#69b3a2");
       });
-
-
   }, []);
 
   return (
     <div className="App">
-      <header className="App-header">
-        <svg ref={svgRef}></svg>
-      </header>
+      <select
+        value={selectedGrapeType}
+        onChange={(e) => setSelectedGrapeType(e.target.value)}
+      >
+        <option value="red">Red Grapes</option>
+        <option value="white">White Grapes</option>
+      </select>
+      <svg ref={svgRef}></svg>
     </div>
   );
 };
 
-export default BarGraph;
+export default BarChart;

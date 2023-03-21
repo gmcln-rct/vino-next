@@ -1,5 +1,5 @@
 export function getFeaturedData(data) {
-    return data.filter((event) => event.isFeatured);
+    return data.filter((dataItem) => dataItem.isFeatured);
   }
   
   export function getAllData() {
@@ -9,17 +9,17 @@ export function getFeaturedData(data) {
   export function getFilteredData(dateFilter) {
     const { year, month } = dateFilter;
   
-    let filteredData = data.filter((event) => {
-      const eventDate = new Date(event.date);
+    let filteredData = data.filter((dataItem) => {
+      const dataItemDate = new Date(dataItem.date);
       return (
-        eventDate.getFullYear() === year && eventDate.getMonth() === month - 1
+        dataItemDate.getFullYear() === year && dataItemDate.getMonth() === month - 1
       );
     });
   
     return filteredData;
   }
   
-  export function getCountryById(id) {
-    return data.find((event) => event.id === id);
+  export function getDataItemById(id, data) {
+    return data.find((dataItem) => dataItem.id === id);
   }
   
