@@ -23,7 +23,7 @@ function CountryDetailPage() {
 
   return <>
     <h2 class="header">{country.itemName} Detail Page</h2>
-    <BarChart redGrapeData={countryWineData.redGrapeData} whiteGrapeData={countryWineData.whiteGrapeData} />
+    <BarChart units={countryWineData.units} dataYear={countryWineData.dataYear} redGrapeData={countryWineData.redGrapeData} whiteGrapeData={countryWineData.whiteGrapeData} />
     <div>
 
       <a href={country.link} target="_blank">More about Wine Region</a>

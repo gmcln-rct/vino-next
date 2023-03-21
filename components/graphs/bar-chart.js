@@ -2,12 +2,18 @@ import { useEffect, useState, useRef } from "react";
 
 import * as d3 from "d3";
 
+import classes from "./charts.module.css";
+
 const BarChart = (props) => {
   const svgRef = useRef();
 
   const { redGrapeData, whiteGrapeData } = props;
 
-  console.log("redGrapeData", redGrapeData);
+  // const [chartData, setChartData] = useState(null);
+  // const [chartElements, setChartElements] = useState(null);
+  const [selectedGrapeType, setSelectedGrapeType] = useState("red");
+
+  const data = selectedGrapeType === "red" ? redGrapeData : whiteGrapeData;
 
   // const [data, setData] = useState([
   //     { grape: "Cabernet Sauvignon", value: 46555 },
@@ -23,10 +29,8 @@ const BarChart = (props) => {
   //     { grape: "Gamay Noir", value: 24095 },
   //     { grape: "Cinsaut", value: 15930 }
   //   ]);
+  
 
-  const [selectedGrapeType, setSelectedGrapeType] = useState("red");
-
-  const data = selectedGrapeType === "red" ? redGrapeData : whiteGrapeData;
 
   useEffect(() => {
     const margin = { top: 20, right: 20, bottom: 50, left: 10 };
@@ -86,14 +90,17 @@ const BarChart = (props) => {
       })
       .on("mouseout", function () {
         d3.select(this).transition().duration(300).attr("fill", "#69b3a2");
-      });
-  }, []);
+      })
+      .exit().remove();
+
+  }, [selectedGrapeType]);
 
   return (
-    <div className="App">
+    <div className={classes.chart}>
       <select
+      className={classes.selectCss}
         value={selectedGrapeType}
-        onChange={(e) => setSelectedGrapeType(e.target.value)}
+        onChange={(event) => setSelectedGrapeType(event.target.value)}
       >
         <option value="red">Red Grapes</option>
         <option value="white">White Grapes</option>
