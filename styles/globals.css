@@ -127,6 +127,25 @@ main a {
   margin: 1rem 0;
 }
 
+
+.details {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 3rem 0;
+
+  width: 300px;
+  border-radius: 20px;
+
+  background-color: darkgrey;
+}
+
+.details a {
+  font-size: 1.5rem;
+  color: #fff;
+}
+
 /* Charts */
 
 /* placeholders */

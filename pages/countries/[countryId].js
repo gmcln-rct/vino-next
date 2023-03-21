@@ -22,10 +22,9 @@ function CountryDetailPage() {
   console.log('pageId', params, country);
 
   return <>
-    <h2 class="header">{country.itemName} Detail Page</h2>
+    <h2 className="header">{country.itemName} Detail Page</h2>
     <BarChart units={countryWineData.units} dataYear={countryWineData.dataYear} redGrapeData={countryWineData.redGrapeData} whiteGrapeData={countryWineData.whiteGrapeData} />
-    <div>
-
+    <div className="details">
       <a href={country.link} target="_blank">More about Wine Region</a>
     </div>
   </>

@@ -28,18 +28,19 @@ const BarChart = (props) => {
   //     { grape: "Cinsaut", value: 15930 }
   //   ]);
   
-  const margin = { top: 20, right: 20, bottom: 50, left: 10 };
-  let widthCalc = 0;
-  if (svgRef.current) {
-     widthCalc = svgRef.current.clientWidth + 200;
-  }
-  const width = widthCalc < 320 ? 400 : widthCalc;
-  const height = 400 - margin.top - margin.bottom;
 
   useEffect(() => {
 
     d3.select(svgRef.current).selectAll('*').remove();
 
+    const margin = { top: 20, right: 20, bottom: 50, left: 10 };
+    let widthCalc = 0;
+    if (svgRef.current) {
+       widthCalc = svgRef.current.clientWidth + 200;
+    }
+    const width = widthCalc < 320 ? 400 : widthCalc;
+    const height = 400 - margin.top - margin.bottom;
+  
 
     const svg = d3
       .select(svgRef.current)
@@ -53,6 +54,7 @@ const BarChart = (props) => {
       .range([0, width])
       .domain(data.map((d) => d.grape))
       .padding(0.2);
+      
 
     const yScale = d3
       .scaleLinear()
@@ -63,11 +65,12 @@ const BarChart = (props) => {
       .append("g")
       .attr("transform", `translate(0, ${height})`)
       .call(d3.axisBottom(xScale))
+      .attr("font-size","16")
       .selectAll("text")
       .attr("transform", "rotate(-45)")
       .style("text-anchor", "end");
 
-    svg.append("g").call(d3.axisLeft(yScale));
+    svg.append("g").call(d3.axisLeft(yScale)).attr("font-size","16");
 
     svg
       .selectAll("rect")
