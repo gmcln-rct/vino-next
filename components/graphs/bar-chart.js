@@ -9,8 +9,6 @@ const BarChart = (props) => {
 
   const { redGrapeData, whiteGrapeData } = props;
 
-  // const [chartData, setChartData] = useState(null);
-  // const [chartElements, setChartElements] = useState(null);
   const [selectedGrapeType, setSelectedGrapeType] = useState("red");
 
   const data = selectedGrapeType === "red" ? redGrapeData : whiteGrapeData;
@@ -30,13 +28,18 @@ const BarChart = (props) => {
   //     { grape: "Cinsaut", value: 15930 }
   //   ]);
   
-
+  const margin = { top: 20, right: 20, bottom: 50, left: 10 };
+  let widthCalc = 0;
+  if (svgRef.current) {
+     widthCalc = svgRef.current.clientWidth + 200;
+  }
+  const width = widthCalc < 320 ? 400 : widthCalc;
+  const height = 400 - margin.top - margin.bottom;
 
   useEffect(() => {
-    const margin = { top: 20, right: 20, bottom: 50, left: 10 };
-    const widthCalc = svgRef.current.clientWidth - margin.left - margin.right;
-    const width = widthCalc < 320 ? 400 : widthCalc;
-    const height = 400 - margin.top - margin.bottom;
+
+    d3.select(svgRef.current).selectAll('*').remove();
+
 
     const svg = d3
       .select(svgRef.current)
