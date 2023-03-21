@@ -7,7 +7,7 @@ import classes from "./charts.module.css";
 const BarChart = (props) => {
   const svgRef = useRef();
 
-  const { redGrapeData, whiteGrapeData } = props;
+  const { dataYear, units, redGrapeData, whiteGrapeData } = props;
 
   const [selectedGrapeType, setSelectedGrapeType] = useState("red");
 
@@ -49,6 +49,11 @@ const BarChart = (props) => {
       .append("g")
       .attr("transform", `translate(${margin.left}, ${margin.top})`);
 
+          // Set up tooltip
+        const tooltip = d3.select("body").append("div")
+        .attr("class", "tooltip")
+
+
     const xScale = d3
       .scaleBand()
       .range([0, width])
@@ -82,20 +87,17 @@ const BarChart = (props) => {
       .attr("width", xScale.bandwidth())
       .attr("height", (d) => height - yScale(d.value))
       .attr("fill", "#69b3a2")
-      .on("mouseover", function (d) {
+      .on("mouseover", function (event, d) {
         d3.select(this).transition().duration(300).attr("fill", "#F9D90A");
-        svg
-          .append("text")
-          .attr("class", "value")
-          .attr("x", xScale(d.grape) + xScale.bandwidth() / 2)
-          .attr("y", yScale(d.value) - 5)
-          .attr("text-anchor", "top")
-          .text(d.value)
-          .attr("fill", "black")
-          .attr("font-size", "12px");
+        tooltip
+        .style("top", event.pageY + 30 + "px")
+        .style("left", event.pageX + 20 + "px")
+        .style("visibility", "visible")
+        .html("Value " + d3.format(",")(d.value) + " " + units);
       })
       .on("mouseout", function () {
         d3.select(this).transition().duration(300).attr("fill", "#69b3a2");
+        tooltip.style("visibility", "hidden");
       })
       .exit().remove();
 
@@ -112,6 +114,9 @@ const BarChart = (props) => {
         <option value="white">White Grapes</option>
       </select>
       <svg ref={svgRef}></svg>
+      <div>
+        <p className={classes.chartTitle}>Data as of {dataYear}</p>
+      </div>
     </div>
   );
 };

@@ -7,7 +7,9 @@
     Remove all the styles of the "User-Agent-Stylesheet", except for the 'display' property
     - The "symbol *" part is to solve Firefox SVG sprite bug
  */
- *:where(:not(html, iframe, canvas, img, svg, video, audio):not(svg *, symbol *)) {
+*:where(
+    :not(html, iframe, canvas, img, svg, video, audio):not(svg *, symbol *)
+  ) {
   all: unset;
   display: revert;
 }
@@ -20,12 +22,15 @@
 }
 
 /* Reapply the pointer cursor for anchor tags */
-a, button {
+a,
+button {
   cursor: revert;
 }
 
 /* Remove list styles (bullets/numbers) */
-ol, ul, menu {
+ol,
+ul,
+menu {
   list-style: none;
 }
 
@@ -41,7 +46,8 @@ table {
 }
 
 /* Safari - solving issue when using user-select:none on the <body> text input doesn't working */
-input, textarea {
+input,
+textarea {
   -webkit-user-select: auto;
 }
 
@@ -110,11 +116,12 @@ body {
 main {
   display: flex;
   flex-direction: column;
-  justify-content:center;
+  justify-content: center;
   align-items: center;
 }
 
-main h1, main .header {
+main h1,
+main .header {
   font-size: 2rem;
   font-weight: 700;
   color: #000;
@@ -126,7 +133,6 @@ main a {
   font-size: 1.5rem;
   margin: 1rem 0;
 }
-
 
 .details {
   display: flex;
@@ -187,7 +193,6 @@ main a {
   padding: 0.6em 1em;
   margin: 0.5em;
 }
-
 
 svg {
   margin: 2vh 5vw;
