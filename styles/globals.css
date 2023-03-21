@@ -134,6 +134,15 @@ main a {
   margin: 1rem 0;
 }
 
+.tooltip {
+  position: absolute;
+  width: 60px;
+  color: 3px red;
+  font-style: bold;
+  font-size: 20px;
+  background-color: #222;
+}
+
 .details {
   display: flex;
   flex-direction: column;

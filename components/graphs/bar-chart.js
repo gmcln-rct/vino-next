@@ -41,7 +41,6 @@ const BarChart = (props) => {
     const width = widthCalc < 320 ? 400 : widthCalc;
     const height = 400 - margin.top - margin.bottom;
   
-
     const svg = d3
       .select(svgRef.current)
       .attr("width", width + margin.left + margin.right)
@@ -49,10 +48,9 @@ const BarChart = (props) => {
       .append("g")
       .attr("transform", `translate(${margin.left}, ${margin.top})`);
 
-          // Set up tooltip
-        const tooltip = d3.select("body").append("div")
-        .attr("class", "tooltip")
-
+      // Set up tooltip
+      const tooltip = d3.select("body").append("div")
+      .attr("className", "tooltip")
 
     const xScale = d3
       .scaleBand()
@@ -66,6 +64,7 @@ const BarChart = (props) => {
       .range([height, 0])
       .domain([0, d3.max(data, (d) => d.value)]);
 
+    // Add X axis
     svg
       .append("g")
       .attr("transform", `translate(0, ${height})`)
@@ -75,8 +74,12 @@ const BarChart = (props) => {
       .attr("transform", "rotate(-45)")
       .style("text-anchor", "end");
 
-    svg.append("g").call(d3.axisLeft(yScale)).attr("font-size","16");
+    // Add Y axis
+    svg.append("g")
+      .call(d3.axisLeft(yScale))
+      .attr("font-size","16");
 
+    // Bars
     svg
       .selectAll("rect")
       .data(data)
@@ -90,16 +93,23 @@ const BarChart = (props) => {
       .on("mouseover", function (event, d) {
         d3.select(this).transition().duration(300).attr("fill", "#F9D90A");
         tooltip
-        .style("top", event.pageY + 30 + "px")
-        .style("left", event.pageX + 20 + "px")
+        .style("top", event.pageY - 40 + "px")
+        .style("left", event.pageX - 40 + "px")
         .style("visibility", "visible")
-        .html("Value " + d3.format(",")(d.value) + " " + units);
+        .style("position", "absolute")
+        .style("z-index", "10")
+        // .style("background", "#fff")
+        .style("padding", "10px")
+        .style("border", "1px solid #000")
+        .style("border-radius", "5px")
+        .style("text-align", "center")
+        .style("transition", "0.3s")
+        .html( (d.grape) + '<br />' + " - " + d3.format(",")(d.value) + " " + units);
       })
       .on("mouseout", function () {
         d3.select(this).transition().duration(300).attr("fill", "#69b3a2");
         tooltip.style("visibility", "hidden");
       })
-      .exit().remove();
 
   }, [selectedGrapeType]);
 
