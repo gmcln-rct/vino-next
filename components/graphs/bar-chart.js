@@ -13,6 +13,8 @@ const BarChart = (props) => {
 
   const data = selectedGrapeType === "red" ? redGrapeData : whiteGrapeData;
 
+  const fillColor = selectedGrapeType === "red" ? "#B03E3E" : "#A19F18";
+
   useEffect(() => {
     d3.select(svgRef.current).selectAll("*").remove();
 
@@ -55,13 +57,13 @@ const BarChart = (props) => {
       .append("g")
       .attr("transform", `translate(0, ${height})`)
       .call(d3.axisBottom(xScale))
-      .attr("font-size", "16")
+      .attr("font-size", "14")
       .selectAll("text")
       .attr("transform", "rotate(-45)")
       .style("text-anchor", "end");
 
     // Add Y axis
-    svg.append("g").call(d3.axisLeft(yScale)).attr("font-size", "16");
+    svg.append("g").call(d3.axisLeft(yScale)).attr("font-size", "14");
 
     // Bars
     svg
@@ -73,7 +75,7 @@ const BarChart = (props) => {
       .attr("y", (d) => yScale(d.value))
       .attr("width", xScale.bandwidth())
       .attr("height", (d) => height - yScale(d.value))
-      .attr("fill", "#69b3a2")
+      .attr("fill", fillColor)
       .on("mouseover", function (event, d) {
         d3.select(this).transition().duration(300).attr("fill", "#F9D90A");
         tooltip
@@ -87,13 +89,13 @@ const BarChart = (props) => {
           .style("border", "1px solid #000")
           .style("border-radius", "5px")
           .style("text-align", "center")
-          .style("transition", "0.3s")
+          .style("transition", "0.5s")
           .html(
             d.grape + "<br />" + d3.format(",")(d.value) + " " + units
           );
       })
       .on("mouseout", function () {
-        d3.select(this).transition().duration(300).attr("fill", "#69b3a2");
+        d3.select(this).transition().duration(300).attr("fill", fillColor);
         tooltip.style("visibility", "hidden");
       })
       .exit()

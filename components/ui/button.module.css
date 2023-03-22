@@ -3,8 +3,8 @@
   cursor: pointer;
   text-decoration: none;
   font: inherit;
-  background-color: #03be9f;
-  border: 1px solid #03be9f;
+  background-color: #08A187;
+  border: 1px solid #08A187;
   border-radius: 6px;
   color: #dafff7;
   text-align: center;
@@ -14,6 +14,6 @@
 
 .btn:hover,
 .btn:active {
-  background-color: #02afa1;
-  border-color: #02afa1;
+  background-color: #46cbb5;
+  border-color: #46cbb5;
 }
