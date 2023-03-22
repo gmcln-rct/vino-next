@@ -131,7 +131,7 @@ main h1,
 main .header {
   color: #000;
   text-align: center;
-  margin: 1rem 0;
+  margin: 1rem 0 0 0;
 
   font-size: clamp(16px, 4vw, 32px);
   font-weight: bold;

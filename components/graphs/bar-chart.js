@@ -25,7 +25,7 @@ const BarChart = (props) => {
       widthCalc = svgRef.current.clientWidth + 200;
     }
     const width = widthCalc < 320 ? 400 : widthCalc;
-    const height = 400 - margin.top - margin.bottom;
+    const height = 350 - margin.top - margin.bottom;
 
     const svg = d3
       .select(svgRef.current)
@@ -62,13 +62,16 @@ const BarChart = (props) => {
       .append("g")
       .attr("transform", `translate(0, ${height})`)
       .call(d3.axisBottom(xScale))
-      .attr("font-size", "14")
+      .attr("font-size", "clamp(12px, 1.5vw, 16px)")
       .selectAll("text")
       .attr("transform", "rotate(-45)")
       .style("text-anchor", "end");
 
     // Add Y axis
-    svg.append("g").call(d3.axisLeft(yScale)).attr("font-size", "14");
+    svg
+      .append("g")
+      .call(d3.axisLeft(yScale))
+      .attr("font-size", "clamp(12px, 1vw, 14px)");
 
     // Bars
     svg
@@ -95,6 +98,7 @@ const BarChart = (props) => {
           .style("border-radius", "5px")
           .style("text-align", "center")
           .style("transition", "0.5s")
+          .style("font-family", "sans-serif")
           .html(d.grape + "<br />" + d3.format(",")(d.value) + " " + units);
       })
       .on("mouseout", function () {
@@ -111,6 +115,7 @@ const BarChart = (props) => {
 
   return (
     <div className={classes.chart}>
+      <p className={classes.subheader}>National winegrape area production for world's top 10 {selectedGrapeType} grape varietals, {dataYear}</p>
       <select
         className={classes.selectCss}
         value={selectedGrapeType}
@@ -122,7 +127,6 @@ const BarChart = (props) => {
 
       <div className={classes.barchart}>
         <svg ref={svgRef}></svg>
-
         <p className={classes.units}>Units in hectares</p>
       </div>
     </div>
