@@ -74,6 +74,9 @@ const BarChart = (props) => {
       .attr("x", (d) => xScale(d.grape))
       .attr("y", (d) => yScale(d.value))
       .attr("width", xScale.bandwidth())
+      .transition()
+      .duration(500)
+      .delay((d, i) => (i * 500) / 10)
       .attr("height", (d) => height - yScale(d.value))
       .attr("fill", fillColor)
       .on("mouseover", function (event, d) {
@@ -100,6 +103,8 @@ const BarChart = (props) => {
       })
       .exit()
       .remove();
+
+
   }, [selectedGrapeType]);
 
   return (
