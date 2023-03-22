@@ -14,7 +14,6 @@ function MyApp({ Component, pageProps }) {
         <meta name="description" content="Winography - Data visualization about wine production and consumption, both historic and present-day" />
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
       </Head>
-      `
       <main>
         <Component {...pageProps} />
       </main>
