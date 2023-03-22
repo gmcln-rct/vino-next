@@ -13,30 +13,15 @@ const BarChart = (props) => {
 
   const data = selectedGrapeType === "red" ? redGrapeData : whiteGrapeData;
 
-  // const [data, setData] = useState([
-  //     { grape: "Cabernet Sauvignon", value: 46555 },
-  //     { grape: "Merlot", value: 108483 },
-  //     { grape: "Syrah", value: 62211 },
-  //     { grape: "Garnacha Tinta", value: 78631 },
-  //     { grape: "Pinot Noir", value: 31602 },
-  //     { grape: "Cabernet Franc", value: 32327 },
-  //     { grape: "Côt", value: 6100 },
-  //     { grape: "Monastrell", value: 8754 },
-  //     { grape: "Mazuelo", value: 31760 },
-  //     { grape: "Alicante Henri Bouschet", value: 2607 },
-  //     { grape: "Gamay Noir", value: 24095 },
-  //     { grape: "Cinsaut", value: 15930 }
-  //   ]);
-
   useEffect(() => {
     d3.select(svgRef.current).selectAll("*").remove();
 
     const margin = { top: 20, right: 20, bottom: 50, left: 10 };
-    let widthCalc = 400;
+    let widthCalc = 500;
     if (!svgRef.current) {
       console.log("svgRef.current", svgRef.current);
       widthCalc = svgRef.current.clientWidth + 200;
-    }
+    };
     const width = widthCalc < 320 ? 400 : widthCalc;
     const height = 400 - margin.top - margin.bottom;
 
@@ -103,7 +88,7 @@ const BarChart = (props) => {
           .style("text-align", "center")
           .style("transition", "0.3s")
           .html(
-            d.grape + "<br />" + " - " + d3.format(",")(d.value) + " " + units
+            d.grape + "<br />" + d3.format(",")(d.value) + " " + units
           );
       })
       .on("mouseout", function () {
@@ -125,6 +110,7 @@ const BarChart = (props) => {
         <option value="white">White Grapes</option>
       </select>
       <svg ref={svgRef}></svg>
+      <p>Units in hectares</p>
     </div>
   );
 };
