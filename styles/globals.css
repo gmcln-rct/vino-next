@@ -149,15 +149,20 @@ main a {
   justify-content: center;
   align-items: center;
   margin: 3rem 0;
+  padding: 1rem 0.5rem;
 
   width: 300px;
   border-radius: 20px;
-
+  color: #fff;
   background-color: darkgrey;
+
+  font-size: clamp(18px, 2vw, 24px);
+  font-weight: bold;
+  font-display: swap;
+
 }
 
 .details a {
-  font-size: 1.5rem;
   color: #fff;
 }
 
