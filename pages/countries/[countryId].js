@@ -18,6 +18,8 @@ function CountryDetailPage() {
   // const { pageId } = router.query;
 
   const country = getCountryById(params);
+
+  const wineCategory = country.category === 'OW' ? 'Old World' : 'New World';
   
   console.log('pageId', params, country);
 
@@ -25,7 +27,11 @@ function CountryDetailPage() {
     <h2 className="header">{country.itemName} Detail Page</h2>
     <BarChart units={countryWineData.units} dataYear={countryWineData.dataYear} redGrapeData={countryWineData.redGrapeData} whiteGrapeData={countryWineData.whiteGrapeData} />
     <div className="details">
+      <p>Classification: {wineCategory}</p>
       <a href={country.link} target="_blank">More about Wine Region</a>
+    </div>
+    <div>
+      <p>Data as of {countryWineData.dataYear}</p>
     </div>
   </>
   

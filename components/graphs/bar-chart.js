@@ -27,20 +27,19 @@ const BarChart = (props) => {
   //     { grape: "Gamay Noir", value: 24095 },
   //     { grape: "Cinsaut", value: 15930 }
   //   ]);
-  
 
   useEffect(() => {
-
-    d3.select(svgRef.current).selectAll('*').remove();
+    d3.select(svgRef.current).selectAll("*").remove();
 
     const margin = { top: 20, right: 20, bottom: 50, left: 10 };
-    let widthCalc = 0;
-    if (svgRef.current) {
-       widthCalc = svgRef.current.clientWidth + 200;
+    let widthCalc = 400;
+    if (!svgRef.current) {
+      console.log("svgRef.current", svgRef.current);
+      widthCalc = svgRef.current.clientWidth + 200;
     }
     const width = widthCalc < 320 ? 400 : widthCalc;
     const height = 400 - margin.top - margin.bottom;
-  
+
     const svg = d3
       .select(svgRef.current)
       .attr("width", width + margin.left + margin.right)
@@ -48,16 +47,17 @@ const BarChart = (props) => {
       .append("g")
       .attr("transform", `translate(${margin.left}, ${margin.top})`);
 
-      // Set up tooltip
-      const tooltip = d3.select("body").append("div")
-      .attr("className", "tooltip")
+    // Set up tooltip
+    const tooltip = d3
+      .select("body")
+      .append("div")
+      .attr("className", "tooltip");
 
     const xScale = d3
       .scaleBand()
       .range([0, width])
       .domain(data.map((d) => d.grape))
       .padding(0.2);
-      
 
     const yScale = d3
       .scaleLinear()
@@ -69,15 +69,13 @@ const BarChart = (props) => {
       .append("g")
       .attr("transform", `translate(0, ${height})`)
       .call(d3.axisBottom(xScale))
-      .attr("font-size","16")
+      .attr("font-size", "16")
       .selectAll("text")
       .attr("transform", "rotate(-45)")
       .style("text-anchor", "end");
 
     // Add Y axis
-    svg.append("g")
-      .call(d3.axisLeft(yScale))
-      .attr("font-size","16");
+    svg.append("g").call(d3.axisLeft(yScale)).attr("font-size", "16");
 
     // Bars
     svg
@@ -93,30 +91,33 @@ const BarChart = (props) => {
       .on("mouseover", function (event, d) {
         d3.select(this).transition().duration(300).attr("fill", "#F9D90A");
         tooltip
-        .style("top", event.pageY - 40 + "px")
-        .style("left", event.pageX - 40 + "px")
-        .style("visibility", "visible")
-        .style("position", "absolute")
-        .style("z-index", "10")
-        // .style("background", "#fff")
-        .style("padding", "10px")
-        .style("border", "1px solid #000")
-        .style("border-radius", "5px")
-        .style("text-align", "center")
-        .style("transition", "0.3s")
-        .html( (d.grape) + '<br />' + " - " + d3.format(",")(d.value) + " " + units);
+          .style("top", event.pageY - 40 + "px")
+          .style("left", event.pageX - 40 + "px")
+          .style("visibility", "visible")
+          .style("position", "absolute")
+          .style("z-index", "10")
+          .style("background", "#fff")
+          .style("padding", "10px")
+          .style("border", "1px solid #000")
+          .style("border-radius", "5px")
+          .style("text-align", "center")
+          .style("transition", "0.3s")
+          .html(
+            d.grape + "<br />" + " - " + d3.format(",")(d.value) + " " + units
+          );
       })
       .on("mouseout", function () {
         d3.select(this).transition().duration(300).attr("fill", "#69b3a2");
         tooltip.style("visibility", "hidden");
       })
-
+      .exit()
+      .remove();
   }, [selectedGrapeType]);
 
   return (
     <div className={classes.chart}>
       <select
-      className={classes.selectCss}
+        className={classes.selectCss}
         value={selectedGrapeType}
         onChange={(event) => setSelectedGrapeType(event.target.value)}
       >
@@ -124,9 +125,6 @@ const BarChart = (props) => {
         <option value="white">White Grapes</option>
       </select>
       <svg ref={svgRef}></svg>
-      <div>
-        <p className={classes.chartTitle}>Data as of {dataYear}</p>
-      </div>
     </div>
   );
 };
