@@ -108,10 +108,12 @@ meter {
 
 /******************************* END RESET ***************************************/
 
-/* Global CSS variables */
+/**************************** Global CSS variables ***************************************/
 
 body {
-  background-color: #edf4f5;
+  /* background-color: #edf4f5; */
+  background-color: #d8dbdb;
+
 }
 
 /* main */

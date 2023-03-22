@@ -23,7 +23,7 @@ const BarChart = (props) => {
     if (!svgRef.current) {
       console.log("svgRef.current", svgRef.current);
       widthCalc = svgRef.current.clientWidth + 200;
-    };
+    }
     const width = widthCalc < 320 ? 400 : widthCalc;
     const height = 400 - margin.top - margin.bottom;
 
@@ -31,7 +31,12 @@ const BarChart = (props) => {
       .select(svgRef.current)
       .attr("width", width + margin.left + margin.right)
       .attr("height", height + margin.top + margin.bottom)
-      .attr("viewBox", `0 0 ${width + margin.left + margin.right} ${height + margin.top + margin.bottom}`)
+      .attr(
+        "viewBox",
+        `0 0 ${width + margin.left + margin.right} ${
+          height + margin.top + margin.bottom
+        }`
+      )
       .append("g")
       .attr("transform", `translate(${margin.left}, ${margin.top})`);
 
@@ -90,9 +95,7 @@ const BarChart = (props) => {
           .style("border-radius", "5px")
           .style("text-align", "center")
           .style("transition", "0.5s")
-          .html(
-            d.grape + "<br />" + d3.format(",")(d.value) + " " + units
-          );
+          .html(d.grape + "<br />" + d3.format(",")(d.value) + " " + units);
       })
       .on("mouseout", function () {
         d3.select(this).transition().duration(300).attr("fill", fillColor);
@@ -100,11 +103,10 @@ const BarChart = (props) => {
       })
       .exit()
       .remove();
-      
-      return () => {
-        tooltip.remove();
-        };
 
+    return () => {
+      tooltip.remove();
+    };
   }, [selectedGrapeType]);
 
   return (
@@ -117,10 +119,12 @@ const BarChart = (props) => {
         <option value="red">Red Grapes</option>
         <option value="white">White Grapes</option>
       </select>
-      <svg ref={svgRef}></svg>
-      <br />
-      <br/>
-      <p className={classes.units}>Units in hectares</p>
+
+      <div className={classes.barchart}>
+        <svg ref={svgRef}></svg>
+
+        <p className={classes.units}>Units in hectares</p>
+      </div>
     </div>
   );
 };

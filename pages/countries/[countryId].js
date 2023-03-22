@@ -40,12 +40,6 @@ function CountryDetailPage() {
         countryName={country.itemName}
         countryRegions={country.regions}
       />
-      {/* <div className="details">
-        <p>Classification: {wineCategory}</p>
-        <a href={country.link} target="_blank">
-          More about Wine Region
-        </a>
-      </div> */}
       <div>
         <p>Data as of {countryWineData.dataYear}</p>
       </div>
