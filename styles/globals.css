@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Lato:ital,wght@0,100;0,400;0,900;1,100;1,400;1,700&family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700&display=swap');
 /***
     The new CSS reset - version 1.8.4 (last updated 14.2.2023)
     GitHub page: https://github.com/elad2412/the-new-css-reset
@@ -118,15 +119,20 @@ main {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+
+  /* font-family: 'Lato', sans-serif; */
+  font-family: 'Open Sans', sans-serif;
 }
 
 main h1,
 main .header {
-  font-size: 2rem;
-  font-weight: 700;
   color: #000;
   text-align: center;
   margin: 1rem 0;
+
+  font-size: clamp(16px, 4vw, 32px);
+  font-weight: bold;
+  font-display: swap;
 }
 
 main a {
@@ -148,7 +154,7 @@ main a {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  
+
   width: 300px;
   margin: 3rem 0;
   padding: 1rem 0.5rem;
