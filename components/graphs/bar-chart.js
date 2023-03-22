@@ -120,7 +120,7 @@ const BarChart = (props) => {
       <svg ref={svgRef}></svg>
       <br />
       <br/>
-      <p>Units in hectares</p>
+      <p className={classes.units}>Units in hectares</p>
     </div>
   );
 };

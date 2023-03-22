@@ -13,6 +13,13 @@
     background-color: #222;
 }
 
+.units {
+  font-size: clamp(12px, 2vw, 16px);
+  font-weight: 100;
+  font-style: italic;
+  font-display: swap;
+}
+
 /* class applies to select element itself, not a wrapper element */
 .selectCss {
     display: block;
