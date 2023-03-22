@@ -1,0 +1,26 @@
+.details {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  
+    width: 300px;
+    margin: 3rem 0;
+    padding: 1rem 0.5rem;
+  
+    color: #fff;
+    background-color: darkgrey;
+    border-radius: 20px;
+  
+    font-size: clamp(16px, 2vw, 18px);
+    font-family: 'Open Sans', sans-serif;
+  
+    font-display: swap;
+  
+  }
+  
+  .details a {
+    color: #fff;
+    font-size: clamp(16px, 2vw, 18px);
+    font-display: swap;
+  }
