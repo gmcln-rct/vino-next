@@ -17,7 +17,7 @@ function HomePage() {
   return (
     <>
       <h1>Homepage</h1>
-      <Link href="/countries">All Countries</Link>
+      <Link href="/countries" className="link">All Countries</Link>
     </>
   );
 }

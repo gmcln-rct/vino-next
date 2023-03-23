@@ -143,6 +143,10 @@ main a {
   margin: 1rem 0;
 }
 
+.link {
+  color: blue;
+}
+
 .tooltip {
   position: absolute;
   width: 60px;
