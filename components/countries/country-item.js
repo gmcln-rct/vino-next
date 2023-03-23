@@ -20,7 +20,6 @@ function CountryItem(props) {
             <div className={classes.actions}>
                 <Button link={worldTopTenLink}>World Top 10 Grapes</Button>
                 <Button link={countryTopTenLink}>Country Top 10 Grapes</Button>
-
             </div>
         </li>
     );

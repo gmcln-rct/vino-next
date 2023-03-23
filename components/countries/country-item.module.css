@@ -4,8 +4,9 @@
     justify-items: center;
     align-items: center;
     
-    margin: 1rem;
-    padding: 0.5rem 2rem;
+    /* margin: 1rem; */
+    padding: 0.2rem 1rem;
+    width: 360px;
     background-color: white;
     box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3), 0 1px 12px 2px rgba(0, 0, 0, 0.2);
     border-radius: 8px;
@@ -13,12 +14,11 @@
   }
 
   .item h2 {
-    margin: 1rem 0 0 0;
+    margin: 0.5rem 0 0 0;
     font-size: clamp(16px, 4vw, 24px);
     font-weight: 600;
     font-display: swap;
   }
-  
  
   .content {
     width: 100%;

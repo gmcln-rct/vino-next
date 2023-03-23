@@ -1,3 +1,7 @@
+import Link from "next/link";
+
+import Head from "next/head";
+
 import { useRouter } from "next/router";
 
 import { getCountryById } from "@/data/country-data";
@@ -29,6 +33,10 @@ function CountryTopTenDetailPage() {
 
   return (
     <>
+    <Head>
+      <title>Country Top Grapes - {country.itemName } - Winography - Wine Data Visualization</title>
+      <meta name="description" content="Wine data visualization for winegrape area production for top national grape varietals" />
+    </Head>
       <h2 className="header">{country.itemName}: Country Top 10 Grapes</h2>
       <BarChart
         units={countryWineData.units}
@@ -46,6 +54,7 @@ function CountryTopTenDetailPage() {
       <div>
         <p>Data as of {countryWineData.dataYear}</p>
       </div>
+      <Link href="/countries/">Back to Country</Link>
     </>
   );
 }
