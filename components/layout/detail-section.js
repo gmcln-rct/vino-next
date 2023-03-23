@@ -9,7 +9,7 @@ const DetailSection = (props) => {
   return (
     <section className={classes.details__container}>
       <div className={classes.details__items}>
-        <p>Country: <span className={classes.details__data}>{countryName}</span></p>
+        <p>Country: {countryName}</p>
         <p>Classification: <span className={classes.details__data}>{wineCategory}</span></p>
         <p>Regions: <span className={classes.details__data}>{regionList}</span></p>
         <a href={countryLink} target="_blank">

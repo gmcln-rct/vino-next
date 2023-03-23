@@ -12,7 +12,7 @@
     text-decoration: none;
 
     font-family: 'Jost', sans-serif;
-    font-size: clamp(18px, 4vw, 48px);
+    font-size: clamp(24px, 4vw, 64px);
     font-weight: bold;
     font-display: swap;
 }

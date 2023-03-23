@@ -112,7 +112,8 @@ meter {
 
 body {
   /* background-color: #edf4f5; */
-  background-color: #d8dbdb;
+  /* background-color: #d8dbdb; */
+  background-color: #e7e5d5;
 
 }
 
@@ -144,7 +145,7 @@ main a {
 }
 
 .link {
-  color: blue;
+  color: #4A948E;
 }
 
 .tooltip {

@@ -4,13 +4,16 @@
   padding: 0.5rem 1rem;
 
   cursor: pointer;
+
   font: inherit;
+  font-weight: 600;
+  font-size: clamp(16px, 1vw, 20px);
   text-decoration: none;
   text-align: center;
   vertical-align: middle;
   color: #dafff7;
-  background-color: #08A187;
-  border: 1px solid #08A187;
+  background-color: #2A5B75;
+  border: 1px solid #2A5B75;
 
   border-radius: 6px;
   box-shadow: 0 1px 6px rgba(0, 0, 0, 0.2);
@@ -19,6 +22,6 @@
 
 .btn:hover,
 .btn:active {
-  background-color: #46cbb5;
-  border-color: #46cbb5;
+  background-color: #4A948E;
+  border-color: #4A948E;
 }

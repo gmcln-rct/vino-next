@@ -11,13 +11,11 @@ function MyApp({ Component, pageProps }) {
       <Layout >
         <Head>
           <title>Winography - Wine Data Visualization</title>
-          <meta name='description' content='Winography - Data visualization about wine production and consumption, both historic and present-day' />
-          <meta name='viewport' content='initial-scale=1.0, width=device-width' />
-          <meta name='robots' content='index, follow'></meta>
           <meta charset="UTF-8" />
-          <meta name="keywords" content="titla, meta, nextjs" />
-          <meta name="author" content="Syamlal CM" />
           <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+          <meta name='robots' content='index, follow'></meta>
+          <meta name="keywords" content="wine, data visualization, wine produciton" />
+          <meta name="author" content="Glenn McClanan, Rio Create LLC" />
         </Head>
         <Component {...pageProps} />
       </Layout>
