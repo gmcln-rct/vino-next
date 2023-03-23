@@ -3,7 +3,7 @@ export const COUNTRIES_WINE_DATA = [
     id: "argentina",
     dataYear: 2016,
     units: "hectares",
-    redGrapeData: [
+    redGrapeDataWorld: [
       { grape: "Cabernet Sauvignon", value: 15356 },
       { grape: "Merlot", value: 5632 },
       { grape: "Tempranillo", value: 6140 },
@@ -15,7 +15,7 @@ export const COUNTRIES_WINE_DATA = [
       { grape: "Malbec", value: 12 },
       { grape: "Mourvedre", value: 40401 },
     ],
-    whiteGrapeData: [
+    whiteGrapeDataWorld: [
       { grape: "Airén", value: 0 },
       { grape: "Chardonnay", value: 6227 },
       { grape: "Sauvignon Blanc", value: 2148 },
@@ -56,7 +56,7 @@ export const COUNTRIES_WINE_DATA = [
     id: "australia",
     dataYear: 2016,
     units: "hectares",
-    redGrapeData: [
+    redGrapeDataWorld: [
       { grape: "Cabernet Sauvignon", value: 23987 },
       { grape: "Merlot", value: 8415 },
       { grape: "Tempranillo", value: 681 },
@@ -68,7 +68,7 @@ export const COUNTRIES_WINE_DATA = [
       { grape: "Malbec", value: 515 },
       { grape: "Mourvedre", value: 704 },
     ],
-    whiteGrapeData: [
+    whiteGrapeDataWorld: [
       { grape: "Airén", value: 0 },
       { grape: "Chardonnay", value: 21321 },
       { grape: "Sauvignon Blanc", value: 6044 },
@@ -109,7 +109,7 @@ export const COUNTRIES_WINE_DATA = [
     id: "chile",
     dataYear: 2016,
     units: "hectares",
-    redGrapeData: [
+    redGrapeDataWorld: [
       { grape: "Cabernet Sauvignon", value: 42409 },
       { grape: "Merlot", value: 12057 },
       { grape: "Tempranillo", value: 127 },
@@ -121,7 +121,7 @@ export const COUNTRIES_WINE_DATA = [
       { grape: "Malbec", value: 2293 },
       { grape: "Mourvedre", value: 102 },
     ],
-    whiteGrapeData: [
+    whiteGrapeDataWorld: [
       { grape: "Airén", value: 0 },
       { grape: "Chardonnay", value: 11435 },
       { grape: "Sauvignon Blanc", value: 14999 },
@@ -162,7 +162,7 @@ export const COUNTRIES_WINE_DATA = [
     id: "france",
     dataYear: 2016,
     units: "hectares",
-    redGrapeData: [
+    redGrapeDataWorld: [
       { grape: "Cabernet Sauvignon", value: 0 },
       { grape: "Merlot", value: 47451 },
       { grape: "Tempranillo", value: 28084 },
@@ -174,7 +174,7 @@ export const COUNTRIES_WINE_DATA = [
       { grape: "Malbec", value: 7333 },
       { grape: "Mourvedre", value: 9432 },
     ],
-    whiteGrapeData: [
+    whiteGrapeDataWorld: [
       { grape: "Airén", value: 0 },
       { grape: "Chardonnay", value: 185429 },
       { grape: "Sauvignon Blanc", value: 65297 },
@@ -215,7 +215,7 @@ export const COUNTRIES_WINE_DATA = [
     id: "germany",
     dataYear: 2016,
     units: "hectares",
-    redGrapeData: [
+    redGrapeDataWorld: [
       { grape: "Cabernet Sauvignon", value: 329 },
       { grape: "Merlot", value: 553 },
       { grape: "Tempranillo", value: 0 },
@@ -227,7 +227,7 @@ export const COUNTRIES_WINE_DATA = [
       { grape: "Malbec", value: 0 },
       { grape: "Mourvedre", value: 0 },
     ],
-    whiteGrapeData: [
+    whiteGrapeDataWorld: [
       { grape: "Airén", value: 0 },
       { grape: "Chardonnay", value: 1485 },
       { grape: "Sauvignon Blanc", value: 736 },
@@ -268,7 +268,7 @@ export const COUNTRIES_WINE_DATA = [
     id: "italy",
     dataYear: 2016,
     units: "hectares",
-    redGrapeData: [
+    redGrapeDataWorld: [
       { grape: "Cabernet Sauvignon", value: 14240 },
       { grape: "Merlot", value: 24057 },
       { grape: "Tempranillo", value: 9 },
@@ -280,7 +280,7 @@ export const COUNTRIES_WINE_DATA = [
       { grape: "Malbec", value: 178 },
       { grape: "Mourvedre", value: 0 },
     ],
-    whiteGrapeData: [
+    whiteGrapeDataWorld: [
       { grape: "Airén", value: 19769 },
       { grape: "Chardonnay", value: 3935 },
       { grape: "Sauvignon Blanc", value: 35441 },
@@ -321,7 +321,7 @@ export const COUNTRIES_WINE_DATA = [
     id: "portugal",
     dataYear: 2016,
     units: "hectares",
-    redGrapeData: [
+    redGrapeDataWorld: [
       { grape: "Cabernet Sauvignon", value: 2346 },
       { grape: "Merlot", value: 482 },
       { grape: "Tempranillo", value: 17014 },
@@ -333,7 +333,7 @@ export const COUNTRIES_WINE_DATA = [
       { grape: "Malbec", value: 0 },
       { grape: "Mourvedre", value: 0 },
     ],
-    whiteGrapeData: [
+    whiteGrapeDataWorld: [
       { grape: "Airén", value: 547 },
       { grape: "Chardonnay", value: 102 },
       { grape: "Sauvignon Blanc", value: 122 },
@@ -370,12 +370,11 @@ export const COUNTRIES_WINE_DATA = [
       { grape: "Síria", value: 6438 },
     ],
   },
-
   {
     id: "south-africa",
     dataYear: 2016,
     units: "hectares",
-    redGrapeData: [
+    redGrapeDataWorld: [
       { grape: "Cabernet Sauvignon", value: 10589 },
       { grape: "Merlot", value: 5558 },
       { grape: "Tempranillo", value: 92 },
@@ -387,7 +386,7 @@ export const COUNTRIES_WINE_DATA = [
       { grape: "Malbec", value: 452 },
       { grape: "Mourvedre", value: 473 },
     ],
-    whiteGrapeData: [
+    whiteGrapeDataWorld: [
       { grape: "Airén", value: 0 },
       { grape: "Chardonnay", value: 6856 },
       { grape: "Sauvignon Blanc", value: 9246 },
@@ -428,7 +427,7 @@ export const COUNTRIES_WINE_DATA = [
     id: "spain",
     dataYear: 2016,
     units: "hectares",
-    redGrapeData: [
+    redGrapeDataWorld: [
       { grape: "Cabernet Sauvignon", value: 20139 },
       { grape: "Merlot", value: 12852 },
       { grape: "Tempranillo", value: 193597 },
@@ -440,7 +439,7 @@ export const COUNTRIES_WINE_DATA = [
       { grape: "Malbec", value: 113 },
       { grape: "Mourvedre", value: 41303 },
     ],
-    whiteGrapeData: [
+    whiteGrapeDataWorld: [
       { grape: "Airén", value: 203276 },
       { grape: "Chardonnay", value: 6866 },
       { grape: "Sauvignon Blanc", value: 4562 },
@@ -481,7 +480,7 @@ export const COUNTRIES_WINE_DATA = [
     id: "united-states",
     dataYear: 2016,
     units: "hectares",
-    redGrapeData: [
+    redGrapeDataWorld: [
       { grape: "Cabernet Sauvignon", value: 40837 },
       { grape: "Merlot", value: 21251 },
       { grape: "Tempranillo", value: 626 },
@@ -493,7 +492,7 @@ export const COUNTRIES_WINE_DATA = [
       { grape: "Malbec", value: 1610 },
       { grape: "Mourvedre", value: 515 },
     ],
-    whiteGrapeData: [
+    whiteGrapeDataWorld: [
       { grape: "Airén", value: 0 },
       { grape: "Chardonnay", value: 41392 },
       { grape: "Sauvignon Blanc", value: 6747 },

@@ -23,6 +23,8 @@ function CountryTopTenDetailPage() {
 
   const wineCategory = country.category === "OW" ? "Old World" : "New World";
 
+  const explanationText = "national top ";
+
   console.log("pageId", params, country);
 
   return (
@@ -31,8 +33,9 @@ function CountryTopTenDetailPage() {
       <BarChart
         units={countryWineData.units}
         dataYear={countryWineData.dataYear}
-        redGrapeData={countryWineData.redGrapeData}
-        whiteGrapeData={countryWineData.whiteGrapeData}
+        redGrapeData={countryWineData.redGrapeDataNational}
+        whiteGrapeData={countryWineData.whiteGrapeDataNational}
+        explanationText={explanationText}
       />
       <DetailSection
         wineCategory={wineCategory}

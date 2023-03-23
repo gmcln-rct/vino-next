@@ -7,7 +7,7 @@ import classes from "./charts.module.css";
 const BarChart = (props) => {
   const svgRef = useRef();
 
-  const { dataYear, units, redGrapeData, whiteGrapeData } = props;
+  const { dataYear, units, redGrapeData, whiteGrapeData, explanationText } = props;
 
   const [selectedGrapeType, setSelectedGrapeType] = useState("red");
 
@@ -115,7 +115,7 @@ const BarChart = (props) => {
 
   return (
     <div className={classes.chart}>
-      <p className={classes.subheader}>National winegrape area production for world's top 10 {selectedGrapeType} grape varietals, {dataYear}</p>
+      <p className={classes.subheader}>National winegrape area production for {explanationText} {selectedGrapeType} grape varietals, {dataYear}</p>
       <select
         className={classes.selectCss}
         value={selectedGrapeType}
