@@ -6,19 +6,23 @@ import Button from '../ui/button';
 
 function CountryItem(props) {
     const { id, countryName, category } = props;
-    const exploreLink = `/countries/${id}`;
-
     const categoryName = category !== 'NW' ? 'Old World' : 'New World';
+
+    const worldTopTenLink = `/countries/worldtopten/${id}`;
+
+    const countryTopTenLink = `/countries/countrytopten/${id}`;
+
 
     return (
         <li 
             className={classes.item}>
             <div className={classes.content}>
                 <h2>Country: { countryName }</h2>
-                <p>Category: { categoryName }</p>
             </div>
             <div className={classes.actions}>
-                <Button link={exploreLink}>Explore</Button>
+                <Button link={worldTopTenLink}>World Top 10 Grapes</Button>
+                <Button link={countryTopTenLink}>Country Top 10 Grapes</Button>
+
             </div>
         </li>
     );

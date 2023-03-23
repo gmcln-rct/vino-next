@@ -2,9 +2,9 @@
 // import { Inter } from 'next/font/google'
 // import styles from '@/styles/Home.module.css'
 
-import { getFeaturedCountries } from "@/data/country-data";
+import Link from "next/link";
 
-import CountryList from "@/components/countries/country-list";
+
 
 // const inter = Inter({
 //   variable: '--inter-font',
@@ -13,12 +13,11 @@ import CountryList from "@/components/countries/country-list";
 
 function HomePage() {
 
-
-  const featuredCountries = getFeaturedCountries();
+  
   return (
     <>
       <h1>Homepage</h1>
-      <CountryList items={ featuredCountries }/>
+      <Link href="/countries">All Countries</Link>
     </>
   );
 }

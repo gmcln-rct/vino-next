@@ -27,6 +27,30 @@ export const COUNTRIES_WINE_DATA = [
       { grape: "Moscatel", value: 0 },
       { grape: "Chenin Blanc", value: 0 },
     ],
+    redGrapeDataNational: [
+      { grape: 'Aglianico', value: 9627 },
+      { grape: 'Barbera', value: 15006 },
+      { grape: 'Corvina Veronese', value: 6222 },
+      { grape: 'Lambrusco Salamino', value: 6228 },
+      { grape: 'Montepulciano', value: 32724 },
+      { grape: 'Nebbiolo', value: 7551 },
+      { grape: 'Nero d\'Avola', value: 14129 },
+      { grape: 'Negroamaro', value: 11431 },
+      { grape: 'Sangiovese', value: 68428 },
+      { grape: 'Tribidrag', value: 13896 }
+    ],
+    whiteGrapeDataNational: [
+      { grape: 'Catarratto Bianco', value: 28563 },
+      { grape: 'Garganega', value: 8522 },
+      { grape: 'Grillo', value: 7382 },
+      { grape: 'Malvasia Bianca di Candia', value: 9028 },
+      { grape: 'Muscat Blanc à Petits Grains', value: 13334 },
+      { grape: 'Pinot Gris', value: 18821 },
+      { grape: 'Prosecco', value: 19730 },
+      { grape: 'Trebbiano Romagnolo', value: 19059 },
+      { grape: 'Trebbiano Toscano', value: 35441 },
+      { grape: 'Vermentino', value: 6703 }
+    ]
   },
   {
     id: "australia",
@@ -56,6 +80,30 @@ export const COUNTRIES_WINE_DATA = [
       { grape: "Moscatel", value: 406 },
       { grape: "Chenin Blanc", value: 0 },
     ],
+    redGrapeDataNational: [
+      { grape: 'Cabernet Sauvignon', value: 23987 },
+      { grape: 'Durif', value: 540 },
+      { grape: 'Merlot', value: 8415 },
+      { grape: 'Petit Verdot', value: 1118 },
+      { grape: 'Pinot Noir', value: 4806 },
+      { grape: 'Ruby Cabernet', value: 849 },
+      { grape: 'Syrah', value: 38942 }
+    ],
+    whiteGrapeDataNational: [
+      { grape: 'Canada Muscat', value: 120 },
+      { grape: 'Chardonnay', value: 21321 },
+      { grape: 'Colombard', value: 1789 },
+      { grape: 'Marsanne', value: 161 },
+      { grape: 'Muscat Blanc à Petits Grains (R)', value: 240 },
+      { grape: 'Muscat of Alexandria', value: 2179 },
+      { grape: 'Pinot Gris', value: 3652 },
+      { grape: 'Riesling', value: 3114 },
+      { grape: 'Sauvignon Blanc', value: 6044 },
+      { grape: 'Savagnin Blanc', value: 870 },
+      { grape: 'Sémillon', value: 4556 },
+      { grape: 'Verdelho', value: 1016 },
+      { grape: 'Viognier', value: 753 }
+    ]
   },
   {
     id: "spain",
