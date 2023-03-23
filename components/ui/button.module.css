@@ -1,13 +1,18 @@
 .btn {
+
+  min-width: 160px;
   padding: 0.5rem 1.5rem;
+
   cursor: pointer;
-  text-decoration: none;
   font: inherit;
+  text-decoration: none;
+  text-align: center;
+  vertical-align: middle;
+  color: #dafff7;
   background-color: #08A187;
   border: 1px solid #08A187;
+
   border-radius: 6px;
-  color: #dafff7;
-  text-align: center;
   box-shadow: 0 1px 6px rgba(0, 0, 0, 0.2);
   transition: 0.5s;
 }

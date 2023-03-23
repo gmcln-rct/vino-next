@@ -16,9 +16,7 @@ function CountryItem(props) {
     return (
         <li 
             className={classes.item}>
-            <div className={classes.content}>
-                <h2>Country: { countryName }</h2>
-            </div>
+            <h2>{ countryName }</h2>
             <div className={classes.actions}>
                 <Button link={worldTopTenLink}>World Top 10 Grapes</Button>
                 <Button link={countryTopTenLink}>Country Top 10 Grapes</Button>

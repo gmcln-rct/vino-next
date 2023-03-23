@@ -116,7 +116,6 @@ const COUNTRIES_DATA = [
     isFeatured: true,
   },
 
-  
   {
     id: "portugal",
     itemName: "Portugal",
@@ -175,8 +174,6 @@ const COUNTRIES_DATA = [
     isFeatured: true,
   },
 
-
- 
   {
     id: "united-states",
     itemName: "United States",
@@ -195,7 +192,7 @@ const COUNTRIES_DATA = [
     ],
     link: "https://en.wikipedia.org/wiki/American_wine",
     isFeatured: false,
-  }
+  },
 ];
 
 export function getFeaturedCountries() {

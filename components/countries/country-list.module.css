@@ -1,4 +1,8 @@
 .list {
+
+    display: flex;
+    flex-direction: row;
+    flex-wrap:wrap;
     width: 90%;
     max-width: 30rem;
     margin: 3rem auto;
