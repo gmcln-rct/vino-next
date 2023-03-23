@@ -1,4 +1,4 @@
-function CounryIndex() {
+function CountryIndex() {
     return (
       <div>
           <h1>Country Index</h1>
@@ -6,4 +6,4 @@ function CounryIndex() {
     )
   }
   
-  export default CounryIndex;
+  export default CountryIndex;
