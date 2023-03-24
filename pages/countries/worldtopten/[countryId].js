@@ -54,7 +54,7 @@ function CountryWorldTopTenDetailPage() {
       />
       <DetailSection
         wineCategory={wineCategory}
-        countryLink={country.link}
+        itemLink={country.link}
         countryName={country.itemName}
         countryRegions={country.regions}
       />

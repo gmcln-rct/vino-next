@@ -37,9 +37,9 @@ function CountryDetailPage() {
       />
       <DetailSection
         wineCategory={wineCategory}
-        countryLink={country.link}
+        itemLink={country.link}
         countryName={country.itemName}
-        countryRegions={country.regions}
+        moreInfo={country.regions}
       />
       <div>
         <p>Data as of {countryWineData.dataYear}</p>

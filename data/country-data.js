@@ -17,6 +17,7 @@ export const COUNTRIES_DATA = [
     ],
     link: "https://en.wikipedia.org/wiki/Argentine_wine",
     isFeatured: false,
+    isTop: true,
   },
 
   {
@@ -37,6 +38,7 @@ export const COUNTRIES_DATA = [
     ],
     link: "https://en.wikipedia.org/wiki/Australian_wine",
     isFeatured: true,
+    isTop: true,
   },
   {
     id: "chile",
@@ -56,6 +58,7 @@ export const COUNTRIES_DATA = [
     ],
     link: "https://en.wikipedia.org/wiki/Chilean_wine",
     isFeatured: false,
+    isTop: true,
   },
 
   {
@@ -76,6 +79,7 @@ export const COUNTRIES_DATA = [
     ],
     link: "https://en.wikipedia.org/wiki/French_wine",
     isFeatured: false,
+    isTop: true,
   },
   {
     id: "germany",
@@ -95,6 +99,7 @@ export const COUNTRIES_DATA = [
     ],
     link: "https://en.wikipedia.org/wiki/German_wine",
     isFeatured: false,
+    isTop: true,
   },
   {
     id: "italy",
@@ -114,6 +119,7 @@ export const COUNTRIES_DATA = [
     ],
     link: "https://en.wikipedia.org/wiki/Italian_wine",
     isFeatured: true,
+    isTop: true,
   },
 
   {
@@ -134,6 +140,7 @@ export const COUNTRIES_DATA = [
     ],
     link: "https://en.wikipedia.org/wiki/Portuguese_wine",
     isFeatured: false,
+    isTop: true,
   },
   {
     id: "south-africa",
@@ -153,6 +160,7 @@ export const COUNTRIES_DATA = [
     ],
     link: "https://en.wikipedia.org/wiki/South_African_wine",
     isFeatured: false,
+    isTop: true,
   },
   {
     id: "spain",
@@ -172,6 +180,7 @@ export const COUNTRIES_DATA = [
     ],
     link: "https://en.wikipedia.org/wiki/Spanish_wine",
     isFeatured: true,
+    isTop: true,
   },
 
   {
@@ -192,6 +201,7 @@ export const COUNTRIES_DATA = [
     ],
     link: "https://en.wikipedia.org/wiki/American_wine",
     isFeatured: false,
+    isTop: true,
   },
 ];
 

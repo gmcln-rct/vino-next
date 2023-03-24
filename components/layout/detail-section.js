@@ -1,17 +1,21 @@
 import classes from "./detail-section.module.css";
 
 const DetailSection = (props) => {
-  const { wineCategory, countryLink, countryName, countryRegions } = props;
+  const { wineCategory, dataType, itemLink, moreInfo } = props;
 
-  let regionList =
-    countryRegions.length > 0 ? countryRegions.join(", ") : "No regions listed";
+  let moreInfoListLabel = dataType === "grape" ? "Other Names" : "Regions";
+
+  let moreInfoList =
+    moreInfo.length > 0 ? moreInfo.join(", ") : "No items listed";
+
+
 
   return (
     <section className={classes.details__container}>
       <div className={classes.details__items}>
         <p>Classification: {wineCategory}</p>
-        <p>Regions: {regionList}</p>
-        <a href={countryLink} target="_blank">
+        <p>{moreInfoListLabel}: {moreInfoList}</p>
+        <a href={itemLink} target="_blank">
           Read Wikipedia Page in new tab
         </a>
       </div>
