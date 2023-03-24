@@ -9,9 +9,8 @@ const DetailSection = (props) => {
   return (
     <section className={classes.details__container}>
       <div className={classes.details__items}>
-        <p>Country: {countryName}</p>
-        <p>Classification: <span className={classes.details__data}>{wineCategory}</span></p>
-        <p>Regions: <span className={classes.details__data}>{regionList}</span></p>
+        <p>Classification: {wineCategory}</p>
+        <p>Regions: {regionList}</p>
         <a href={countryLink} target="_blank">
           Read Wikipedia Page in new tab
         </a>

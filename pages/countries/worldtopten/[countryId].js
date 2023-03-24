@@ -13,15 +13,22 @@ import DetailSection from "@/components/layout/detail-section";
 
 function CountryWorldTopTenDetailPage() {
   const router = useRouter();
-  // console.log('router', router.query)
+  console.log('router', router.query)
+
+  // if(router.query.countryId && router.query.countryId.includes("-")) {
+  //   const [params] = router.query.countryId;
+  // } else {
+  //   const [params] = router.query.countryId.split("-");
+  // }
 
   const [params] = router.query.countryId.split("-");
+  console.log('params', params)
 
   const countryWineData = getDataItemById(params, COUNTRIES_WINE_DATA);
   // const { pageId } = router.query;
 
   const country = getCountryById(params);
-  console.log("country", country);
+  // console.log("country", country);
 
   const wineCategory = country.category === "OW" ? "Old World" : "New World";
 
@@ -50,7 +57,7 @@ function CountryWorldTopTenDetailPage() {
         countryRegions={country.regions}
       />
       <div>
-        <p>Data as of {countryWineData.dataYear}</p>
+      <p>Data Source: Wine Economics Research Centre, University of Adelaide</p>
       </div>
     </>
   );

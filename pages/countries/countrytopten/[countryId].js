@@ -33,10 +33,16 @@ function CountryTopTenDetailPage() {
 
   return (
     <>
-    <Head>
-      <title>Country Top Grapes - {country.itemName } - Winography - Wine Data Visualization</title>
-      <meta name="description" content="Wine data visualization for winegrape area production for top national grape varietals" />
-    </Head>
+      <Head>
+        <title>
+          Country Top Grapes - {country.itemName} - Winography - Wine Data
+          Visualization
+        </title>
+        <meta
+          name="description"
+          content="Wine data visualization for winegrape area production for top national grape varietals"
+        />
+      </Head>
       <h2 className="header">{country.itemName}: Country Top 10 Grapes</h2>
       <BarChart
         units={countryWineData.units}
@@ -52,7 +58,9 @@ function CountryTopTenDetailPage() {
         countryRegions={country.regions}
       />
       <div>
-        <p>Data as of {countryWineData.dataYear}</p>
+        <p>
+          Data Source: Wine Economics Research Centre, University of Adelaide
+        </p>
       </div>
       <Link href="/countries/">Back to Country</Link>
     </>
