@@ -1,4 +1,4 @@
-const COUNTRIES_DATA = [
+export const COUNTRIES_DATA = [
   {
     id: "argentina",
     itemName: "Argentina",

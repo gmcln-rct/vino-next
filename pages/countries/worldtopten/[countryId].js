@@ -15,12 +15,6 @@ function CountryWorldTopTenDetailPage() {
   const router = useRouter();
   console.log('router', router.query.countryId)
 
-  // if(router.query.countryId && router.query.countryId.includes("-")) {
-  //   const [params] = router.query.countryId;
-  // } else {
-  //   const [params] = router.query.countryId.split("-");
-  // }
-
   const id = router.query.countryId;
   // console.log('params', params)
 
@@ -34,7 +28,7 @@ function CountryWorldTopTenDetailPage() {
 
   const explanationText = "world's top 10";
 
-  console.log("pageId", id, country);
+  console.log("pageId", id);
 
   return (
     <>

@@ -2,12 +2,10 @@ import { useRouter } from "next/router";
 import Link from "next/link";
 import Head from "next/head";
 
-import { getCountryById } from "@/data/country-data";
-
 import { getDataItemById } from "@/data/utils";
 
 import { GRAPES_DATA } from "@/data/grape-data";
-import { GRAPES_RED_TOP_TEN_DATA } from "@/data/country-wine-data-top-grapes-2016";
+import { GRAPES_RED_TOP_TEN_DATA } from "@/data/grape-top-ten-red-data-2016";
 
 import BarChart from "@/components/graphs/bar-chart";
 import DetailSection from "@/components/layout/detail-section";
@@ -16,19 +14,21 @@ function GrapeTopTenDetailPage() {
   const router = useRouter();
   console.log('router', router.query)
 
-  const id = router.query.countryId;
+  const id = router.query.grapeId;
 
-  const grapeWineData = getDataItemById(id, GRAPES_RED_TOP_TEN_DATA);
-  // const { pageId } = router.query;
+  console.log('grapes data', GRAPES_DATA)
 
   const grape = getDataItemById(id, GRAPES_DATA);
-  console.log("country", country);
+  const grapeWineData = getDataItemById(id, GRAPES_RED_TOP_TEN_DATA);
 
-  const wineCategory = grape.category === "OW" ? "Old World" : "New World";
+    console.log('grape', grape);
+    console.log('grapeWineData', grapeWineData);
+
+  const wineCategory = grape.category === "R" ? "Red" : "White";
 
   const explanationText = "national top ";
 
-  console.log("pageId", id, grape);
+  console.log("pageId", id);
 
   return (
     <>
