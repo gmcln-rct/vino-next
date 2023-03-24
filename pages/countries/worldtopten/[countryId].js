@@ -30,6 +30,14 @@ function CountryWorldTopTenDetailPage() {
 
   console.log("pageId", id);
 
+  if (!country || !countryWineData) {
+    return (
+      <div className="center">
+        <p>Loading...</p>
+      </div>
+    );
+  }
+
   return (
     <>
       <Head>
@@ -37,7 +45,7 @@ function CountryWorldTopTenDetailPage() {
       <meta name="description" content="Data visualization for wine grape area production in {country.itemName } for global top 10 grape varietals" />
     </Head>
       <BarChart
-        countryName={country.itemName}
+        itemName={country.itemName}
         units={countryWineData.units}
         dataYear={countryWineData.dataYear}
         redGrapeData={countryWineData.redGrapeDataWorld}

@@ -29,6 +29,7 @@ function CountryDetailPage() {
     <>
       <h2 className="header">{country.itemName}: World's Top 10 Grapes</h2>
       <BarChart
+        itemName={country.itemName}
         units={countryWineData.units}
         dataYear={countryWineData.dataYear}
         redGrapeData={countryWineData.redGrapeData}

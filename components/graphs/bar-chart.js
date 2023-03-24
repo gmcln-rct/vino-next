@@ -7,13 +7,16 @@ import classes from "./charts.module.css";
 const BarChart = (props) => {
   const svgRef = useRef();
 
-  const { countryName, dataYear, units, redGrapeData, whiteGrapeData, explanationText } = props;
+  const { itemName, dataYear, units, redGrapeData, whiteGrapeData, explanationText } = props;
 
   const [selectedGrapeType, setSelectedGrapeType] = useState("Red");  
 
-  const data = selectedGrapeType === "Red" ? redGrapeData : whiteGrapeData;
+  // const data = selectedGrapeType === "Red" ? redGrapeData : whiteGrapeData;
+  const data = redGrapeData;
 
   const fillColor = selectedGrapeType === "Red" ? "#B03E3E" : "#A19F18";
+
+  const dataType ="grape";
 
   useEffect(() => {
     d3.select(svgRef.current).selectAll("*").remove();
@@ -46,11 +49,26 @@ const BarChart = (props) => {
       .append("div")
       .attr("className", "tooltip");
 
-    const xScale = d3
-      .scaleBand()
-      .range([0, width])
-      .domain(data.map((d) => d.grape))
-      .padding(0.2);
+      let xScale;
+      if (dataType==="grape"){
+         xScale = d3
+        .scaleBand()
+        .range([0, width])
+        .domain(data.map((d) => d.country))
+        .padding(0.2);
+      } else {
+        xScale = d3
+        .scaleBand()
+        .range([0, width])
+        .domain(data.map((d) => d.grape))
+        .padding(0.2);
+      }
+
+    // const xScale = d3
+    //   .scaleBand()
+    //   .range([0, width])
+    //   .domain(data.map((d) => d.grape))
+    //   .padding(0.2);
 
     const yScale = d3
       .scaleLinear()
@@ -111,11 +129,11 @@ const BarChart = (props) => {
     return () => {
       tooltip.remove();
     };
-  }, [selectedGrapeType]);
+  }, [redGrapeData, selectedGrapeType]);
 
   return (
     <div className={classes.chart}>
-      <h2 className="header">{countryName}: World's Top 10 {selectedGrapeType} Grapes</h2>
+      <h2 className="header">{itemName}: World's Top 10 {selectedGrapeType} Grapes</h2>
       <p className={classes.subheader}>National winegrape area production for {explanationText} {selectedGrapeType} grape varietals, {dataYear}</p>
       <select
         className={classes.selectCss}
