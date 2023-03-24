@@ -13,7 +13,7 @@ import DetailSection from "@/components/layout/detail-section";
 
 function CountryWorldTopTenDetailPage() {
   const router = useRouter();
-  console.log('router', router.query)
+  console.log('router', router.query.countryId)
 
   // if(router.query.countryId && router.query.countryId.includes("-")) {
   //   const [params] = router.query.countryId;
@@ -21,20 +21,20 @@ function CountryWorldTopTenDetailPage() {
   //   const [params] = router.query.countryId.split("-");
   // }
 
-  const [params] = router.query.countryId.split("-");
-  console.log('params', params)
+  const id = router.query.countryId;
+  // console.log('params', params)
 
-  const countryWineData = getDataItemById(params, COUNTRIES_WINE_DATA);
+  const countryWineData = getDataItemById(id, COUNTRIES_WINE_DATA);
   // const { pageId } = router.query;
 
-  const country = getCountryById(params);
+  const country = getCountryById(id);
   // console.log("country", country);
 
   const wineCategory = country.category === "OW" ? "Old World" : "New World";
 
   const explanationText = "world's top 10";
 
-  console.log("pageId", params, country);
+  console.log("pageId", id, country);
 
   return (
     <>
