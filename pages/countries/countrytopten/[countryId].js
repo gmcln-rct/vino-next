@@ -8,7 +8,7 @@ import { getCountryById } from "@/data/country-data";
 
 import { getDataItemById } from "@/data/utils";
 
-import { COUNTRIES_WINE_DATA } from "@/data/country-wine-data-2016";
+import { COUNTRIES_WINE_DATA } from "@/data/country-wine-data-top-grapes-2016";
 
 import BarChart from "@/components/graphs/bar-chart";
 import DetailSection from "@/components/layout/detail-section";
