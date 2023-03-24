@@ -1,6 +1,6 @@
-export const GRAPES_TOP_TEN_DATA = [
+export const GRAPES_RED_TOP_TEN_DATA = [
   {
-    id: "Cabernet Sauvignon",
+    id: "cabernet-sauvignon",
     dataYear: 2016,
     units: "hectares",
     countries: [
@@ -27,7 +27,7 @@ export const GRAPES_TOP_TEN_DATA = [
     ],
   },
   {
-    id: "Merlot",
+    id: "merlot",
     dataYear: 2016,
     units: "hectares",
     countries: [
@@ -54,7 +54,7 @@ export const GRAPES_TOP_TEN_DATA = [
     ],
   },
   {
-    id: "Tempranillo",
+    id: "tempranillo",
     dataYear: 2016,
     units: "hectares",
     countries: [
@@ -81,7 +81,7 @@ export const GRAPES_TOP_TEN_DATA = [
     ],
   },
   {
-    id: "Syrah",
+    id: "syrah",
     dataYear: 2016,
     units: "hectares",
     countries: [
@@ -108,7 +108,7 @@ export const GRAPES_TOP_TEN_DATA = [
     ],
   },
   {
-    id: "Cabernet Franc",
+    id: "cabernet-franc",
     dataYear: 2016,
     units: "hectares",
     countries: [
@@ -135,7 +135,7 @@ export const GRAPES_TOP_TEN_DATA = [
     ],
   },
   {
-    id: "Garnacha Tinta",
+    id: "garnacha-tinta",
     dataYear: 2016,
     units: "hectares",
     countries: [
@@ -161,7 +161,7 @@ export const GRAPES_TOP_TEN_DATA = [
     ],
   },
   {
-    id: "Pinot Noir",
+    id: "pinot-noir",
     dataYear: 2016,
     units: "hectares",
     countries: [
@@ -188,7 +188,7 @@ export const GRAPES_TOP_TEN_DATA = [
     ],
   },
   {
-    id: "Sangiovese",
+    id: "sangiovese",
     dataYear: 2016,
     units: "hectares",
     countries: [
@@ -211,7 +211,7 @@ export const GRAPES_TOP_TEN_DATA = [
     ],
   },
   {
-    id: "Malbec",
+    id: "malbec",
     dataYear: 2016,
     units: "hectares",
     countries: [
@@ -237,7 +237,7 @@ export const GRAPES_TOP_TEN_DATA = [
     ],
   },
   {
-    id: "Monastrell",
+    id: "monastrell",
     dataYear: 2016,
     units: "hectares",
     countries: [
