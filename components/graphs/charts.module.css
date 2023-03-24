@@ -18,7 +18,7 @@
 }
 
 .subheader {
-  margin: 1vmin 0 1vmin 0;
+  margin: 0.2vmin 0 1vmin 0;
   font-size: clamp(14px, 2vw, 18px);
   font-weight: 400;
   font-style: italic;

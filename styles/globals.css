@@ -130,7 +130,8 @@ main {
 
 main h1,
 main .header {
-  color: #000;
+  /* color: #000; */
+  color: #d34544;
   text-align: center;
   margin: 1rem 0 0 0;
 
@@ -142,6 +143,13 @@ main .header {
 main a {
   font-size: 1.5rem;
   margin: 1rem 0;
+}
+
+.dataSource {
+  font-size: clamp(14px, 1vw, 16px);
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
 }
 
 .link {

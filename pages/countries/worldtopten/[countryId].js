@@ -42,8 +42,8 @@ function CountryWorldTopTenDetailPage() {
       <title>World Top 10 Grapes {country.itemName } - Winography - Wine Data Visualization</title>
       <meta name="description" content="Data visualization for wine grape area production in {country.itemName } for global top 10 grape varietals" />
     </Head>
-      <h2 className="header">{country.itemName}: World's Top 10 Grapes</h2>
       <BarChart
+        countryName={country.itemName}
         units={countryWineData.units}
         dataYear={countryWineData.dataYear}
         redGrapeData={countryWineData.redGrapeDataWorld}
@@ -57,7 +57,7 @@ function CountryWorldTopTenDetailPage() {
         countryRegions={country.regions}
       />
       <div>
-      <p>Data Source: Wine Economics Research Centre, University of Adelaide</p>
+      <p className="dataSource">Data Source: Wine Economics Research Centre, University of Adelaide</p>
       </div>
     </>
   );

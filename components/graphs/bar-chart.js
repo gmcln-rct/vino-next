@@ -7,13 +7,13 @@ import classes from "./charts.module.css";
 const BarChart = (props) => {
   const svgRef = useRef();
 
-  const { dataYear, units, redGrapeData, whiteGrapeData, explanationText } = props;
+  const { countryName, dataYear, units, redGrapeData, whiteGrapeData, explanationText } = props;
 
-  const [selectedGrapeType, setSelectedGrapeType] = useState("red");
+  const [selectedGrapeType, setSelectedGrapeType] = useState("Red");  
 
-  const data = selectedGrapeType === "red" ? redGrapeData : whiteGrapeData;
+  const data = selectedGrapeType === "Red" ? redGrapeData : whiteGrapeData;
 
-  const fillColor = selectedGrapeType === "red" ? "#B03E3E" : "#A19F18";
+  const fillColor = selectedGrapeType === "Red" ? "#B03E3E" : "#A19F18";
 
   useEffect(() => {
     d3.select(svgRef.current).selectAll("*").remove();
@@ -115,14 +115,15 @@ const BarChart = (props) => {
 
   return (
     <div className={classes.chart}>
+      <h2 className="header">{countryName}: World's Top 10 {selectedGrapeType} Grapes</h2>
       <p className={classes.subheader}>National winegrape area production for {explanationText} {selectedGrapeType} grape varietals, {dataYear}</p>
       <select
         className={classes.selectCss}
         value={selectedGrapeType}
         onChange={(event) => setSelectedGrapeType(event.target.value)}
       >
-        <option value="red">Red Grapes</option>
-        <option value="white">White Grapes</option>
+        <option value="Red">Red Grapes</option>
+        <option value="White">White Grapes</option>
       </select>
 
       <div className={classes.barchart}>
