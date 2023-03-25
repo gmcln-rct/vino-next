@@ -8,14 +8,19 @@ import CountriesList from "@/components/countries/country-list";
 
 function CountryWorldTopTenIndex() {
 
+  // console.log('countries data: ', allCountries);
+
+  if (!COUNTRIES_DATA) {
+    return <p>Loading...</p>;
+  }
+
   const topCountries = getTopData(COUNTRIES_DATA);
 
   return (
     <div>
       <Head>
         <title>
-          Top 10 Wine Producing Country Index - Winography - Wine Data
-          Visualization
+          Top 10 Wine Producing Country Index - Winography - Wine Data Visualization
         </title>
         <meta
           name="description"
