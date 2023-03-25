@@ -16,7 +16,7 @@ function CountryIndex() {
         </title>
         <meta
           name="description"
-          content="Data visualization for all wine-producing countries"
+          content="Data visualization of wine production by country for all wine-producing countries"
         />
       </Head>
       <h1>Country Index</h1>

@@ -1,8 +1,7 @@
 import { useEffect, useState, useRef } from "react";
+import classes from "./charts.module.css";
 
 import * as d3 from "d3";
-
-import classes from "./charts.module.css";
 
 const BarChart = (props) => {
   const svgRef = useRef();
@@ -14,16 +13,10 @@ const BarChart = (props) => {
   if (grapeType) {
     setSelectedGrapeType(grapeType);
   }
-console.log('in bar chart, selectedGrapeType', selectedGrapeType);
-console.log('in bar chart, grapeType', grapeType);
+
   const data = selectedGrapeType === "Red" ? redGrapeData : whiteGrapeData;
-  // const data = redGrapeData;
 
   const fillColor = selectedGrapeType === "Red" ? "#B03E3E" : "#A19F18";
-
-  console.log("dataType", dataType);
-
-  // const dataKey = dataType === "grape" ? "country" : "grape";
 
   useEffect(() => {
     d3.select(svgRef.current).selectAll("*").remove();
@@ -31,7 +24,6 @@ console.log('in bar chart, grapeType', grapeType);
     const margin = { top: 20, right: 20, bottom: 50, left: 10 };
     let widthCalc = 500;
     if (!svgRef.current) {
-      console.log("svgRef.current", svgRef.current);
       widthCalc = svgRef.current.clientWidth + 200;
     }
     const width = widthCalc < 320 ? 400 : widthCalc;
@@ -98,7 +90,7 @@ console.log('in bar chart, grapeType', grapeType);
       .call(d3.axisLeft(yScale))
       .attr("font-size", "clamp(12px, 1vw, 14px)");
 
-    // Bars
+    // Bars + Tooltip
     svg
       .selectAll("rect")
       .data(data)
@@ -140,8 +132,8 @@ console.log('in bar chart, grapeType', grapeType);
 
   return (
     <div className={classes.chart}>
-      <h2 className="header">{itemName}: World's Top 10 {selectedGrapeType} Grapes</h2>
-      <p className={classes.subheader}>National winegrape area production for {explanationText} {selectedGrapeType} grape varietals, {dataYear}</p>
+      <h2 className="header">{itemName}: {explanationText} {selectedGrapeType} Grapes</h2>
+      <p className={classes.subheader}>Winegrape area production for {explanationText} {selectedGrapeType} grape varietals, {dataYear}</p>
       <select
         className={classes.selectCss}
         value={selectedGrapeType}

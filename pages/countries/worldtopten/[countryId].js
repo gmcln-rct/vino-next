@@ -23,11 +23,11 @@ function CountryWorldTopTenDetailPage() {
   // const { pageId } = router.query;
 
   const country = getCountryById(id);
-  console.log("country", country);
+  // console.log("country", country);
 
   // const wineCategory = country.category === "OW" ? "Old World" : "New World";
 
-  const explanationText = "world's top 10";
+  const explanationText = "Global Top 10";
 
   if (!country || !countryWineData) {
     return (
@@ -36,6 +36,8 @@ function CountryWorldTopTenDetailPage() {
       </div>
     );
   }
+  const flagImage = `/images/flags/flag-${country.id}.svg`;
+  const flagImageAlt = `Flag of ${country.itemName}`;
 
   return (
     <>
@@ -43,7 +45,6 @@ function CountryWorldTopTenDetailPage() {
       <title>World Top 10 Grapes {country.itemName } - Winography - Wine Data Visualization</title>
       <meta name="description" content="Data visualization for wine grape area production in {country.itemName } for global top 10 grape varietals" />
     </Head>
-    <Image src={flagImage} alt="Wine" width={100} height={75} />
       <BarChart
         itemName={country.itemName}
         units={countryWineData.units}

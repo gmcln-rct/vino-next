@@ -9,10 +9,10 @@ import Button from "@/components/ui/button";
 
 function CountryDetailPage() {
   const router = useRouter();
-
   const id = router.query.countryId;
   const country = getCountryById(id);
 
+  
   if (!country || !country.id) {
     return (
       <div className="center">
@@ -23,7 +23,7 @@ function CountryDetailPage() {
   const flagImage = `/images/flags/flag-${country.id}.svg`;
   const flagImageAlt = `Flag of ${country.itemName}`;
   const wineCategory = country.category === "OW" ? "Old World" : "New World";
-  
+
   const worldTopTenLink = `/countries/worldtopten/${id}`;
   const nationalTopLink = `/countries/nationaltop/${id}`;
 
@@ -36,7 +36,7 @@ function CountryDetailPage() {
       <Image src={flagImage} alt={flagImageAlt} className="flagImage" width={100} height={75} />
       <h2 className="header">{country.itemName} Country Index</h2>
       <p>Classification: {wineCategory}</p>
-      <div >
+      <div className="actions">
           <Button link={worldTopTenLink}>World Top 10 Grapes</Button>
           <Button link={nationalTopLink}>Country Top 10 Grapes</Button>
       </div>

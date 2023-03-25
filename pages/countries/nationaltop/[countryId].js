@@ -18,19 +18,12 @@ function CountryTopTenDetailPage() {
   console.log('router', router.query.countryId)
 
   const id = router.query.countryId;
-  // console.log('params', params)
 
   const countryWineData = getDataItemById(id, COUNTRIES_WINE_DATA);
-  // const { pageId } = router.query;
 
   const country = getCountryById(id);
-  console.log("country", country);
 
-  // const wineCategory = country.category === "OW" ? "Old World" : "New World";
-
-  const explanationText = "world's top 10";
-
-  console.log("pageId", id);
+  const explanationText = "National Top ";
 
   if (!country || !countryWineData) {
     return (
@@ -44,25 +37,24 @@ function CountryTopTenDetailPage() {
     <>
       <Head>
         <title>
-          Country Top Grapes - {country.itemName} - Winography - Wine Data
-          Visualization
+          Top National Grapes - {country.itemName} - Winography - Wine Data Visualization
         </title>
         <meta
           name="description"
           content="Wine data visualization for winegrape area production for top national grape varietals"
         />
       </Head>
-      <h2 className="header">{country.itemName}: Country Top 10 Grapes</h2>
       <BarChart
+        itemName={country.itemName}
         units={countryWineData.units}
         dataYear={countryWineData.dataYear}
         dataType="country"
-        redGrapeData={countryWineData.redGrapeDataNational}
-        whiteGrapeData={countryWineData.whiteGrapeDataNational}
+        redGrapeData={countryWineData.redGrapeDataWorld}
+        whiteGrapeData={countryWineData.whiteGrapeDataWorld}
         explanationText={explanationText}
       />
       <DetailSection
-        wineCategory={wineCategory}
+        wineCategory={country.category}
         countryLink={country.link}
         countryName={country.itemName}
         moreInfo={country.regions}

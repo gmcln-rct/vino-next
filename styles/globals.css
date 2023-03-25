@@ -156,6 +156,22 @@ main a {
   color: #4A948E;
 }
 
+.actions {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  padding: 1rem;
+}
+
+.actions a {
+  display: block;
+  margin: 0 1rem;
+}
+
+.actions a span {
+  vertical-align: middle;
+}
+
 .flagImage {
   margin: 1vmin 0 0 0;
 }
