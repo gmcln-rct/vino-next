@@ -56,6 +56,7 @@ function CountryTopTenDetailPage() {
       <BarChart
         units={countryWineData.units}
         dataYear={countryWineData.dataYear}
+        dataType="country"
         redGrapeData={countryWineData.redGrapeDataNational}
         whiteGrapeData={countryWineData.whiteGrapeDataNational}
         explanationText={explanationText}

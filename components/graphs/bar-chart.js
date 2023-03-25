@@ -7,16 +7,23 @@ import classes from "./charts.module.css";
 const BarChart = (props) => {
   const svgRef = useRef();
 
-  const { itemName, dataYear, units, redGrapeData, whiteGrapeData, explanationText } = props;
+  const { itemName, dataYear, dataType, grapeType, units, redGrapeData, whiteGrapeData, explanationText } = props;
 
   const [selectedGrapeType, setSelectedGrapeType] = useState("Red");  
 
-  // const data = selectedGrapeType === "Red" ? redGrapeData : whiteGrapeData;
-  const data = redGrapeData;
+  if (grapeType) {
+    setSelectedGrapeType(grapeType);
+  }
+console.log('in bar chart, selectedGrapeType', selectedGrapeType);
+console.log('in bar chart, grapeType', grapeType);
+  const data = selectedGrapeType === "Red" ? redGrapeData : whiteGrapeData;
+  // const data = redGrapeData;
 
   const fillColor = selectedGrapeType === "Red" ? "#B03E3E" : "#A19F18";
 
-  const dataType ="grape";
+  console.log("dataType", dataType);
+
+  // const dataKey = dataType === "grape" ? "country" : "grape";
 
   useEffect(() => {
     d3.select(svgRef.current).selectAll("*").remove();
@@ -129,7 +136,7 @@ const BarChart = (props) => {
     return () => {
       tooltip.remove();
     };
-  }, [redGrapeData, selectedGrapeType]);
+  }, [selectedGrapeType]);
 
   return (
     <div className={classes.chart}>

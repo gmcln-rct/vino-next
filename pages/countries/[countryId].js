@@ -32,6 +32,7 @@ function CountryDetailPage() {
         itemName={country.itemName}
         units={countryWineData.units}
         dataYear={countryWineData.dataYear}
+        dataType="country"
         redGrapeData={countryWineData.redGrapeData}
         whiteGrapeData={countryWineData.whiteGrapeData}
       />

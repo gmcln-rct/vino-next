@@ -30,9 +30,13 @@ function GrapeTopTenDetailPage() {
   console.log("redrapeWineData", redGrapeWineData);
   console.log("whiteGrapeWineData", whiteGrapeWineData);
 
-//   const wineCategory = grape.category === "R" ? "Red" : "White";
+  let wineCategory = "Red";
+  if (grape) {
+       wineCategory = grape.category === "R" ? "Red" : "White";
+  }
 
-  const wineCategory = "Red";
+console.log('wineCategory', wineCategory)
+//   const wineCategory = "Red";
   const explanationText = "national top counteies ";
 
   console.log("pageId", id);
@@ -49,7 +53,7 @@ function GrapeTopTenDetailPage() {
     <>
       <Head>
         <title>
-          Grape World Top Grapes - {grape.itemName} - Winography - Wine Data
+            {grape.itemName} - World {wineCategory} Top Grapes in Top Wine-Producing Countries - Winography - Wine Data
           Visualization
         </title>
         <meta
@@ -57,11 +61,12 @@ function GrapeTopTenDetailPage() {
           content="Wine data visualization for winegrape area production for top national grape varietals"
         />
       </Head>
-      <h2 className="header">{grape.itemName}: Top Wine Producing Countries</h2>
       <BarChart
         itemName={grape.itemName}
         units={grape.units}
         dataYear={redGrapeWineData.dataYear}
+        dataType="grape"
+        grapeType={wineCategory}
         redGrapeData={redGrapeWineData.countries}
         whiteGrapeData={whiteGrapeWineData.countries}
         explanationText={explanationText}

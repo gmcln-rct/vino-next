@@ -19,6 +19,7 @@ function CountryWorldTopTenDetailPage() {
   // console.log('params', params)
 
   const countryWineData = getDataItemById(id, COUNTRIES_WINE_DATA);
+  console.log("countryWineData", countryWineData);
   // const { pageId } = router.query;
 
   const country = getCountryById(id);
@@ -48,6 +49,7 @@ function CountryWorldTopTenDetailPage() {
         itemName={country.itemName}
         units={countryWineData.units}
         dataYear={countryWineData.dataYear}
+        dataType="country"
         redGrapeData={countryWineData.redGrapeDataWorld}
         whiteGrapeData={countryWineData.whiteGrapeDataWorld}
         explanationText={explanationText}
