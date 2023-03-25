@@ -22,6 +22,8 @@ function CountryWorldTopTenDetailPage() {
   // const { pageId } = router.query;
 
   const country = getCountryById(id);
+
+  const dataType = "country";
   // console.log("country", country);
 
   // const wineCategory = country.category === "OW" ? "Old World" : "New World";
@@ -54,7 +56,7 @@ function CountryWorldTopTenDetailPage() {
         itemName={country.itemName}
         units={countryWineData.units}
         dataYear={countryWineData.dataYear}
-        dataType="country"
+        dataType={dataType}
         redGrapeData={countryWineData.redGrapeDataWorld}
         whiteGrapeData={countryWineData.whiteGrapeDataWorld}
         explanationText={explanationText}
@@ -62,7 +64,7 @@ function CountryWorldTopTenDetailPage() {
       <DetailSection
         wineCategory={country.category}
         itemLink={country.link}
-        countryName={country.itemName}
+        dataType={dataType}
         moreInfo={country.regions}
       />
       <div>

@@ -15,39 +15,40 @@ import DetailSection from "@/components/layout/detail-section";
 
 function GrapeTopTenDetailPage() {
   const router = useRouter();
-  console.log("router", router.query);
+  // console.log("router", router.query);
 
   const id = router.query.grapeId;
 
   console.log("grapes data", GRAPES_DATA);
 
-  const grape = getDataItemById(id, GRAPES_DATA);
-  const redGrapeWineData = getDataItemById(id, GRAPES_RED_TOP_TEN_DATA);
-  const whiteGrapeWineData = getDataItemById(id, GRAPES_WHITE_TOP_TEN_DATA);
-  const dataType = "grape";
+
 
   // console.log("grape", grape);
   // console.log("redrapeWineData", redGrapeWineData);
   // console.log("whiteGrapeWineData", whiteGrapeWineData);
+
+//   const wineCategory = "Red";
+  const explanationText = "national top counteies ";
+
+  // console.log("pageId", id);
+  const grape = getDataItemById(id, GRAPES_DATA);
+
 
   let wineCategory = "Red";
   if (grape) {
        wineCategory = grape.category === "R" ? "Red" : "White";
   }
 
-console.log('wineCategory', wineCategory)
-//   const wineCategory = "Red";
-  const explanationText = "national top counteies ";
-
-  console.log("pageId", id);
-
-  if (!grape || !redGrapeWineData || !whiteGrapeWineData) {
+  if (!grape) {
     return (
       <div className="center">
         <p>Loading...</p>
       </div>
     );
   }
+  const redGrapeWineData = getDataItemById(id, GRAPES_RED_TOP_TEN_DATA);
+  const whiteGrapeWineData = getDataItemById(id, GRAPES_WHITE_TOP_TEN_DATA);
+  const dataType = "grape";
 
   return (
     <>
@@ -75,7 +76,6 @@ console.log('wineCategory', wineCategory)
         wineCategory={wineCategory}
         dataType={dataType}
         itemLink={grape.link}
-        countryName={grape.itemName}
         moreInfo={grape.altNames}
       />
       <div>

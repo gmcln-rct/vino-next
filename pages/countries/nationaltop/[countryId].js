@@ -25,6 +25,8 @@ function CountryTopTenDetailPage() {
 
   const explanationText = "National Top ";
 
+  const dataType = "country";
+
   if (!country || !countryWineData) {
     return (
       <div className="center">
@@ -48,7 +50,7 @@ function CountryTopTenDetailPage() {
         itemName={country.itemName}
         units={countryWineData.units}
         dataYear={countryWineData.dataYear}
-        dataType="country"
+        dataType={dataType}
         redGrapeData={countryWineData.redGrapeDataWorld}
         whiteGrapeData={countryWineData.whiteGrapeDataWorld}
         explanationText={explanationText}
@@ -56,6 +58,7 @@ function CountryTopTenDetailPage() {
       <DetailSection
         wineCategory={country.category}
         countryLink={country.link}
+        dataType={dataType}
         countryName={country.itemName}
         moreInfo={country.regions}
       />
