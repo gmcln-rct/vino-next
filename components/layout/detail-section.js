@@ -8,10 +8,20 @@ const DetailSection = (props) => {
   let moreInfoList =
     moreInfo.length > 0 ? moreInfo.join(", ") : "No items listed";
 
+  let classification = wineCategory;
+
+  console.log('wineCategory: ', wineCategory)
+
+  if (wineCategory === "NW") {
+    classification = "New World";
+  } else if (wineCategory === "OW") {
+    classification = "Old World";
+  }
+
   return (
     <section className={classes.details__container}>
       <div className={classes.details__items}>
-        <p>Classification: {wineCategory}</p>
+        <p>Classification: {classification}</p>
         <p>{moreInfoListLabel}: {moreInfoList}</p>
         <a href={itemLink} target="_blank">
           Read Wikipedia Page in new tab

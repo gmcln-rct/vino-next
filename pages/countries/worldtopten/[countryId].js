@@ -13,10 +13,9 @@ import DetailSection from "@/components/layout/detail-section";
 
 function CountryWorldTopTenDetailPage() {
   const router = useRouter();
-  console.log('router', router.query.countryId)
+  console.log("router", router.query.countryId);
 
   const id = router.query.countryId;
-  // console.log('params', params)
 
   const countryWineData = getDataItemById(id, COUNTRIES_WINE_DATA);
   console.log("countryWineData", countryWineData);
@@ -42,9 +41,15 @@ function CountryWorldTopTenDetailPage() {
   return (
     <>
       <Head>
-      <title>World Top 10 Grapes {country.itemName } - Winography - Wine Data Visualization</title>
-      <meta name="description" content="Data visualization for wine grape area production in {country.itemName } for global top 10 grape varietals" />
-    </Head>
+        <title>
+          World Top 10 Grapes {country.itemName} - Winography - Wine Data
+          Visualization
+        </title>
+        <meta
+          name="description"
+          content="Data visualization for wine grape area production in {country.itemName } for global top 10 grape varietals"
+        />
+      </Head>
       <BarChart
         itemName={country.itemName}
         units={countryWineData.units}
@@ -61,7 +66,9 @@ function CountryWorldTopTenDetailPage() {
         moreInfo={country.regions}
       />
       <div>
-      <p className="dataSource">Data Source: Wine Economics Research Centre, University of Adelaide</p>
+        <p className="dataSource">
+          Data Source: Wine Economics Research Centre, University of Adelaide
+        </p>
       </div>
     </>
   );

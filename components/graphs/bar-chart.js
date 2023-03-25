@@ -6,9 +6,18 @@ import * as d3 from "d3";
 const BarChart = (props) => {
   const svgRef = useRef();
 
-  const { itemName, dataYear, dataType, grapeType, units, redGrapeData, whiteGrapeData, explanationText } = props;
+  const {
+    itemName,
+    dataYear,
+    dataType,
+    grapeType,
+    units,
+    redGrapeData,
+    whiteGrapeData,
+    explanationText,
+  } = props;
 
-  const [selectedGrapeType, setSelectedGrapeType] = useState("Red");  
+  const [selectedGrapeType, setSelectedGrapeType] = useState("Red");
 
   if (grapeType) {
     setSelectedGrapeType(grapeType);
@@ -48,20 +57,20 @@ const BarChart = (props) => {
       .append("div")
       .attr("className", "tooltip");
 
-      let xScale;
-      if (dataType==="grape"){
-         xScale = d3
+    let xScale;
+    if (dataType === "grape") {
+      xScale = d3
         .scaleBand()
         .range([0, width])
         .domain(data.map((d) => d.country))
         .padding(0.2);
-      } else {
-        xScale = d3
+    } else {
+      xScale = d3
         .scaleBand()
         .range([0, width])
         .domain(data.map((d) => d.grape))
         .padding(0.2);
-      }
+    }
 
     // const xScale = d3
     //   .scaleBand()
@@ -132,8 +141,13 @@ const BarChart = (props) => {
 
   return (
     <div className={classes.chart}>
-      <h2 className="header">{itemName}: {explanationText} {selectedGrapeType} Grapes</h2>
-      <p className={classes.subheader}>Winegrape area production for {explanationText} {selectedGrapeType} grape varietals, {dataYear}</p>
+      <h2 className="header">
+        {itemName}: {explanationText} {selectedGrapeType} Grapes
+      </h2>
+      <p className={classes.subheader}>
+        Winegrape area production for {explanationText} {selectedGrapeType}{" "}
+        grape varietals, {dataYear}
+      </p>
       <select
         className={classes.selectCss}
         value={selectedGrapeType}
