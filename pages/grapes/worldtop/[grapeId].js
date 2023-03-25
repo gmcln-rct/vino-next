@@ -26,9 +26,9 @@ function GrapeTopTenDetailPage() {
   const whiteGrapeWineData = getDataItemById(id, GRAPES_WHITE_TOP_TEN_DATA);
   const dataType = "grape";
 
-  console.log("grape", grape);
-  console.log("redrapeWineData", redGrapeWineData);
-  console.log("whiteGrapeWineData", whiteGrapeWineData);
+  // console.log("grape", grape);
+  // console.log("redrapeWineData", redGrapeWineData);
+  // console.log("whiteGrapeWineData", whiteGrapeWineData);
 
   let wineCategory = "Red";
   if (grape) {
@@ -65,7 +65,7 @@ console.log('wineCategory', wineCategory)
         itemName={grape.itemName}
         units={grape.units}
         dataYear={redGrapeWineData.dataYear}
-        dataType="grape"
+        dataType={dataType}
         grapeType={wineCategory}
         redGrapeData={redGrapeWineData.countries}
         whiteGrapeData={whiteGrapeWineData.countries}
@@ -83,7 +83,7 @@ console.log('wineCategory', wineCategory)
           Data Source: Wine Economics Research Centre, University of Adelaide
         </p>
       </div>
-      <Link href="/countries/">Back to Country</Link>
+      <Link href="/grapes/">Back to Country</Link>
     </>
   );
 }
