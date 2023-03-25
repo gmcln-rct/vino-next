@@ -10,7 +10,7 @@ function CountryItem(props) {
 
     const worldTopTenLink = `/countries/worldtopten/${id}`;
 
-    const countryTopTenLink = `/countries/countrytopten/${id}`;
+    const nationalTopLink = `/countries/nationaltop/${id}`;
 
 
     return (
@@ -19,7 +19,7 @@ function CountryItem(props) {
             <h2>{ countryName }</h2>
             <div className={classes.actions}>
                 <Button link={worldTopTenLink}>World Top 10 Grapes</Button>
-                <Button link={countryTopTenLink}>Country Top 10 Grapes</Button>
+                <Button link={nationalTopLink}>Country Top 10 Grapes</Button>
             </div>
         </li>
     );

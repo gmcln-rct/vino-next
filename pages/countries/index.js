@@ -1,7 +1,5 @@
 import Head from "next/head";
 
-// import { getFeaturedCountries, getAllCountries } from "@/data/country-data";
-
 import { COUNTRIES_DATA } from "@/data/country-data";
 
 import { getAllData } from "@/data/utils";
