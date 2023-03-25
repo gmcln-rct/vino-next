@@ -13,7 +13,7 @@ import { COUNTRIES_WINE_DATA } from "@/data/country-wine-data-top-grapes-2016";
 import BarChart from "@/components/graphs/bar-chart";
 import DetailSection from "@/components/layout/detail-section";
 
-function nationalTopDetailPage() {
+function CountryTopTenDetailPage() {
   const router = useRouter();
   console.log('router', router.query.countryId)
 
@@ -77,4 +77,4 @@ function nationalTopDetailPage() {
   );
 }
 
-export default nationalTopDetailPage;
+export default CountryTopTenDetailPage;

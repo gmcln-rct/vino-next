@@ -1,10 +1,8 @@
 import { useRouter } from "next/router";
 
-import Link from "next/link";
+import { getCountryById } from "@/data/country-data";
 
 import { getDataItemById } from "@/data/utils";
-
-import { COUNTRIES_DATA } from "@/data/country-data";
 
 import { COUNTRIES_WINE_DATA } from "@/data/country-wine-data-top-grapes-2016";
 
@@ -13,28 +11,23 @@ import DetailSection from "@/components/layout/detail-section";
 
 function CountryDetailPage() {
   const router = useRouter();
-  const id = router.query.countryId;
+  // console.log('router', router.query)
 
-  // const countryWineData = getDataItemById(params, COUNTRIES_WINE_DATA);
-  // // const { pageId } = router.query;
+  const [params] = router.query.countryId.split("-");
 
-  const country = getDataItemById(id, COUNTRIES_DATA);
+  const countryWineData = getDataItemById(params, COUNTRIES_WINE_DATA);
+  // const { pageId } = router.query;
 
+  const country = getCountryById(params);
+  console.log("country", country);
 
-  if (!country) {
-    return (
-      <div className="center">
-        <p>Loading...</p>
-      </div>
-    );
-  }
+  const wineCategory = country.category === "OW" ? "Old World" : "New World";
+
+  console.log("pageId", params, country);
 
   return (
     <>
-      <h1>{country.itemName} Page</h1>
-      <Link href="/countries/worldtop10">World Top 10 Grape Production</Link>
-      <Link href="/countries/nationaltop">National Top Grape Production</Link>
-      {/* <h2 className="header">{country.itemName}: World's Top 10 Grapes</h2>
+      <h2 className="header">{country.itemName}: World's Top 10 Grapes</h2>
       <BarChart
         itemName={country.itemName}
         units={countryWineData.units}
@@ -51,7 +44,7 @@ function CountryDetailPage() {
       />
       <div>
         <p>Data as of {countryWineData.dataYear}</p>
-      </div> */}
+      </div>
     </>
   );
 }
