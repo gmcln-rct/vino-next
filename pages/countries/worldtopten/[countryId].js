@@ -1,6 +1,6 @@
 import { useRouter } from "next/router";
-
 import Head from "next/head";
+import Image from "next/image";
 
 import { getCountryById } from "@/data/country-data";
 
@@ -29,8 +29,6 @@ function CountryWorldTopTenDetailPage() {
 
   const explanationText = "world's top 10";
 
-  console.log("pageId", id);
-
   if (!country || !countryWineData) {
     return (
       <div className="center">
@@ -39,12 +37,15 @@ function CountryWorldTopTenDetailPage() {
     );
   }
 
+  const flagImage = `/images/flags/flag-${country.id}.svg`;
+
   return (
     <>
       <Head>
       <title>World Top 10 Grapes {country.itemName } - Winography - Wine Data Visualization</title>
       <meta name="description" content="Data visualization for wine grape area production in {country.itemName } for global top 10 grape varietals" />
     </Head>
+    <Image src={flagImage} alt="Wine" width={100} height={75} />
       <BarChart
         itemName={country.itemName}
         units={countryWineData.units}

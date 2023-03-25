@@ -1,34 +1,43 @@
 import { useRouter } from "next/router";
+import Head from "next/head";
+import Image from "next/image";
 
 import { getCountryById } from "@/data/country-data";
 
-import { getDataItemById } from "@/data/utils";
-
-import { COUNTRIES_WINE_DATA } from "@/data/country-wine-data-top-grapes-2016";
-
-import BarChart from "@/components/graphs/bar-chart";
-import DetailSection from "@/components/layout/detail-section";
 
 function CountryDetailPage() {
   const router = useRouter();
   // console.log('router', router.query)
 
-  const [params] = router.query.countryId.split("-");
+  const id = router.query.countryId;
 
-  const countryWineData = getDataItemById(params, COUNTRIES_WINE_DATA);
+  // const countryWineData = getDataItemById(id, COUNTRIES_WINE_DATA);
   // const { pageId } = router.query;
 
-  const country = getCountryById(params);
+  const country = getCountryById(id);
   console.log("country", country);
 
+  if (!country) {
+    return (
+      <div className="center">
+        <p>Loading...</p>
+      </div>
+    );
+  }
+  const flagImage = `/images/flags/flag-${country.id}.svg`;
+  const flagImageAlt = `Flag of ${country.itemName}`;
   const wineCategory = country.category === "OW" ? "Old World" : "New World";
-
-  console.log("pageId", params, country);
 
   return (
     <>
-      <h2 className="header">{country.itemName}: World's Top 10 Grapes</h2>
-      <BarChart
+    <Head>
+      <title>{country.itemName} Country Index - Winography - Wine Data Visualization</title>
+      <meta name="description" content="Data visualization for wine grape area production in {country.itemName }" />
+    </Head>
+      <Image src={flagImage} alt={flagImageAlt} width={100} height={75} />
+      <h2 className="header">{country.itemName} Country Index</h2>
+      <p>Classification: {wineCategory}</p>
+      {/* <BarChart
         itemName={country.itemName}
         units={countryWineData.units}
         dataYear={countryWineData.dataYear}
@@ -44,7 +53,7 @@ function CountryDetailPage() {
       />
       <div>
         <p>Data as of {countryWineData.dataYear}</p>
-      </div>
+      </div> */}
     </>
   );
 }
