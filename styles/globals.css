@@ -145,6 +145,50 @@ main a {
   margin: 1rem 0;
 }
 
+.home {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+
+}
+
+.home__main {
+  /* display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center; */
+  
+  margin: 2rem;
+  padding: 1rem;
+  background-color: aliceblue;
+  border-radius: 10px;
+
+
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  background-color: white;
+  border: 1px solid rgba(255, 255, 255, 0.61);
+  border-radius: 16px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3), 0 1px 12px 2px rgba(0, 0, 0, 0.2);
+}
+
+.center {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.margin-bottom {
+  margin-bottom: 1rem;
+}
+
+
+.transparent {
+filter:opacity(60%);
+}
+
 .dataSource {
   font-size: clamp(14px, 1vw, 16px);
   font-weight: 400;

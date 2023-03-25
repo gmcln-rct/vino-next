@@ -19,9 +19,7 @@ function GrapeTopTenDetailPage() {
 
   const id = router.query.grapeId;
 
-  console.log("grapes data", GRAPES_DATA);
-
-
+  // console.log("grapes data", GRAPES_DATA);
 
   // console.log("grape", grape);
   // console.log("redrapeWineData", redGrapeWineData);
@@ -46,6 +44,7 @@ function GrapeTopTenDetailPage() {
       </div>
     );
   }
+
   const redGrapeWineData = getDataItemById(id, GRAPES_RED_TOP_TEN_DATA);
   const whiteGrapeWineData = getDataItemById(id, GRAPES_WHITE_TOP_TEN_DATA);
   const dataType = "grape";
@@ -62,7 +61,7 @@ function GrapeTopTenDetailPage() {
           content="Wine data visualization for winegrape area production for top national grape varietals"
         />
       </Head>
-      <BarChart
+      {/* <BarChart
         itemName={grape.itemName}
         units={grape.units}
         dataYear={redGrapeWineData.dataYear}
@@ -77,13 +76,13 @@ function GrapeTopTenDetailPage() {
         dataType={dataType}
         itemLink={grape.link}
         moreInfo={grape.altNames}
-      />
+      /> */}
       <div>
         <p>
           Data Source: Wine Economics Research Centre, University of Adelaide
         </p>
       </div>
-      <Link href="/grapes/">Back to Country</Link>
+      <Link href="/grapes/">Back to Grapes Index</Link>
     </>
   );
 }
