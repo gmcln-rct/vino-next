@@ -1,10 +1,10 @@
 import { useRouter } from 'next/router'
 
-function FilteredCountriesPage() {
+function FilteredTopCountriesPage() {
   const router = useRouter()
   const { slug } = router.query
 
   return <div>Filtered countries: {slug}</div>
 }
 
-export default FilteredCountriesPage
+export default FilteredTopCountriesPage

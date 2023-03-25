@@ -1,4 +1,4 @@
-function CountryTopTenIndex() {
+function nationalTopIndex() {
     return (
       <div>
           <h1>Country Top 10 Index</h1>
@@ -6,4 +6,4 @@ function CountryTopTenIndex() {
     )
   }
   
-  export default CountryTopTenIndex;
+  export default nationalTopIndex;
