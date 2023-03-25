@@ -6,12 +6,9 @@ import Button from '../ui/button';
 
 function CountryItem(props) {
     const { id, countryName, category } = props;
-    const categoryName = category !== 'NW' ? 'Old World' : 'New World';
 
     const worldTopTenLink = `/countries/worldtopten/${id}`;
-
     const nationalTopLink = `/countries/nationaltop/${id}`;
-
 
     return (
         <li 

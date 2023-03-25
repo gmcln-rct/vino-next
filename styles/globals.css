@@ -156,6 +156,10 @@ main a {
   color: #4A948E;
 }
 
+.flagImage {
+  margin: 1vmin 0 0 0;
+}
+
 .tooltip {
   position: absolute;
   width: 60px;
@@ -164,8 +168,6 @@ main a {
   font-size: 20px;
   background-color: #222;
 }
-
-
 
 /* Charts */
 

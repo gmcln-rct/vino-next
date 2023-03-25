@@ -37,8 +37,6 @@ function CountryWorldTopTenDetailPage() {
     );
   }
 
-  const flagImage = `/images/flags/flag-${country.id}.svg`;
-
   return (
     <>
       <Head>
