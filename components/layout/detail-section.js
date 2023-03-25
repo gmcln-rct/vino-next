@@ -8,8 +8,6 @@ const DetailSection = (props) => {
   let moreInfoList =
     moreInfo.length > 0 ? moreInfo.join(", ") : "No items listed";
 
-
-
   return (
     <section className={classes.details__container}>
       <div className={classes.details__items}>

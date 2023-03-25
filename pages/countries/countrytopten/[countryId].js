@@ -15,21 +15,30 @@ import DetailSection from "@/components/layout/detail-section";
 
 function CountryTopTenDetailPage() {
   const router = useRouter();
-  // console.log('router', router.query)
+  console.log('router', router.query.countryId)
 
-  const [params] = router.query.countryId.split("-");
+  const id = router.query.countryId;
+  // console.log('params', params)
 
-  const countryWineData = getDataItemById(params, COUNTRIES_WINE_DATA);
+  const countryWineData = getDataItemById(id, COUNTRIES_WINE_DATA);
   // const { pageId } = router.query;
 
-  const country = getCountryById(params);
+  const country = getCountryById(id);
   console.log("country", country);
 
-  const wineCategory = country.category === "OW" ? "Old World" : "New World";
+  // const wineCategory = country.category === "OW" ? "Old World" : "New World";
 
-  const explanationText = "national top ";
+  const explanationText = "world's top 10";
 
-  console.log("pageId", params, country);
+  console.log("pageId", id);
+
+  if (!country || !countryWineData) {
+    return (
+      <div className="center">
+        <p>Loading...</p>
+      </div>
+    );
+  }
 
   return (
     <>
@@ -55,7 +64,7 @@ function CountryTopTenDetailPage() {
         wineCategory={wineCategory}
         countryLink={country.link}
         countryName={country.itemName}
-        countryRegions={country.regions}
+        moreInfo={country.regions}
       />
       <div>
         <p>

@@ -22,9 +22,9 @@ function CountryWorldTopTenDetailPage() {
   // const { pageId } = router.query;
 
   const country = getCountryById(id);
-  // console.log("country", country);
+  console.log("country", country);
 
-  const wineCategory = country.category === "OW" ? "Old World" : "New World";
+  // const wineCategory = country.category === "OW" ? "Old World" : "New World";
 
   const explanationText = "world's top 10";
 
@@ -53,10 +53,10 @@ function CountryWorldTopTenDetailPage() {
         explanationText={explanationText}
       />
       <DetailSection
-        wineCategory={wineCategory}
+        wineCategory={country.category}
         itemLink={country.link}
         countryName={country.itemName}
-        countryRegions={country.regions}
+        moreInfo={country.regions}
       />
       <div>
       <p className="dataSource">Data Source: Wine Economics Research Centre, University of Adelaide</p>
