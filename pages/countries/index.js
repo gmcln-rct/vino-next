@@ -1,3 +1,5 @@
+import Head from "next/head";
+
 import { getFeaturedCountries, getAllCountries } from "@/data/country-data";
 
 import CountryList from "@/components/countries/country-list";

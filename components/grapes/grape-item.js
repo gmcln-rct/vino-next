@@ -12,7 +12,7 @@ function GrapeItem(props) {
             </div>
         </div>
         <div>
-            <Link href="/grapes/[grapeId]" as={`/grapes/${props.grape.id}`}></Link>
+            {/* <Link href="/grapes/[grapeId]" as={`/grapes/${props.grape.id}`}></Link> */}
         </div>
     </li>
   );
