@@ -1,9 +1,31 @@
+import Head from "next/head";
+
+import { COUNTRIES_DATA  } from "@/data/country-data";
+
+import { getTopData } from "@/data/utils";
+
+import CountriesList from "@/components/countries/country-list";
+
 function CountryWorldTopTenIndex() {
-    return (
-      <div>
-          <h1>Country World Top 10 Index</h1>
-      </div>
-    )
-  }
-  
-  export default CountryWorldTopTenIndex;
+
+  const topCountries = getTopData(COUNTRIES_DATA);
+
+  return (
+    <div>
+      <Head>
+        <title>
+          Top 10 Wine Producing Country Index - Winography - Wine Data
+          Visualization
+        </title>
+        <meta
+          name="description"
+          content="Data visualization for all wine-producing countries"
+        />
+      </Head>
+      <h1>Top 10 Wine Producing Countries</h1>
+      <CountriesList items={topCountries} />
+    </div>
+  );
+}
+
+export default CountryWorldTopTenIndex;

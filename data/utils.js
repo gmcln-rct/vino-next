@@ -1,6 +1,10 @@
 export function getFeaturedData(data) {
     return data.filter((dataItem) => dataItem.isFeatured);
   }
+
+  export function getTopData() {
+    return data.filter((dataItem) => dataItem.isTop);
+  }
   
   export function getAllData() {
     return data;

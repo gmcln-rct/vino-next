@@ -18,9 +18,9 @@ function HomePage() {
       <Link href="/countries" className="link">
         All Countries
       </Link>
-      {/* <Link href="/grapes" className="link">
+      <Link href="/grapes" className="link">
         All Grapes
-      </Link> */}
+      </Link>
     </>
   );
 }
