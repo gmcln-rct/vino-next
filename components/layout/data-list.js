@@ -2,7 +2,7 @@ import DataItem from "./data-item";
 
 import classes from "./data-list.module.css";
 
-function CountryList(props) {
+function DataList(props) {
   const { items } = props;
 
   return (
@@ -20,4 +20,4 @@ function CountryList(props) {
   );
 }
 
-export default CountryList;
+export default DataList;

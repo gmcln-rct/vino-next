@@ -6,6 +6,8 @@ import { getTopData } from "@/data/utils";
 
 import CountriesList from "@/components/countries/country-list";
 
+import { DataList} from "@/components/layout/data-list";
+
 function CountryWorldTopTenIndex() {
 
   // console.log('countries data: ', allCountries);

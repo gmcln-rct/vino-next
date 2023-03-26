@@ -6,6 +6,8 @@ import { getAllData } from "@/data/utils";
 
 import CountryList from "@/components/countries/country-list";
 
+import { DataList } from "@/components/layout/data-list";
+
 function CountryIndex() {
   const allCountries = getAllData(COUNTRIES_DATA);
   return (

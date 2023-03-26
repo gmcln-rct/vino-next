@@ -15,7 +15,7 @@ function DataItem(props) {
     let textFill = "Countries"
 
     if (dataType === "grape") {
-        worldTopLink = grapePrefix + `/worldtop/${id}`;
+        worldTopLink = grapePrefix + `worldtop/${id}`;
         textFill = "Grapes"
     }
 
