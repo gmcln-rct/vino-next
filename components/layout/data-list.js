@@ -7,12 +7,13 @@ function CountryList(props) {
 
   return (
     <ul className={classes.list}>
-      {items.map((country) => (
-        <CountryItem
-          key={country.id}
-          id={country.id}
-          countryName={country.itemName}
-          category={country.category}
+      {items.map((item) => (
+        <itemItem
+          key={item.id}
+          id={item.id}
+          itemName={item.itemName}
+          dataType={item.dataType}
+          category={item.category}
         />
       ))}
     </ul>

@@ -3,6 +3,7 @@ export const COUNTRIES_DATA = [
     id: "argentina",
     itemName: "Argentina",
     category: "NW",
+    dataType: "country",
     regions: [
       "Mendoza",
       "Salta",
@@ -24,6 +25,7 @@ export const COUNTRIES_DATA = [
     id: "australia",
     itemName: "Australia",
     category: "NW",
+    dataType: "country",
     regions: [
       "Barossa Valley",
       "Hunter Valley",
@@ -44,6 +46,7 @@ export const COUNTRIES_DATA = [
     id: "chile",
     itemName: "Chile",
     category: "NW",
+    dataType: "country",
     regions: [
       "Maipo Valley",
       "Casablanca Valley",
@@ -65,6 +68,7 @@ export const COUNTRIES_DATA = [
     id: "france",
     itemName: "France",
     category: "OW",
+    dataType: "country",
     regions: [
       "Bordeaux",
       "Burgundy",
@@ -85,6 +89,7 @@ export const COUNTRIES_DATA = [
     id: "germany",
     itemName: "Germany",
     category: "OW",
+    dataType: "country",
     regions: [
       "Mosel",
       "Rheingau",
@@ -105,6 +110,7 @@ export const COUNTRIES_DATA = [
     id: "italy",
     itemName: "Italy",
     category: "OW",
+    dataType: "country",
     regions: [
       "Piedmont",
       "Tuscany",
@@ -126,6 +132,7 @@ export const COUNTRIES_DATA = [
     id: "portugal",
     itemName: "Portugal",
     category: "OW",
+    dataType: "country",
     regions: [
       "Douro",
       "Alentejo",
@@ -146,6 +153,7 @@ export const COUNTRIES_DATA = [
     id: "south-africa",
     itemName: "South Africa",
     category: "NW",
+    dataType: "country",
     regions: [
       "Stellenbosch",
       "Franschhoek",
@@ -166,6 +174,7 @@ export const COUNTRIES_DATA = [
     id: "spain",
     itemName: "Spain",
     category: "OW",
+    dataType: "country",
     regions: [
       "Rioja",
       "Ribera del Duero",
@@ -187,6 +196,7 @@ export const COUNTRIES_DATA = [
     id: "united-states",
     itemName: "United States",
     category: "NW",
+    dataType: "country",
     regions: [
       "Napa Valley",
       "Sonoma County",

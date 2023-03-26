@@ -1,13 +1,12 @@
 import Link from 'next/link';
 
-import classes from './country-item.module.css';
+import classes from './data-item.module.css';
 
 import Button from '../ui/button';
 
 function DataItem(props) {
     const { id, itemName, dataType, category } = props;
 
-    
     const worldTopTenLink = `/countries/worldtopten/${id}`;
     const nationalTopLink = `/countries/nationaltop/${id}`;
 
