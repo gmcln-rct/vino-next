@@ -8,7 +8,7 @@ function CountryList(props) {
   return (
     <ul className={classes.list}>
       {items.map((item) => (
-        <itemItem
+        <DataItem
           key={item.id}
           id={item.id}
           itemName={item.itemName}

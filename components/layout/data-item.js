@@ -7,16 +7,25 @@ import Button from '../ui/button';
 function DataItem(props) {
     const { id, itemName, dataType, category } = props;
 
-    const worldTopTenLink = `/countries/worldtopten/${id}`;
-    const nationalTopLink = `/countries/nationaltop/${id}`;
+    const grapePrefix = '/grapes/'
+    const countryPrefix = '/countries/'
+
+    let worldTopLink = countryPrefix + `worldtopten/${id}`;
+    let nationalTopLink = countryPrefix + `nationaltop/${id}`;
+    let textFill = "Countries"
+
+    if (dataType === "grape") {
+        worldTopLink = grapePrefix + `/worldtop/${id}`;
+        textFill = "Grapes"
+    }
 
     return (
         <li 
             className={classes.item}>
             <h2>{ itemName }</h2>
             <div className={classes.actions}>
-                <Button link={worldTopTenLink}>World Top 10 Grapes</Button>
-                <Button link={nationalTopLink}>Country Top 10 Grapes</Button>
+                <Button link={worldTopLink}>World Top {textFill}</Button>
+                {dataType==='country' && <Button link={nationalTopLink}>Country Top {textFill}</Button>}
             </div>
         </li>
     );
