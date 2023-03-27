@@ -3,10 +3,9 @@ import Head from "next/head";
 import Link from "next/link";
 import Image from "next/image";
 
-import { getCountryById } from "@/data/country-data";
 
 import { getDataItemById } from "@/data/utils";
-
+import { COUNTRIES_DATA } from "@/data/country-data";
 import { COUNTRIES_WINE_DATA } from "@/data/country-wine-data-top-grapes-2016";
 
 import BarChart from "@/components/graphs/bar-chart";
@@ -19,16 +18,10 @@ function CountryWorldTopTenDetailPage() {
 
   const id = router.query.countryId;
 
+  const country = getDataItemById(id, COUNTRIES_DATA);
   const countryWineData = getDataItemById(id, COUNTRIES_WINE_DATA);
-  console.log("countryWineData", countryWineData);
-  // const { pageId } = router.query;
-
-  const country = getCountryById(id);
 
   const dataType = "country";
-  // console.log("country", country);
-
-  // const wineCategory = country.category === "OW" ? "Old World" : "New World";
 
   const explanationText = "Global Top 10";
 

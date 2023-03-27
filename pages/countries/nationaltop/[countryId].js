@@ -4,11 +4,8 @@ import Head from "next/head";
 
 import { useRouter } from "next/router";
 
-import { getCountryById } from "@/data/country-data";
-
 import { getDataItemById } from "@/data/utils";
-
-import { COUNTRY_DATA } from "@/data/country-data";
+import { COUNTRIES_DATA} from "@/data/country-data";
 import { COUNTRIES_WINE_DATA } from "@/data/country-wine-data-top-grapes-2016";
 
 import BarChart from "@/components/graphs/bar-chart";
@@ -20,9 +17,9 @@ function CountryTopTenDetailPage() {
 
   const id = router.query.countryId;
 
-  const countryWineData = getDataItemById(id, COUNTRIES_WINE_DATA);
+  const country = getDataItemById(id, COUNTRIES_DATA);
 
-  const country = getCountryById(id);
+  const countryWineData = getDataItemById(id, COUNTRIES_WINE_DATA);
 
   const explanationText = "National Top ";
 
