@@ -11,6 +11,7 @@ import { COUNTRIES_WINE_DATA } from "@/data/country-wine-data-top-grapes-2016";
 
 import BarChart from "@/components/graphs/bar-chart";
 import DetailSection from "@/components/layout/detail-section";
+import Button from "@/components/ui/button";
 
 function CountryWorldTopTenDetailPage() {
   const router = useRouter();
@@ -71,13 +72,20 @@ function CountryWorldTopTenDetailPage() {
         moreInfo={country.regions}
       /> */}
       <div>
-
         <p className="dataSource">
-          Data Source: Wine Economics Research Centre, University of Adelaide
+          Data Source:{" "}
+          <Link
+            href="https://economics.adelaide.edu.au/wine-economics/databases/"
+            className="dataSource"
+          >
+            Wine Economics Research Centre, University of Adelaide
+          </Link>
         </p>
       </div>
-      <Link href={countryLink}>Back to {country.itemName} Page</Link>
-      <Link href="/countries/">Back to Country Index</Link>
+      <div className="buttonFooter">
+        <Button link={countryLink}>Back to {country.itemName} Page</Button>
+        <Button link="/countries/">Back to Country Index</Button>
+      </div>
     </>
   );
 }

@@ -12,10 +12,11 @@ import { COUNTRIES_WINE_DATA } from "@/data/country-wine-data-top-grapes-2016";
 
 import BarChart from "@/components/graphs/bar-chart";
 import DetailSection from "@/components/layout/detail-section";
+import Button from "@/components/ui/button";
 
 function CountryTopTenDetailPage() {
   const router = useRouter();
-  console.log('router', router.query.countryId)
+  console.log("router", router.query.countryId);
 
   const id = router.query.countryId;
 
@@ -39,7 +40,8 @@ function CountryTopTenDetailPage() {
     <>
       <Head>
         <title>
-          Top National Grapes - {country.itemName} - Winography - Wine Data Visualization
+          Top National Grapes - {country.itemName} - Winography - Wine Data
+          Visualization
         </title>
         <meta
           name="description"
@@ -67,8 +69,10 @@ function CountryTopTenDetailPage() {
           Data Source: Wine Economics Research Centre, University of Adelaide
         </p>
       </div>
-      <Link href={countryLink}>Back to {country.itemName} Page</Link>
-      <Link href="/countries/">Back to Country Index</Link>
+      <div className="buttonFooter">
+        <Button link={countryLink}>Back to {country.itemName} Page</Button>
+        <Button link="/countries/">Back to Country Index</Button>
+      </div>
     </>
   );
 }

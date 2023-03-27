@@ -199,6 +199,7 @@ filter:opacity(60%);
 }
 
 .dataSource {
+  margin: 1rem 0 0 0;
   font-size: clamp(14px, 1vw, 16px);
   font-weight: 400;
   font-style: italic;
@@ -207,6 +208,15 @@ filter:opacity(60%);
 
 .link {
   color: #4A948E;
+}
+
+.buttonFooter {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem;
 }
 
 .actions {
