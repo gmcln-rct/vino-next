@@ -11,7 +11,7 @@ import { DataList } from "@/components/layout/data-list";
 function CountryIndex() {
   const allCountries = getAllData(COUNTRIES_DATA);
   return (
-    <div>
+    <>
       <Head>
         <title>
           Country Index - Winography - Wine Data Visualization
@@ -24,7 +24,7 @@ function CountryIndex() {
       <h1>Country Index</h1>
       {/* <h2>Featured Countries</h2> */}
       <CountryList items={allCountries} />
-    </div>
+    </>
   );
 }
 

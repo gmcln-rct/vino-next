@@ -1,5 +1,6 @@
 import { useRouter } from "next/router";
 import Head from "next/head";
+import Link from "next/link";
 import Image from "next/image";
 
 import { getCountryById } from "@/data/country-data";
@@ -40,6 +41,8 @@ function CountryWorldTopTenDetailPage() {
   const flagImage = `/images/flags/flag-${country.id}.svg`;
   const flagImageAlt = `Flag of ${country.itemName}`;
 
+  const countryLink = `/countries/${country.id}`;
+
   return (
     <>
       <Head>
@@ -61,17 +64,20 @@ function CountryWorldTopTenDetailPage() {
         whiteGrapeData={countryWineData.whiteGrapeDataWorld}
         explanationText={explanationText}
       />
-      <DetailSection
+      {/* <DetailSection
         wineCategory={country.category}
         itemLink={country.link}
         dataType={dataType}
         moreInfo={country.regions}
-      />
+      /> */}
       <div>
+
         <p className="dataSource">
           Data Source: Wine Economics Research Centre, University of Adelaide
         </p>
       </div>
+      <Link href={countryLink}>Back to {country.itemName} Page</Link>
+      <Link href="/countries/">Back to Country Index</Link>
     </>
   );
 }

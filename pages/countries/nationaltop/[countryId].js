@@ -34,7 +34,7 @@ function CountryTopTenDetailPage() {
       </div>
     );
   }
-
+  const countryLink = `/countries/${country.id}`;
   return (
     <>
       <Head>
@@ -55,19 +55,20 @@ function CountryTopTenDetailPage() {
         whiteGrapeData={countryWineData.whiteGrapeDataWorld}
         explanationText={explanationText}
       />
-      <DetailSection
+      {/* <DetailSection
         wineCategory={country.category}
         countryLink={country.link}
         dataType={dataType}
         countryName={country.itemName}
         moreInfo={country.regions}
-      />
+      /> */}
       <div>
         <p>
           Data Source: Wine Economics Research Centre, University of Adelaide
         </p>
       </div>
-      <Link href="/countries/">Back to Country</Link>
+      <Link href={countryLink}>Back to {country.itemName} Page</Link>
+      <Link href="/countries/">Back to Country Index</Link>
     </>
   );
 }

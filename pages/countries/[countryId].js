@@ -4,15 +4,14 @@ import Image from "next/image";
 
 import { getCountryById } from "@/data/country-data";
 
+import DetailSection from "@/components/layout/detail-section";
 import Button from "@/components/ui/button";
-
 
 function CountryDetailPage() {
   const router = useRouter();
   const id = router.query.countryId;
   const country = getCountryById(id);
 
-  
   if (!country || !country.id) {
     return (
       <div className="center">
@@ -29,16 +28,27 @@ function CountryDetailPage() {
 
   return (
     <>
-    <Head>
-      <title>{country.itemName} Country Index - Winography - Wine Data Visualization</title>
-      <meta name="description" content="Data visualization for wine grape area production in {country.itemName }" />
-    </Head>
-      <Image src={flagImage} alt={flagImageAlt} className="flagImage" width={100} height={75} />
-      <h2 className="header">{country.itemName} Country Index</h2>
-      <p>Classification: {wineCategory}</p>
+      <Head>
+        <title>
+          {country.itemName} Country Wine Production - Winography - Wine Data
+          Visualization
+        </title>
+        <meta
+          name="description"
+          content="Data visualization for wine grape area production in {country.itemName }"
+        />
+      </Head>
+      <Image
+        src={flagImage}
+        alt={flagImageAlt}
+        className="flagImage"
+        width={100}
+        height={75}
+      />
+      <h2 className="header">{country.itemName} Wine Production Data</h2>
       <div className="actions">
-          <Button link={worldTopTenLink}>World Top 10 Grapes</Button>
-          <Button link={nationalTopLink}>Country Top 10 Grapes</Button>
+        <Button link={worldTopTenLink}>World Top Grapes</Button>
+        <Button link={nationalTopLink}>Country Top Grapes</Button>
       </div>
 
       {/* <BarChart
@@ -48,16 +58,13 @@ function CountryDetailPage() {
         dataType="country"
         redGrapeData={countryWineData.redGrapeData}
         whiteGrapeData={countryWineData.whiteGrapeData}
-      />
+      /> */}
       <DetailSection
         wineCategory={wineCategory}
         itemLink={country.link}
         countryName={country.itemName}
         moreInfo={country.regions}
       />
-      <div>
-        <p>Data as of {countryWineData.dataYear}</p>
-      </div> */}
     </>
   );
 }
