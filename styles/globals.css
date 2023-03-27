@@ -110,10 +110,16 @@ meter {
 
 /**************************** Global CSS variables ***************************************/
 
-body {
+body, html {
+
   /* background-color: #edf4f5; */
   /* background-color: #d8dbdb; */
   background-color: #e7e5d5;
+
+}
+
+#__next {
+  flex: 1 0 auto;
 
 }
 
@@ -124,12 +130,16 @@ main {
   justify-content: center;
   align-items: center;
 
+  height: 100%;
+  margin: 0;
+
   /* font-family: 'Lato', sans-serif; */
   font-family: 'Open Sans', sans-serif;
 }
 
 main h1,
 main .header {
+  
   /* color: #000; */
   color: #d34544;
   text-align: center;

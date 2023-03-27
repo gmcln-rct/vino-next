@@ -1,6 +1,7 @@
 // import { Fragment, useContext } from 'react';
 
 import MainHeader from './main-header';
+import MainFooter from './main-footer';
 // import Notification from '../ui/notification/notification';
 
 // Connect to the context not the Provider
@@ -16,6 +17,7 @@ function Layout(props) {
     <>
       <MainHeader />
       <main>{props.children}</main>
+      <MainFooter />
     </>
   );
 }
