@@ -137,7 +137,7 @@ const BarChart = (props) => {
     return () => {
       tooltip.remove();
     };
-  }, [selectedGrapeType]);
+  }, [data, dataType, fillColor, units, selectedGrapeType]);
 
   return (
     <div className={classes.chart}>
