@@ -61,7 +61,7 @@ function GrapeTopTenDetailPage() {
           content="Wine data visualization for winegrape area production for top national grape varietals"
         />
       </Head>
-      {/* <BarChart
+      <BarChart
         itemName={grape.itemName}
         units={grape.units}
         dataYear={redGrapeWineData.dataYear}
@@ -71,7 +71,7 @@ function GrapeTopTenDetailPage() {
         whiteGrapeData={whiteGrapeWineData.countries}
         explanationText={explanationText}
       />
-      <DetailSection
+      {/* <DetailSection
         wineCategory={wineCategory}
         dataType={dataType}
         itemLink={grape.link}

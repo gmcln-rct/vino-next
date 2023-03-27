@@ -2,15 +2,17 @@ import { useRouter } from "next/router";
 import Head from "next/head";
 import Image from "next/image";
 
-import { getCountryById } from "@/data/country-data";
+import { getDataItemById } from "@/data/utils";
+import { COUNTRIES_DATA} from "@/data/country-data";
 
 import DetailSection from "@/components/layout/detail-section";
 import Button from "@/components/ui/button";
 
 function CountryDetailPage() {
   const router = useRouter();
+
   const id = router.query.countryId;
-  const country = getCountryById(id);
+  const country = getDataItemById(id, COUNTRIES_DATA);
 
   if (!country || !country.id) {
     return (
