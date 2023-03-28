@@ -15,14 +15,13 @@ function HomePage() {
         />
       </Head>
       <section className="masthead">
-        <h1>Homepage</h1>
+        {/* <h1>Homepage</h1> */}
         <p>
-          Winography presents the wold of wine through data about wine
-          production for different countries and grapes around the world. It is
+          Winography presents the world of wine through data, with grape varietals and countries around the world. It is
           a resource intended for wine professionals and enthusiasts alike.
         </p>
 
-        <h2>Browse data visualizations by type:</h2>
+        <h2>Browse data visualizations:</h2>
         <section className="home">
           <Link href="/countries" className="home__main center">
             <Image
