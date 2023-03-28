@@ -7,28 +7,22 @@ import { getDataItemById } from "@/data/utils";
 import { GRAPES_DATA } from "@/data/grape-data";
 import {
   GRAPES_RED_TOP_TEN_DATA,
-  GRAPES_WHITE_TOP_TEN_DATA,
+  GRAPES_WHITE_TOP_TEN_DATA
 } from "@/data/grape-top-ten-countries-data-2016";
 
 import BarChart from "@/components/graphs/bar-chart";
-import DetailSection from "@/components/layout/detail-section";
 import Button from "@/components/ui/button";
 
-function GrapeTopTenDetailPage() {
+function GrapeTopDetailPage() {
   const router = useRouter();
-  // console.log("router", router.query);
-
+  
   const id = router.query.grapeId;
-
-  // console.log("grapes data", GRAPES_DATA);
-
-
-//   const wineCategory = "Red";
-  const explanationText = "national top counteies ";
+  
+  // console.log("router", id);
+  const explanationText = "Wine Production By Country";
 
   // console.log("pageId", id);
   const grape = getDataItemById(id, GRAPES_DATA);
-
 
   let wineCategory = "Red";
   if (grape) {
@@ -43,23 +37,26 @@ function GrapeTopTenDetailPage() {
     );
   }
 
+  // console.log("grape", grape);
+  let redGrapeWineData;
+  let whiteGrapeWineData;
+  const dataYear = grape.dataYear;
+  if (wineCategory==="Red") {
+    redGrapeWineData = getDataItemById(id, GRAPES_RED_TOP_TEN_DATA);
+    whiteGrapeWineData = { countries: [] };
+  } else {
+    whiteGrapeWineData = getDataItemById(id, GRAPES_WHITE_TOP_TEN_DATA);
+    redGrapeWineData = { countries: [] };
+  }
 
-  const redGrapeWineData = getDataItemById(id, GRAPES_RED_TOP_TEN_DATA);
-  const whiteGrapeWineData = getDataItemById(id, GRAPES_WHITE_TOP_TEN_DATA);
   const dataType = grape.dataType;
-
   const grapeLink = `/grapes/${grape.id}`;
-
-
-  console.log("grape", grape);
-  console.log("redrapeWineData", redGrapeWineData);
-  console.log("whiteGrapeWineData", whiteGrapeWineData);
 
   return (
     <>
       <Head>
         <title>
-            Top {grape.itemName} - Wine Grape Producing Countries - Winography - Wine Data
+            Top {grape.itemName} Wine Grape Producing Countries - Winography - Wine Data
           Visualization
         </title>
         <meta
@@ -67,16 +64,16 @@ function GrapeTopTenDetailPage() {
           content="Wine data visualization for winegrape area production for top national grape varietals"
         />
       </Head>
-      {/* <BarChart
+      <BarChart
         itemName={grape.itemName}
         units={grape.units}
-        dataYear={grape.dataYear}
-        dataType={grape.dataType}
+        dataYear={dataYear}
+        dataType={dataType}
         grapeType={grape.category}
         redGrapeData={redGrapeWineData.countries}
         whiteGrapeData={whiteGrapeWineData.countries}
         explanationText={explanationText}
-      /> */}
+      />
       <div>
         <p className="dataSource">
           Data Source:{" "}
@@ -96,4 +93,4 @@ function GrapeTopTenDetailPage() {
   );
 }
 
-export default GrapeTopTenDetailPage;
+export default GrapeTopDetailPage;

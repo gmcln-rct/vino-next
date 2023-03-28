@@ -1,5 +1,5 @@
 import { useEffect, useState, useRef } from "react";
-import classes from "./charts.module.css";
+import classes from "./bar-chart.module.css";
 
 import * as d3 from "d3";
 
@@ -17,13 +17,21 @@ const BarChart = (props) => {
     explanationText,
   } = props;
 
+  console.log("in bar chart - grapeType", grapeType);
+  console.log("redGrapeData", redGrapeData);
+
   const [selectedGrapeType, setSelectedGrapeType] = useState("Red");
 
   if (grapeType === "W") {
     setSelectedGrapeType("White");
   }
 
+  console.log("selectedGrapeType", selectedGrapeType);
+
   const data = selectedGrapeType === "Red" ? redGrapeData : whiteGrapeData;
+
+  console.log("data", data);
+  console.log("dataType", dataType);
 
   const fillColor = selectedGrapeType === "Red" ? "#B03E3E" : "#A19F18";
 
@@ -137,10 +145,10 @@ const BarChart = (props) => {
     return () => {
       tooltip.remove();
     };
-  }, [data, dataType, fillColor, units, selectedGrapeType]);
+  }, [data, selectedGrapeType]);
 
   return (
-    <div className={classes.chart}>
+    <section className={classes.chart}>
       <h2 className="header">
         {itemName}: {explanationText} {selectedGrapeType} Grapes
       </h2>
@@ -148,20 +156,20 @@ const BarChart = (props) => {
         Winegrape area production for {explanationText} {selectedGrapeType}{" "}
         grape varietals, {dataYear}
       </p>
-      dataType === "country" && (<select
+      {dataType === "country" && (<select
         className={classes.selectCss}
         value={selectedGrapeType}
         onChange={(event) => setSelectedGrapeType(event.target.value)}
       >
         <option value="Red">Red Grapes</option>
         <option value="White">White Grapes</option>
-      </select>)
+      </select>)}
 
       <div className={classes.barchart}>
         <svg ref={svgRef}></svg>
         <p className={classes.units}>Units in hectares</p>
       </div>
-    </div>
+    </section>
   );
 };
 

@@ -1,15 +1,12 @@
 import { useRouter } from "next/router";
 import Head from "next/head";
 import Link from "next/link";
-import Image from "next/image";
-
 
 import { getDataItemById } from "@/data/utils";
 import { COUNTRIES_DATA } from "@/data/country-data";
 import { COUNTRIES_WINE_DATA } from "@/data/country-wine-data-top-grapes-2016";
 
 import BarChart from "@/components/graphs/bar-chart";
-import DetailSection from "@/components/layout/detail-section";
 import Button from "@/components/ui/button";
 
 function CountryWorldTopTenDetailPage() {
