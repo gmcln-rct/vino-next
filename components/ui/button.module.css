@@ -7,13 +7,13 @@
 
   font: inherit;
   font-weight: 600;
-  font-size: clamp(16px, 1vw, 20px);
+  font-size: clamp(18px, 2vw, 24px);
   text-decoration: none;
   text-align: center;
   vertical-align: middle;
   color: #dafff7;
-  background-color: #2A5B75;
-  border: 1px solid #2A5B75;
+  background-color: #1269A1;
+  border: 1px solid #1269A1;
 
   border-radius: 6px;
   box-shadow: 0 1px 6px rgba(0, 0, 0, 0.2);
@@ -22,6 +22,6 @@
 
 .btn:hover,
 .btn:active {
-  background-color: #4A948E;
-  border-color: #4A948E;
+  background-color: #053654;
+  border-color: #053654;
 }

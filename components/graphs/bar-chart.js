@@ -176,7 +176,7 @@ const BarChart = (props) => {
 
   return (
     <section className={classes.chart}>
-      <h2 className="header">
+      <h2 className={classes.header}>
         {/* {itemName}: {explanationText} {selectedGrapeType} Grapes */}
         {headerText}
       </h2>

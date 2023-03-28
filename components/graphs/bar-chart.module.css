@@ -17,6 +17,16 @@
 
 }
 
+.header {
+  color: #A1360A;
+  text-align: center;
+  margin: 1rem 0 0 0;
+
+  font-size: clamp(16px, 4vw, 32px);
+  font-weight: bold;
+  font-display: swap;
+}
+
 .subheader {
   margin: 0.2vmin 0 1vmin 0;
   font-size: clamp(14px, 2vw, 18px);

@@ -14,16 +14,15 @@ function HomePage() {
           content="Winography - Data visualization about wine production and consumption, both historic and present-day"
         />
       </Head>
-      <section className="masthead">
-        {/* <h1>Homepage</h1> */}
-        <p>
-          Winography presents the world of wine through data, with grape varietals and countries around the world. It is
-          a resource intended for wine professionals and enthusiasts alike.
+      <section className="homePage">
+        <p className="headline">
+          Winography presents the world of wine through data, with grape varietals and countries from around the world. It is
+          a resource intended for wine professionals and wine enthusiasts alike. Enjoy!
         </p>
 
-        <h2>Browse data visualizations:</h2>
-        <section className="home">
-          <Link href="/countries" className="home__main center">
+        <h2 className="actionHeader">Browse data visualizations:</h2>
+        <section className="homePage__links">
+          <Link href="/countries" className="homePage__link center">
             <Image
               src="/images/icons/country-icon-sm.png"
               className="transparent margin-bottom"
@@ -33,7 +32,7 @@ function HomePage() {
             />
             <p className="link">Data By Country</p>
           </Link>
-          <Link href="/grapes" className="home__main center">
+          <Link href="/grapes" className="homePage__link center">
             <Image
               src="/images/icons/grape-icon-sm.png"
               className="transparent margin-bottom"

@@ -49,7 +49,7 @@ function CountryDetailPage() {
           width={100}
           height={75}
         />
-        <h2 className="header">{country.itemName} Wine Production Data</h2>
+        <h2 className="countryHeader">{country.itemName} Wine Production Data</h2>
         <div className="actions">
           <Button link={worldTopTenLink}>World Top Grapes</Button>
           <Button link={nationalTopLink}>Country Top Grapes</Button>
