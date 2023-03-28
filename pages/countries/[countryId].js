@@ -40,6 +40,8 @@ function CountryDetailPage() {
           content="Data visualization for wine grape area production in {country.itemName }"
         />
       </Head>
+
+      <section className="masthead">
       <Image
         src={flagImage}
         alt={flagImageAlt}
@@ -52,6 +54,7 @@ function CountryDetailPage() {
         <Button link={worldTopTenLink}>World Top Grapes</Button>
         <Button link={nationalTopLink}>Country Top Grapes</Button>
       </div>
+      </section>
 
       {/* <BarChart
         itemName={country.itemName}

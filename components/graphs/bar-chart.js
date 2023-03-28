@@ -19,8 +19,8 @@ const BarChart = (props) => {
 
   const [selectedGrapeType, setSelectedGrapeType] = useState("Red");
 
-  if (grapeType) {
-    setSelectedGrapeType(grapeType);
+  if (grapeType === "W") {
+    setSelectedGrapeType("White");
   }
 
   const data = selectedGrapeType === "Red" ? redGrapeData : whiteGrapeData;
@@ -118,9 +118,9 @@ const BarChart = (props) => {
           .style("visibility", "visible")
           .style("position", "absolute")
           .style("z-index", "10")
-          .style("background", "#fff")
+          .style("color", "#fff")
+          .style("background", "#555")
           .style("padding", "10px")
-          .style("border", "1px solid #000")
           .style("border-radius", "5px")
           .style("text-align", "center")
           .style("transition", "0.5s")
@@ -148,14 +148,14 @@ const BarChart = (props) => {
         Winegrape area production for {explanationText} {selectedGrapeType}{" "}
         grape varietals, {dataYear}
       </p>
-      <select
+      dataType === "country" && (<select
         className={classes.selectCss}
         value={selectedGrapeType}
         onChange={(event) => setSelectedGrapeType(event.target.value)}
       >
         <option value="Red">Red Grapes</option>
         <option value="White">White Grapes</option>
-      </select>
+      </select>)
 
       <div className={classes.barchart}>
         <svg ref={svgRef}></svg>

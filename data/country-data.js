@@ -215,27 +215,27 @@ export const COUNTRIES_DATA = [
   },
 ];
 
-export function getFeaturedCountries() {
-  return COUNTRIES_DATA.filter((event) => event.isFeatured);
-}
+// export function getFeaturedCountries() {
+//   return COUNTRIES_DATA.filter((event) => event.isFeatured);
+// }
 
-export function getAllCountries() {
-  return COUNTRIES_DATA;
-}
+// export function getAllCountries() {
+//   return COUNTRIES_DATA;
+// }
 
-export function getFilteredCountries(dateFilter) {
-  const { year, month } = dateFilter;
+// export function getFilteredCountries(dateFilter) {
+//   const { year, month } = dateFilter;
 
-  let filteredCountries = COUNTRIES_DATA.filter((event) => {
-    const eventDate = new Date(event.date);
-    return (
-      eventDate.getFullYear() === year && eventDate.getMonth() === month - 1
-    );
-  });
+//   let filteredCountries = COUNTRIES_DATA.filter((event) => {
+//     const eventDate = new Date(event.date);
+//     return (
+//       eventDate.getFullYear() === year && eventDate.getMonth() === month - 1
+//     );
+//   });
 
-  return filteredCountries;
-}
+//   return filteredCountries;
+// }
 
-export function getCountryById(id) {
-  return COUNTRIES_DATA.find((event) => event.id === id);
-}
+// export function getCountryById(id) {
+//   return COUNTRIES_DATA.find((event) => event.id === id);
+// }

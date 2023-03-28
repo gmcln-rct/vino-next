@@ -18,6 +18,8 @@ function GrapeDetailPage() {
 
   const worldTopLink = "/grapes/worldtop/" + id;
 
+  const wineCategory = grape.category === "R" ? "Red" : "White";
+
   if (!grape || !grape.id) {
     return (
       <div className="center">
@@ -28,7 +30,7 @@ function GrapeDetailPage() {
 
   return (
     <>
-          <Head>
+      <Head>
         <title>
           {grape.itemName} Wine Grape Production - Winography - Wine Data
           Visualization
@@ -38,10 +40,19 @@ function GrapeDetailPage() {
           content="Data visualization for {grape.itemName} wine grape area production."
         />
       </Head>
+      <section className="masthead">
+
       <h2 className="header"> {grape.itemName} Grape Page</h2>
       <div className="actions">
         <Button link={worldTopLink}>World Top Grapes</Button>
       </div>
+      </section>
+      <DetailSection
+        wineCategory={wineCategory}
+        itemLink={grape.link}
+        countryName={grape.itemName}
+        moreInfo={grape.altNames}
+      />
     </>
   );
 }

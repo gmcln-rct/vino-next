@@ -3,7 +3,7 @@ import classes from "./detail-section.module.css";
 const DetailSection = (props) => {
   const { wineCategory, dataType, itemLink, moreInfo } = props;
 
-  let moreInfoListLabel = dataType === "grape" ? "Other Names" : "Regions";
+  let moreInfoListLabel = dataType !== "grape" ? "Other Names" : "Regions";
 
   let moreInfoList =
     moreInfo.length > 0 ? moreInfo.join(", ") : "No items listed";

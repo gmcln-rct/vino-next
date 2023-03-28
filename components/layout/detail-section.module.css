@@ -14,7 +14,7 @@
   /* From https://css.glass */
 
 
-  background: rgba(0, 0, 0, 0.52);
+  background: rgba(0, 0, 0, 0.65);
   backdrop-filter: saturate(180%) blur(10px);
   box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3), 0 1px 12px 2px rgba(0, 0, 0, 0.2);
 
