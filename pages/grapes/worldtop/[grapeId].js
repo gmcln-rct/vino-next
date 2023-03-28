@@ -12,6 +12,7 @@ import {
 
 import BarChart from "@/components/graphs/bar-chart";
 import DetailSection from "@/components/layout/detail-section";
+import Button from "@/components/ui/button";
 
 function GrapeTopTenDetailPage() {
   const router = useRouter();
@@ -21,9 +22,6 @@ function GrapeTopTenDetailPage() {
 
   // console.log("grapes data", GRAPES_DATA);
 
-  // console.log("grape", grape);
-  // console.log("redrapeWineData", redGrapeWineData);
-  // console.log("whiteGrapeWineData", whiteGrapeWineData);
 
 //   const wineCategory = "Red";
   const explanationText = "national top counteies ";
@@ -37,7 +35,7 @@ function GrapeTopTenDetailPage() {
        wineCategory = grape.category === "R" ? "Red" : "White";
   }
 
-  if (!grape) {
+  if (!grape || !grape.id) {
     return (
       <div className="center">
         <p>Loading...</p>
@@ -45,15 +43,23 @@ function GrapeTopTenDetailPage() {
     );
   }
 
+
   const redGrapeWineData = getDataItemById(id, GRAPES_RED_TOP_TEN_DATA);
   const whiteGrapeWineData = getDataItemById(id, GRAPES_WHITE_TOP_TEN_DATA);
-  const dataType = "grape";
+  const dataType = grape.dataType;
+
+  const grapeLink = `/grapes/${grape.id}`;
+
+
+  console.log("grape", grape);
+  console.log("redrapeWineData", redGrapeWineData);
+  console.log("whiteGrapeWineData", whiteGrapeWineData);
 
   return (
     <>
       <Head>
         <title>
-            {grape.itemName} - World {wineCategory} Top Grapes in Top Wine-Producing Countries - Winography - Wine Data
+            Top {grape.itemName} - Wine Grape Producing Countries - Winography - Wine Data
           Visualization
         </title>
         <meta
@@ -61,28 +67,31 @@ function GrapeTopTenDetailPage() {
           content="Wine data visualization for winegrape area production for top national grape varietals"
         />
       </Head>
-      <BarChart
+      {/* <BarChart
         itemName={grape.itemName}
         units={grape.units}
-        dataYear={redGrapeWineData.dataYear}
-        dataType={dataType}
-        grapeType={wineCategory}
+        dataYear={grape.dataYear}
+        dataType={grape.dataType}
+        grapeType={grape.category}
         redGrapeData={redGrapeWineData.countries}
         whiteGrapeData={whiteGrapeWineData.countries}
         explanationText={explanationText}
-      />
-      {/* <DetailSection
-        wineCategory={wineCategory}
-        dataType={dataType}
-        itemLink={grape.link}
-        moreInfo={grape.altNames}
       /> */}
       <div>
-        <p>
-          Data Source: Wine Economics Research Centre, University of Adelaide
+        <p className="dataSource">
+          Data Source:{" "}
+          <Link
+            href="https://economics.adelaide.edu.au/wine-economics/databases/"
+            className="dataSource"
+          >
+            Wine Economics Research Centre, University of Adelaide
+          </Link>
         </p>
       </div>
-      <Link href="/grapes/">Back to Grapes Index</Link>
+      <div className="buttonFooter">
+        <Button link={grapeLink}>Back to {grape.itemName} Page</Button>
+        <Button link="/grapes/">Back to Grapes Index</Button>
+      </div>
     </>
   );
 }
