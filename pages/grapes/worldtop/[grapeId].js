@@ -64,6 +64,7 @@ function GrapeTopDetailPage() {
           content="Wine data visualization for winegrape area production for top national grape varietals"
         />
       </Head>
+      {grape && (
       <BarChart
         itemName={grape.itemName}
         units={grape.units}
@@ -73,7 +74,7 @@ function GrapeTopDetailPage() {
         redGrapeData={redGrapeWineData.countries}
         whiteGrapeData={whiteGrapeWineData.countries}
         explanationText={explanationText}
-      />
+      />)}
       <div>
         <p className="dataSource">
           Data Source:{" "}

@@ -23,9 +23,9 @@ html {
 
   width: 100%;
   margin: 0;
-  padding: 0 100px 10px 100px;
+
   color: white;
-  background-color: #969696;
+  background-color: #807f7f;
   box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.2);
 
 
@@ -50,8 +50,9 @@ html {
   /* color: #505050; */
   text-align: center;
   margin: 2rem 0 0 0;
+  padding: 0 10vw 2vw 10vw;
 
-  font-size: clamp(16px, 3vw, 22px);
+  font-size: clamp(18px, 4vw, 24px);
   font-weight: 400;
   font-display: swap;
 }
@@ -89,22 +90,15 @@ main a {
 
 .home {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
 }
 
 .home__main {
-  /* display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center; */
-
-  margin: 2rem;
-  padding: 1rem;
-  background-color: aliceblue;
-  border-radius: 10px;
-
+  margin: 1rem 2rem 2rem 2rem;
+  padding: 1rem 0.5rem;
+  
   backdrop-filter: blur(5px);
   -webkit-backdrop-filter: blur(5px);
   background-color: white;
@@ -172,59 +166,13 @@ main a {
   /* filter:brightness() */
 }
 
-.tooltip {
-  position: absolute;
-  width: 60px;
-  color: 3px red;
-  font-style: bold;
-  font-size: 20px;
-  background-color: #222;
-}
 
-/* Charts */
-
-/* placeholders */
-.placeholder {
-  background: #ecf0f1;
-}
-
-.Timeline {
-  height: 300px;
-  min-width: 500px;
-  width: calc(100% + 1em);
-  margin-bottom: 2em;
-}
-
-.Histogram {
-  height: 500px;
-  flex: 1;
-  min-width: 500px;
-  overflow: hidden;
-}
-
-.ScatterPlot {
-  height: 500px;
-  width: 500px;
-  margin-right: 2em;
-}
-
-.App__charts {
-  display: flex;
-  align-items: center;
-  flex-wrap: wrap;
-  margin: -0.5em;
-}
-
-.Timeline,
-.ScatterPlot,
-.Histogram {
-  background: white;
-  padding: 0.6em 1em;
-  margin: 0.5em;
-}
-
-svg {
-  margin: 2vh 5vw;
-  /* background: #eee; */
-  overflow: visible;
+@media (min-width: 768px) {
+  .home {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+  }
+  
 }

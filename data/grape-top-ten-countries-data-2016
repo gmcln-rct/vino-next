@@ -263,7 +263,7 @@ export const GRAPES_RED_TOP_TEN_DATA = [
 
   export const GRAPES_WHITE_TOP_TEN_DATA = [
     {
-      id: "airén",
+      id: "airen",
       dataYear: 2016,
       units: "hectares",
       countries: [

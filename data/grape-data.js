@@ -152,7 +152,7 @@ export const GRAPES_DATA = [
     isTop: true,
   },
   {
-    id: "airén",
+    id: "airen",
     itemName: "Airén",
     category: "W",
     dataType: "grape",
@@ -195,9 +195,7 @@ export const GRAPES_DATA = [
     category: "W",
     dataType: "grape",
     dataYear: 2016,
-    altNames: [
-      "Steen"
-    ],
+    altNames: ["Steen"],
     link: "https://en.wikipedia.org/wiki/Chardonnay",
     isFeatured: false,
     isTop: true,
@@ -253,7 +251,6 @@ export const GRAPES_DATA = [
     isFeatured: false,
     isTop: true,
   },
-
   {
     id: "sauvignon-blanc",
     itemName: "Sauvignon Blanc",
