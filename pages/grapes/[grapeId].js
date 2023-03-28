@@ -3,10 +3,10 @@ import Head from "next/head";
 
 import { getDataItemById } from "@/data/utils";
 import { GRAPES_DATA } from "@/data/grape-data";
-import {
-  GRAPES_RED_TOP_TEN_DATA,
-  GRAPES_WHITE_TOP_TEN_DATA,
-} from "@/data/grape-top-ten-countries-data-2016";
+// import {
+//   GRAPES_RED_TOP_TEN_DATA,
+//   GRAPES_WHITE_TOP_TEN_DATA,
+// } from "@/data/grape-top-ten-countries-data-2016";
 
 import DetailSection from "@/components/layout/detail-section";
 import Button from "@/components/ui/button";
@@ -18,8 +18,6 @@ function GrapeDetailPage() {
 
   const worldTopLink = "/grapes/worldtop/" + id;
 
-  const wineCategory = grape.category === "R" ? "Red" : "White";
-
   if (!grape || !grape.id) {
     return (
       <div className="center">
@@ -27,13 +25,14 @@ function GrapeDetailPage() {
       </div>
     );
   }
+  
+  const wineCategory = grape.category === "R" ? "Red" : "White";
 
   return (
     <>
       <Head>
         <title>
-          {grape.itemName} Wine Grape Production - Winography - Wine Data
-          Visualization
+          {grape.itemName} Wine Grape Production - Winography - Wine Data Visualization
         </title>
         <meta
           name="description"
