@@ -30,7 +30,7 @@ const BarChart = (props) => {
 
   const data = selectedGrapeType === "Red" ? redGrapeData : whiteGrapeData;
 
-  console.log("data", data);
+  console.log("in bar chart - data", data);
   console.log("dataType", dataType);
 
   const fillColor = selectedGrapeType === "Red" ? "#B03E3E" : "#A19F18";
@@ -65,26 +65,34 @@ const BarChart = (props) => {
       .append("div")
       .attr("className", "tooltip");
 
-    let xScale;
-    if (dataType === "grape") {
-      xScale = d3
-        .scaleBand()
-        .range([0, width])
-        .domain(data.map((d) => d.country))
-        .padding(0.2);
-    } else {
-      xScale = d3
-        .scaleBand()
-        .range([0, width])
-        .domain(data.map((d) => d.grape))
-        .padding(0.2);
-    }
+      let dKey;
 
-    // const xScale = d3
-    //   .scaleBand()
-    //   .range([0, width])
-    //   .domain(data.map((d) => d.grape))
-    //   .padding(0.2);
+    // let xScale;
+    // if (dataType === "grape") {
+    //   xScale = d3
+    //     .scaleBand()
+    //     .range([0, width])
+    //     .domain(data.map((d) => d.country))
+    //     .padding(0.2);
+    // } else {
+    //   xScale = d3
+    //     .scaleBand()
+    //     .range([0, width])
+    //     .domain(data.map((d) => d.grape))
+    //     .padding(0.2);
+    // }
+
+    const xScale = d3
+      .scaleBand()
+      .range([0, width])
+      .domain(data.map((d) => {
+        if(dataType === "grape") {
+          return d.country 
+        } else {
+          return d.grape
+        }
+      }))
+      .padding(0.2);
 
     const yScale = d3
       .scaleLinear()
@@ -113,7 +121,13 @@ const BarChart = (props) => {
       .data(data)
       .enter()
       .append("rect")
-      .attr("x", (d) => xScale(d.grape))
+      .attr("x", (d) => {
+        if(dataType === "grape") {
+          return xScale(d.country)
+        } else {
+          return xScale(d.grape)
+        }
+      })
       .attr("y", (d) => yScale(d.value))
       .attr("width", xScale.bandwidth())
       .attr("height", (d) => height - yScale(d.value))
@@ -133,7 +147,7 @@ const BarChart = (props) => {
           .style("text-align", "center")
           .style("transition", "0.5s")
           .style("font-family", "sans-serif")
-          .html(d.grape + "<br />" + d3.format(",")(d.value) + " " + units);
+          .html((dataType==="grape" ? d.country : d.grape) + "<br />" + d3.format(",")(d.value) + " " + units);
       })
       .on("mouseout", function () {
         d3.select(this).transition().duration(300).attr("fill", fillColor);
@@ -147,14 +161,28 @@ const BarChart = (props) => {
     };
   }, [data, dataType, fillColor, units, selectedGrapeType]);
 
+  let headerText;
+  let subHeaderText;
+
+  if (dataType === "grape") {
+    headerText =itemName + ": " + explanationText;
+    subHeaderText = "Winegrape area production in top " + itemName + " grape producing countries, " + dataYear;
+  } else {
+    headerText = itemName + ": " + explanationText + " " + selectedGrapeType + " Grapes";
+    subHeaderText = "Winegrape area production for " + explanationText + " " + selectedGrapeType + " grape varietals, " + dataYear;
+  }
+
+
   return (
     <section className={classes.chart}>
       <h2 className="header">
-        {itemName}: {explanationText} {selectedGrapeType} Grapes
+        {/* {itemName}: {explanationText} {selectedGrapeType} Grapes */}
+        {headerText}
       </h2>
       <p className={classes.subheader}>
-        Winegrape area production for {explanationText} {selectedGrapeType}{" "}
-        grape varietals, {dataYear}
+        {/* Winegrape area production for {explanationText} {selectedGrapeType}{" "}
+        grape varietals, {dataYear} */}
+        {subHeaderText}
       </p>
       {dataType === "country" && (<select
         className={classes.selectCss}
