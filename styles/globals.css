@@ -168,7 +168,7 @@ main a {
 .flagImage {
   margin: 1vmin 0 0 0;
   /* opacity: 0.8; */
-  filter: saturate(0.6);
+  filter: saturate(0.8);
   /* filter:brightness() */
 }
 
