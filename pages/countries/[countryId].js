@@ -3,7 +3,7 @@ import Head from "next/head";
 import Image from "next/image";
 
 import { getDataItemById } from "@/data/utils";
-import { COUNTRIES_DATA} from "@/data/country-data";
+import { COUNTRIES_DATA } from "@/data/country-data";
 
 import DetailSection from "@/components/layout/detail-section";
 import Button from "@/components/ui/button";
@@ -42,18 +42,18 @@ function CountryDetailPage() {
       </Head>
 
       <section className="masthead">
-      <Image
-        src={flagImage}
-        alt={flagImageAlt}
-        className="flagImage"
-        width={100}
-        height={75}
-      />
-      <h2 className="header">{country.itemName} Wine Production Data</h2>
-      <div className="actions">
-        <Button link={worldTopTenLink}>World Top Grapes</Button>
-        <Button link={nationalTopLink}>Country Top Grapes</Button>
-      </div>
+        <Image
+          src={flagImage}
+          alt={flagImageAlt}
+          className="flagImage"
+          width={100}
+          height={75}
+        />
+        <h2 className="header">{country.itemName} Wine Production Data</h2>
+        <div className="actions">
+          <Button link={worldTopTenLink}>World Top Grapes</Button>
+          <Button link={nationalTopLink}>Country Top Grapes</Button>
+        </div>
       </section>
 
       {/* <BarChart
