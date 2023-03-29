@@ -30,7 +30,6 @@ export const GRAPES_RED_TOP_TEN_DATA = [
     id: "cabernet-sauvignon",
     dataYear: 2016,
     units: "hectares",
-    synonmyms: ['Burdeos', 'Cabernet S.'],
     countries: [
       { country: "France", value: 46555 },
       { country: "Chile", value: 42409 },
@@ -85,7 +84,6 @@ export const GRAPES_RED_TOP_TEN_DATA = [
     id: "tempranillo",
     dataYear: 2016,
     units: "hectares",
-    synonmyms: ['Aragonez', 'Tempranillo Tinto', 'Tinta Roriz', 'Tinto de Toro'],
     countries: [
       { country: "Spain", value: 193597 },
       { country: "Portugal", value: 17014 },
@@ -330,7 +328,7 @@ export const GRAPES_RED_TOP_TEN_DATA = [
       ],
     },
     {
-      id: "Chenin Blanc",
+      id: "chenin-blanc",
       dataYear: 2016,
       units: "hectares",
       countries: [

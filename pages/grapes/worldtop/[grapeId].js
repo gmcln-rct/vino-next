@@ -15,7 +15,6 @@ import Button from "@/components/ui/button";
 
 function GrapeTopDetailPage() {
   const router = useRouter();
-  
   const id = router.query.grapeId;
   
   const explanationText = "Wine Production By Country";
@@ -35,7 +34,7 @@ function GrapeTopDetailPage() {
     );
   }
 
-  // console.log("grape", grape);
+  console.log("grape", grape);
   let redGrapeWineData;
   let whiteGrapeWineData;
   const dataYear = grape.dataYear;
@@ -47,6 +46,8 @@ function GrapeTopDetailPage() {
     redGrapeWineData = { countries: [] };
   }
 
+  // console.log("redGrapeWineData", redGrapeWineData.countries);
+  // console.log("whiteGrapeWineData", whiteGrapeWineData.countries);
   const dataType = grape.dataType;
   const grapeLink = `/grapes/${grape.id}`;
 
@@ -62,17 +63,16 @@ function GrapeTopDetailPage() {
           content="Wine data visualization for winegrape area production for top national grape varietals"
         />
       </Head>
-      {grape && (
       <BarChart
         itemName={grape.itemName}
         units={grape.units}
-        dataYear={dataYear}
-        dataType={dataType}
-        grapeType={grape.category}
+        dataYear={grape.dataYear}
+        dataType={grape.dataType}
+        grapeType={wineCategory}
         redGrapeData={redGrapeWineData.countries}
         whiteGrapeData={whiteGrapeWineData.countries}
         explanationText={explanationText}
-      />)}
+      />
       <div>
         <p className="dataSource">
           Data Source:{" "}
