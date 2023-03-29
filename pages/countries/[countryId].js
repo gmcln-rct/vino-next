@@ -56,14 +56,6 @@ function CountryDetailPage() {
         </div>
       </section>
 
-      {/* <BarChart
-        itemName={country.itemName}
-        units={countryWineData.units}
-        dataYear={countryWineData.dataYear}
-        dataType="country"
-        redGrapeData={countryWineData.redGrapeData}
-        whiteGrapeData={countryWineData.whiteGrapeData}
-      /> */}
       <DetailSection
         wineCategory={wineCategory}
         itemLink={country.link}

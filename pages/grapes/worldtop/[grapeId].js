@@ -18,10 +18,8 @@ function GrapeTopDetailPage() {
   
   const id = router.query.grapeId;
   
-  // console.log("router", id);
   const explanationText = "Wine Production By Country";
 
-  // console.log("pageId", id);
   const grape = getDataItemById(id, GRAPES_DATA);
 
   let wineCategory = "Red";
