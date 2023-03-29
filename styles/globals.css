@@ -207,12 +207,19 @@ main a {
 }
 
 .flagImage {
-  margin: 1vmin 0 0 0;
-  /* opacity: 0.8; */
+  margin: 2vmin 0 0 0;
+  filter:brightness(3);
   filter: saturate(0);
-  /* filter:brightness() */
+  border: 1px solid rgba(255, 255, 255, 0.61);
+  /* opacity: 0.8; */
 }
 
+.flagImage:hover {
+  filter:brightness(1);
+  filter: saturate(1);
+  /* opacity: 1; */
+  transition: 0.3s;
+}
 
 @media (min-width: 768px) {
   .homePage__links {
