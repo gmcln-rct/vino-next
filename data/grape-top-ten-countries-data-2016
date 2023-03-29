@@ -353,7 +353,7 @@ export const GRAPES_RED_TOP_TEN_DATA = [
       ],
     },
     {
-      id: "Pinot Gris",
+      id: "pinot-gris",
       dataYear: 2016,
       units: "hectares",
       countries: [

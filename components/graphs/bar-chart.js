@@ -18,15 +18,15 @@ const BarChart = (props) => {
   } = props;
 
   const [selectedGrapeType, setSelectedGrapeType] = useState(grapeType ? grapeType : "Red");
-  const [wineData, setWineData] = useState(grapeType === "Red" ? redGrapeData : whiteGrapeData);
+  // const [wineData, setWineData] = useState(grapeType === "Red" ? redGrapeData : whiteGrapeData);
 
   // if (grapeType === "W") {
   //   setSelectedGrapeType("White");
   //   setWineData(whiteGrapeData);
   // }
 
-  const data = wineData;
-  // const data = selectedGrapeType === "Red" ? redGrapeData : whiteGrapeData;
+  // const data = wineData;
+  const data = selectedGrapeType === "Red" ? redGrapeData : whiteGrapeData;
   const fillColor = selectedGrapeType === "Red" ? "#B03E3E" : "#A19F18";
   
   console.log("in bar chart - grapeType", grapeType);
