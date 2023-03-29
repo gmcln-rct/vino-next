@@ -9,7 +9,7 @@ html {
   background-color: #e7e5d5;
 }
 
-/* Home Page */
+/****************************  Home Page ***************************************/
 
 .homePage{
   display: flex;
@@ -34,18 +34,31 @@ html {
   align-items: center;
 }
 
-.homePage__link {
+.action__container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   margin: 1rem 2rem 2rem 2rem;
-  padding: 1rem;
+  padding: 1rem 2rem;
   
   backdrop-filter: blur(5px);
   -webkit-backdrop-filter: blur(5px);
   background-color: #1269A1;
-  border: 1px solid rgba(255, 255, 255, 0.61);
+  border: 2px solid rgba(255, 255, 255, 0.61);
   border-radius: 16px;
   box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3), 0 1px 12px 2px rgba(0, 0, 0, 0.2);
 }
 
+.action__container:hover {
+  background-color: #053654;
+  border-color: #1269A1;
+  transition: 0.3s;
+}
+
+.action__container img {
+  filter: brightness(1.2);
+}
 
 /* General */
 
@@ -196,7 +209,7 @@ main a {
 .flagImage {
   margin: 1vmin 0 0 0;
   /* opacity: 0.8; */
-  filter: saturate(0.8);
+  filter: saturate(0);
   /* filter:brightness() */
 }
 

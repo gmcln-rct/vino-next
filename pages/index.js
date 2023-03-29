@@ -22,7 +22,7 @@ function HomePage() {
 
         <h2 className="actionHeader">Browse data visualizations:</h2>
         <section className="homePage__links">
-          <Link href="/countries" className="homePage__link center">
+          <Link href="/countries" className="action__container center">
             <Image
               src="/images/icons/country-icon-sm.png"
               className="transparent margin-bottom"
@@ -30,9 +30,9 @@ function HomePage() {
               width={100}
               height={100}
             />
-            <p className="link">Data By Country</p>
+            <p className="link">By Country</p>
           </Link>
-          <Link href="/grapes" className="homePage__link center">
+          <Link href="/grapes" className="action__container center">
             <Image
               src="/images/icons/grape-icon-sm.png"
               className="transparent margin-bottom"
@@ -40,7 +40,7 @@ function HomePage() {
               width={100}
               height={100}
             />
-            <p className="link">Data By Grape</p>
+            <p className="link">By Grape</p>
           </Link>
         </section>
       </section>
