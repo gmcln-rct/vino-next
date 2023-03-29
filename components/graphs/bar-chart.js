@@ -29,34 +29,37 @@ const BarChart = (props) => {
   // const data = selectedGrapeType === "Red" ? redGrapeData : whiteGrapeData;
   const fillColor = selectedGrapeType === "Red" ? "#B03E3E" : "#A19F18";
   
-  console.log("in bar chart - grapeType", grapeType);
-  console.log("in bar chart - redGrapeData", redGrapeData);
-  console.log("in bar chart - selectedGrapeType", selectedGrapeType);
-  console.log("in bar chart - data", data);
-  console.log("in bat chart - dataType", dataType);
+  // console.log("in bar chart - grapeType", grapeType);
+  // console.log("in bar chart - redGrapeData", redGrapeData);
+  // console.log("in bar chart - selectedGrapeType", selectedGrapeType);
+  // console.log("in bar chart - data", data);
+  // console.log("in bat chart - dataType", dataType);
 
 
   useEffect(() => {
     d3.select(svgRef.current).selectAll("*").remove();
 
     const margin = { top: 20, right: 20, bottom: 50, left: 10 };
-    let widthCalc = 500;
-    if (!svgRef.current) {
-      widthCalc = svgRef.current.clientWidth + 200;
-    }
+    let widthCalc = 600;
+    // if (!svgRef.current) {
+    //   widthCalc = svgRef.current.clientWidth + 500;
+    // }
     const width = widthCalc < 320 ? 400 : widthCalc;
     const height = 350 - margin.top - margin.bottom;
 
     const svg = d3
       .select(svgRef.current)
       .attr("width", width + margin.left + margin.right)
+      // .attr("width", "800px")
+      // .attr("height", "500px")
       .attr("height", height + margin.top + margin.bottom)
-      .attr(
-        "viewBox",
-        `0 0 ${width + margin.left + margin.right} ${
-          height + margin.top + margin.bottom
-        }`
-      )
+      .attr("viewBox", "0 0 600 420")
+      // .attr(
+      //   "viewBox",
+      //   `0 0 ${width + margin.left + margin.right} ${
+      //     height + margin.top + margin.bottom
+      //   }`
+      // )
       .append("g")
       .attr("transform", `translate(${margin.left}, ${margin.top})`);
 
