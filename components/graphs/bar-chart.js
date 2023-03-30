@@ -29,11 +29,11 @@ const BarChart = (props) => {
   const data = selectedGrapeType === "Red" ? redGrapeData : whiteGrapeData;
   const fillColor = selectedGrapeType === "Red" ? "#B03E3E" : "#A19F18";
   
-  console.log("in bar chart - grapeType", grapeType);
-  console.log("in bar chart - redGrapeData", redGrapeData);
-  console.log("in bar chart - selectedGrapeType", selectedGrapeType);
-  console.log("in bar chart - data", data);
-  console.log("in bat chart - dataType", dataType);
+  // console.log("in bar chart - grapeType", grapeType);
+  // console.log("in bar chart - redGrapeData", redGrapeData);
+  // console.log("in bar chart - selectedGrapeType", selectedGrapeType);
+  // console.log("in bar chart - data", data);
+  // console.log("in bat chart - dataType", dataType);
 
 
   useEffect(() => {

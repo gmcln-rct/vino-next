@@ -18,13 +18,15 @@ function CountryTopTenDetailPage() {
 
   const id = router.query.countryId;
 
-//   const country = getDataItemById(id, COUNTRIES_DATA);
+  const country = getDataItemById(id, COUNTRIES_DATA);
 
-//   const countryWineData = getDataItemById(id, COUNTRIES_WINE_DATA);
+  const countryWineData = getDataItemById(id, COUNTRIES_WINE_DATA);
 
 //   const explanationText = "National Top ";
 
 //   const dataType = "country";
+
+// COUNTRIES BUBBLE CHART
 
   if (!country || !countryWineData) {
     return (
@@ -38,7 +40,7 @@ function CountryTopTenDetailPage() {
     <>
       <Head>
         <title>
-          Top National Grapes - {country.itemName} - Winography - Wine Data
+          {country.itemName} Top National Grapes - Bubble Chart - Winography - Wine Data
           Visualization
         </title>
         <meta
