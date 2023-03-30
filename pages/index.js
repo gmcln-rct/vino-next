@@ -42,6 +42,16 @@ function HomePage() {
             />
             <p className="link">By Grape</p>
           </Link>
+          {/* <Link href="/historic" className="action__container center"> */}
+            {/* <Image
+              src="/images/icons/grape-icon-sm.png"
+              className="transparent margin-bottom"
+              alt="grapes icon"
+              width={100}
+              height={100}
+            /> */}
+            {/* <p className="link">Historic Data</p>
+          </Link> */}
         </section>
       </section>
     </>

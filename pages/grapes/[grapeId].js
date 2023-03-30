@@ -27,14 +27,15 @@ function GrapeDetailPage() {
       </div>
     );
   }
-  
+
   const wineCategory = grape.category === "R" ? "Red" : "White";
 
   return (
     <>
       <Head>
         <title>
-          {grape.itemName} Wine Grape Production - Winography - Wine Data Visualization
+          {grape.itemName} Wine Grape Production - Winography - Wine Data
+          Visualization
         </title>
         <meta
           name="description"
@@ -42,13 +43,12 @@ function GrapeDetailPage() {
         />
       </Head>
       <section className="masthead">
-
-      <h2 className="header"> {grape.itemName} Grape</h2>
-        <h2>Top {grape.itemName} Producing Countries</h2>
-      <div className="actions">
-        <Button link={worldTopLink}>Bar Chart</Button>
-        <Button link={worldTopBubbleChartLink}>Bubble Chart</Button>
-      </div>
+        <h2 className="header"> {grape.itemName} Grape</h2>
+        <h2>Top {grape.itemName} Producing Countries Charts:</h2>
+        <div className="actions">
+          <Button link={worldTopLink}>Bar Chart</Button>
+          <Button link={worldTopBubbleChartLink}>Bubble Chart</Button>
+        </div>
       </section>
       <DetailSection
         wineCategory={wineCategory}
