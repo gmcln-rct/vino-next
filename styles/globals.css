@@ -215,8 +215,8 @@ main a {
 
 .flagImage {
   margin: 2vmin 0 0 0;
-  /* filter:brightness(3);
-  filter: saturate(0); */
+  /* filter:brightness(3); */
+  filter: saturate(0.8);
   /* border: 1px solid rgba(255, 255, 255, 0.61); */
 }
 
@@ -224,6 +224,7 @@ main a {
   filter:brightness(3);
   filter: saturate(0);
 }
+
 .borderGrey {
   border: 1px solid rgba(255, 255, 255, 0.61);
 }
