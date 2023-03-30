@@ -13,7 +13,7 @@ import {
 import BubbleChart from "@/components/graphs/bubble-chart";
 import Button from "@/components/ui/button";
 
-function GrapeTopDetailPage() {
+function GrapeTopCountriesBubblePage() {
   const router = useRouter();
   const id = router.query.grapeId;
   
@@ -93,4 +93,4 @@ function GrapeTopDetailPage() {
   );
 }
 
-export default GrapeTopDetailPage;
+export default GrapeTopCountriesBubblePage;
