@@ -18,6 +18,8 @@ function GrapeDetailPage() {
 
   const worldTopLink = "/grapes/worldtop/" + id;
 
+  const worldTopBubbleChartLink = "/grapes/worldtop/bubble-chart/" + id;
+
   if (!grape || !grape.id) {
     return (
       <div className="center">
@@ -41,9 +43,11 @@ function GrapeDetailPage() {
       </Head>
       <section className="masthead">
 
-      <h2 className="header"> {grape.itemName} Grape Page</h2>
+      <h2 className="header"> {grape.itemName} Grape</h2>
+        <h2>Top {grape.itemName} Producing Countries</h2>
       <div className="actions">
-        <Button link={worldTopLink}>World Top Grapes</Button>
+        <Button link={worldTopLink}>Bar Chart</Button>
+        <Button link={worldTopBubbleChartLink}>Bubble Chart</Button>
       </div>
       </section>
       <DetailSection

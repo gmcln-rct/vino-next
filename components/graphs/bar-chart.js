@@ -17,15 +17,15 @@ const BarChart = (props) => {
     explanationText,
   } = props;
 
-  const [selectedGrapeType, setSelectedGrapeType] = useState(grapeType ? grapeType : "Red");
   // const [wineData, setWineData] = useState(grapeType === "Red" ? redGrapeData : whiteGrapeData);
-
+  
   // if (grapeType === "W") {
-  //   setSelectedGrapeType("White");
-  //   setWineData(whiteGrapeData);
-  // }
-
-  // const data = wineData;
+    //   setSelectedGrapeType("White");
+    //   setWineData(whiteGrapeData);
+    // }
+    
+    // const data = wineData;
+    const [selectedGrapeType, setSelectedGrapeType] = useState(grapeType ? grapeType : "Red");
   const data = selectedGrapeType === "Red" ? redGrapeData : whiteGrapeData;
   const fillColor = selectedGrapeType === "Red" ? "#B03E3E" : "#A19F18";
   

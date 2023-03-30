@@ -1,19 +1,31 @@
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import * as d3 from "d3";
+import classes from "./bubble-chart.module.css";
 
-const BubbleChart = () => {
-  const data = [
-    { grape: "Cabernet Sauvignon", value: 1000, hexColor: "#fff" },
-    { grape: "Merlot", value: 47451, hexColor: "#DBF47C" },
-    { grape: "Tempranillo", value: 28084, hexColor: "#DBF47C" },
-    { grape: "Syrah", value: 78842, hexColor: "#8D0C02" },
-    { grape: "Garnacha Tinta", value: 4025, hexColor: "#DBF47C" },
-    { grape: "Pinot Noir", value: 300, hexColor: "#DBF47C" },
-    { grape: "Sangiovese", value: 1657, hexColor: "#DBF47C" },
-    { grape: "Cabernet Franc", value: 0, hexColor: "#DBF47C" },
-    { grape: "Malbec", value: 7333, hexColor: "#DBF47C" },
-    { grape: "Mourvedre", value: 9432, hexColor: "#7F171F" },
-  ];
+const BubbleChart = (props) => {
+  // const data = [
+  //   { grape: "Cabernet Sauvignon", value: 1000, hexColor: "#fff" },
+  //   { grape: "Merlot", value: 47451, hexColor: "#DBF47C" },
+  //   { grape: "Tempranillo", value: 28084, hexColor: "#DBF47C" },
+  //   { grape: "Syrah", value: 78842, hexColor: "#8D0C02" },
+  //   { grape: "Garnacha Tinta", value: 4025, hexColor: "#DBF47C" },
+  //   { grape: "Pinot Noir", value: 300, hexColor: "#DBF47C" },
+  //   { grape: "Sangiovese", value: 1657, hexColor: "#DBF47C" },
+  //   { grape: "Cabernet Franc", value: 0, hexColor: "#DBF47C" },
+  //   { grape: "Malbec", value: 7333, hexColor: "#DBF47C" },
+  //   { grape: "Mourvedre", value: 9432, hexColor: "#7F171F" },
+  // ];
+
+  const {
+    itemName,
+    dataYear,
+    dataType,
+    grapeType,
+    units,
+    redGrapeData,
+    whiteGrapeData,
+    explanationText,
+  } = props;
 
   const svgRef = useRef();
 
@@ -26,6 +38,9 @@ const BubbleChart = () => {
     const brightness = red * 0.299 + green * 0.587 + blue * 0.114;
     return brightness < 180 ? "white" : "black";
   }
+
+  const [selectedGrapeType, setSelectedGrapeType] = useState(grapeType ? grapeType : "Red");
+  const data = selectedGrapeType === "Red" ? redGrapeData : whiteGrapeData;
 
   useEffect(() => {
     const svg = d3.select(svgRef.current);
@@ -51,21 +66,21 @@ const BubbleChart = () => {
       .join("g")
       .attr("transform", (d) => `translate(${d.x + 1},${d.y + 1})`);
 
-    //   let textColor = getContrastYIQ(color(d.data.grape));
+    //   let textColor = getContrastYIQ(color(d.data.country));
     node
       .append("circle")
       .attr("r", (d) => d.r)
-      .attr("fill", (d) => color(d.data.grape))
+      .attr("fill", (d) => color(d.data.country))
       .style("padding", "5px");
 
     node
       .append("text")
       .attr("text-anchor", "middle")
       .attr("dy", "0.3em")
-      .text((d) => d.data.grape)
+      .text((d) => d.data.country)
       .attr("font-size", (d) => `${Math.max(8, d.r / 4)}px`)
       .attr("fill", (d) => {
-        let textColor = getContrastYIQ(color(d.data.grape));
+        let textColor = getContrastYIQ(color(d.data.country));
         // console.log("text color" + textColor)
         return textColor;
       })
@@ -80,13 +95,14 @@ const BubbleChart = () => {
       .style("border", "1px solid black")
       .style("padding", "5px")
       .style("border-radius", "5px")
+      .style("font-family", "Open Sans")
       .style("visibility", "hidden");
 
     node
       .on("mouseover", function (event, d) {
         tooltip
           .style("visibility", "visible")
-          .text(`${d.data.grape}: ${d.data.value}`);
+          .text(`${d.data.country}: ${d.data.value}`);
       })
       .on("mousemove", (event) => {
         tooltip
@@ -103,7 +119,8 @@ const BubbleChart = () => {
       ref={svgRef}
       width={600}
       height={600}
-      style={{ backgroundColor: "white", display: "block", margin: "auto" }}
+      className={classes.chartMain}
+      style={{ backgroundColor: "white", display: "block" }}
     />
   );
 };

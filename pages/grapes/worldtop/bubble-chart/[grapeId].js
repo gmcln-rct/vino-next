@@ -55,7 +55,7 @@ function GrapeTopDetailPage() {
     <>
       <Head>
         <title>
-            Top {grape.itemName} Wine Grape Producing Countries - Winography - Wine Data
+            Top {grape.itemName} Wine Grape Producing Countries - Bubble Chart - Winography - Wine Data
           Visualization
         </title>
         <meta
@@ -63,8 +63,8 @@ function GrapeTopDetailPage() {
           content="Wine data visualization for winegrape area production for top national grape varietals"
         />
       </Head>
+        <h2 className="header">Top {grape.itemName} Producing Countries</h2>
       <BubbleChart 
-
         itemName={grape.itemName}
         units={grape.units}
         dataYear={grape.dataYear}
