@@ -71,7 +71,7 @@ const BubbleChart = (props) => {
       .append("circle")
       .attr("r", (d) => d.r)
       .attr("fill", (d) => color(d.data.country))
-      .style("padding", "5px");
+      .style("padding", "5px")
 
     node
       .append("text")
@@ -118,7 +118,7 @@ const BubbleChart = (props) => {
     <svg
       ref={svgRef}
       width={600}
-      height={640}
+      height={600}
       className={classes.chartMain}
       style={{  display: "block" }}
     />

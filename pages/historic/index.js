@@ -2,6 +2,8 @@ import Head from "next/head";
 
 
 import StreamGraph from "@/components/graphs/streamgraph-chart";
+import TimelineChart from "@/components/graphs/streamgraph-alt";
+import StackedBarChart from "@/components/graphs/stacked-area-chart";
 
 function HistoricDataIndex() {
 
@@ -26,7 +28,8 @@ function HistoricDataIndex() {
       </Head>
       <h1>Top 10 Wine Producing Countries</h1>
       {/* <CountriesList items={topCountries} /> */}
-      <StreamGraph />
+      {/* <TimelineChart /> */}
+      <StackedBarChart />
     </>
   );
 }

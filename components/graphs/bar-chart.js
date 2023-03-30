@@ -17,24 +17,17 @@ const BarChart = (props) => {
     explanationText,
   } = props;
 
-  // const [wineData, setWineData] = useState(grapeType === "Red" ? redGrapeData : whiteGrapeData);
-  
-  // if (grapeType === "W") {
-    //   setSelectedGrapeType("White");
-    //   setWineData(whiteGrapeData);
-    // }
-    
-    // const data = wineData;
-    const [selectedGrapeType, setSelectedGrapeType] = useState(grapeType ? grapeType : "Red");
+  const [selectedGrapeType, setSelectedGrapeType] = useState(
+    grapeType ? grapeType : "Red"
+  );
   const data = selectedGrapeType === "Red" ? redGrapeData : whiteGrapeData;
   const fillColor = selectedGrapeType === "Red" ? "#B03E3E" : "#A19F18";
-  
+
   // console.log("in bar chart - grapeType", grapeType);
   // console.log("in bar chart - redGrapeData", redGrapeData);
   // console.log("in bar chart - selectedGrapeType", selectedGrapeType);
   // console.log("in bar chart - data", data);
   // console.log("in bat chart - dataType", dataType);
-
 
   useEffect(() => {
     d3.select(svgRef.current).selectAll("*").remove();
@@ -52,10 +45,9 @@ const BarChart = (props) => {
     // console.log("widthCalc", widthCalc);
     // console.log("svgRef.current Parebt", svgRef.current);
 
-      // const width = svgRef.current.clientWidth - margin.left - margin.right;
+    // const width = svgRef.current.clientWidth - margin.left - margin.right;
     const width = 800 - margin.left - margin.right;
     const height = 400 - margin.top - margin.bottom;
-
 
     const svg = d3
       .select(svgRef.current)
@@ -76,14 +68,16 @@ const BarChart = (props) => {
 
     const xScale = d3
       .scaleBand()
-      .range([0, width+50])
-      .domain(data.map((d) => {
-        if(dataType === "grape") {
-          return d.country 
-        } else {
-          return d.grape
-        }
-      }))
+      .range([0, width + 50])
+      .domain(
+        data.map((d) => {
+          if (dataType === "grape") {
+            return d.country;
+          } else {
+            return d.grape;
+          }
+        })
+      )
       .padding(0.2);
 
     const yScale = d3
@@ -114,10 +108,10 @@ const BarChart = (props) => {
       .enter()
       .append("rect")
       .attr("x", (d) => {
-        if(dataType === "grape") {
-          return xScale(d.country)
+        if (dataType === "grape") {
+          return xScale(d.country);
         } else {
-          return xScale(d.grape)
+          return xScale(d.grape);
         }
       })
       .attr("y", (d) => yScale(d.value))
@@ -139,7 +133,13 @@ const BarChart = (props) => {
           .style("text-align", "center")
           .style("transition", "0.5s")
           .style("font-family", "sans-serif")
-          .html((dataType==="grape" ? d.country : d.grape) + "<br />" + d3.format(",")(d.value) + " " + units);
+          .html(
+            (dataType === "grape" ? d.country : d.grape) +
+              "<br />" +
+              d3.format(",")(d.value) +
+              " " +
+              units
+          );
       })
       .on("mouseout", function () {
         d3.select(this).transition().duration(300).attr("fill", fillColor);
@@ -157,41 +157,52 @@ const BarChart = (props) => {
   let subHeaderText;
 
   if (dataType === "grape") {
-    headerText =itemName + ": " + explanationText;
-    subHeaderText = "Winegrape area production in top " + itemName + " grape producing countries, " + dataYear;
+    headerText = itemName + ": " + explanationText;
+    subHeaderText =
+      "Winegrape area production in top " +
+      itemName +
+      " grape producing countries, " +
+      dataYear;
   } else {
-    headerText = itemName + ": " + explanationText + " " + selectedGrapeType + " Grapes";
-    subHeaderText = "Winegrape area production for " + explanationText + " " + selectedGrapeType + " grape varietals, " + dataYear;
+    headerText =
+      itemName + ": " + explanationText + " " + selectedGrapeType + " Grapes";
+    subHeaderText =
+      "Winegrape area production for " +
+      explanationText +
+      " " +
+      selectedGrapeType +
+      " grape varietals, " +
+      dataYear;
   }
-
 
   return (
     <>
-    <section className={classes.chart}>
-      <h2 className={classes.header}>
-        {/* {itemName}: {explanationText} {selectedGrapeType} Grapes */}
-        {headerText}
-      </h2>
-      <p className={classes.subheader}>
-        {/* Winegrape area production for {explanationText} {selectedGrapeType}{" "}
+      <section className={classes.chart}>
+        <h2 className={classes.header}>
+          {/* {itemName}: {explanationText} {selectedGrapeType} Grapes */}
+          {headerText}
+        </h2>
+        <p className={classes.subheader}>
+          {/* Winegrape area production for {explanationText} {selectedGrapeType}{" "}
         grape varietals, {dataYear} */}
-        {subHeaderText}
-      </p>
-      {dataType === "country" && (<select
-        className={classes.selectCss}
-        value={selectedGrapeType}
-        onChange={(event) => setSelectedGrapeType(event.target.value)}
-      >
-        <option value="Red">Red Grapes</option>
-        <option value="White">White Grapes</option>
-      </select>)}
+          {subHeaderText}
+        </p>
+        {dataType === "country" && (
+          <select
+            className={classes.selectCss}
+            value={selectedGrapeType}
+            onChange={(event) => setSelectedGrapeType(event.target.value)}
+          >
+            <option value="Red">Red Grapes</option>
+            <option value="White">White Grapes</option>
+          </select>
+        )}
 
-      <div className={classes.barchart}>
-        <svg ref={svgRef}></svg>
-      </div>
-    </section>
-    <p className={classes.units}>Units in hectares</p>
-
+        <div className={classes.barchart}>
+          <svg ref={svgRef}></svg>
+        </div>
+      </section>
+      <p className={classes.units}>Units in hectares</p>
     </>
   );
 };
