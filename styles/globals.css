@@ -162,7 +162,7 @@ main a {
   /* border-color: #e7e5d5; */
 
   /* box-shadow: 0 1px 4px rgba(255, 254, 254, 0.3), 0 1px 12px 2px rgba(185, 185, 185, 0.2);
-} */ */
+} */ 
 .transparent {
   filter: opacity(60%);
 }
@@ -215,9 +215,7 @@ main a {
 
 .flagImage {
   margin: 2vmin 0 0 0;
-  /* filter:brightness(3); */
   filter: saturate(0.8);
-  /* border: 1px solid rgba(255, 255, 255, 0.61); */
 }
 
 .desaturate {
