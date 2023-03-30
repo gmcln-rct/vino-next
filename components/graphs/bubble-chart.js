@@ -45,8 +45,8 @@ const BubbleChart = (props) => {
   useEffect(() => {
     const svg = d3.select(svgRef.current);
 
-    const width = 600;
-    const height = 600;
+    const width = 580;
+    const height = 580;
 
     const color = d3.scaleOrdinal(d3.schemeYlOrRd[5]);
 
@@ -118,9 +118,9 @@ const BubbleChart = (props) => {
     <svg
       ref={svgRef}
       width={600}
-      height={600}
+      height={640}
       className={classes.chartMain}
-      style={{ backgroundColor: "white", display: "block" }}
+      style={{  display: "block" }}
     />
   );
 };
