@@ -46,8 +46,8 @@ function CountryDetailPage() {
           src={flagImage}
           alt={flagImageAlt}
           className="flagImage"
-          width={100}
-          height={75}
+          width={200}
+          height={150}
         />
         <h2 className="countryHeader">{country.itemName} Wine Production Data</h2>
         <div className="actions">

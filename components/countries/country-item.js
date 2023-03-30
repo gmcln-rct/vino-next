@@ -30,7 +30,7 @@ function CountryItem(props) {
         <Image
           src={flagImage}
           alt={flagImageAlt}
-          className="flagImage"
+          className="flagImage desaturate borderGrey"
           width={100}
           height={75}
         />
