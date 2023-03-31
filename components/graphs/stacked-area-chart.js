@@ -13,6 +13,9 @@ const StackedAreaChart = () => {
   
 
   useEffect(() => {
+    d3.select(svgRef.current).selectAll("*").remove();
+    // d3.select(svgRef.current.parentNode).selectAll("*").remove();
+
     const margin = { top: 20, right: 30, bottom: 100, left: 60 };
     const width = 800;
     const height = 400;
@@ -77,19 +80,19 @@ const StackedAreaChart = () => {
       .append("text")
       .attr(
         "transform",
-        `translate(${width / 2},${height - margin.bottom / 2})`
+        `translate(${width / 2},${(height - margin.bottom / 2) -20})`
       )
       .style("text-anchor", "middle")
       .text("Year");
 
-    svg
-      .append("text")
-      .attr("transform", "rotate(-90)")
-      .attr("y", 0 - margin.left)
-      .attr("x", 0 - height / 2)
-      .attr("dy", "1em")
-      .style("text-anchor", "middle")
-      .text("Production (thousand liters)");
+    // svg
+    //   .append("text")
+    //   .attr("transform", "rotate(-90)")
+    //   .attr("y", 0 - margin.left)
+    //   .attr("x", 0 - height / 2)
+    //   .attr("dy", "1em")
+    //   .style("text-anchor", "middle")
+    //   .text("Production (thousand liters)");
 
     // Add legend
     const legend = svg.append("g")

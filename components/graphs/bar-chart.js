@@ -59,6 +59,7 @@ const BarChart = (props) => {
       .attr("viewBox", "0 0 850 500")
       .append("g")
       .attr("transform", `translate(${margin.left}, ${margin.top})`);
+    
 
     // Set up tooltip
     const tooltip = d3
