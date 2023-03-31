@@ -1,0 +1,17 @@
+.legend {
+    font-size: 12px;
+    text-anchor: start;
+  }
+  
+  .legend rect {
+    stroke: none;
+  }
+  
+  .tooltip {
+    position: absolute;
+    display: none;
+    padding: 10px;
+    background: white;
+    box-shadow: 0px 0px 5px rgba(0,0,0,0.3);
+    z-index: 9999;
+  }
