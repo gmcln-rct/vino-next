@@ -233,11 +233,17 @@ main a {
   transition: 0.3s;
 }
 
-/* STacked area charet */
+/* Stacked area charet */
 
 .legend {
-  font-size: 12px;
-  text-anchor: start;
+  /* display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center; */
+  /* padding: 5vmin; */
+  font-size: 10px;
+  text-anchor: start; 
+  /* /* text-align: center; */
 }
 
 .legend rect {
