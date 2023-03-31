@@ -64,7 +64,15 @@ const BarChart = (props) => {
     const tooltip = d3
       .select("body")
       .append("div")
-      .attr("className", "tooltip");
+      .attr("className", "tooltip")
+      .style("z-index", "10")
+      .style("color", "#fff")
+      .style("background", "#B8075F")
+      .style("padding", "10px")
+      .style("border-radius", "5px")
+      .style("text-align", "center")
+      .style("transition", "0.5s")
+      .style("font-family", "Open Sans")
 
     const xScale = d3
       .scaleBand()
@@ -114,25 +122,37 @@ const BarChart = (props) => {
           return xScale(d.grape);
         }
       })
-      .attr("y", (d) => yScale(d.value))
+      // .attr("y", (d) => yScale(d.value))
       .attr("width", xScale.bandwidth())
-      .attr("height", (d) => height - yScale(d.value))
+      .attr("y", (d) => {
+        let barHeight = yScale(d.value);
+        if(barHeight <= 0) {
+          return 0;
+        } else if (height - yScale(d.value) < (height/20)) {
+          barHeight = (barHeight - (height/21));
+        } else {
+          barHeight = yScale(d.value);
+        }
+        return barHeight;
+      })
+      .attr("height", (d) => {
+        let barHeight = height - yScale(d.value);
+        if(barHeight <= 0) {
+          return 0;
+        } else if (barHeight < (height/20)) {
+          return height/20;
+        } else {
+          return height - yScale(d.value);
+        }
+      })
       .attr("fill", fillColor)
       .on("mouseover", function (event, d) {
         d3.select(this).transition().duration(300).attr("fill", "#F9D90A");
         tooltip
-          .style("top", event.pageY - 40 + "px")
+          .style("top", event.pageY - 80 + "px")
           .style("left", event.pageX - 40 + "px")
           .style("visibility", "visible")
           .style("position", "absolute")
-          .style("z-index", "10")
-          .style("color", "#fff")
-          .style("background", "#555")
-          .style("padding", "10px")
-          .style("border-radius", "5px")
-          .style("text-align", "center")
-          .style("transition", "0.5s")
-          .style("font-family", "sans-serif")
           .html(
             (dataType === "grape" ? d.country : d.grape) +
               "<br />" +
@@ -147,6 +167,7 @@ const BarChart = (props) => {
       })
       .exit()
       .remove();
+      
 
     return () => {
       tooltip.remove();

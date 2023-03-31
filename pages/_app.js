@@ -11,7 +11,7 @@ function MyApp({ Component, pageProps }) {
       <Layout >
         <Head>
           <title>Winography - Wine Data Visualization</title>
-          <meta charset="UTF-8" />
+          <meta charSet="UTF-8" />
           <meta name="viewport" content="width=device-width, initial-scale=1.0" />
           <meta name='robots' content='noindex, nofollow'></meta>
           <meta name="keywords" content="wine, data visualization, wine produciton" />
