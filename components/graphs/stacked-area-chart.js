@@ -2,7 +2,6 @@ import React, { useRef, useEffect } from "react";
 import * as d3 from "d3";
 
 
-
 const data = [
     { year: 1835, France: 2669460, Italy: 0, Portugal: 0, Spain: 0, Germany: 0, Australia: 0, NewZealand: 0, UnitedStates: 0, Argentina: 0, Chile: 0, Algeria: 0, SouthAfrica: 8997 },
     { year: 1836, France: 3139583, Italy: 0, Portugal: 0, Spain: 0, Germany: 0, Australia: 0, NewZealand: 0, UnitedStates: 0, Argentina: 0, Chile: 0, Algeria: 0, SouthAfrica: 9715 },
@@ -192,8 +191,12 @@ const data = [
 ];
 
 const StackedAreaChart = () => {
-  const svgRef = useRef(null);
-  const tooltipRef = useRef(null);
+  const svgRef = useRef();
+  const tooltipRef = useRef();
+
+  const objArray = Object.keys(data[0]).slice(1);
+
+  console.log("array of objects: ", objArray);
 
   useEffect(() => {
     const margin = { top: 20, right: 30, bottom: 50, left: 60 };
@@ -217,7 +220,7 @@ const StackedAreaChart = () => {
       .range([height - margin.top - margin.bottom, 0]);
 
 
-    const stack = d3.stack().keys(["France", "Italy", "Portugal","Spain", "Germany", "Australia", "NewZealand", "UnitedStates","Argentina", "Chile", "Algeria", "SouthAfrica" ])(data);
+    const stack = d3.stack().keys(objArray)(data);
 
     const area = d3
       .area()
@@ -225,14 +228,7 @@ const StackedAreaChart = () => {
       .y0((d) => yScale(d[0]))
       .y1((d) => yScale(d[1]));
 
-    //   const colors = d3.scaleOrdinal(d3.schemeYlOrRd[9]);
-      const colors = d3.scaleOrdinal(d3.schemeRdYlBu[9]);
-
-    // const colors = d3
-    //   .scaleOrdinal()
-    //   .domain(["France", "Italy", "Portugal","Spain", "Germany", "Australia", "NewZealand", "UnitedStates"])
-    //   .range(["#1f77b4", "#ff7f0e", "#2ca02c","#d62728", "#9467bd", "#8c564b", "#e377c2", "#7f7f7f"]);
-
+    const colors = d3.scaleOrdinal(d3.schemeSet3);
     svg
       .selectAll("path")
       .data(stack)
@@ -240,18 +236,6 @@ const StackedAreaChart = () => {
       .append("path")
       .attr("fill", (d) => colors(d.key))
       .attr("d", area)
-    //   .on("mouseover", (event, d) => {
-    //     const country = d.key;
-    //     const values = d.data[country];
-    //     const year = d3.timeFormat("%Y")(d.data.year);
-    //     tooltipRef.current.innerHTML = `${country}: ${values} (${year})`;
-    //     tooltipRef.current.style.display = "block";
-    //     tooltipRef.current.style.left = `${event.pageX}px`;
-    //     tooltipRef.current.style.top = `${event.pageY}px`;
-    //   })
-    //   .on("mouseout", () => {
-    //     tooltipRef.current.style.display = "none";
-    //   });
     const xAxis = d3.axisBottom(xScale).tickFormat(d3.format("d"));
     const yAxis = d3.axisLeft(yScale);
 
@@ -280,6 +264,31 @@ const StackedAreaChart = () => {
       .style("text-anchor", "middle")
       .text("Production (thousand liters)");
 
+      // Create a legend
+const legend = svg.append("g")
+.attr("class", "legend")
+.attr("transform", `translate(${margin.left},${height - margin.bottom + 20})`);
+
+const legendItems = legend.selectAll(".legend-item")
+.data(objArray)
+.enter()
+.append("g")
+.attr("class", "legend-item")
+.attr("transform", (d, i) => `translate(${i * 80}, 0)`);
+
+legendItems
+.append("rect")
+.attr("width", 20)
+.attr("height", 20)
+.attr("fill", (d) => colors(d));
+
+legendItems
+.append("text")
+.attr("x", 25)
+.attr("y", 15)
+.text((d) => d);
+
+
     d3.select(window).on("resize", () => {
       const containerWidth = svgRef.current.getBoundingClientRect().width;
       const containerHeight = svgRef.current.getBoundingClientRect().height;
@@ -293,7 +302,7 @@ const StackedAreaChart = () => {
   }, []);
 
   return (
-    <div style={{ position: "relative", width: "100%", height: "100%" }}>
+    <div style={{ position: "relative", width: "90%", height: "100%" }}>
       <svg ref={svgRef}></svg>
       <div
         ref={tooltipRef}
