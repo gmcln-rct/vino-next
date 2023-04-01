@@ -1,4 +1,4 @@
-import React, { useRef, useEffect } from "react";
+import React, { useRef, useEffect, useState } from "react";
 import * as d3 from "d3";
 
 import { HISTORIC_PRODUCTION_STACKED_DATA } from "@/data/historic-production-stacked-data";
@@ -9,7 +9,10 @@ const StackedAreaChart = () => {
 
   const data = HISTORIC_PRODUCTION_STACKED_DATA;
 
-  console.log("data from json: ", data);
+  const [displayNormalized, setDisplayNormalized] = useState(false);
+  
+
+  // console.log("data from json: ", data);
 
   if (!data) {
     return <div>Loading...</div>;
@@ -22,7 +25,7 @@ const StackedAreaChart = () => {
     d3.select(svgRef.current).selectAll("*").remove();
     const margin = { top: 20, right: 30, bottom: 100, left: 60 };
     const width = 800;
-    const height = 320;
+    const height = 400;
 
     const svg = d3
       .select(svgRef.current)
@@ -45,16 +48,41 @@ const StackedAreaChart = () => {
       .domain([d3.min(data, (d) => d.year), d3.max(data, (d) => d.year)])
       .range([0, width - margin.left - margin.right]);
 
-    const yScale = d3
-      .scaleLinear()
-      .domain([0, 1]) // Update yScale domain for normalization
-      .range([height - margin.top - margin.bottom, 0]);
+      let yScale;
 
-    const stack = d3
-      .stack()
-      .keys(objArray)
-      .offset(d3.stackOffsetExpand) // Normalize the data using stackOffsetExpand
-      (data);
+      if (displayNormalized) {
+        yScale = d3
+          .scaleLinear()
+          .domain([0, 1]) // Update yScale domain for normalization
+          .range([height - margin.top - margin.bottom, 0]);
+      } else {
+        yScale = d3
+          .scaleLinear()
+          .domain([0, d3.max(data, (d) => d.total)])
+          .range([height - margin.top - margin.bottom, 0]);
+      }
+    // const yScale = d3
+    //   .scaleLinear()
+    //   .domain([0, 1]) // Update yScale domain for normalization
+    //   .range([height - margin.top - margin.bottom, 0]);
+
+    let stack;
+
+    if (displayNormalized) {
+      stack = d3
+        .stack()
+        .keys(objArray)
+        .offset(d3.stackOffsetExpand) // Normalize the data using stackOffsetExpand
+        (data);
+    } else {
+       stack = d3.stack().offset(d3.stackOffsetNone).keys(objArray)(data);
+    }
+
+    // const stack = d3
+    //   .stack()
+    //   .keys(objArray)
+    //   .offset(d3.stackOffsetExpand) // Normalize the data using stackOffsetExpand
+    //   (data);
 
     const area = d3
       .area()
@@ -63,43 +91,6 @@ const StackedAreaChart = () => {
       .y1((d) => yScale(d[1]));
 
     const colors = d3.scaleOrdinal(d3.schemeSet3);
-
-    // Create country area paths
-    const countryAreas = svg
-      .selectAll("path")
-      .data(stack)
-      .enter()
-      .append("path")
-      .attr("fill", (d) => colors(d.key))
-      .attr("d", area);
-
-    // Create country labels
-    const midYear = (d3.min(data, (d) => d.year) + d3.max(data, (d) => d.year)) / 2;
-  
-    countryAreas.each(function (d) {
-      const path = d3.select(this);
-      const pathBounds = path.node().getBBox();
-      const countryName = d.key;
-      const fontSize = Math.sqrt(pathBounds.height) * 0.5; // Adjust font size based on area height
-    
-      // Find the index of the middle data point
-      const middleIndex = Math.floor(data.length / 2);
-    
-      // Calculate the y-coordinate for the label
-      const labelY = yScale((d[middleIndex][1] + d[middleIndex][0]) / 2);
-    
-      svg
-        .append("text")
-        .attr("class", "country-label")
-        .attr("x", xScale(data[middleIndex].year))
-        .attr("y", labelY)
-        .attr("dy", "0.35em") // Adjust vertical alignment
-        .style("text-anchor", "middle")
-        .style("font-size", `${fontSize}px`)
-        .text(countryName);
-    });
-    
-    // const colors = d3.scaleOrdinal(d3.schemeSet3);
 
     svg
       .selectAll("path")
@@ -110,7 +101,15 @@ const StackedAreaChart = () => {
       .attr("d", area);
 
     const xAxis = d3.axisBottom(xScale).tickFormat(d3.format("d"));
-    const yAxis = d3.axisLeft(yScale).tickFormat(d3.format(".0%"));
+
+    let yAxis;
+
+    if (displayNormalized) {
+      yAxis = d3.axisLeft(yScale).tickFormat(d3.format(".0%"));
+    } else {
+       yAxis = d3.axisLeft(yScale);
+    }
+    // const yAxis = d3.axisLeft(yScale).tickFormat(d3.format(".0%"));
 
     svg
       .append("g")
@@ -168,10 +167,14 @@ const StackedAreaChart = () => {
       })
       .attr("margin-top", 10);
 
-  }, []);
+  }, [displayNormalized]);
 
   return (
     <div style={{ position: "relative", width: "90%", height: "90%" }}>
+      <select onChange={(e) => setDisplayNormalized(e.target.value)}>
+        <option value={false}>Show absolute values</option>
+        <option value={true}>Show normalized values</option>
+      </select>
       <svg ref={svgRef}></svg>
       <div ref={tooltipRef} className="tooltip">
         Production in KL

@@ -1,6 +1,24 @@
 import PropTypes from 'prop-types'
 import { useEffect, useState, useRef } from "react"
-import ResizeObserver from "resize-observer-polyfill"
+
+
+// Helper function to find the optimal x position for a label
+export const findOptimalXPosition = (areaData, xScale) => {
+  let maxWidth = -1;
+  let optimalIndex = 0;
+
+  for (let i = 0; i < areaData.length - 1; i++) {
+    const width = Math.abs(areaData[i][1] - areaData[i][0]);
+
+    if (width > maxWidth) {
+      maxWidth = width;
+      optimalIndex = i;
+    }
+  }
+
+  return xScale(areaData[optimalIndex].data.year);
+};
+
 
 export const accessorPropsType = (
   PropTypes.oneOfType([
