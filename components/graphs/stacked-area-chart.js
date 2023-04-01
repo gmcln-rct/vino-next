@@ -101,9 +101,14 @@ const StackedAreaChart = () => {
       .append("g")
       .attr("class", "x-axis")
       .attr("transform", `translate(0,${height - margin.top - margin.bottom})`)
+      .style("color", "white")
       .call(xAxis);
 
-    svg.append("g").attr("class", "y-axis").call(yAxis);
+    svg
+      .append("g")
+      .attr("class", "y-axis")
+      .style("color", "white")
+      .call(yAxis);
 
     // svg
     //   .append("text")
@@ -144,6 +149,7 @@ const StackedAreaChart = () => {
       .append("text")
       .attr("x", 20)
       .attr("y", 15)
+      .style("fill", "white")
       .html((d) => {
         const words = d.split(" ");
         return `<tspan x="-4" dy="1.4em">${words
@@ -157,7 +163,7 @@ const StackedAreaChart = () => {
   }, [data, displayNormalized]);
 
   return (
-    <div style={{ position: "relative", width: "90%", height: "90%" }}>
+    <div className="stackedarea" style={{ position: "relative", width: "90%", height: "90%", padding: "0.5rem 1rem 0.5rem", borderRadius: "10px", backgroundColor: "grey" }}>
       <select
         value={displayNormalized}
         className="selectCss center"

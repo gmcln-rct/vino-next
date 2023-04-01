@@ -179,7 +179,7 @@ main a {
   justify-content: center;
   align-items: center;
 
-  color: #000;
+  color: #fff;
 
   font-family: 'Open Sans', sans-serif;
   font-size: clamp(12px, 2vw, 18px);
@@ -226,6 +226,18 @@ main a {
   align-items: center;
   gap: 1rem;
   padding: 1rem;
+}
+
+.stackedarea {
+  /* display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center; */
+  margin: 1rem 0 0 0;
+  position: "relative"; 
+  width: "90%"; 
+  height: "90%"; 
+  background-color: "red";
 }
 
 .actions {
