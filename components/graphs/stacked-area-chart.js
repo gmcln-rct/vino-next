@@ -9,16 +9,18 @@ const StackedAreaChart = () => {
   const data = HISTORIC_PRODUCTION_STACKED_DATA;
   const [displayNormalized, setDisplayNormalized] = useState(false);
 
-  if (!data) {
-    return <div>Loading...</div>;
-  }
-  const objArray = Object.keys(data[0]).slice(1);
+
 
   useEffect(() => {
     d3.select(svgRef.current).selectAll("*").remove();
     const margin = { top: 20, right: 30, bottom: 100, left: 60 };
     const width = 800;
     const height = 400;
+
+    if (!data) {
+      return <div>Loading...</div>;
+    }
+    const objArray = Object.keys(data[0]).slice(1);
 
     const svg = d3
       .select(svgRef.current)
