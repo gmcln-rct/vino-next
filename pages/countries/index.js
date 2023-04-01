@@ -21,7 +21,7 @@ function CountryIndex() {
           content="Data visualization of wine production by country for all wine-producing countries"
         />
       </Head>
-      <h1>Country Index</h1>
+      <h1 className="indexheader">Country Index</h1>
       {/* <h2>Featured Countries</h2> */}
       <CountryList items={allCountries} />
     </>

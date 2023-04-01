@@ -9,6 +9,8 @@ const StackedAreaChart = () => {
   const data = HISTORIC_PRODUCTION_STACKED_DATA;
   const [displayNormalized, setDisplayNormalized] = useState(false);
 
+  const dataTypeText = displayNormalized ? "Production by % of World Production" : "Production in Kiloliters (KL)";
+
   useEffect(() => {
     d3.select(svgRef.current).selectAll("*").remove();
     const margin = { top: 10, right: 30, bottom: 100, left: 60 };
@@ -113,13 +115,14 @@ const StackedAreaChart = () => {
       .style("font-size", "0.7em")
       .text("Year");
 
-    // Create a legend
+    // LEGENG
+    // Position legend
     const legend = svg
       .append("g")
       .attr("class", "legend")
       .attr(
         "transform",
-        `translate(${margin.left -40},${height - margin.bottom + 30})`
+        `translate(${margin.left - 50},${height - margin.bottom + 30})`
       ); // Increased padding between chart and legend
 
     const legendItems = legend
@@ -136,6 +139,7 @@ const StackedAreaChart = () => {
       .attr("height", 15)
       .attr("fill", (d) => colors(d));
 
+    // Wrap text in legend to accomodate for two words
     legendItems
       .append("text")
       .attr("x", 20)
@@ -159,15 +163,14 @@ const StackedAreaChart = () => {
         className="selectCss center"
         onChange={(e) => setDisplayNormalized(e.target.value === "true")}
       >
-        <option value={false}>Show absolute values</option>
-        <option value={true}>Show normalized values</option>
+        <option value={false}>Absolute Values (KL)</option>
+        <option value={true}>Normalized Values (%)</option>
       </select>
       <svg ref={svgRef}></svg>
-      <div ref={tooltipRef} className="tooltip">
+      {/* <div ref={tooltipRef} className="tooltip">
         Production in KL
-      </div>
-      <br />
-      <p className="center italic">Wine production in Kiloliters(KL)</p>
+      </div> */}
+      <p className="chartfooter">{dataTypeText}</p>
     </div>
   );
 };

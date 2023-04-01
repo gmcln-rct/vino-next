@@ -20,7 +20,7 @@ function GrapeIndex() {
           content="Data visualization of grape wine production for all wine-producing countries"
         />
       </Head>
-      <h1>Grapes Index</h1>
+      <h1 className="indexheader">Grapes Index</h1>
       {/* <h2>Featured Countries</h2> */}
       <DataList items={topGrapes} />
     </div>

@@ -48,20 +48,20 @@ html {
   width: 100%;
   margin: 0;
 
-  color: white;
+  /* color: white; */
   background-color: #898989;
   box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.2);
   font-family: 'Lato', sans-serif;
 }
 
 .masthead .header {
-  color: white;
+  /* color: white; */
 }
 
 .masthead h2 {
   /* color: #505050; */
   margin: 1rem 0 0 0;
-  color: #fffd8d;
+  /* color: #fffd8d; */
 
   
   font-size: clamp(16px, 4vw, 28px);
@@ -110,13 +110,10 @@ main {
 main h1,
 main .header {
   /* color: #000; */
-  color: #A1360A;
-  text-align: center;
-  margin: 1rem 0 0 0;
+  /* color: #A1360A; */
+  /* text-align: center;
+  margin: 1rem 0 0 0; */
 
-  font-size: clamp(16px, 4vw, 32px);
-  font-weight: bold;
-  font-display: swap;
 }
 
 main a {
@@ -144,12 +141,64 @@ main a {
   filter: opacity(60%);
 }
 
-.countryHeader {
+.header {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   margin: 1rem 0 0 0;
+
+  font-size: clamp(16px, 4vw, 28px);
+  font-weight: 600;
+  font-family: 'Lato', sans-serif;
+  font-display: swap;
+  letter-spacing: 1px;
+
+  color: #fffd8d;
+
+}
+
+.subheader {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  margin: 1rem 0 0 0;
+  color: #fff;
+
+
+  font-size: clamp(16px, 4vw, 28px);
+  font-weight: 400;
+  font-display: swap;
+}
+
+.chartfooter {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  color: #000;
+
+  font-family: 'Open Sans', sans-serif;
+  font-size: clamp(12px, 2vw, 18px);
+  font-weight: 400;
+  font-display: swap;
+}
+
+.indexheader {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  margin: 1rem 0 0 0;
+  color: #A1360A;
+
+  font-size: clamp(16px, 4vw, 32px);
+  font-weight: bold;
+  font-display: swap;
 }
 
 .dataSource {
@@ -212,20 +261,11 @@ main a {
 
 /* Stacked area charet */
 
-.legend {
-  /* display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center; */
-  /* padding: 5vmin; */
-  font-size: 10px;
-  text-anchor: start; 
-  /* /* text-align: center; */
-}
 
-.legend rect {
-  stroke: none;
-}
+/* .legend {
+ background-color: red;
+} */
+
 
 .tooltip {
   position: absolute;

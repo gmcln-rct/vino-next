@@ -43,8 +43,8 @@ function GrapeDetailPage() {
         />
       </Head>
       <section className="masthead">
-        <h2 className="header"> {grape.itemName} Grape</h2>
-        <h2>Top {grape.itemName} Producing Countries Charts:</h2>
+        <h2 className="header"> {grape.itemName} Grape Production Data</h2>
+        <h3 className="subheader">Top {grape.itemName} Producing Countries:</h3>
         <div className="actions">
           <Button link={worldTopLink}>Bar Chart</Button>
           <Button link={worldTopBubbleChartLink}>Bubble Chart</Button>
