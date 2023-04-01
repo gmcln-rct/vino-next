@@ -56,6 +56,9 @@ function GrapeDetailPage() {
         countryName={grape.itemName}
         moreInfo={grape.altNames}
       />
+      <div className="buttonFooter">
+        <Button link="/grapes/">Back to Grapes Index</Button>
+      </div>
     </>
   );
 }

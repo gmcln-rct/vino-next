@@ -32,6 +32,7 @@ const BarChart = (props) => {
     const width = 800 - margin.left - margin.right;
     const height = 400 - margin.top - margin.bottom;
 
+    // Set up and position SVG
     const svg = d3
       .select(svgRef.current)
       .attr("width", width + margin.left + margin.right)
@@ -40,7 +41,6 @@ const BarChart = (props) => {
       .append("g")
       .attr("transform", `translate(${margin.left}, ${margin.top})`);
     
-
     // Set up tooltip
     const tooltip = d3
       .select("body")
@@ -56,6 +56,7 @@ const BarChart = (props) => {
       .style("font-family", "Open Sans")
       .style("visibility", "hidden")
 
+    // Add X axis
     const xScale = d3
       .scaleBand()
       .range([0, width + 50])
