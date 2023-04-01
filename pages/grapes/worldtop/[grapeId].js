@@ -34,7 +34,7 @@ function GrapeTopDetailPage() {
     );
   }
 
-  console.log("grape", grape);
+  
   let redGrapeWineData;
   let whiteGrapeWineData;
   const dataYear = grape.dataYear;
@@ -46,8 +46,6 @@ function GrapeTopDetailPage() {
     redGrapeWineData = { countries: [] };
   }
 
-  // console.log("redGrapeWineData", redGrapeWineData.countries);
-  // console.log("whiteGrapeWineData", whiteGrapeWineData.countries);
   const dataType = grape.dataType;
   const grapeLink = `/grapes/${grape.id}`;
 

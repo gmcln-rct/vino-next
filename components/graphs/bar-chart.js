@@ -54,6 +54,7 @@ const BarChart = (props) => {
       .style("text-align", "center")
       .style("transition", "0.5s")
       .style("font-family", "Open Sans")
+      .style("visibility", "hidden")
 
     const xScale = d3
       .scaleBand()
@@ -138,8 +139,7 @@ const BarChart = (props) => {
             (dataType === "grape" ? d.country : d.grape) +
               "<br />" +
               d3.format(",")(d.value) +
-              " " +
-              units
+              " " + units
           );
       })
       .on("mouseout", function () {

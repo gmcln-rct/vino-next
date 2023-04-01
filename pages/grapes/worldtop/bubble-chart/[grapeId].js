@@ -63,7 +63,7 @@ function GrapeTopCountriesBubblePage() {
           content="Wine data visualization for winegrape area production for top national grape varietals"
         />
       </Head>
-        <h2 className="header">Top {grape.itemName} Producing Countries</h2>
+        <h2 className="indexheader">Top {grape.itemName} Producing Countries</h2>
       <BubbleChart 
         itemName={grape.itemName}
         units={grape.units}
