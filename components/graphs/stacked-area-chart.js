@@ -9,13 +9,11 @@ const StackedAreaChart = () => {
   const data = HISTORIC_PRODUCTION_STACKED_DATA;
   const [displayNormalized, setDisplayNormalized] = useState(false);
 
-
-
   useEffect(() => {
     d3.select(svgRef.current).selectAll("*").remove();
-    const margin = { top: 20, right: 30, bottom: 100, left: 60 };
-    const width = 800;
-    const height = 400;
+    const margin = { top: 10, right: 30, bottom: 100, left: 60 };
+    const width = 600;
+    const height = 300;
 
     if (!data) {
       return <div>Loading...</div>;
@@ -109,10 +107,10 @@ const StackedAreaChart = () => {
       .append("text")
       .attr(
         "transform",
-        `translate(${width / 2.2},${height - margin.bottom / 2 - 30})`
+        `translate(${width / 2.2},${height - margin.bottom / 2 - 35})`
       )
       .style("text-anchor", "middle")
-      .style("font-size", "0.8em")
+      .style("font-size", "0.7em")
       .text("Year");
 
     // Create a legend
@@ -121,7 +119,7 @@ const StackedAreaChart = () => {
       .attr("class", "legend")
       .attr(
         "transform",
-        `translate(${margin.left},${height - margin.bottom + 30})`
+        `translate(${margin.left -40},${height - margin.bottom + 30})`
       ); // Increased padding between chart and legend
 
     const legendItems = legend
@@ -134,23 +132,23 @@ const StackedAreaChart = () => {
 
     legendItems
       .append("rect")
-      .attr("width", 20)
-      .attr("height", 20)
+      .attr("width", 15)
+      .attr("height", 15)
       .attr("fill", (d) => colors(d));
 
     legendItems
       .append("text")
       .attr("x", 20)
-      .attr("y", 20)
+      .attr("y", 15)
       .html((d) => {
         const words = d.split(" ");
-        return `<tspan x="0" dy="1.4em">${words
+        return `<tspan x="-2" dy="1.4em">${words
           .slice(0, words.length / 2)
-          .join(" ")}</tspan><tspan x="0" dy="1.4em">${words
+          .join(" ")}</tspan><tspan x="-5" dy="1.2em">${words
           .slice(words.length / 2)
           .join(" ")}</tspan>`;
       })
-      .attr("margin-top", 10);
+      // .attr("margin-top", 10);
 
   }, [data, displayNormalized]);
 

@@ -2,12 +2,12 @@
 .selectCss {
     display: block;
   
-    padding: 0.6em 1.4em 0.5em 0.8em;
     width: 20vmin;
     min-width: 250px; /* a must for IE 11 */
     max-width: 100%; /* useful when width is set to anything other than 100% */
     /* margin: 0 0 0.5rem 0; */
-    margin: 0 auto;
+    margin: 0.5rem auto 0;
+    padding: 0.6em 1.4em 0.5em 0.8em;
   
     font-size: 16px;
     font-family: sans-serif;

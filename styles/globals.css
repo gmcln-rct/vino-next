@@ -236,3 +236,11 @@ main a {
   z-index: 9999;
 }
 
+tspan {
+  display: flex;
+  /* flex-direction: column;
+  justify-content: center;
+  align-items: center; */
+  font-size: clamp(6px, 1vw, 8px);
+  text-align: center;
+}
