@@ -39,7 +39,7 @@ function HistoricDataIndex() {
       {/* <TimelineChart /> */}
       <StackedBarChart  />
       <div>
-        <p className="dataSource">
+        <p className="dataSource moveUp">
           Data Source:{" "}
           <Link
             href="https://economics.adelaide.edu.au/wine-economics/databases/"

@@ -176,7 +176,7 @@ const StackedAreaChart = () => {
       {/* <div ref={tooltipRef} className="tooltip">
         Production in KL
       </div> */}
-      <p className="chartfooter">{dataTypeText}</p>
+      <p className="chartfooter moveUp">{dataTypeText}</p>
     </div>
   );
 };

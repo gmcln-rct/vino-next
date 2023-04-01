@@ -199,7 +199,6 @@ const BarChart = (props) => {
             <option value="White">White Grapes</option>
           </select>
         )}
-
         <div className={classes.barchart}>
           <svg ref={svgRef}></svg>
         </div>

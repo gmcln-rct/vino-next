@@ -186,7 +186,12 @@ main a {
   font-weight: 600;
   font-display: swap;
 
+}
+
+.moveUp {
   transform:translateY(-3rem);
+
+  color: #fff;
 }
 
 .indexheader {
@@ -209,9 +214,6 @@ main a {
   font-weight: 400;
   font-style: italic;
   font-display: swap;
-
-  transform:translateY(-3rem);
-
 }
 
 .link {
