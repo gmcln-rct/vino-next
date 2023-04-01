@@ -6,9 +6,7 @@ import { HISTORIC_PRODUCTION_STACKED_DATA } from "@/data/historic-production-sta
 const StackedAreaChart = () => {
   const svgRef = useRef();
   const tooltipRef = useRef();
-
   const data = HISTORIC_PRODUCTION_STACKED_DATA;
-
   const [displayNormalized, setDisplayNormalized] = useState(false);
 
   if (!data) {
@@ -34,7 +32,7 @@ const StackedAreaChart = () => {
       .attr("y", 0)
       .attr("width", width - margin.left - margin.right)
       .attr("height", height - margin.top - margin.bottom)
-      .style("fill", "#a9a9a9")
+      .style("fill", "#555454")
       .style("opacity", 0.8);
 
     // Create scales
@@ -45,6 +43,7 @@ const StackedAreaChart = () => {
 
     let yScale;
 
+    // Switch between normalized and absolute values
     if (displayNormalized) {
       yScale = d3
         .scaleLinear()
@@ -157,6 +156,7 @@ const StackedAreaChart = () => {
     <div style={{ position: "relative", width: "90%", height: "90%" }}>
       <select
         value={displayNormalized}
+        className="selectCss center"
         onChange={(e) => setDisplayNormalized(e.target.value === "true")}
       >
         <option value={false}>Show absolute values</option>
@@ -167,7 +167,7 @@ const StackedAreaChart = () => {
         Production in KL
       </div>
       <br />
-      <p className="center">Wine production in Kiloliters(KL)</p>
+      <p className="center italic">Wine production in Kiloliters(KL)</p>
     </div>
   );
 };
