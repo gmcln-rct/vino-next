@@ -10,16 +10,11 @@ const StackedAreaChart = () => {
   const data = HISTORIC_PRODUCTION_STACKED_DATA;
 
   const [displayNormalized, setDisplayNormalized] = useState(false);
-  
-
-  // console.log("data from json: ", data);
 
   if (!data) {
     return <div>Loading...</div>;
   }
   const objArray = Object.keys(data[0]).slice(1);
-
-  console.log("array of objects: ", objArray);
 
   useEffect(() => {
     d3.select(svgRef.current).selectAll("*").remove();
@@ -48,23 +43,20 @@ const StackedAreaChart = () => {
       .domain([d3.min(data, (d) => d.year), d3.max(data, (d) => d.year)])
       .range([0, width - margin.left - margin.right]);
 
-      let yScale;
+    let yScale;
 
-      if (displayNormalized) {
-        yScale = d3
-          .scaleLinear()
-          .domain([0, 1]) // Update yScale domain for normalization
-          .range([height - margin.top - margin.bottom, 0]);
-      } else {
-        yScale = d3
-          .scaleLinear()
-          .domain([0, d3.max(data, (d) => d.total)])
-          .range([height - margin.top - margin.bottom, 0]);
-      }
-    // const yScale = d3
-    //   .scaleLinear()
-    //   .domain([0, 1]) // Update yScale domain for normalization
-    //   .range([height - margin.top - margin.bottom, 0]);
+    if (displayNormalized) {
+      yScale = d3
+        .scaleLinear()
+        .domain([0, 1]) // Update yScale domain for normalization
+        .range([height - margin.top - margin.bottom, 0]);
+    } else {
+      const stackedData = d3.stack().offset(d3.stackOffsetNone).keys(objArray)(data);
+      yScale = d3
+        .scaleLinear()
+        .domain([0, d3.max(stackedData, d => d3.max(d, d => d[1]))])
+        .range([height - margin.top - margin.bottom, 0]);
+    }
 
     let stack;
 
@@ -75,14 +67,8 @@ const StackedAreaChart = () => {
         .offset(d3.stackOffsetExpand) // Normalize the data using stackOffsetExpand
         (data);
     } else {
-       stack = d3.stack().offset(d3.stackOffsetNone).keys(objArray)(data);
+      stack = d3.stack().offset(d3.stackOffsetNone).keys(objArray)(data);
     }
-
-    // const stack = d3
-    //   .stack()
-    //   .keys(objArray)
-    //   .offset(d3.stackOffsetExpand) // Normalize the data using stackOffsetExpand
-    //   (data);
 
     const area = d3
       .area()
@@ -107,9 +93,8 @@ const StackedAreaChart = () => {
     if (displayNormalized) {
       yAxis = d3.axisLeft(yScale).tickFormat(d3.format(".0%"));
     } else {
-       yAxis = d3.axisLeft(yScale);
+      yAxis = d3.axisLeft(yScale);
     }
-    // const yAxis = d3.axisLeft(yScale).tickFormat(d3.format(".0%"));
 
     svg
       .append("g")
@@ -129,7 +114,6 @@ const StackedAreaChart = () => {
       .style("font-size", "0.8em")
       .text("Year");
 
- 
     // Create a legend
     const legend = svg
       .append("g")
@@ -167,11 +151,14 @@ const StackedAreaChart = () => {
       })
       .attr("margin-top", 10);
 
-  }, [displayNormalized]);
+  }, [data, displayNormalized]);
 
   return (
     <div style={{ position: "relative", width: "90%", height: "90%" }}>
-      <select onChange={(e) => setDisplayNormalized(e.target.value)}>
+      <select
+        value={displayNormalized}
+        onChange={(e) => setDisplayNormalized(e.target.value === "true")}
+      >
         <option value={false}>Show absolute values</option>
         <option value={true}>Show normalized values</option>
       </select>
