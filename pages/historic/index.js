@@ -34,7 +34,7 @@ function HistoricDataIndex() {
           content="Data visualization for all wine-producing countries"
         />
       </Head>
-      <h1 className="indexheader">Historic Wine Production - Top Producers</h1>
+      <h1 className="indexheader">Historic Wine Production By Year</h1>
       {/* <CountriesList items={topCountries} /> */}
       {/* <TimelineChart /> */}
       <StackedBarChart  />

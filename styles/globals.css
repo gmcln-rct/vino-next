@@ -183,8 +183,10 @@ main a {
 
   font-family: 'Open Sans', sans-serif;
   font-size: clamp(12px, 2vw, 18px);
-  font-weight: 400;
+  font-weight: 600;
   font-display: swap;
+
+  transform:translateY(-3rem);
 }
 
 .indexheader {
@@ -207,6 +209,9 @@ main a {
   font-weight: 400;
   font-style: italic;
   font-display: swap;
+
+  transform:translateY(-3rem);
+
 }
 
 .link {

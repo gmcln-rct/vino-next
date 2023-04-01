@@ -13,7 +13,7 @@ const StackedAreaChart = () => {
 
   useEffect(() => {
     d3.select(svgRef.current).selectAll("*").remove();
-    const margin = { top: 10, right: 30, bottom: 100, left: 60 };
+    const margin = { top: 10, right: 30, bottom: 110, left: 60 };
     const width = 600;
     const height = 300;
 
@@ -24,7 +24,7 @@ const StackedAreaChart = () => {
 
     const svg = d3
       .select(svgRef.current)
-      .attr("viewBox", `0 0 ${width} ${height}`)
+      .attr("viewBox", `0 0 ${width} ${height-10}`)
       .append("g")
       .attr("transform", `translate(${margin.left},${margin.top})`);
 
@@ -105,15 +105,15 @@ const StackedAreaChart = () => {
 
     svg.append("g").attr("class", "y-axis").call(yAxis);
 
-    svg
-      .append("text")
-      .attr(
-        "transform",
-        `translate(${width / 2.2},${height - margin.bottom / 2 - 35})`
-      )
-      .style("text-anchor", "middle")
-      .style("font-size", "0.7em")
-      .text("Year");
+    // svg
+    //   .append("text")
+    //   .attr(
+    //     "transform",
+    //     `translate(${width / 2.2},${height - margin.bottom / 2 - 30})`
+    //   )
+    //   .style("text-anchor", "middle")
+    //   .style("font-size", "0.7em")
+    //   .text("Year");
 
     // LEGENG
     // Position legend
@@ -122,7 +122,7 @@ const StackedAreaChart = () => {
       .attr("class", "legend")
       .attr(
         "transform",
-        `translate(${margin.left - 50},${height - margin.bottom + 30})`
+        `translate(${margin.left - 50},${height - margin.bottom + 20})`
       ); // Increased padding between chart and legend
 
     const legendItems = legend
@@ -131,12 +131,12 @@ const StackedAreaChart = () => {
       .enter()
       .append("g")
       .attr("class", "legend-item")
-      .attr("transform", (d, i) => `translate(${i * 50}, 0)`); // Increased spacing between legend items
+      .attr("transform", (d, i) => `translate(${i * 45}, 0)`); // Increased spacing between legend items
 
     legendItems
       .append("rect")
-      .attr("width", 15)
-      .attr("height", 15)
+      .attr("width", 10)
+      .attr("height", 10)
       .attr("fill", (d) => colors(d));
 
     // Wrap text in legend to accomodate for two words
@@ -146,9 +146,9 @@ const StackedAreaChart = () => {
       .attr("y", 15)
       .html((d) => {
         const words = d.split(" ");
-        return `<tspan x="-2" dy="1.4em">${words
+        return `<tspan x="-4" dy="1.4em">${words
           .slice(0, words.length / 2)
-          .join(" ")}</tspan><tspan x="-5" dy="1.2em">${words
+          .join(" ")}</tspan><tspan x="-6" dy="1.2em">${words
           .slice(words.length / 2)
           .join(" ")}</tspan>`;
       })
