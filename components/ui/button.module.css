@@ -6,22 +6,53 @@
   cursor: pointer;
 
   font: inherit;
-  font-weight: 600;
-  font-size: clamp(18px, 2vw, 24px);
+
   text-decoration: none;
   text-align: center;
   vertical-align: middle;
-  color: #dafff7;
-  background-color: #1269A1;
-  border: 1px solid #1269A1;
+  /* color: #dafff7;
+  background-color: #1269A1; */
+  /* border: 1px solid #1269A1; */
 
   border-radius: 6px;
   box-shadow: 0 1px 6px rgba(0, 0, 0, 0.2);
   transition: 0.5s;
 }
 
-.btn:hover,
+/* .btn:hover,
 .btn:active {
   background-color: #053654;
   border-color: #053654;
+} */
+
+.primary {
+  color: #dafff7;
+  background-color: #1269A1;
+  border: 1px solid #1269A1;
+
+  font-weight: 600;
+  font-size: clamp(18px, 2vw, 24px);
+}
+
+.primary:hover,
+.primary:active {
+  background-color: #1269A1;
+  border: 1px solid #1269A1;
+}
+
+.secondary {
+  color: #1269A1;
+
+  background-color: #fff;
+  border: 1px solid #1269A1;
+
+
+  font-size: clamp(18px, 1.5vw, 24px);
+}
+
+.secondary:hover,
+.secondary:active {
+  color: #fff;
+  background-color: #1269A1;
+  border: 1px solid #fff;
 }

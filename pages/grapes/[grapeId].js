@@ -57,7 +57,7 @@ function GrapeDetailPage() {
         moreInfo={grape.altNames}
       />
       <div className="buttonFooter">
-        <Button link="/grapes/">Back to Grapes Index</Button>
+        <Button link="/grapes/" isSecondary="true">Back to Grapes Index</Button>
       </div>
     </>
   );

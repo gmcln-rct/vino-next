@@ -86,8 +86,8 @@ function GrapeTopCountriesBubblePage() {
         </p>
       </div>
       <div className="buttonFooter">
-        <Button link={grapeLink}>Back to {grape.itemName} Page</Button>
-        <Button link="/grapes/">Back to Grapes Index</Button>
+        <Button link={grapeLink} isSecondary="true">Back to {grape.itemName} Page</Button>
+        <Button link="/grapes/" isSecondary="true">Back to Grapes Index</Button>
       </div>
     </>
   );
