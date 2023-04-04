@@ -2,6 +2,8 @@ import Link from "next/link";
 import Head from "next/head";
 import Image from "next/image";
 
+import Masthead from "@/components/layout/masthead";
+
 // MAIN HOMEPAGE
 
 function HomePage() {
@@ -14,11 +16,15 @@ function HomePage() {
           content="Winography - Data visualization about wine production and consumption, both historic and present-day"
         />
       </Head>
+      <Masthead
+        backgroundImage="/images/masthead-homepage.jpg"
+        headerText="Winography"
+      />
       <section className="homePage">
-        <p className="headline">
+        {/* <p className="headline">
           Winography presents the world of wine through data, with grape varietals and countries from around the world. It is
           a resource intended for wine professionals and wine enthusiasts alike. Enjoy!
-        </p>
+        </p> */}
 
         <h2 className="actionHeader">Browse data visualizations:</h2>
         <section className="homePage__links">
