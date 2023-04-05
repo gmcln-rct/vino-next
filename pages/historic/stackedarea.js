@@ -6,7 +6,7 @@ import GRAPES_RED_TOP_TEN_DATA from "@/data/grape-top-ten-countries-data-2016";
 
 // import StreamGraph from "@/components/graphs/streamgraph-chart";
 // import TimelineChart from "@/components/graphs/streamgraph-alt";
-import StackedBarChart from "@/components/graphs/stacked-area-chart";
+import StackedAreaChart from "@/components/graphs/stacked-area-chart";
 
 import HISTORIC_PRODUCTION_STACKED_DATA from "@/data/historic-production-stacked-data";
 
@@ -35,9 +35,8 @@ function HistoricDataHistogram() {
         />
       </Head>
       <h1 className="indexheader">Historic Wine Production By Year</h1>
-      {/* <CountriesList items={topCountries} /> */}
-      {/* <TimelineChart /> */}
-      {/* <StackedBarChart  /> */}
+
+      <StackedAreaChart  />
       <div> 
         <p className="dataSource moveUp">
           Data Source:{" "}

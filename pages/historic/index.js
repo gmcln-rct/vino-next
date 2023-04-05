@@ -6,7 +6,7 @@ import HISTORIC_PRODUCTION_STACKED_DATA from "@/data/historic-production-stacked
 
 function HistoricDataIndex() {
   const histogramLink = "/historic/histogram";
-  const stackedAreaLink = "/historic/stackedbar";
+  const stackedAreaLink = "/historic/stackedarea";
 
   return (
     <>

@@ -4,6 +4,8 @@ import * as d3 from "d3";
 const DoubleHistogramChart = ({ data, country1, country2 }) => {
   const svgRef = useRef();
 
+  const dataTypeText = "Production in Kiloliters (KL)";
+
   useEffect(() => {
     const margin = { top: 20, right: 100, bottom: 80, left: 100 };
     const container = svgRef.current.parentElement;
@@ -51,9 +53,13 @@ const DoubleHistogramChart = ({ data, country1, country2 }) => {
 
     const yAxis = d3.axisLeft(y).ticks(8).tickSize(-width).tickPadding(10);
 
-    chart.append("g").attr("transform", `translate(0, ${height})`).call(xAxis);
+    chart
+      .append("g")
+      .attr("transform", `translate(0, ${height})`)
+      .call(xAxis)
+      .style("color", "white");
 
-    chart.append("g").call(yAxis);
+    chart.append("g").call(yAxis).style("color", "white");
 
     chart
       .selectAll(".tick line")
@@ -86,14 +92,14 @@ const DoubleHistogramChart = ({ data, country1, country2 }) => {
       .attr("height", (d) => height - y(d[country2]))
       .attr("fill", d3.interpolate("#fde68a", "#e6c612")(0.4));
 
-    chart
-      .append("text")
-      .attr(
-        "transform",
-        `rotate(-90) translate(${-height / 2}, ${-margin.left})`
-      )
-      .attr("text-anchor", "middle")
-      .text("Number of people");
+    // chart
+    //   .append("text")
+    //   .attr(
+    //     "transform",
+    //     `rotate(-90) translate(${-height / 2}, ${-margin.left})`
+    //   )
+    //   .attr("text-anchor", "middle")
+    //   .text("Number of people");
 
     // Add legend for country 1
     const legend = chart.append("g").attr("transform", "translate(10, 10)");
@@ -159,7 +165,20 @@ const DoubleHistogramChart = ({ data, country1, country2 }) => {
     };
   }, [data, country1, country2]);
 
-  return <svg ref={svgRef} className="chart" width="100%" height="100%"></svg>;
+  return (
+    <div
+      style={{
+        position: "relative",
+        height: "500px",
+        width: "90%",
+        borderRadius: "10px",
+        backgroundColor: "grey",
+      }}
+    >
+      <svg ref={svgRef} className="chart" width="100%" height="100%"></svg>
+      <p className="chartfooter moveUp">{dataTypeText}</p>
+    </div>
+  );
 };
 
 export default DoubleHistogramChart;

@@ -62,7 +62,7 @@ function HistoricHistogram() {
       <div className={classes.selectrow}>
         <select
           value={country1}
-          className="selectCss select100"
+          className="selectCss select120"
           onChange={(e) => setCountry1(e.target.value)}
         >
           {COUNTRIES.map((country) => (
@@ -100,7 +100,7 @@ function HistoricHistogram() {
         country2={country2}
       />
       <div>
-        <p className="dataSource moveUp">
+        <p className="dataSource">
           Data Source:{" "}
           <Link
             href="https://economics.adelaide.edu.au/wine-economics/databases/"

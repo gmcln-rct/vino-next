@@ -158,7 +158,6 @@ const StackedAreaChart = () => {
           .slice(words.length / 2)
           .join(" ")}</tspan>`;
       })
-      // .attr("margin-top", 10);
 
   }, [data, displayNormalized]);
 
