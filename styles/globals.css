@@ -18,10 +18,10 @@ html {
   align-items: center;
   margin: 1rem 2rem 2rem 2rem;
   padding: 1rem 2rem;
-  
+
   backdrop-filter: blur(5px);
   -webkit-backdrop-filter: blur(5px);
-  background-color: #1269A1;
+  background-color: #1269a1;
   border: 2px solid rgba(255, 255, 255, 0.61);
   border-radius: 16px;
   box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3), 0 1px 12px 2px rgba(0, 0, 0, 0.2);
@@ -29,7 +29,7 @@ html {
 
 .action__container:hover {
   background-color: #053654;
-  border-color: #1269A1;
+  border-color: #1269a1;
   transition: 0.3s;
 }
 
@@ -52,7 +52,7 @@ html {
   /* background-color: #7a7a7a; */
   background-color: #96074e;
   box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.2);
-  font-family: 'Lato', sans-serif;
+  font-family: "Lato", sans-serif;
 }
 
 .masthead .header {
@@ -89,7 +89,7 @@ html {
   font-weight: 600;
   font-display: swap;
   letter-spacing: 0.5px;
-  
+
   color: #f8ae52;
 }
 
@@ -113,7 +113,6 @@ main .header {
   /* color: #A1360A; */
   /* text-align: center;
   margin: 1rem 0 0 0; */
-
 }
 
 main a {
@@ -135,8 +134,8 @@ main a {
 /* .outerglow {
   /* border-color: #e7e5d5; */
 
-  /* box-shadow: 0 1px 4px rgba(255, 254, 254, 0.3), 0 1px 12px 2px rgba(185, 185, 185, 0.2);
-} */ 
+/* box-shadow: 0 1px 4px rgba(255, 254, 254, 0.3), 0 1px 12px 2px rgba(185, 185, 185, 0.2);
+} */
 .transparent {
   filter: opacity(60%);
 }
@@ -150,12 +149,11 @@ main a {
 
   font-size: clamp(16px, 4vw, 28px);
   font-weight: 600;
-  font-family: 'Lato', sans-serif;
+  font-family: "Lato", sans-serif;
   font-display: swap;
   letter-spacing: 1px;
 
   color: #fffd8d;
-
 }
 
 .subheader {
@@ -166,7 +164,6 @@ main a {
 
   margin: 1rem 0 0 0;
   color: #fff;
-
 
   font-size: clamp(16px, 4vw, 28px);
   font-weight: 400;
@@ -181,15 +178,14 @@ main a {
 
   color: #fff;
 
-  font-family: 'Open Sans', sans-serif;
+  font-family: "Open Sans", sans-serif;
   font-size: clamp(12px, 2vw, 18px);
   font-weight: 600;
   font-display: swap;
-
 }
 
 .moveUp {
-  transform:translateY(-3rem);
+  transform: translateY(-3rem);
 
   color: #fff;
 }
@@ -237,9 +233,9 @@ main a {
   justify-content: center;
   align-items: center; */
   margin: 1rem 0 0 0;
-  position: "relative"; 
-  width: "90%"; 
-  height: "90%"; 
+  position: "relative";
+  width: "90%";
+  height: "90%";
   background-color: "red";
 }
 
@@ -265,7 +261,7 @@ main a {
 }
 
 .desaturate {
-  filter:brightness(3);
+  filter: brightness(3);
   filter: saturate(0);
 }
 
@@ -274,25 +270,23 @@ main a {
 }
 
 .desaturate:hover {
-  filter:brightness(1);
+  filter: brightness(1);
   filter: saturate(1);
   transition: 0.3s;
 }
 
 /* Stacked area charet */
 
-
 /* .legend {
  background-color: red;
 } */
-
 
 .tooltip {
   position: absolute;
   display: none;
   padding: 10px;
   background: white;
-  box-shadow: 0px 0px 5px rgba(0,0,0,0.3);
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.3);
   z-index: 9999;
 }
 
