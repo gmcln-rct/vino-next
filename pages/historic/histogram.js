@@ -2,7 +2,7 @@ import Head from "next/head";
 import Link from "next/link";
 import { useState } from "react";
 
-import classes from "./histogram.module.css"
+import classes from "./histogram.module.css";
 
 import HistogramChart from "@/components/graphs/histogram-chart";
 
@@ -21,18 +21,9 @@ const COUNTRIES = [
   "Portugal",
 ];
 
-const YEARS = [
-    2000,
-    2001,
-    2002,
-    2003,
-    2004,
-    2005,
-    2006
-]
+const YEARS = [2000, 2001, 2002, 2003, 2004, 2005, 2006];
 
 function HistoricHistogram() {
-
   const [country1, setCountry1] = useState(COUNTRIES[0]);
   const [country2, setCountry2] = useState(COUNTRIES[1]);
 
@@ -46,14 +37,14 @@ function HistoricHistogram() {
     }
   };
 
-//   const filteredData = historicData.filter((data) => data.year === parseInt(year))[0];
-//   const newData = { 
-//     year: year,
-//     country1: filteredData[country1],
-//     country2: filteredData[country2],
-//   };
+  //   const filteredData = historicData.filter((data) => data.year === parseInt(year))[0];
+  //   const newData = {
+  //     year: year,
+  //     country1: filteredData[country1],
+  //     country2: filteredData[country2],
+  //   };
 
-//   console.log('histogram page data', newData);
+  //   console.log('histogram page data', newData);
 
   return (
     <>
@@ -71,7 +62,7 @@ function HistoricHistogram() {
       <div className={classes.selectrow}>
         <select
           value={country1}
-          className="selectCss"
+          className="selectCss select100"
           onChange={(e) => setCountry1(e.target.value)}
         >
           {COUNTRIES.map((country) => (
@@ -96,20 +87,19 @@ function HistoricHistogram() {
           className="selectCss"
           onChange={(e) => setYear(e.target.value)}
         > */}
-         {/* {YEARS.map((year) => (
+        {/* {YEARS.map((year) => (
             <option key={year} value={year}>
               {year}
             </option>
           ))} */}
         {/* </select> */}
       </div>
-      {/* <HistogramChart data={newData} /> */}
       <HistogramChart
         data={historicData}
         country1={country1}
         country2={country2}
-        />
-         <div>
+      />
+      <div>
         <p className="dataSource moveUp">
           Data Source:{" "}
           <Link

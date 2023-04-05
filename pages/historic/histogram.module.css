@@ -1,7 +1,12 @@
 .selectrow {
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: space-evenly;
     align-items: center;
+    width: 40%;
     margin: 0 0 1em 0;
+}
+
+.width50 {
+    width: 150px;
 }

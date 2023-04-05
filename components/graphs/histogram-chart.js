@@ -71,7 +71,7 @@ const DoubleHistogramChart = ({ data, country1, country2 }) => {
       .attr("y", (d) => y(d[country1]))
       .attr("width", x.bandwidth() / 2)
       .attr("height", (d) => height - y(d[country1]))
-      .attr("fill", d3.interpolate("#fca5a5", "#f87171")(0.2));
+      .attr("fill", d3.interpolate("#fca5a5", "#B82107")(0.2));
 
     // Bars for country 2
     const bars2 = chart
@@ -84,7 +84,7 @@ const DoubleHistogramChart = ({ data, country1, country2 }) => {
       .attr("y", (d) => y(d[country2]))
       .attr("width", x.bandwidth() / 2)
       .attr("height", (d) => height - y(d[country2]))
-      .attr("fill", d3.interpolate("#fde68a", "#f6e05e")(0.2));
+      .attr("fill", d3.interpolate("#fde68a", "#e6c612")(0.4));
 
     chart
       .append("text")
@@ -104,7 +104,7 @@ const DoubleHistogramChart = ({ data, country1, country2 }) => {
       .attr("y", 10)
       .attr("width", 20)
       .attr("height", 20)
-      .attr("fill", d3.interpolate("#fca5a5", "#f87171")(0.2));
+      .attr("fill", d3.interpolate("#fca5a5", "#B82107")(0.2));
 
     legend.append("text").attr("x", 40).attr("y", 25).text(country1);
 
@@ -114,7 +114,7 @@ const DoubleHistogramChart = ({ data, country1, country2 }) => {
       .attr("y", 40)
       .attr("width", 20)
       .attr("height", 20)
-      .attr("fill", d3.interpolate("#fde68a", "#f6e05e")(0.2));
+      .attr("fill", d3.interpolate("#fde68a", "#e6c612")(0.2));
 
     legend.append("text").attr("x", 40).attr("y", 55).text(country2);
 
