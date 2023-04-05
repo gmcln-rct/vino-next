@@ -1,76 +1,162 @@
-import React, { useEffect, useRef } from 'react';
-import * as d3 from 'd3';
+import React, { useRef, useEffect } from "react";
+import * as d3 from "d3";
 
-function WineProductionChart({ data, country1, country2 }) {
-  const chartRef = useRef(null);
+const DoubleHistogramChart = ({ data, country1, country2 }) => {
+  const svgRef = useRef();
 
   useEffect(() => {
-    const svg = d3.select(chartRef.current);
+    const margin = { top: 20, right: 100, bottom: 80, left: 100 };
+    const container = svgRef.current.parentElement;
+    const width = container.offsetWidth - margin.left - margin.right;
+    const calcHeight = container.offsetHeight - margin.top - margin.bottom;
+    const height = calcHeight > 400 ? 400 : calcHeight;
 
-    const margin = { top: 20, right: 20, bottom: 30, left: 50 };
-    const width = 960 - margin.left - margin.right;
-    const height = 500 - margin.top - margin.bottom;
+    const svg = d3.select(svgRef.current)
+      .attr("width", container.offsetWidth)
+      .attr("height", container.offsetHeight);
 
-    const x = d3.scaleBand().range([0, width]).padding(0.1);
-    const y = d3.scaleLinear().range([height, 0]);
+    // Clear the SVG
+    svg.selectAll("*").remove();
 
-    const xAxis = d3.axisBottom(x);
-    const yAxis = d3.axisLeft(y).ticks(10);
+    // Create new elements
+    const chart = svg.append("g")
+      .attr("transform", `translate(${margin.left}, ${margin.top})`);
 
-    const keys = Object.keys(data[0]).filter(d => d !== 'year');
+          // Add white background to chart area
+    chart.append("rect")
+    .attr("x", 0)
+    .attr("y", 0)
+    .attr("width", width)
+    .attr("height", height)
+    .attr("fill", "white");
 
-    const country1Data = data.map(d => ({ year: d.year, value: d[country1] }));
-    const country2Data = data.map(d => ({ year: d.year, value: d[country2] }));
+    const x = d3.scaleBand()
+      .domain(data.map(d => d.year))
+      .range([0, width])
+      .padding(0.1);
 
-    x.domain(data.map(d => d.year));
+    const y = d3.scaleLinear()
+      .domain([0, d3.max(data, d => Math.max(d[country1], d[country2]))])
+      .range([height, 0]);
 
-    y.domain([0, d3.max([...country1Data, ...country2Data], d => d.value)]);
+    const xAxis = d3.axisBottom(x)
+      .tickFormat(d => Number(d.toString().slice(0, 3) + "0"))
+      .tickValues(x.domain().filter((d, i) => d.toString().slice(3) === "0"));
 
-    svg
-      .append('g')
-      .attr('class', 'x axis')
-      .attr('transform', `translate(0,${height})`)
+    const yAxis = d3.axisLeft(y)
+      .ticks(8)
+      .tickSize(-width)
+      .tickPadding(10);
+
+    chart.append("g")
+      .attr("transform", `translate(0, ${height})`)
       .call(xAxis);
 
-    svg
-      .append('g')
-      .attr('class', 'y axis')
-      .call(yAxis)
-      .append('text')
-      .attr('transform', 'rotate(-90)')
-      .attr('y', 6)
-      .attr('dy', '.71em')
-      .style('text-anchor', 'end')
-      .text('Wine Production');
+    chart.append("g")
+      .call(yAxis);
 
-    svg
-      .selectAll('.bar')
-      .data(country1Data)
-      .join('rect')
-      .attr('class', 'bar')
-      .attr('x', d => x(d.year))
-      .attr('width', x.bandwidth() / 2)
-      .attr('y', d => y(d.value))
-      .attr('height', d => height - y(d.value))
-      .style('fill', 'steelblue');
+    chart.selectAll(".tick line")
+      .attr("stroke", "lightgray")
+      .attr("stroke-width", 0.5);
 
-    svg
-      .selectAll('.bar2')
-      .data(country2Data)
-      .join('rect')
-      .attr('class', 'bar2')
-      .attr('x', d => x(d.year) + x.bandwidth() / 2)
-      .attr('width', x.bandwidth() / 2)
-      .attr('y', d => y(d.value))
-      .attr('height', d => height - y(d.value))
-      .style('fill', 'red');
+      // Bars for country 1
+    const bars1 = chart.selectAll(".bar1")
+      .data(data)
+      .enter()
+      .append("rect")
+      .attr("class", "bar1")
+      .attr("x", d => x(d.year))
+      .attr("y", d => y(d[country1]))
+      .attr("width", x.bandwidth() / 2)
+      .attr("height", d => height - y(d[country1]))
+      .attr("fill", d3.interpolate("#fca5a5", "#f87171")(0.2));
+
+      // Bars for country 2
+    const bars2 = chart.selectAll(".bar2")
+      .data(data)
+      .enter()
+      .append("rect")
+      .attr("class", "bar2")
+      .attr("x", d => x(d.year) + x.bandwidth() / 2)
+      .attr("y", d => y(d[country2]))
+      .attr("width", x.bandwidth() / 2)
+      .attr("height", d => height - y(d[country2]))
+      .attr("fill", d3.interpolate("#fde68a", "#f6e05e")(0.2));
+
+      chart.append("text")
+      .attr("transform", `rotate(-90) translate(${-height/2}, ${-margin.left})`)
+      .attr("text-anchor", "middle")
+      .text("Number of people");
+
+    // Add legend for country 1
+    const legend = chart.append("g")
+      .attr("transform", `translate(${width - 120}, ${height - 80})`);
+
+    legend.append("rect")
+      .attr("x", 10)
+      .attr("y", 10)
+      .attr("width", 20)
+      .attr("height", 20)
+      .attr("fill", d3.interpolate("#fca5a5", "#f87171")(0.2));
+
+    legend.append("text")
+      .attr("x", 40)
+      .attr("y", 25)
+      .text(country1);
+
+    legend.append("rect")
+      .attr("x", 10)
+      .attr("y", 40)
+      .attr("width", 20)
+      .attr("height", 20)
+      .attr("fill", d3.interpolate("#fde68a", "#f6e05e")(0.2));
+
+    legend.append("text")
+      .attr("x", 40)
+      .attr("y", 55)
+      .text(country2);
+
+    function resize() {
+      const container = svgRef.current.parentElement;
+      const width = container.offsetWidth - margin.left - margin.right;
+      const height = container.offsetHeight - margin.top - margin.bottom;
+
+      svg.attr("width", container.offsetWidth)
+        .attr("height", container.offsetHeight);
+
+      x.range([0, width]);
+      y.range([height, 0]);
+
+      chart.select(".x-axis")
+        .attr("transform", `translate(0, ${height})`)
+        .call(xAxis);
+
+      chart.select(".y-axis")
+        .call(yAxis);
+
+      chart.selectAll(".bar1")
+        .attr("x", d => x(d.year))
+        .attr("y", d => y(d[country1]))
+        .attr("width", x.bandwidth() / 2)
+        .attr("height", d => height - y(d[country1]));
+
+      chart.selectAll(".bar2")
+        .attr("x", d => x(d.year) + x.bandwidth() / 2)
+        .attr("y", d => y(d[country2]))
+        .attr("width", x.bandwidth() / 2)
+        .attr("height", d => height - y(d[country2]));
+    }
+
+    window.addEventListener("resize", resize);
+
+    return () => {
+      window.removeEventListener("resize", resize);
+    };
   }, [data, country1, country2]);
 
-  return (
-    <div className="chart-container">
-      <svg ref={chartRef}></svg>
-    </div>
-  );
-}
+  return <svg ref={svgRef} className="chart" width="100%" height="100%"></svg>;
+};
 
-export default WineProductionChart;
+export default DoubleHistogramChart;
+
+   

@@ -35,7 +35,6 @@ function HistoricHistogram() {
 
   const [country1, setCountry1] = useState(COUNTRIES[0]);
   const [country2, setCountry2] = useState(COUNTRIES[1]);
-  const [year, setYear] = useState("2016");
 
   const historicData = HISTORIC_PRODUCTION_STACKED_DATA;
 
@@ -47,14 +46,14 @@ function HistoricHistogram() {
     }
   };
 
-  const filteredData = historicData.filter((data) => data.year === parseInt(year))[0];
-  const newData = { 
-    year: year,
-    country1: filteredData[country1],
-    country2: filteredData[country2],
-  };
+//   const filteredData = historicData.filter((data) => data.year === parseInt(year))[0];
+//   const newData = { 
+//     year: year,
+//     country1: filteredData[country1],
+//     country2: filteredData[country2],
+//   };
 
-  console.log('histogram page data', newData);
+//   console.log('histogram page data', newData);
 
   return (
     <>
@@ -92,19 +91,24 @@ function HistoricHistogram() {
             </option>
           ))}
         </select>
-        <select
+        {/* <select
           value={year}
           className="selectCss"
           onChange={(e) => setYear(e.target.value)}
-        >
-         {YEARS.map((year) => (
+        > */}
+         {/* {YEARS.map((year) => (
             <option key={year} value={year}>
               {year}
             </option>
-          ))}
-        </select>
+          ))} */}
+        {/* </select> */}
       </div>
       {/* <HistogramChart data={newData} /> */}
+      <HistogramChart
+        data={historicData}
+        country1={country1}
+        country2={country2}
+        />
     </>
   );
 }
