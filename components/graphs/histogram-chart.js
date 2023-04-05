@@ -90,7 +90,7 @@ const DoubleHistogramChart = ({ data, country1, country2 }) => {
 
     // Add legend for country 1
     const legend = chart.append("g")
-      .attr("transform", `translate(${width - 120}, ${height - 80})`);
+      .attr("transform", "translate(10, 10)");
 
     legend.append("rect")
       .attr("x", 10)

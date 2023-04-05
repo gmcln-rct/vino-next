@@ -109,6 +109,17 @@ function HistoricHistogram() {
         country1={country1}
         country2={country2}
         />
+         <div>
+        <p className="dataSource moveUp">
+          Data Source:{" "}
+          <Link
+            href="https://economics.adelaide.edu.au/wine-economics/databases/"
+            className="dataSource"
+          >
+            Wine Economics Research Centre, University of Adelaide
+          </Link>
+        </p>
+      </div>
     </>
   );
 }
