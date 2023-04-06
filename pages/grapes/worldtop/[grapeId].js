@@ -7,7 +7,7 @@ import { getDataItemById } from "@/data/utils";
 import { GRAPES_DATA } from "@/data/grape-data";
 import {
   GRAPES_RED_TOP_TEN_DATA,
-  GRAPES_WHITE_TOP_TEN_DATA
+  GRAPES_WHITE_TOP_TEN_DATA,
 } from "@/data/grape-top-ten-countries-data-2016";
 
 import BarChart from "@/components/graphs/bar-chart";
@@ -16,14 +16,14 @@ import Button from "@/components/ui/button";
 function GrapeTopDetailPage() {
   const router = useRouter();
   const id = router.query.grapeId;
-  
+
   const explanationText = "Wine Production By Country";
 
   const grape = getDataItemById(id, GRAPES_DATA);
 
   let wineCategory = "Red";
   if (grape) {
-       wineCategory = grape.category === "R" ? "Red" : "White";
+    wineCategory = grape.category === "R" ? "Red" : "White";
   }
 
   if (!grape || !grape.id) {
@@ -34,11 +34,10 @@ function GrapeTopDetailPage() {
     );
   }
 
-  
   let redGrapeWineData;
   let whiteGrapeWineData;
   const dataYear = grape.dataYear;
-  if (wineCategory==="Red") {
+  if (wineCategory === "Red") {
     redGrapeWineData = getDataItemById(id, GRAPES_RED_TOP_TEN_DATA);
     whiteGrapeWineData = { countries: [] };
   } else {
@@ -53,8 +52,8 @@ function GrapeTopDetailPage() {
     <>
       <Head>
         <title>
-            Top {grape.itemName} Wine Grape Producing Countries - Winography - Wine Data
-          Visualization
+          Top {grape.itemName} Wine Grape Producing Countries - Winography -
+          Wine Data Visualization
         </title>
         <meta
           name="description"
@@ -83,8 +82,12 @@ function GrapeTopDetailPage() {
         </p>
       </div>
       <div className="buttonFooter">
-        <Button link={grapeLink} isSecondary="true">Back to {grape.itemName} Page</Button>
-        <Button link="/grapes/" isSecondary="true">Back to Grapes Index</Button>
+        <Button link={grapeLink} isSecondary="true">
+          Back to {grape.itemName} Page
+        </Button>
+        <Button link="/grapes/" isSecondary="true">
+          Back to Grapes Index
+        </Button>
       </div>
     </>
   );

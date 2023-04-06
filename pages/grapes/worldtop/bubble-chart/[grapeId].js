@@ -7,7 +7,7 @@ import { getDataItemById } from "@/data/utils";
 import { GRAPES_DATA } from "@/data/grape-data";
 import {
   GRAPES_RED_TOP_TEN_DATA,
-  GRAPES_WHITE_TOP_TEN_DATA
+  GRAPES_WHITE_TOP_TEN_DATA,
 } from "@/data/grape-top-ten-countries-data-2016";
 
 import BubbleChart from "@/components/graphs/bubble-chart";
@@ -16,14 +16,14 @@ import Button from "@/components/ui/button";
 function GrapeTopCountriesBubblePage() {
   const router = useRouter();
   const id = router.query.grapeId;
-  
+
   const explanationText = "Wine Production By Country";
 
   const grape = getDataItemById(id, GRAPES_DATA);
 
   let wineCategory = "Red";
   if (grape) {
-       wineCategory = grape.category === "R" ? "Red" : "White";
+    wineCategory = grape.category === "R" ? "Red" : "White";
   }
 
   if (!grape || !grape.id) {
@@ -37,8 +37,8 @@ function GrapeTopCountriesBubblePage() {
   console.log("grape", grape);
   let redGrapeWineData;
   let whiteGrapeWineData;
-  const dataYear = grape.dataYear;
-  if (wineCategory==="Red") {
+  // const dataYear = grape.dataYear;
+  if (wineCategory === "Red") {
     redGrapeWineData = getDataItemById(id, GRAPES_RED_TOP_TEN_DATA);
     whiteGrapeWineData = { countries: [] };
   } else {
@@ -46,25 +46,23 @@ function GrapeTopCountriesBubblePage() {
     redGrapeWineData = { countries: [] };
   }
 
-  // console.log("redGrapeWineData", redGrapeWineData.countries);
-  // console.log("whiteGrapeWineData", whiteGrapeWineData.countries);
-  const dataType = grape.dataType;
+  // const dataType = grape.dataType;
   const grapeLink = `/grapes/${grape.id}`;
 
   return (
     <>
       <Head>
         <title>
-            Top {grape.itemName} Wine Grape Producing Countries - Bubble Chart - Winography - Wine Data
-          Visualization
+          Top {grape.itemName} Wine Grape Producing Countries - Bubble Chart -
+          Winography - Wine Data Visualization
         </title>
         <meta
           name="description"
           content="Wine data visualization for winegrape area production for top national grape varietals"
         />
       </Head>
-        <h2 className="indexheader">Top {grape.itemName} Producing Countries</h2>
-      <BubbleChart 
+      <h2 className="indexheader">Top {grape.itemName} Producing Countries</h2>
+      <BubbleChart
         itemName={grape.itemName}
         units={grape.units}
         dataYear={grape.dataYear}
@@ -73,7 +71,7 @@ function GrapeTopCountriesBubblePage() {
         redGrapeData={redGrapeWineData.countries}
         whiteGrapeData={whiteGrapeWineData.countries}
         explanationText={explanationText}
-      /> 
+      />
       <div>
         <p className="dataSource">
           Data Source:{" "}
@@ -86,8 +84,12 @@ function GrapeTopCountriesBubblePage() {
         </p>
       </div>
       <div className="buttonFooter">
-        <Button link={grapeLink} isSecondary="true">Back to {grape.itemName} Page</Button>
-        <Button link="/grapes/" isSecondary="true">Back to Grapes Index</Button>
+        <Button link={grapeLink} isSecondary="true">
+          Back to {grape.itemName} Page
+        </Button>
+        <Button link="/grapes/" isSecondary="true">
+          Back to Grapes Index
+        </Button>
       </div>
     </>
   );

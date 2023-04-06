@@ -2,11 +2,10 @@ import Head from "next/head";
 
 import { GRAPES_DATA } from "@/data/grape-data";
 
-import { getAllData, getTopData } from "@/data/utils";
+import { getTopData } from "@/data/utils";
 
 import DataList from "@/components/layout/data-list";
 
-import CountryList from "@/components/countries/country-list";
 
 function GrapeIndex() {
   // const allGrapes = getAllData(GRAPES_DATA);

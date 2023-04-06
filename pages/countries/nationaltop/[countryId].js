@@ -66,8 +66,8 @@ function CountryTopTenDetailPage() {
         </p>
       </div>
       <div className="buttonFooter">
-        <Button link={countryLink}>Back to {country.itemName} Page</Button>
-        <Button link="/countries/">Back to Country Index</Button>
+        <Button link={countryLink} isSecondary="true">Back to {country.itemName} Page</Button>
+        <Button link="/countries/" isSecondary="true">Back to Country Index</Button>
       </div>
     </>
   );

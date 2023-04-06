@@ -14,8 +14,6 @@ html {
   background-color: #e7e5d5;
 }
 
-
-
 /* General */
 
 .masthead {
@@ -60,8 +58,6 @@ html {
   font-weight: 400;
   font-display: swap;
 }
-
-
 
 /* main */
 main {
@@ -175,6 +171,8 @@ main a {
   align-items: center;
   gap: 1rem;
   padding: 1rem;
+
+  font-weight: 700;
 }
 
 .stackedarea {
@@ -184,7 +182,6 @@ main a {
   height: "90%";
   background-color: "red";
 }
-
 
 /* Flag images */
 .flagImage {

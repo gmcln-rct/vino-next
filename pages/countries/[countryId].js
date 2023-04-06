@@ -65,7 +65,9 @@ function CountryDetailPage() {
       />
 
       <div className="buttonFooter">
-        <Button link="/countries/" isSecondary="true">Back to Countries Index</Button>
+        <Button link="/countries/" isSecondary="true">
+          Back to Countries Index
+        </Button>
       </div>
     </>
   );

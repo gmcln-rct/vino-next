@@ -44,10 +44,7 @@ function GrapeDetailPage() {
         <h2 className="header"> {grape.itemName} Grape Production Data</h2>
         <h3 className="subheader">Top {grape.itemName} Producing Countries:</h3>
         <div className="actions">
-
-
-
-        <Link href={worldTopLink} className="action__container center">
+          <Link href={worldTopLink} className="action__container center">
             <Image
               src="/images/icons/icon-barchart.png"
               className="transparent margin-bottom"
@@ -57,7 +54,10 @@ function GrapeDetailPage() {
             />
             <p className="link">Bar Chart</p>
           </Link>
-          <Link href={worldTopBubbleChartLink} className="action__container center">
+          <Link
+            href={worldTopBubbleChartLink}
+            className="action__container center"
+          >
             <Image
               src="/images/icons/icon-bubblechart.png"
               className="transparent margin-bottom"
@@ -67,7 +67,7 @@ function GrapeDetailPage() {
             />
             <p className="link">Bubble Chart</p>
           </Link>
-          </div>
+        </div>
       </section>
       <DetailSection
         wineCategory={wineCategory}
@@ -77,7 +77,9 @@ function GrapeDetailPage() {
       />
 
       <div className="buttonFooter">
-        <Button link="/grapes/" isSecondary="true">Back to Grapes Index</Button>
+        <Button link="/grapes/" isSecondary="true">
+          Back to Grapes Index
+        </Button>
       </div>
     </>
   );

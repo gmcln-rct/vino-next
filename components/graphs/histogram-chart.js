@@ -1,6 +1,8 @@
 import React, { useRef, useEffect } from "react";
 import * as d3 from "d3";
 
+// DOUBLE HISTOGRAM CHART
+
 const DoubleHistogramChart = ({ data, country1, country2 }) => {
   const svgRef = useRef();
 
@@ -60,8 +62,11 @@ const DoubleHistogramChart = ({ data, country1, country2 }) => {
       .style("color", "white")
       .attr("font-size", "clamp(14px, 1.2vw, 18px)");
 
-    chart.append("g").call(yAxis).style("color", "white").attr("font-size", "clamp(14px, 1.2vw, 18px)");
-
+    chart
+      .append("g")
+      .call(yAxis)
+      .style("color", "white")
+      .attr("font-size", "clamp(14px, 1.2vw, 18px)");
 
     chart
       .selectAll(".tick line")
@@ -93,15 +98,6 @@ const DoubleHistogramChart = ({ data, country1, country2 }) => {
       .attr("width", x.bandwidth() / 2)
       .attr("height", (d) => height - y(d[country2]))
       .attr("fill", d3.interpolate("#fde68a", "#e6c612")(0.4));
-
-    // chart
-    //   .append("text")
-    //   .attr(
-    //     "transform",
-    //     `rotate(-90) translate(${-height / 2}, ${-margin.left})`
-    //   )
-    //   .attr("text-anchor", "middle")
-    //   .text("Number of people");
 
     // Add legend for country 1
     const legend = chart.append("g").attr("transform", "translate(10, 10)");
@@ -141,10 +137,9 @@ const DoubleHistogramChart = ({ data, country1, country2 }) => {
       chart
         .select(".x-axis")
         .attr("transform", `translate(0, ${height})`)
-        .call(xAxis)
+        .call(xAxis);
 
       chart.select(".y-axis").call(yAxis);
-
 
       chart
         .selectAll(".bar1")
