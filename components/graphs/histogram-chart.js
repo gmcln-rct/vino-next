@@ -4,7 +4,7 @@ import * as d3 from "d3";
 const DoubleHistogramChart = ({ data, country1, country2 }) => {
   const svgRef = useRef();
 
-  const dataTypeText = "Production in Kiloliters (KL)";
+  const dataTypeText = "Annual production in Kiloliters (KL)";
 
   useEffect(() => {
     const margin = { top: 20, right: 100, bottom: 80, left: 100 };

@@ -29,6 +29,9 @@ const BubbleChart = (props) => {
 
   const svgRef = useRef();
 
+  const dataTypeText = "Units in hectares";
+
+
   // Adjust text color based on background color
   function getContrastYIQ(hexcolor) {
     console.log("hexcolor ", hexcolor);
@@ -115,6 +118,7 @@ const BubbleChart = (props) => {
   }, [data]);
 
   return (
+    <>
     <svg
       ref={svgRef}
       width={600}
@@ -122,6 +126,8 @@ const BubbleChart = (props) => {
       className={classes.chartMain}
       style={{  display: "block" }}
     />
+          <p className="chartfooter moveUp">{dataTypeText}</p>
+          </>
   );
 };
 

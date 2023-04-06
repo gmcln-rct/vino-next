@@ -1,10 +1,11 @@
 @import url("https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Lato:ital,wght@0,100;0,400;0,900;1,100;1,400;1,700&family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700&display=swap");
 
+@import "actions.css";
 @import "reset.css";
 @import "charts.css";
 @import "select.css";
 @import "homepage.css";
-@import "styling-modifiers.css";
+@import "stylingmodifiers.css";
 
 /**************************** Global CSS variables ***************************************/
 
@@ -13,31 +14,7 @@ html {
   background-color: #e7e5d5;
 }
 
-.action__container {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  margin: 1rem 2rem 2rem 2rem;
-  padding: 1rem 2rem;
 
-  backdrop-filter: blur(5px);
-  -webkit-backdrop-filter: blur(5px);
-  background-color: #1269a1;
-  border: 2px solid rgba(255, 255, 255, 0.61);
-  border-radius: 16px;
-  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3), 0 1px 12px 2px rgba(0, 0, 0, 0.2);
-}
-
-.action__container:hover {
-  background-color: #053654;
-  border-color: #1269a1;
-  transition: 0.3s;
-}
-
-.action__container img {
-  filter: brightness(1.2);
-}
 
 /* General */
 
@@ -84,16 +61,7 @@ html {
   font-display: swap;
 }
 
-.actionHeader {
-  margin: 1rem 0 0 0;
 
-  font-size: clamp(18px, 4vw, 32px);
-  font-weight: 600;
-  font-display: swap;
-  letter-spacing: 0.5px;
-
-  color: #f8ae52;
-}
 
 /* main */
 main {
@@ -210,10 +178,6 @@ main a {
 }
 
 .stackedarea {
-  /* display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center; */
   margin: 1rem 0 0 0;
   position: "relative";
   width: "90%";
@@ -221,24 +185,20 @@ main a {
   background-color: "red";
 }
 
-.actions {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-evenly;
-  padding: 1rem;
-}
 
-.actions a {
-  display: block;
-  margin: 0 1rem;
-}
-
-.actions a span {
-  vertical-align: middle;
-}
-
+/* Flag images */
 .flagImage {
   margin: 2vmin 0 0 0;
   filter: saturate(0.8);
 }
 
+.desaturate {
+  filter: brightness(3);
+  filter: saturate(0);
+}
+
+.desaturate:hover {
+  filter: brightness(1);
+  filter: saturate(1);
+  transition: 0.3s;
+}

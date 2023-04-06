@@ -23,7 +23,8 @@ function HistoricDataIndex() {
       </Head>
       <section className="masthead">
         <h2 className="header"> Historic Production Data</h2>
-        <Link href="/historic/histogram" className="action__container center">
+        <div className="actions">
+          <Link href="/historic/histogram" className="action__container center">
             <Image
               src="/images/icons/icon-histogram.png"
               className="transparent margin-bottom"
@@ -33,7 +34,10 @@ function HistoricDataIndex() {
             />
             <p className="link">Histogram Chart</p>
           </Link>
-          <Link href="/historic/stackedarea" className="action__container center">
+          <Link
+            href="/historic/stackedarea"
+            className="action__container center"
+          >
             <Image
               src="/images/icons/icon-stackedarea.png"
               className="transparent margin-bottom"
@@ -43,10 +47,11 @@ function HistoricDataIndex() {
             />
             <p className="link">Stacked Area Chart</p>
           </Link>
-        {/* <div className="actions">
+          {/* <div className="actions">
           <Button link={histogramLink}>Histogram Chart</Button>
           <Button link={stackedAreaLink}>Stacked Area Chart</Button>
         </div> */}
+        </div>
       </section>
     </>
   );

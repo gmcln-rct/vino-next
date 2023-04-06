@@ -1,12 +1,10 @@
 import { useRouter } from "next/router";
 import Head from "next/head";
+import Link from "next/link";
+import Image from "next/image";
 
 import { getDataItemById } from "@/data/utils";
 import { GRAPES_DATA } from "@/data/grape-data";
-// import {
-//   GRAPES_RED_TOP_TEN_DATA,
-//   GRAPES_WHITE_TOP_TEN_DATA,
-// } from "@/data/grape-top-ten-countries-data-2016";
 
 import DetailSection from "@/components/layout/detail-section";
 import Button from "@/components/ui/button";
@@ -46,9 +44,30 @@ function GrapeDetailPage() {
         <h2 className="header"> {grape.itemName} Grape Production Data</h2>
         <h3 className="subheader">Top {grape.itemName} Producing Countries:</h3>
         <div className="actions">
-          <Button link={worldTopLink}>Bar Chart</Button>
-          <Button link={worldTopBubbleChartLink}>Bubble Chart</Button>
-        </div>
+
+
+
+        <Link href={worldTopLink} className="action__container center">
+            <Image
+              src="/images/icons/icon-barchart.png"
+              className="transparent margin-bottom"
+              alt="grapes icon"
+              width={100}
+              height={100}
+            />
+            <p className="link">Bar Chart</p>
+          </Link>
+          <Link href={worldTopBubbleChartLink} className="action__container center">
+            <Image
+              src="/images/icons/icon-bubblechart.png"
+              className="transparent margin-bottom"
+              alt="grapes icon"
+              width={100}
+              height={100}
+            />
+            <p className="link">Bubble Chart</p>
+          </Link>
+          </div>
       </section>
       <DetailSection
         wineCategory={wineCategory}
@@ -56,6 +75,7 @@ function GrapeDetailPage() {
         countryName={grape.itemName}
         moreInfo={grape.altNames}
       />
+
       <div className="buttonFooter">
         <Button link="/grapes/" isSecondary="true">Back to Grapes Index</Button>
       </div>
