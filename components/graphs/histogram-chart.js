@@ -57,9 +57,11 @@ const DoubleHistogramChart = ({ data, country1, country2 }) => {
       .append("g")
       .attr("transform", `translate(0, ${height})`)
       .call(xAxis)
-      .style("color", "white");
+      .style("color", "white")
+      .attr("font-size", "clamp(14px, 1.2vw, 18px)");
 
-    chart.append("g").call(yAxis).style("color", "white");
+    chart.append("g").call(yAxis).style("color", "white").attr("font-size", "clamp(14px, 1.2vw, 18px)");
+
 
     chart
       .selectAll(".tick line")
@@ -139,9 +141,10 @@ const DoubleHistogramChart = ({ data, country1, country2 }) => {
       chart
         .select(".x-axis")
         .attr("transform", `translate(0, ${height})`)
-        .call(xAxis);
+        .call(xAxis)
 
       chart.select(".y-axis").call(yAxis);
+
 
       chart
         .selectAll(".bar1")
@@ -170,7 +173,7 @@ const DoubleHistogramChart = ({ data, country1, country2 }) => {
       style={{
         position: "relative",
         height: "500px",
-        width: "90%",
+        width: "80%",
         borderRadius: "10px",
         backgroundColor: "grey",
       }}

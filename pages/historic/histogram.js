@@ -8,6 +8,8 @@ import HistogramChart from "@/components/graphs/histogram-chart";
 
 import { HISTORIC_PRODUCTION_STACKED_DATA } from "@/data/historic-production-stacked-data";
 
+import Button from "@/components/ui/button";
+
 const COUNTRIES = [
   "France",
   "Italy",
@@ -23,7 +25,7 @@ const COUNTRIES = [
 
 const YEARS = [2000, 2001, 2002, 2003, 2004, 2005, 2006];
 
-function HistoricHistogram() {
+function HistoricHistogramPage() {
   const [country1, setCountry1] = useState(COUNTRIES[0]);
   const [country2, setCountry2] = useState(COUNTRIES[1]);
 
@@ -37,28 +39,19 @@ function HistoricHistogram() {
     }
   };
 
-  //   const filteredData = historicData.filter((data) => data.year === parseInt(year))[0];
-  //   const newData = {
-  //     year: year,
-  //     country1: filteredData[country1],
-  //     country2: filteredData[country2],
-  //   };
-
-  //   console.log('histogram page data', newData);
-
   return (
     <>
       <Head>
         <title>
-          Historic Wine Production Index - Histogram - Winography - Wine Data
+          Historic Wine Production - Histogram - Winography - Wine Data
           Visualization
         </title>
         <meta
           name="description"
-          content="Data visualization for all wine-producing countries"
+          content="Histogram data visualization by country."
         />
       </Head>
-      <h1 className="indexheader">Historic Wine Production By Year</h1>
+      <h1 className="indexheader">Histogram: Historic Wine Production By Year</h1>
       <div className={classes.selectrow}>
         <select
           value={country1}
@@ -73,7 +66,7 @@ function HistoricHistogram() {
         </select>
         <select
           value={country2}
-          className="selectCss"
+          className="selectCss select120"
           onChange={handleCountry2Change}
         >
           {COUNTRIES.filter((c) => c !== country1).map((country) => (
@@ -82,17 +75,6 @@ function HistoricHistogram() {
             </option>
           ))}
         </select>
-        {/* <select
-          value={year}
-          className="selectCss"
-          onChange={(e) => setYear(e.target.value)}
-        > */}
-        {/* {YEARS.map((year) => (
-            <option key={year} value={year}>
-              {year}
-            </option>
-          ))} */}
-        {/* </select> */}
       </div>
       <HistogramChart
         data={historicData}
@@ -110,8 +92,11 @@ function HistoricHistogram() {
           </Link>
         </p>
       </div>
+      <div className="buttonFooter">
+        <Button link="/historic/" isSecondary="true">Back to Historic Data Index</Button>
+      </div>
     </>
   );
 }
 
-export default HistoricHistogram;
+export default HistoricHistogramPage;

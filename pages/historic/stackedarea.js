@@ -4,20 +4,10 @@ import { useState } from "react";
 
 import GRAPES_RED_TOP_TEN_DATA from "@/data/grape-top-ten-countries-data-2016";
 
-// import StreamGraph from "@/components/graphs/streamgraph-chart";
-// import TimelineChart from "@/components/graphs/streamgraph-alt";
 import StackedAreaChart from "@/components/graphs/stacked-area-chart";
-
-import HISTORIC_PRODUCTION_STACKED_DATA from "@/data/historic-production-stacked-data";
-
+import Button from "@/components/ui/button";
 
 function HistoricDataHistogram() {
-
-  // const [historicData, setHistoricData] = useState(HISTORIC_PRODUCTION_STACKED_DATA);
-
-  // if (!HISTORIC_PRODUCTION_STACKED_DATA) {
-  //   return <p>Loading...</p>;
-  // }
 
   const data = GRAPES_RED_TOP_TEN_DATA;
 
@@ -34,7 +24,7 @@ function HistoricDataHistogram() {
           content="Data visualization for all wine-producing countries"
         />
       </Head>
-      <h1 className="indexheader">Historic Wine Production By Year</h1>
+      <h1 className="indexheader">Stacked Area: Historic Wine Production By Year</h1>
 
       <StackedAreaChart  />
       <div> 
@@ -47,6 +37,9 @@ function HistoricDataHistogram() {
             Wine Economics Research Centre, University of Adelaide
           </Link>
         </p>
+      </div>
+      <div className="buttonFooter">
+        <Button link="/historic/" isSecondary="true">Back to Historic Index</Button>
       </div>
     </>
   );
