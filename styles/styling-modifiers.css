@@ -1,0 +1,38 @@
+
+/* Styling for modifying class styles */
+
+.center {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .margin-bottom {
+    margin-bottom: 1rem;
+  }
+  
+  .transparent {
+    filter: opacity(60%);
+  }
+
+  .moveUp {
+    transform: translateY(-3rem);
+  
+    color: #fff;
+  }
+
+  .desaturate {
+    filter: brightness(3);
+    filter: saturate(0);
+  }
+
+  .desaturate:hover {
+    filter: brightness(1);
+    filter: saturate(1);
+    transition: 0.3s;
+  }
+  
+  .borderGrey {
+    border: 1px solid rgba(255, 255, 255, 0.61);
+  }

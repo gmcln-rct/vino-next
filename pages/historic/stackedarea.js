@@ -39,7 +39,7 @@ function HistoricDataHistogram() {
         </p>
       </div>
       <div className="buttonFooter">
-        <Button link="/historic/" isSecondary="true">Back to Historic Index</Button>
+        <Button link="/historic/" isSecondary="true">Back to Historic Data Index</Button>
       </div>
     </>
   );

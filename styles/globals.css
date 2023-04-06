@@ -3,6 +3,7 @@
 @import "reset.css";
 @import "select.css";
 @import "homepage.css";
+@import "styling-modifiers.css";
 
 /**************************** Global CSS variables ***************************************/
 
@@ -120,25 +121,12 @@ main a {
   margin: 1rem 0;
 }
 
-.center {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-
-.margin-bottom {
-  margin-bottom: 1rem;
-}
-
 /* .outerglow {
   /* border-color: #e7e5d5; */
 
 /* box-shadow: 0 1px 4px rgba(255, 254, 254, 0.3), 0 1px 12px 2px rgba(185, 185, 185, 0.2);
 } */
-.transparent {
-  filter: opacity(60%);
-}
+
 
 .header {
   display: flex;
@@ -184,11 +172,6 @@ main a {
   font-display: swap;
 }
 
-.moveUp {
-  transform: translateY(-3rem);
-
-  color: #fff;
-}
 
 .indexheader {
   display: flex;
@@ -260,20 +243,9 @@ main a {
   filter: saturate(0.8);
 }
 
-.desaturate {
-  filter: brightness(3);
-  filter: saturate(0);
-}
 
-.borderGrey {
-  border: 1px solid rgba(255, 255, 255, 0.61);
-}
 
-.desaturate:hover {
-  filter: brightness(1);
-  filter: saturate(1);
-  transition: 0.3s;
-}
+
 
 /* Stacked area charet */
 
