@@ -105,14 +105,13 @@ const BarChart = (props) => {
           return xScale(d.grape);
         }
       })
-      // .attr("y", (d) => yScale(d.value))
       .attr("width", xScale.bandwidth())
       .attr("y", (d) => {
         let barHeight = yScale(d.value);
         if(barHeight <= 0) {
           return 0;
-        } else if (height - yScale(d.value) < (height/20)) {
-          barHeight = (barHeight - (height/21));
+        } else if ((height - yScale(d.value)) < (height/20)) {
+          barHeight = (height - (height/21));
         } else {
           barHeight = yScale(d.value);
         }
