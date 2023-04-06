@@ -1,6 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Lato:ital,wght@0,100;0,400;0,900;1,100;1,400;1,700&family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700&display=swap");
 
 @import "reset.css";
+@import "charts.css";
 @import "select.css";
 @import "homepage.css";
 @import "styling-modifiers.css";
@@ -127,7 +128,6 @@ main a {
 /* box-shadow: 0 1px 4px rgba(255, 254, 254, 0.3), 0 1px 12px 2px rgba(185, 185, 185, 0.2);
 } */
 
-
 .header {
   display: flex;
   flex-direction: column;
@@ -171,7 +171,6 @@ main a {
   font-weight: 600;
   font-display: swap;
 }
-
 
 .indexheader {
   display: flex;
@@ -243,30 +242,3 @@ main a {
   filter: saturate(0.8);
 }
 
-
-
-
-
-/* Stacked area charet */
-
-/* .legend {
- background-color: red;
-} */
-
-.tooltip {
-  position: absolute;
-  display: none;
-  padding: 10px;
-  background: white;
-  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.3);
-  z-index: 9999;
-}
-
-tspan {
-  display: flex;
-  /* flex-direction: column;
-  justify-content: center;
-  align-items: center; */
-  font-size: clamp(6px, 1vw, 8px);
-  text-align: center;
-}
