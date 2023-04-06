@@ -30,7 +30,7 @@ function HomePage() {
         <section className="homePage__links">
           <Link href="/countries" className="action__container center">
             <Image
-              src="/images/icons/country-icon-sm.png"
+              src="/images/icons/icon-country-sm.png"
               className="transparent margin-bottom"
               alt="countries icon"
               width={100}
@@ -40,7 +40,7 @@ function HomePage() {
           </Link>
           <Link href="/grapes" className="action__container center">
             <Image
-              src="/images/icons/grape-icon-sm.png"
+              src="/images/icons/icon-grape-sm.png"
               className="transparent margin-bottom"
               alt="grapes icon"
               width={100}
@@ -50,7 +50,7 @@ function HomePage() {
           </Link>
           <Link href="/historic" className="action__container center">
             <Image
-              src="/images/icons/historic-data-sm.png"
+              src="/images/icons/icon-historic-data-sm.png"
               className="transparent margin-bottom"
               alt="grapes icon"
               width={100}
