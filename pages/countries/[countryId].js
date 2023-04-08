@@ -52,8 +52,8 @@ function CountryDetailPage() {
         <h1 className="header">{country.itemName} Wine Production Data</h1>
         <p className="subheader">Bar Charts</p>
         <div className="actions">
-          <Button link={worldTopTenLink}>World Top Grapes</Button>
-          <Button link={nationalTopLink}>Country Top Grapes</Button>
+          <Button link={worldTopTenLink}>Top Grapes Worldwide</Button>
+          <Button link={nationalTopLink}>Top Grapes by Country</Button>
         </div>
       </section>
 
