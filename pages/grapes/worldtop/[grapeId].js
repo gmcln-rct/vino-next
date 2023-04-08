@@ -17,7 +17,7 @@ function GrapeTopDetailPage() {
   const router = useRouter();
   const id = router.query.grapeId;
 
-  const explanationText = "Wine Production By Country";
+  const explanationText = "Grape Production By Country";
 
   const grape = getDataItemById(id, GRAPES_DATA);
 

@@ -49,7 +49,7 @@ function CountryDetailPage() {
           width={200}
           height={150}
         />
-        <h1 className="header">{country.itemName} Wine Production Data</h1>
+        <h1 className="header">{country.itemName} Wine Production Data by Land Area</h1>
         <p className="subheader">Bar Charts</p>
         <div className="actions">
           <Button link={worldTopTenLink}>Top Grapes Worldwide</Button>
