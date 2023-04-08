@@ -37,7 +37,7 @@ function CountryTopTenDetailPage() {
     <>
       <Head>
         <title>
-          {country.itemName} Top National Grapes - Bar Chart - Winography - Wine Data
+        Top Grapes of {country.itemName} - Bar Chart - Winography - Wine Data
           Visualization
         </title>
         <meta

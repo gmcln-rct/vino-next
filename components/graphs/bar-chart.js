@@ -167,7 +167,7 @@ const BarChart = (props) => {
       dataYear;
   } else {
     headerText =
-      itemName + ": " + explanationText + " " + selectedGrapeType + " Grapes";
+      "Top " + selectedGrapeType + " Grapes of " + itemName;
     subHeaderText =
       "Winegrape area production for " +
       explanationText +
