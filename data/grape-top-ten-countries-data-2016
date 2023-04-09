@@ -136,7 +136,7 @@ export const GRAPES_RED_TOP_TEN_DATA = [
   },
 
   {
-    id: "garnacha-tinta",
+    id: "grenache",
     dataYear: 2016,
     units: "hectares",
     countries: [

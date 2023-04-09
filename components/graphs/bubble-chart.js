@@ -8,7 +8,7 @@ const BubbleChart = (props) => {
   //   { grape: "Merlot", value: 47451, hexColor: "#DBF47C" },
   //   { grape: "Tempranillo", value: 28084, hexColor: "#DBF47C" },
   //   { grape: "Syrah", value: 78842, hexColor: "#8D0C02" },
-  //   { grape: "Garnacha Tinta", value: 4025, hexColor: "#DBF47C" },
+  //   { grape: "Grenache", value: 4025, hexColor: "#DBF47C" },
   //   { grape: "Pinot Noir", value: 300, hexColor: "#DBF47C" },
   //   { grape: "Sangiovese", value: 1657, hexColor: "#DBF47C" },
   //   { grape: "Cabernet Franc", value: 0, hexColor: "#DBF47C" },

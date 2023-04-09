@@ -72,6 +72,7 @@ function GrapeDetailPage() {
       <DetailSection
         wineCategory={wineCategory}
         itemLink={grape.link}
+        description={grape.description}
         countryName={grape.itemName}
         moreInfo={grape.altNames}
       />

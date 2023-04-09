@@ -70,8 +70,8 @@ export const RED_GRAPE_TOP_COUNTRIES = [
     ],
   },
   {
-    itemName: "Garnacha Tinta",
-    id: "garnacha-tinta",
+    itemName: "Grenache",
+    id: "grenache",
     category: "R",
     units: "hectares",
     dataType: "grape",

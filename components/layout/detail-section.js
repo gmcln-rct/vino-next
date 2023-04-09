@@ -1,7 +1,7 @@
 import classes from "./detail-section.module.css";
 
 const DetailSection = (props) => {
-  const { wineCategory, dataType, itemLink, moreInfo } = props;
+  const { wineCategory, dataType, description, itemLink, moreInfo } = props;
 
   let moreInfoListLabel = dataType !== "grape" ? "Other Names" : "Regions";
 
@@ -21,6 +21,7 @@ const DetailSection = (props) => {
   return (
     <section className={classes.details__container}>
       <div className={classes.details__items}>
+        { description && (<p>Description: {description}</p>) }
         <p>Classification: {classification}</p>
         <p>{moreInfoListLabel}: {moreInfoList}</p>
         <a href={itemLink} target="_blank">
