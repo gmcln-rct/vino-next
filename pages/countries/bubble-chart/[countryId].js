@@ -22,12 +22,6 @@ function CountryTopTenDetailPage() {
 
   const countryWineData = getDataItemById(id, COUNTRIES_WINE_DATA);
 
-//   const explanationText = "National Top ";
-
-//   const dataType = "country";
-
-// COUNTRIES BUBBLE CHART
-
   if (!country || !countryWineData) {
     return (
       <div className="center">
