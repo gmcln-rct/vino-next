@@ -64,8 +64,10 @@
 }
 
 .whiteGrapeColor:hover {
-  color: #4fb9f3;
-  background-color: #fff;
-  border: 1px solid #fff;
+  color: rgb(227, 219, 148);
+  background-color: #2A5B75;
+  /* color: #4fb9f3;
+  background-color: #fff; */
+  border: 1px solid #2A5B75;
   transition: 0.3s;
 }

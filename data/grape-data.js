@@ -83,7 +83,7 @@ export const GRAPES_DATA = [
     description: "Merlot is a red wine grape known for producing medium to full-bodied wines with flavors of black cherry, plum, and chocolate. It is widely cultivated throughout the world and is particularly associated with Bordeaux and California. Merlot is often used as a blending grape. It is valued for its soft, velvety texture and low tannins.",
     altNames: ["Merlot Noir"],
     link: "https://en.wikipedia.org/wiki/Merlot",
-    imageLink: "/images/site-images/masthead-cabernet-sauvignon.jpg",
+    imageLink: "/images/site-images/masthead-merlot.jpg",
     isFeatured: false,
     isTop: true,
   },
