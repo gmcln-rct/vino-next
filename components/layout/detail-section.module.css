@@ -7,8 +7,8 @@
   align-items: center;
 
   width: 90vw;
-  max-width: 1000px;
-  margin: 1.5rem 0 1.5rem 3vmin;
+  max-width: 800px;
+  margin: 3vmin 0 1vmin 5vmin;
   padding: 2.5vmin 3vmin;
 
   font-family: "Verdana", sans-serif;
@@ -16,7 +16,6 @@
   color: #000;
   /* background-color: rgb(135, 134, 134); */
   /* From https://css.glass */
-
 
   background: rgba(255, 255, 255, 0.65);
   backdrop-filter: saturate(180%) blur(10px);
@@ -36,10 +35,10 @@
   margin-bottom: 1vmin;
 
   font-family: "Open Sans", sans-serif;
-  font-size: clamp(18px, 1.5vw, 24px);
+  font-size: clamp(18px, 2vw, 24px);
   font-weight: 700;
 
-  color: #870101;
+  color: #6f0f47da;
   /* color: #6E0101; */
 }
 .data {
@@ -55,13 +54,14 @@
   font-size: clamp(18px, 1.5vw, 24px);
   line-height: clamp(18px, 4vw, 38px);
   font-display: swap;
-  /* color: #1269a1; */
-  color: #A1360A;
+  color: #0165a3;
+  
+  /* color: #A1360A; */
 }
 
 .link:hover {
-  /* color: #20a6fa; */
-  color: #870101;
+  color: #20a6fa;
+  /* color: #870101; */
   text-decoration: underline;
   transition: 0.3s;
 }

@@ -43,7 +43,7 @@ function GrapeDetailPage() {
         />
       </Head>
       <Masthead
-        backgroundImage="/images/site-images/masthead-cabernet-sauvignon.jpg"
+        backgroundImage={grape.imageLink}
         headerText="Winography"
         wineCategory={wineCategory}
         itemLink={grape.link}
