@@ -2,8 +2,9 @@ import React from 'react';
 import classes from './masthead.module.css';
 import DetailSection from './detail-section'; 
 
-const Masthead = ({ headerText, backgroundImage, wineCategory, itemLink,description, countryName, moreInfo }) => {
+const Masthead = (props) => {
 
+  const { headerText, backgroundImage, wineCategory, itemLink,description, countryName, moreInfo } = props;
   // let mastheadBackgroundImage = backgroundImage;
   // if (!headerText) {
   //   mastheadBackgroundImage = `/images/site-images/homepage-masthead.jpg`;
@@ -24,8 +25,8 @@ const Masthead = ({ headerText, backgroundImage, wineCategory, itemLink,descript
       />)}
 
         {!wineCategory && ( <>
-        <h1 className={classes.mastheadHeader}>{headerText}</h1> 
-        <p className={classes.mastheadText}>Explore the world of wine through data visualizations by grapes, country or historic yearly trends. </p> </>)}
+        {/* <h1 className={classes.mastheadHeader}>{headerText}</h1>  */}
+        <p className={classes.mastheadText}>{headerText} </p> </>)}
 
       </div>
     </div>

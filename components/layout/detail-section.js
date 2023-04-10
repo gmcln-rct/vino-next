@@ -7,7 +7,7 @@ const DetailSection = (props) => {
   let moreInfoListLabel = "";
   let moreInfoList = "";
   if(moreInfo && wineCategory) {
-   moreInfoListLabel = dataType !== "grape" ? "Other Names" : "Regions";
+   moreInfoListLabel = dataType === "grape" ? "Other Names" : "Regions";
 
    moreInfoList =
     moreInfo.length > 0 ? moreInfo.join(", ") : "No items listed";

@@ -34,12 +34,17 @@
 
 .description {
   margin-bottom: 1vmin;
+
+  font-family: "Open Sans", sans-serif;
   font-size: clamp(18px, 1.5vw, 24px);
-  font-weight: 600;
+  font-weight: 700;
+
+  color: #870101;
+  /* color: #6E0101; */
 }
 .data {
   font-size: clamp(18px, 1.5vw, 24px);
-  padding: 0.5rem 0 1rem 0;
+  padding: 0.5rem 0 .5rem 0;
 }
 .data:last-child {
   padding-bottom: 8vmin;
@@ -48,12 +53,15 @@
 .link {
   padding: 1rem 0;
   font-size: clamp(18px, 1.5vw, 24px);
+  line-height: clamp(18px, 4vw, 38px);
   font-display: swap;
-  color: #1269a1;
+  /* color: #1269a1; */
+  color: #A1360A;
 }
 
 .link:hover {
-  color: #20a6fa;
+  /* color: #20a6fa; */
+  color: #870101;
   text-decoration: underline;
   transition: 0.3s;
 }

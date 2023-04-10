@@ -144,7 +144,8 @@ main a {
 
   margin: 1rem 0 0 0;
   /* color: #A1360A; */
-  color: #555;
+  /* color: #555; */
+  color: #96074e;
 
   font-size: clamp(24px, 4vw, 32px);
   font-weight: bold;

@@ -29,15 +29,15 @@
   }
    */
 .mastheadText {
-  margin-left: 40%;
+  margin-right: 40%;
   margin-top: 5vmin;
-  padding: 2vw;
+  padding: 2vw 2vw 2vw 4vw;
 
   /* color: white; */
   font-size: clamp(2rem, 2.5vw, 2.5rem);
   font-weight: 600;
   text-shadow: 2px 2px 2px rgba(25, 24, 24, 0.85);
-  text-align: right;
+  text-align: left;
   
   color: #fff;
   background-color: rgba(111, 15, 71, 0.853);
