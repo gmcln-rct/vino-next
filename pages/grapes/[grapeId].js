@@ -53,7 +53,7 @@ function GrapeDetailPage() {
       />
       <section className="masthead">
         <h2 className="header"> {grape.itemName} Grape Production Data</h2>
-        <h3 className="subheader">Top {grape.itemName} Producing Countries:</h3>
+        {/* <h3 className="subheader">Top {grape.itemName} Producing Countries:</h3> */}
         <div className="actions">
           <Link href={worldTopLink} className="action__container center">
             <Image
