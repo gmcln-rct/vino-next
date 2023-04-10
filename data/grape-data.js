@@ -19,7 +19,7 @@ export const GRAPES_DATA = [
     dataType: "grape",
     units: "hectares",
     dataYear: 2016,
-    description: "Cabernet Sauvignon is a popular red wine grape known for producing full-bodied, rich wines with flavors of black currant, blackberry, and cedar. It is widely cultivated throughout the world and is particularly associated with Bordeaux, California, and Australia. It is often blended with other grape varieties, but is also bottled as a single varietal wine. Cabernet Sauvignon has thick skin, which provides high tannins and a long aging potential.",
+    description: "Cabernet Sauvignon is a popular red wine grape known for producing full-bodied, rich wines with flavors of black currant, blackberry, and cedar. It is widely cultivated throughout the world and is particularly associated with Bordeaux, California, and Australia. Cabernet Sauvignon has thick skin, which provides high tannins and a long aging potential.",
     altNames: [
       "Burdeos",
       "Cabernet S.",
@@ -280,6 +280,7 @@ export const GRAPES_DATA = [
     dataType: "grape",
     units: "hectares",
     dataYear: 2016,
+    description: "Rkatsiteli is a white wine grape primarily grown in Georgia, where it is used to produce light, crisp wines with flavors of green apple and citrus. It is often blended with other grape varieties but is also bottled as a single varietal wine.",
     altNames: ["Rkaciteli", "Rkatsiteli", "Rkaţiteli", "Rkatziteli"],
     link: "https://en.wikipedia.org/wiki/Rkatsiteli",
     isFeatured: false,
@@ -292,6 +293,7 @@ export const GRAPES_DATA = [
     dataType: "grape",
     units: "hectares",
     dataYear: 2016,
+    description: "Sauvignon Blanc is a white wine grape known for producing light, crisp wines with flavors of green apple, grapefruit, and grass. It is widely cultivated throughout the world and is particularly associated with the Loire Valley and New Zealand. Sauvignon Blanc is often bottled as a single varietal wine but is also used in blends.",
     altNames: [
       "Sauvignon",
       "Sauvignon B.",
@@ -310,6 +312,7 @@ export const GRAPES_DATA = [
     dataType: "grape",
     units: "hectares",
     dataYear: 2016,
+    description: "Trebbiano Toscano, also known as Ugni Blanc, is a white wine grape primarily grown in Italy and France, where it is used to produce light, dry wines with flavors of lemon and herbs. Trebbiano Toscano is often blended with other grape varieties but is also bottled as a single varietal wine.",
     altNames: [
       "St. Emilion",
       "Talia",
@@ -332,6 +335,7 @@ export const GRAPES_DATA = [
     dataType: "grape",
     units: "hectares",
     dataYear: 2016,
+    description: "Pinot Gris, also known as Pinot Grigio, is a white wine grape known for producing light, crisp wines with flavors of citrus and pear. It is widely cultivated throughout the world and is particularly associated with Italy and Oregon. Pinot Gris is often bottled as a single varietal wine but can also used in blends. Sometimes it is classified as a 'grey' grape variety, given its origin as a mutation of Pinot Noir.",
     altNames: ["Pinot Grigio"],
     link: "https://en.wikipedia.org/wiki/Pinot_gris",
     isFeatured: false,

@@ -8,6 +8,7 @@ import { GRAPES_DATA } from "@/data/grape-data";
 
 import DetailSection from "@/components/layout/detail-section";
 import Button from "@/components/ui/button";
+import Masthead from "@/components/layout/masthead";
 
 function GrapeDetailPage() {
   const router = useRouter();
@@ -27,6 +28,7 @@ function GrapeDetailPage() {
   }
 
   const wineCategory = grape.category === "R" ? "Red" : "White";
+  
 
   return (
     <>
@@ -40,6 +42,15 @@ function GrapeDetailPage() {
           content="Data visualization for {grape.itemName} wine grape area production."
         />
       </Head>
+      <Masthead
+        backgroundImage="/images/site-images/masthead-cabernet-sauvignon.jpg"
+        headerText="Winography"
+        wineCategory={wineCategory}
+        itemLink={grape.link}
+        description={grape.description}
+        countryName={grape.itemName}
+        moreInfo={grape.altNames}
+      />
       <section className="masthead">
         <h2 className="header"> {grape.itemName} Grape Production Data</h2>
         <h3 className="subheader">Top {grape.itemName} Producing Countries:</h3>
@@ -69,13 +80,13 @@ function GrapeDetailPage() {
           </Link>
         </div>
       </section>
-      <DetailSection
+      {/* <DetailSection
         wineCategory={wineCategory}
         itemLink={grape.link}
         description={grape.description}
         countryName={grape.itemName}
         moreInfo={grape.altNames}
-      />
+      /> */}
 
       <div className="buttonFooter">
         <Button link="/grapes/" isSecondary="true">
