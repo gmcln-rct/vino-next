@@ -151,7 +151,7 @@ export const GRAPES_DATA = [
       "Brunello",
     ],
     link: "https://en.wikipedia.org/wiki/Sangiovese",
-    imageLink: "/images/site-images/masthead-cabernet-sauvignon.jpg",
+    imageLink: "/images/site-images/masthead-sangiovese.jpg",
     isFeatured: false,
     isTop: true,
   },
