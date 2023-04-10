@@ -52,7 +52,7 @@
 .link {
   padding: 1rem 0;
   font-size: clamp(18px, 1.5vw, 24px);
-  line-height: clamp(18px, 4vw, 38px);
+  line-height: clamp(18px, 4.5vw, 48px);
   font-display: swap;
   color: #0165a3;
   
@@ -66,4 +66,8 @@
   transition: 0.3s;
 }
 
-
+@media (min-width: 1028px) {
+  .container {
+    max-width: 950px;
+  }
+}

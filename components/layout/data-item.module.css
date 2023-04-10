@@ -50,7 +50,22 @@
   color: white;
 }
 
+.redGrapeColor:hover {
+  color:rgb(181, 6, 50);
+  background-color: #fff;
+  border: 1px solid #fff;
+  transition: 0.3s;
+}
+
+
 .whiteGrapeColor {
   background-color: rgb(227, 219, 148);
   color: #2A5B75;
+}
+
+.whiteGrapeColor:hover {
+  color: #4fb9f3;
+  background-color: #fff;
+  border: 1px solid #fff;
+  transition: 0.3s;
 }
