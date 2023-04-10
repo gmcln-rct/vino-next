@@ -162,7 +162,7 @@ export const GRAPES_DATA = [
     dataType: "grape",
     units: "hectares",
     dataYear: 2016,
-    description: "Syrah, also known as Shiraz, is a red wine grape known for producing full-bodied wines with flavors of black fruit, pepper, and smoked meat. It is widely cultivated throughout the world and is particularly associated with France, Australia, and California. Syrah is often bottled as a single varietal wine but is also used in blends. It is valued for its ability to produce wines with high tannins and good aging potential.",
+    description: "Syrah, also known as Shiraz, is a red wine grape known for producing full-bodied wines with flavors of black fruit, pepper, and smoked meat. It is widely cultivated throughout the world and is particularly associated with France, Australia, and California. It is valued for its ability to produce wines with high tannins and good aging potential.",
     altNames: ["Chirac", "Shiraz", "Sira (falsa)", "Sirah", "Syrach"],
     link: "https://en.wikipedia.org/wiki/Syrah",
     imageLink: "/images/site-images/masthead-cabernet-sauvignon.jpg",
