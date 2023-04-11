@@ -169,7 +169,7 @@ const BarChart = (props) => {
     headerText =
       "Top " + selectedGrapeType + " Grapes of " + itemName;
     subHeaderText =
-      "Winegrape area production for " +
+      "Winegrape land area used for production, " +
       explanationText +
       " " +
       selectedGrapeType +
