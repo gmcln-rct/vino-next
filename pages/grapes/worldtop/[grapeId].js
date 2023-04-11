@@ -45,7 +45,7 @@ function GrapeTopDetailPage() {
     redGrapeWineData = { countries: [] };
   }
 
-  const dataType = grape.dataType;
+  // const dataType = grape.dataType;
   const grapeLink = `/grapes/${grape.id}`;
 
   return (

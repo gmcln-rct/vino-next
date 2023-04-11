@@ -28,7 +28,6 @@ function GrapeDetailPage() {
   }
 
   const wineCategory = grape.category === "R" ? "Red" : "White";
-  
 
   return (
     <>
@@ -46,6 +45,7 @@ function GrapeDetailPage() {
         backgroundImage={grape.imageLink}
         headerText="Winography"
         wineCategory={wineCategory}
+        dataType={grape.dataType}
         itemLink={grape.link}
         description={grape.description}
         countryName={grape.itemName}

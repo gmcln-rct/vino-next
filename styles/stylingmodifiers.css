@@ -1,29 +1,29 @@
-
 /* Styling for modifying class styles */
 
 .center {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-  }
-  
-  .margin-bottom {
-    margin-bottom: 1rem;
-  }
-  
-  .transparent {
-    filter: opacity(60%);
-  }
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
 
-  .moveUp {
-    transform: translateY(-3rem);
-  
-    color: #fff;
-  }
+.margin-bottom {
+  margin-bottom: 1rem;
+}
 
+.transparent {
+  filter: opacity(60%);
+}
 
-  
-  .borderGrey {
-    border: 1px solid rgba(255, 255, 255, 0.61);
-  }
+.moveUp {
+  transform: translateY(-3rem);
+
+  color: #fff;
+}
+
+.bold {
+  font-weight: bold;
+}
+.borderGrey {
+  border: 1px solid rgba(255, 255, 255, 0.61);
+}

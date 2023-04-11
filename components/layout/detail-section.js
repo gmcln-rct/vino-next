@@ -3,6 +3,7 @@ import classes from "./detail-section.module.css";
 const DetailSection = (props) => {
   const { wineCategory, dataType, description, itemLink, moreInfo } = props;
 
+  console.log('dataType: ', dataType);
   let classification = "";
   let moreInfoListLabel = "";
   let moreInfoList = "";
@@ -33,8 +34,8 @@ const DetailSection = (props) => {
     <section className={classes.container}>
       <div className={classes.Items}>
         { description && (<p className={classes.description}>{description}</p>) }
-        <p className={classes.data}>Classification: {classification}</p>
-        <p className={classes.data}>{moreInfoListLabel}: {moreInfoList}</p>
+        <p className={classes.data}>Classification: <span className="bold">{classification}</span></p>
+        <p className={classes.data}>{moreInfoListLabel}: <span className="bold">{moreInfoList}</span></p>
         <a className={classes.link} href={itemLink} target="_blank">
           Read Wikipedia Page in new tab
         </a>

@@ -4,12 +4,12 @@ import DetailSection from './detail-section';
 
 const Masthead = (props) => {
 
-  const { headerText, backgroundImage, wineCategory, itemLink,description, countryName, moreInfo } = props;
+  const { headerText, backgroundImage, dataType, wineCategory, itemLink,description, countryName, moreInfo } = props;
   // let mastheadBackgroundImage = backgroundImage;
   // if (!headerText) {
   //   mastheadBackgroundImage = `/images/site-images/homepage-masthead.jpg`;
   // }
-
+console.log("wine category: ", wineCategory);
   const mastheadBackgroundImage = backgroundImage || `/images/site-images/homepage-masthead.jpg`;
 
   return (
@@ -19,6 +19,7 @@ const Masthead = (props) => {
       <DetailSection
         wineCategory={wineCategory}
         itemLink={itemLink}
+        dataType={dataType}
         description={description}
         countryName={countryName}
         moreInfo={moreInfo}
