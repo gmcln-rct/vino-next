@@ -517,7 +517,7 @@ export const GRAPES_WHITE_TOP_TEN_DATA = [
   },
 
   {
-    id: "trebbiano-toscano",
+    id: "trebbiano",
     dataYear: 2016,
     dataType: "grape",
     category: "R",

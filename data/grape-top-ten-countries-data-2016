@@ -452,7 +452,7 @@ export const GRAPES_RED_TOP_TEN_DATA = [
     },
 
     {
-      id: "trebbiano-toscano",
+      id: "trebbiano",
       dataYear: 2016,
       units: "hectares",
       countries: [
