@@ -97,7 +97,8 @@ const DoubleHistogramChart = ({ data, country1, country2 }) => {
       .attr("y", (d) => y(d[country2]))
       .attr("width", x.bandwidth() / 2)
       .attr("height", (d) => height - y(d[country2]))
-      .attr("fill", d3.interpolate("#fde68a", "#e6c612")(0.4));
+      .attr("fill", d3.interpolate("#008ac5", "#0b1d78")(0.4));
+      // .attr("fill", d3.interpolate("#fde68a", "#e6c612")(0.4));
 
     // Add legend for country 1
     const legend = chart.append("g").attr("transform", "translate(10, 10)");
