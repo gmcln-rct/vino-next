@@ -105,7 +105,7 @@ const BubbleChart = (props) => {
       .on("mouseover", function (event, d) {
         tooltip
           .style("visibility", "visible")
-          .text(`${d.data.country}: ${d.data.value}`);
+          .text(`${d.data.country}: ${(d.data.value).toLocaleString("en-US")} ${units}`);
       })
       .on("mousemove", (event) => {
         tooltip
