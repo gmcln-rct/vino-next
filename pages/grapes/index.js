@@ -10,6 +10,8 @@ import DataList from "@/components/layout/data-list";
 function GrapeIndex() {
   // const allGrapes = getAllData(GRAPES_DATA);
   const topGrapes = getTopData(GRAPES_DATA);
+
+  console.log('topGrapes: ', topGrapes);
   return (
     <div>
       <Head>

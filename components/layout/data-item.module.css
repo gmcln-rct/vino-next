@@ -5,10 +5,10 @@
   align-items: center;
 
   /* margin: 1rem; */
-  padding: 0.2rem .5rem;
-  width: 270px;
-  /* From https://css.glass */
-  /* From https://css.glass */
+  /* padding: 0.2rem .5rem; */
+  width: 270px; 
+  /* height: 75px;
+
   /* background: rgba(255, 255, 255, 0.57); */
   backdrop-filter: blur(5px);
   -webkit-backdrop-filter: blur(5px);
@@ -17,6 +17,9 @@
   border-radius: 16px;
   box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3), 0 1px 12px 2px rgba(0, 0, 0, 0.2);
   /* border-radius: 8px; */
+
+  /* background: rgb(181,6,50); */
+  /* background: linear-gradient(0deg, rgba(181,6,50,1) 0%, rgba(181,6,50,0.7539390756302521) 35%, rgba(0,212,255,0) 100%); */
   overflow: hidden;
 
 }
@@ -36,17 +39,36 @@
   /* color: #2A5B75; */
 }
 
-.item img {
+/* .item img {
   width: 100px;
   height: 75px;
   object-fit: cover;
   /* object-position: center; */
-  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3), 0 1px 12px 2px rgba(0, 0, 0, 0.2);
+  /* box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3), 0 1px 12px 2px rgba(0, 0, 0, 0.2); */
+
+/* }  */
+
+.actions {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+
+  z-index: 10;
+
 
 }
 
+.image {
+  /* background: linear-gradient(0deg, rgba(181,6,50,1) 0%, rgba(181,6,50,0.7539390756302521) 35%, rgba(0,212,255,0) 100%); */
+  object-fit:cover;
+  width: 100%;
+  z-index:5;
+}
+
 .redGrapeColor {
-  background-color: rgb(181, 6, 50);
+  background-color: #b50632;
   color: white;
 }
 

@@ -14,6 +14,7 @@ function DataList(props) {
           itemName={item.itemName}
           dataType={item.dataType}
           category={item.category}
+          bgImage={item.imageLink}
         />
       ))}
     </ul>

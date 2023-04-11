@@ -1,42 +1,49 @@
-import Link from 'next/link';
+import Link from "next/link";
+import Image from "next/image";
 
-import classes from './data-item.module.css';
+import classes from "./data-item.module.css";
 
-import Button from '../ui/button';
+import Button from "../ui/button";
 
 function DataItem(props) {
-    const { id, itemName, dataType, category } = props;
+  const { id, itemName, dataType, category, bgImage } = props;
 
-    const grapePrefix = '/grapes/' + id + '/';
-    const countryPrefix = '/countries/'
+  const grapePrefix = "/grapes/" + id + "/";
+  const countryPrefix = "/countries/";
 
+  let grapeColor;
 
-let grapeColor;
-
-if (category === "R") {
+  if (category === "R") {
     grapeColor = `classes.redGrapeColor`;
-} else {
+  } else {
     grapeColor = "whiteGrapeColor";
-}
+  }
 
-    // let worldTopLink = countryPrefix + `worldtopten/${id}`;
-    // let nationalTopLink = countryPrefix + `nationaltop/${id}`;
-    // let textFill = "Countries"
-
-    // if (dataType === "grape") {
-    //     worldTopLink = grapePrefix + `worldtop/${id}`;
-    //     textFill = "Grapes"
-    // }
-
-    return (
-        <li 
-            className={`${classes.item} ${category === "R" ? classes.redGrapeColor : classes.whiteGrapeColor}`} >
-            <div className={classes.actions }>
-                <Link href={grapePrefix} as={`/grapes/${id}`}> {itemName} </Link>
-
-            </div>
-        </li>
-    );
+  return (
+    <li
+      className={`${classes.item} ${
+        category === "R" ? classes.redGrapeColor : classes.whiteGrapeColor
+      }`}
+    >
+      <Image
+        src={bgImage}
+        alt={itemName}
+        className={classes.image}
+        width={100}
+        height={75}
+        // fill
+        // sizes="(max-width: 768px) 100vw,
+        // (max-width: 1200px) 5vw,
+        // 33vw"
+      />
+      <div className={classes.actions}>
+        <Link href={grapePrefix} as={`/grapes/${id}`}>
+          {" "}
+          {itemName}{" "}
+        </Link>
+      </div>
+    </li>
+  );
 }
 
 export default DataItem;
