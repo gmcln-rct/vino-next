@@ -3,6 +3,7 @@ export const COUNTRIES_RED_WINE_DATA = [
     id: "algeria",
     dataYear: 2016,
     itemName: "Algeria",
+units: "hectares",
     redGrapeData: [
       { grape: "Cabernet Sauvignon", value: 1000 },
       { grape: "Merlot", value: 1000 },
@@ -39,6 +40,7 @@ export const COUNTRIES_RED_WINE_DATA = [
     id: "argentina",
     dataYear: 2016,
     itemName: "Argentina",
+units: "hectares",
     redGrapeData: [
       { grape: "Cabernet Sauvignon", value: 15356 },
       { grape: "Merlot", value: 5632 },
@@ -75,6 +77,7 @@ export const COUNTRIES_RED_WINE_DATA = [
     id: "armenia",
     dataYear: 2016,
     itemName: "Armenia",
+units: "hectares",
     redGrapeData: [
       { grape: "Cabernet Sauvignon", value: 0 },
       { grape: "Merlot", value: 0 },
@@ -111,6 +114,7 @@ export const COUNTRIES_RED_WINE_DATA = [
     id: "australia",
     dataYear: 2016,
     itemName: "Australia",
+units: "hectares",
     redGrapeData: [
       { grape: "Cabernet Sauvignon", value: 23987 },
       { grape: "Merlot", value: 8415 },
@@ -147,6 +151,7 @@ export const COUNTRIES_RED_WINE_DATA = [
     id: "austria",
     dataYear: 2016,
     itemName: "Austria",
+units: "hectares",
     redGrapeData: [
       { grape: "Cabernet Sauvignon", value: 567 },
       { grape: "Merlot", value: 695 },
@@ -183,6 +188,7 @@ export const COUNTRIES_RED_WINE_DATA = [
     id: "brazil",
     dataYear: 2016,
     itemName: "Brazil",
+units: "hectares",
     redGrapeData: [
       { grape: "Cabernet Sauvignon", value: 429 },
       { grape: "Merlot", value: 363 },
@@ -219,6 +225,7 @@ export const COUNTRIES_RED_WINE_DATA = [
     id: "bulgaria",
     dataYear: 2016,
     itemName: "Bulgaria",
+units: "hectares",
     redGrapeData: [
       { grape: "Cabernet Sauvignon", value: 9327 },
       { grape: "Merlot", value: 10050 },
@@ -255,6 +262,7 @@ export const COUNTRIES_RED_WINE_DATA = [
     id: "cambodia",
     dataYear: 2016,
     itemName: "Cambodia",
+units: "hectares",
     redGrapeData: [
       { grape: "Cabernet Sauvignon", value: 2 },
       { grape: "Merlot", value: 2 },
@@ -291,6 +299,7 @@ export const COUNTRIES_RED_WINE_DATA = [
     id: "canada",
     dataYear: 2016,
     itemName: "Canada",
+units: "hectares",
     redGrapeData: [
       { grape: "Cabernet Sauvignon", value: 660 },
       { grape: "Merlot", value: 633 },
@@ -327,6 +336,7 @@ export const COUNTRIES_RED_WINE_DATA = [
     id: "chile",
     dataYear: 2016,
     itemName: "Chile",
+units: "hectares",
     redGrapeData: [
       { grape: "Cabernet Sauvignon", value: 42409 },
       { grape: "Merlot", value: 12057 },
@@ -363,6 +373,7 @@ export const COUNTRIES_RED_WINE_DATA = [
     id: "china",
     dataYear: 2016,
     itemName: "China",
+units: "hectares",
     redGrapeData: [
       { grape: "Cabernet Sauvignon", value: 40300 },
       { grape: "Merlot", value: 16700 },
@@ -399,6 +410,7 @@ export const COUNTRIES_RED_WINE_DATA = [
     id: "croatia",
     dataYear: 2016,
     itemName: "Croatia",
+units: "hectares",
     redGrapeData: [
       { grape: "Cabernet Sauvignon", value: 709 },
       { grape: "Merlot", value: 828 },
@@ -435,6 +447,7 @@ export const COUNTRIES_RED_WINE_DATA = [
     id: "cyprus",
     dataYear: 2016,
     itemName: "Cyprus",
+units: "hectares",
     redGrapeData: [
       { grape: "Cabernet Sauvignon", value: 0 },
       { grape: "Merlot", value: 0 },
@@ -471,6 +484,7 @@ export const COUNTRIES_RED_WINE_DATA = [
     id: "czechia",
     dataYear: 2016,
     itemName: "Czechia",
+units: "hectares",
     redGrapeData: [
       { grape: "Cabernet Sauvignon", value: 0 },
       { grape: "Merlot", value: 0 },
@@ -507,6 +521,7 @@ export const COUNTRIES_RED_WINE_DATA = [
     id: "ethiopia",
     dataYear: 2016,
     itemName: "Ethiopia",
+units: "hectares",
     redGrapeData: [
       { grape: "Cabernet Sauvignon", value: 0 },
       { grape: "Merlot", value: 0 },
@@ -543,6 +558,7 @@ export const COUNTRIES_RED_WINE_DATA = [
     id: "france",
     dataYear: 2016,
     itemName: "France",
+units: "hectares",
     redGrapeData: [
       { grape: "Cabernet Sauvignon", value: 46555 },
       { grape: "Merlot", value: 108483 },
@@ -579,6 +595,7 @@ export const COUNTRIES_RED_WINE_DATA = [
     id: "georgia",
     dataYear: 2016,
     itemName: "Georgia",
+units: "hectares",
     redGrapeData: [
       { grape: "Cabernet Sauvignon", value: 286 },
       { grape: "Merlot", value: 0 },
@@ -615,6 +632,7 @@ export const COUNTRIES_RED_WINE_DATA = [
     id: "germany",
     dataYear: 2016,
     itemName: "Germany",
+units: "hectares",
     redGrapeData: [
       { grape: "Cabernet Sauvignon", value: 329 },
       { grape: "Merlot", value: 553 },
@@ -651,6 +669,7 @@ export const COUNTRIES_RED_WINE_DATA = [
     id: "greece",
     dataYear: 2016,
     itemName: "Greece",
+units: "hectares",
     redGrapeData: [
       { grape: "Cabernet Sauvignon", value: 1929 },
       { grape: "Merlot", value: 1393 },
@@ -687,6 +706,7 @@ export const COUNTRIES_RED_WINE_DATA = [
     id: "hungary",
     dataYear: 2016,
     itemName: "Hungary",
+units: "hectares",
     redGrapeData: [
       { grape: "Cabernet Sauvignon", value: 2677 },
       { grape: "Merlot", value: 1961 },
@@ -723,6 +743,7 @@ export const COUNTRIES_RED_WINE_DATA = [
     id: "india",
     dataYear: 2016,
     itemName: "India",
+units: "hectares",
     redGrapeData: [
       { grape: "Cabernet Sauvignon", value: 100 },
       { grape: "Merlot", value: 0 },
@@ -759,6 +780,7 @@ export const COUNTRIES_RED_WINE_DATA = [
     id: "israel",
     dataYear: 2016,
     itemName: "Israel",
+units: "hectares",
     redGrapeData: [
       { grape: "Cabernet Sauvignon", value: 990 },
       { grape: "Merlot", value: 715 },
@@ -795,6 +817,7 @@ export const COUNTRIES_RED_WINE_DATA = [
     id: "italy",
     dataYear: 2016,
     itemName: "Italy",
+units: "hectares",
     redGrapeData: [
       { grape: "Cabernet Sauvignon", value: 14240 },
       { grape: "Merlot", value: 24057 },
@@ -831,6 +854,7 @@ export const COUNTRIES_RED_WINE_DATA = [
     id: "japan",
     dataYear: 2016,
     itemName: "Japan",
+units: "hectares",
     redGrapeData: [
       { grape: "Cabernet Sauvignon", value: 42 },
       { grape: "Merlot", value: 197 },
@@ -867,6 +891,7 @@ export const COUNTRIES_RED_WINE_DATA = [
     id: "kazakhstan",
     dataYear: 2016,
     itemName: "Kazakhstan",
+units: "hectares",
     redGrapeData: [
       { grape: "Cabernet Sauvignon", value: 20 },
       { grape: "Merlot", value: 0 },
@@ -903,6 +928,7 @@ export const COUNTRIES_RED_WINE_DATA = [
     id: "korea-rep.",
     dataYear: 2016,
     itemName: "Korea Rep.",
+units: "hectares",
     redGrapeData: [
       { grape: "Cabernet Sauvignon", value: 0 },
       { grape: "Merlot", value: 0 },
@@ -939,6 +965,7 @@ export const COUNTRIES_RED_WINE_DATA = [
     id: "lebanon",
     dataYear: 2016,
     itemName: "Lebanon",
+units: "hectares",
     redGrapeData: [
       { grape: "Cabernet Sauvignon", value: 1000 },
       { grape: "Merlot", value: 500 },
@@ -975,6 +1002,7 @@ export const COUNTRIES_RED_WINE_DATA = [
     id: "luxembourg",
     dataYear: 2016,
     itemName: "Luxembourg",
+units: "hectares",
     redGrapeData: [
       { grape: "Cabernet Sauvignon", value: 0 },
       { grape: "Merlot", value: 0 },
@@ -1011,6 +1039,7 @@ export const COUNTRIES_RED_WINE_DATA = [
     id: "mexico",
     dataYear: 2016,
     itemName: "Mexico",
+units: "hectares",
     redGrapeData: [
       { grape: "Cabernet Sauvignon", value: 756 },
       { grape: "Merlot", value: 391 },
@@ -1047,6 +1076,7 @@ export const COUNTRIES_RED_WINE_DATA = [
     id: "moldova",
     dataYear: 2016,
     itemName: "Moldova",
+units: "hectares",
     redGrapeData: [
       { grape: "Cabernet Sauvignon", value: 8169 },
       { grape: "Merlot", value: 7689 },
@@ -1083,6 +1113,7 @@ export const COUNTRIES_RED_WINE_DATA = [
     id: "morocco",
     dataYear: 2016,
     itemName: "Morocco",
+units: "hectares",
     redGrapeData: [
       { grape: "Cabernet Sauvignon", value: 604 },
       { grape: "Merlot", value: 333 },
@@ -1119,6 +1150,7 @@ export const COUNTRIES_RED_WINE_DATA = [
     id: "myanmar",
     dataYear: 2016,
     itemName: "Myanmar",
+units: "hectares",
     redGrapeData: [
       { grape: "Cabernet Sauvignon", value: 0 },
       { grape: "Merlot", value: 0 },
@@ -1155,6 +1187,7 @@ export const COUNTRIES_RED_WINE_DATA = [
     id: "new-zealand",
     dataYear: 2016,
     itemName: "New Zealand",
+units: "hectares",
     redGrapeData: [
       { grape: "Cabernet Sauvignon", value: 275 },
       { grape: "Merlot", value: 1239 },
@@ -1191,6 +1224,7 @@ export const COUNTRIES_RED_WINE_DATA = [
     id: "n.-macedonia",
     dataYear: 2016,
     itemName: "N. Macedonia",
+units: "hectares",
     redGrapeData: [
       { grape: "Cabernet Sauvignon", value: 1020 },
       { grape: "Merlot", value: 1240 },
@@ -1227,6 +1261,7 @@ export const COUNTRIES_RED_WINE_DATA = [
     id: "norway",
     dataYear: 2016,
     itemName: "Norway",
+units: "hectares",
     redGrapeData: [
       { grape: "Cabernet Sauvignon", value: 0 },
       { grape: "Merlot", value: 0 },
@@ -1263,6 +1298,7 @@ export const COUNTRIES_RED_WINE_DATA = [
     id: "peru",
     dataYear: 2016,
     itemName: "Peru",
+units: "hectares",
     redGrapeData: [
       { grape: "Cabernet Sauvignon", value: 48 },
       { grape: "Merlot", value: 2 },
@@ -1299,6 +1335,7 @@ export const COUNTRIES_RED_WINE_DATA = [
     id: "portugal",
     dataYear: 2016,
     itemName: "Portugal",
+units: "hectares",
     redGrapeData: [
       { grape: "Cabernet Sauvignon", value: 2346 },
       { grape: "Merlot", value: 482 },
@@ -1335,6 +1372,7 @@ export const COUNTRIES_RED_WINE_DATA = [
     id: "romania",
     dataYear: 2016,
     itemName: "Romania",
+units: "hectares",
     redGrapeData: [
       { grape: "Cabernet Sauvignon", value: 5359 },
       { grape: "Merlot", value: 11647 },
@@ -1371,6 +1409,7 @@ export const COUNTRIES_RED_WINE_DATA = [
     id: "russia",
     dataYear: 2016,
     itemName: "Russia",
+units: "hectares",
     redGrapeData: [
       { grape: "Cabernet Sauvignon", value: 8528 },
       { grape: "Merlot", value: 2988 },
@@ -1407,6 +1446,7 @@ export const COUNTRIES_RED_WINE_DATA = [
     id: "serbia",
     dataYear: 2016,
     itemName: "Serbia",
+units: "hectares",
     redGrapeData: [
       { grape: "Cabernet Sauvignon", value: 2111 },
       { grape: "Merlot", value: 1968 },
@@ -1443,6 +1483,7 @@ export const COUNTRIES_RED_WINE_DATA = [
     id: "slovakia",
     dataYear: 2016,
     itemName: "Slovakia",
+units: "hectares",
     redGrapeData: [
       { grape: "Cabernet Sauvignon", value: 469 },
       { grape: "Merlot", value: 0 },
@@ -1479,6 +1520,7 @@ export const COUNTRIES_RED_WINE_DATA = [
     id: "slovenia",
     dataYear: 2016,
     itemName: "Slovenia",
+units: "hectares",
     redGrapeData: [
       { grape: "Cabernet Sauvignon", value: 423 },
       { grape: "Merlot", value: 817 },
@@ -1515,6 +1557,7 @@ export const COUNTRIES_RED_WINE_DATA = [
     id: "south-africa",
     dataYear: 2016,
     itemName: "South Africa",
+units: "hectares",
     redGrapeData: [
       { grape: "Cabernet Sauvignon", value: 10589 },
       { grape: "Merlot", value: 5558 },
@@ -1551,6 +1594,7 @@ export const COUNTRIES_RED_WINE_DATA = [
     id: "spain",
     dataYear: 2016,
     itemName: "Spain",
+units: "hectares",
     redGrapeData: [
       { grape: "Cabernet Sauvignon", value: 20139 },
       { grape: "Merlot", value: 12852 },
@@ -1587,6 +1631,7 @@ export const COUNTRIES_RED_WINE_DATA = [
     id: "switzerland",
     dataYear: 2016,
     itemName: "Switzerland",
+units: "hectares",
     redGrapeData: [
       { grape: "Cabernet Sauvignon", value: 66 },
       { grape: "Merlot", value: 1124 },
@@ -1623,6 +1668,7 @@ export const COUNTRIES_RED_WINE_DATA = [
     id: "taiwan",
     dataYear: 2016,
     itemName: "Taiwan",
+units: "hectares",
     redGrapeData: [
       { grape: "Cabernet Sauvignon", value: 0 },
       { grape: "Merlot", value: 0 },
@@ -1659,6 +1705,7 @@ export const COUNTRIES_RED_WINE_DATA = [
     id: "thailand",
     dataYear: 2016,
     itemName: "Thailand",
+units: "hectares",
     redGrapeData: [
       { grape: "Cabernet Sauvignon", value: 7 },
       { grape: "Merlot", value: 0 },
@@ -1695,6 +1742,7 @@ export const COUNTRIES_RED_WINE_DATA = [
     id: "tunisia",
     dataYear: 2016,
     itemName: "Tunisia",
+units: "hectares",
     redGrapeData: [
       { grape: "Cabernet Sauvignon", value: 117 },
       { grape: "Merlot", value: 64 },
@@ -1731,6 +1779,7 @@ export const COUNTRIES_RED_WINE_DATA = [
     id: "turkey",
     dataYear: 2016,
     itemName: "Turkey",
+units: "hectares",
     redGrapeData: [
       { grape: "Cabernet Sauvignon", value: 476 },
       { grape: "Merlot", value: 415 },
@@ -1767,6 +1816,7 @@ export const COUNTRIES_RED_WINE_DATA = [
     id: "ukraine",
     dataYear: 2016,
     itemName: "Ukraine",
+units: "hectares",
     redGrapeData: [
       { grape: "Cabernet Sauvignon", value: 4935 },
       { grape: "Merlot", value: 1400 },
@@ -1803,6 +1853,7 @@ export const COUNTRIES_RED_WINE_DATA = [
     id: "united-kingdom",
     dataYear: 2016,
     itemName: "United Kingdom",
+units: "hectares",
     redGrapeData: [
       { grape: "Cabernet Sauvignon", value: 0 },
       { grape: "Merlot", value: 0 },
@@ -1839,6 +1890,7 @@ export const COUNTRIES_RED_WINE_DATA = [
     id: "united-states",
     dataYear: 2016,
     itemName: "United States",
+units: "hectares",
     redGrapeData: [
       { grape: "Cabernet Sauvignon", value: 40837 },
       { grape: "Merlot", value: 21251 },
@@ -1875,6 +1927,7 @@ export const COUNTRIES_RED_WINE_DATA = [
     id: "uruguay",
     dataYear: 2016,
     itemName: "Uruguay",
+units: "hectares",
     redGrapeData: [
       { grape: "Cabernet Sauvignon", value: 484 },
       { grape: "Merlot", value: 747 },
