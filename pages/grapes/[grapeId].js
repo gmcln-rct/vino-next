@@ -1,31 +1,14 @@
-import { useRouter } from "next/router";
 import Head from "next/head";
 import Link from "next/link";
 import Image from "next/image";
-
-import { getDataItemById } from "@/data/utils";
-import { GRAPES_DATA } from "@/data/grape-data";
-
-import DetailSection from "@/components/layout/detail-section";
 import Button from "@/components/ui/button";
 import Masthead from "@/components/layout/masthead";
+import { GRAPES_DATA } from "@/data/grape-data";
+import { getDataItemById } from "@/data/utils";
 
-function GrapeDetailPage() {
-  const router = useRouter();
-  const id = router.query.grapeId;
-  const grape = getDataItemById(id, GRAPES_DATA);
-
-  const worldTopLink = "/grapes/worldtop/" + id;
-
-  const worldTopBubbleChartLink = "/grapes/worldtop/bubble-chart/" + id;
-
-  if (!grape || !grape.id) {
-    return (
-      <div className="center">
-        <p>Loading...</p>
-      </div>
-    );
-  }
+export default function GrapeDetailPage({ grape }) {
+  const worldTopLink = "/grapes/worldtop/" + grape.id;
+  const worldTopBubbleChartLink = "/grapes/worldtop/bubble-chart/" + grape.id;
 
   const wineCategory = grape.category === "R" ? "Red" : "White";
 
@@ -38,7 +21,7 @@ function GrapeDetailPage() {
         </title>
         <meta
           name="description"
-          content="Data visualization for {grape.itemName} wine grape area production."
+          content={`Data visualization for ${grape.itemName} wine grape area production.`}
         />
       </Head>
       <Masthead
@@ -80,14 +63,6 @@ function GrapeDetailPage() {
           </Link>
         </div>
       </section>
-      {/* <DetailSection
-        wineCategory={wineCategory}
-        itemLink={grape.link}
-        description={grape.description}
-        countryName={grape.itemName}
-        moreInfo={grape.altNames}
-      /> */}
-
       <div className="buttonFooter">
         <Button link="/grapes/" isSecondary="true">
           Back to Grapes Index
@@ -97,4 +72,16 @@ function GrapeDetailPage() {
   );
 }
 
-export default GrapeDetailPage;
+export async function getStaticPaths() {
+  const paths = GRAPES_DATA.map((grape) => ({
+    params: { grapeId: grape.id },
+  }));
+
+  return { paths, fallback: false };
+}
+
+export async function getStaticProps({ params }) {
+  const grape = getDataItemById(params.grapeId, GRAPES_DATA);
+
+  return { props: { grape } };
+}

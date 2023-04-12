@@ -1,32 +1,17 @@
-import { useRouter } from "next/router";
 import Head from "next/head";
 import Image from "next/image";
-
-import { getDataItemById } from "@/data/utils";
-import { COUNTRIES_DATA } from "@/data/country-data";
-
 import DetailSection from "@/components/layout/detail-section";
 import Button from "@/components/ui/button";
+import { COUNTRIES_DATA } from "@/data/country-data";
+import { getDataItemById } from "@/data/utils";
 
-function CountryDetailPage() {
-  const router = useRouter();
-
-  const id = router.query.countryId;
-  const country = getDataItemById(id, COUNTRIES_DATA);
-
-  if (!country || !country.id) {
-    return (
-      <div className="center">
-        <p>Loading...</p>
-      </div>
-    );
-  }
+export default function CountryDetailPage({ country }) {
   const flagImage = `/images/flags/flag-${country.id}.svg`;
   const flagImageAlt = `Flag of ${country.itemName}`;
   const wineCategory = country.category === "OW" ? "Old World" : "New World";
 
-  const worldTopTenLink = `/countries/worldtopten/${id}`;
-  const nationalTopLink = `/countries/nationaltop/${id}`;
+  const worldTopTenLink = `/countries/worldtopten/${country.id}`;
+  const nationalTopLink = `/countries/nationaltop/${country.id}`;
 
   return (
     <>
@@ -37,7 +22,7 @@ function CountryDetailPage() {
         </title>
         <meta
           name="description"
-          content="Data visualization for wine grape area production in {country.itemName }"
+          content={`Data visualization for wine grape area production in ${country.itemName}`}
         />
       </Head>
 
@@ -73,4 +58,16 @@ function CountryDetailPage() {
   );
 }
 
-export default CountryDetailPage;
+export async function getStaticPaths() {
+  const paths = COUNTRIES_DATA.map((country) => ({
+    params: { countryId: country.id },
+  }));
+
+  return { paths, fallback: false };
+}
+
+export async function getStaticProps({ params }) {
+  const country = getDataItemById(params.countryId, COUNTRIES_DATA);
+
+  return { props: { country } };
+}

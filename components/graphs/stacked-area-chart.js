@@ -15,7 +15,7 @@ const StackedAreaChart = () => {
     d3.select(svgRef.current).selectAll("*").remove();
     const margin = { top: 10, right: 30, bottom: 110, left: 60 };
     const width = 600;
-    const height = 300;
+    const height = 250;
 
     if (!data) {
       return <div>Loading...</div>;
@@ -172,9 +172,6 @@ const StackedAreaChart = () => {
         <option value={true}>Normalized Values (%)</option>
       </select>
       <svg ref={svgRef}></svg>
-      {/* <div ref={tooltipRef} className="tooltip">
-        Production in KL
-      </div> */}
       <p className="chartfooter moveUp">{dataTypeText}</p>
     </div>
   );
