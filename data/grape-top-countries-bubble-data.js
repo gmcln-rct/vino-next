@@ -157,8 +157,8 @@ export const RED_GRAPE_TOP_COUNTRIES = [
     ],
   },
   {
-    itemName: "Monastrell",
-    id: "monastrell",
+    itemName: "Mourvèdre",
+    id: "mourvedre",
     category: "R",
     units: "hectares",
     dataType: "grape",

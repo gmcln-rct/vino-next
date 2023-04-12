@@ -238,7 +238,7 @@ export const GRAPES_RED_TOP_TEN_DATA = [
     ],
   },
   {
-    id: "monastrell",
+    id: "mourvedre",
     dataYear: 2016,
     units: "hectares",
     countries: [

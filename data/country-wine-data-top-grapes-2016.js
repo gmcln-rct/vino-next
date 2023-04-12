@@ -172,7 +172,7 @@ export const COUNTRIES_WINE_DATA = [
       {grape: "Sangiovese", value: 1503},
       {grape: "Cabernet Franc", value: 32327},
       {grape: "Malbec", value: 6100},
-      {grape: "Monastrell", value: 8754},
+      {grape: "Mourvèdre", value: 8754},
     ],
     whiteGrapeDataWorld: [
       { grape: "Airén", value: 0 },
@@ -456,7 +456,7 @@ export const COUNTRIES_WINE_DATA = [
       { grape: "Bobal", value: 59189 },
       { grape: "Grenache", value: 54606 },
       { grape: "Mencía", value: 8489 },
-      { grape: "Monastrell", value: 41303 },
+      { grape: "Mourvèdre", value: 41303 },
       { grape: "Prieto Picudo", value: 4293 },
       { grape: "Tempranillo", value: 193597 },
       { grape: "Tinto Velasco", value: 5369 },
