@@ -1,17 +1,9 @@
 import Head from "next/head";
-
 import { GRAPES_DATA } from "@/data/grape-data";
-
 import { getTopData } from "@/data/utils";
-
 import DataList from "@/components/layout/data-list";
 
-
-function GrapeIndex() {
-  // const allGrapes = getAllData(GRAPES_DATA);
-  const topGrapes = getTopData(GRAPES_DATA);
-
-  console.log('topGrapes: ', topGrapes);
+export default function GrapeIndex({ topGrapes }) {
   return (
     <div>
       <Head>
@@ -28,4 +20,8 @@ function GrapeIndex() {
   );
 }
 
-export default GrapeIndex;
+export async function getStaticProps() {
+  const topGrapes = getTopData(GRAPES_DATA);
+
+  return { props: { topGrapes } };
+}

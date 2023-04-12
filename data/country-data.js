@@ -17,7 +17,8 @@ export const COUNTRIES_DATA = [
       "Buenos Aires",
     ],
     link: "https://en.wikipedia.org/wiki/Argentine_wine",
-    isFeatured: false,
+      indexImageLink: "/images/site-images/index-images/grape-sm-rkatsiteli.jpg",
+  isFeatured: false,
     isTop: true,
   },
 
@@ -39,7 +40,8 @@ export const COUNTRIES_DATA = [
       "Langhorne Creek",
     ],
     link: "https://en.wikipedia.org/wiki/Australian_wine",
-    isFeatured: true,
+      indexImageLink: "/images/site-images/index-images/grape-sm-rkatsiteli.jpg",
+  isFeatured: true,
     isTop: true,
   },
   {
@@ -60,7 +62,8 @@ export const COUNTRIES_DATA = [
       "Itata Valley",
     ],
     link: "https://en.wikipedia.org/wiki/Chilean_wine",
-    isFeatured: false,
+      indexImageLink: "/images/site-images/index-images/grape-sm-rkatsiteli.jpg",
+  isFeatured: false,
     isTop: true,
   },
 
@@ -82,7 +85,8 @@ export const COUNTRIES_DATA = [
       "Savoie",
     ],
     link: "https://en.wikipedia.org/wiki/French_wine",
-    isFeatured: false,
+      indexImageLink: "/images/site-images/index-images/grape-sm-rkatsiteli.jpg",
+  isFeatured: false,
     isTop: true,
   },
   {
@@ -103,7 +107,8 @@ export const COUNTRIES_DATA = [
       "Hessische Bergstraße",
     ],
     link: "https://en.wikipedia.org/wiki/German_wine",
-    isFeatured: false,
+      indexImageLink: "/images/site-images/index-images/grape-sm-rkatsiteli.jpg",
+  isFeatured: false,
     isTop: true,
   },
   {
@@ -124,7 +129,8 @@ export const COUNTRIES_DATA = [
       "Lazio",
     ],
     link: "https://en.wikipedia.org/wiki/Italian_wine",
-    isFeatured: true,
+      indexImageLink: "/images/site-images/index-images/grape-sm-rkatsiteli.jpg",
+  isFeatured: true,
     isTop: true,
   },
 
@@ -146,7 +152,8 @@ export const COUNTRIES_DATA = [
       "Trás-os-Montes",
     ],
     link: "https://en.wikipedia.org/wiki/Portuguese_wine",
-    isFeatured: false,
+      indexImageLink: "/images/site-images/index-images/grape-sm-rkatsiteli.jpg",
+  isFeatured: false,
     isTop: true,
   },
   {
@@ -167,7 +174,8 @@ export const COUNTRIES_DATA = [
       "Olifants River",
     ],
     link: "https://en.wikipedia.org/wiki/South_African_wine",
-    isFeatured: false,
+      indexImageLink: "/images/site-images/index-images/grape-sm-rkatsiteli.jpg",
+  isFeatured: false,
     isTop: true,
   },
   {
@@ -188,7 +196,8 @@ export const COUNTRIES_DATA = [
       "Penedès",
     ],
     link: "https://en.wikipedia.org/wiki/Spanish_wine",
-    isFeatured: true,
+      indexImageLink: "/images/site-images/index-images/grape-sm-rkatsiteli.jpg",
+  isFeatured: true,
     isTop: true,
   },
 
@@ -210,7 +219,8 @@ export const COUNTRIES_DATA = [
       "Russian River Valley",
     ],
     link: "https://en.wikipedia.org/wiki/American_wine",
-    isFeatured: false,
+      indexImageLink: "/images/site-images/index-images/grape-sm-rkatsiteli.jpg",
+  isFeatured: false,
     isTop: true,
   },
 ];
