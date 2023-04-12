@@ -1,6 +1,6 @@
 import Head from "next/head";
 import Link from "next/link";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 import classes from "./histogram.module.css";
 
@@ -25,19 +25,24 @@ const COUNTRIES = [
 
 const YEARS = [2000, 2001, 2002, 2003, 2004, 2005, 2006];
 
-function HistoricHistogramPage() {
+function HistogramIndividualPage() {
   const [country1, setCountry1] = useState(COUNTRIES[0]);
-  const [country2, setCountry2] = useState(COUNTRIES[1]);
+  const [country2, setCountry2] = useState(null);
 
   const historicData = HISTORIC_PRODUCTION_STACKED_DATA;
 
-  const handleCountry2Change = (e) => {
-    if (e.target.value === country1) {
-      setCountry2(COUNTRIES.find((c) => c !== country1));
-    } else {
-      setCountry2(e.target.value);
-    }
-  };
+  // useEffect(() => {
+  //   // update country2 if it is the same as country1
+  //   if (country2 && country1 === country2) {
+  //     setCountry2(COUNTRIES.find((c) => c !== country1));
+  //   }
+  // }, [country1, country2]);
+
+  // const handleCountry2Change = (e) => {
+  //   const value = e.target.value;
+  //   setCountry2(value === "" ? null : value);
+  // };
+
 
   return (
     <>
@@ -51,7 +56,7 @@ function HistoricHistogramPage() {
           content="Histogram data visualization by country."
         />
       </Head>
-      <h1 className="indexheader">Histogram: Historic Wine Production By Year</h1>
+      <h1 className="indexheader">Histogram: Historic Yearly Wine Production, by Volume</h1>
       <div className={classes.selectrow}>
         <select
           value={country1}
@@ -64,22 +69,10 @@ function HistoricHistogramPage() {
             </option>
           ))}
         </select>
-        <select
-          value={country2}
-          className="selectCss select120"
-          onChange={handleCountry2Change}
-        >
-          {COUNTRIES.filter((c) => c !== country1).map((country) => (
-            <option key={country} value={country}>
-              {country}
-            </option>
-          ))}
-        </select>
       </div>
       <HistogramChart
         data={historicData}
         country1={country1}
-        country2={country2}
       />
       <div>
         <p className="dataSource">
@@ -94,9 +87,10 @@ function HistoricHistogramPage() {
       </div>
       <div className="buttonFooter">
         <Button link="/historic/" isSecondary="true">Back to Historic Data Index</Button>
+        <Button link="/historic/histogram-comparison" isSecondary="true">Histogram Comparison Chart</Button>
       </div>
     </>
   );
 }
 
-export default HistoricHistogramPage;
+export default HistogramIndividualPage;

@@ -24,7 +24,7 @@ function HistoricDataHistogram() {
           content="Data visualization for all wine-producing countries"
         />
       </Head>
-      <h1 className="indexheader">Stacked Area: Historic Wine Production By Year</h1>
+      <h1 className="indexheader">Stacked Area: Historic Yearly Wine Production, by Volume</h1>
 
       <StackedAreaChart  />
       <div> 

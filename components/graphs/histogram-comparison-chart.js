@@ -1,9 +1,9 @@
 import React, { useRef, useEffect } from "react";
 import * as d3 from "d3";
 
-// SINGLE HISTOGRAM CHART
+// DOUBLE HISTOGRAM CHART
 
-const HistogramChart = ({ data, country1 }) => {
+const HistogramComparisonChart = ({ data, country1, country2 }) => {
   const svgRef = useRef();
 
   const dataTypeText = "Annual production in Kiloliters (KL)";
@@ -45,7 +45,7 @@ const HistogramChart = ({ data, country1 }) => {
 
     const y = d3
       .scaleLinear()
-      .domain([0, d3.max(data, (d) => Math.max(d[country1]))])
+      .domain([0, d3.max(data, (d) => Math.max(d[country1], d[country2]))])
       .range([height, 0]);
 
     const xAxis = d3
@@ -84,8 +84,21 @@ const HistogramChart = ({ data, country1 }) => {
       .attr("y", (d) => y(d[country1]))
       .attr("width", x.bandwidth() / 2)
       .attr("height", (d) => height - y(d[country1]))
-      .attr("fill", d3.interpolate("#fca5a5", "#96074e")(0.5));
+      .attr("fill", d3.interpolate("#fca5a5", "#B82107")(0.2));
 
+    // Bars for country 2
+    const bars2 = chart
+      .selectAll(".bar2")
+      .data(data)
+      .enter()
+      .append("rect")
+      .attr("class", "bar2")
+      .attr("x", (d) => x(d.year) + x.bandwidth() / 2)
+      .attr("y", (d) => y(d[country2]))
+      .attr("width", x.bandwidth() / 2)
+      .attr("height", (d) => height - y(d[country2]))
+      .attr("fill", d3.interpolate("#008ac5", "#0b1d78")(0.4));
+      // .attr("fill", d3.interpolate("#fde68a", "#e6c612")(0.4));
 
     // Add legend for country 1
     const legend = chart.append("g").attr("transform", "translate(10, 10)");
@@ -96,20 +109,20 @@ const HistogramChart = ({ data, country1 }) => {
       .attr("y", 10)
       .attr("width", 20)
       .attr("height", 20)
-      .attr("fill", d3.interpolate("#fca5a5", "#96074e")(0.5));
+      .attr("fill", d3.interpolate("#fca5a5", "#B82107")(0.2));
 
     legend.append("text").attr("x", 40).attr("y", 25).text(country1);
 
-    // legend
-    //   .append("rect")
-    //   .attr("x", 10)
-    //   .attr("y", 40)
-    //   .attr("width", 20)
-    //   .attr("height", 20)
-    //   .attr("fill", d3.interpolate("#fde68a", "#e6c612")(0.2));
+    legend
+      .append("rect")
+      .attr("x", 10)
+      .attr("y", 40)
+      .attr("width", 20)
+      .attr("height", 20)
+      .attr("fill", d3.interpolate("#fde68a", "#e6c612")(0.2));
 
-    // legend.append("text").attr("x", 40).attr("y", 55).text(country2);
-    // Resize function
+    legend.append("text").attr("x", 40).attr("y", 55).text(country2);
+
     function resize() {
       const container = svgRef.current.parentElement;
       const width = container.offsetWidth - margin.left - margin.right;
@@ -136,6 +149,12 @@ const HistogramChart = ({ data, country1 }) => {
         .attr("width", x.bandwidth() / 2)
         .attr("height", (d) => height - y(d[country1]));
 
+      chart
+        .selectAll(".bar2")
+        .attr("x", (d) => x(d.year) + x.bandwidth() / 2)
+        .attr("y", (d) => y(d[country2]))
+        .attr("width", x.bandwidth() / 2)
+        .attr("height", (d) => height - y(d[country2]));
     }
 
     window.addEventListener("resize", resize);
@@ -143,7 +162,7 @@ const HistogramChart = ({ data, country1 }) => {
     return () => {
       window.removeEventListener("resize", resize);
     };
-  }, [data, country1]);
+  }, [data, country1, country2]);
 
   return (
     <div
@@ -161,4 +180,4 @@ const HistogramChart = ({ data, country1 }) => {
   );
 };
 
-export default HistogramChart;
+export default HistogramComparisonChart;
