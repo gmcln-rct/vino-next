@@ -10,7 +10,7 @@ import { COUNTRIES_WHITE_WINE_DATA } from "@/data/country-wine-data-white-all-20
 
 
 // import BarChart from "@/components/graphs/bar-chart";
-import MultiBarChart from "@/components/graphs/bar-chart-multi";
+import MultiBarChart from "@/components/graphs/bar-multi-chart";
 import Button from "@/components/ui/button";
 
 import {filterCountriesData, getDataItemById} from "@/data/utils";
