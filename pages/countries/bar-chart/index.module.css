@@ -1,0 +1,9 @@
+.selectrow {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 40%;
+    margin: 0 0 1em 0;
+  }
+  

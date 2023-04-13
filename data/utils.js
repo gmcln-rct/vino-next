@@ -27,3 +27,7 @@ export function getFilteredData(dateFilter) {
 export function getDataItemById(id, data) {
   return data.find((dataItem) => dataItem.id === id);
 }
+
+export function filterCountriesData(countriesData) {
+  return countriesData.map(({ id, itemName }) => ({ id, itemName }));
+}

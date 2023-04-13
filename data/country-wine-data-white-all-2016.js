@@ -3,7 +3,7 @@ export const COUNTRIES_WHITE_WINE_DATA = [
     id: "algeria",
     dataYear: 2016,
     itemName: "Algeria",
-    redGrapeData: [
+    grapeData: [
       { grape: "Airén", value: 0 },
       { grape: "Chardonnay", value: 0 },
       { grape: "Sauvignon Blanc", value: 0 },
@@ -40,7 +40,7 @@ export const COUNTRIES_WHITE_WINE_DATA = [
     id: "argentina",
     dataYear: 2016,
     itemName: "Argentina",
-    redGrapeData: [
+    grapeData: [
       { grape: "Airén", value: 0 },
       { grape: "Chardonnay", value: 6227 },
       { grape: "Sauvignon Blanc", value: 2148 },
@@ -77,7 +77,7 @@ export const COUNTRIES_WHITE_WINE_DATA = [
     id: "armenia",
     dataYear: 2016,
     itemName: "Armenia",
-    redGrapeData: [
+    grapeData: [
       { grape: "Airén", value: 0 },
       { grape: "Chardonnay", value: 0 },
       { grape: "Sauvignon Blanc", value: 0 },
@@ -114,7 +114,7 @@ export const COUNTRIES_WHITE_WINE_DATA = [
     id: "australia",
     dataYear: 2016,
     itemName: "Australia",
-    redGrapeData: [
+    grapeData: [
       { grape: "Airén", value: 0 },
       { grape: "Chardonnay", value: 21321 },
       { grape: "Sauvignon Blanc", value: 6044 },
@@ -151,7 +151,7 @@ export const COUNTRIES_WHITE_WINE_DATA = [
     id: "austria",
     dataYear: 2016,
     itemName: "Austria",
-    redGrapeData: [
+    grapeData: [
       { grape: "Airén", value: 0 },
       { grape: "Chardonnay", value: 1577 },
       { grape: "Sauvignon Blanc", value: 1170 },
@@ -188,7 +188,7 @@ export const COUNTRIES_WHITE_WINE_DATA = [
     id: "brazil",
     dataYear: 2016,
     itemName: "Brazil",
-    redGrapeData: [
+    grapeData: [
       { grape: "Airén", value: 0 },
       { grape: "Chardonnay", value: 340 },
       { grape: "Sauvignon Blanc", value: 33 },
@@ -225,7 +225,7 @@ export const COUNTRIES_WHITE_WINE_DATA = [
     id: "bulgaria",
     dataYear: 2016,
     itemName: "Bulgaria",
-    redGrapeData: [
+    grapeData: [
       { grape: "Airén", value: 0 },
       { grape: "Chardonnay", value: 3087 },
       { grape: "Sauvignon Blanc", value: 637 },
@@ -262,7 +262,7 @@ export const COUNTRIES_WHITE_WINE_DATA = [
     id: "cambodia",
     dataYear: 2016,
     itemName: "Cambodia",
-    redGrapeData: [
+    grapeData: [
       { grape: "Airén", value: 0 },
       { grape: "Chardonnay", value: 0 },
       { grape: "Sauvignon Blanc", value: 0 },
@@ -299,7 +299,7 @@ export const COUNTRIES_WHITE_WINE_DATA = [
     id: "canada",
     dataYear: 2016,
     itemName: "Canada",
-    redGrapeData: [
+    grapeData: [
       { grape: "Airén", value: 0 },
       { grape: "Chardonnay", value: 1417 },
       { grape: "Sauvignon Blanc", value: 285 },
@@ -336,7 +336,7 @@ export const COUNTRIES_WHITE_WINE_DATA = [
     id: "chile",
     dataYear: 2016,
     itemName: "Chile",
-    redGrapeData: [
+    grapeData: [
       { grape: "Airén", value: 0 },
       { grape: "Chardonnay", value: 11435 },
       { grape: "Sauvignon Blanc", value: 14999 },
@@ -373,7 +373,7 @@ export const COUNTRIES_WHITE_WINE_DATA = [
     id: "china",
     dataYear: 2016,
     itemName: "China",
-    redGrapeData: [
+    grapeData: [
       { grape: "Airén", value: 0 },
       { grape: "Chardonnay", value: 6100 },
       { grape: "Sauvignon Blanc", value: 2000 },
@@ -410,7 +410,7 @@ export const COUNTRIES_WHITE_WINE_DATA = [
     id: "croatia",
     dataYear: 2016,
     itemName: "Croatia",
-    redGrapeData: [
+    grapeData: [
       { grape: "Airén", value: 0 },
       { grape: "Chardonnay", value: 657 },
       { grape: "Sauvignon Blanc", value: 0 },
@@ -447,7 +447,7 @@ export const COUNTRIES_WHITE_WINE_DATA = [
     id: "cyprus",
     dataYear: 2016,
     itemName: "Cyprus",
-    redGrapeData: [
+    grapeData: [
       { grape: "Airén", value: 0 },
       { grape: "Chardonnay", value: 0 },
       { grape: "Sauvignon Blanc", value: 0 },
@@ -484,7 +484,7 @@ export const COUNTRIES_WHITE_WINE_DATA = [
     id: "czechia",
     dataYear: 2016,
     itemName: "Czechia",
-    redGrapeData: [
+    grapeData: [
       { grape: "Airén", value: 0 },
       { grape: "Chardonnay", value: 820 },
       { grape: "Sauvignon Blanc", value: 906 },
@@ -521,7 +521,7 @@ export const COUNTRIES_WHITE_WINE_DATA = [
     id: "ethiopia",
     dataYear: 2016,
     itemName: "Ethiopia",
-    redGrapeData: [
+    grapeData: [
       { grape: "Airén", value: 0 },
       { grape: "Chardonnay", value: 0 },
       { grape: "Sauvignon Blanc", value: 0 },
@@ -558,7 +558,7 @@ export const COUNTRIES_WHITE_WINE_DATA = [
     id: "france",
     dataYear: 2016,
     itemName: "France",
-    redGrapeData: [
+    grapeData: [
       { grape: "Airén", value: 0 },
       { grape: "Chardonnay", value: 47451 },
       { grape: "Sauvignon Blanc", value: 28084 },
@@ -595,7 +595,7 @@ export const COUNTRIES_WHITE_WINE_DATA = [
     id: "georgia",
     dataYear: 2016,
     itemName: "Georgia",
-    redGrapeData: [
+    grapeData: [
       { grape: "Airén", value: 0 },
       { grape: "Chardonnay", value: 0 },
       { grape: "Sauvignon Blanc", value: 0 },
@@ -632,7 +632,7 @@ export const COUNTRIES_WHITE_WINE_DATA = [
     id: "germany",
     dataYear: 2016,
     itemName: "Germany",
-    redGrapeData: [
+    grapeData: [
       { grape: "Airén", value: 0 },
       { grape: "Chardonnay", value: 1485 },
       { grape: "Sauvignon Blanc", value: 736 },
@@ -669,7 +669,7 @@ export const COUNTRIES_WHITE_WINE_DATA = [
     id: "greece",
     dataYear: 2016,
     itemName: "Greece",
-    redGrapeData: [
+    grapeData: [
       { grape: "Airén", value: 0 },
       { grape: "Chardonnay", value: 673 },
       { grape: "Sauvignon Blanc", value: 727 },
@@ -706,7 +706,7 @@ export const COUNTRIES_WHITE_WINE_DATA = [
     id: "hungary",
     dataYear: 2016,
     itemName: "Hungary",
-    redGrapeData: [
+    grapeData: [
       { grape: "Airén", value: 0 },
       { grape: "Chardonnay", value: 2464 },
       { grape: "Sauvignon Blanc", value: 982 },
@@ -743,7 +743,7 @@ export const COUNTRIES_WHITE_WINE_DATA = [
     id: "india",
     dataYear: 2016,
     itemName: "India",
-    redGrapeData: [
+    grapeData: [
       { grape: "Airén", value: 0 },
       { grape: "Chardonnay", value: 100 },
       { grape: "Sauvignon Blanc", value: 500 },
@@ -780,7 +780,7 @@ export const COUNTRIES_WHITE_WINE_DATA = [
     id: "israel",
     dataYear: 2016,
     itemName: "Israel",
-    redGrapeData: [
+    grapeData: [
       { grape: "Airén", value: 0 },
       { grape: "Chardonnay", value: 165 },
       { grape: "Sauvignon Blanc", value: 110 },
@@ -817,7 +817,7 @@ export const COUNTRIES_WHITE_WINE_DATA = [
     id: "italy",
     dataYear: 2016,
     itemName: "Italy",
-    redGrapeData: [
+    grapeData: [
       { grape: "Airén", value: 0 },
       { grape: "Chardonnay", value: 19769 },
       { grape: "Sauvignon Blanc", value: 3935 },
@@ -854,7 +854,7 @@ export const COUNTRIES_WHITE_WINE_DATA = [
     id: "japan",
     dataYear: 2016,
     itemName: "Japan",
-    redGrapeData: [
+    grapeData: [
       { grape: "Airén", value: 0 },
       { grape: "Chardonnay", value: 137 },
       { grape: "Sauvignon Blanc", value: 15 },
@@ -891,7 +891,7 @@ export const COUNTRIES_WHITE_WINE_DATA = [
     id: "kazakhstan",
     dataYear: 2016,
     itemName: "Kazakhstan",
-    redGrapeData: [
+    grapeData: [
       { grape: "Airén", value: 0 },
       { grape: "Chardonnay", value: 0 },
       { grape: "Sauvignon Blanc", value: 0 },
@@ -928,7 +928,7 @@ export const COUNTRIES_WHITE_WINE_DATA = [
     id: "korea-rep.",
     dataYear: 2016,
     itemName: "Korea Rep.",
-    redGrapeData: [
+    grapeData: [
       { grape: "Airén", value: 0 },
       { grape: "Chardonnay", value: 0 },
       { grape: "Sauvignon Blanc", value: 0 },
@@ -965,7 +965,7 @@ export const COUNTRIES_WHITE_WINE_DATA = [
     id: "lebanon",
     dataYear: 2016,
     itemName: "Lebanon",
-    redGrapeData: [
+    grapeData: [
       { grape: "Airén", value: 0 },
       { grape: "Chardonnay", value: 1000 },
       { grape: "Sauvignon Blanc", value: 500 },
@@ -1002,7 +1002,7 @@ export const COUNTRIES_WHITE_WINE_DATA = [
     id: "luxembourg",
     dataYear: 2016,
     itemName: "Luxembourg",
-    redGrapeData: [
+    grapeData: [
       { grape: "Airén", value: 0 },
       { grape: "Chardonnay", value: 30 },
       { grape: "Sauvignon Blanc", value: 0 },
@@ -1039,7 +1039,7 @@ export const COUNTRIES_WHITE_WINE_DATA = [
     id: "mexico",
     dataYear: 2016,
     itemName: "Mexico",
-    redGrapeData: [
+    grapeData: [
       { grape: "Airén", value: 0 },
       { grape: "Chardonnay", value: 0 },
       { grape: "Sauvignon Blanc", value: 120 },
@@ -1076,7 +1076,7 @@ export const COUNTRIES_WHITE_WINE_DATA = [
     id: "moldova",
     dataYear: 2016,
     itemName: "Moldova",
-    redGrapeData: [
+    grapeData: [
       { grape: "Airén", value: 0 },
       { grape: "Chardonnay", value: 4133 },
       { grape: "Sauvignon Blanc", value: 6909 },
@@ -1113,7 +1113,7 @@ export const COUNTRIES_WHITE_WINE_DATA = [
     id: "morocco",
     dataYear: 2016,
     itemName: "Morocco",
-    redGrapeData: [
+    grapeData: [
       { grape: "Airén", value: 440 },
       { grape: "Chardonnay", value: 880 },
       { grape: "Sauvignon Blanc", value: 440 },
@@ -1150,7 +1150,7 @@ export const COUNTRIES_WHITE_WINE_DATA = [
     id: "myanmar",
     dataYear: 2016,
     itemName: "Myanmar",
-    redGrapeData: [
+    grapeData: [
       { grape: "Airén", value: 0 },
       { grape: "Chardonnay", value: 2 },
       { grape: "Sauvignon Blanc", value: 22 },
@@ -1187,7 +1187,7 @@ export const COUNTRIES_WHITE_WINE_DATA = [
     id: "new-zealand",
     dataYear: 2016,
     itemName: "New Zealand",
-    redGrapeData: [
+    grapeData: [
       { grape: "Airén", value: 0 },
       { grape: "Chardonnay", value: 3117 },
       { grape: "Sauvignon Blanc", value: 20497 },
@@ -1224,7 +1224,7 @@ export const COUNTRIES_WHITE_WINE_DATA = [
     id: "n.-macedonia",
     dataYear: 2016,
     itemName: "N. Macedonia",
-    redGrapeData: [
+    grapeData: [
       { grape: "Airén", value: 0 },
       { grape: "Chardonnay", value: 750 },
       { grape: "Sauvignon Blanc", value: 185 },
@@ -1261,7 +1261,7 @@ export const COUNTRIES_WHITE_WINE_DATA = [
     id: "norway",
     dataYear: 2016,
     itemName: "Norway",
-    redGrapeData: [
+    grapeData: [
       { grape: "Airén", value: 0 },
       { grape: "Chardonnay", value: 0 },
       { grape: "Sauvignon Blanc", value: 0 },
@@ -1298,7 +1298,7 @@ export const COUNTRIES_WHITE_WINE_DATA = [
     id: "peru",
     dataYear: 2016,
     itemName: "Peru",
-    redGrapeData: [
+    grapeData: [
       { grape: "Airén", value: 0 },
       { grape: "Chardonnay", value: 1 },
       { grape: "Sauvignon Blanc", value: 0 },
@@ -1335,7 +1335,7 @@ export const COUNTRIES_WHITE_WINE_DATA = [
     id: "portugal",
     dataYear: 2016,
     itemName: "Portugal",
-    redGrapeData: [
+    grapeData: [
       { grape: "Airén", value: 0 },
       { grape: "Chardonnay", value: 547 },
       { grape: "Sauvignon Blanc", value: 102 },
@@ -1372,7 +1372,7 @@ export const COUNTRIES_WHITE_WINE_DATA = [
     id: "romania",
     dataYear: 2016,
     itemName: "Romania",
-    redGrapeData: [
+    grapeData: [
       { grape: "Airén", value: 0 },
       { grape: "Chardonnay", value: 1878 },
       { grape: "Sauvignon Blanc", value: 5594 },
@@ -1409,7 +1409,7 @@ export const COUNTRIES_WHITE_WINE_DATA = [
     id: "russia",
     dataYear: 2016,
     itemName: "Russia",
-    redGrapeData: [
+    grapeData: [
       { grape: "Airén", value: 0 },
       { grape: "Chardonnay", value: 3481 },
       { grape: "Sauvignon Blanc", value: 2501 },
@@ -1446,7 +1446,7 @@ export const COUNTRIES_WHITE_WINE_DATA = [
     id: "serbia",
     dataYear: 2016,
     itemName: "Serbia",
-    redGrapeData: [
+    grapeData: [
       { grape: "Airén", value: 0 },
       { grape: "Chardonnay", value: 1455 },
       { grape: "Sauvignon Blanc", value: 741 },
@@ -1483,7 +1483,7 @@ export const COUNTRIES_WHITE_WINE_DATA = [
     id: "slovakia",
     dataYear: 2016,
     itemName: "Slovakia",
-    redGrapeData: [
+    grapeData: [
       { grape: "Airén", value: 0 },
       { grape: "Chardonnay", value: 0 },
       { grape: "Sauvignon Blanc", value: 0 },
@@ -1520,7 +1520,7 @@ export const COUNTRIES_WHITE_WINE_DATA = [
     id: "slovenia",
     dataYear: 2016,
     itemName: "Slovenia",
-    redGrapeData: [
+    grapeData: [
       { grape: "Airén", value: 0 },
       { grape: "Chardonnay", value: 1181 },
       { grape: "Sauvignon Blanc", value: 1121 },
@@ -1557,7 +1557,7 @@ export const COUNTRIES_WHITE_WINE_DATA = [
     id: "south-africa",
     dataYear: 2016,
     itemName: "South Africa",
-    redGrapeData: [
+    grapeData: [
       { grape: "Airén", value: 0 },
       { grape: "Chardonnay", value: 6856 },
       { grape: "Sauvignon Blanc", value: 9246 },
@@ -1594,7 +1594,7 @@ export const COUNTRIES_WHITE_WINE_DATA = [
     id: "spain",
     dataYear: 2016,
     itemName: "Spain",
-    redGrapeData: [
+    grapeData: [
       { grape: "Airén", value: 203276 },
       { grape: "Chardonnay", value: 6866 },
       { grape: "Sauvignon Blanc", value: 4562 },
@@ -1631,7 +1631,7 @@ export const COUNTRIES_WHITE_WINE_DATA = [
     id: "switzerland",
     dataYear: 2016,
     itemName: "Switzerland",
-    redGrapeData: [
+    grapeData: [
       { grape: "Airén", value: 0 },
       { grape: "Chardonnay", value: 359 },
       { grape: "Sauvignon Blanc", value: 170 },
@@ -1668,7 +1668,7 @@ export const COUNTRIES_WHITE_WINE_DATA = [
     id: "taiwan",
     dataYear: 2016,
     itemName: "Taiwan",
-    redGrapeData: [
+    grapeData: [
       { grape: "Airén", value: 0 },
       { grape: "Chardonnay", value: 0 },
       { grape: "Sauvignon Blanc", value: 0 },
@@ -1705,7 +1705,7 @@ export const COUNTRIES_WHITE_WINE_DATA = [
     id: "thailand",
     dataYear: 2016,
     itemName: "Thailand",
-    redGrapeData: [
+    grapeData: [
       { grape: "Airén", value: 0 },
       { grape: "Chardonnay", value: 0 },
       { grape: "Sauvignon Blanc", value: 0 },
@@ -1742,7 +1742,7 @@ export const COUNTRIES_WHITE_WINE_DATA = [
     id: "tunisia",
     dataYear: 2016,
     itemName: "Tunisia",
-    redGrapeData: [
+    grapeData: [
       { grape: "Airén", value: 85 },
       { grape: "Chardonnay", value: 170 },
       { grape: "Sauvignon Blanc", value: 85 },
@@ -1779,7 +1779,7 @@ export const COUNTRIES_WHITE_WINE_DATA = [
     id: "turkey",
     dataYear: 2016,
     itemName: "Turkey",
-    redGrapeData: [
+    grapeData: [
       { grape: "Airén", value: 0 },
       { grape: "Chardonnay", value: 177 },
       { grape: "Sauvignon Blanc", value: 153 },
@@ -1816,7 +1816,7 @@ export const COUNTRIES_WHITE_WINE_DATA = [
     id: "ukraine",
     dataYear: 2016,
     itemName: "Ukraine",
-    redGrapeData: [
+    grapeData: [
       { grape: "Airén", value: 0 },
       { grape: "Chardonnay", value: 1500 },
       { grape: "Sauvignon Blanc", value: 1550 },
@@ -1853,7 +1853,7 @@ export const COUNTRIES_WHITE_WINE_DATA = [
     id: "united-kingdom",
     dataYear: 2016,
     itemName: "United Kingdom",
-    redGrapeData: [
+    grapeData: [
       { grape: "Airén", value: 0 },
       { grape: "Chardonnay", value: 531 },
       { grape: "Sauvignon Blanc", value: 0 },
@@ -1890,7 +1890,7 @@ export const COUNTRIES_WHITE_WINE_DATA = [
     id: "united-states",
     dataYear: 2016,
     itemName: "United States",
-    redGrapeData: [
+    grapeData: [
       { grape: "Airén", value: 0 },
       { grape: "Chardonnay", value: 41392 },
       { grape: "Sauvignon Blanc", value: 6747 },
@@ -1927,7 +1927,7 @@ export const COUNTRIES_WHITE_WINE_DATA = [
     id: "uruguay",
     dataYear: 2016,
     itemName: "Uruguay",
-    redGrapeData: [
+    grapeData: [
       { grape: "Airén", value: 0 },
       { grape: "Chardonnay", value: 119 },
       { grape: "Sauvignon Blanc", value: 144 },
