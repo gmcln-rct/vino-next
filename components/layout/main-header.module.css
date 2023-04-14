@@ -13,10 +13,6 @@
 }
 
 .logo a {
-  /* color: #fff;
-    border-bottom: 1px solid #e6e6e6;
-    background-color: #a10101; */
-
   margin: 2vw 2vw;
 
   font-family: "Jost", sans-serif;
@@ -59,3 +55,37 @@
   /* border-bottom: 1px solid #a10101; */
   transition: 0.3s;
 }
+/* 
+.drawer {
+  position: absolute;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+
+  top: 60px;
+  left: 0;
+  width: 100%;
+
+  overflow-x: auto;
+  margin-top: 10px;
+  padding: 10px 0;
+  border-top: 1px solid #ddd;
+  transition: all 0.9s ease;
+  background-color: #fff;
+
+} */
+
+/* .drawer a {
+  margin: 2vmin 0;
+  padding: 2vmin;
+  font-size: 19px;
+  color: #333;
+  text-decoration: none;
+  white-space: nowrap;
+  font-family: 'Lato', sans-serif;
+  border-color: #000;
+}
+
+.drawer a:hover {
+  color: #666;
+} */
