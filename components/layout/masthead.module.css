@@ -7,14 +7,6 @@
   display: flex;
   justify-content: flex-start;
   align-items: center;
-  /* padding-top: 100px; */
-  /* linear-gradient(to bottom, rgba(245, 246, 252, 0.52), rgba(117, 19, 93, 1)); */
-
-  /* object-fit: contain; */
-  /* display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column; */
 }
 
 .mastheadOverlay {

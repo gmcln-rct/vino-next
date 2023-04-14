@@ -15,28 +15,14 @@ const BarChart = (props) => {
     redGrapeData,
     whiteGrapeData,
     explanationText,
-    isGeneral,
   } = props;
 
-  const [selectedCountry, setSelectedCountry] = useState("France");
   const [selectedGrapeType, setSelectedGrapeType] = useState(
     grapeType ? grapeType : "Red"
   );
   const data = selectedGrapeType === "Red" ? redGrapeData : whiteGrapeData;
   const fillColor = selectedGrapeType === "Red" ? "#B03E3E" : "#A19F18";
 
-  const COUNTRIES = [
-    "France",
-    "Italy",
-    "Spain",
-    "United States",
-    "Argentina",
-    "Australia",
-    "Chile",
-    "South Africa",
-    "Germany",
-    "Portugal",
-  ];
 
   useEffect(() => {
     d3.select(svgRef.current).selectAll("*").remove();
@@ -203,21 +189,6 @@ const BarChart = (props) => {
         grape varietals, {dataYear} */}
           {subHeaderText}
         </p>
-        <div className={classes.selectrow}>
-          {isGeneral && (
-        <select
-        value={selectedCountry}
-        className="selectCss select120"
-        onChange={(e) => setSelectedCountry(e.target.value)}
-      >
-        {COUNTRIES.map((country) => (
-          <option key={country} value={country}>
-            {country}
-          </option>
-        ))}
-      </select>
-          )}
-
         {dataType === "country" && (
           <select
             className={classes.selectCss}
@@ -228,7 +199,6 @@ const BarChart = (props) => {
             <option value="White">White Grapes</option>
           </select>
         )}
-        </div>
         <div className={classes.barchart}>
           <svg ref={svgRef}></svg>
         </div>

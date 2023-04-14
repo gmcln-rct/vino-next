@@ -18,7 +18,7 @@ function HomePage() {
       </Head>
       <Masthead
         backgroundImage="/images/site-images/homepage-masthead.jpg"
-        headerText="Explore the world of wine through data visualizations."
+        headerText="Explore the world of wine through data visualizations. Gain insights into historic production, grape varieties, and wine regions."
       />
       <section className="homePage">
         {/* <p className="headline">

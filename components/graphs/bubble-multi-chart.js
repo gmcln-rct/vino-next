@@ -1,71 +1,102 @@
-import React, { useEffect, useRef, useState } from "react";
+import { useState, useEffect, useRef } from "react";
 import * as d3 from "d3";
 import classes from "./bubble-chart.module.css";
 
-const BubbleMultiChart = ({ data }) => {
-  // const [selectedCountry, setSelectedCountry] = useState("");
-  // const [selectedGrape, setSelectedGrape] = useState("");
-  console.log("bubble = data", data);
-  const svgRef = useRef(null);
+const BubbleMultiChart = (props) => {
+  const svgRef = useRef();
+
+  const { country, grapeData, units } = props;
+
+  const [selectedCountry, setSelectedCountry] = useState(country);
+  const [selectedData, setSelectedData] = useState(grapeData);
+
+  console.log("in bubble - data: ", selectedData);
+  const dataTypeText = "Units in hectares";
+
+  // Adjust text color based on background color
+  function getContrastYIQ(hexcolor) {
+    const red = parseInt(hexcolor.substring(1, 3), 16);
+    const green = parseInt(hexcolor.substring(3, 5), 16);
+    const blue = parseInt(hexcolor.substring(5, 7), 16);
+    const brightness = red * 0.299 + green * 0.587 + blue * 0.114;
+    return brightness < 180 ? "white" : "black";
+  }
 
   useEffect(() => {
+    d3.select(svgRef.current).selectAll("*").remove();
     const svg = d3.select(svgRef.current);
 
-    // Define dimensions of SVG
-    const width = svg.node().getBoundingClientRect().width;
-    const height = svg.node().getBoundingClientRect().height;
+    const width = 580;
+    const height = 580;
 
-    // Define data for the bubble chart
-    const grapeData = data
-      .filter((d) => d.id === selectedCountry)[0]
-      .grapeData.filter((d) => d.value !== 0);
+    const data = selectedData;
 
-    // Define scales for the bubble chart
-    const colorScale = d3.scaleOrdinal(d3.schemeCategory10);
-    const sizeScale = d3
-      .scaleSqrt()
-      .domain([0, d3.max(grapeData, (d) => d.value)])
-      .range([0, (width / 2) * 0.8]);
+    // Create a color scale with unique colors for each grape type
+    const color = d3.scaleOrdinal()
+      .domain(data.map(d => d.grape))
+      .range(d3.schemeYlOrRd[9]);
 
-    // Create simulation for positioning the bubbles
-    const simulation = d3
-      .forceSimulation(grapeData)
-      .force("center", d3.forceCenter(width / 2, height / 2))
-      .force(
-        "charge",
-        d3.forceManyBody().strength((d) => -sizeScale(d.value) * 5)
-      )
-      .force(
-        "collision",
-        d3.forceCollide().radius((d) => sizeScale(d.value) + 1)
-      )
-      .stop();
+    const pack = (data) =>
+      d3.pack().size([width, height]).padding(1.5)(
+        d3
+          .hierarchy({ children: data })
+          .sum((d) => Math.max(d.value, (100 * 100) / Math.PI))
+          .sort((a, b) => b.value - a.value)
+      );
 
-    // Run the simulation for a few steps to position the bubbles
-    for (let i = 0; i < 100; i++) {
-      simulation.tick();
-    }
+    const root = pack(data);
 
-    // Draw the bubbles
-    const bubbles = svg.selectAll(".bubble").data(grapeData, (d) => d.grape);
+    const node = svg
+      .selectAll("g")
+      .data(root.leaves())
+      .join("g")
+      .attr("transform", (d) => `translate(${d.x + 1},${d.y + 1})`);
 
-    bubbles
-      .enter()
+    node
       .append("circle")
-      .classed("bubble", true)
-      .attr("cx", (d) => d.x)
-      .attr("cy", (d) => d.y)
-      .attr("r", (d) => sizeScale(d.value))
-      .style("fill", (d) => colorScale(d.grape));
+      .attr("r", (d) => d.r)
+      .attr("fill", (d) => color(d.data.grape))
+      .style("padding", "5px");
 
-    bubbles
-      .attr("cx", (d) => d.x)
-      .attr("cy", (d) => d.y)
-      .attr("r", (d) => sizeScale(d.value))
-      .style("fill", (d) => colorScale(d.grape));
+    node
+      .append("text")
+      .attr("text-anchor", "middle")
+      .attr("dy", "0.3em")
+      .text((d) => d.data.grape)
+      .attr("font-size", (d) => `${Math.max(8, d.r / 5)}px`)
+      .attr("fill", (d) => {
+        let textColor = getContrastYIQ(color(d.data.grape));
+        return textColor;
+      })
+      .style("text-wrap", "wrap");
 
-    bubbles.exit().remove();
-  }, [selectedCountry]);
+    // Tooltip
+    const tooltip = d3
+      .select("body")
+      .append("div")
+      .style("position", "absolute")
+      .style("background", "white")
+      .style("border", "1px solid black")
+      .style("padding", "5px")
+      .style("border-radius", "5px")
+      .style("font-family", "Open Sans")
+      .style("visibility", "hidden");
+
+    node
+      .on("mouseover", function (event, d) {
+        tooltip
+          .style("visibility", "visible")
+          .text(`${d.data.grape}: ${(d.data.value).toLocaleString("en-US")} ${units}`);
+      })
+      .on("mousemove", (event) => {
+        tooltip
+          .style("top", `${event.pageY - 10}px`)
+          .style("left", `${event.pageX + 10}px`);
+      })
+      .on("mouseout", () => {
+        tooltip.style("visibility", "hidden");
+      });
+  }, [selectedCountry, selectedData]);
 
   return (
     <>
@@ -76,7 +107,7 @@ const BubbleMultiChart = ({ data }) => {
         className={classes.chartMain}
         style={{ display: "block" }}
       />
-      {/* <p className="chartfooter moveUp">{dataTypeText}</p> */}
+      <p className="chartfooter moveUp">{dataTypeText}</p>
     </>
   );
 };
