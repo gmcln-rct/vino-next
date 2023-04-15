@@ -63,12 +63,12 @@ export function createGrapeQuestion(countryData) {
   const answers = [...topGrapes, notTopGrape].sort(() => Math.random() - 0.5);
 
   const questionObj = {
-    question: `Which grape is NOT one of the top 3 grapes in ${countryData.itemName} by hectares?`,
+    question: `Which grape is NOT one of the top 3 grapes in ${countryData.itemName} based on land area of grape production?`,
     questionType: "multiplechoice",
     answerSelectionType: "single",
     answers: answers,
     correctAnswer: answers.indexOf(notTopGrape).toString(),
-    explanation: `${notTopGrape} is not one of the top 3 grapes in ${countryData.itemName} by hectares.`,
+    explanation: `${notTopGrape} is not one of the top 3 grapes in ${countryData.itemName} based on land area.`,
   };
 
   return questionObj;
@@ -113,7 +113,7 @@ function createQuestionObject(
       "en-US"
     )} kiloliters of wine, while ${countryBName} produced ${countryDataB.value.toLocaleString(
       "en-US"
-    )} kiloliters.`,
+    )} kiloliters in ${randomYear}.`,
   };
 
   return questionObj;
@@ -124,15 +124,14 @@ function getRandomInt(min, max) {
 }
 
 export function createWineHistoryQuestion(data) {
-  const randomYear = getRandomInt(1850, 2019);
+  const randomYear = getRandomInt(1860, 2019);
   const randomCountryIndices = [];
-
   while (randomCountryIndices.length < 2) {
     const randomIndex = getRandomInt(0, data.length - 1);
-    console.log("random index", randomIndex);
     if (!randomCountryIndices.includes(randomIndex)) {
-      randomCountryIndices.push(randomIndex);
+        randomCountryIndices.push(randomIndex);
     }
+    console.log("random index", randomIndex);
   }
 
   const countryA = data[randomCountryIndices[0]];
@@ -156,3 +155,45 @@ export function createWineHistoryQuestion(data) {
   return questionObj;
 
 }
+
+  export function createTermsQuestion(wineTerms) {
+    const randomIndex = Math.floor(Math.random() * wineTerms.length);
+  const randomTerm = wineTerms[randomIndex];
+
+  // Choose two different random terms for the false answers
+  const falseIndexes = [];
+  while (falseIndexes.length < 2) {
+    const falseIndex = Math.floor(Math.random() * wineTerms.length);
+    if (falseIndex !== randomIndex && !falseIndexes.includes(falseIndex)) {
+      falseIndexes.push(falseIndex);
+    }
+  }
+  const falseTerm1 = wineTerms[falseIndexes[0]];
+  const falseTerm2 = wineTerms[falseIndexes[1]];
+
+  // Ensure the definitions are different
+  if (falseTerm1.definition === randomTerm.definition || falseTerm2.definition === randomTerm.definition) {
+    return createQuestionObject(wineTerms);
+  }
+
+  // Determine the correct answer position (0, 1, or 2) with the specified probabilities
+  const correctAnswerPosition = Math.random() < 0.33 ? 0 : Math.random() < 0.5 ? 1 : 2;
+  const answers = [
+    correctAnswerPosition === 0 ? randomTerm.definition : falseTerm1.definition,
+    correctAnswerPosition === 1 ? randomTerm.definition : correctAnswerPosition === 0 ? falseTerm2.definition : falseTerm1.definition,
+    correctAnswerPosition === 2 ? randomTerm.definition : falseTerm2.definition,
+  ];
+
+  const questionObject = {
+    question: `Which of the following definitions matches the word "${randomTerm.word}"?`,
+    questionType: "multiplechoice",
+    answerSelectionType: "single",
+    answers: answers,
+    correctAnswer: String(correctAnswerPosition),
+    explanation: `The word "${randomTerm.word}" matches the definition: "${randomTerm.definition}".`,
+    point: "10",
+  };
+
+  return questionObject;
+}
+  

@@ -50,8 +50,17 @@
     -moz-box-shadow: inset 0px 0px 28px 0px rgba(0, 0, 0, 0.50);
     box-shadow: inset 0px 0px 28px 0px rgba(0, 0, 0, 0.50);
 }
+
+.questionContainer h2{
+
+    font-size: clamp(24px, 3vw, 28px);
+color:  #fffd8d;
+}
+
 .answers {
     padding: 1vmin 2vmin;
+
+    font-style: italic;
 }
 
 .next {
@@ -69,4 +78,10 @@
     color: white;
     /* background-color: green; */
     border-radius: 10px;
+}
+
+.results {
+    font-size: clamp(24px, 3vw, 28px);
+    color:  #fffd8d;
+    text-align: center;
 }

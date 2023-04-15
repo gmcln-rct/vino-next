@@ -25,6 +25,9 @@ const Navbar = () => {
             <Link href="/terms">Wine Terms</Link>
           </li>
           <li className={classes.listitem}>
+            <Link href="/quiz/">Quiz</Link>
+          </li>
+          <li className={classes.listitem}>
             <Link href="/about">About</Link>
           </li>
         </ul>

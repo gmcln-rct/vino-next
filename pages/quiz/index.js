@@ -1,18 +1,16 @@
 import { useState, useEffect, use } from "react";
 
+// Import data
 import { QUIZ_DATA } from "@/data/quiz-data";
+import { WINE_TERMS } from "@/data/terms";
 import { LABELS } from "@/data/labels";
-// import { handleAnswerButtonClick, handleNextButtonClick } from './quiz-utils';
-
 import { COUNTRIES_RED_WINE_DATA } from "@/data/country-wine-data-red-all-2016";
 import { COUNTRIES_WHITE_WINE_DATA } from "@/data/country-wine-data-white-all-2016";
 import { HISTORIC_PRODUCTION_DATA } from "@/data/historic-production-data";
 
-import {HISTORIC_PRODUCTION_STACKED_DATA} from "@/data/historic-production-stacked-data";
 import {
   createGrapeQuestion,
-  handleAnswerButtonClick,
-  handleNextButtonClick,
+  createTermsQuestion,
   createWineHistoryQuestion,
 } from "@/components/utils/quiz-utils";
 
@@ -29,33 +27,35 @@ const QuizPage = () => {
 
   //   const [randomIndex, setRandomIndex] = useState(0);
   const [countryRedData, setCountryRedData] = useState(COUNTRIES_RED_WINE_DATA);
-  const [countryWhiteData, setCountryWhiteData] = useState(
-    COUNTRIES_WHITE_WINE_DATA
-  );
+  const [countryWhiteData, setCountryWhiteData] = useState(COUNTRIES_WHITE_WINE_DATA);
   const [wineHistoryData, setWineHistoryData] = useState(
     HISTORIC_PRODUCTION_DATA
   );
 
-  console.log("wine history data in quiz", wineHistoryData);
-  //   const quizData = QUIZ_DATA;
-  //   const labels = LABELS;
+//   console.log("country red data ", countryRedData);
+
+
   useEffect(() => {
     const randomIndexRed = Math.floor(Math.random() * countryRedData.length);
-    let randomIndexWhite = Math.floor(Math.random() * countryWhiteData.length);
-    // const countryRed = countryRedData[randomIndexRed];
-    // const countryRedQuestion = createGrapeQuestion(countryRed);
+    // let randomIndexWhite = Math.floor(Math.random() * countryWhiteData.length);
+    const countryRed = countryRedData[randomIndexRed];
+    const countryRedQuestion = createGrapeQuestion(countryRed);
+
+
     // const countryWhite = countryWhiteData[randomIndexWhite];
     // const countryWhiteQuestion = createGrapeQuestion(countryWhite);
-    //   console.log("randomIndex", countryRedQuestion, countryWhiteQuestion);
+    //   console.log("country Red", countryRedQuestion);
+    const wineTermsQuestion = createTermsQuestion(WINE_TERMS);
 
+    // const randomIndexQuizQuestions = Math.floor(Math.random() * quizData.length);
+    // const quizQuestion = quizData[randomIndexQuizQuestions];
+    console.log("wine terms index quiz questions ", wineTermsQuestion);
     const wineHistoryQuestion = createWineHistoryQuestion(wineHistoryData);
-    console.log("wine history data", HISTORIC_PRODUCTION_STACKED_DATA);
 
-    setQuizData([wineHistoryQuestion]);
+    setQuizData([ wineTermsQuestion, countryRedQuestion, wineHistoryQuestion]);
   }, []);
 
   const handleAnswerButtonClick = (answerIndex) => {
-    // setSelectedAnswer(quizData[currentQuestion].answers[answerIndex]);
     const selectedAnswer = quizData[currentQuestion].answers[answerIndex];
     const correctAnswer = quizData[currentQuestion].correctAnswer;
     const isCorrect = selectedAnswer == correctAnswer;
@@ -94,12 +94,12 @@ const QuizPage = () => {
   return (
     <section className={classes.quizPage}>
 <h1 className={classes.header}>Wine Quiz</h1>
-<p>Test your wine knowledge. Note most questions based on 2016 data.</p>
+<p>Test your wine knowledge. Most questions are based on 2016 data.</p>
       {showResults ? (
         <div className="results-container">
-          <h2>Results</h2>
+          <h2 className={classes.results}>Results</h2>
           <p>
-            You scored {score} out of {quizData.length} questions.
+            You got {score} out of {quizData.length} questions correct.
           </p>
         </div>
       ) : (
@@ -107,13 +107,16 @@ const QuizPage = () => {
           <h2>{quizData[currentQuestion].question}</h2>
           {selectedAnswer === null ? (
             quizData[currentQuestion].answers.map((answer, index) => (
+                <>
+               
               <button
                 key={index}
                 onClick={() => handleAnswerButtonClick(String(index))}
                 className={classes.answers}
               >
-                {answer}
+                <span>{index +1}.</span> {answer}
               </button>
+              </>
             ))
           ) : (
             <div className={classes.feedback}>
