@@ -18,21 +18,27 @@
 }
 
 .header {
-  color: #a1360a;
-  text-align: center;
+  /* color: #a1360a; */
+
   margin: 1rem 0 0 0;
 
   font-size: clamp(16px, 4vw, 32px);
   font-weight: bold;
   font-display: swap;
+  text-align: center;
+
+  color: #fff;
 }
 
 .subheader {
   margin: 0.2vmin 0 1vmin 0;
+  
   font-size: clamp(14px, 2vw, 18px);
   font-weight: 400;
   font-style: italic;
   font-display: swap;
+
+  color: #fff;
 }
 
 .units {
