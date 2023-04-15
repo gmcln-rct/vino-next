@@ -32,8 +32,8 @@
   justify-content: center;
   align-items: center;
 
-  margin: 2vmin 0 0 0;
-  padding: 1vmin 6vmin;
+  margin: 2vmin 0;
+  padding: 2vmin 6vmin;
 
   font-size: clamp(16px, 4vw, 28px);
   font-weight: 400;
@@ -45,6 +45,8 @@
   -moz-box-shadow: inset 0px 0px 28px 0px rgba(0, 0, 0, 0.35);
   box-shadow: inset 0px 0px 28px 0px rgba(0, 0, 0, 0.35);
 
+  border-radius: 3vmin;
+
 }
 
 .listItem {
@@ -53,7 +55,7 @@
   justify-content: center;
   align-items: center;
 
-  margin: 1rem 0 0 0;
+  margin: 1vmin 0 ;
   padding: 0 0 0 0;
 }
 
