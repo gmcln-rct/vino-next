@@ -129,7 +129,7 @@ const QuizPage = () => {
               <p className={correctness ? classes.correct : classes.incorrect}>
                 {feedbackMessage}
               </p>
-              <p>{explanationMessage}</p>
+              <p className={classes.explanation}>{explanationMessage}</p>
               <button onClick={handleNextButtonClick} className={classes.next}>
                 Next
               </button>

@@ -59,12 +59,14 @@ export function createGrapeQuestion(countryData, grapeType) {
 
   const answers = [...topGrapes, notTopGrape].sort(() => Math.random() - 0.5);
 
+  console.log("in create grape - ", notTopGrape);
+
   const questionObj = {
     question: `Which grape is NOT one of the top 3 ${grapeType} grapes in ${countryData.itemName} based on land area of grape production?`,
     questionType: "multiplechoice",
     answerSelectionType: "single",
     answers: answers,
-    correctAnswer: answers.indexOf(notTopGrape).toString(),
+    correctAnswer: notTopGrape,
     explanation: `${notTopGrape} is not one of the top 3 ${grapeType} grapes in ${countryData.itemName} based on land area.`,
   };
 
