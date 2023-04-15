@@ -69,7 +69,7 @@ function HistogramComparisonPage() {
             </option>
           ))}
         </select>
-        <span>vs.</span>
+        <span className="versus">vs.</span>
         <select
           value={country2}
           className="selectCss select120"
