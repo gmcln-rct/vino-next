@@ -2,6 +2,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  
 }
 
 .barchart {
@@ -15,6 +16,7 @@
   background-color: #fff;
   border-radius: 10px;
   box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2), 0 1px 12px 2px rgba(0, 0, 0, 0.1);
+  
 }
 
 .header {
@@ -32,7 +34,7 @@
 
 .subheader {
   margin: 0.2vmin 0 1vmin 0;
-  
+
   font-size: clamp(14px, 2vw, 18px);
   font-weight: 400;
   font-style: italic;
@@ -43,10 +45,13 @@
 
 .units {
   margin: 1.5vmin 0 1vmin 0;
+
   font-size: clamp(14px, 2vw, 18px);
   font-weight: 400;
   font-style: italic;
   font-display: swap;
+
+  color: #fff;
 }
 .selectrow {
   display: flex;

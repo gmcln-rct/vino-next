@@ -178,10 +178,13 @@ main a {
 
 .dataSource {
   margin: 1rem 0 0 0;
+
   font-size: clamp(16px, 1vw, 18px);
   font-weight: 400;
   font-style: italic;
   font-display: swap;
+
+  color: #fff;
 }
 
 .link {
