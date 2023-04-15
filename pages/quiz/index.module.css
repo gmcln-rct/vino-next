@@ -49,6 +49,8 @@
     -webkit-box-shadow: inset 0px 0px 28px 0px rgba(0, 0, 0, 0.50);
     -moz-box-shadow: inset 0px 0px 28px 0px rgba(0, 0, 0, 0.50);
     box-shadow: inset 0px 0px 28px 0px rgba(0, 0, 0, 0.50);
+
+    border-radius: 10px;
 }
 
 .questionContainer h2{
@@ -60,7 +62,9 @@ color:  #fffd8d;
 .answers {
     padding: 1vmin 2vmin;
 
-    font-style: italic;
+    /* font-style: italic; */
+
+    text-align: start;
 }
 
 .next {
@@ -69,6 +73,15 @@ color:  #fffd8d;
     color: white;
     background-color: #D44E17;
     border-radius: 10px;
+    border: 1px solid #fff;
+}
+
+.next:hover {
+    color: #D44E17;
+    background-color: #fff;
+    border-radius: 10px;
+    border: 1px solid #D44E17;
+    cursor: pointer;
 }
 
 .feedback {
@@ -84,4 +97,12 @@ color:  #fffd8d;
     font-size: clamp(24px, 3vw, 28px);
     color:  #fffd8d;
     text-align: center;
+}
+
+.correct {
+    background-color: #12A13A;
+}
+
+.incorrect {
+    background-color: #A11212;
 }

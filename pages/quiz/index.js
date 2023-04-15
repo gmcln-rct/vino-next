@@ -24,6 +24,7 @@ const QuizPage = () => {
   const [feedbackMessage, setFeedbackMessage] = useState("");
   const [quizData, setQuizData] = useState(QUIZ_DATA);
   const [explanationMessage, setExplanationMessage] = useState("");
+  const [correctness, setCorrectness] = useState(false);
 
   //   const [randomIndex, setRandomIndex] = useState(0);
   const [countryRedData, setCountryRedData] = useState(COUNTRIES_RED_WINE_DATA);
@@ -32,6 +33,7 @@ const QuizPage = () => {
     HISTORIC_PRODUCTION_DATA
   );
 
+  const answerIndex = ["A", "B", "C", "D"];
 //   console.log("country red data ", countryRedData);
 
 
@@ -69,12 +71,14 @@ const QuizPage = () => {
           ? `${LABELS.messageForCorrectAnswerWithExplanation}`
           : LABELS.messageForCorrectAnswer
       );
+      setCorrectness(true);
     } else {
       setFeedbackMessage(
         explanation
           ? `${LABELS.messageForIncorrectAnswerWithExplanation}`
           : LABELS.messageForIncorrectAnswer
       );
+        setCorrectness(false);
     }
   };
 
@@ -105,6 +109,7 @@ const QuizPage = () => {
       ) : (
         <div className={classes.questionContainer}>
           <h2>{quizData[currentQuestion].question}</h2>
+          <p>Click on correct answer below.</p>
           {selectedAnswer === null ? (
             quizData[currentQuestion].answers.map((answer, index) => (
                 <>
@@ -114,13 +119,13 @@ const QuizPage = () => {
                 onClick={() => handleAnswerButtonClick(String(index))}
                 className={classes.answers}
               >
-                <span>{index +1}.</span> {answer}
+                <span>{answerIndex[index]}.</span> {answer}
               </button>
               </>
             ))
           ) : (
             <div className={classes.feedback}>
-              <p>{feedbackMessage}</p>
+              <p className={correctness ? classes.correct : classes.incorrect}>{feedbackMessage}</p>
               <p>{explanationMessage}</p>
               <button onClick={handleNextButtonClick} className={classes.next}>Next</button>
             </div>
