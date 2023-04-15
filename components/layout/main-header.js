@@ -18,13 +18,15 @@ const Navbar = () => {
           </Link>
         </div>
         <ul className={classes.list}>
-        <li className={classes.listitem} onClick={toggleDrawer}>
-          Data Visualizations
-        </li>
-        <li className={classes.listitem}>
-          <Link href="/about">About</Link>
-        </li>
-
+          <li className={classes.listitem} onClick={toggleDrawer}>
+            Data Visualizations
+          </li>
+          <li className={classes.listitem}>
+            <Link href="/terms">Wine Terms</Link>
+          </li>
+          <li className={classes.listitem}>
+            <Link href="/about">About</Link>
+          </li>
         </ul>
       </div>
       <CSSTransition
@@ -35,9 +37,15 @@ const Navbar = () => {
       >
         <div className="drawer" onClick={toggleDrawer}>
           <div className={classes.drawercontent}>
-            <Link className={classes.drawerlink} href="countries">Country</Link>
-            <Link className={classes.drawerlink} href="/grapes">Grapes</Link>
-            <Link className={classes.drawerlink} href="/historic">Historic Data</Link>
+            <Link className={classes.drawerlink} href="countries">
+              Country
+            </Link>
+            <Link className={classes.drawerlink} href="/grapes">
+              Grapes
+            </Link>
+            <Link className={classes.drawerlink} href="/historic">
+              Historic Data
+            </Link>
           </div>
         </div>
       </CSSTransition>
