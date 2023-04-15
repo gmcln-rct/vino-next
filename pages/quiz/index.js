@@ -28,24 +28,24 @@ const QuizPage = () => {
 
   //   const [randomIndex, setRandomIndex] = useState(0);
   const [countryRedData, setCountryRedData] = useState(COUNTRIES_RED_WINE_DATA);
-  const [countryWhiteData, setCountryWhiteData] = useState(COUNTRIES_WHITE_WINE_DATA);
+  const [countryWhiteData, setCountryWhiteData] = useState(
+    COUNTRIES_WHITE_WINE_DATA
+  );
   const [wineHistoryData, setWineHistoryData] = useState(
     HISTORIC_PRODUCTION_DATA
   );
 
   const answerIndex = ["A", "B", "C", "D"];
-//   console.log("country red data ", countryRedData);
-
+  //   console.log("country red data ", countryRedData);
 
   useEffect(() => {
     const randomIndexRed = Math.floor(Math.random() * countryRedData.length);
-    // let randomIndexWhite = Math.floor(Math.random() * countryWhiteData.length);
+    const randomIndexWhite = Math.floor(Math.random() * countryWhiteData.length);
     const countryRed = countryRedData[randomIndexRed];
-    const countryRedQuestion = createGrapeQuestion(countryRed);
+    const countryRedQuestion = createGrapeQuestion(countryRed, "red");
 
-
-    // const countryWhite = countryWhiteData[randomIndexWhite];
-    // const countryWhiteQuestion = createGrapeQuestion(countryWhite);
+    const countryWhite = countryWhiteData[randomIndexWhite];
+    const countryWhiteQuestion = createGrapeQuestion(countryWhite, "white");
     //   console.log("country Red", countryRedQuestion);
     const wineTermsQuestion = createTermsQuestion(WINE_TERMS);
 
@@ -54,7 +54,7 @@ const QuizPage = () => {
     console.log("wine terms index quiz questions ", wineTermsQuestion);
     const wineHistoryQuestion = createWineHistoryQuestion(wineHistoryData);
 
-    setQuizData([ wineTermsQuestion, countryRedQuestion, wineHistoryQuestion]);
+    setQuizData([wineTermsQuestion, countryRedQuestion, countryWhiteQuestion, wineHistoryQuestion]);
   }, []);
 
   const handleAnswerButtonClick = (answerIndex) => {
@@ -78,7 +78,7 @@ const QuizPage = () => {
           ? `${LABELS.messageForIncorrectAnswerWithExplanation}`
           : LABELS.messageForIncorrectAnswer
       );
-        setCorrectness(false);
+      setCorrectness(false);
     }
   };
 
@@ -97,8 +97,10 @@ const QuizPage = () => {
 
   return (
     <section className={classes.quizPage}>
-<h1 className={classes.header}>Wine Quiz</h1>
-<p>Test your wine knowledge. Most questions are based on 2016 data.</p>
+      <div className={classes.headerSection}>
+        <h1 className={classes.header}>Wine Quiz</h1>
+        <p>Test your wine knowledge. Most questions are based on 2016 data.</p>
+      </div>
       {showResults ? (
         <div className="results-container">
           <h2 className={classes.results}>Results</h2>
@@ -112,22 +114,25 @@ const QuizPage = () => {
           <p>Click on correct answer below.</p>
           {selectedAnswer === null ? (
             quizData[currentQuestion].answers.map((answer, index) => (
-                <>
-               
-              <button
-                key={index}
-                onClick={() => handleAnswerButtonClick(String(index))}
-                className={classes.answers}
-              >
-                <span>{answerIndex[index]}.</span> {answer}
-              </button>
+              <>
+                <button
+                  key={index}
+                  onClick={() => handleAnswerButtonClick(String(index))}
+                  className={classes.answers}
+                >
+                  <span>{answerIndex[index]}.</span> {answer}
+                </button>
               </>
             ))
           ) : (
             <div className={classes.feedback}>
-              <p className={correctness ? classes.correct : classes.incorrect}>{feedbackMessage}</p>
+              <p className={correctness ? classes.correct : classes.incorrect}>
+                {feedbackMessage}
+              </p>
               <p>{explanationMessage}</p>
-              <button onClick={handleNextButtonClick} className={classes.next}>Next</button>
+              <button onClick={handleNextButtonClick} className={classes.next}>
+                Next
+              </button>
             </div>
           )}
         </div>
@@ -135,56 +140,5 @@ const QuizPage = () => {
     </section>
   );
 };
-
-//   const onAnswerButtonClick = (selectedAnswer) => {
-//     const feedbackMessage = handleAnswerButtonClick(selectedAnswer, quizData, currentQuestion);
-//     setSelectedAnswer(selectedAnswer);
-//     setFeedbackMessage(feedbackMessage);
-//   };
-
-//   const onNextButtonClick = () => {
-//     const { newScore, newCurrentQuestion, showResults } = handleNextButtonClick(selectedAnswer, quizData, currentQuestion, score);
-//     setSelectedAnswer(null);
-//     setFeedbackMessage('');
-//     setCurrentQuestion(newCurrentQuestion);
-//     setScore(newScore);
-//     setShowResults(showResults);
-//   };
-
-//   return (
-//     <section className={classes.quizPage}>
-//         <h1 className={classes.header}>Wine Quiz</h1>
-//         <p>Test your wine knowledge. Note most questions based on 2016 data.</p>
-//       {showResults ? (
-//         <div className="results-container">
-//           <h2>Results</h2>
-//           <p>
-//             You scored {score} out of {quizData.length} questions.
-//           </p>
-//         </div>
-//       ) : (
-//         <div className={classes.questionContainer}>
-//           <h2>{quizData[currentQuestion].question}</h2>
-//           {selectedAnswer === null
-//             ? quizData[currentQuestion].answers.map((answer, index) => (
-//                 <button
-//                   key={index}
-//                   onClick={() => onAnswerButtonClick(String(index))}
-//                   className={classes.answers}
-//                 >
-//                   {answer}
-//                 </button>
-//               ))
-//             : (
-//                 <div className={classes.feedback}>
-//                   <p>{feedbackMessage}</p>
-//                   <button onClick={onNextButtonClick} className={classes.next}>Next</button>
-//                 </div>
-//               )}
-//         </div>
-//       )}
-//     </section>
-//   );
-// };
 
 export default QuizPage;

@@ -46,12 +46,9 @@ export const handleNextButtonClick = (
   return { newScore, newCurrentQuestion, showResults };
 };
 
-// export function getRandomInt(min, max) {
-//   return Math.floor(Math.random() * (max - min + 1) + min);
-// }
 
 // Grapes in countries question
-export function createGrapeQuestion(countryData) {
+export function createGrapeQuestion(countryData, grapeType) {
   const topGrapes = countryData.grapeData
     .sort((a, b) => b.value - a.value)
     .slice(0, 3)
@@ -63,12 +60,12 @@ export function createGrapeQuestion(countryData) {
   const answers = [...topGrapes, notTopGrape].sort(() => Math.random() - 0.5);
 
   const questionObj = {
-    question: `Which grape is NOT one of the top 3 grapes in ${countryData.itemName} based on land area of grape production?`,
+    question: `Which grape is NOT one of the top 3 ${grapeType} grapes in ${countryData.itemName} based on land area of grape production?`,
     questionType: "multiplechoice",
     answerSelectionType: "single",
     answers: answers,
     correctAnswer: answers.indexOf(notTopGrape).toString(),
-    explanation: `${notTopGrape} is not one of the top 3 grapes in ${countryData.itemName} based on land area.`,
+    explanation: `${notTopGrape} is not one of the top 3 ${grapeType} grapes in ${countryData.itemName} based on land area.`,
   };
 
   return questionObj;
