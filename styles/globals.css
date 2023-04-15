@@ -11,7 +11,7 @@
 
 body,
 html {
-  /* background-color: #e7e5d5; */
+  /* background-color: rgb(231, 229, 213); */
   height: 100vh;
   /* background-color: #96074e;
   background-image: radial-gradient(at 8% 50%, hsla(360, 94%, 68%, 1) 0, hsla(360, 94%, 68%, 0) 50%),
@@ -19,13 +19,13 @@ html {
 
   background-color: #96074e;
   background-image: radial-gradient(
-      at 50% 90%,
-      rgb(208, 213, 126) 0,
+      at 50% 95%,
+      rgb(231, 229, 213) 0,
       hsla(63, 94%, 60%, 0) 50%
     ),
     radial-gradient(
       at 73% 41%,
-      hsla(342, 93%, 62%, 1) 0,
+      hsla(325, 70%, 25%, 1) 0,
       hsla(342, 93%, 62%, 0) 50%
     );
 
@@ -227,8 +227,20 @@ main a {
 }
 
 .aboutPage {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   padding: 3vw 5vw;
   color: white;
-  font-size: clamp(16px, 1.5vw, 24px);
+  font-size: clamp(18px, 2vw, 24px);
+  text-align: left;
+}
+
+.aboutPage h1 {
+  margin: 0;
+  font-size: clamp(24px, 3vw, 32px);
+  font-weight: 600;
+  font-display: swap;
+
   text-align: center;
 }

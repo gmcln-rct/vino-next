@@ -1,26 +1,24 @@
-.header {
+.navbar {
   display: flex;
-  flex-direction: row;
-  justify-content: flex-start;
+  justify-content: space-between;
   align-items: center;
+  padding: 1vmin 0;
+  background-color: #f0f0f0;
+  position: relative;
 
-  margin: 0;
-  padding: 1vh 2vw;
-
-  color: #a10101;
-  /* border-bottom: 1px solid #e6e6e6; */
-  background-color: #fff;
+  font-family: "Jost", sans-serif;
 }
 
-.logo a {
-  margin: 2vw 2vw;
-
+.brand {
+  /* margin: 1vw ; */
+  padding: 0 0 0 5vw;
   font-family: "Jost", sans-serif;
   font-size: clamp(24px, 4vw, 36px);
   font-weight: 600;
   font-display: swamp;
-
   text-decoration: none;
+
+  color: #a10101;
 }
 
 .sitebeta {
@@ -38,54 +36,81 @@
   justify-content: flex-start;
   align-items: center;
 
-  margin: 0;
-  padding: 0;
+  padding: 0 2vmin;
+
+  font-family: "Lato", sans-serif;
+  font-size: clamp(18px, 1.5vw, 24px);
+  font-weight: 400;
   list-style: none;
+
+  color: #a10101;
+
+  
+
 }
 
-.navigation ul li {
+.listitem {
+  padding: 0 2vmin;
+
+  cursor: pointer;
+}
+
+.listitem:hover {
+  color: #e04090;
+  text-decoration: underline;
+}
+
+
+
+.dataVisualization {
+  cursor: pointer;
+
+}
+
+.drawer {
+  position: absolute;
+  left: 0;
+  right: 0;
+  overflow: hidden;
+}
+
+.drawerlink {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 0 1rem;
+
   padding: 0 2vmin;
   font-family: "Lato", sans-serif;
   font-size: clamp(18px, 1.5vw, 24px);
   font-weight: 400;
-}
-
-.navigation ul li:hover {
-  color: #666;
-  /* border-bottom: 1px solid #a10101; */
-  transition: 0.3s;
-}
-/* 
-.drawer {
-  position: absolute;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-
-  top: 60px;
-  left: 0;
-  width: 100%;
-
-  overflow-x: auto;
-  margin-top: 10px;
-  padding: 10px 0;
-  border-top: 1px solid #ddd;
-  transition: all 0.9s ease;
-  background-color: #fff;
-
-} */
-
-/* .drawer a {
-  margin: 2vmin 0;
-  padding: 2vmin;
-  font-size: 19px;
-  color: #333;
   text-decoration: none;
-  white-space: nowrap;
-  font-family: 'Lato', sans-serif;
-  border-color: #000;
+  color: #a10101;
 }
 
-.drawer a:hover {
-  color: #666;
-} */
+.drawercontent {
+  padding: 1rem;
+  background-color: #f0f0f0;
+  display: flex;
+  justify-content: flex-end;
+  align-items: space-between;
+  border-top: 1px solid #a10101;
+}
+
+.drawer-enter {
+  max-height: 0;
+}
+
+.drawer-enter-active {
+  max-height: 100px;
+  transition: max-height 1s ease-in;
+}
+
+.drawer-exit {
+  max-height: 100px;
+}
+
+.drawer-exit-active {
+  max-height: 0;
+  transition: max-height 1s ease-out;
+}
