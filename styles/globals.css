@@ -247,6 +247,9 @@ main a {
   text-align: center;
 }
 
+.aboutPage p {
+  margin: 1vmin 0;
+}
 .versus {
   padding: 0 2vmin;
 

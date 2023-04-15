@@ -4,12 +4,6 @@ import { WINE_TERMS } from "@/data/terms";
 
 import classes from "./terms.module.css";
 
-// export const WINE_TERMS = [
-//   // ...
-//   // Your provided WINE_TERMS array goes here
-//   // ...
-// ];
-
 export default function WineTerms() {
   const [searchTerm, setSearchTerm] = useState("");
   const [filteredTerms, setFilteredTerms] = useState(WINE_TERMS);
