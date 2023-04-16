@@ -9,7 +9,7 @@ export const handleAnswerButtonClick = (
   const explanation = quizData[currentQuestion].explanation;
   let feedbackMessage;
 
-  console.log("is correct ", isCorrect);
+//   console.log("is correct ", isCorrect);
 
   if (isCorrect) {
     feedbackMessage = explanation
@@ -49,6 +49,8 @@ export const handleNextButtonClick = (
 
 // Grapes in countries question
 export function createGrapeQuestion(countryData, grapeType) {
+
+    if(countryData){
   const topGrapes = countryData.grapeData
     .sort((a, b) => b.value - a.value)
     .slice(0, 3)
@@ -59,7 +61,7 @@ export function createGrapeQuestion(countryData, grapeType) {
 
   const answers = [...topGrapes, notTopGrape].sort(() => Math.random() - 0.5);
 
-  console.log("in create grape - ", notTopGrape);
+//   console.log("in create grape - ", notTopGrape);
 
   const questionObj = {
     question: `Which grape is NOT one of the top 3 ${grapeType} grapes in ${countryData.itemName} based on land area of grape production?`,
@@ -72,6 +74,7 @@ export function createGrapeQuestion(countryData, grapeType) {
 
   return questionObj;
 }
+}
 
 function createQuestionObject(
   countryAName,
@@ -80,23 +83,6 @@ function createQuestionObject(
   countryDataB,
   randomYear
 ) {
-  //   const countryA = {
-  //     itemName: countryDataA.country,
-  //     value: countryDataA.historicData[randomYear],
-  //   };
-
-  //   const countryB = {
-  //     itemName: countryDataB.country,
-  //     value: countryDataB.historicData[randomYear],
-  //   };
-
-//   console.log(
-//     "in create question object",
-//     countryAName,
-//     countryDataB,
-//     randomYear
-//   );
-
   const correctAnswer =
     countryDataA.value > countryDataB.value ? countryAName : countryBName;
 
@@ -176,19 +162,23 @@ export function createWineHistoryQuestion(data) {
   }
 
   // Determine the correct answer position (0, 1, or 2) with the specified probabilities
-  const correctAnswerPosition = Math.random() < 0.33 ? 0 : Math.random() < 0.5 ? 1 : 2;
+  const correctAnswerPosition = Math.floor(Math.random() * 3);
+//   console.log("correct answer position", correctAnswerPosition);
   const answers = [
     correctAnswerPosition === 0 ? randomTerm.definition : falseTerm1.definition,
     correctAnswerPosition === 1 ? randomTerm.definition : correctAnswerPosition === 0 ? falseTerm2.definition : falseTerm1.definition,
-    correctAnswerPosition === 2 ? randomTerm.definition : falseTerm2.definition,
+    correctAnswerPosition === 2 ? randomTerm.definition : correctAnswerPosition === 0 ? falseTerm1.definition : falseTerm2.definition,
   ];
+
+//   console.log("in create question object", answers);
+//   console.log("correct answer ", answers[correctAnswerPosition]);
 
   const questionObject = {
     question: `Which of the following definitions matches the word "${randomTerm.word}"?`,
     questionType: "multiplechoice",
     answerSelectionType: "single",
     answers: answers,
-    correctAnswer: String(correctAnswerPosition),
+    correctAnswer: answers[correctAnswerPosition],
     explanation: `The word "${randomTerm.word}" matches the definition: "${randomTerm.definition}".`,
     point: "10",
   };

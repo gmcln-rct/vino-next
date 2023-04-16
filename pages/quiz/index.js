@@ -40,7 +40,9 @@ const QuizPage = () => {
 
   useEffect(() => {
     const randomIndexRed = Math.floor(Math.random() * countryRedData.length);
-    const randomIndexWhite = Math.floor(Math.random() * countryWhiteData.length);
+    const randomIndexWhite = Math.floor(
+      Math.random() * countryWhiteData.length
+    );
     const countryRed = countryRedData[randomIndexRed];
     const countryRedQuestion = createGrapeQuestion(countryRed, "red");
 
@@ -51,10 +53,15 @@ const QuizPage = () => {
 
     // const randomIndexQuizQuestions = Math.floor(Math.random() * quizData.length);
     // const quizQuestion = quizData[randomIndexQuizQuestions];
-    console.log("wine terms index quiz questions ", wineTermsQuestion);
+    // console.log("wine terms index quiz questions ", wineTermsQuestion);
     const wineHistoryQuestion = createWineHistoryQuestion(wineHistoryData);
 
-    setQuizData([wineTermsQuestion, countryRedQuestion, countryWhiteQuestion, wineHistoryQuestion]);
+    setQuizData([
+      wineTermsQuestion,
+      countryRedQuestion,
+      countryWhiteQuestion,
+      wineHistoryQuestion,
+    ]);
   }, []);
 
   const handleAnswerButtonClick = (answerIndex) => {
@@ -111,7 +118,7 @@ const QuizPage = () => {
       ) : (
         <div className={classes.questionContainer}>
           <h2>{quizData[currentQuestion].question}</h2>
-          <p>Click on correct answer below.</p>
+          <p className={classes.instructions}>Click on correct answer below.</p>
           {selectedAnswer === null ? (
             quizData[currentQuestion].answers.map((answer, index) => (
               <>
@@ -120,7 +127,7 @@ const QuizPage = () => {
                   onClick={() => handleAnswerButtonClick(String(index))}
                   className={classes.answers}
                 >
-                  <span>{answerIndex[index]}.</span> {answer}
+                  <span className={classes.answerLetter}>{answerIndex[index]}.</span> {answer}
                 </button>
               </>
             ))
