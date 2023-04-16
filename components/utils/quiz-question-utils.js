@@ -8,7 +8,21 @@ export function createGrapeQuestion(countryData, grapeType, includeNotTopGrape) 
         .map((grape) => (grape.grape));
 
         console.log("topGrapes ", topGrapes);
-  
+
+        let notTopGrapeArr = countryData.grapeData.filter((grape) => !topGrapes.includes(grape.grape) && grape.value !== 0).map((grape) => grape.grape);
+            // if (!topGrapes.includes(countryData.grapeData[i].grape) && countryData.grapeData[i].value !== 0) {
+            //     notTopGrapeArr.push(countryData.grapeData[i].grape)
+            // }
+            let notTopGrapeArrLength = notTopGrapeArr.length;
+
+            let newArr = notTopGrapeArr.slice(notTopGrapeArrLength-4, notTopGrapeArrLength-1)
+            console.log("newArr ", newArr);
+            // if (countryData.grapeData[i].value !== 0) {
+            //     notTopGrapeArr.push(countryData.grapeData[i].grape)
+            // }
+
+            notTopGrapeArr = newArr;
+        console.log("notTopGrapeArr ", notTopGrapeArr);
       let questionText;
       let correctAnswer;
       let explanation;
@@ -20,12 +34,13 @@ export function createGrapeQuestion(countryData, grapeType, includeNotTopGrape) 
         const notTopGrape = countryData.grapeData.find(
           (grape) => !topGrapes.includes(grape.grape) && grape.value !== 0
         ).grape;
+        console.log("notTopGrape ", notTopGrape);
         questionText = `Which grape is NOT one of the top 3 ${grapeType} grapes in ${countryData.itemName} based on land area of grape production?`;
         correctAnswer = notTopGrape;
         explanation = `${notTopGrape} is not one of the top 3 ${grapeType} grapes in ${countryData.itemName} based on land area.`;
       }
   
-      const answers = [...topGrapes, correctAnswer].sort(() => Math.random() - 0.5);
+      const answers = includeNotTopGrape === "include" ? [...notTopGrapeArr, correctAnswer].sort(() => Math.random() - 0.5)  : [...topGrapes, correctAnswer].sort(() => Math.random() - 0.5) 
   
       const questionObj = {
         question: questionText,
