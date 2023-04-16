@@ -1,11 +1,6 @@
-import { useState, useEffect,  } from "react";
+import { useState, useEffect } from "react";
 import classes from "./index.module.css";
 
-import {
-  createGrapeQuestion,
-  createTermsQuestion,
-  createWineHistoryQuestion,
-} from "@/components/utils/quiz-utils";
 // Import data
 import { QUIZ_DATA } from "@/data/quiz-data";
 import { WINE_TERMS } from "@/data/terms";
@@ -14,60 +9,57 @@ import { COUNTRIES_RED_WINE_DATA } from "@/data/country-wine-data-red-all-2016";
 import { COUNTRIES_WHITE_WINE_DATA } from "@/data/country-wine-data-white-all-2016";
 import { HISTORIC_PRODUCTION_DATA } from "@/data/historic-production-data";
 
+import {
+  createGrapeQuestion,
+  createTermsQuestion,
+  createWineHistoryQuestion,
+} from "@/components/utils/quiz-utils";
 
 
-const answerIndex = ["A", "B", "C", "D"];
 
-export async function getStaticProps() {
-  const countryRedData = COUNTRIES_RED_WINE_DATA;
-  const countryWhiteData = COUNTRIES_WHITE_WINE_DATA;
-  const wineHistoryData = HISTORIC_PRODUCTION_DATA;
-
-  const quizData = await generateQuizData(
-    countryRedData,
-    countryWhiteData,
-    wineHistoryData
-  );
-
-  return {
-    props: {
-      quizData,
-    },
-  };
-}
-
-async function generateQuizData(
-  countryRedData,
-  countryWhiteData,
-  wineHistoryData
-) {
-  const randomIndexRed = Math.floor(Math.random() * countryRedData.length);
-  const randomIndexWhite = Math.floor(Math.random() * countryWhiteData.length);
-  const countryRed = countryRedData[randomIndexRed];
-  const countryRedQuestion = createGrapeQuestion(countryRed, "red");
-
-  const countryWhite = countryWhiteData[randomIndexWhite];
-  const countryWhiteQuestion = createGrapeQuestion(countryWhite, "white");
-  const wineTermsQuestion = createTermsQuestion(WINE_TERMS);
-
-  const wineHistoryQuestion = createWineHistoryQuestion(wineHistoryData);
-
-  return [
-    wineTermsQuestion,
-    countryRedQuestion,
-    countryWhiteQuestion,
-    wineHistoryQuestion,
-  ];
-}
-
-const QuizPage = ({ quizData }) => {
+const QuizPage = () => {
   const [currentQuestion, setCurrentQuestion] = useState(0);
   const [score, setScore] = useState(0);
   const [showResults, setShowResults] = useState(false);
   const [selectedAnswer, setSelectedAnswer] = useState(null);
   const [feedbackMessage, setFeedbackMessage] = useState("");
+  const [quizData, setQuizData] = useState(QUIZ_DATA);
   const [explanationMessage, setExplanationMessage] = useState("");
   const [correctness, setCorrectness] = useState(false);
+
+  //   const [randomIndex, setRandomIndex] = useState(0);
+  const [countryRedData, setCountryRedData] = useState(COUNTRIES_RED_WINE_DATA);
+  const [countryWhiteData, setCountryWhiteData] = useState(
+    COUNTRIES_WHITE_WINE_DATA
+  );
+  const [wineHistoryData, setWineHistoryData] = useState(
+    HISTORIC_PRODUCTION_DATA
+  );
+
+  const answerIndex = ["A", "B", "C", "D"];
+
+  useEffect(() => {
+    const randomIndexRed = Math.floor(Math.random() * countryRedData.length);
+    const randomIndexWhite = Math.floor(
+      Math.random() * countryWhiteData.length
+    );
+    const countryRed = countryRedData[randomIndexRed];
+    const countryRedQuestion = createGrapeQuestion(countryRed, "red");
+
+    const countryWhite = countryWhiteData[randomIndexWhite];
+    const countryWhiteQuestion = createGrapeQuestion(countryWhite, "white");
+    const wineTermsQuestion = createTermsQuestion(WINE_TERMS);
+
+
+    const wineHistoryQuestion = createWineHistoryQuestion(wineHistoryData);
+
+    setQuizData([
+      wineTermsQuestion,
+      countryRedQuestion,
+      countryWhiteQuestion,
+      wineHistoryQuestion,
+    ]);
+  }, []);
 
   const handleAnswerButtonClick = (answerIndex) => {
     const selectedAnswer = quizData[currentQuestion].answers[answerIndex];
