@@ -48,33 +48,45 @@ export const handleNextButtonClick = (
 
 
 // Grapes in countries question
-export function createGrapeQuestion(countryData, grapeType) {
+export function createGrapeQuestion(countryData, grapeType, includeNotTopGrape) {
+    if (countryData) {
+      const topGrapes = countryData.grapeData
+        .sort((a, b) => b.value - a.value)
+        .slice(0, 3)
+        .map((grape, index) => ({ ...grape, key: `grape_${index + 1}` }));
+  
+      let questionText;
+      let correctAnswer;
+      let explanation;
+      if (includeNotTopGrape === "include") {
+        questionText = `Which grape is one of the top 3 ${grapeType} grapes in ${countryData.itemName} based on land area of grape production?`;
+        correctAnswer = topGrapes[Math.floor(Math.random() * topGrapes.length)];
+        explanation = `${correctAnswer} is one of the top 3 ${grapeType} grapes in ${countryData.itemName} based on land area.`;
+      } else {
+        const notTopGrape = countryData.grapeData.find(
+          (grape) => !topGrapes.includes(grape.grape) && grape.value !== 0
+        ).grape;
+        questionText = `Which grape is NOT one of the top 3 ${grapeType} grapes in ${countryData.itemName} based on land area of grape production?`;
+        correctAnswer = notTopGrape;
+        explanation = `${notTopGrape} is not one of the top 3 ${grapeType} grapes in ${countryData.itemName} based on land area.`;
+      }
+  
+      const answers = [...topGrapes, correctAnswer].sort(() => Math.random() - 0.5);
 
-    if(countryData){
-  const topGrapes = countryData.grapeData
-    .sort((a, b) => b.value - a.value)
-    .slice(0, 3)
-    .map((grape) => grape.grape);
-  const notTopGrape = countryData.grapeData.find(
-    (grape) => !topGrapes.includes(grape.grape) && grape.value !== 0
-  ).grape;
-
-  const answers = [...topGrapes, notTopGrape].sort(() => Math.random() - 0.5);
-
-//   console.log("in create grape - ", notTopGrape);
-
-  const questionObj = {
-    question: `Which grape is NOT one of the top 3 ${grapeType} grapes in ${countryData.itemName} based on land area of grape production?`,
-    questionType: "multiplechoice",
-    answerSelectionType: "single",
-    answers: answers,
-    correctAnswer: notTopGrape,
-    explanation: `${notTopGrape} is not one of the top 3 ${grapeType} grapes in ${countryData.itemName} based on land area.`,
-  };
-
-  return questionObj;
-}
-}
+      console.log("in quiz util - answers", questionText);
+  
+      const questionObj = {
+        question: questionText,
+        questionType: "multiplechoice",
+        answerSelectionType: "single",
+        answers: answers,
+        correctAnswer: correctAnswer,
+        explanation: explanation,
+      };
+  
+      return questionObj;
+    }
+  }
 
 function createQuestionObject(
   countryAName,

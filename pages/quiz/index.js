@@ -47,7 +47,7 @@ const QuizPage = () => {
     const countryRedQuestion = createGrapeQuestion(countryRed, "red");
 
     const countryWhite = countryWhiteData[randomIndexWhite];
-    const countryWhiteQuestion = createGrapeQuestion(countryWhite, "white");
+    const countryWhiteQuestion = createGrapeQuestion(countryWhite, "white",false);
     const wineTermsQuestion = createTermsQuestion(WINE_TERMS);
 
 
