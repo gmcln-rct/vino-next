@@ -13,7 +13,7 @@ import {
   createGrapeQuestion,
   createTermsQuestion,
   createWineHistoryQuestion,
-} from "@/components/utils/quiz-utils";
+} from "@/components/utils/quiz-question-utils";
 
 
 
@@ -47,7 +47,7 @@ const QuizPage = () => {
     const countryRedQuestion = createGrapeQuestion(countryRed, "red");
 
     const countryWhite = countryWhiteData[randomIndexWhite];
-    const countryWhiteQuestion = createGrapeQuestion(countryWhite, "white",false);
+    const countryWhiteQuestion = createGrapeQuestion(countryWhite, "white","include");
     const wineTermsQuestion = createTermsQuestion(WINE_TERMS);
 
 
@@ -99,6 +99,7 @@ const QuizPage = () => {
     }
   };
 
+  console.log("question ", quizData);
   return (
     <section className={classes.quizPage}>
       <div className={classes.headerSection}>
@@ -118,7 +119,6 @@ const QuizPage = () => {
           <p className={classes.instructions}>Click on correct answer below.</p>
           {selectedAnswer === null ? (
             quizData[currentQuestion].answers.map((answer, index) => (
-              <>
                 <button
                   key={index}
                   onClick={() => handleAnswerButtonClick(String(index))}
@@ -126,7 +126,6 @@ const QuizPage = () => {
                 >
                   <span className={classes.answerLetter}>{answerIndex[index]}.</span> {answer}
                 </button>
-              </>
             ))
           ) : (
             <div className={classes.feedback}>
