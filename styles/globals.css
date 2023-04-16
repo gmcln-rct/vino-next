@@ -10,14 +10,14 @@
 /**************************** Global CSS variables ***************************************/
 
 html {
-  /* background-color: rgb(231, 229, 213); */
+  background-color: rgb(199, 197, 183);
   height: 100vh;
   /* background-color: #96074e;
   background-image: radial-gradient(at 8% 50%, hsla(360, 94%, 68%, 1) 0, hsla(360, 94%, 68%, 0) 50%),
   radial-gradient(at 92% 38%, hsla(319, 85%, 61%, 1) 0, hsla(319, 85%, 61%, 0) 50%); */
 
-  background-color: #96074e;
-  background-image: radial-gradient(
+  /* background-color: #96074e; */
+  /* background-image: radial-gradient(
       at 50% 95%,
       rgb(231, 229, 213) 0,
       hsla(63, 94%, 60%, 0) 50%
@@ -26,11 +26,11 @@ html {
       at 73% 41%,
       hsla(325, 70%, 25%, 1) 0,
       hsla(342, 93%, 62%, 0) 50%
-    );
+    ); */
 
-  /* background-color: #96074e;
-background-image: radial-gradient(at 5% 92%, hsla(360, 95%, 57%, 1) 0, hsla(360, 95%, 57%, 0) 50%),
-radial-gradient(at 44% 80%, hsla(272, 92%, 62%, 1) 0, hsla(272, 92%, 62%, 0) 50%); */
+  /* /* background-color: #96074e; */
+/* background-image: radial-gradient(at 5% 92%, hsla(360, 95%, 57%, 1) 0, hsla(360, 95%, 57%, 0) 50%),
+radial-gradient(at 44% 80%, hsla(272, 92%, 62%, 1) 0, hsla(272, 92%, 62%, 0) 50%); */ 
 }
 
 /* General */
@@ -169,8 +169,8 @@ main a {
   margin: 1rem 0 0 0;
   /* color: #A1360A; */
   /* color: #555; */
-  /* color: #96074e; */
-  color: #fff;
+  color: #96074e;
+  /* color: #fff; */
 
   font-size: clamp(24px, 4vw, 32px);
   font-weight: bold;

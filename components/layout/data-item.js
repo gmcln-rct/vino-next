@@ -25,17 +25,13 @@ function DataItem(props) {
         category === "R" ? classes.redGrapeColor : classes.whiteGrapeColor
       }`}
     >
-      <Image
+      {/* <Image
         src={bgImage}
         alt={itemName}
         className={classes.image}
         width={100}
         height={75}
-        // fill
-        // sizes="(max-width: 768px) 100vw,
-        // (max-width: 1200px) 5vw,
-        // 33vw"
-      />
+      /> */}
       <div className={classes.actions}>
         <Link href={grapePrefix} as={`/grapes/${id}`}>
           {" "}
