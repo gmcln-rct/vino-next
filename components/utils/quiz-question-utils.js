@@ -6,8 +6,9 @@ export function createGrapeQuestion(countryData, grapeType, includeNotTopGrape) 
         .sort((a, b) => b.value - a.value)
         .slice(0, 3)
         .map((grape) => (grape.grape));
+
+        console.log("topGrapes ", topGrapes);
   
-        console.log("top grapes ", topGrapes)
       let questionText;
       let correctAnswer;
       let explanation;

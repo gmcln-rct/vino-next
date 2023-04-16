@@ -15,8 +15,6 @@ import {
   createWineHistoryQuestion,
 } from "@/components/utils/quiz-question-utils";
 
-
-
 const QuizPage = () => {
   const [currentQuestion, setCurrentQuestion] = useState(0);
   const [score, setScore] = useState(0);
@@ -44,19 +42,30 @@ const QuizPage = () => {
       Math.random() * countryWhiteData.length
     );
     const countryRed = countryRedData[randomIndexRed];
-    const countryRedQuestion = createGrapeQuestion(countryRed, "red");
+    const countryRedQuestion1 = createGrapeQuestion(countryRed, "red");
+    const countryRedQuestion2 = createGrapeQuestion(
+      countryRed,
+      "red",
+      "include"
+    );
 
     const countryWhite = countryWhiteData[randomIndexWhite];
-    const countryWhiteQuestion = createGrapeQuestion(countryWhite, "white","include");
+    const countryWhiteQuestion1 = createGrapeQuestion(
+      countryWhite,
+      "white",
+      "include"
+    );
+    const countryWhiteQuestion2 = createGrapeQuestion(countryWhite, "white");
     const wineTermsQuestion = createTermsQuestion(WINE_TERMS);
-
 
     const wineHistoryQuestion = createWineHistoryQuestion(wineHistoryData);
 
     setQuizData([
       wineTermsQuestion,
-      countryRedQuestion,
-      countryWhiteQuestion,
+      countryRedQuestion1,
+      countryWhiteQuestion1,
+      countryRedQuestion2,
+      countryWhiteQuestion2,
       wineHistoryQuestion,
     ]);
   }, []);
@@ -119,13 +128,16 @@ const QuizPage = () => {
           <p className={classes.instructions}>Click on correct answer below.</p>
           {selectedAnswer === null ? (
             quizData[currentQuestion].answers.map((answer, index) => (
-                <button
-                  key={index}
-                  onClick={() => handleAnswerButtonClick(String(index))}
-                  className={classes.answers}
-                >
-                  <span className={classes.answerLetter}>{answerIndex[index]}.</span> {answer}
-                </button>
+              <button
+                key={index}
+                onClick={() => handleAnswerButtonClick(String(index))}
+                className={classes.answers}
+              >
+                <span className={classes.answerLetter}>
+                  {answerIndex[index]}.
+                </span>{" "}
+                {answer}
+              </button>
             ))
           ) : (
             <div className={classes.feedback}>
