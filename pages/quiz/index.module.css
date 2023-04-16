@@ -4,7 +4,7 @@
   align-items: center;
   justify-content: center;
   /* height: 100vh; */
-    width: 100vw;
+  width: 100vw;
 
   font-family: "Open Sans", sans-serif;
   font-size: clamp(16px, 2vw, 24px);
@@ -75,10 +75,10 @@
 }
 
 .instructions {
-    font-size: clamp(18px, 2vw, 24px);
-    font-weight: 400;
-    font-style: italic;
-    color: #000;
+  font-size: clamp(18px, 2vw, 24px);
+  font-weight: 400;
+  font-style: italic;
+  color: #000;
 }
 
 .answers {
@@ -95,12 +95,12 @@
 }
 
 .answers:hover {
-  color: #0AA18A;
+  color: #0aa18a;
   cursor: pointer;
 }
 
 .answerLetter {
-  padding: 0 2vmin  0 0;
+  padding: 0 2vmin 0 0;
 }
 
 .next {
@@ -131,14 +131,14 @@
 }
 
 .explanation {
-    font-size: clamp(18px, 2vw, 24px);
-    font-weight: 400;
-    font-style: italic;
-    color: #000;
+  font-size: clamp(18px, 2vw, 24px);
+  font-weight: 400;
+  font-style: italic;
+  color: #000;
 }
 
 .results {
-margin: 2vmin 0 0 0;
+  margin: 2vmin 0 0 0;
   font-size: clamp(24px, 3vw, 28px);
   color: #e4ffa1;
   text-align: center;
@@ -146,11 +146,11 @@ margin: 2vmin 0 0 0;
 
 .correct {
   color: #fff;
-  background-color: #44A112;
+  background-color: #44a112;
 }
 
 .incorrect {
   color: #fff;
 
-  background-color: #AD0202;
+  background-color: #ad0202;
 }

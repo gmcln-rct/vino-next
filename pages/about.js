@@ -9,11 +9,12 @@ function AboutPage() {
         with the aim of making wine accessible to everyone and to help people
         discover new and exciting wines that they will love.
       </p>
+      <p>The app was built using Next.js and D3. It was designed and developed by New York-based Front End Developer Glenn McClanan.</p>
       <p>
         The primary data source for the site is from Wine Economics Research
-        Centre at the University of Adelaide, the Southern Hemisphere's premier wine research and teaching university. The data spans many elements of the wine industry, including production, consumption, and trade. 
+        Centre at the University of Adelaide, the Southern Hemisphere&apos;s premier wine research and teaching university. The data spans many elements of the wine industry, including production, consumption, and trade. 
       </p>
-      <p> The data is available in both pdf and Excel formats on the Centre's website:</p>
+      <p> The data is available in both pdf and Excel formats on the Centre&apos;s website:</p>
       <Link href="https://economics.adelaide.edu.au/wine-economics/" className="yellow">
         Wine Economics Research Centre
       </Link>
