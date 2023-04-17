@@ -5,6 +5,7 @@ import classes from "./index.module.css";
 import { QUIZ_DATA } from "@/data/quiz-data";
 import { WINE_TERMS } from "@/data/terms";
 import { LABELS } from "@/data/labels";
+import { COUNTRIES_DATA } from "@/data/country-data";
 import { COUNTRIES_RED_WINE_DATA } from "@/data/country-wine-data-red-all-2016";
 import { COUNTRIES_WHITE_WINE_DATA } from "@/data/country-wine-data-white-all-2016";
 import { HISTORIC_PRODUCTION_DATA } from "@/data/historic-production-data";
@@ -13,6 +14,7 @@ import {
   createGrapeQuestion,
   createTermsQuestion,
   createWineHistoryQuestion,
+  generateRegionQuestion,
 } from "@/components/utils/quiz-question-utils";
 
 const QuizPage = () => {
@@ -24,6 +26,7 @@ const QuizPage = () => {
   const [quizData, setQuizData] = useState(QUIZ_DATA);
   const [explanationMessage, setExplanationMessage] = useState("");
   const [correctness, setCorrectness] = useState(false);
+//   const [scoreComment, setScoreComment] = useState("");
 
   //   const [randomIndex, setRandomIndex] = useState(0);
   const [countryRedData, setCountryRedData] = useState(COUNTRIES_RED_WINE_DATA);
@@ -60,15 +63,35 @@ const QuizPage = () => {
 
     const wineHistoryQuestion = createWineHistoryQuestion(wineHistoryData);
 
+    const wineRegionsQuestion1 = generateRegionQuestion(COUNTRIES_DATA, "inCountry");
+    const wineRegionsQuestion2 = generateRegionQuestion(COUNTRIES_DATA, "notInCountry");
+    // console.log("wineRegionsQuestion1", wineRegionsQuestion2);
+
+    // let questionsLength = quizData.length;
+
+    // if (score === 0) {
+    //     setScoreComment("You need to study up on your wine knowledge.");
+    // } else if (score < questionsLength / 2) {
+    //     setScoreComment("Try beer. It's simpler...");
+    // } else if (score < questionsLength * 0.8) {
+    //     setScoreComment("You're getting there. Keep studying!");
+    // } else if (score < questionsLength) {
+    //     setScoreComment("You have been studying!");
+    // } else {
+    //     setScoreComment("You're a wine expert!");
+    // }
+
     setQuizData([
       wineTermsQuestion,
       countryRedQuestion1,
+      wineRegionsQuestion1,
       countryWhiteQuestion1,
       countryRedQuestion2,
+      wineRegionsQuestion2,
       countryWhiteQuestion2,
       wineHistoryQuestion,
     ]);
-  }, []);
+  }, [score]);
 
   const handleAnswerButtonClick = (answerIndex) => {
     const selectedAnswer = quizData[currentQuestion].answers[answerIndex];
@@ -108,7 +131,8 @@ const QuizPage = () => {
     }
   };
 
-  console.log("question ", quizData);
+
+
   return (
     <section className={classes.quizPage}>
       <div className={classes.headerSection}>
@@ -116,8 +140,9 @@ const QuizPage = () => {
         <p>Test your wine knowledge. Most questions are based on 2016 data.</p>
       </div>
       {showResults ? (
-        <div className="results-container">
+        <div className={classes.resultsContainer}>
           <h2 className={classes.results}>Results</h2>
+          {/* <p>{scoreComment}</p> */}
           <p>
             You got {score} out of {quizData.length} questions correct.
           </p>

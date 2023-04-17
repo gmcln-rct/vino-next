@@ -7,7 +7,7 @@ export function createGrapeQuestion(countryData, grapeType, includeNotTopGrape) 
         .slice(0, 3)
         .map((grape) => (grape.grape));
 
-        console.log("topGrapes ", topGrapes);
+        // console.log("topGrapes ", topGrapes);
 
         let notTopGrapeArr = countryData.grapeData.filter((grape) => !topGrapes.includes(grape.grape) && grape.value !== 0).map((grape) => grape.grape);
             // if (!topGrapes.includes(countryData.grapeData[i].grape) && countryData.grapeData[i].value !== 0) {
@@ -153,9 +153,63 @@ export function createWineHistoryQuestion(data) {
     answers: answers,
     correctAnswer: answers[correctAnswerPosition],
     explanation: `The word "${randomTerm.word}" matches the definition: "${randomTerm.definition}".`,
-    point: "10",
+    point: "1",
   };
 
   return questionObject;
 }
+  
+function getRandom(array) {
+    return array[Math.floor(Math.random() * array.length)];
+  }
+  
+export function generateRegionQuestion(countries, questionType) {
+    const selectedCountry = getRandom(countries);
+    const otherCountries = countries.filter((country) => country.id !== selectedCountry.id);
+    const selectedRegion = getRandom(selectedCountry.regions);
+    const correctRegions = selectedCountry.regions.slice(0, 3);
+    const incorrectRegion = getRandom(getRandom(otherCountries).regions);
+
+    function getThreeIncorrectRegions() {
+        let incorrectThreeRegions = [];
+        while (incorrectThreeRegions.length < 3) {
+            const incorrectRegion = getRandom(getRandom(otherCountries).regions);
+            if (!incorrectThreeRegions.includes(incorrectRegion)) {
+                incorrectThreeRegions.push(incorrectRegion);
+            }
+        }
+        return incorrectThreeRegions;
+    }
+
+    const incorrectRegions = getThreeIncorrectRegions();
+    // console.log("selected 3 region", selectedCountry, selectedRegion);
+  
+    let answers, questionText, correctAnswer, explanation;
+
+    let countryName = selectedCountry.itemName !== "United States" ? selectedCountry.itemName : "the United States";
+  
+    if (questionType === "inCountry") {
+
+      answers = incorrectRegions.concat(selectedRegion).sort(() => Math.random() - 0.5);
+      questionText = `Which of the following regions is a wine region of ${countryName}?`;
+      correctAnswer = selectedRegion;
+      explanation = `${correctAnswer} is a region of ${selectedCountry.itemName}.`;
+    } else {
+      answers = correctRegions.slice(0, 3).concat(incorrectRegion).sort(() => Math.random() - 0.5);
+      questionText = `Which of the following regions is NOT a region of ${countryName}?`;
+      correctAnswer = incorrectRegion;
+      explanation = `${correctAnswer} is not a region of ${countryName}.`;
+    }
+
+    console.log("Regions answers ", answers);
+  
+    return {
+      question: questionText,
+      questionType: "multiplechoice",
+      answerSelectionType: "single",
+      answers: answers,
+      correctAnswer: correctAnswer,
+      explanation: explanation,
+    };
+  }
   

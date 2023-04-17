@@ -44,9 +44,6 @@
   list-style: none;
 
   color: #a10101;
-
-  
-
 }
 
 .listitem {
@@ -60,11 +57,8 @@
   text-decoration: underline;
 }
 
-
-
 .dataVisualization {
   cursor: pointer;
-
 }
 
 .drawer {
@@ -72,6 +66,7 @@
   left: 0;
   right: 0;
   overflow: hidden;
+
 }
 
 .drawerlink {
@@ -95,6 +90,8 @@
   justify-content: flex-end;
   align-items: space-between;
   border-top: 1px solid #a10101;
+
+  padding: 2vmin 2vmin 2vmin 0;
 }
 
 .drawer-enter {
@@ -113,4 +110,18 @@
 .drawer-exit-active {
   max-height: 0;
   transition: max-height 1s ease-out;
+}
+
+.close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  cursor: pointer;
+  transform: opacity 0.5s ease-in;
+}
+
+.close:hover {
+  opacity: 0.8;
+  transition: 0.3s;
+  transform: hue-rotate(180deg);
 }

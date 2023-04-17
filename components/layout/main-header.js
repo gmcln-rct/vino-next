@@ -1,5 +1,6 @@
 import { useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { CSSTransition } from "react-transition-group";
 import classes from "./main-header.module.css";
 const Navbar = () => {
@@ -49,6 +50,15 @@ const Navbar = () => {
             <Link className={classes.drawerlink} href="/historic">
               Historic Data
             </Link>
+          <p onClick={toggleDrawer}>
+            <Image 
+              src="/images/icons/close.png"
+              alt="close"
+              width={20}
+              height={20}
+              className={classes.close}
+            />
+          </p>
           </div>
         </div>
       </CSSTransition>
