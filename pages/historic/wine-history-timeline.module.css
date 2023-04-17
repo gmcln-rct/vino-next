@@ -1,0 +1,36 @@
+.timeline {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+
+    padding: 2vmin;
+
+    text-align: center;
+}
+
+.event {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    max-width: 80vw;
+    margin: 1vmin 0;
+    padding: 1vmin 2vmin;
+
+    text-align: center;
+
+    background-color: rgba(150, 150, 150, 0.8);
+    border-radius: 10px;
+}
+
+.year {
+    font-size: clamp(18px, 2vw, 24px);
+    font-weight: 600;
+    font-style: italic;
+
+    color: #fff;
+    /* color: #a10101; */
+}

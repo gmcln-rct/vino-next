@@ -31,13 +31,16 @@ export function createGrapeQuestion(countryData, grapeType, includeNotTopGrape) 
         correctAnswer = topGrapes[Math.floor(Math.random() * topGrapes.length)];
         explanation = `${correctAnswer} is one of the top 3 ${grapeType} grapes in ${countryData.itemName} based on land area.`;
       } else {
-        const notTopGrape = countryData.grapeData.find(
-          (grape) => !topGrapes.includes(grape.grape) && grape.value !== 0
-        ).grape;
-        console.log("notTopGrape ", notTopGrape);
-        questionText = `Which grape is NOT one of the top 3 ${grapeType} grapes in ${countryData.itemName} based on land area of grape production?`;
-        correctAnswer = notTopGrape;
-        explanation = `${notTopGrape} is not one of the top 3 ${grapeType} grapes in ${countryData.itemName} based on land area.`;
+        if (topGrapes) {
+
+          const notTopGrape = countryData.grapeData.find(
+            (grape) => !topGrapes.includes(grape.grape) && grape.value !== 0
+          ).grape;
+          // console.log("notTopGrape ", notTopGrape);
+          questionText = `Which grape is NOT one of the top 3 ${grapeType} grapes in ${countryData.itemName} based on land area of grape production?`;
+          correctAnswer = notTopGrape;
+          explanation = `${notTopGrape} is not one of the top 3 ${grapeType} grapes in ${countryData.itemName} based on land area.`;
+        }
       }
   
       const answers = includeNotTopGrape === "include" ? [...notTopGrapeArr, correctAnswer].sort(() => Math.random() - 0.5)  : [...topGrapes, correctAnswer].sort(() => Math.random() - 0.5) 

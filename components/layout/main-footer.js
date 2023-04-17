@@ -9,7 +9,7 @@ const dataSource = "https://economics.adelaide.edu.au/wine-economics/databases/"
 function MainFooter() {
   return (
     <footer className={classes.footer}>
-      @{currentYear} Rio Create LLC. All Rights Reserved.
+      @{currentYear} Rio Create LLC. 
         {/* <Link href={dataSource}>Data Source</Link> */}
     </footer>
   );

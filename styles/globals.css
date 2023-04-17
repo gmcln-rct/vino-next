@@ -9,7 +9,7 @@
 
 /**************************** Global CSS variables ***************************************/
 
-html {
+html, body {
   background-color: rgb(199, 197, 183);
   height: 100vh;
   /* background-color: #96074e;

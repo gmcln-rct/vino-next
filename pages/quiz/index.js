@@ -91,7 +91,7 @@ const QuizPage = () => {
       countryWhiteQuestion2,
       wineHistoryQuestion,
     ]);
-  }, [score]);
+  }, []);
 
   const handleAnswerButtonClick = (answerIndex) => {
     const selectedAnswer = quizData[currentQuestion].answers[answerIndex];
