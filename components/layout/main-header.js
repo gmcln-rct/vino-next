@@ -23,7 +23,7 @@ const Navbar = () => {
             Data Visualizations
           </li>
           <li className={classes.listitem}>
-            <Link href="/terms">Wine Terms</Link>
+            <Link href="/resources">Resources</Link>
           </li>
           <li className={classes.listitem}>
             <Link href="/quiz/">Quiz</Link>
