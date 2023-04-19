@@ -9,7 +9,7 @@ const Masthead = (props) => {
   // if (!headerText) {
   //   mastheadBackgroundImage = `/images/site-images/homepage-masthead.jpg`;
   // }
-console.log("wine category: ", wineCategory);
+// console.log("wine category: ", wineCategory);
   const mastheadBackgroundImage = backgroundImage || `/images/site-images/homepage-masthead.jpg`;
 
   return (
