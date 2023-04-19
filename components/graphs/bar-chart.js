@@ -20,8 +20,10 @@ const BarChart = (props) => {
   const [selectedGrapeType, setSelectedGrapeType] = useState(
     grapeType ? grapeType : "Red"
   );
-  const data = selectedGrapeType === "Red" ? redGrapeData : whiteGrapeData;
+  const selectedData = selectedGrapeType === "Red" ? redGrapeData : whiteGrapeData;
   const fillColor = selectedGrapeType === "Red" ? "#B03E3E" : "#A19F18";
+
+  const data = selectedData.filter((d) => d.value > 0);
 
 
   useEffect(() => {

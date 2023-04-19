@@ -26,7 +26,7 @@ function CountryItem(props) {
   return (
     <li className={classes.item}>
       <Link href="/countries/[countryId]" as={`/countries/${id}`}>
-        {countryName} Wine Data
+        {countryName}
         <Image
           src={flagImage}
           alt={flagImageAlt}

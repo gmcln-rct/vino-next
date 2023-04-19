@@ -39,9 +39,9 @@
   font-size: clamp(18px, 2vw, 24px);
   font-weight: 700;
 
-  color: rgba(111, 15, 71, 0.853);
+  /* color: rgba(111, 15, 71, 0.853); */
   /* color: #6f0f47da; */
-  /* color: #6E0101; */
+  color: #8d0000;
 }
 .data {
   font-family: 'Open Sans', sans-serif;

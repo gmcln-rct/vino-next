@@ -230,13 +230,13 @@ main a {
 }
 
 .desaturate {
-  filter: brightness(3);
-  filter: saturate(0);
+  /* filter: brightness(0.8); */
+  /* filter: saturate(0); */
 }
 
 .desaturate:hover {
   filter: brightness(1);
-  filter: saturate(1);
+  filter: saturate(0.4);
   transition: 0.3s;
 }
 
