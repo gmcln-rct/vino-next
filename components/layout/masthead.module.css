@@ -28,7 +28,9 @@
    .mastheadHeader {
  
     /* color: white; */
+    font-family: 'Lato', sans-serif;
     font-size: clamp(2rem, 3.5vw, 4rem);
+    font-weight: 400;
 
     
     color: #faf9b8;
@@ -40,7 +42,7 @@
 
   /* color: white; */
   font-size: clamp(2rem, 2.5vw, 2.5rem);
-  font-weight: 600;
+  font-weight: 400;
   text-shadow: 2px 2px 2px rgba(25, 24, 24, 0.85);
   text-align: left;
   
