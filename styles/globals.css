@@ -11,7 +11,8 @@
 
 html, body {
   background-color: rgb(199, 197, 183);
-  height: 100vh;
+
+  /* height: 100vh; */
   /* background-color: #96074e;
   background-image: radial-gradient(at 8% 50%, hsla(360, 94%, 68%, 1) 0, hsla(360, 94%, 68%, 0) 50%),
   radial-gradient(at 92% 38%, hsla(319, 85%, 61%, 1) 0, hsla(319, 85%, 61%, 0) 50%); */
@@ -33,8 +34,44 @@ html, body {
 radial-gradient(at 44% 80%, hsla(272, 92%, 62%, 1) 0, hsla(272, 92%, 62%, 0) 50%); */ 
 }
 
+/* body {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+} */
+
 /* General */
 
+
+/* main */
+main {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+
+  min-height: 85vh;
+
+  /* height: 100%; */
+  margin: 0;
+
+  /* font-family: 'Lato', sans-serif; */
+  font-family: "Open Sans", sans-serif;
+}
+
+main h1,
+main .header {
+  /* color: #000; */
+  /* color: #A1360A; */
+  /* text-align: center;
+  margin: 1rem 0 0 0; */
+}
+
+main a {
+  font-size: 1.5rem;
+  margin: 1rem 0;
+}
 .masthead {
   display: flex;
   flex-direction: column;
@@ -50,9 +87,9 @@ radial-gradient(at 44% 80%, hsla(272, 92%, 62%, 1) 0, hsla(272, 92%, 62%, 0) 50%
   /* background-color: #96074e; */
   background-color: rgba(55, 55, 55, 0.8);
   /* box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.2); */
-  -webkit-box-shadow: inset 0px 0px 28px 0px rgba(0, 0, 0, 0.75);
-  -moz-box-shadow: inset 0px 0px 28px 0px rgba(0, 0, 0, 0.75);
-  box-shadow: inset 0px 0px 28px 0px rgba(0, 0, 0, 0.75);
+  -webkit-box-shadow: inset 0px 0px 28px 0px rgba(0, 0, 0, 0.25);
+  -moz-box-shadow: inset 0px 0px 28px 0px rgba(0, 0, 0, 0.25);
+  box-shadow: inset 0px 0px 28px 0px rgba(0, 0, 0, 0.25);
   
 }
 
@@ -83,32 +120,6 @@ radial-gradient(at 44% 80%, hsla(272, 92%, 62%, 1) 0, hsla(272, 92%, 62%, 0) 50%
   font-display: swap;
 }
 
-/* main */
-main {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-
-  /* height: 100%; */
-  margin: 0;
-
-  /* font-family: 'Lato', sans-serif; */
-  font-family: "Open Sans", sans-serif;
-}
-
-main h1,
-main .header {
-  /* color: #000; */
-  /* color: #A1360A; */
-  /* text-align: center;
-  margin: 1rem 0 0 0; */
-}
-
-main a {
-  font-size: 1.5rem;
-  margin: 1rem 0;
-}
 
 /* .outerglow {
   /* border-color: #e7e5d5; */
