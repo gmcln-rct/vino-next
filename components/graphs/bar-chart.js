@@ -25,7 +25,6 @@ const BarChart = (props) => {
 
   const data = selectedData.filter((d) => d.value > 0);
 
-
   useEffect(() => {
     d3.select(svgRef.current).selectAll("*").remove();
 

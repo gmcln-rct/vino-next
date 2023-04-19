@@ -26,31 +26,31 @@ function HomePage() {
         <section className="homePage__links">
           <Link href="/countries" className="action__container center">
             <Image
-              src="/images/icons/icon-countries.svg"
+              src="/images/icons/icon-countries-sm.png"
               className="transparent margin-bottom"
               alt="countries icon"
-              width={100}
-              height={100}
+              width={150}
+              height={150}
             />
             <p className="link">By Country</p>
           </Link>
           <Link href="/grapes" className="action__container center">
             <Image
-              src="/images/icons/icon-grape.svg"
+              src="/images/icons/icon-grape-sm.png"
               className="transparent margin-bottom"
               alt="grapes icon"
-              width={100}
-              height={100}
+              width={150}
+              height={150}
             />
             <p className="link">By Grape</p>
           </Link>
           <Link href="/historic" className="action__container center">
             <Image
-              src="/images/icons/icon-historic-data.svg"
+              src="/images/icons/icon-historic-data-sm.png"
               className="transparent margin-bottom"
               alt="grapes icon"
-              width={100}
-              height={100}
+              width={150}
+              height={150}
             />
             <p className="link">Historic Data</p>
           </Link>
