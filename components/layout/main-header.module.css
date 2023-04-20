@@ -69,31 +69,33 @@
   right: 0;
   overflow: hidden;
 
+  transition: 0.4s;
 }
 
 .drawerlink {
   display: flex;
   justify-content: flex-end;
   align-items: center;
-  padding: 0 1rem;
 
   padding: 0 2vmin;
+
   font-family: "Lato", sans-serif;
   font-size: clamp(18px, 1.5vw, 24px);
   font-weight: 400;
   text-decoration: none;
+  
   color: #a10101;
 }
 
 .drawercontent {
-  padding: 1rem;
-  background-color: #f0f0f0;
   display: flex;
   justify-content: flex-end;
   align-items: space-between;
   border-top: 1px solid #a10101;
+  /* padding: 0 1rem; */
+  background-color: #f0f0f0;
 
-  padding: 2vmin 2vmin 2vmin 0;
+  padding: 1vmin 2vmin 1vmin 0;
 }
 
 .drawer-enter {
@@ -114,13 +116,52 @@
   transition: max-height 1s ease-out;
 }
 
-.close {
+.drawerClose {
+  /* position: absolute;
+  top: 10px;
+  right: 10px; */
+  margin: 0 0 0 2vmin;
+
+  padding: 1vmin 2vmin;
+
+  font-family: "Open Sans", sans-serif;
+  font-size: clamp(18px, 1vw, 24px);
+  font-weight: 200;
+  text-decoration: none;
+
+  color: #555;
+
+  border: 1px solid #555;
+  border-radius: 5px;
+  cursor: pointer;
+
+  transform: opacity 0.5s ease-in;
+}
+
+.drawerClose:hover,
+.drawerClose:focus {
+  color: #fff;
+  background-color: #555;
+
+  border: 1px solid #fff;
+  opacity: 0.8;
+  transition: 0.3s;
+}
+
+/* .close {
   position: absolute;
   top: 10px;
   right: 10px;
+
+  font-family: 'Open Sans', sans-serif;
+  font-size: 1.5rem;
+  font-weight: 200;
+  text-decoration: none;
+  border: 1px solid #a10101;
   cursor: pointer;
+
   transform: opacity 0.5s ease-in;
-}
+} */
 
 .close:hover {
   opacity: 0.8;

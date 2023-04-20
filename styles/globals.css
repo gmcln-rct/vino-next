@@ -245,7 +245,8 @@ main a {
   flex-direction: column;
   justify-content: center;
   padding: 3vw 5vw;
-  color: white;
+  /* color: white; */
+  color: #3a3a3a;
   font-size: clamp(18px, 2vw, 24px);
   text-align: left;
 }
@@ -261,6 +262,16 @@ main a {
 
 .aboutPage p {
   margin: 1vmin 0;
+}
+
+.aboutPage a {
+  color: #0165a3;
+  font-weight: 600;
+}
+
+.aboutPage a:hover {
+  color: #96074e;
+  text-decoration: underline;
 }
 .versus {
   padding: 0 2vmin;

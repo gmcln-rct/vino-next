@@ -18,7 +18,7 @@ function HomePage() {
       </Head>
       <Masthead
         backgroundImage="/images/site-images/homepage-masthead.jpg"
-        header="Uncork Your Curiosity!"
+        header="Uncork Your Curiosity"
         headerText="Discover wine's untold stories through data visualizations. Test your wine knowlege on historic production, grape varieties, wine regions and more."
       />
       <section className="homePage">
@@ -36,7 +36,7 @@ function HomePage() {
           </Link>
           <Link href="/grapes" className="action__container center">
             <Image
-              src="/images/icons/icon-grape-sm.png"
+              src="/images/icons/icon-grapes-sm.png"
               className="transparent margin-bottom"
               alt="grapes icon"
               width={150}

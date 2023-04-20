@@ -50,14 +50,15 @@ const Navbar = () => {
             <Link className={classes.drawerlink} href="/historic">
               Historic Data
             </Link>
-          <p onClick={toggleDrawer}>
-            <Image 
+          <p onClick={toggleDrawer} className={classes.drawerClose}>
+            {/* <Image 
               src="/images/icons/close.png"
               alt="close"
               width={20}
               height={20}
               className={classes.close}
-            />
+            /> */}
+            Close
           </p>
           </div>
         </div>

@@ -141,7 +141,7 @@ const QuizPage = () => {
       </div>
       {showResults ? (
         <div className={classes.resultsContainer}>
-          <h2 className={classes.results}>Results</h2>
+          <h2 className={classes.results}>Your Results</h2>
           {/* <p>{scoreComment}</p> */}
           <p>
             You got {score} out of {quizData.length} questions correct.
