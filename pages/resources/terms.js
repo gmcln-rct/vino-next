@@ -36,7 +36,7 @@ export default function WineTerms() {
       <ul className={classes.termsList}>
         {filteredTerms.map((term, index) => (
           <li key={index} className={classes.listItem}>
-            <span className={classes.term}>{term.word}</span> {term.definition}
+            <span className={classes.term}>{term.word}</span> {term.definition}{" "}
           </li>
         ))}
       </ul>
