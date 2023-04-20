@@ -9,7 +9,7 @@ import { WINE_HISTORY_TIMELINE_DATA } from "@/data/wine-history-timeline.data";
 function randomKey(year) {
   return year + Math.random();
 }
-const wineHistoryData = WINE_HISTORY_TIMELINE_DATA;
+const wineHistoryData = WINE_HISTORY_TIMELINE_DATA.sort((a, b) => a.year - b.year);
 
 // const [wineHistoryData, setWineHistoryData] = useState(WINE_HISTORY_TIMELINE_DATA);
 const WineHistoryTimeline = ({ events }) => {
