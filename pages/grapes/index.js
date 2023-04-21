@@ -16,11 +16,10 @@ export default function GrapeIndex({ topGrapes }) {
       </Head>
       <Masthead
         backgroundImage="/images/site-images/index-masthead-grape.jpg"
-        header="Wine Grapes"
+        header="Grapes"
         headerText="Learn about individual grape varietals through our customizable data charts or sections for individual grapes."
       />
       {/* <h2>Featured Countries</h2> */}
-
       <DataList items={topGrapes} />
     </div>
   );
