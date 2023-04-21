@@ -68,6 +68,7 @@
   left: 0;
   right: 0;
   overflow: hidden;
+  z-index: 5;
 
   transition: 0.4s;
 }
