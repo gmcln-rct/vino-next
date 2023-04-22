@@ -27,7 +27,8 @@
 
 .mastheadHeader {
   /* color: white; */
-  font-family: "Lato", sans-serif;
+  /* font-family: "Lato", sans-serif; */
+  font-family: "Jost", sans-serif;
   font-size: clamp(2rem, 3.5vw, 4rem);
   font-style: italic;
   font-weight: 600;
