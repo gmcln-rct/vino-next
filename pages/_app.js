@@ -3,7 +3,7 @@ import Head from "next/head";
 import Layout from "../components/layout/layout";
 // import HomePage from './index';
 import MainHeader from "../components/layout/main-header";
-import "../styles/globals.css";
+import "../styles/global.css";
 
 function MyApp({ Component, pageProps }) {
   return (
