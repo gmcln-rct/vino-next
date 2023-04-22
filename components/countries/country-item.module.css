@@ -10,7 +10,8 @@
   padding: 0.2rem .5rem;
 
   color: white;
-  background-color: #1269A1;
+  /* background-color: #1269A1; */
+  background-color: #0AA18A;
   border: 2px solid rgba(255, 255, 255, 0.61);
   border-radius: 16px;
   box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3), 0 1px 12px 2px rgba(0, 0, 0, 0.2);
