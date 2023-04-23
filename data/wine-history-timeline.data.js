@@ -303,23 +303,6 @@ export const WINE_HISTORY_TIMELINE_DATA = [
     event: "Canned wine gains popularity as a convenient and portable option",
   },
   {
-    year: "2014 CE",
-    event:
-      "Wine tourism becomes a growing industry, with wineries and regions offering immersive experiences",
-  },
-  {
-    year: "2015 CE",
-    event: "New York Times exposé reveals labor abuses in California vineyards",
-  },
-  {
-    year: "2015 CE",
-    event: "Great vintage in Bordeaux, particularly for the Right Bank",
-  },
-  {
-    year: "2016 CE",
-    event: "Excellent vintage in Bordeaux, particularly for the Left Bank",
-  },
-  {
     year: "2017 CE",
     event:
       "Wildfires devastate California wine country, leading to a decrease in production and quality",
@@ -329,16 +312,7 @@ export const WINE_HISTORY_TIMELINE_DATA = [
     event:
       "Climate change accelerates, with some regions experiencing droughts and extreme weather events that impact wine production",
   },
-  {
-    year: "2020 CE",
-    event:
-      "Challenging vintage due to weather conditions, but some promising wines on both the Left and Right Bank",
-  },
-  {
-    year: "2021 CE",
-    event:
-      "Frost and heatwaves lead to a smaller harvest, but some exceptional wines on both the Left and Right Bank",
-  },
+
   {
     year: "2021 CE",
     event:
