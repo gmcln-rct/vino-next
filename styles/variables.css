@@ -7,6 +7,8 @@
   --font-jost: "Jost", sans-serif;
 
   --font-size-5: clamp(16px, 3vw, 24px);
+  --font-size-6: clamp(16px, 4vw, 28px);
+
   --font-size-10: clamp(24px, 4vw, 36px);
 
   /* Colors */

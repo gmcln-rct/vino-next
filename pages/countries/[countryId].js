@@ -34,11 +34,11 @@ export default function CountryDetailPage({ country }) {
           width={200}
           height={150}
         />
-        <h1 className="header">{country.itemName} Wine Production Data by Land Area</h1>
+        <h1 className="header">{country.itemName} Wine Production Data</h1>
         <p className="subheader">Bar Charts</p>
         <div className="actions">
           <Button link={worldTopTenLink}>Top Grapes Worldwide</Button>
-          <Button link={nationalTopLink}>Top Grapes by Country</Button>
+          <Button link={nationalTopLink}>Top Grapes in {country.itemName}</Button>
         </div>
       </section>
 

@@ -1,6 +1,8 @@
 import Head from "next/head";
 import Link from "next/link";
 import Image from "next/image";
+import Masthead from "@/components/layout/masthead";
+import Button from "@/components/ui/button";
 
 import classes from "./index.module.css";
 
@@ -14,24 +16,30 @@ export default function ResourcesIndex({ topGrapes }) {
           content="Data visualization of grape wine production for all wine-producing countries"
         />
       </Head>
-      <Image
+      {/* <Image
         src="/images/site-images/resources-bg.jpeg"
         alt="Wine History Timeline"
         className={classes.bgImage}
         width={1280}
         height={1080}
         priority={true}
-        // fill="cover"
-        // sizes="(max-width: 768px) 100vw,
-        // (max-width: 1200px) 155vw,
-        // 33vw"
+      /> */}
+            <Masthead
+        backgroundImage="/images/site-images/resources-bg.jpeg"
+        header="Resources"
+        headerText="Learn about wine through tools like a searchable wine terms list and a historic timeline of important milestones in the history of wine."
       />
       <section className={classes.resourcesPage}>
-        <h1 className="indexheader">Resources Index</h1>
-        <Link href="/resources/terms">Wine Terms</Link>
+        {/* <h1 className="indexheader">Resources Index</h1> */}
+
+        <div className="actions">
+          <Button link="/resources/terms">Wine Terms</Button>
+          <Button link="/resources/wine-history-timeline">Wine History Timeline</Button>
+        </div>
+        {/* <Link href="/resources/terms">Wine Terms</Link>
         <Link href="/resources/wine-history-timeline">
           Wine History Timeline
-        </Link>
+        </Link> */}
       </section>
     </>
   );

@@ -1,10 +1,10 @@
-Mr V
-Reformat this css code to scss for an scss file:
+
 .actions {
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
   align-items: center;
+
   padding: 1rem;
 
   text-align: center;
