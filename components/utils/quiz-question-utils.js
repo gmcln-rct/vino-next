@@ -168,7 +168,8 @@ export function createTermsQuestion(wineTerms) {
   // Ensure the definitions are different
   if (
     falseTerm1.definition === randomTerm.definition ||
-    falseTerm2.definition === randomTerm.definition
+    falseTerm2.definition === randomTerm.definition ||
+    falseTerm1.definition === falseTerm2.definition
   ) {
     return createQuestionObject(wineTerms);
   }
@@ -177,20 +178,10 @@ export function createTermsQuestion(wineTerms) {
   const correctAnswerPosition = Math.floor(Math.random() * 3);
   const answers = [
     correctAnswerPosition === 0 ? randomTerm.definition : falseTerm1.definition,
-    correctAnswerPosition === 1
-      ? randomTerm.definition
-      : correctAnswerPosition === 0
-      ? falseTerm2.definition
-      : falseTerm1.definition,
-    correctAnswerPosition === 2
-      ? randomTerm.definition
-      : correctAnswerPosition === 0
-      ? falseTerm1.definition
-      : falseTerm2.definition,
+    correctAnswerPosition === 1 ? randomTerm.definition : falseTerm2.definition,
+    correctAnswerPosition === 2 ? randomTerm.definition : 
+      (falseTerm1.definition !== falseTerm2.definition ? falseTerm1.definition : createTermsQuestion(wineTerms).answers[2]),
   ];
-
-  //   console.log("in create question object", answers);
-  //   console.log("correct answer ", answers[correctAnswerPosition]);
 
   const questionObject = {
     question: `Which of the following definitions matches the word "${randomTerm.word}"?`,
@@ -204,6 +195,7 @@ export function createTermsQuestion(wineTerms) {
 
   return questionObject;
 }
+
 
 function getRandom(array) {
   return array[Math.floor(Math.random() * array.length)];
