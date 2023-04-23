@@ -24,7 +24,7 @@
 .resourcesPage a {
   font-size: clamp(18px, 2vw, 3rem);
   font-weight: 600;
-  color: #fff;
+  color: var(--white);
 
 }
 

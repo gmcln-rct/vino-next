@@ -13,7 +13,7 @@
 
   padding: 1vmin 0 0 0;
   /* padding: 0 2vmin 1vmin 2vmin; */
-  background-color: #fff;
+  background-color: var(--white);
   border-radius: 10px;
   box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2), 0 1px 12px 2px rgba(0, 0, 0, 0.1);
   
@@ -29,7 +29,7 @@
   font-display: swap;
   text-align: center;
 
-  color: #fff;
+  color: var(--white);
 }
 
 .subheader {
@@ -40,7 +40,7 @@
   font-style: italic;
   font-display: swap;
 
-  color: #fff;
+  color: var(--white);
 }
 
 .units {
@@ -51,7 +51,7 @@
   font-style: italic;
   font-display: swap;
 
-  color: #fff;
+  color: var(--white);
 }
 .selectrow {
   display: flex;
@@ -84,7 +84,7 @@
   -moz-appearance: none;
   -webkit-appearance: none;
   appearance: none;
-  background-color: #fff;
+  background-color: var(--white);
   /* note: bg image below uses 2 urls. The first is an svg data uri for the arrow icon, and the second is the gradient. 
       for the icon, if you want to change the color, be sure to use `%23` instead of `#`, since it's a url. You can also swap in a different svg icon or an external image reference
       

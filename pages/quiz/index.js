@@ -1,6 +1,8 @@
 import { useState, useEffect } from "react";
 import classes from "./index.module.css";
 
+import Button from "@/components/ui/button";
+
 // Import data
 import { QUIZ_DATA } from "@/data/quiz-data";
 import { WINE_TERMS } from "@/data/terms";
@@ -127,7 +129,7 @@ const QuizPage = () => {
           <p>
             You got {score} out of {quizData.length} questions correct.
           </p>
-          <button onClick={handleRestartButtonClick}>Take Another Quiz</button>
+          <button onClick={handleRestartButtonClick} className={classes.next}>Take Another Quiz</button>
         </div>
       ) : (
         <div className={classes.questionContainer}>

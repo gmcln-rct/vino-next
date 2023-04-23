@@ -6,11 +6,11 @@
 
   padding: 2vmin 5vmin;
 
-  font-family: "Lato", sans-serif;
+font-family: var(--font-lato);
   font-display: swap;
   letter-spacing: 1px;
 
-  color: #fff;
+  color: var(--white);
 }
 
 .header {

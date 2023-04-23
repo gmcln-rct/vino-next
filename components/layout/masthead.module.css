@@ -29,7 +29,7 @@
   /* text-shadow: 2px 2px 2px rgba(25, 24, 24, 0.85); */
   text-align: left;
 
-  color: #fff;
+  color: var(--white);
   background-color: var(--pink-9);
   /* background-color: rgba(111, 15, 71, 0.853); */
 }

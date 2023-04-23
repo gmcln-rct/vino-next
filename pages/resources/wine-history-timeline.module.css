@@ -30,7 +30,7 @@
   font-weight: 600;
   font-style: italic;
 
-  color: #fff;
+  color: var(--white);
   /* color: #a10101; */
 }
 

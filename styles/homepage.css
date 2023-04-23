@@ -18,14 +18,14 @@
   -moz-box-shadow: inset 0px 0px 28px 0px rgba(0, 0, 0, 0.25);
   box-shadow: inset 0px 0px 28px 0px rgba(0, 0, 0, 0.25);
 
-  font-family: "Lato", sans-serif;
+font-family: var(--font-lato);
 }
 
 .homePageHeader {
   margin: 1rem 0 0 0;
   font-size: clamp(16px, 4vw, 28px);
   font-weight: 600;
-  color: #fff;
+  color: var(--white);
 }
 .homePage__links {
   display: flex;

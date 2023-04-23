@@ -18,7 +18,7 @@
 .moveUp {
   transform: translateY(-3rem);
 
-  color: #fff;
+  color: var(--white);
 }
 
 .bold {

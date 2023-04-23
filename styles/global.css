@@ -10,7 +10,8 @@
 
 /**************************** Global CSS variables ***************************************/
 
-html, body {
+html,
+body {
   background-color: var(--grey-2);
 
   /* height: 100vh; */
@@ -31,8 +32,8 @@ html, body {
     ); */
 
   /* /* background-color: #96074e; */
-/* background-image: radial-gradient(at 5% 92%, hsla(360, 95%, 57%, 1) 0, hsla(360, 95%, 57%, 0) 50%),
-radial-gradient(at 44% 80%, hsla(272, 92%, 62%, 1) 0, hsla(272, 92%, 62%, 0) 50%); */ 
+  /* background-image: radial-gradient(at 5% 92%, hsla(360, 95%, 57%, 1) 0, hsla(360, 95%, 57%, 0) 50%),
+radial-gradient(at 44% 80%, hsla(272, 92%, 62%, 1) 0, hsla(272, 92%, 62%, 0) 50%); */
 }
 
 /* body {
@@ -43,7 +44,6 @@ radial-gradient(at 44% 80%, hsla(272, 92%, 62%, 1) 0, hsla(272, 92%, 62%, 0) 50%
 } */
 
 /* General */
-
 
 /* main */
 main {
@@ -61,14 +61,6 @@ main {
   font-family: "Open Sans", sans-serif;
 }
 
-main h1,
-main .header {
-  /* color: #000; */
-  /* color: #A1360A; */
-  /* text-align: center;
-  margin: 1rem 0 0 0; */
-}
-
 main a {
   font-size: 1.5rem;
   margin: 1rem 0;
@@ -82,7 +74,7 @@ main a {
   width: 100%;
   margin: 0;
   padding: 1vmin 0;
-  font-family: "Lato", sans-serif;
+font-family: var(--font-lato);
   /* color: white; */
   /* background-color: #7a7a7a; */
   /* background-color: #96074e; */
@@ -91,7 +83,6 @@ main a {
   -webkit-box-shadow: inset 0px 0px 28px 0px rgba(0, 0, 0, 0.25);
   -moz-box-shadow: inset 0px 0px 28px 0px rgba(0, 0, 0, 0.25);
   box-shadow: inset 0px 0px 28px 0px rgba(0, 0, 0, 0.25);
-  
 }
 
 .masthead .header {
@@ -121,7 +112,6 @@ main a {
   font-display: swap;
 }
 
-
 /* .outerglow {
   /* border-color: #e7e5d5; */
 
@@ -137,7 +127,7 @@ main a {
 
   font-size: clamp(16px, 4vw, 28px);
   font-weight: 600;
-  font-family: "Lato", sans-serif;
+font-family: var(--font-lato);
   font-display: swap;
   letter-spacing: 1px;
 
@@ -151,7 +141,7 @@ main a {
   align-items: center;
 
   margin: 1rem 0 0 0;
-  color: #fff;
+  color: var(--white);
 
   font-size: clamp(16px, 4vw, 28px);
   font-weight: 400;
@@ -164,7 +154,7 @@ main a {
   justify-content: center;
   align-items: center;
 
-  color: #fff;
+  color: var(--white);
 
   font-family: "Open Sans", sans-serif;
   font-size: clamp(12px, 2vw, 18px);
@@ -182,7 +172,7 @@ main a {
   /* color: #A1360A; */
   /* color: #555; */
   color: #96074e;
-  /* color: #fff; */
+  /* color: var(--white); */
 
   font-size: clamp(24px, 4vw, 32px);
   font-weight: bold;
@@ -197,11 +187,11 @@ main a {
   font-style: italic;
   font-display: swap;
 
-  color: #fff;
+  color: var(--white);
 }
 
 .link {
-  color: #fff;
+  color: var(--white);
   font-weight: 400;
 }
 
@@ -247,7 +237,7 @@ main a {
   justify-content: center;
   padding: 3vw 5vw;
   /* color: white; */
-  color: #3a3a3a;
+  color: var(--grey-10);
   font-size: clamp(18px, 2vw, 24px);
   text-align: left;
 }
@@ -277,7 +267,7 @@ main a {
 .versus {
   padding: 0 2vmin;
 
-  font-family: "Lato", sans-serif;
+font-family: var(--font-lato);
   font-size: clamp(18px, 1.5vw, 24px);
   font-weight: 600;
   color: #fffd8d;
