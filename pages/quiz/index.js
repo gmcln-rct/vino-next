@@ -11,6 +11,7 @@ import { COUNTRIES_WHITE_WINE_DATA } from "@/data/country-wine-data-white-all-20
 import { HISTORIC_PRODUCTION_DATA } from "@/data/historic-production-data";
 
 import {
+  getRandomCountry,
   getTopGrapeCountry,
   createGrapeQuestion,
   createTermsQuestion,
@@ -41,26 +42,22 @@ const QuizPage = () => {
     const randomIndexWhite = Math.floor(
       Math.random() * countryWhiteData.length
     );
-    const countryRed = countryRedData[randomIndexRed];
-    // console.log("countryRed", countryRed);
-    const countryRedQuestion1 = createGrapeQuestion(countryRed, "red");
+    const countryRed1 = getRandomCountry(countryRedData);
+    const countryRed2 = getRandomCountry(countryRedData);
+    const countryWhite1 = getRandomCountry(countryWhiteData);
+    const countryWhite2 = getRandomCountry(countryWhiteData);
+    const countryRedQuestion1 = createGrapeQuestion(countryRed1, "red");
     const countryRedQuestion2 = createGrapeQuestion(
-      countryRed,
+      countryRed2,
       "red",
       "include"
     );
-
-    const countryWhite = countryWhiteData[randomIndexWhite];
-    console.log("countryWhite", countryWhite);
-
-    let check = getTopGrapeCountry(countryWhiteData);
-    console.log("check", check);
     const countryWhiteQuestion1 = createGrapeQuestion(
-      countryWhite,
+      countryWhite1,
       "white",
       "include"
     );
-    const countryWhiteQuestion2 = createGrapeQuestion(countryWhite, "white");
+    const countryWhiteQuestion2 = createGrapeQuestion(countryWhite2, "white");
     const wineTermsQuestion = createTermsQuestion(WINE_TERMS);
 
     const wineHistoryQuestion = createWineHistoryQuestion(wineHistoryData);

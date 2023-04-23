@@ -11,7 +11,7 @@ function checkValuesGreaterThanZero(arr) {
   return false;
 }
 
-export function getTopGrapeCountry(countryDataByType) {
+export function getRandomCountry(countryDataByType) {
   let randomCountry;
   let grapesWithValueGreaterThanZero = [];
 
@@ -22,7 +22,7 @@ export function getTopGrapeCountry(countryDataByType) {
   }
 
   console.log("Random Country", randomCountry);
-  return randomCountry.countryName;
+  return randomCountry;
 }
 
 // Grapes in countries question
