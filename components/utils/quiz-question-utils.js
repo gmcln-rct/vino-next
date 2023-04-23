@@ -18,12 +18,13 @@ export function getRandomCountry(countryDataByType) {
   while (grapesWithValueGreaterThanZero.length < 3) {
     const randomIndex = Math.floor(Math.random() * countryDataByType.length);
     randomCountry = countryDataByType[randomIndex];
-    grapesWithValueGreaterThanZero = checkValuesGreaterThanZero(
-      randomCountry.grapeData
-    );
+    if (checkValuesGreaterThanZero(randomCountry.grapeData)) {
+      grapesWithValueGreaterThanZero.push(randomCountry);
+    }
   }
 
   console.log("Random Country", randomCountry);
+  console.log("grapesWithValueGreaterThanZero", grapesWithValueGreaterThanZero);
   return randomCountry;
 }
 
@@ -43,7 +44,7 @@ export function createGrapeQuestion(
     console.log("in util - countryData ", countryData);
 
     let notTopGrapeArr = countryData.grapeData
-      .filter((grape) => !topGrapes.includes(grape.grape) && grape.value !== 0)
+      .filter((grape) => !topGrapes.includes(grape.grape))
       .map((grape) => grape.grape);
     let notTopGrapeArrLength = notTopGrapeArr.length;
 
@@ -72,7 +73,7 @@ export function createGrapeQuestion(
         explanation = `${notTopGrape} is not one of the top 3 ${grapeType} grapes in ${countryData.itemName}.`;
       }
     }
-    console.log('correct answer ', correctAnswer);
+    console.log("correct answer ", correctAnswer);
     const answers =
       includeNotTopGrape === "include"
         ? [...notTopGrapeArr, correctAnswer].sort(() => Math.random() - 0.5)
@@ -179,8 +180,11 @@ export function createTermsQuestion(wineTerms) {
   const answers = [
     correctAnswerPosition === 0 ? randomTerm.definition : falseTerm1.definition,
     correctAnswerPosition === 1 ? randomTerm.definition : falseTerm2.definition,
-    correctAnswerPosition === 2 ? randomTerm.definition : 
-      (falseTerm1.definition !== falseTerm2.definition ? falseTerm1.definition : createTermsQuestion(wineTerms).answers[2]),
+    correctAnswerPosition === 2
+      ? randomTerm.definition
+      : falseTerm1.definition !== falseTerm2.definition
+      ? falseTerm1.definition
+      : createTermsQuestion(wineTerms).answers[2],
   ];
 
   const questionObject = {
@@ -195,7 +199,6 @@ export function createTermsQuestion(wineTerms) {
 
   return questionObject;
 }
-
 
 function getRandom(array) {
   return array[Math.floor(Math.random() * array.length)];
