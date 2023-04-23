@@ -12,7 +12,6 @@ import { HISTORIC_PRODUCTION_DATA } from "@/data/historic-production-data";
 
 import {
   getRandomCountry,
-  getTopGrapeCountry,
   createGrapeQuestion,
   createTermsQuestion,
   createWineHistoryQuestion,
@@ -38,10 +37,6 @@ const QuizPage = () => {
   const answerIndex = ["A", "B", "C", "D"];
   
   useEffect(() => {
-    const randomIndexRed = Math.floor(Math.random() * countryRedData.length);
-    const randomIndexWhite = Math.floor(
-      Math.random() * countryWhiteData.length
-    );
     const countryRed1 = getRandomCountry(countryRedData);
     const countryRed2 = getRandomCountry(countryRedData);
     const countryWhite1 = getRandomCountry(countryWhiteData);
@@ -59,14 +54,10 @@ const QuizPage = () => {
     );
     const countryWhiteQuestion2 = createGrapeQuestion(countryWhite2, "white");
     const wineTermsQuestion = createTermsQuestion(WINE_TERMS);
-
     const wineHistoryQuestion = createWineHistoryQuestion(wineHistoryData);
-
     const wineRegionsQuestion1 = generateRegionQuestion(COUNTRIES_DATA, "inCountry");
     const wineRegionsQuestion2 = generateRegionQuestion(COUNTRIES_DATA, "notInCountry");
-    // console.log("wineRegionsQuestion1", wineRegionsQuestion2);
 
-    // let questionsLength = quizData.length;
 
     // if (score === 0) {
     //     setScoreComment("You need to study up on your wine knowledge.");
@@ -150,12 +141,13 @@ const QuizPage = () => {
         <div className={classes.questionContainer}>
           <h2>{quizData[currentQuestion].question}</h2>
           <p className={classes.instructions}>Click on correct answer below.</p>
+          <div className={classes.answers}>
           {selectedAnswer === null ? (
             quizData[currentQuestion].answers.map((answer, index) => (
               <button
                 key={index}
                 onClick={() => handleAnswerButtonClick(String(index))}
-                className={classes.answers}
+                className={classes.answer}
               >
                 <span className={classes.answerLetter}>
                   {answerIndex[index]}.
@@ -174,6 +166,7 @@ const QuizPage = () => {
               </button>
             </div>
           )}
+          </div>
         </div>
       )}
     </section>

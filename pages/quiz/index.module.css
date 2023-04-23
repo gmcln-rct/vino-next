@@ -70,6 +70,11 @@
 }
 
 .questionContainer p {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+
   font-size: clamp(18px, 2vw, 24px);
   font-weight: 400;
   font-style: italic;
@@ -83,7 +88,7 @@
   color: #000;
 }
 
-.answers {
+.answer {
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
