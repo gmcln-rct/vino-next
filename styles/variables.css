@@ -1,3 +1,18 @@
-root {
+:root {
     --brand-red: var(#a10101);
+
+
+    --middle-grey: var(#5a4949);
+    --grey0: var(#faf9f9);
+    --grey1: var(#efedee);
+    --grey2: var(#e3e0e1);
+    --grey3: var(#d6d2d4);
+    --grey4: var(#c8c2c5);
+    --grey5: var(#b8b1b5);
+    --grey6: var(#a69da2);
+
+--grey-7: var(#91868c);
+--grey-8: var(#766870);
+--grey-9: var(#493b43);
+
 }
