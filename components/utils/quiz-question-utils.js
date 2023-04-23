@@ -57,9 +57,9 @@ export function createGrapeQuestion(
     let correctAnswer;
     let explanation;
     if (includeNotTopGrape === "include") {
-      questionText = `Which grape is one of the top 3 ${grapeType} grapes in ${countryData.itemName} based on land area of grape production?`;
+      questionText = `Which of the following is one of the top 3 ${grapeType} grapes produced in ${countryData.itemName} (based on land area)?`;
       correctAnswer = topGrapes[Math.floor(Math.random() * topGrapes.length)];
-      explanation = `${correctAnswer} is one of the top 3 ${grapeType} grapes in ${countryData.itemName} based on land area.`;
+      explanation = `${correctAnswer} is one of the top 3 ${grapeType} grapes in ${countryData.itemName}.`;
     } else {
       // console.log("in quiz uitl - top Grape ", topGrapes, " countryData ", countryData);
       if (topGrapes) {
@@ -67,12 +67,12 @@ export function createGrapeQuestion(
           (grape) => !topGrapes.includes(grape.grape)
         ).grape;
         // console.log("notTopGrape ", notTopGrape);
-        questionText = `Which grape is NOT one of the top 3 ${grapeType} grapes in ${countryData.itemName} based on land area of grape production?`;
+        questionText = `Which of the following is NOT one of the top 3 ${grapeType} grapes produced in ${countryData.itemName} (based on land area)?`;
         correctAnswer = notTopGrape;
-        explanation = `${notTopGrape} is not one of the top 3 ${grapeType} grapes in ${countryData.itemName} based on land area.`;
+        explanation = `${notTopGrape} is not one of the top 3 ${grapeType} grapes in ${countryData.itemName}.`;
       }
     }
-
+    console.log('correct answer ', correctAnswer);
     const answers =
       includeNotTopGrape === "include"
         ? [...notTopGrapeArr, correctAnswer].sort(() => Math.random() - 0.5)

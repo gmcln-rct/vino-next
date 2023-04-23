@@ -9,25 +9,8 @@
   align-items: center;
 }
 
-.mastheadOverlay {
-  /* background-color: rgba(255, 255, 255, 0.8); */
-  /* padding: 50px; */
-  /* background-color: rgba(0, 0, 0, 0.5); */
-  /* max-width: 1200px;
-    width: 100%;
-    text-align: center; */
-}
-
-/* .mastheadHeader {
-    color: white;
-    font-size: 3rem;
-    margin-bottom: 1rem;
-  }
-   */
 
 .mastheadHeader {
-  /* color: white; */
-  /* font-family: "Lato", sans-serif; */
   font-family: "Jost", sans-serif;
   font-size: clamp(2rem, 3.5vw, 4rem);
   font-style: italic;
@@ -47,7 +30,8 @@
   text-align: left;
 
   color: #fff;
-  background-color: rgba(111, 15, 71, 0.853);
+  background-color: var(--pink-9);
+  /* background-color: rgba(111, 15, 71, 0.853); */
 }
 
 @media (max-width: 768px) {
