@@ -32,8 +32,8 @@
   text-decoration: none;
   text-align:center;
 
-  font-size: clamp(16px, 3vw, 22px);
-  font-family: Lato, sans-serif;
+  font-family: var(--font-lato);
+  font-size: var(--font-size-5);
   font-weight: 600;
 
   /* color: #2A5B75; */

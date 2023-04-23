@@ -11,15 +11,13 @@
 
   color: white;
   /* background-color: #1269A1; */
-  background-color: #0AA18A;
-  border: 2px solid rgba(255, 255, 255, 0.61);
+  /* background-color: #0AA18A; */
+  background-color: var(--cyan-5);
+  border: 2px solid var(--cyan-5);
   border-radius: 16px;
   box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3), 0 1px 12px 2px rgba(0, 0, 0, 0.2);
   overflow: hidden;
-  /* -webkit-backdrop-filter: blur(5px); */
-  /* background-color: white;
-  border: 1px solid rgba(255, 255, 255, 0.61); */
-  /* border-radius: 8px; */
+
 }
 
 .item:hover {
