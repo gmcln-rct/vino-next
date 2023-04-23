@@ -26,25 +26,22 @@ const QuizPage = () => {
   const [quizData, setQuizData] = useState(QUIZ_DATA);
   const [explanationMessage, setExplanationMessage] = useState("");
   const [correctness, setCorrectness] = useState(false);
-//   const [scoreComment, setScoreComment] = useState("");
 
-  //   const [randomIndex, setRandomIndex] = useState(0);
   const [countryRedData, setCountryRedData] = useState(COUNTRIES_RED_WINE_DATA);
-  const [countryWhiteData, setCountryWhiteData] = useState(
-    COUNTRIES_WHITE_WINE_DATA
-  );
+  const [countryWhiteData, setCountryWhiteData] = useState(COUNTRIES_WHITE_WINE_DATA);
   const [wineHistoryData, setWineHistoryData] = useState(
     HISTORIC_PRODUCTION_DATA
   );
 
   const answerIndex = ["A", "B", "C", "D"];
-
+  
   useEffect(() => {
     const randomIndexRed = Math.floor(Math.random() * countryRedData.length);
     const randomIndexWhite = Math.floor(
       Math.random() * countryWhiteData.length
     );
     const countryRed = countryRedData[randomIndexRed];
+    console.log("countryRed", countryRed);
     const countryRedQuestion1 = createGrapeQuestion(countryRed, "red");
     const countryRedQuestion2 = createGrapeQuestion(
       countryRed,

@@ -1,26 +1,31 @@
+Mr V
+Reformat this css code to scss for an scss file:
 .actions {
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
   align-items: center;
   padding: 1rem;
+
   text-align: center;
+}
 
-  a {
-    margin: 0 1rem;
+.actions a {
+  margin: 0 1rem;
+}
 
-    span {
-      vertical-align: middle;
-    }
-  }
+.actions a span {
+  vertical-align: middle;
 }
 
 .actionHeader {
   margin: 1rem 0 0 0;
+
   font-size: clamp(18px, 4vw, 32px);
   font-weight: 600;
   font-display: swap;
   letter-spacing: 0.5px;
+
   color: #f8ae52;
 }
 
@@ -29,28 +34,32 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+
   min-width: 200px;
   margin: 1rem 2rem 2rem 2rem;
   padding: 1rem 2rem;
+
+  /* background-color: #1269a1; */
   background-color: #0AA18A;
   backdrop-filter: blur(5px);
   -webkit-backdrop-filter: blur(5px);
+
   border: 2px solid rgba(255, 255, 255, 0.61);
   border-radius: 16px;
   box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3), 0 1px 12px 2px rgba(0, 0, 0, 0.2);
+}
 
-  &:hover {
-    background-color: #053654;
-    border-color: #1269a1;
-    transition: 0.3s;
-  }
+.action__container:hover {
+  background-color: #053654;
+  border-color: #1269a1;
+  transition: 0.3s;
+}
 
-  img {
-    filter: brightness(1.2);
-  }
+.action__container img {
+  filter: brightness(1.2);
+}
 
-  &.tall {
-    max-width: 100px;
-    height: 230px;
-  }
+.tall {
+  max-width: 100px;
+  height: 230px;
 }
