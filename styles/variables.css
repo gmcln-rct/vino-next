@@ -1,18 +1,44 @@
 :root {
-    --brand-red: var(#a10101);
+  --brand-red: var(#a10101);
+
+  --middle-grey: var(#5a4949);
+  --grey0: var(#faf9f9);
+  --grey1: var(#efeded);
+  --grey2: var(#e3e0e0);
+  --grey3: var(#d7d2d2);
+  --grey4: var(#c9c2c2);
+  --grey5: var(#b9b1b1);
+  --grey6: var(#a89d9d);
+  --grey-7: var(#938686);
+  --grey-8: var(#796868);
+  --grey-9: var(#4c3b3b);
+  --grey-10: var(#2e242a);
+
+  --red-0: var(#fdf8f8);
+    --red-1: var(#f7ebeb);
+    --red-2: var(#f2dcdc);
+    --red-3: var(#eccbcb);
+    --red-4: var(#e5b9b9);
+    --red-5: var(#dea5a5);
+    --red-6: var(#d58d8d);
+    --red-7: var(#ca6f6f);
+    --red-8: var(#ba4444);
+    --red-9: var(#850101);
+
+    --green-0: var(#f5fbf5);
+    --green-1: var(#dff3df);
+    --green-2: var(#c6eac6);
+    --green-3: var(#abe0ab);
+    --green-4: var(#8dd58d);
+    --green-5: var(#69c769);
+    --green-6: var(#3cb73c);
+    --green-7: var(#01a001);
+    --green-8: var(#017e01);
+    --green-9: var(#004b00);
 
 
-    --middle-grey: var(#5a4949);
-    --grey0: var(#faf9f9);
-    --grey1: var(#efedee);
-    --grey2: var(#e3e0e1);
-    --grey3: var(#d6d2d4);
-    --grey4: var(#c8c2c5);
-    --grey5: var(#b8b1b5);
-    --grey6: var(#a69da2);
-
---grey-7: var(#91868c);
---grey-8: var(#766870);
---grey-9: var(#493b43);
 
 }
+
+
+
