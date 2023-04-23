@@ -1,3 +1,23 @@
+function checkValuesGreaterThanZero(arr) {
+  let count = 0;
+  for (let i = 0; i < arr.length; i++) {
+    if (arr[i].value > 0) {
+      count++;
+      if (count >= 3) {
+        return true;
+      }
+    }
+  }
+  return false;
+}
+
+export function getTopGrapeCountry(countryData) {
+  let checkCountry = checkValuesGreaterThanZero(countryData.grapeData);
+  console.log("checkCountry ", checkCountry);
+
+
+}
+
 
 // Grapes in countries question
 export function createGrapeQuestion(countryData, grapeType, includeNotTopGrape) {
@@ -13,10 +33,10 @@ export function createGrapeQuestion(countryData, grapeType, includeNotTopGrape) 
             let notTopGrapeArrLength = notTopGrapeArr.length;
 
             let newArr = notTopGrapeArr.slice(notTopGrapeArrLength-4, notTopGrapeArrLength-1)
-            console.log("newArr ", newArr);
+            // console.log("newArr ", newArr);
 
             notTopGrapeArr = newArr;
-        console.log("notTopGrapeArr ", notTopGrapeArr);
+        // console.log("notTopGrapeArr ", notTopGrapeArr);
       let questionText;
       let correctAnswer;
       let explanation;
@@ -25,7 +45,7 @@ export function createGrapeQuestion(countryData, grapeType, includeNotTopGrape) 
         correctAnswer = topGrapes[Math.floor(Math.random() * topGrapes.length)];
         explanation = `${correctAnswer} is one of the top 3 ${grapeType} grapes in ${countryData.itemName} based on land area.`;
       } else {
-        console.log("in quiz uitl - top Grape ", topGrapes, " countryData ", countryData);
+        // console.log("in quiz uitl - top Grape ", topGrapes, " countryData ", countryData);
         if (topGrapes) {
           const notTopGrape = countryData.grapeData.find(
             (grape) => !topGrapes.includes(grape.grape)).grape;

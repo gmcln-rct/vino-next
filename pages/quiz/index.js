@@ -11,6 +11,7 @@ import { COUNTRIES_WHITE_WINE_DATA } from "@/data/country-wine-data-white-all-20
 import { HISTORIC_PRODUCTION_DATA } from "@/data/historic-production-data";
 
 import {
+  getTopGrapeCountry,
   createGrapeQuestion,
   createTermsQuestion,
   createWineHistoryQuestion,
@@ -23,14 +24,14 @@ const QuizPage = () => {
   const [showResults, setShowResults] = useState(false);
   const [selectedAnswer, setSelectedAnswer] = useState(null);
   const [feedbackMessage, setFeedbackMessage] = useState("");
+
   const [quizData, setQuizData] = useState(QUIZ_DATA);
   const [explanationMessage, setExplanationMessage] = useState("");
   const [correctness, setCorrectness] = useState(false);
 
   const [countryRedData, setCountryRedData] = useState(COUNTRIES_RED_WINE_DATA);
   const [countryWhiteData, setCountryWhiteData] = useState(COUNTRIES_WHITE_WINE_DATA);
-  const [wineHistoryData, setWineHistoryData] = useState(
-    HISTORIC_PRODUCTION_DATA
+  const [wineHistoryData, setWineHistoryData] = useState(HISTORIC_PRODUCTION_DATA
   );
 
   const answerIndex = ["A", "B", "C", "D"];
@@ -41,7 +42,7 @@ const QuizPage = () => {
       Math.random() * countryWhiteData.length
     );
     const countryRed = countryRedData[randomIndexRed];
-    console.log("countryRed", countryRed);
+    // console.log("countryRed", countryRed);
     const countryRedQuestion1 = createGrapeQuestion(countryRed, "red");
     const countryRedQuestion2 = createGrapeQuestion(
       countryRed,
@@ -50,6 +51,9 @@ const QuizPage = () => {
     );
 
     const countryWhite = countryWhiteData[randomIndexWhite];
+    console.log("countryWhite", countryWhite);
+
+    let check = getTopGrapeCountry(countryWhite);
     const countryWhiteQuestion1 = createGrapeQuestion(
       countryWhite,
       "white",
