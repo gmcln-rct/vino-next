@@ -53,7 +53,8 @@ const QuizPage = () => {
     const countryWhite = countryWhiteData[randomIndexWhite];
     console.log("countryWhite", countryWhite);
 
-    let check = getTopGrapeCountry(countryWhite);
+    let check = getTopGrapeCountry(countryWhiteData);
+    console.log("check", check);
     const countryWhiteQuestion1 = createGrapeQuestion(
       countryWhite,
       "white",

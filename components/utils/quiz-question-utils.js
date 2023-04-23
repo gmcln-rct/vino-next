@@ -11,13 +11,19 @@ function checkValuesGreaterThanZero(arr) {
   return false;
 }
 
-export function getTopGrapeCountry(countryData) {
-  let checkCountry = checkValuesGreaterThanZero(countryData.grapeData);
-  console.log("checkCountry ", checkCountry);
+export function getTopGrapeCountry(countryDataByType) {
+  let randomCountry;
+  let grapesWithValueGreaterThanZero = [];
 
+  while (grapesWithValueGreaterThanZero.length < 3) {
+    const randomIndex = Math.floor(Math.random() * countryDataByType.length);
+    randomCountry = countryDataByType[randomIndex];
+    grapesWithValueGreaterThanZero = checkValuesGreaterThanZero(randomCountry.grapeData);
+  }
 
+  console.log("Random Country", randomCountry);
+  return randomCountry.countryName;
 }
-
 
 // Grapes in countries question
 export function createGrapeQuestion(countryData, grapeType, includeNotTopGrape) {
@@ -28,6 +34,7 @@ export function createGrapeQuestion(countryData, grapeType, includeNotTopGrape) 
         .map((grape) => (grape.grape));
 
         // console.log("topGrapes ", topGrapes);
+        console.log("in util - countryData ", countryData);
 
         let notTopGrapeArr = countryData.grapeData.filter((grape) => !topGrapes.includes(grape.grape) && grape.value !== 0).map((grape) => grape.grape);
             let notTopGrapeArrLength = notTopGrapeArr.length;
@@ -217,7 +224,7 @@ export function generateRegionQuestion(countries, questionType) {
       explanation = `${correctAnswer} is not a region of ${countryName}.`;
     }
 
-    console.log("Regions answers ", answers);
+    // console.log("Regions answers ", answers);
   
     return {
       question: questionText,
