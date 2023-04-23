@@ -58,19 +58,6 @@ const QuizPage = () => {
     const wineRegionsQuestion1 = generateRegionQuestion(COUNTRIES_DATA, "inCountry");
     const wineRegionsQuestion2 = generateRegionQuestion(COUNTRIES_DATA, "notInCountry");
 
-
-    // if (score === 0) {
-    //     setScoreComment("You need to study up on your wine knowledge.");
-    // } else if (score < questionsLength / 2) {
-    //     setScoreComment("Try beer. It's simpler...");
-    // } else if (score < questionsLength * 0.8) {
-    //     setScoreComment("You're getting there. Keep studying!");
-    // } else if (score < questionsLength) {
-    //     setScoreComment("You have been studying!");
-    // } else {
-    //     setScoreComment("You're a wine expert!");
-    // }
-
     setQuizData([
       wineTermsQuestion,
       countryRedQuestion1,
@@ -90,6 +77,7 @@ const QuizPage = () => {
     const explanation = quizData[currentQuestion].explanation;
     setSelectedAnswer(selectedAnswer);
 
+   
     setExplanationMessage(explanation);
     if (isCorrect) {
       setFeedbackMessage(
@@ -121,7 +109,11 @@ const QuizPage = () => {
     }
   };
 
-
+  const handleRestartButtonClick = () => {
+    setShowResults(false);
+    setCurrentQuestion(0);
+    setScore(0);
+  };
 
   return (
     <section className={classes.quizPage}>
@@ -132,10 +124,10 @@ const QuizPage = () => {
       {showResults ? (
         <div className={classes.resultsContainer}>
           <h2 className={classes.results}>Your Results</h2>
-          {/* <p>{scoreComment}</p> */}
           <p>
             You got {score} out of {quizData.length} questions correct.
           </p>
+          <button onClick={handleRestartButtonClick}>Take Another Quiz</button>
         </div>
       ) : (
         <div className={classes.questionContainer}>
@@ -174,3 +166,5 @@ const QuizPage = () => {
 };
 
 export default QuizPage;
+
+

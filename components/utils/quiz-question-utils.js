@@ -18,7 +18,9 @@ export function getRandomCountry(countryDataByType) {
   while (grapesWithValueGreaterThanZero.length < 3) {
     const randomIndex = Math.floor(Math.random() * countryDataByType.length);
     randomCountry = countryDataByType[randomIndex];
-    grapesWithValueGreaterThanZero = checkValuesGreaterThanZero(randomCountry.grapeData);
+    grapesWithValueGreaterThanZero = checkValuesGreaterThanZero(
+      randomCountry.grapeData
+    );
   }
 
   console.log("Random Country", randomCountry);
@@ -26,57 +28,68 @@ export function getRandomCountry(countryDataByType) {
 }
 
 // Grapes in countries question
-export function createGrapeQuestion(countryData, grapeType, includeNotTopGrape) {
-    if (countryData) {
-      const topGrapes = countryData.grapeData
-        .sort((a, b) => b.value - a.value)
-        .slice(0, 3)
-        .map((grape) => (grape.grape));
+export function createGrapeQuestion(
+  countryData,
+  grapeType,
+  includeNotTopGrape
+) {
+  if (countryData) {
+    const topGrapes = countryData.grapeData
+      .sort((a, b) => b.value - a.value)
+      .slice(0, 3)
+      .map((grape) => grape.grape);
 
-        // console.log("topGrapes ", topGrapes);
-        console.log("in util - countryData ", countryData);
+    // console.log("topGrapes ", topGrapes);
+    console.log("in util - countryData ", countryData);
 
-        let notTopGrapeArr = countryData.grapeData.filter((grape) => !topGrapes.includes(grape.grape) && grape.value !== 0).map((grape) => grape.grape);
-            let notTopGrapeArrLength = notTopGrapeArr.length;
+    let notTopGrapeArr = countryData.grapeData
+      .filter((grape) => !topGrapes.includes(grape.grape) && grape.value !== 0)
+      .map((grape) => grape.grape);
+    let notTopGrapeArrLength = notTopGrapeArr.length;
 
-            let newArr = notTopGrapeArr.slice(notTopGrapeArrLength-4, notTopGrapeArrLength-1)
-            // console.log("newArr ", newArr);
-
-            notTopGrapeArr = newArr;
-        // console.log("notTopGrapeArr ", notTopGrapeArr);
-      let questionText;
-      let correctAnswer;
-      let explanation;
-      if (includeNotTopGrape === "include") {
-        questionText = `Which grape is one of the top 3 ${grapeType} grapes in ${countryData.itemName} based on land area of grape production?`;
-        correctAnswer = topGrapes[Math.floor(Math.random() * topGrapes.length)];
-        explanation = `${correctAnswer} is one of the top 3 ${grapeType} grapes in ${countryData.itemName} based on land area.`;
-      } else {
-        // console.log("in quiz uitl - top Grape ", topGrapes, " countryData ", countryData);
-        if (topGrapes) {
-          const notTopGrape = countryData.grapeData.find(
-            (grape) => !topGrapes.includes(grape.grape)).grape;
-          // console.log("notTopGrape ", notTopGrape);
-          questionText = `Which grape is NOT one of the top 3 ${grapeType} grapes in ${countryData.itemName} based on land area of grape production?`;
-          correctAnswer = notTopGrape;
-          explanation = `${notTopGrape} is not one of the top 3 ${grapeType} grapes in ${countryData.itemName} based on land area.`;
-        }
+    let newArr = notTopGrapeArr.slice(
+      notTopGrapeArrLength - 4,
+      notTopGrapeArrLength - 1
+    );
+    notTopGrapeArr = newArr;
+    console.log("notTopGrapeArr ", notTopGrapeArr);
+    let questionText;
+    let correctAnswer;
+    let explanation;
+    if (includeNotTopGrape === "include") {
+      questionText = `Which grape is one of the top 3 ${grapeType} grapes in ${countryData.itemName} based on land area of grape production?`;
+      correctAnswer = topGrapes[Math.floor(Math.random() * topGrapes.length)];
+      explanation = `${correctAnswer} is one of the top 3 ${grapeType} grapes in ${countryData.itemName} based on land area.`;
+    } else {
+      // console.log("in quiz uitl - top Grape ", topGrapes, " countryData ", countryData);
+      if (topGrapes) {
+        const notTopGrape = countryData.grapeData.find(
+          (grape) => !topGrapes.includes(grape.grape)
+        ).grape;
+        // console.log("notTopGrape ", notTopGrape);
+        questionText = `Which grape is NOT one of the top 3 ${grapeType} grapes in ${countryData.itemName} based on land area of grape production?`;
+        correctAnswer = notTopGrape;
+        explanation = `${notTopGrape} is not one of the top 3 ${grapeType} grapes in ${countryData.itemName} based on land area.`;
       }
-  
-      const answers = includeNotTopGrape === "include" ? [...notTopGrapeArr, correctAnswer].sort(() => Math.random() - 0.5)  : [...topGrapes, correctAnswer].sort(() => Math.random() - 0.5) 
-  
-      const questionObj = {
-        question: questionText,
-        questionType: "multiplechoice",
-        answerSelectionType: "single",
-        answers: answers,
-        correctAnswer: correctAnswer,
-        explanation: explanation,
-      };
-  
-      return questionObj;
     }
+
+    const answers =
+      includeNotTopGrape === "include"
+        ? [...notTopGrapeArr, correctAnswer].sort(() => Math.random() - 0.5)
+        : [...topGrapes, correctAnswer].sort(() => Math.random() - 0.5);
+
+    const questionObj = {
+      question: questionText,
+      questionType: "multiplechoice",
+      answerSelectionType: "single",
+      answers: answers,
+      correctAnswer: correctAnswer,
+      explanation: explanation,
+    };
+
+    return questionObj;
   }
+}
 
 function createQuestionObject(
   countryAName,
@@ -114,7 +127,7 @@ export function createWineHistoryQuestion(data) {
   while (randomCountryIndices.length < 2) {
     const randomIndex = getRandomInt(0, data.length - 1);
     if (!randomCountryIndices.includes(randomIndex)) {
-        randomCountryIndices.push(randomIndex);
+      randomCountryIndices.push(randomIndex);
     }
   }
 
@@ -135,11 +148,10 @@ export function createWineHistoryQuestion(data) {
   );
 
   return questionObj;
-
 }
 
-  export function createTermsQuestion(wineTerms) {
-    const randomIndex = Math.floor(Math.random() * wineTerms.length);
+export function createTermsQuestion(wineTerms) {
+  const randomIndex = Math.floor(Math.random() * wineTerms.length);
   const randomTerm = wineTerms[randomIndex];
 
   // Choose two different random terms for the false answers
@@ -154,7 +166,10 @@ export function createWineHistoryQuestion(data) {
   const falseTerm2 = wineTerms[falseIndexes[1]];
 
   // Ensure the definitions are different
-  if (falseTerm1.definition === randomTerm.definition || falseTerm2.definition === randomTerm.definition) {
+  if (
+    falseTerm1.definition === randomTerm.definition ||
+    falseTerm2.definition === randomTerm.definition
+  ) {
     return createQuestionObject(wineTerms);
   }
 
@@ -162,12 +177,20 @@ export function createWineHistoryQuestion(data) {
   const correctAnswerPosition = Math.floor(Math.random() * 3);
   const answers = [
     correctAnswerPosition === 0 ? randomTerm.definition : falseTerm1.definition,
-    correctAnswerPosition === 1 ? randomTerm.definition : correctAnswerPosition === 0 ? falseTerm2.definition : falseTerm1.definition,
-    correctAnswerPosition === 2 ? randomTerm.definition : correctAnswerPosition === 0 ? falseTerm1.definition : falseTerm2.definition,
+    correctAnswerPosition === 1
+      ? randomTerm.definition
+      : correctAnswerPosition === 0
+      ? falseTerm2.definition
+      : falseTerm1.definition,
+    correctAnswerPosition === 2
+      ? randomTerm.definition
+      : correctAnswerPosition === 0
+      ? falseTerm1.definition
+      : falseTerm2.definition,
   ];
 
-//   console.log("in create question object", answers);
-//   console.log("correct answer ", answers[correctAnswerPosition]);
+  //   console.log("in create question object", answers);
+  //   console.log("correct answer ", answers[correctAnswerPosition]);
 
   const questionObject = {
     question: `Which of the following definitions matches the word "${randomTerm.word}"?`,
@@ -181,58 +204,66 @@ export function createWineHistoryQuestion(data) {
 
   return questionObject;
 }
-  
+
 function getRandom(array) {
-    return array[Math.floor(Math.random() * array.length)];
-  }
-  
+  return array[Math.floor(Math.random() * array.length)];
+}
+
 export function generateRegionQuestion(countries, questionType) {
-    const selectedCountry = getRandom(countries);
-    const otherCountries = countries.filter((country) => country.id !== selectedCountry.id);
-    const selectedRegion = getRandom(selectedCountry.regions);
-    const correctRegions = selectedCountry.regions.slice(0, 3);
-    const incorrectRegion = getRandom(getRandom(otherCountries).regions);
+  const selectedCountry = getRandom(countries);
+  const otherCountries = countries.filter(
+    (country) => country.id !== selectedCountry.id
+  );
+  const selectedRegion = getRandom(selectedCountry.regions);
+  const correctRegions = selectedCountry.regions.slice(0, 3);
+  const incorrectRegion = getRandom(getRandom(otherCountries).regions);
 
-    function getThreeIncorrectRegions() {
-        let incorrectThreeRegions = [];
-        while (incorrectThreeRegions.length < 3) {
-            const incorrectRegion = getRandom(getRandom(otherCountries).regions);
-            if (!incorrectThreeRegions.includes(incorrectRegion)) {
-                incorrectThreeRegions.push(incorrectRegion);
-            }
-        }
-        return incorrectThreeRegions;
+  function getThreeIncorrectRegions() {
+    let incorrectThreeRegions = [];
+    while (incorrectThreeRegions.length < 3) {
+      const incorrectRegion = getRandom(getRandom(otherCountries).regions);
+      if (!incorrectThreeRegions.includes(incorrectRegion)) {
+        incorrectThreeRegions.push(incorrectRegion);
+      }
     }
-
-    const incorrectRegions = getThreeIncorrectRegions();
-    // console.log("selected 3 region", selectedCountry, selectedRegion);
-  
-    let answers, questionText, correctAnswer, explanation;
-
-    let countryName = selectedCountry.itemName !== "United States" ? selectedCountry.itemName : "the United States";
-  
-    if (questionType === "inCountry") {
-
-      answers = incorrectRegions.concat(selectedRegion).sort(() => Math.random() - 0.5);
-      questionText = `Which of the following regions is a wine region of ${countryName}?`;
-      correctAnswer = selectedRegion;
-      explanation = `${correctAnswer} is a region of ${selectedCountry.itemName}.`;
-    } else {
-      answers = correctRegions.slice(0, 3).concat(incorrectRegion).sort(() => Math.random() - 0.5);
-      questionText = `Which of the following regions is NOT a region of ${countryName}?`;
-      correctAnswer = incorrectRegion;
-      explanation = `${correctAnswer} is not a region of ${countryName}.`;
-    }
-
-    // console.log("Regions answers ", answers);
-  
-    return {
-      question: questionText,
-      questionType: "multiplechoice",
-      answerSelectionType: "single",
-      answers: answers,
-      correctAnswer: correctAnswer,
-      explanation: explanation,
-    };
+    return incorrectThreeRegions;
   }
-  
+
+  const incorrectRegions = getThreeIncorrectRegions();
+  // console.log("selected 3 region", selectedCountry, selectedRegion);
+
+  let answers, questionText, correctAnswer, explanation;
+
+  let countryName =
+    selectedCountry.itemName !== "United States"
+      ? selectedCountry.itemName
+      : "the United States";
+
+  if (questionType === "inCountry") {
+    answers = incorrectRegions
+      .concat(selectedRegion)
+      .sort(() => Math.random() - 0.5);
+    questionText = `Which of the following regions is a wine region of ${countryName}?`;
+    correctAnswer = selectedRegion;
+    explanation = `${correctAnswer} is a region of ${selectedCountry.itemName}.`;
+  } else {
+    answers = correctRegions
+      .slice(0, 3)
+      .concat(incorrectRegion)
+      .sort(() => Math.random() - 0.5);
+    questionText = `Which of the following regions is NOT a region of ${countryName}?`;
+    correctAnswer = incorrectRegion;
+    explanation = `${correctAnswer} is not a region of ${countryName}.`;
+  }
+
+  // console.log("Regions answers ", answers);
+
+  return {
+    question: questionText,
+    questionType: "multiplechoice",
+    answerSelectionType: "single",
+    answers: answers,
+    correctAnswer: correctAnswer,
+    explanation: explanation,
+  };
+}
