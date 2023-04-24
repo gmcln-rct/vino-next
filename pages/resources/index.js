@@ -40,10 +40,11 @@ export default function ResourcesIndex({ topGrapes }) {
       </section> */}
       <section className="info">
         <h2 className="header"> Explore Our Resources</h2>
+        <div className="actionsContainer">
         <div className="actions">
           <Link href="/resources/terms" className="action__container center">
             <Image
-              src="/images/icons/icon-barchart.png"
+              src="/images/icons/icon-terms.png"
               className="transparent margin-bottom"
               alt="grapes icon"
               width={100}
@@ -55,7 +56,7 @@ export default function ResourcesIndex({ topGrapes }) {
         <div className="actions">
           <Link href="/resources/wine-history-timeline" className="action__container center">
             <Image
-              src="/images/icons/icon-barchart.png"
+              src="/images/icons/icon-timeline.png"
               className="transparent margin-bottom"
               alt="grapes icon"
               width={100}
@@ -63,6 +64,7 @@ export default function ResourcesIndex({ topGrapes }) {
             />
             <p className="link"> Wine Timeline</p>
           </Link>
+        </div>
         </div>
       </section>
     </>

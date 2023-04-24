@@ -23,7 +23,7 @@ font-family: var(--font-lato);
   font-size: clamp(24px, 4vw, 32px);
   font-weight: 600;
 
-  color: #fffd8d;
+  color: var(--red-8)
 }
 
 .termsList {
@@ -75,11 +75,7 @@ font-family: var(--font-lato);
   font-weight: 400;
   font-display: swap;
 
-  color: black;
+  color: var(--white);
 
-  background-color: rgba(230, 230, 230, 0.8);
-  /* box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.2); */
-  /* -webkit-box-shadow: inset 0px 0px 28px 0px rgba(0, 0, 0, 0.75);
-    -moz-box-shadow: inset 0px 0px 28px 0px rgba(0, 0, 0, 0.75);
-    box-shadow: inset 0px 0px 28px 0px rgba(0, 0, 0, 0.75); */
+  background-color: var(--grey-8);
 }
