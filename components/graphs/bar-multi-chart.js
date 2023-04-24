@@ -159,7 +159,6 @@ const MultiBarChart = (props) => {
     return (
       <>
         <section className={classes.chart}>
-
           <div className={classes.barchart}>
             <svg ref={svgRef}></svg>
           </div>
