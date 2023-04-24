@@ -25,6 +25,8 @@ function CountryTopTenDetailPage() {
 
   const dataType = "country";
 
+  const headerText = country.itemName + "'s Most Produced Grape Varieties";
+
   if (!country || !countryWineData) {
     return (
       <div className="center">

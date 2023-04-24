@@ -18,3 +18,30 @@
     text-align: center;
   }
   
+  .chartHeader {
+
+  }
+
+  .chartHeader {
+    /* color: #a1360a; */
+  
+    margin: 1rem 0 0 0;
+  
+    font-size: clamp(16px, 4vw, 32px);
+    font-weight: bold;
+    font-display: swap;
+    text-align: center;
+  
+    color: var(--grey-9);
+  }
+  
+  .chartSubheader {
+    margin: 0.2vmin 0 1vmin 0;
+  
+    font-size: var(--font-size-1);
+    font-weight: 400;
+    font-style: italic;
+    font-display: swap;
+  
+    color: var(--grey-8);
+  }

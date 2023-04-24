@@ -20,7 +20,8 @@ function CountryWorldTopTenDetailPage() {
 
   const dataType = "country";
 
-  const explanationText = "Global Top 10";
+  const headerSuffix = "Production of Top Global ";
+  const explanationText = ": Production of top global ";
 
   if (!country || !countryWineData) {
     return (
@@ -34,11 +35,14 @@ function CountryWorldTopTenDetailPage() {
 
   const countryLink = `/countries/${country.id}`;
 
+  // let headerText = country.itemName + " Production of Top Grapes Worldwide";
+// const headerText = country.itemName + ": Production of Top Global Grape Varieties";
+
   return (
     <>
       <Head>
         <title>
-          World Top 10 Grapes {country.itemName} - Winography - Wine Data
+         {country.itemName} Production of Top Global Grape Varieties - Winography - Wine Data
           Visualization
         </title>
         <meta
@@ -46,6 +50,14 @@ function CountryWorldTopTenDetailPage() {
           content="Data visualization for wine grape area production in {country.itemName } for global top 10 grape varietals"
         />
       </Head>
+      <section>
+      {/* <h2 className="chartHeader">
+          {headerText}
+        </h2> */}
+        {/* <p className="chartSubheader">
+          {subHeaderText}
+        </p> */}
+
       <BarChart
         itemName={country.itemName}
         units={countryWineData.units}
@@ -53,6 +65,7 @@ function CountryWorldTopTenDetailPage() {
         dataType={dataType}
         redGrapeData={countryWineData.redGrapeDataWorld}
         whiteGrapeData={countryWineData.whiteGrapeDataWorld}
+        headerSuffix={headerSuffix}
         explanationText={explanationText}
       />
       {/* <DetailSection
@@ -76,6 +89,7 @@ function CountryWorldTopTenDetailPage() {
         <Button link={countryLink} isSecondary="true">Back to {country.itemName} Page</Button>
         <Button link="/countries/" isSecondary="true">Back to Country Index</Button>
       </div>
+      </section>
     </>
   );
 }

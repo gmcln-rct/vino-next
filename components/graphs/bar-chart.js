@@ -14,6 +14,7 @@ const BarChart = (props) => {
     units,
     redGrapeData,
     whiteGrapeData,
+    headerSuffix,
     explanationText,
   } = props;
 
@@ -168,7 +169,7 @@ const BarChart = (props) => {
       dataYear;
   } else {
     headerText =
-      "Top " + selectedGrapeType + " Grapes of " + itemName;
+      itemName + ": " + headerSuffix + selectedGrapeType + " Grape Varietals"
     subHeaderText =
       "Winegrape land area used for production, " +
       explanationText +
@@ -182,12 +183,9 @@ const BarChart = (props) => {
     <>
       <section className={classes.chart}>
         <h2 className={classes.header}>
-          {/* {itemName}: {explanationText} {selectedGrapeType} Grapes */}
           {headerText}
         </h2>
         <p className={classes.subheader}>
-          {/* Winegrape area production for {explanationText} {selectedGrapeType}{" "}
-        grape varietals, {dataYear} */}
           {subHeaderText}
         </p>
         {dataType === "country" && (
