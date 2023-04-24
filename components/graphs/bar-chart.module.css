@@ -27,7 +27,9 @@
   font-display: swap;
   text-align: center;
 
-  color: var(--grey-9);
+  /* color: var(--grey-9); */
+  color: var(--pink-9);
+
 }
 
 .subheader {
@@ -71,7 +73,8 @@
   font-size: var(--font-size-4);
   font-weight: 600;
 
-  color: var(--cyan-9)
+  color: var(--pink-8);
+  /* color: var(--cyan-9) */
 }
 
 /* class applies to select element itself, not a wrapper element */

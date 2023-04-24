@@ -79,15 +79,15 @@ function HistogramIndividualPage() {
           Data Source:{" "}
           <Link
             href="https://economics.adelaide.edu.au/wine-economics/databases/"
-            className="dataSource"
+            className="dataSource" 
           >
             Wine Economics Research Centre, University of Adelaide
           </Link>
         </p>
       </div>
       <div className="buttonFooter">
+        <Button link="/historic/histogram-comparison" isSecondary="false">Histogram Comparison Chart</Button>
         <Button link="/historic/" isSecondary="true">Back to Historic Data Index</Button>
-        <Button link="/historic/histogram-comparison" isSecondary="true">Histogram Comparison Chart</Button>
       </div>
     </>
   );

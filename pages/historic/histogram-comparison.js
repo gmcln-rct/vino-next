@@ -43,7 +43,6 @@ function HistogramComparisonPage() {
     setCountry2(value === "" ? null : value);
   };
 
-
   return (
     <>
       <Head>
@@ -56,7 +55,9 @@ function HistogramComparisonPage() {
           content="Histogram data visualization by country."
         />
       </Head>
-      <h1 className="indexheader">Histogram: Historic Yearly Wine Production, by Volume</h1>
+      <h1 className="indexheader">
+        Histogram: Historic Yearly Wine Production, by Volume
+      </h1>
       <div className={classes.selectrow}>
         <select
           value={country1}
@@ -99,8 +100,13 @@ function HistogramComparisonPage() {
         </p>
       </div>
       <div className="buttonFooter">
-        <Button link="/historic/" isSecondary="true">Back to Historic Data Index</Button>
-        <Button link="/historic/histogram-individual" isSecondary="true">Individual Histogram Chart</Button>
+        <Button link="/historic/histogram-individual" isSecondary="false">
+          Individual Histogram Chart
+        </Button>
+
+        <Button link="/historic/" isSecondary="true">
+          Back to Historic Data Index
+        </Button>
       </div>
     </>
   );
