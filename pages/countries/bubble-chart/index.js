@@ -44,7 +44,7 @@ function CountryBubbleIndex() {
     }
     // setGrapeData(country.grapeData);
 
-  }, [selectedCountry, selectedGrapeType]);
+  }, [redWineData, whiteWineData, selectedCountry, selectedGrapeType]);
   
   // const filteredData = grapeData.filter(
   //   (d) =>

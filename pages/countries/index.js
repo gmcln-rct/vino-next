@@ -33,7 +33,7 @@ function CountryIndex() {
       />
       <section className="info">
         <h2 className="header"> National Grape Production</h2>
-        <p className="subheader">Production of world's top red and whitle grape varietals by country.</p>
+        <p className="subheader">Production of world&apos;s top red and whitle grape varietals by country.</p>
         <div className="actions">
           <Link href={barChartLink} className="action__container center">
             <Image
