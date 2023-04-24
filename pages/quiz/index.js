@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import classes from "./index.module.css";
 
-import Button from "@/components/ui/button";
+// import Button from "@/components/ui/button";
 
 // Import data
 import { QUIZ_DATA } from "@/data/quiz-data";
@@ -33,8 +33,7 @@ const QuizPage = () => {
 
   const [countryRedData, setCountryRedData] = useState(COUNTRIES_RED_WINE_DATA);
   const [countryWhiteData, setCountryWhiteData] = useState(COUNTRIES_WHITE_WINE_DATA);
-  const [wineHistoryData, setWineHistoryData] = useState(HISTORIC_PRODUCTION_DATA
-  );
+  const [wineHistoryData, setWineHistoryData] = useState(HISTORIC_PRODUCTION_DATA);
 
   const answerIndex = ["A", "B", "C", "D"];
   
@@ -43,6 +42,8 @@ const QuizPage = () => {
     const countryRed2 = getRandomCountry(countryRedData);
     const countryWhite1 = getRandomCountry(countryWhiteData);
     const countryWhite2 = getRandomCountry(countryWhiteData);
+
+    // Create quiz questions
     const countryRedQuestion1 = createGrapeQuestion(countryRed1, "red");
     const countryRedQuestion2 = createGrapeQuestion(
       countryRed2,
