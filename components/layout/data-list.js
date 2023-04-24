@@ -3,9 +3,11 @@ import DataItem from "./data-item";
 import classes from "./data-list.module.css";
 
 function DataList(props) {
-  const { items } = props;
+  const { items, headerText } = props;
 
   return (
+    <section className={classes.listContainer}>
+    <h2 className={classes.header}>{headerText}</h2>
     <ul className={classes.list}>
       {items.map((item) => (
         <DataItem
@@ -18,6 +20,7 @@ function DataList(props) {
         />
       ))}
     </ul>
+    </section>
   );
 }
 

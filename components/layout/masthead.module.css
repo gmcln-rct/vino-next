@@ -11,8 +11,9 @@
 
 
 .mastheadHeader {
-  font-family: "Jost", sans-serif;
-  font-size: clamp(2rem, 3.5vw, 4rem);
+  /* font-family: "Jost", sans-serif; */
+  font-family: 'Sao Display', serif;
+  font-size: clamp(2rem, 4vw, 4rem);
   font-style: italic;
   font-weight: 600;
 

@@ -48,6 +48,7 @@ function GrapeTopCountriesBubblePage() {
 
   // const dataType = grape.dataType;
   const grapeLink = `/grapes/${grape.id}`;
+  const barChartLink = `/grapes/worldtop/${grape.id}`;
 
   return (
     <>
@@ -84,8 +85,11 @@ function GrapeTopCountriesBubblePage() {
         </p>
       </div>
       <div className="buttonFooter">
-        <Button link={grapeLink} isSecondary="true">
+        {/* <Button link={grapeLink} isSecondary="true">
           Back to {grape.itemName} Page
+        </Button> */}
+        <Button link={barChartLink} isSecondary='false'>
+          {grape.itemName} Bar Chart
         </Button>
         <Button link="/grapes/" isSecondary="true">
           Back to Grapes Index

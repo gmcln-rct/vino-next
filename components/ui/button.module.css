@@ -48,7 +48,7 @@
   border: 1px solid var(--blue-8);
 
 
-  font-size: clamp(18px, 1.5vw, 24px);
+  font-size: clamp(18px, 2vw, 24px);
 }
 
 .secondary:hover,

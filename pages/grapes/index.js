@@ -19,8 +19,8 @@ export default function GrapeIndex({ topGrapes }) {
         header="Grapes"
         headerText="Learn about individual grape varietals through our customizable data charts or sections for individual grapes."
       />
-      {/* <h2>Featured Countries</h2> */}
-      <DataList items={topGrapes} />
+      {/* <h2>Featured Grapes</h2> */}
+      <DataList items={topGrapes} headerText="Featured Grapes" />
     </div>
   );
 }
