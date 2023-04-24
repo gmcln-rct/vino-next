@@ -19,8 +19,8 @@ function CountryWorldTopTenDetailPage() {
 
   const dataType = "country";
 
-  const headerSuffix = "Production of Top Global ";
-  const explanationText = ": Production of top global ";
+  const headerSuffix = "Top Global ";
+  const explanationText = "Production of top global ";
 
   if (!country || !countryWineData) {
     return (
@@ -33,9 +33,6 @@ function CountryWorldTopTenDetailPage() {
   const flagImageAlt = `Flag of ${country.itemName}`;
 
   const countryLink = `/countries/${country.id}`;
-
-  // let headerText = country.itemName + " Production of Top Grapes Worldwide";
-// const headerText = country.itemName + ": Production of Top Global Grape Varieties";
 
   return (
     <>
@@ -67,12 +64,6 @@ function CountryWorldTopTenDetailPage() {
         headerSuffix={headerSuffix}
         explanationText={explanationText}
       />
-      {/* <DetailSection
-        wineCategory={country.category}
-        itemLink={country.link}
-        dataType={dataType}
-        moreInfo={country.regions}
-      /> */}
       <div>
         <p className="dataSource">
           Data Source:{" "}

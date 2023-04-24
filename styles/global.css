@@ -8,6 +8,7 @@
 @import "stylingmodifiers.css";
 @import "variables.css";
 
+
 /**************************** Global CSS variables ***************************************/
 
 html,
@@ -191,6 +192,12 @@ main a {
   text-align: center;
 
   color: var(--grey-8);
+}
+
+.dataSource:hover,
+.dataSource:active {
+  color: var(--blue-7);
+  transition: 0.3s;
 }
 
 .link {

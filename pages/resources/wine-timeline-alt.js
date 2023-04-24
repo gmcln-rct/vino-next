@@ -9,28 +9,25 @@ import { WINE_HISTORY_TIMELINE_DATA } from "@/data/wine-history-timeline.data";
 function randomKey(year) {
   return year + Math.random();
 }
-const wineHistoryData = WINE_HISTORY_TIMELINE_DATA.sort(
-  (a, b) => a.year - b.year
-);
+const wineHistoryData = WINE_HISTORY_TIMELINE_DATA.sort((a, b) => a.year - b.year);
 
 // const [wineHistoryData, setWineHistoryData] = useState(WINE_HISTORY_TIMELINE_DATA);
 const WineHistoryTimeline = ({ events }) => {
   // console.log("wine history timeline events",  WINE_HISTORY_TIMELINE_DATA);
   return (
-    <section className={classes.timeline}>
-      <ul >
+    <>
+      <div className={classes.timeline}>
         {events.map((event) => (
-            <li key={randomKey(event.year)}>
-              <div className={classes.content}>
-                <h2 className={classes.year}>
-                 {event.year}
-                </h2>
-                <p>{event.event}</p>
-              </div>
-            </li>
+          <>
+          <div className={classes.event} key={randomKey(event.year)}>
+            <div className={classes.year}>{event.year}</div>
+            <div className="timeline-description">{event.event}</div>
+          </div>
+            <hr className={classes.vertical} />
+          </>
         ))}
-      </ul>
-    </section>
+      </div>
+    </>
   );
 };
 

@@ -159,6 +159,7 @@ const BarChart = (props) => {
 
   let headerText;
   let subHeaderText;
+  let grapeTypeText = selectedGrapeType.toLowerCase();
 
   if (dataType === "grape") {
     headerText = itemName + ": " + explanationText;
@@ -171,11 +172,11 @@ const BarChart = (props) => {
     headerText =
       itemName + ": " + headerSuffix + selectedGrapeType + " Grape Varietals"
     subHeaderText =
-      "Winegrape land area used for production, " +
       explanationText +
       " " +
-      selectedGrapeType +
+      grapeTypeText +
       " grape varietals, " +
+      "by land area, " +
       dataYear;
   }
 

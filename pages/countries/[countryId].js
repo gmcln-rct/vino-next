@@ -38,7 +38,7 @@ export default function CountryDetailPage({ country }) {
         <p className="subheader">Bar Charts</p>
         <div className="actions">
           <Button link={worldTopTenLink}>Top Grapes Worldwide</Button>
-          <Button link={nationalTopLink}>Top Grapes in {country.itemName}</Button>
+          <Button link={nationalTopLink}>Top Grapes of {country.itemName}</Button>
         </div>
       </section>
 

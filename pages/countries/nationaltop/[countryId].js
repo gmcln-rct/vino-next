@@ -28,8 +28,8 @@ function CountryTopTenDetailPage() {
   // const headerText = country.itemName + "'s Most Produced Grape Varieties";
 
 
-  const headerSuffix = "Production of National Top "
-  const explanationText = ": Production of top national ";
+  const headerSuffix = "National Top "
+  const explanationText = "Production of top national ";
 
   if (!country || !countryWineData) {
     return (

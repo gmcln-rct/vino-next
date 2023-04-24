@@ -1,4 +1,4 @@
-.timeline {
+/* .timeline {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -16,7 +16,6 @@
   align-items: center;
 
   max-width: 80vw;
-  /* margin: 1vmin 0; */
   padding: 1vmin 2vmin;
 
   text-align: center;
@@ -31,14 +30,179 @@
   font-style: italic;
 
   color: var(--white);
-  /* color: #a10101; */
 }
 
 .vertical {
   border-left: 4px solid #a10101;
   height: 30px;
-  /* position: absolute; */
   left: 50%;
 
   z-index: 0;
+} */
+@import url(https://fonts.googleapis.com/css?family=Lato);
+
+/* Variables */
+.timeline {
+  --title-background: #3d9e67;
+  --background-color: #faf8eb;
+  --content-background-color: var(--pink-9);
+  --content-background-color-2: var(--red-8);
+  /* --content-background-gradient: #56BC83; */
+  --time-color: #fff;
+  --text-color: #fff;
+  --content-width: 450px;
 }
+
+/* Global styles */
+/* *,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+} */
+
+/* Body styles */
+/* body{
+  font-size: 16px;
+  font-family: 'Lato', sans-serif;
+} */
+
+/* Timeline styles */
+.timeline{
+  color: var(--text-color);
+}
+
+.timeline h1,
+.timeline ul li .content h2{
+  text-shadow: 1px 1px 1px rgba(56, 56, 56, 0.5);
+}
+
+.timeline h1{
+  background: var(--title-background);
+  padding: 70px 0;
+  font-size: 2.5em;
+  text-align: center;
+}
+
+.timeline ul{
+  background: var(--background-color);
+  padding: 50px 0;
+}
+
+.timeline ul li{
+  background: var(--content-background-color);
+  position: relative;
+  margin: 0 auto;
+  width: 5px;
+  padding-bottom: 40px;
+  list-style-type: none;
+}
+
+.timeline ul li:last-child{
+  padding-bottom: 7px;
+}
+
+.timeline ul li:before{
+  content: '';
+  background: var(--background-color);
+  position: absolute;
+  left: 50%;
+  top: 0;
+  transform: translateX(-50%);
+  width: 20px;
+  height: 20px;
+  border: 3px solid var(--content-background-color);
+  border-radius: 50%;
+}
+
+.timeline ul li .hidden {
+  opacity: 0;
+}
+
+.timeline ul li .content{
+  background: var(--content-background-color);
+  position: relative;
+  top: 7px;
+  width: var(--content-width);
+  padding: 20px;
+}
+
+.timeline ul li .content h2{
+  color: var(--time-color);
+  padding-bottom: 10px;
+  text-align: center;
+}
+
+.timeline ul li .content p{
+  text-align: center;
+}
+
+.timeline ul li:nth-child(odd) .content{
+  left: 50px;
+  background: var(--content-background-color-2);
+  /* background: -webkit-linear-gradient(-45deg, var(--content-background-gradient) , var(--content-background-color));
+  background: linear-gradient(-45deg, var(--content-background-gradient) , var(--content-background-color)); */
+}
+
+.timeline ul li:nth-child(odd) .content:before{
+  left: -38px;
+}
+
+.timeline ul li:nth-child(even) .content{
+  left: calc(-1 * (var(--content-width) + 45px));
+  background: var(--content-background-color);
+  /* background: -webkit-linear-gradient(45deg, var(--content-background-gradient) , var(--content-background-color));
+  background: linear-gradient(45deg, var(--content-background-gradient) , var(--content-background-color)); */
+}
+
+.timeline ul li:nth-child(even) .content:before{
+  right: -38px;
+}
+
+
+.year {
+  font-family: 'Inter', sans-serif;
+  font-size: clamp(18px, 2vw, 24px);
+  font-weight: 600;
+  font-style: italic;
+
+  color: var(--white);
+}
+
+/* MEDIA QUERIES */
+
+@media screen and (max-width: 1020px) {
+	.timeline ul li .content{
+	  width: 41vw;
+	}
+	.timeline ul li:nth-child(even) .content{
+	  left: calc(-41vw - 45px);
+	}
+  }
+  
+  @media screen and (max-width: 700px) {
+	.timeline ul li{
+	  margin-left: 20px;
+	}
+	
+	.timeline ul li .content{
+	  width: calc(100vw - 100px);
+	}
+	
+	.timeline ul li .content h2{
+	  text-align: initial;
+	}
+	
+	.timeline ul li:nth-child(even) .content{
+	  left: 45px;
+	  background: var(--content-background-color);
+	  background: -webkit-linear-gradient(-45deg, var(--content-background-gradient) , var(--content-background-color));
+	  background: linear-gradient(-45deg, var(--content-background-gradient) , var(--content-background-color));
+	}
+	
+	.timeline ul li:nth-child(even) .content:before{
+	  left: -33px;
+	}
+  }
+  

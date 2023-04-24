@@ -29,11 +29,11 @@ function CountryIndex() {
       <Masthead
         backgroundImage="/images/site-images/index-masthead-countries.jpg"
         header="Countries"
-        headerText="Learn about grape production in countries around the world, national bar chart or individual country sections."
+        headerText="Learn about wine production in countries around the world, with comparative charts and country-specific graphs."
       />
       <section className="info">
-        <h2 className="header"> National Grape Production</h2>
-        <p className="subheader">Production of world&apos;s top red and whitle grape varietals by country.</p>
+        <h2 className="header"> Grape Production Country Comparison</h2>
+        <p className="subheader">Production of world&apos;s top red and white grape varietals, by country.</p>
         <div className="actions">
           <Link href={barChartLink} className="action__container center">
             <Image
