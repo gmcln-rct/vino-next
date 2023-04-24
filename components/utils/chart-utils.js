@@ -2,13 +2,14 @@ export function generateHeader(props) {
 
     const {dataType, itemName, explanationText, selectedGrapeType} = props;
     let headerText;
+    let grapeType = selectedGrapeType.slice(0,1).toUpperCase() + selectedGrapeType.slice(1);
     
     if (dataType === "grape") {
         headerText = itemName + ": " + explanationText;
       } else {
         headerText =
         explanationText + " " +
-         selectedGrapeType + " Grape Varietals"
+         grapeType + " Grape Varietals"
       
       }
     // console.log('headerText', headerText)

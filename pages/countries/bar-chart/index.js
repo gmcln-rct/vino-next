@@ -19,14 +19,11 @@ import {
 } from "@/components/utils/chart-utils";
 
 function CountryGeneralBarChartPage() {
-  //   const country = getDataItemById(id, COUNTRIES_DATA);
   const [selectedCountry, setSelectedCountry] = useState("france");
-  const [selectedGrapeType, setSelectedGrapeType] = useState("Red");
+  const [selectedGrapeType, setSelectedGrapeType] = useState("red");
 
   const countryRedWineData = COUNTRIES_RED_WINE_DATA;
   const countryWhiteWineData = COUNTRIES_WHITE_WINE_DATA;
-
-  console.log("countryRedWineData", countryRedWineData);
 
   const redWineData = getDataItemById(selectedCountry, countryRedWineData);
   const whiteWineData = getDataItemById(selectedCountry, countryWhiteWineData);
@@ -90,7 +87,8 @@ function CountryGeneralBarChartPage() {
 
           <select
             value={selectedCountry}
-            className={classes.selectCss}            onChange={handleCountryChange}
+            className={classes.selectCss}
+            onChange={handleCountryChange}
           >
             {COUNTRIES.map((country) => (
               <option key={country.id} value={country.id}>
@@ -104,8 +102,8 @@ function CountryGeneralBarChartPage() {
             className={classes.selectCss}
             onChange={handleGrapeTypeChange}
           >
-            <option value="Red">Red</option>
-            <option value="White">White</option>
+            <option value="red">Red</option>
+            <option value="white">White</option>
           </select>
         </div>
         <MultiBarChart
@@ -116,8 +114,6 @@ function CountryGeneralBarChartPage() {
           grapeType={selectedGrapeType}
           redGrapeData={redWineData}
           whiteGrapeData={whiteWineData}
-
-          // isGeneral="true"
         />
 
         <p className="dataSource">
