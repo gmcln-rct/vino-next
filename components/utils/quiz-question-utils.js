@@ -23,8 +23,6 @@ export function getRandomCountry(countryDataByType) {
     }
   }
 
-  console.log("Random Country", randomCountry);
-  console.log("grapesWithValueGreaterThanZero", grapesWithValueGreaterThanZero);
   return randomCountry;
 }
 
@@ -40,9 +38,6 @@ export function createGrapeQuestion(
       .slice(0, 3)
       .map((grape) => grape.grape);
 
-    // console.log("topGrapes ", topGrapes);
-    console.log("in util - countryData ", countryData);
-
     let notTopGrapeArr = countryData.grapeData
       .filter((grape) => !topGrapes.includes(grape.grape))
       .map((grape) => grape.grape);
@@ -53,7 +48,6 @@ export function createGrapeQuestion(
       notTopGrapeArrLength - 1
     );
     notTopGrapeArr = newArr;
-    console.log("notTopGrapeArr ", notTopGrapeArr);
     let questionText;
     let correctAnswer;
     let explanation;
@@ -62,18 +56,16 @@ export function createGrapeQuestion(
       correctAnswer = topGrapes[Math.floor(Math.random() * topGrapes.length)];
       explanation = `${correctAnswer} is one of the top 3 ${grapeType} grapes in ${countryData.itemName}.`;
     } else {
-      // console.log("in quiz uitl - top Grape ", topGrapes, " countryData ", countryData);
       if (topGrapes) {
         const notTopGrape = countryData.grapeData.find(
           (grape) => !topGrapes.includes(grape.grape)
         ).grape;
-        // console.log("notTopGrape ", notTopGrape);
         questionText = `Which of the following is NOT one of the top 3 ${grapeType} grapes produced in ${countryData.itemName} (based on land area)?`;
         correctAnswer = notTopGrape;
         explanation = `${notTopGrape} is not one of the top 3 ${grapeType} grapes in ${countryData.itemName}.`;
       }
     }
-    console.log("correct answer ", correctAnswer);
+
     const answers =
       includeNotTopGrape === "include"
         ? [...notTopGrapeArr, correctAnswer].sort(() => Math.random() - 0.5)
@@ -225,7 +217,6 @@ export function generateRegionQuestion(countries, questionType) {
   }
 
   const incorrectRegions = getThreeIncorrectRegions();
-  // console.log("selected 3 region", selectedCountry, selectedRegion);
 
   let answers, questionText, correctAnswer, explanation;
 
@@ -250,8 +241,6 @@ export function generateRegionQuestion(countries, questionType) {
     correctAnswer = incorrectRegion;
     explanation = `${correctAnswer} is not a region of ${countryName}.`;
   }
-
-  // console.log("Regions answers ", answers);
 
   return {
     question: questionText,

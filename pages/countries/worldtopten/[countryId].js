@@ -11,7 +11,6 @@ import Button from "@/components/ui/button";
 
 function CountryWorldTopTenDetailPage() {
   const router = useRouter();
-  console.log("router", router.query.countryId);
 
   const id = router.query.countryId;
 
