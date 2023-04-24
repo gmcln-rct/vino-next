@@ -65,7 +65,7 @@ main a {
   font-size: 1.5rem;
   margin: 1rem 0;
 }
-.masthead {
+.info {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -85,14 +85,15 @@ main a {
   box-shadow: inset 0px 0px 28px 0px rgba(0, 0, 0, 0.25);
 }
 
-.masthead .header {
+.info .header {
   /* color: white; */
 }
 
-.masthead h2 {
+.info h2 {
   /* color: #505050; */
   margin: 1rem 0 0 0;
-  /* color: #fffd8d; */
+  color: #faf9b8;
+  /* color: var(--red-7); */
 
   font-size: clamp(16px, 4vw, 28px);
   font-weight: 600;
@@ -196,6 +197,21 @@ main a {
   font-weight: 400;
 }
 
+.featured {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  margin: 1rem 0 0 0;
+  /* padding: 0 10vw 2vw 10vw; */
+
+  font-size: var(--font-size-6);
+  font-weight: 600;
+  font-display: swap;
+
+  color: var(--red-9);
+}
 .buttonFooter {
   display: flex;
   flex-direction: row;

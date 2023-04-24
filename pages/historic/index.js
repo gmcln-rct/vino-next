@@ -17,7 +17,7 @@ function HistoricDataIndex() {
           content="Data visualization for all wine-producing countries"
         />
       </Head>
-      <section className="masthead">
+      <section className="info">
         <h2 className="header"> Historic Production Data</h2>
         <div className="actions">
           <Link href="/historic/histogram-individual" className="action__container center tall">

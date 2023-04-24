@@ -26,7 +26,7 @@ export default function CountryDetailPage({ country }) {
         />
       </Head>
 
-      <section className="masthead">
+      <section className="info">
         <Image
           src={flagImage}
           alt={flagImageAlt}

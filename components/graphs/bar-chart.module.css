@@ -65,7 +65,7 @@
 .selectLabel {
   /* vertical-align: middle; */
   /* width: 15vmin; */
-  margin: 0.9vmin 1vmin 0 2vmin;
+  margin: 0.9vmin 0.6vmin 0 2vmin;
 
   font-family: var(--font-roboto);
   font-size: var(--font-size-4);

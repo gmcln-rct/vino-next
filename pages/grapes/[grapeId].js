@@ -34,7 +34,7 @@ export default function GrapeDetailPage({ grape }) {
         countryName={grape.itemName}
         moreInfo={grape.altNames}
       />
-      <section className="masthead">
+      <section className="info">
         <h2 className="header"> {grape.itemName} Grape Production Data</h2>
         {/* <h3 className="subheader">Top {grape.itemName} Producing Countries:</h3> */}
         <div className="actions">
