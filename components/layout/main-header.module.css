@@ -14,8 +14,9 @@
 .brand {
   /* margin: 1vw ; */
   padding: 0 0 0 5vw;
-  font-family: "Jost", sans-serif;
-  font-size: clamp(24px, 4vw, 36px);
+
+  font-family: var(--font-jost);
+  font-size: var(--font-size-10);
   font-weight: 600;
   font-display: swamp;
   text-decoration: none;
@@ -27,9 +28,10 @@
   position: relative;
   top: -10px;
   padding: 0 0 0 1px;
+  
   font-size: 14px;
-  text-transform: uppercase;
   font-weight: 400;
+  text-transform: uppercase;
 }
 
 .list {
