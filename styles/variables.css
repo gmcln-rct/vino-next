@@ -6,6 +6,8 @@
   --font-roboto: "Roboto", sans-serif;
   --font-jost: "Jost", sans-serif;
 
+
+  --font-size-1: clamp(14px, 2vw, 18px);
   --font-size-5: clamp(16px, 3vw, 24px);
   --font-size-6: clamp(16px, 4vw, 28px);
   --font-size-7: clamp(18px, 4vw, 32px);

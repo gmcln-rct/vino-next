@@ -2,7 +2,6 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  
 }
 
 .barchart {
@@ -16,7 +15,6 @@
   background-color: var(--white);
   border-radius: 10px;
   box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2), 0 1px 12px 2px rgba(0, 0, 0, 0.1);
-  
 }
 
 .header {
@@ -29,18 +27,18 @@
   font-display: swap;
   text-align: center;
 
-  color: var(--white);
+  color: var(--grey-9);
 }
 
 .subheader {
   margin: 0.2vmin 0 1vmin 0;
 
-  font-size: clamp(14px, 2vw, 18px);
+  font-size: var(--font-size-1);
   font-weight: 400;
   font-style: italic;
   font-display: swap;
 
-  color: var(--white);
+  color: var(--grey-8);
 }
 
 .units {
@@ -51,13 +49,14 @@
   font-style: italic;
   font-display: swap;
 
-  color: var(--white);
+  color: var(--grey-8);
 }
 .selectrow {
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
+
   width: 30%;
   margin: 0 0 1em 0;
 }
