@@ -1,49 +1,37 @@
 import Link from "next/link";
 import Head from "next/head";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
-import classes from "./index.module.css";
+import classes from "@/components/graphs/bar-chart.module.css";
 
 import { COUNTRIES_RED_WINE_DATA } from "@/data/country-wine-data-red-all-2016";
 import { COUNTRIES_WHITE_WINE_DATA } from "@/data/country-wine-data-white-all-2016";
-
 
 // import BarChart from "@/components/graphs/bar-chart";
 import MultiBarChart from "@/components/graphs/bar-multi-chart";
 import Button from "@/components/ui/button";
 
-import {filterCountriesData, getDataItemById} from "@/data/utils";
+import { filterCountriesData, getDataItemById } from "@/data/utils";
+import {
+  generateHeader,
+  generateSubheader,
+} from "@/components/utils/chart-utils";
 
 function CountryGeneralBarChartPage() {
   //   const country = getDataItemById(id, COUNTRIES_DATA);
-  const [selectedCountry, setSelectedCountry] = useState('france');
-  const [selectedGrapeType, setSelectedGrapeType] = useState('red');
+  const [selectedCountry, setSelectedCountry] = useState("france");
+  const [selectedGrapeType, setSelectedGrapeType] = useState("Red");
 
   const countryRedWineData = COUNTRIES_RED_WINE_DATA;
   const countryWhiteWineData = COUNTRIES_WHITE_WINE_DATA;
 
-  console.log('countryRedWineData', countryRedWineData);
-  
+  console.log("countryRedWineData", countryRedWineData);
+
   const redWineData = getDataItemById(selectedCountry, countryRedWineData);
   const whiteWineData = getDataItemById(selectedCountry, countryWhiteWineData);
 
   const COUNTRIES = filterCountriesData(countryRedWineData);
-
-// console.log('COUNTRIES', COUNTRIES)
-  // const COUNTRIES = [
-  //   "France",
-  //   "Italy",
-  //   "Spain",
-  //   "United States",
-  //   "Argentina",
-  //   "Australia",
-  //   "Chile",
-  //   "South Africa",
-  //   "Germany",
-  //   "Portugal",
-  // ];
-
 
   const handleCountryChange = (event) => {
     setSelectedCountry(event.target.value);
@@ -53,9 +41,9 @@ function CountryGeneralBarChartPage() {
     setSelectedGrapeType(event.target.value);
   };
 
-  // const country = getDataItemById("france", COUNTRIES_RED_WINE_DATA);
+  const dataType = "country";
 
-  // const dataType = "country";
+  const headerExplanationText = "National Production: "
 
   if (!countryRedWineData || !countryWhiteWineData) {
     return (
@@ -64,7 +52,25 @@ function CountryGeneralBarChartPage() {
       </div>
     );
   }
-  // const countryLink = `/countries/${country.id}`;
+
+  let headerText = "test header text";
+   headerText = generateHeader({
+    dataType: dataType,
+    itemName: selectedCountry.itemName,
+    explanationText: headerExplanationText,
+    selectedGrapeType,
+  });
+
+  console.log("headerText", headerText);
+  // let subheaderText = "test subheader text";
+
+  let subheaderText = generateSubheader({
+    dataType: dataType,
+    itemName: selectedCountry.itemName,
+    selectedGrapeType,
+    dataYear: 2016,
+  });
+
   return (
     <>
       <Head>
@@ -76,53 +82,44 @@ function CountryGeneralBarChartPage() {
           content="Wine data visualization for winegrape area production for top national grape varietals"
         />
       </Head>
-      <div className={classes.selectrow}>
+      <section className={classes.chart}>
+        <h2 className={classes.header}>{headerText}</h2>
+        <p className={classes.subheader}>{subheaderText}</p>
+        <div className={classes.selectrow}>
+        <span className={classes.selectLabel}> Select Country: </span>
 
-        <select
-          value={selectedCountry}
-          className="selectCss select120"
-          onChange={handleCountryChange}
-        >
-          {COUNTRIES.map((country) => (
-            <option key={country.id} value={country.id}>
-              {country.itemName}
-            </option>
-          ))}
-        </select>
-        <span>vs.</span>
-        <select
-          value={selectedGrapeType}
-          className="selectCss select120"
-          onChange={handleGrapeTypeChange}
-        >
-          <option value="red">Red</option>
-          <option value="white">White</option>
-        </select>
+          <select
+            value={selectedCountry}
+            className={classes.selectCss}            onChange={handleCountryChange}
+          >
+            {COUNTRIES.map((country) => (
+              <option key={country.id} value={country.id}>
+                {country.itemName}
+              </option>
+            ))}
+          </select>
+          <span className={classes.selectLabel}> Select Grape: </span>
+          <select
+            value={selectedGrapeType}
+            className={classes.selectCss}
+            onChange={handleGrapeTypeChange}
+          >
+            <option value="Red">Red</option>
+            <option value="White">White</option>
+          </select>
+        </div>
+        <MultiBarChart
+          itemName={selectedCountry.itemName}
+          units={redWineData.units}
+          dataYear={selectedCountry.dataYear}
+          dataType={dataType}
+          grapeType={selectedGrapeType}
+          redGrapeData={redWineData}
+          whiteGrapeData={whiteWineData}
 
-      </div>
-      <MultiBarChart
-        // itemName={country.itemName}
-        // units={country.units}
-        // dataYear={country.dataYear}
-        // dataType={dataType}
-        grapeType={selectedGrapeType}s
-        redGrapeData={redWineData.grapeData}
-        whiteGrapeData={whiteWineData.grapeData}
-        // explanationText={explanationText}
-        // isGeneral="true"
-      />
+          // isGeneral="true"
+        />
 
-      {/* <BarChart
-        itemName={country.itemName}
-        units={country.units}
-        dataYear={country.dataYear}
-        dataType={dataType}
-        redGrapeData={countryRedWineData}
-        whiteGrapeData={countryWhiteWineData}
-        explanationText={explanationText}
-        isGeneral="true"
-      /> */}
-      <div>
         <p className="dataSource">
           Data Source:{" "}
           <Link
@@ -132,15 +129,7 @@ function CountryGeneralBarChartPage() {
             Wine Economics Research Centre, University of Adelaide
           </Link>
         </p>
-      </div>
-      {/* <div className="buttonFooter">
-        <Button link={countryLink} isSecondary="true">
-          Back to {country.itemName} Page
-        </Button>
-        <Button link="/countries/" isSecondary="true">
-          Back to Country Index
-        </Button>
-      </div> */}
+      </section>
     </>
   );
 }

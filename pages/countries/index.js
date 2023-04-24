@@ -27,7 +27,7 @@ function CountryIndex() {
       <Masthead
         backgroundImage="/images/site-images/index-masthead-countries.jpg"
         header="Countries"
-        headerText="Learn about grape production and consumption in countries around the world, customizable data charts or indidual country sections."
+        headerText="Learn about grape production in countries around the world, overall national bar chart or individual country sections."
       />
       {/* <h2>Featured Countries</h2> */}
       <CountryList items={allCountries} />

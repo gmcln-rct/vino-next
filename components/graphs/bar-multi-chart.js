@@ -1,29 +1,32 @@
 import { useEffect, useState, useRef } from "react";
 import * as d3 from 'd3';
 import classes from './bar-chart.module.css';
-// import redGrapeData from '../data/RedWineData';
-// import WhiteWineData from '../data/WhiteWineData';
+
+
 
 const MultiBarChart = (props) => {
     const svgRef = useRef();
 
     const {
-        grapeType,
+      itemName,
+      dataYear,
+      dataType,
+      grapeType,
+      units,
       redGrapeData,
       whiteGrapeData,
-
+      explanationText
     } = props;
-  
-    console.log('redGrapeData', redGrapeData);
 
-    const dataType = "country";
-    const data = grapeType === "red" ? redGrapeData : whiteGrapeData;
+    const [selectedGrapeType, setSelectedGrapeType] = useState(
+      grapeType ? grapeType : "Red"
+    );
+  
+    // const dataType = "country";
+    const countryArray = grapeType === "red" ? redGrapeData : whiteGrapeData;
+    const data = countryArray.grapeData.filter((d) => d.value > 0);
     const fillColor = grapeType === "red" ? "#B03E3E" : "#A19F18";
-
-    console.log('grapeType', grapeType)
-    console.log('data', data);
-  
-  const units = "hectares";
+ 
     useEffect(() => {
       d3.select(svgRef.current).selectAll("*").remove();
   
@@ -61,7 +64,13 @@ const MultiBarChart = (props) => {
         .scaleBand()
         .range([0, width + 50])
         .domain(
-          data.map((d) => {return d.itemName})
+          data.map((d) => {
+            if (dataType === "grape") {
+              return d.country;
+            } else {
+              return d.grape;
+            }
+          })
         )
         .padding(0.2);
   
@@ -143,43 +152,14 @@ const MultiBarChart = (props) => {
       return () => {
         tooltip.remove();
       };
-    }, [data, grapeType, redGrapeData, whiteGrapeData]);
+    }, [data]);
   
-    // let headerText;
-    // let subHeaderText;
-  
-    // if (dataType === "grape") {
-    //   headerText = itemName + ": " + explanationText;
-    //   subHeaderText =
-    //     "Winegrape land area used for production, Top " +
-    //     itemName +
-    //     " grape producing countries,  " +
-    //     dataYear;
-    // } else {
-    //   headerText =
-    //     "Top " + grapeType + " Grapes of " + itemName;
-    //   subHeaderText =
-    //     "Winegrape land area used for production, " +
-    //     explanationText +
-    //     " " +
-    //     selectedGrapeType +
-    //     " grape varietals, " +
-    //     dataYear;
-    // }
+
   
     return (
       <>
         <section className={classes.chart}>
-          {/* <h2 className={classes.header}> */}
-            {/* {itemName}: {explanationText} {selectedGrapeType} Grapes */}
-            {/* {headerText}
-          </h2> */}
-          {/* <p className={classes.subheader}> */}
-            {/* Winegrape area production for {explanationText} {selectedGrapeType}{" "}
-          grape varietals, {dataYear} */}
-            {/* {subHeaderText}
-          </p> */}
- 
+
           <div className={classes.barchart}>
             <svg ref={svgRef}></svg>
           </div>
