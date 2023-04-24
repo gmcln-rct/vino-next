@@ -24,22 +24,46 @@ export default function ResourcesIndex({ topGrapes }) {
         height={1080}
         priority={true}
       /> */}
-            <Masthead
+      <Masthead
         backgroundImage="/images/site-images/resources-bg.jpeg"
         header="Resources"
         headerText="Learn about wine through tools like a searchable wine terms list and a historic timeline of important milestones in the history of wine."
       />
-      <section className={classes.resourcesPage}>
-        {/* <h1 className="indexheader">Resources Index</h1> */}
+      {/* <section className={classes.resourcesPage}>
 
         <div className="actions">
           <Button link="/resources/terms">Wine Terms</Button>
-          <Button link="/resources/wine-history-timeline">Wine History Timeline</Button>
+          <Button link="/resources/wine-history-timeline">
+            Wine History Timeline
+          </Button>
         </div>
-        {/* <Link href="/resources/terms">Wine Terms</Link>
-        <Link href="/resources/wine-history-timeline">
-          Wine History Timeline
-        </Link> */}
+      </section> */}
+      <section className="info">
+        <h2 className="header"> Explore Our Resources</h2>
+        <div className="actions">
+          <Link href="/resources/terms" className="action__container center">
+            <Image
+              src="/images/icons/icon-barchart.png"
+              className="transparent margin-bottom"
+              alt="grapes icon"
+              width={100}
+              height={100}
+            />
+            <p className="link">Terms</p>
+          </Link>
+        </div>
+        <div className="actions">
+          <Link href="/resources/wine-history-timeline" className="action__container center">
+            <Image
+              src="/images/icons/icon-barchart.png"
+              className="transparent margin-bottom"
+              alt="grapes icon"
+              width={100}
+              height={100}
+            />
+            <p className="link"> Wine Timeline</p>
+          </Link>
+        </div>
       </section>
     </>
   );
