@@ -51,16 +51,19 @@ const BubbleChart = (props) => {
 
     const root = pack(data);
 
-    const simulation = d3.forceSimulation(root.leaves())
+    const simulation = d3
+      .forceSimulation(root.leaves())
       .force("charge", d3.forceManyBody().strength(1))
       .force("center", d3.forceCenter(width / 2, height / 2))
-      .force("collision", d3.forceCollide().radius(d => d.r + 1).strength(0.5))
+      .force(
+        "collision",
+        d3
+          .forceCollide()
+          .radius((d) => d.r + 1)
+          .strength(0.5)
+      )
       .force("x", d3.forceX(width / 2).strength(0.1))
       .force("y", d3.forceY(height / 2).strength(0.1));
-
-    simulation.on("tick", () => {
-      node.attr("transform", d => `translate(${d.x},${d.y})`);
-    });
 
     const node = svg
       .selectAll("g")
@@ -68,11 +71,16 @@ const BubbleChart = (props) => {
       .join("g")
       .attr("transform", (d) => `translate(${d.x},${d.y})`);
 
-    node
+    const circles = node
       .append("circle")
-      .attr("r", (d) => d.r)
+      .attr("r", 1) // start small
       .attr("fill", (d) => color(d.data.country))
       .style("padding", "5px");
+
+    circles
+      .transition()
+      .duration(1000) // grow over 1 second
+      .attr("r", (d) => d.r);
 
     node
       .append("text")
@@ -82,7 +90,6 @@ const BubbleChart = (props) => {
       .attr("font-size", (d) => `${Math.max(8, d.r / 4)}px`)
       .attr("fill", (d) => {
         let textColor = getContrastYIQ(color(d.data.country));
-        // console.log("text color" + textColor)
         return textColor;
       })
       .style("text-wrap", "wrap");

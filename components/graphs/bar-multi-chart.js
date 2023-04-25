@@ -96,7 +96,7 @@ const MultiBarChart = (props) => {
         .attr("font-size", "clamp(14px, 1.5vw, 18px)");
   
       // Bars + Tooltip
-      svg
+      const bars = svg
         .selectAll("rect")
         .data(data)
         .enter()
@@ -105,30 +105,12 @@ const MultiBarChart = (props) => {
             return xScale(d.grape);
           })
         .attr("width", xScale.bandwidth())
-        .attr("y", (d) => {
-          let barHeight = yScale(d.value);
-          if(barHeight <= 0) {
-            return 0;
-          } else if ((height - yScale(d.value)) < (height/20)) {
-            barHeight = (height - (height/21));
-          } else {
-            barHeight = yScale(d.value);
-          }
-          return barHeight;
-        })
-        .attr("height", (d) => {
-          let barHeight = height - yScale(d.value);
-          if(barHeight <= 0) {
-            return 0;
-          } else if (barHeight < (height/20)) {
-            return height/20;
-          } else {
-            return height - yScale(d.value);
-          }
-        })
+        .attr("y", height) // Start from bottom of chart
+        .attr("height", 0) // Start with 0 height
         .attr("fill", fillColor)
         .on("mouseover", function (event, d) {
           d3.select(this).transition().duration(300).attr("fill", "#F9D90A");
+
           tooltip
             .style("top", event.pageY - 80 + "px")
             .style("left", event.pageX - 40 + "px")
@@ -145,9 +127,35 @@ const MultiBarChart = (props) => {
           d3.select(this).transition().duration(300).attr("fill", fillColor);
           tooltip.style("visibility", "hidden");
         })
-        .exit()
-        .remove();
+        // .exit()
+        // .remove();
         
+  
+        bars
+        .transition() // Add transition for the animation
+        .duration(1000)
+        .delay((d, i) => i * 100) // Add delay for each bar to animate one by one
+        .attr("y", (d) => {
+          let barHeight = yScale(d.value);
+          if (barHeight <= 0) {
+            return 0;
+          } else if (height - yScale(d.value) < height / 20) {
+            barHeight = height - height / 21;
+          } else {
+            barHeight = yScale(d.value);
+          }
+          return barHeight;
+        })
+        .attr("height", (d) => {
+          let barHeight = height - yScale(d.value);
+          if (barHeight <= 0) {
+            return 0;
+          } else if (barHeight < height / 20) {
+            return height / 20;
+          } else {
+            return height - yScale(d.value);
+          }
+        });
   
       return () => {
         tooltip.remove();

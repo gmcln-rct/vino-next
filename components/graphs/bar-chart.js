@@ -136,7 +136,7 @@ const BarChart = (props) => {
     bars
       .transition() // Add transition for the animation
       .duration(1000)
-      .delay((d, i) => i * 100) // Add delay for each bar to animate one by one
+      .delay((d, i) => i * 50) // Add delay for each bar to animate one by one
       .attr("y", (d) => {
         let barHeight = yScale(d.value);
         if (barHeight <= 0) {
