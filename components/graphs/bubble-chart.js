@@ -3,19 +3,6 @@ import * as d3 from "d3";
 import classes from "./bubble-chart.module.css";
 
 const BubbleChart = (props) => {
-  // const data = [
-  //   { grape: "Cabernet Sauvignon", value: 1000, hexColor: "#fff" },
-  //   { grape: "Merlot", value: 47451, hexColor: "#DBF47C" },
-  //   { grape: "Tempranillo", value: 28084, hexColor: "#DBF47C" },
-  //   { grape: "Syrah", value: 78842, hexColor: "#8D0C02" },
-  //   { grape: "Grenache", value: 4025, hexColor: "#DBF47C" },
-  //   { grape: "Pinot Noir", value: 300, hexColor: "#DBF47C" },
-  //   { grape: "Sangiovese", value: 1657, hexColor: "#DBF47C" },
-  //   { grape: "Cabernet Franc", value: 0, hexColor: "#DBF47C" },
-  //   { grape: "Malbec", value: 7333, hexColor: "#DBF47C" },
-  //   { grape: "Mourvedre", value: 9432, hexColor: "#7F171F" },
-  // ];
-
   const {
     itemName,
     dataYear,
@@ -31,7 +18,6 @@ const BubbleChart = (props) => {
 
   const dataTypeText = "Units in hectares";
 
-
   // Adjust text color based on background color
   function getContrastYIQ(hexcolor) {
     console.log("hexcolor ", hexcolor);
@@ -42,7 +28,9 @@ const BubbleChart = (props) => {
     return brightness < 180 ? "white" : "black";
   }
 
-  const [selectedGrapeType, setSelectedGrapeType] = useState(grapeType ? grapeType : "Red");
+  const [selectedGrapeType, setSelectedGrapeType] = useState(
+    grapeType ? grapeType : "Red"
+  );
   const data = selectedGrapeType === "Red" ? redGrapeData : whiteGrapeData;
 
   useEffect(() => {
@@ -63,18 +51,28 @@ const BubbleChart = (props) => {
 
     const root = pack(data);
 
+    const simulation = d3.forceSimulation(root.leaves())
+      .force("charge", d3.forceManyBody().strength(1))
+      .force("center", d3.forceCenter(width / 2, height / 2))
+      .force("collision", d3.forceCollide().radius(d => d.r + 1).strength(0.5))
+      .force("x", d3.forceX(width / 2).strength(0.1))
+      .force("y", d3.forceY(height / 2).strength(0.1));
+
+    simulation.on("tick", () => {
+      node.attr("transform", d => `translate(${d.x},${d.y})`);
+    });
+
     const node = svg
       .selectAll("g")
       .data(root.leaves())
       .join("g")
-      .attr("transform", (d) => `translate(${d.x + 1},${d.y + 1})`);
+      .attr("transform", (d) => `translate(${d.x},${d.y})`);
 
-    //   let textColor = getContrastYIQ(color(d.data.country));
     node
       .append("circle")
       .attr("r", (d) => d.r)
       .attr("fill", (d) => color(d.data.country))
-      .style("padding", "5px")
+      .style("padding", "5px");
 
     node
       .append("text")
@@ -105,7 +103,11 @@ const BubbleChart = (props) => {
       .on("mouseover", function (event, d) {
         tooltip
           .style("visibility", "visible")
-          .text(`${d.data.country}: ${(d.data.value).toLocaleString("en-US")} ${units}`);
+          .text(
+            `${d.data.country}: ${d.data.value.toLocaleString(
+              "en-US"
+            )} ${units}`
+          );
       })
       .on("mousemove", (event) => {
         tooltip
@@ -119,15 +121,15 @@ const BubbleChart = (props) => {
 
   return (
     <>
-    <svg
-      ref={svgRef}
-      width={600}
-      height={600}
-      className={classes.chartMain}
-      style={{  display: "block" }}
-    />
-          <p className="chartfooter moveUp">{dataTypeText}</p>
-          </>
+      <svg
+        ref={svgRef}
+        width={600}
+        height={600}
+        className={classes.chartMain}
+        style={{ display: "block" }}
+      />
+      <p className="chartfooter moveUp">{dataTypeText}</p>
+    </>
   );
 };
 

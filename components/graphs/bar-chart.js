@@ -21,7 +21,8 @@ const BarChart = (props) => {
   const [selectedGrapeType, setSelectedGrapeType] = useState(
     grapeType ? grapeType : "Red"
   );
-  const selectedData = selectedGrapeType === "Red" ? redGrapeData : whiteGrapeData;
+  const selectedData =
+    selectedGrapeType === "Red" ? redGrapeData : whiteGrapeData;
   const fillColor = selectedGrapeType === "Red" ? "#B03E3E" : "#A19F18";
 
   const data = selectedData.filter((d) => d.value > 0);
@@ -42,7 +43,7 @@ const BarChart = (props) => {
       .attr("viewBox", "0 0 850 500")
       .append("g")
       .attr("transform", `translate(${margin.left}, ${margin.top})`);
-    
+
     // Set up tooltip
     const tooltip = d3
       .select("body")
@@ -56,7 +57,7 @@ const BarChart = (props) => {
       .style("text-align", "center")
       .style("transition", "0.5s")
       .style("font-family", "Open Sans")
-      .style("visibility", "hidden")
+      .style("visibility", "hidden");
 
     // Add X axis
     const xScale = d3
@@ -94,12 +95,11 @@ const BarChart = (props) => {
       .call(d3.axisLeft(yScale))
       .attr("font-size", "clamp(14px, 1.5vw, 18px)");
 
-    // Bars + Tooltip
-    svg
+    // / Bars + Tooltip + Animations
+    const bars = svg
       .selectAll("rect")
       .data(data)
-      .enter()
-      .append("rect")
+      .join("rect")
       .attr("x", (d) => {
         if (dataType === "grape") {
           return xScale(d.country);
@@ -108,27 +108,8 @@ const BarChart = (props) => {
         }
       })
       .attr("width", xScale.bandwidth())
-      .attr("y", (d) => {
-        let barHeight = yScale(d.value);
-        if(barHeight <= 0) {
-          return 0;
-        } else if ((height - yScale(d.value)) < (height/20)) {
-          barHeight = (height - (height/21));
-        } else {
-          barHeight = yScale(d.value);
-        }
-        return barHeight;
-      })
-      .attr("height", (d) => {
-        let barHeight = height - yScale(d.value);
-        if(barHeight <= 0) {
-          return 0;
-        } else if (barHeight < (height/20)) {
-          return height/20;
-        } else {
-          return height - yScale(d.value);
-        }
-      })
+      .attr("y", height) // Start from bottom of chart
+      .attr("height", 0) // Start with 0 height
       .attr("fill", fillColor)
       .on("mouseover", function (event, d) {
         d3.select(this).transition().duration(300).attr("fill", "#F9D90A");
@@ -141,16 +122,42 @@ const BarChart = (props) => {
             (dataType === "grape" ? d.country : d.grape) +
               "<br />" +
               d3.format(",")(d.value) +
-              " " + units
+              " " +
+              units
           );
       })
       .on("mouseout", function () {
         d3.select(this).transition().duration(300).attr("fill", fillColor);
         tooltip.style("visibility", "hidden");
+      });
+    // .exit()
+    // .remove();
+
+    bars
+      .transition() // Add transition for the animation
+      .duration(1000)
+      .delay((d, i) => i * 100) // Add delay for each bar to animate one by one
+      .attr("y", (d) => {
+        let barHeight = yScale(d.value);
+        if (barHeight <= 0) {
+          return 0;
+        } else if (height - yScale(d.value) < height / 20) {
+          barHeight = height - height / 21;
+        } else {
+          barHeight = yScale(d.value);
+        }
+        return barHeight;
       })
-      .exit()
-      .remove();
-      
+      .attr("height", (d) => {
+        let barHeight = height - yScale(d.value);
+        if (barHeight <= 0) {
+          return 0;
+        } else if (barHeight < height / 20) {
+          return height / 20;
+        } else {
+          return height - yScale(d.value);
+        }
+      });
 
     return () => {
       tooltip.remove();
@@ -170,7 +177,7 @@ const BarChart = (props) => {
       dataYear;
   } else {
     headerText =
-      itemName + ": " + headerSuffix + selectedGrapeType + " Grape Varietals"
+      itemName + ": " + headerSuffix + selectedGrapeType + " Grape Varietals";
     subHeaderText =
       explanationText +
       " " +
@@ -183,12 +190,8 @@ const BarChart = (props) => {
   return (
     <>
       <section className={classes.chart}>
-        <h2 className={classes.header}>
-          {headerText}
-        </h2>
-        <p className={classes.subheader}>
-          {subHeaderText}
-        </p>
+        <h2 className={classes.header}>{headerText}</h2>
+        <p className={classes.subheader}>{subHeaderText}</p>
         {dataType === "country" && (
           <select
             className={classes.selectCss}
