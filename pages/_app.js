@@ -37,6 +37,7 @@ function MyApp({ Component, pageProps }) {
           />
           <meta property="og:url" content="https://winography.net" />
 
+        </Head>
           <Script id="google-tag-manager" strategy="afterInteractive">
             {/* Google tag (gtag.js) */}
             <script
@@ -49,7 +50,6 @@ function MyApp({ Component, pageProps }) {
               gtag('js', new Date()); gtag('config', 'G-X1PYJEHQHJ');
             </script>
           </Script>
-        </Head>
         <Component {...pageProps} />
       </Layout>
     </>
