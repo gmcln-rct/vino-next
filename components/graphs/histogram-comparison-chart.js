@@ -119,7 +119,7 @@ const HistogramComparisonChart = ({ data, country1, country2 }) => {
       .attr("y", 40)
       .attr("width", 20)
       .attr("height", 20)
-      .attr("fill", d3.interpolate("#fde68a", "#e6c612")(0.2));
+      .attr("fill", d3.interpolate("#008ac5", "#0b1d78")(0.2));
 
     legend.append("text").attr("x", 40).attr("y", 55).text(country2);
 

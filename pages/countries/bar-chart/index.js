@@ -76,7 +76,7 @@ function CountryGeneralBarChartPage() {
         </title>
         <meta
           name="description"
-          content="Wine data visualization for winegrape area production for top national grape varietals"
+          content="Wine data visualization for winegrape area production for top national grape varietals."
         />
       </Head>
       <section className={classes.chart}>
