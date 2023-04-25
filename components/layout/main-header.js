@@ -10,6 +10,16 @@ const Navbar = () => {
     setDrawerOpen(!drawerOpen);
   };
 
+  const toggleDrawerTimer = () => {
+    setTimeout(() => {  
+      setDrawerOpen(!drawerOpen);
+    }, 5000);
+
+  };
+  if (drawerOpen) {
+  toggleDrawerTimer();
+  }
+
   return (
     <>
       <div className={classes.navbar}>
