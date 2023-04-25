@@ -10,12 +10,17 @@ function MyApp({ Component, pageProps }) {
     <>
       <Layout >
         <Head>
-          <title>Winography - Wine Data Visualization</title>
+          <title>Winography - Wine Data Visualizations</title>
           <meta charSet="UTF-8" />
           <meta name="viewport" content="width=device-width, initial-scale=1.0" />
           <meta name='robots' content='index, follow'></meta>
-          <meta name="keywords" content="wine, data visualization, wine produciton" />
+          <meta name="keywords" content="wine, data visualization, wine education, learning" />
           <meta name="author" content="Glenn McClanan, Rio Create LLC" />
+          <meta property="og:title" content="Winography - Wine Data Visualizations" />
+          <meta property="og:description" content="Wine data visualizations for wine education and learning" />
+          <meta property="og:image" content="https://winography.net/images/site-images/homepage-masthead.jpg" />
+          <meta property="og:url" content="https://winography.net" />
+          
         </Head>
         <Component {...pageProps} />
       </Layout>

@@ -20,6 +20,7 @@ function CountryIndex() {
     <>
       <Head>
         <title>Country Index - Winography - Wine Data Visualization</title>
+        
         <meta
           name="description"
           content="Data visualization of wine production by country for all wine-producing countries"
