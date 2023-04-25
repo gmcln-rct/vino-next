@@ -31,6 +31,7 @@ function MyApp({ Component, pageProps }) {
             property="og:description"
             content="Wine data visualizations for wine education and learning"
           />
+          <meta property="og:type" content="website" />
           <meta
             property="og:image"
             content="https://winography.net/images/site-images/homepage-masthead.jpg"
@@ -39,9 +40,10 @@ function MyApp({ Component, pageProps }) {
         </Head>
         <Script
           src="https://www.googletagmanager.com/gtag/js?id=G-X1PYJEHQHJ"
+          id="google-analytics"
           strategy="afterInteractive"
         />
-        <Script>
+        <Script id="google-analytics-2" strategy="afterInteractive">
           {`window.dataLayer = window.dataLayer || []; function gtag()
               {dataLayer.push(arguments)}
               gtag('js', new Date()); gtag('config', 'G-X1PYJEHQHJ');
