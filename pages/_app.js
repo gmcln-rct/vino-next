@@ -36,20 +36,17 @@ function MyApp({ Component, pageProps }) {
             content="https://winography.net/images/site-images/homepage-masthead.jpg"
           />
           <meta property="og:url" content="https://winography.net" />
-
         </Head>
-          <Script id="google-tag-manager" strategy="afterInteractive">
-            {/* Google tag (gtag.js) */}
-            <script
-              async
-              src="https://www.googletagmanager.com/gtag/js?id=G-X1PYJEHQHJ"
-            ></script>
-            <script>
-              window.dataLayer = window.dataLayer || []; function gtag()
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=G-X1PYJEHQHJ"
+          strategy="afterInteractive"
+        />
+        <Script>
+          {`window.dataLayer = window.dataLayer || []; function gtag()
               {dataLayer.push(arguments)}
               gtag('js', new Date()); gtag('config', 'G-X1PYJEHQHJ');
-            </script>
-          </Script>
+          `}
+        </Script>
         <Component {...pageProps} />
       </Layout>
     </>
