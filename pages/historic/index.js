@@ -2,6 +2,8 @@ import Head from "next/head";
 import Link from "next/link";
 import Image from "next/image";
 
+import Masthead from "@/components/layout/masthead";
+
 function HistoricDataIndex() {
   const histogramLink = "/historic/histogram";
   const stackedAreaLink = "/historic/stackedarea";
@@ -17,7 +19,13 @@ function HistoricDataIndex() {
           content="Data visualization for all wine-producing countries"
         />
       </Head>
-      <section className="info">
+<>
+      <Masthead
+        backgroundImage="/images/site-images/index-masthead-historic.jpg"
+        header="Historic Data"
+        headerText="Learn about how wine production has evolved from the 19th Century to the Present."
+      />
+            <section className="info">
         <h2 className="header"> Historic Production Data</h2>
         <div className="actions">
           <Link href="/historic/histogram-individual" className="action__container center tall">
@@ -55,6 +63,7 @@ function HistoricDataIndex() {
           </Link>
         </div>
       </section>
+      </>
     </>
   );
 }
