@@ -1900,7 +1900,6 @@ export const HISTORIC_PRODUCTION_DATA = [
         ]
         },
         { id: "chile", itemName: "Chile", historicData: [
-
           {year:1835, value:0},
           {year:1836, value:0},
           {year:1837, value:0},
