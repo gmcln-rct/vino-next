@@ -1,4 +1,4 @@
-export COUNTRY_DESCRIPTION_DATAE = [
+export COUNTRY_DESCRIPTION_DATA = [
     {
       country: "Italy",
       description: "Wine production in Italy dates back to the 8th century BCE, with the Etruscans and Greeks establishing vineyards. The Romans further developed viticulture and oenology, creating appellations and classifications. Italy is known for its diverse wine styles and grape varieties, such as Sangiovese, Nebbiolo, and Pinot Grigio."
