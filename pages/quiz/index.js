@@ -11,6 +11,7 @@ import { COUNTRIES_DATA } from "@/data/country-data";
 import { COUNTRIES_RED_WINE_DATA } from "@/data/country-wine-data-red-all-2016";
 import { COUNTRIES_WHITE_WINE_DATA } from "@/data/country-wine-data-white-all-2016";
 import { HISTORIC_PRODUCTION_DATA } from "@/data/historic-production-data";
+import { COUNTRY_ORIGIN_DATA} from "@/data/country-origin-data";
 
 import {
   getRandomCountry,
@@ -18,6 +19,7 @@ import {
   createTermsQuestion,
   createWineHistoryQuestion,
   generateRegionQuestion,
+  createGrapeOriginQuestion
 } from "@/components/utils/quiz-question-utils";
 
 const QuizPage = () => {
@@ -61,7 +63,11 @@ const QuizPage = () => {
     const wineRegionsQuestion1 = generateRegionQuestion(COUNTRIES_DATA, "inCountry");
     const wineRegionsQuestion2 = generateRegionQuestion(COUNTRIES_DATA, "notInCountry");
 
+    const countryOriginQuestion = createGrapeOriginQuestion(COUNTRY_ORIGIN_DATA);
+    console.log(countryOriginQuestion);
+
     setQuizData([
+      countryOriginQuestion,
       wineTermsQuestion,
       countryRedQuestion1,
       wineRegionsQuestion1,

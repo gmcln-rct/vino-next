@@ -251,3 +251,35 @@ export function generateRegionQuestion(countries, questionType) {
     explanation: explanation,
   };
 }
+
+
+// Country of Origin Questions
+export function createGrapeOriginQuestion(grapes) {
+  const grape = grapes[Math.floor(Math.random() * grapes.length)];
+  const answerOptions = [grape.originCountry];
+
+  // Add unique random countries as incorrect answers
+  while (answerOptions.length < 4) {
+    const country = grapes[Math.floor(Math.random() * grapes.length)].originCountry;
+    if (!answerOptions.some(option => option === country)) {
+      answerOptions.push(country);
+    }
+  }
+
+  // Shuffle answer options to randomize order
+  for (let i = answerOptions.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [answerOptions[i], answerOptions[j]] = [answerOptions[j], answerOptions[i]];
+  }
+
+  const correctAnswerPosition = answerOptions.findIndex(option => option.value === grape.originCountry);
+  return {
+    question: `What country is the origin of the grape "${grape.grape}"?`,
+    questionType: "multiplechoice",
+    answerSelectionType: "single",
+    answers: answerOptions,
+    correctAnswer: grape.originCountry,
+    explanation: `The grape "${grape.grape}" is originally from ${grape.originCountry}.`,
+    point: "1"
+  };
+}
