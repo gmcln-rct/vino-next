@@ -72,17 +72,17 @@ const QuizPage = () => {
 console.log(wineHistoryConsumptionQuestion);
 
     setQuizData([
-      wineHistoryConsumptionQuestion,
       wineTermsQuestion,
       countryRedQuestion1,
+      wineHistoryProductionQuestion,
       wineRegionsQuestion1,
       countryWhiteQuestion1,
       grapeColorQuestion,
       countryRedQuestion2,
+      wineHistoryConsumptionQuestion,
       countryOriginQuestion,
       wineRegionsQuestion2,
       countryWhiteQuestion2,
-      wineHistoryProductionQuestion,
     ]);
   }, [countryRedData, countryWhiteData, wineHistoryData]);
 
