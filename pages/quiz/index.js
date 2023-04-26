@@ -11,6 +11,7 @@ import { COUNTRIES_DATA } from "@/data/country-data";
 import { COUNTRIES_RED_WINE_DATA } from "@/data/country-wine-data-red-all-2016";
 import { COUNTRIES_WHITE_WINE_DATA } from "@/data/country-wine-data-white-all-2016";
 import { HISTORIC_PRODUCTION_DATA } from "@/data/historic-production-data";
+import { HISTORIC_CONSUMPTION_DATA } from "@/data/historic-consumption-data";
 import { COUNTRY_ORIGIN_DATA} from "@/data/country-origin-data";
 
 import {
@@ -59,18 +60,19 @@ const QuizPage = () => {
       "include"
     );
     const countryWhiteQuestion2 = createGrapeQuestion(countryWhite2, "white");
+
     const wineTermsQuestion = createTermsQuestion(WINE_TERMS);
-    const wineHistoryQuestion = createWineHistoryQuestion(wineHistoryData);
+    const wineHistoryProductionQuestion = createWineHistoryQuestion(wineHistoryData, "produced");
+    const wineHistoryConsumptionQuestion = createWineHistoryQuestion(HISTORIC_CONSUMPTION_DATA, "consumed");
     const wineRegionsQuestion1 = generateRegionQuestion(COUNTRIES_DATA, "inCountry");
     const wineRegionsQuestion2 = generateRegionQuestion(COUNTRIES_DATA, "notInCountry");
 
     const countryOriginQuestion = createGrapeOriginQuestion(COUNTRY_ORIGIN_DATA);
       const grapeColorQuestion = createGrapeColorQuestion(COUNTRY_ORIGIN_DATA);
-console.log("grape color question", grapeColorQuestion);
-
+console.log(wineHistoryConsumptionQuestion);
 
     setQuizData([
-
+      wineHistoryConsumptionQuestion,
       wineTermsQuestion,
       countryRedQuestion1,
       wineRegionsQuestion1,
@@ -80,7 +82,7 @@ console.log("grape color question", grapeColorQuestion);
       countryOriginQuestion,
       wineRegionsQuestion2,
       countryWhiteQuestion2,
-      wineHistoryQuestion,
+      wineHistoryProductionQuestion,
     ]);
   }, [countryRedData, countryWhiteData, wineHistoryData]);
 

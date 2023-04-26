@@ -89,20 +89,21 @@ function createQuestionObject(
   countryDataA,
   countryBName,
   countryDataB,
-  randomYear
+  randomYear,
+  fillWord
 ) {
   const correctAnswer =
     countryDataA.value > countryDataB.value ? countryAName : countryBName;
 
   const questionObj = {
-    question: `In ${randomYear}, which country produced more wine: ${countryAName} or ${countryBName}?`,
+    question: `In ${randomYear}, which country ${fillWord} more wine: ${countryAName} or ${countryBName}?`,
     questionType: "multiplechoice",
     answerSelectionType: "single",
     answers: [countryAName, countryBName],
     correctAnswer: correctAnswer,
-    explanation: `${countryAName} produced ${countryDataA.value.toLocaleString(
+    explanation: `${countryAName} ${fillWord} ${countryDataA.value.toLocaleString(
       "en-US"
-    )} kiloliters of wine, while ${countryBName} produced ${countryDataB.value.toLocaleString(
+    )} kiloliters of wine, while ${countryBName} ${fillWord} ${countryDataB.value.toLocaleString(
       "en-US"
     )} kiloliters in ${randomYear}.`,
   };
@@ -114,7 +115,7 @@ function getRandomInt(min, max) {
   return Math.floor(Math.random() * (max - min + 1) + min);
 }
 
-export function createWineHistoryQuestion(data) {
+export function createWineHistoryQuestion(data, fillWord) {
   const randomYear = getRandomInt(1860, 2019);
   const randomCountryIndices = [];
   while (randomCountryIndices.length < 2) {
@@ -137,7 +138,8 @@ export function createWineHistoryQuestion(data) {
     countryAData,
     countryBName,
     countryBData,
-    randomYear
+    randomYear,
+    fillWord
   );
 
   return questionObj;
