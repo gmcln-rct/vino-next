@@ -93,6 +93,8 @@ font-family: var(--font-lato);
   flex-direction: row;
   justify-content: flex-start;
   align-items: flex-start;
+
+  max-width: 900px;
   padding: 1vmin 2vmin;
 
   color: var(--grey-10);

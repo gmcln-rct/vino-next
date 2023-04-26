@@ -256,7 +256,7 @@ function getRandomizedAnswers(answerOptions, grapes, questionType) {
     // Add unique random countries as incorrect answers
     while (answerOptions.length < 4) {
       const country = grapes[Math.floor(Math.random() * grapes.length)].originCountry;
-      if (!answerOptions.some(option => option === questionType)) {
+      if (!answerOptions.includes(country)) {
         answerOptions.push(country);
       }
     }
@@ -275,21 +275,6 @@ export function createGrapeOriginQuestion(grapes) {
   const answerOptions = [grape.originCountry];
 
   getRandomizedAnswers(answerOptions, grapes, "country");
-
-  // Add unique random countries as incorrect answers
-  // while (answerOptions.length < 4) {
-  //   const country = grapes[Math.floor(Math.random() * grapes.length)].originCountry;
-  //   if (!answerOptions.some(option => option === country)) {
-  //     answerOptions.push(country);
-  //   }
-  // }
-
-  // Shuffle answer options to randomize order
-  // for (let i = answerOptions.length - 1; i > 0; i--) {
-  //   const j = Math.floor(Math.random() * (i + 1));
-  //   [answerOptions[i], answerOptions[j]] = [answerOptions[j], answerOptions[i]];
-  // }
-
 
   return {
     question: `What is the country of origin of the grape "${grape.grape}"?`,
@@ -314,6 +299,5 @@ export function createGrapeColorQuestion(grapes) {
     explanation: `${grape.grape} is a ${grape.grapeType} grape.`,
     point: "1"
   };
-
 
 }
