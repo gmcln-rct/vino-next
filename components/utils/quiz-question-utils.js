@@ -252,29 +252,47 @@ export function generateRegionQuestion(countries, questionType) {
   };
 }
 
+function getRandomizedAnswers(answerOptions, grapes, questionType) {
+    // Add unique random countries as incorrect answers
+    while (answerOptions.length < 4) {
+      const country = grapes[Math.floor(Math.random() * grapes.length)].originCountry;
+      if (!answerOptions.some(option => option === questionType)) {
+        answerOptions.push(country);
+      }
+    }
+  
+    // Shuffle answer options to randomize order
+    for (let i = answerOptions.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [answerOptions[i], answerOptions[j]] = [answerOptions[j], answerOptions[i]];
+    }
+    return answerOptions;
+}
 
 // Country of Origin Questions
 export function createGrapeOriginQuestion(grapes) {
   const grape = grapes[Math.floor(Math.random() * grapes.length)];
   const answerOptions = [grape.originCountry];
 
+  getRandomizedAnswers(answerOptions, grapes, "country");
+
   // Add unique random countries as incorrect answers
-  while (answerOptions.length < 4) {
-    const country = grapes[Math.floor(Math.random() * grapes.length)].originCountry;
-    if (!answerOptions.some(option => option === country)) {
-      answerOptions.push(country);
-    }
-  }
+  // while (answerOptions.length < 4) {
+  //   const country = grapes[Math.floor(Math.random() * grapes.length)].originCountry;
+  //   if (!answerOptions.some(option => option === country)) {
+  //     answerOptions.push(country);
+  //   }
+  // }
 
   // Shuffle answer options to randomize order
-  for (let i = answerOptions.length - 1; i > 0; i--) {
-    const j = Math.floor(Math.random() * (i + 1));
-    [answerOptions[i], answerOptions[j]] = [answerOptions[j], answerOptions[i]];
-  }
+  // for (let i = answerOptions.length - 1; i > 0; i--) {
+  //   const j = Math.floor(Math.random() * (i + 1));
+  //   [answerOptions[i], answerOptions[j]] = [answerOptions[j], answerOptions[i]];
+  // }
 
-  const correctAnswerPosition = answerOptions.findIndex(option => option.value === grape.originCountry);
+
   return {
-    question: `What country is the origin of the grape "${grape.grape}"?`,
+    question: `What is the country of origin of the grape "${grape.grape}"?`,
     questionType: "multiplechoice",
     answerSelectionType: "single",
     answers: answerOptions,
@@ -282,4 +300,20 @@ export function createGrapeOriginQuestion(grapes) {
     explanation: `The grape "${grape.grape}" is originally from ${grape.originCountry}.`,
     point: "1"
   };
+}
+
+export function createGrapeColorQuestion(grapes) {
+  const grape = grapes[Math.floor(Math.random() * grapes.length)];
+
+  return {
+    question: `Is ${grape.grape} a red or white grape"?`,
+    questionType: "multiplechoice",
+    answerSelectionType: "single",
+    answers: ["red", "white"],
+    correctAnswer: grape.grapeType,
+    explanation: `${grape.grape} is a ${grape.grapeType} grape.`,
+    point: "1"
+  };
+
+
 }

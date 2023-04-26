@@ -72,8 +72,8 @@ font-family: var(--font-lato);
 .questionContainer p {
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
-  justify-content: flex-start;
+  /* align-items: flex-start;
+  justify-content: flex-start; */
 
   font-size: clamp(18px, 2vw, 24px);
   font-weight: 400;
@@ -101,7 +101,7 @@ font-family: var(--font-lato);
   text-align: start;
 }
 
-.answers:hover {
+.answer:hover {
   color: #0aa18a;
   cursor: pointer;
 }
@@ -130,26 +130,39 @@ font-family: var(--font-lato);
   transition: 0.5s;
 }
 
+
+
 /* Feedback section */
 .feedback {
-  display: flex;
+  /* display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: center; */
 
-  /* width: 100%; */
   margin: 1vmin 3vmin;
-  /* padding: 1vmin 5vmin; */
-  /* border-radius: 10px; */
-  background-color: #e4e3e3;
+  text-align: center;
 
+  background-color: #e4e3e3;
   border-radius: 10px;
   overflow: hidden;
+}
+
+.explanation {
+  max-width: 700px;
+  padding: 0 5vmin;
+  
+  font-size: clamp(18px, 2vw, 24px);
+  font-weight: 400;
+  font-style: italic;
+  
+  color: var(--grey-10);
 }
 
 .correct {
   width: 100%;
   padding: 0.5vmin 5vmin;
+
+  text-align: center;
 
   color: var(--white);
   background-color: var(--green-8);
@@ -157,18 +170,19 @@ font-family: var(--font-lato);
 
 .incorrect {
   width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   padding: 0.5vmin 5vmin;
+
+  /* text-align: center; */
+
   color: var(--white);
   background-color: var(--red-8);
 }
 
-.explanation {
-  padding: 0 5vmin;
-  font-size: clamp(18px, 2vw, 24px);
-  font-weight: 400;
-  font-style: italic;
-  color: var(--grey-10);
-}
+
 
 /* Results */
 

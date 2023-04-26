@@ -19,7 +19,8 @@ import {
   createTermsQuestion,
   createWineHistoryQuestion,
   generateRegionQuestion,
-  createGrapeOriginQuestion
+  createGrapeOriginQuestion,
+  createGrapeColorQuestion,
 } from "@/components/utils/quiz-question-utils";
 
 const QuizPage = () => {
@@ -64,15 +65,19 @@ const QuizPage = () => {
     const wineRegionsQuestion2 = generateRegionQuestion(COUNTRIES_DATA, "notInCountry");
 
     const countryOriginQuestion = createGrapeOriginQuestion(COUNTRY_ORIGIN_DATA);
-    console.log(countryOriginQuestion);
+      const grapeColorQuestion = createGrapeColorQuestion(COUNTRY_ORIGIN_DATA);
+console.log("grape color question", grapeColorQuestion);
+
 
     setQuizData([
-      countryOriginQuestion,
+
       wineTermsQuestion,
       countryRedQuestion1,
       wineRegionsQuestion1,
       countryWhiteQuestion1,
+      grapeColorQuestion,
       countryRedQuestion2,
+      countryOriginQuestion,
       wineRegionsQuestion2,
       countryWhiteQuestion2,
       wineHistoryQuestion,
