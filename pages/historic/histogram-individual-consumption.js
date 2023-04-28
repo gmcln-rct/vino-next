@@ -8,24 +8,27 @@ import HistogramChart from "@/components/graphs/histogram-chart";
 
 import { HISTORIC_CONSUMPTION_DATA } from "@/data/historic-consumption-data";
 
-import {convertToStackedFormat} from "@/data/utils";
+import { convertToStackedFormat } from "@/data/utils";
 
 // import { HISTORIC_PRODUCTION_STACKED_DATA } from "@/data/historic-production-stacked-data";
 
-
+import HistoricChartNotes from "@/components/layout/historic-chart-notes";
 import Button from "@/components/ui/button";
 
-
-  // Get all the unique country names
-  const COUNTRIES = [...new Set( HISTORIC_CONSUMPTION_DATA.map(d => d.itemName))];
-
+// Get all the unique country names
+const COUNTRIES = [
+  ...new Set(HISTORIC_CONSUMPTION_DATA.map((d) => d.itemName)),
+];
 
 const YEARS = [2000, 2001, 2002, 2003, 2004, 2005, 2006];
 
 function HistogramIndividualConsumptionPage() {
   const [country1, setCountry1] = useState(COUNTRIES[0]);
 
-  const historicData = convertToStackedFormat(HISTORIC_CONSUMPTION_DATA, COUNTRIES);
+  const historicData = convertToStackedFormat(
+    HISTORIC_CONSUMPTION_DATA,
+    COUNTRIES
+  );
 
   return (
     <>
@@ -39,7 +42,9 @@ function HistogramIndividualConsumptionPage() {
           content="Histogram data visualization by country."
         />
       </Head>
-      <h1 className="indexheader">Histogram: Historic Yearly Wine Consumption, by Volume</h1>
+      <h1 className="indexheader">
+        Histogram: Historic Yearly Wine Consumption, by Volume
+      </h1>
       <div className={classes.selectrow}>
         <select
           value={country1}
@@ -53,11 +58,10 @@ function HistogramIndividualConsumptionPage() {
           ))}
         </select>
       </div>
-      <HistogramChart
-        data={historicData}
-        country1={country1}
-      />
-      <div>
+      <HistogramChart data={historicData} country1={country1} />
+      <HistoricChartNotes />
+      {/* <div>
+        <p className="dataSource">Note that the starting year for historical data varies by country.</p>
         <p className="dataSource">
           Data Source:{" "}
           <Link
@@ -67,10 +71,17 @@ function HistogramIndividualConsumptionPage() {
             Wine Economics Research Centre, University of Adelaide
           </Link>
         </p>
-      </div>
+      </div> */}
       <div className="buttonFooter">
-        <Button link="/historic/histogram-comparison-consumption" isSecondary="false">Histogram Comparison Chart</Button>
-        <Button link="/historic/" isSecondary="true">Back to Historic Data Index</Button>
+        <Button
+          link="/historic/histogram-comparison-consumption"
+          isSecondary="false"
+        >
+          Histogram Comparison Chart
+        </Button>
+        <Button link="/historic/" isSecondary="true">
+          Back to Historic Data Index
+        </Button>
       </div>
     </>
   );

@@ -8,6 +8,8 @@ import HistogramComparisonChart from "@/components/graphs/histogram-comparison-c
 
 import { HISTORIC_PRODUCTION_STACKED_DATA } from "@/data/historic-production-stacked-data";
 
+import HistoricChartNotes from "@/components/layout/historic-chart-notes";
+
 import Button from "@/components/ui/button";
 
 const COUNTRIES = [
@@ -88,17 +90,7 @@ function HistogramComparisonPage() {
         country1={country1}
         country2={country2}
       />
-      <div>
-        <p className="dataSource">
-          Data Source:{" "}
-          <Link
-            href="https://economics.adelaide.edu.au/wine-economics/databases/"
-            className="dataSource"
-          >
-            Wine Economics Research Centre, University of Adelaide
-          </Link>
-        </p>
-      </div>
+      <HistoricChartNotes />
       <div className="buttonFooter">
         <Button link="/historic/histogram-individual-production" isSecondary="false">
           Individual Histogram Chart

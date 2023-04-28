@@ -13,6 +13,7 @@ import { HISTORIC_CONSUMPTION_DATA } from "@/data/historic-consumption-data";
 
 import { HISTORIC_CONSUMPTION_PER_CAPITA } from "@/data/historic-consumption-per-capita";
 
+import HistoricChartNotes from "@/components/layout/historic-chart-notes";
 
 import Button from "@/components/ui/button";
 
@@ -55,17 +56,7 @@ function HistogramIndividualConsumptionPerCapitaPage() {
         data={historicData}
         country1={country1}
       />
-      <div>
-        <p className="dataSource">
-          Data Source:{" "}
-          <Link
-            href="https://economics.adelaide.edu.au/wine-economics/databases/"
-            className="dataSource" 
-          >
-            Wine Economics Research Centre, University of Adelaide
-          </Link>
-        </p>
-      </div>
+      <HistoricChartNotes />
       <div className="buttonFooter">
         <Button link="/historic/histogram-comparison-consumption" isSecondary="false">Histogram Comparison Chart</Button>
         <Button link="/historic/" isSecondary="true">Back to Historic Data Index</Button>

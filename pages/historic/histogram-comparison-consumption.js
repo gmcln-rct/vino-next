@@ -10,6 +10,8 @@ import { HISTORIC_CONSUMPTION_DATA } from "@/data/historic-consumption-data";
 
 import {convertToStackedFormat} from "@/data/utils";
 
+import HistoricChartNotes from "@/components/layout/historic-chart-notes";
+
 import Button from "@/components/ui/button";
 
 // const COUNTRIES = [
@@ -94,17 +96,7 @@ const historicData = convertToStackedFormat(HISTORIC_CONSUMPTION_DATA, COUNTRIES
         country1={country1}
         country2={country2}
       />
-      <div>
-        <p className="dataSource">
-          Data Source:{" "}
-          <Link
-            href="https://economics.adelaide.edu.au/wine-economics/databases/"
-            className="dataSource"
-          >
-            Wine Economics Research Centre, University of Adelaide
-          </Link>
-        </p>
-      </div>
+      <HistoricChartNotes />
       <div className="buttonFooter">
         <Button link="/historic/histogram-individual-consumption" isSecondary="false">
           Individual Histogram Chart
