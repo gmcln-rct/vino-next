@@ -85,7 +85,7 @@ function HistoricDataIndex() {
                 width={100}
                 height={100}
               />
-              <p className="link">Histogram National</p>
+              <p className="link">Individual Countries Histogram</p>
             </Link>
             <Link
               href="/historic/histogram-comparison-consumption"
@@ -98,7 +98,7 @@ function HistoricDataIndex() {
                 width={100}
                 height={100}
               />
-              <p className="link">Comparative Histogram</p>
+              <p className="link">Comparing Countries Histogram</p>
             </Link>
             <Link
               href="/historic/histogram-indiv-consumption-per-capita"
@@ -111,7 +111,7 @@ function HistoricDataIndex() {
                 width={100}
                 height={100}
               />
-              <p className="link">Histogram Per Capita</p>
+              <p className="link">Country Per Capita Histogram</p>
             </Link>
             <Link
               href="/historic/histogram-comp-consumption-per-capita"
@@ -124,7 +124,7 @@ function HistoricDataIndex() {
                 width={100}
                 height={100}
               />
-              <p className="link">Comparative Per Capita Histogram</p>
+              <p className="link">Per Capita Comparative Histogram</p>
             </Link>
           </div>
         </section>

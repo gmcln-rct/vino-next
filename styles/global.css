@@ -234,7 +234,7 @@ main a {
 /* Flag images */
 .flagImage {
   margin: 2vmin 0 0 0;
-  filter: saturate(0.8);
+  /* filter: saturate(0.8); */
 }
 
 .desaturate {
