@@ -23,6 +23,9 @@ const HistogramChart = ({ data, country1 }) => {
     // Clear the SVG
     svg.selectAll("*").remove();
 
+    // Find index of first non-zero value for the country
+    const firstNonZeroIndex = data.findIndex((d) => d[country1] > 0);
+
     // Create new elements
     const chart = svg
       .append("g")
@@ -39,19 +42,24 @@ const HistogramChart = ({ data, country1 }) => {
 
     const x = d3
       .scaleBand()
-      .domain(data.map((d) => d.year))
+      .domain(data.slice(firstNonZeroIndex).map((d) => d.year))
       .range([0, width])
       .padding(0.1);
 
     const y = d3
       .scaleLinear()
-      .domain([0, d3.max(data, (d) => Math.max(d[country1]))])
+      .domain([
+        0,
+        d3.max(data.slice(firstNonZeroIndex), (d) => Math.max(d[country1])),
+      ])
       .range([height, 0]);
 
     const xAxis = d3
       .axisBottom(x)
       .tickFormat((d) => Number(d.toString().slice(0, 3) + "0"))
-      .tickValues(x.domain().filter((d, i) => d.toString().slice(3) === "0"));
+      .tickValues(
+        x.domain().filter((d, i) => d.toString().slice(3) === "0")
+      );
 
     const yAxis = d3.axisLeft(y).ticks(8).tickSize(-width).tickPadding(10);
 
@@ -73,70 +81,72 @@ const HistogramChart = ({ data, country1 }) => {
       .attr("stroke", "lightgray")
       .attr("stroke-width", 0.5);
 
+
     // Bars for country 1
     const bars1 = chart
+    .selectAll(".bar1")
+    .data(data.slice(firstNonZeroIndex))
+    .enter()
+    .append("rect")
+    .attr("class", "bar1")
+    .attr("x", (d) => x(d.year))
+    .attr("y", (d) => y(d[country1]))
+    .attr("width", x.bandwidth() / 2)
+    .attr("height", (d) => height - y(d[country1]))
+    .attr("fill", d3.interpolate("#fca5a5", "#96074e")(0.5))
+    .on("mouseover", function (event, d) {
+      // Display tooltip on mouseover
+      tooltip.style("opacity", 1);
+      tooltip
+        .html(`<b>${d.year}:</b> ${d[country1]} KL`)
+        .style("left", event.pageX + 10 + "px")
+        .style("top", event.pageY - 10 + "px");
+    })
+    .on("mousemove", function (event, d) {
+      // Move tooltip on mousemove
+      tooltip
+        .style("left", event.pageX + 10 + "px")
+        .style("top", event.pageY - 10 + "px");
+    })
+    .on("mouseout", function (event, d) {
+      // Hide tooltip on mouseout
+      tooltip.style("opacity", 0);
+    });
+
+  // Add tooltip element
+  const tooltip = d3
+    .select(svgRef.current)
+    .append("div")
+    .attr("class", "tooltip")
+    .style("opacity", 0);
+
+  // Resize function
+  function resize() {
+    const container = svgRef.current.parentElement;
+    const width = container.offsetWidth - margin.left - margin.right;
+    const height = container.offsetHeight - margin.top - margin.bottom;
+
+    svg
+      .attr("width", container.offsetWidth)
+      .attr("height", container.offsetHeight);
+
+    x.range([0, width]);
+    y.range([height, 0]);
+
+    chart
+      .select(".x-axis")
+      .attr("transform", `translate(0, ${height})`)
+      .call(xAxis);
+
+    chart.select(".y-axis").call(yAxis);
+
+    chart
       .selectAll(".bar1")
-      .data(data)
-      .enter()
-      .append("rect")
-      .attr("class", "bar1")
       .attr("x", (d) => x(d.year))
       .attr("y", (d) => y(d[country1]))
       .attr("width", x.bandwidth() / 2)
-      .attr("height", (d) => height - y(d[country1]))
-      .attr("fill", d3.interpolate("#fca5a5", "#96074e")(0.5));
-
-
-    // Add legend for country 1
-    const legend = chart.append("g").attr("transform", "translate(10, 10)");
-
-    legend
-      .append("rect")
-      .attr("x", 10)
-      .attr("y", 10)
-      .attr("width", 20)
-      .attr("height", 20)
-      .attr("fill", d3.interpolate("#fca5a5", "#96074e")(0.5));
-
-    legend.append("text").attr("x", 40).attr("y", 25).text(country1);
-
-    // legend
-    //   .append("rect")
-    //   .attr("x", 10)
-    //   .attr("y", 40)
-    //   .attr("width", 20)
-    //   .attr("height", 20)
-    //   .attr("fill", d3.interpolate("#fde68a", "#e6c612")(0.2));
-
-    // legend.append("text").attr("x", 40).attr("y", 55).text(country2);
-    // Resize function
-    function resize() {
-      const container = svgRef.current.parentElement;
-      const width = container.offsetWidth - margin.left - margin.right;
-      const height = container.offsetHeight - margin.top - margin.bottom;
-
-      svg
-        .attr("width", container.offsetWidth)
-        .attr("height", container.offsetHeight);
-
-      x.range([0, width]);
-      y.range([height, 0]);
-
-      chart
-        .select(".x-axis")
-        .attr("transform", `translate(0, ${height})`)
-        .call(xAxis);
-
-      chart.select(".y-axis").call(yAxis);
-
-      chart
-        .selectAll(".bar1")
-        .attr("x", (d) => x(d.year))
-        .attr("y", (d) => y(d[country1]))
-        .attr("width", x.bandwidth() / 2)
-        .attr("height", (d) => height - y(d[country1]));
-
-    }
+      .attr("height", (d) => height - y(d[country1]));
+  }
 
     window.addEventListener("resize", resize);
 

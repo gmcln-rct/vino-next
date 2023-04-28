@@ -965,8 +965,8 @@ export const HISTORIC_CONSUMPTION_DATA = [
     ],
   },
   {
-    id: "bel-lux",
-    itemName: "Bel-Lux",
+    id: "Belgian Luxembourg",
+    itemName: "Belgian Luxembourg",
     continentId: "europe",
     continentName: "Europe",
     dataType: "consumption",
