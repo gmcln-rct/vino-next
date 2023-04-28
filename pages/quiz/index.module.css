@@ -26,7 +26,7 @@
   width: 100%;
   padding: 2vmin 0;
 
-font-family: var(--font-lato);
+  font-family: var(--font-lato);
   background-color: #6f0f47da;
 }
 .header {
@@ -48,10 +48,12 @@ font-family: var(--font-lato);
   justify-content: center;
 
   width: 100%;
-
+  min-height: 400px;
   /* margin: 1vmin 0; */
   padding: 3vmin 5vmin;
 
+  /* font-family: var(--font-lato); */
+  font-weight: 700;
   text-align: center;
 
   background-color: var(--white);
@@ -85,7 +87,7 @@ font-family: var(--font-lato);
   font-size: clamp(18px, 2vw, 24px);
   font-weight: 400;
   font-style: italic;
-  color: var(--grey-10);
+  color: var(--grey-9);
 }
 
 .answer {
@@ -97,7 +99,7 @@ font-family: var(--font-lato);
   max-width: 900px;
   padding: 1vmin 2vmin;
 
-  color: var(--grey-10);
+  color: var(--grey-9);
   /* font-style: italic; */
 
   text-align: start;
@@ -132,8 +134,6 @@ font-family: var(--font-lato);
   transition: 0.5s;
 }
 
-
-
 /* Feedback section */
 .feedback {
   /* display: flex;
@@ -152,22 +152,27 @@ font-family: var(--font-lato);
 .explanation {
   max-width: 700px;
   padding: 0 5vmin;
-  
+
+  font-family: "Inter", sans-serif;
   font-size: clamp(18px, 2vw, 24px);
   font-weight: 400;
   font-style: italic;
-  
-  color: var(--grey-10);
+
+  color: var(--grey-9);
 }
 
 .correct {
   width: 100%;
   padding: 0.5vmin 5vmin;
 
-  text-align: center;
+  /* font-family: 'Inter', sans-serif;
+  font-size: clamp(18px, 2vw, 24px);
+  font-weight: 700;
+  font-style: italic;
+  text-align: center; */
 
   color: var(--white);
-  background-color: var(--green-8);
+  background-color: var(--teal-7);
 }
 
 .incorrect {
@@ -181,10 +186,8 @@ font-family: var(--font-lato);
   /* text-align: center; */
 
   color: var(--white);
-  background-color: var(--red-8);
+  background-color: var(--red-7);
 }
-
-
 
 /* Results */
 
@@ -209,4 +212,8 @@ font-family: var(--font-lato);
   font-size: clamp(24px, 3.5vw, 32px);
   color: #f1f9b3;
   text-align: center;
+}
+
+.footer {
+  margin: 2vmin 0;
 }

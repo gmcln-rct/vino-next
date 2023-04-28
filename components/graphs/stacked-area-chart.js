@@ -103,12 +103,14 @@ const StackedAreaChart = () => {
       .attr("transform", `translate(0,${height - margin.top - margin.bottom})`)
       .style("color", "white")
       .call(xAxis);
+      
 
     svg
       .append("g")
       .attr("class", "y-axis")
       .style("color", "white")
-      .call(yAxis);
+      .call(yAxis)
+      .attr("font-size", "clamp(8px, 0.1vw, 10px)");
 
     // svg
     //   .append("text")

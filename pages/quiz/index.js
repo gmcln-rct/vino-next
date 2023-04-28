@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import Link from "next/link";
 import classes from "./index.module.css";
 
 // import Button from "@/components/ui/button";
@@ -135,7 +136,7 @@ console.log(wineHistoryConsumptionQuestion);
     <section className={classes.quizPage}>
       <div className={classes.headerSection}>
         <h1 className={classes.header}>Wine Quiz</h1>
-        <p>Test your wine knowledge. Most questions are based on 2016 data.</p>
+        <p>Test your wine knowledge.</p>
       </div>
       {showResults ? (
         <div className={classes.resultsContainer}>
@@ -148,7 +149,8 @@ console.log(wineHistoryConsumptionQuestion);
       ) : (
         <div className={classes.questionContainer}>
           <h2>{quizData[currentQuestion].question}</h2>
-          <p className={classes.instructions}>Click on correct answer below.</p>
+          {selectedAnswer === null ? ( <p className={classes.instructions}>Click on correct answer below.</p>) : (<p></p>)}
+          {/* // <p className={classes.instructions}>Click on correct answer below.</p> */}
           <div className={classes.answers}>
           {selectedAnswer === null ? (
             quizData[currentQuestion].answers.map((answer, index) => (
@@ -177,6 +179,17 @@ console.log(wineHistoryConsumptionQuestion);
           </div>
         </div>
       )}
+      <div className={classes.footer}>
+        <p className="dataSource">
+          Data Source:{" "}
+          <Link
+            href="https://economics.adelaide.edu.au/wine-economics/databases/"
+            className="dataSource"
+          >
+            Wine Economics Research Centre, University of Adelaide
+          </Link>
+        </p>
+      </div>
     </section>
   );
 };

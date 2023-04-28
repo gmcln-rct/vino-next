@@ -5,48 +5,20 @@
 @import "charts.css";
 @import "select.css";
 @import "homepage.css";
+@import "aboutpage.css";
 @import "stylingmodifiers.css";
 @import "variables.css";
-
 
 /**************************** Global CSS variables ***************************************/
 
 html,
 body {
   background-color: var(--grey-2);
-
-  /* height: 100vh; */
-  /* background-color: #96074e;
-  background-image: radial-gradient(at 8% 50%, hsla(360, 94%, 68%, 1) 0, hsla(360, 94%, 68%, 0) 50%),
-  radial-gradient(at 92% 38%, hsla(319, 85%, 61%, 1) 0, hsla(319, 85%, 61%, 0) 50%); */
-
-  /* background-color: #96074e; */
-  /* background-image: radial-gradient(
-      at 50% 95%,
-      rgb(231, 229, 213) 0,
-      hsla(63, 94%, 60%, 0) 50%
-    ),
-    radial-gradient(
-      at 73% 41%,
-      hsla(325, 70%, 25%, 1) 0,
-      hsla(342, 93%, 62%, 0) 50%
-    ); */
-
-  /* /* background-color: #96074e; */
-  /* background-image: radial-gradient(at 5% 92%, hsla(360, 95%, 57%, 1) 0, hsla(360, 95%, 57%, 0) 50%),
-radial-gradient(at 44% 80%, hsla(272, 92%, 62%, 1) 0, hsla(272, 92%, 62%, 0) 50%); */
 }
-
-/* body {
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: flex-start;
-} */
 
 /* General */
 
-/* main */
+/* Main */
 main {
   display: flex;
   flex-direction: column;
@@ -79,13 +51,24 @@ main a {
 
   background-color: var(--grey-8);
   /* box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.2); */
-  -webkit-box-shadow: inset 0px 0px 28px 0px rgba(0, 0, 0, 0.25);
-  -moz-box-shadow: inset 0px 0px 28px 0px rgba(0, 0, 0, 0.25);
-  box-shadow: inset 0px 0px 28px 0px rgba(0, 0, 0, 0.25);
+  -webkit-box-shadow: inset 0px 0px 14px 0px rgba(0, 0, 0, 0.25);
+  -moz-box-shadow: inset 0px 0px 14px 0px rgba(0, 0, 0, 0.25);
+  box-shadow: inset 0px 0px 14px 0px rgba(0, 0, 0, 0.25);
 }
 
-.info .header {
+/* .info .header {
   color: white;
+  margin: 0;
+} */
+
+.alt {
+  /* background-color: var(--grey-5); */
+  background-color: var(--cyan-9);
+
+}
+
+.alt .header {
+  color: var(--cyan-1);
 }
 
 .info h2 {
@@ -93,7 +76,7 @@ main a {
   margin: 1rem 0 0 0;
   /* color: #faf9b8; */
   /* color: var(--red-7); */
-  font-family: 'Inter', sans-serif;
+  font-family: "Inter", sans-serif;
   font-size: clamp(16px, 4vw, 28px);
   font-weight: 600;
   font-display: swap;
@@ -131,7 +114,9 @@ main a {
   font-display: swap;
   letter-spacing: 1px;
 
-  color: #fffd8d;
+  color: var(--white);
+
+  /* color: #fffd8d; */
 }
 
 .subheader {
@@ -140,12 +125,14 @@ main a {
   justify-content: center;
   align-items: center;
 
-  margin: 1rem 0 0 0;
+  /* margin: 1rem 0 0 0; */
+  margin: 0.7vmin 0 0.5vmin 0;
 
   font-size: var(--font-size-6);
   font-weight: 400;
   font-display: swap;
-  color: var(--white);
+
+  color: var(--grey-2);
 }
 
 .chartfooter {
@@ -169,11 +156,7 @@ main a {
   align-items: center;
 
   margin: 1rem 0 0 0;
-  /* color: #A1360A; */
-  /* color: #555; */
-  /* color: #96074e; */
   color: var(--pink-9);
-  /* color: var(--white); */
 
   font-size: clamp(24px, 4vw, 32px);
   font-weight: bold;
@@ -183,7 +166,8 @@ main a {
 .dataSource {
   margin: 1rem 0 0 0;
 
-  font-size: clamp(16px, 1vw, 18px);
+  font-family: "Inter", sans-serif;
+  font-size: clamp(14px, 2vw, 18px);
   font-weight: 400;
   font-style: italic;
   font-display: swap;
@@ -192,6 +176,9 @@ main a {
   color: var(--grey-8);
 }
 
+.dataSource.light {
+  color: var(--grey-3);
+}
 .dataSource:hover,
 .dataSource:active {
   color: var(--blue-7);
@@ -203,7 +190,14 @@ main a {
   font-weight: 400;
 }
 
-.featured {
+/* Featured Section */
+
+.featuredContainer {
+  width: 100%;
+  background-color: var(--pink-2);
+}
+
+.featuredHeader {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -216,7 +210,7 @@ main a {
   font-weight: 600;
   font-display: swap;
 
-  color: var(--red-9);
+  color: var(--pink-9);
 }
 .buttonFooter {
   display: flex;
@@ -254,39 +248,6 @@ main a {
   transition: 0.3s;
 }
 
-.aboutPage {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  padding: 3vw 5vw;
-  /* color: white; */
-  color: var(--grey-10);
-  font-size: clamp(18px, 2vw, 24px);
-  text-align: left;
-}
-
-.aboutPage h1 {
-  margin: 0;
-  font-size: clamp(24px, 3vw, 32px);
-  font-weight: 600;
-  font-display: swap;
-
-  text-align: center;
-}
-
-.aboutPage p {
-  margin: 1vmin 0;
-}
-
-.aboutPage a {
-  color: #0165a3;
-  font-weight: 600;
-}
-
-.aboutPage a:hover {
-  color: #96074e;
-  text-decoration: underline;
-}
 .versus {
   padding: 0 2vmin;
 

@@ -39,7 +39,7 @@ export default function ResourcesIndex({ topGrapes }) {
         </div>
       </section> */}
       <section className="info">
-        <h2 className="header"> Explore Our Resources</h2>
+        <h2 className="header"> Wine Resources</h2>
         <div className="actionsContainer">
         <div className="actions">
           <Link href="/resources/terms" className="action__container center">

@@ -28,11 +28,11 @@ function HistoricDataHistogram() {
 
       <StackedAreaChart  />
       <div> 
-        <p className="dataSource moveUp">
+        <p className="dataSource moveUp light">
           Data Source:{" "}
           <Link
             href="https://economics.adelaide.edu.au/wine-economics/databases/"
-            className="dataSource"
+            className="dataSource light"
           >
             Wine Economics Research Centre, University of Adelaide
           </Link>

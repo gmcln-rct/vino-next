@@ -5,8 +5,7 @@
     justify-content: center;
     align-items: flex-start;
     gap: 1rem;
+
     max-width: 80%;
-    /* width: 90%; */
-    /* max-width: 30rem; */
     margin: 1.5rem auto;
   }

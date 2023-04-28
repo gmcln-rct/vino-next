@@ -11,7 +11,8 @@
   margin: 3vmin 0 1vmin 5vmin;
   padding: 2.5vmin 3vmin;
 
-  font-family: var(--font-open-sans);
+  /* font-family: var(--font-open-sans); */
+  font-family: 'Inter', sans-serif;
 
   color: #000;
   /* background-color: rgb(135, 134, 134); */
@@ -41,13 +42,19 @@
 
   /* color: rgba(111, 15, 71, 0.853); */
   /* color: #6f0f47da; */
-  color: #8d0000;
+  /* color: #8d0000; */
+ color: var(--red-9);
 }
 .data {
-  font-family: var(--font-open-sans);
+  /* font-family: var(--font-open-sans); */
+
+  font-family: 'Inter', sans-serif;
+
   font-size: clamp(18px, 1.5vw, 24px);
   padding: 0.5rem 0 .5rem 0;
-  color: var(--grey-9);
+  /* color: var(--grey-9); */
+  color: var(--red-9);
+
 }
 .data:last-child {
   padding-bottom: 8vmin;

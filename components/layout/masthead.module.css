@@ -9,10 +9,9 @@
   align-items: center;
 }
 
-
 .mastheadHeader {
   /* font-family: "Jost", sans-serif; */
-  font-family: 'Sao Display', serif;
+  font-family: "Sao Display", serif;
   font-size: clamp(2rem, 4vw, 4rem);
   font-style: italic;
   font-weight: 600;
@@ -24,7 +23,7 @@
   margin-top: 5vmin;
   padding: 2vw 2vw 2vw 4vw;
 
-  /* color: white; */
+  font-family: 'Inter', sans-serif;
   font-size: clamp(2rem, 2.5vw, 2.5rem);
   font-weight: 400;
   /* text-shadow: 2px 2px 2px rgba(25, 24, 24, 0.85); */

@@ -30,7 +30,7 @@ function CountryIndex() {
       <Masthead
         backgroundImage="/images/site-images/index-masthead-countries.jpg"
         header="Countries"
-        headerText="Learn about wine production in countries around the world, with comparative charts and country-specific graphs."
+        headerText="Learn about wine production around the world, with charts comparing nations and sections for featured countries."
       />
       <section className="info">
         <h2 className="header"> Grape Production Country Comparison</h2>
@@ -61,8 +61,10 @@ function CountryIndex() {
           </Link> */}
         </div>
       </section>
-      <h2 className="featured">Featured Countries</h2>
+      <section className="featuredContainer">
+      <h2 className="featuredHeader">Featured Countries</h2>
       <CountryList items={allCountries} />
+      </section>
     </>
   );
 }

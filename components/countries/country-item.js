@@ -20,7 +20,10 @@ function CountryItem(props) {
       </div>
     );
   }
-  const flagImage = `/images/flags/flag-${country.id}.svg`;
+  // const flagImage = `/images/flags/flag-${country.id}.svg`;
+    const flagImage = `/images/flags/flag-${country.id}.png`;
+
+  // const flagImage = `/image/flags/france.png`;
   const flagImageAlt = `Flag of ${country.itemName}`;
 
   return (
@@ -32,7 +35,7 @@ function CountryItem(props) {
           alt={flagImageAlt}
           className="flagImage desaturate borderGrey"
           width={100}
-          height={75}
+          height={100}
         />
       </Link>
     </li>

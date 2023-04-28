@@ -6,7 +6,7 @@
 
   /* margin: 1rem; */
   /* padding: 0.2rem .5rem; */
-  width: 270px; 
+  width: 270px;
   /* height: 75px;
 
   /* background: rgba(255, 255, 255, 0.57); */
@@ -21,7 +21,6 @@
   /* background: rgb(181,6,50); */
   /* background: linear-gradient(0deg, rgba(181,6,50,1) 0%, rgba(181,6,50,0.7539390756302521) 35%, rgba(0,212,255,0) 100%); */
   overflow: hidden;
-
 }
 
 .item a {
@@ -30,7 +29,7 @@
   justify-content: center;
   align-items: center;
   text-decoration: none;
-  text-align:center;
+  text-align: center;
 
   font-family: var(--font-lato);
   font-size: var(--font-size-5);
@@ -44,7 +43,7 @@
   height: 75px;
   object-fit: cover;
   /* object-position: center; */
-  /* box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3), 0 1px 12px 2px rgba(0, 0, 0, 0.2); */
+/* box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3), 0 1px 12px 2px rgba(0, 0, 0, 0.2); */
 
 /* }  */
 
@@ -56,15 +55,13 @@
   width: 100%;
 
   z-index: 10;
-
-
 }
 
 .image {
   /* background: linear-gradient(0deg, rgba(181,6,50,1) 0%, rgba(181,6,50,0.7539390756302521) 35%, rgba(0,212,255,0) 100%); */
-  object-fit:cover;
+  object-fit: cover;
   width: 100%;
-  z-index:5;
+  z-index: 5;
 }
 
 .redGrapeColor {
@@ -74,16 +71,16 @@
 }
 
 .redGrapeColor:hover {
-  color:var(--red-8);
+  color: var(--red-8);
   background-color: var(--white);
   border: 1px solid #fff;
   transition: 0.3s;
 }
 
-
 .whiteGrapeColor {
   color: var(--grey-9);
-  background-color: var(--red-3);
+  /* background-color: var(--red-3); */
+  background-color: #f4d2a5;
   border: 1px solid white;
 }
 

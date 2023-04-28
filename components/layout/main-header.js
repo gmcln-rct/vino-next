@@ -25,7 +25,9 @@ const Navbar = () => {
       <div className={classes.navbar}>
         <div className={classes.brand}>
           <Link href="/">
+            {/* Winography <span className={classes.sitebeta}>Beta</span> */}
             Winography <span className={classes.sitebeta}>Beta</span>
+
           </Link>
         </div>
         <ul className={classes.list}>

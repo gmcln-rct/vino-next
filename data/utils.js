@@ -31,3 +31,35 @@ export function getDataItemById(id, data) {
 export function filterCountriesData(countriesData) {
   return countriesData.map(({ id, itemName }) => ({ id, itemName }));
 }
+
+
+export function convertToStackedFormat(data, countries) {
+  const stackedData = [];
+
+  const countryNames = countries;
+
+  // Get all the unique years
+  const years = [...new Set(data.flatMap(d => d.historicData.map(hd => hd.year)))];
+
+  // Loop through each year
+  years.forEach(year => {
+    const stackedYearData = { year };
+
+    // Loop through each country and get the corresponding wine consumption value for the current year
+    countryNames.forEach(countryName => {
+      const countryData = data.find(cd => cd.itemName === countryName);
+      const wineConsumption = countryData.historicData.find(hd => hd.year === year)?.value;
+      if (wineConsumption !== undefined && wineConsumption !== 0) {
+        stackedYearData[countryName] = wineConsumption;
+      }
+    });
+
+    stackedData.push(stackedYearData);
+  });
+
+  return stackedData;
+}
+
+// // Usage example
+// const stackedData = convertToStackedFormat(HISTORIC_PRODUCTION_DATA);
+// console.log(stackedData);

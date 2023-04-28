@@ -8,6 +8,8 @@ function HistoricDataIndex() {
   const histogramLink = "/historic/histogram";
   const stackedAreaLink = "/historic/stackedarea";
 
+  const infoClass = "info alt";
+
   return (
     <>
       <Head>
@@ -23,13 +25,13 @@ function HistoricDataIndex() {
         <Masthead
           backgroundImage="/images/site-images/index-masthead-historic.jpg"
           header="Historic Data"
-          headerText="Learn about how wine production has evolved from the 19th Century to the Present."
+          headerText="Times change! Learn about how wine production and consumption has evolved from the 19th Century to modern day."
         />
         <section className="info">
-          <h2 className="header"> Historic Production Data</h2>
+          <h2 className="header"> Historic Production Data Charts</h2>
           <div className="actions">
             <Link
-              href="/historic/histogram-individual"
+              href="/historic/histogram-individual-production"
               className="action__container center tall"
             >
               <Image
@@ -39,20 +41,20 @@ function HistoricDataIndex() {
                 width={100}
                 height={100}
               />
-              <p className="link">Histogram Chart</p>
+              <p className="link">Histogram Individual</p>
             </Link>
             <Link
-              href="/historic/histogram-comparison"
+              href="/historic/histogram-comparison-production"
               className="action__container center tall"
             >
               <Image
-                src="/images/icons/icon-histogram.png"
+                src="/images/icons/icon-histogram-comp.png"
                 className="transparent margin-bottom"
                 alt="grapes icon"
                 width={100}
                 height={100}
               />
-              <p className="link">Histogram Comparison Chart</p>
+              <p className="link">Comparative Histogram</p>
             </Link>
             <Link
               href="/historic/stackedarea"
@@ -65,7 +67,51 @@ function HistoricDataIndex() {
                 width={100}
                 height={100}
               />
-              <p className="link">Stacked Area Chart</p>
+              <p className="link">Comparative Stacked</p>
+            </Link>
+          </div>
+        </section>
+        <section className={infoClass}>
+          <h2 className="header">Historic Consumption Data</h2>
+          <div className="actions">
+            <Link
+              href="/historic/histogram-individual-consumption"
+              className="action__container center tall"
+            >
+              <Image
+                src="/images/icons/icon-histogram-indiv.png"
+                className="transparent margin-bottom"
+                alt="National Wine Consumption Histogram"
+                width={100}
+                height={100}
+              />
+              <p className="link">Histogram National</p>
+            </Link>
+            <Link
+              href="/historic/histogram-comparison-consumption"
+              className="action__container center tall"
+            >
+              <Image
+                src="/images/icons/icon-histogram-comp.png"
+                className="transparent margin-bottom"
+                alt="Wine Consumption Nation Comparison Histogram"
+                width={100}
+                height={100}
+              />
+              <p className="link">Comparative Histogram</p>
+            </Link>
+            <Link
+              href="/historic/histogram-indiv-consumption-per-capita"
+              className="action__container center tall"
+            >
+              <Image
+                src="/images/icons/icon-histogram-indiv.png"
+                className="transparent margin-bottom"
+                alt="Per Capita Wine Consumption Histogram"
+                width={100}
+                height={100}
+              />
+              <p className="link">Histogram Per Capita</p>
             </Link>
           </div>
         </section>
