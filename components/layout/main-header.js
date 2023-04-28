@@ -63,13 +63,6 @@ const Navbar = () => {
               Historic Data
             </Link>
           <p onClick={toggleDrawer} className={classes.drawerClose}>
-            {/* <Image 
-              src="/images/icons/close.png"
-              alt="close"
-              width={20}
-              height={20}
-              className={classes.close}
-            /> */}
             Close
           </p>
           </div>

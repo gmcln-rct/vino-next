@@ -113,6 +113,19 @@ function HistoricDataIndex() {
               />
               <p className="link">Histogram Per Capita</p>
             </Link>
+            <Link
+              href="/historic/histogram-comp-consumption-per-capita"
+              className="action__container center tall"
+            >
+              <Image
+                src="/images/icons/icon-histogram-comp.png"
+                className="transparent margin-bottom"
+                alt="Per Capita Wine Consumption Histogram"
+                width={100}
+                height={100}
+              />
+              <p className="link">Comparative Per Capita Histogram</p>
+            </Link>
           </div>
         </section>
       </>

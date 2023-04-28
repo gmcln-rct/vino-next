@@ -10,7 +10,6 @@ import { HISTORIC_CONSUMPTION_DATA } from "@/data/historic-consumption-data";
 
 // import {convertToStackedFormat} from "@/data/utils";
 
-
 import { HISTORIC_CONSUMPTION_PER_CAPITA } from "@/data/historic-consumption-per-capita";
 
 import HistoricChartNotes from "@/components/layout/historic-chart-notes";
@@ -58,7 +57,7 @@ function HistogramIndividualConsumptionPerCapitaPage() {
       />
       <HistoricChartNotes />
       <div className="buttonFooter">
-        <Button link="/historic/histogram-comparison-consumption" isSecondary="false">Histogram Comparison Chart</Button>
+        <Button link="/historic/histogram-comp-consumption-per-capita" isSecondary="false">Comparative Per Capita Histogram Chart</Button>
         <Button link="/historic/" isSecondary="true">Back to Historic Data Index</Button>
       </div>
     </>
