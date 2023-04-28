@@ -54,7 +54,7 @@ const Navbar = () => {
         <div className="drawer" onClick={toggleDrawer}>
           <div className={classes.drawercontent}>
             <Link className={classes.drawerlink} href="/countries">
-              Country
+              Countries
             </Link>
             <Link className={classes.drawerlink} href="/grapes">
               Grapes
