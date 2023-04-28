@@ -167,7 +167,7 @@ export const COUNTRIES_WINE_DATA = [
       {grape: "Merlot", value: 108483},
       {grape: "Tempranillo", value: 658},
       {grape: "Syrah", value: 62211},
-      {grape: "Garnacha Tinta", value: 78631},
+      {grape: "Grenache", value: 78631},
       {grape: "Pinot Noir", value: 31602},
       {grape: "Sangiovese", value: 1503},
       {grape: "Cabernet Franc", value: 32327},

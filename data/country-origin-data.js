@@ -356,7 +356,7 @@ export const COUNTRY_ORIGIN_DATA = [
     { countryId: "italy",  originCountry: "Italy",  grapeType: "white", grapeId: "cortese",  grape: "Cortese" },
     { countryId: "italy",  originCountry: "Italy",  grapeType: "red", grapeId: "corvina veronese",  grape: "Corvina Veronese" },
     { countryId: "italy",  originCountry: "Italy",  grapeType: "red", grapeId: "corvinone",  grape: "Corvinone" },
-    { countryId: "france",  originCountry: "France",  grapeType: "red", grapeId: "côt",  grape: "Côt" },
+    { countryId: "france",  originCountry: "France",  grapeType: "red", grapeId: "malbec",  grape: "Malbec" },
     { countryId: "france",  originCountry: "France",  grapeType: "white", grapeId: "couderc 13",  grape: "Couderc 13" },
     { countryId: "france",  originCountry: "France",  grapeType: "red", grapeId: "couderc noir",  grape: "Couderc Noir" },
     { countryId: "france",  originCountry: "France",  grapeType: "red", grapeId: "counoise",  grape: "Counoise" },
