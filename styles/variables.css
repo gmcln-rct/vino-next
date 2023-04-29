@@ -10,7 +10,7 @@
   --font-size-1: clamp(14px, 2vw, 18px);
   --font-size-4: clamp(16px, 2vw, 24px);
   --font-size-5: clamp(20px, 3vw, 24px);
-  --font-size-6: clamp(16px, 4vw, 28px);
+  --font-size-6: clamp(24px, 4vw, 28px);
   --font-size-7: clamp(18px, 4vw, 32px);
   --font-size-8: clamp(24px, 4vw, 36px);
   --font-size-10: clamp(28px, 4.5vw, 42px);

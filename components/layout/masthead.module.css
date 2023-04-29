@@ -35,6 +35,8 @@
 
   font-family: 'Inter', sans-serif;
   font-size: clamp(18px, 5vw, 32px);
+  line-height: clamp(22px, 7vw, 36px);
+
   font-weight: 400;
   /* text-shadow: 2px 2px 2px rgba(25, 24, 24, 0.85); */
   text-align: left;
@@ -59,6 +61,6 @@
     margin-right: 40%;
     margin-top: 5vmin;
     padding: 2vw 2vw 2vw 4vw;
-
+    
   }
 }

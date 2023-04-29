@@ -13,11 +13,13 @@
   
   .aboutPage h1 {
     margin: 0;
+
     font-size: clamp(24px, 3vw, 32px);
     font-weight: 600;
     font-display: swap;
-  
     text-align: center;
+
+    color: var(--pink-9);
   }
   
   .aboutPage p {
