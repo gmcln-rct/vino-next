@@ -41,9 +41,9 @@ const Masthead = (props) => {
 
         {!wineCategory && (
           <>
-          <div className={classes.mastheadText}>
+          <div className={classes.mastheadTextContainer}>
             <h1 className={classes.mastheadHeader}>{header}</h1>
-            <p >{headerText} </p>
+            <p className={classes.mastheadText}>{headerText} </p>
             </div>
           </>
         )}

@@ -3,6 +3,9 @@ import Link from "next/link";
 import Image from "next/image";
 import { CSSTransition } from "react-transition-group";
 import classes from "./main-header.module.css";
+import { AppBar, Toolbar, IconButton, Typography, Drawer, List, ListItem, ListItemText } from "@mui/material";
+import MenuIcon from "@mui/icons-material/Menu";
+
 const Navbar = () => {
   const [drawerOpen, setDrawerOpen] = useState(false);
 
@@ -11,65 +14,81 @@ const Navbar = () => {
   };
 
   const toggleDrawerTimer = () => {
-    setTimeout(() => {  
+    setTimeout(() => {
       setDrawerOpen(!drawerOpen);
     }, 5000);
-
   };
+
   if (drawerOpen) {
-  toggleDrawerTimer();
+    toggleDrawerTimer();
   }
 
   return (
     <>
-      <div className={classes.navbar}>
-        <div className={classes.brand}>
-          <Link href="/">
-            {/* Winography <span className={classes.sitebeta}>Beta</span> */}
-            Winography <span className={classes.sitebeta}>Beta</span>
-
-          </Link>
-        </div>
-        <ul className={classes.list}>
-          <li className={classes.listitem} onClick={toggleDrawer}>
-            Data Visualizations
-          </li>
-          <li className={classes.listitem}>
-            <Link href="/resources">Resources</Link>
-          </li>
-          <li className={classes.listitem}>
-            <Link href="/quiz/">Quiz</Link>
-          </li>
-          <li className={classes.listitem}>
-            <Link href="/about">About</Link>
-          </li>
-        </ul>
-      </div>
-      <CSSTransition
-        in={drawerOpen}
-        timeout={500}
-        className={classes.drawer}
-        unmountOnExit
+      <AppBar position="static" color="inherit">
+        <Toolbar className={classes.navContainer}>
+          <Typography variant="h6" component="div" className={classes.brand}>
+            <Link href="/">Winography <span className={classes.sitebeta}>Beta</span></Link>
+          </Typography>
+          <nav className={classes.listContainer}>
+            <ul className={classes.list}>
+              <li className={classes.listitem} onClick={toggleDrawer}>
+                Data Visualizations
+              </li>
+              <li className={classes.listitem}>
+                <Link href="/resources">Resources</Link>
+              </li>
+              <li className={classes.listitem}>
+                <Link href="/quiz/">Quiz</Link>
+              </li>
+              <li className={classes.listitem}>
+                <Link href="/about">About</Link>
+              </li>
+            </ul>
+          </nav>
+          <IconButton
+            edge="end"
+            color="inherit"
+            aria-label="menu"
+            className={classes.menuButton}
+            onClick={toggleDrawer}
+          >
+            <MenuIcon />
+          </IconButton>
+        </Toolbar>
+      </AppBar>
+      <Drawer
+        anchor="right"
+        open={drawerOpen}
+        onClose={toggleDrawer}
       >
-        <div className="drawer" onClick={toggleDrawer}>
-          <div className={classes.drawercontent}>
-            <Link className={classes.drawerlink} href="/countries">
-              Countries
-            </Link>
-            <Link className={classes.drawerlink} href="/grapes">
-              Grapes
-            </Link>
-            <Link className={classes.drawerlink} href="/historic">
-              Historic Data
-            </Link>
-          <p onClick={toggleDrawer} className={classes.drawerClose}>
-            Close
-          </p>
-          </div>
-        </div>
-      </CSSTransition>
+        <List className={classes.drawer}>
+          <p className={classes.listHeader}>Data Visualizations:</p>
+          <ListItem button onClick={toggleDrawer} component={Link} href="/countries">
+            <ListItemText primary="Countries" />
+          </ListItem>
+          <ListItem button onClick={toggleDrawer} component={Link} href="/grapes">
+            <ListItemText primary="Grapes" />
+          </ListItem>
+          <ListItem button onClick={toggleDrawer} component={Link} href="/historic">
+            <ListItemText primary="Historic Data" />
+          </ListItem>
+          {/* <p className={classes.listHeader}>More Learning:</p> */}
+          <div className={classes.horizontalLine}></div>
+          <ListItem button onClick={toggleDrawer} component={Link} href="/resources">
+            <ListItemText primary="Resources" />
+          </ListItem>
+          <ListItem button onClick={toggleDrawer} component={Link} href="/quiz">
+            <ListItemText primary="Quiz" />
+          </ListItem>
+          <ListItem button onClick={toggleDrawer} component={Link} href="/about">
+            <ListItemText primary="About" />
+          </ListItem>
+        </List>
+      </Drawer>
     </>
   );
 };
 
 export default Navbar;
+
