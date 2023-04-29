@@ -30,6 +30,7 @@ const Navbar = () => {
           <Typography variant="h6" component="div" className={classes.brand}>
             <Link href="/">Winography <span className={classes.sitebeta}>Beta</span></Link>
           </Typography>
+          <div>
           <nav className={classes.listContainer}>
             <ul className={classes.list}>
               <li className={classes.listitem} onClick={toggleDrawer}>
@@ -50,11 +51,13 @@ const Navbar = () => {
             edge="end"
             color="inherit"
             aria-label="menu"
+            display={{ xs: "block", sm: "none" }}
             className={classes.menuButton}
             onClick={toggleDrawer}
           >
             <MenuIcon />
           </IconButton>
+          </div>
         </Toolbar>
       </AppBar>
       <Drawer
