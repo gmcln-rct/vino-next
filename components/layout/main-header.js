@@ -27,9 +27,9 @@ const Navbar = () => {
     <>
       <AppBar position="static" color="inherit">
         <Toolbar className={classes.navContainer}>
-          <Typography variant="h6" component="div" className={classes.brand}>
+          <div className={classes.brand}>
             <Link href="/">Winography <span className={classes.sitebeta}>Beta</span></Link>
-          </Typography>
+          </div>
           <div>
           <nav className={classes.listContainer}>
             <ul className={classes.list}>
@@ -49,7 +49,7 @@ const Navbar = () => {
           </nav>
           <IconButton
             edge="end"
-            color="inherit"
+            color="#a10101"
             aria-label="menu"
             display={{ xs: "block", sm: "none" }}
             className={classes.menuButton}
@@ -67,6 +67,7 @@ const Navbar = () => {
       >
         <List className={classes.drawer}>
           <p className={classes.listHeader}>Data Visualizations:</p>
+          <div className={classes.listDataViz}>
           <ListItem button onClick={toggleDrawer} component={Link} href="/countries">
             <ListItemText primary="Countries" />
           </ListItem>
@@ -76,7 +77,7 @@ const Navbar = () => {
           <ListItem button onClick={toggleDrawer} component={Link} href="/historic">
             <ListItemText primary="Historic Data" />
           </ListItem>
-          {/* <p className={classes.listHeader}>More Learning:</p> */}
+          </div>
           <div className={classes.horizontalLine}></div>
           <ListItem button onClick={toggleDrawer} component={Link} href="/resources">
             <ListItemText primary="Resources" />
