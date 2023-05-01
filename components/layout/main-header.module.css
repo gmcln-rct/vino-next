@@ -73,11 +73,6 @@
   text-decoration: underline;
 }
 
-/* list-item {
-font-size: 29px;
-color: red;
-} */
-
 .dataVisualization {
   cursor: pointer;
 }
@@ -92,6 +87,10 @@ color: red;
   padding: 4vmin 0 0 0;
 
   flex-shrink: 0;
+}
+
+.listDataViz {
+  background-color: var(--pink-2);
 }
 
 .horizontalLine {
@@ -111,11 +110,7 @@ color: red;
   }
 
   .drawer {
-    padding:0;
-  }
-
-  .listDataViz {
-    background-color: var(--pink-2);
+    padding: 0;
   }
 
   .menuButton {
@@ -124,6 +119,5 @@ color: red;
 
   .listHeader {
     margin: 1vmin 0 0 1.5vmin;
-
   }
 }

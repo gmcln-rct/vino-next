@@ -1,7 +1,7 @@
 import { useState } from "react";
 import Link from "next/link";
-import Image from "next/image";
-import { CSSTransition } from "react-transition-group";
+// import Image from "next/image";
+// import { CSSTransition } from "react-transition-group";
 import classes from "./main-header.module.css";
 import { AppBar, Toolbar, IconButton, Typography, Drawer, List, ListItem, ListItemText } from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";

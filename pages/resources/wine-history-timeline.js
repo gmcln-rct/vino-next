@@ -17,6 +17,7 @@ const wineHistoryData = WINE_HISTORY_TIMELINE_DATA.sort(
 const WineHistoryTimeline = ({ events }) => {
   return (
     <section className={classes.timeline}>
+      <h1 className={classes.title}>Wine History Timeline</h1>
       <ul >
         {events.map((event) => (
             <li key={randomKey(event.year)}>

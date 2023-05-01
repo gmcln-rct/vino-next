@@ -1,8 +1,8 @@
 
 /* Variables */
 .timeline {
-  --title-background: #3d9e67;
-  --background-color: #faf8eb;
+  /* --title-background: #3d9e67; */
+  /* --background-color: #faf8eb; */
   --content-background-color: var(--pink-9);
   --content-background-color-2: var(--red-8);
   /* --content-background-gradient: #56BC83; */
@@ -11,23 +11,31 @@
   --content-width: 450px;
 }
 
+
+
 /* Timeline styles */
 .timeline {
   color: var(--text-color);
 
 }
 
-.timeline h1,
+.title {
+
+  margin: 4vmin 0 0 0;
+
+  font-family: 'Inter', sans-serif;
+  font-size: clamp(2rem, 3vw, 4rem);
+  font-weight: 600;
+  text-align: center;
+
+  color: var(--pink-9);
+}
+
 .timeline ul li .content h2 {
   text-shadow: 1px 1px 1px rgba(56, 56, 56, 0.5);
 }
 
-.timeline h1 {
-  background: var(--title-background);
-  padding: 70px 0;
-  font-size: 2.5em;
-  text-align: center;
-}
+
 
 .timeline ul {
   background: var(--background-color);
@@ -49,7 +57,7 @@
 
 .timeline ul li:before {
   content: "";
-  background: var(--background-color);
+  background: var(--pink-7);
   position: absolute;
   left: 50%;
   top: 0;
@@ -125,6 +133,10 @@
 }
 
 @media screen and (max-width: 700px) {
+
+  .title  {
+    margin: 2vmin 0 0 0;
+  }
   .timeline ul li {
     margin-left: 20px;
   }
