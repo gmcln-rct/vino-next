@@ -55,7 +55,7 @@ main a {
 
   width: 100%;
   margin: 0;
-  padding: 1vmin 0;
+  padding: 1vmin 0 2vmin 0;
   font-family: var(--font-lato);
 
   background-color: var(--grey-8);
@@ -70,7 +70,7 @@ main a {
   /* color: #faf9b8; */
   /* color: var(--red-7); */
   font-family: "Inter", sans-serif;
-  font-size: clamp(24px, 4vw, 28px);
+  font-size: clamp(24px, 4vw, 32px);
   font-weight: 600;
   font-display: swap;
 
@@ -85,6 +85,11 @@ main a {
 
 .alt .header {
   color: var(--cyan-1);
+}
+
+.alt2 {
+  /* background-color: var(--grey-5); */
+  background-color: var(--pink-9);
 }
 
 .headline {
