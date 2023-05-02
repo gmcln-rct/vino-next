@@ -103,7 +103,7 @@ const historicData = convertToStackedFormat(HISTORIC_CONSUMPTION_DATA, COUNTRIES
         </Button>
 
         <Button link="/historic/" isSecondary="true">
-          Back to Historic Data Index
+          Historic Data Index
         </Button>
       </div>
     </>

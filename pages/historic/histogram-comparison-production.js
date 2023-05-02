@@ -97,7 +97,7 @@ function HistogramComparisonPage() {
         </Button>
 
         <Button link="/historic/" isSecondary="true">
-          Back to Historic Data Index
+          Historic Data Index
         </Button>
       </div>
     </>

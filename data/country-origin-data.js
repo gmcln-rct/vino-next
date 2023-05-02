@@ -38,7 +38,7 @@ export const COUNTRY_ORIGIN_DATA = [
     { countryId: "georgia",  originCountry: "Georgia",  grapeType: "red", grapeId: "aleksandrouli",  grape: "Aleksandrouli" },
     { countryId: "hungary",  originCountry: "Hungary",  grapeType: "white", grapeId: "aletta",  grape: "Aletta" },
     { countryId: "portugal",  originCountry: "Portugal",  grapeType: "red", grapeId: "alfrocheiro",  grape: "Alfrocheiro" },
-    { countryId: "france",  originCountry: "France",  grapeType: "red", grapeId: "alicante henri bouschet",  grape: "Alicante Henri Bouschet" },
+    { countryId: "france",  originCountry: "France",  grapeType: "red", grapeId: "Alicante Bouschet",  grape: "Alicante Bouschet" },
     { countryId: "france",  originCountry: "France",  grapeType: "white", grapeId: "aligoté",  grape: "Aligoté" },
     { countryId: "italy",  originCountry: "Italy",  grapeType: "white", grapeId: "alionza",  grape: "Alionza" },
     { countryId: "portugal",  originCountry: "Portugal",  grapeType: "white", grapeId: "almafra",  grape: "Almafra" },

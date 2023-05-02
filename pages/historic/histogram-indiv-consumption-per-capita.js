@@ -58,7 +58,7 @@ function HistogramIndividualConsumptionPerCapitaPage() {
       <HistoricChartNotes />
       <div className="buttonFooter">
         <Button link="/historic/histogram-comp-consumption-per-capita" isSecondary="false">Comparative Per Capita Histogram Chart</Button>
-        <Button link="/historic/" isSecondary="true">Back to Historic Data Index</Button>
+        <Button link="/historic/" isSecondary="true">Historic Data Index</Button>
       </div>
     </>
   );

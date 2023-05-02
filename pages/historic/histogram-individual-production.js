@@ -81,7 +81,7 @@ function HistogramIndividualPage() {
       <HistoricChartNotes />
       <div className="buttonFooter">
         <Button link="/historic/histogram-comparison-production" isSecondary="false">Histogram Comparison Chart</Button>
-        <Button link="/historic/" isSecondary="true">Back to Historic Data Index</Button>
+        <Button link="/historic/" isSecondary="true">Historic Data Index</Button>
       </div>
     </>
   );

@@ -87,7 +87,7 @@ function GrapeTopDetailPage() {
           {grape.itemName} Bubble Chart
         </Button>
         <Button link={grapeLink} isSecondary="true">
-          Back to {grape.itemName} Page
+          {grape.itemName} Page
         </Button>
       </div>
     </>

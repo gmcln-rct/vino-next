@@ -134,7 +134,7 @@ export const COUNTRIES_WINE_DATA = [
       { grape: "Chenin Blanc", value: 39 },
     ],
     redGrapeDataNational: [
-      { grape: "Alicante Henri Bouschet", value: 6908 },
+      { grape: "Alicante Bouschet", value: 6908 },
       { grape: "Cabernet Sauvignon", value: 42409 },
       { grape: "Carmenère", value: 10503 },
       { grape: "Malbec", value: 2293 },
@@ -346,7 +346,7 @@ export const COUNTRIES_WINE_DATA = [
       { grape: "Chenin Blanc", value: 0 },
     ],
     redGrapeDataNational: [
-      { grape: "Alicante Henri Bouschet", value: 4547 },
+      { grape: "Alicante Bouschet", value: 4547 },
       { grape: "Alvarelhão", value: 2860 },
       { grape: "Baga", value: 6750 },
       { grape: "Caladoc", value: 2180 },
@@ -452,7 +452,7 @@ export const COUNTRIES_WINE_DATA = [
       { grape: "Chenin Blanc", value: 106 },
     ],
     redGrapeDataNational: [
-      { grape: "Alicante Henri Bouschet", value: 19294 },
+      { grape: "Alicante Bouschet", value: 19294 },
       { grape: "Bobal", value: 59189 },
       { grape: "Grenache", value: 54606 },
       { grape: "Mencía", value: 8489 },

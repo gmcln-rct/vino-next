@@ -92,7 +92,7 @@ const historicData = HISTORIC_CONSUMPTION_PER_CAPITA;
         </Button>
 
         <Button link="/historic/" isSecondary="true">
-          Back to Historic Data Index
+          Historic Data Index
         </Button>
       </div>
     </>

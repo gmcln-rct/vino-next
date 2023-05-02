@@ -92,7 +92,7 @@ function GrapeTopCountriesBubblePage() {
           {grape.itemName} Bar Chart
         </Button>
         <Button link="/grapes/" isSecondary="true">
-          Back to Grapes Index
+          Grapes Index
         </Button>
       </div>
     </>
