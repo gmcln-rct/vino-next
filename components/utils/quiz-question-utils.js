@@ -121,7 +121,10 @@ export function createWineHistoryQuestion(data, fillWord) {
   while (randomCountryIndices.length < 2) {
     const randomIndex = getRandomInt(0, data.length - 1);
     if (!randomCountryIndices.includes(randomIndex)) {
-      randomCountryIndices.push(randomIndex);
+      const countryData = data[randomIndex].historicData.find(d => d.year === randomYear);
+      if (countryData && countryData.value > 0) {
+        randomCountryIndices.push(randomIndex);
+      }
     }
   }
 
