@@ -60,6 +60,3 @@ export function convertToStackedFormat(data, countries) {
   return stackedData;
 }
 
-// // Usage example
-// const stackedData = convertToStackedFormat(HISTORIC_PRODUCTION_DATA);
-// console.log(stackedData);

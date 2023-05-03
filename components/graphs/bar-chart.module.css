@@ -28,8 +28,8 @@
   text-align: center;
 
   /* color: var(--grey-9); */
-  color: var(--pink-9);
 
+  color: var(--red-9);
 }
 
 .subheader {
@@ -74,7 +74,7 @@
   font-size: var(--font-size-4);
   font-weight: 600;
 
-  color: var(--red-9);
+  color: var(--pink-9);
   /* color: var(--cyan-9) */
 }
 

@@ -30,6 +30,8 @@ function CountryGeneralBarChartPage() {
 
   const COUNTRIES = filterCountriesData(countryRedWineData);
 
+  console.log("itemName", whiteWineData.itemName);
+
   const handleCountryChange = (event) => {
     setSelectedCountry(event.target.value);
   };
@@ -40,7 +42,7 @@ function CountryGeneralBarChartPage() {
 
   const dataType = "country";
 
-  const headerExplanationText = "National Production: "
+  // const headerExplanationText = selectedCountry.itemName + " Production: ";
 
   if (!countryRedWineData || !countryWhiteWineData) {
     return (
@@ -53,8 +55,8 @@ function CountryGeneralBarChartPage() {
   let headerText = "test header text";
    headerText = generateHeader({
     dataType: dataType,
-    itemName: selectedCountry.itemName,
-    explanationText: headerExplanationText,
+    itemName: redWineData.itemName,
+    explanationText: whiteWineData.itemName + ": ",
     selectedGrapeType,
   });
 

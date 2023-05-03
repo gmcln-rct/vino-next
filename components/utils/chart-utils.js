@@ -8,8 +8,8 @@ export function generateHeader(props) {
         headerText = itemName + ": " + explanationText;
       } else {
         headerText =
-        explanationText + " " +
-         grapeType + " Grape Varietals"
+        explanationText + " Top " +
+         grapeType + " Grape Varietal Production"
       
       }
     // console.log('headerText', headerText)
@@ -31,8 +31,7 @@ export function generateSubheader(props) {
         subHeaderText =
         "Production of " +
         // selectedGrapeType +
-        " grape varietals, " +
-          " by country, measured in land area, " +
+        " grape varietals by country, measured in land area, " +
           // explanationText +
           " " +
           dataYear;
