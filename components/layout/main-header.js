@@ -79,13 +79,13 @@ const Navbar = () => {
           </ListItem>
           </div>
           <div className={classes.horizontalLine}></div>
-          <ListItem button onClick={toggleDrawer} component={Link} href="/resources">
+          <ListItem button onClick={toggleDrawer} className={classes.mobileOnly} component={Link} href="/resources">
             <ListItemText primary="Resources" />
           </ListItem>
-          <ListItem button onClick={toggleDrawer} component={Link} href="/quiz">
+          <ListItem button onClick={toggleDrawer} className={classes.mobileOnly} component={Link} href="/quiz">
             <ListItemText primary="Quiz" />
           </ListItem>
-          <ListItem button onClick={toggleDrawer} component={Link} href="/about">
+          <ListItem button onClick={toggleDrawer} className={classes.mobileOnly} component={Link} href="/about">
             <ListItemText primary="About" />
           </ListItem>
         </List>

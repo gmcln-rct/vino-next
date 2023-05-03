@@ -120,4 +120,8 @@
   .listHeader {
     margin: 1vmin 0 0 1.5vmin;
   }
+
+  .mobileOnly {
+    display: none;
+  }
 }
