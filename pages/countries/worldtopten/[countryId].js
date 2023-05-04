@@ -19,8 +19,8 @@ function CountryWorldTopTenDetailPage() {
 
   const dataType = "country";
 
-  const headerSuffix = "Top Global ";
-  const explanationText = "Production of top global ";
+  const headerSuffix = "Global Top ";
+  const explanationText = "Production of global ";
 
   if (!country || !countryWineData) {
     return (
@@ -39,7 +39,7 @@ function CountryWorldTopTenDetailPage() {
     <>
       <Head>
         <title>
-          {country.itemName} Production of Top Global Grape Varieties -
+          {country.itemName} Production of Top Grape Varieties -
           Winography - Wine Data Visualization
         </title>
         <meta
@@ -77,7 +77,7 @@ function CountryWorldTopTenDetailPage() {
           </p>
         </div>
         <div className="buttonFooter">
-          <Button link={nationalTopLink} isSecondary="true">
+          <Button link={nationalTopLink} isSecondary="false">
             Top Grapes of {country.itemName}
           </Button>
           <Button link={countryLink} isSecondary="true">

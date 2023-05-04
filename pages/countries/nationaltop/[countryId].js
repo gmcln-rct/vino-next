@@ -79,7 +79,7 @@ function CountryTopTenDetailPage() {
         </p>
       </div>
       <div className="buttonFooter">
-        <Button link={globalTopTenLink} isSecondary="true">Global Top Grapes in {country.itemName} </Button>
+        <Button link={globalTopTenLink} isSecondary="false">Global Top Grapes in {country.itemName} </Button>
         <Button link={countryLink} isSecondary="true">{country.itemName} Country Page</Button>
         <Button link="/countries/" isSecondary="true">Country Index</Button>
       </div>
