@@ -44,6 +44,7 @@ function CountryTopTenDetailPage() {
     );
   }
   const countryLink = `/countries/${country.id}`;
+  const globalTopTenLink = `/countries/worldtopten/${country.id}`;
   return (
     <>
       <Head>
@@ -78,8 +79,9 @@ function CountryTopTenDetailPage() {
         </p>
       </div>
       <div className="buttonFooter">
-        <Button link={countryLink} isSecondary="true">Back to {country.itemName} Page</Button>
-        <Button link="/countries/" isSecondary="true">Back to Country Index</Button>
+        <Button link={globalTopTenLink} isSecondary="true">Global Top Grapes in {country.itemName} </Button>
+        <Button link={countryLink} isSecondary="true">{country.itemName} Country Page</Button>
+        <Button link="/countries/" isSecondary="true">Country Index</Button>
       </div>
     </>
   );

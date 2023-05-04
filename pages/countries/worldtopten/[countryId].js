@@ -33,13 +33,14 @@ function CountryWorldTopTenDetailPage() {
   const flagImageAlt = `Flag of ${country.itemName}`;
 
   const countryLink = `/countries/${country.id}`;
+  const nationalTopLink = `/countries/nationaltop/${country.id}`;
 
   return (
     <>
       <Head>
         <title>
-         {country.itemName} Production of Top Global Grape Varieties - Winography - Wine Data
-          Visualization
+          {country.itemName} Production of Top Global Grape Varieties -
+          Winography - Wine Data Visualization
         </title>
         <meta
           name="description"
@@ -47,38 +48,46 @@ function CountryWorldTopTenDetailPage() {
         />
       </Head>
       <section>
-      {/* <h2 className="chartHeader">
+        {/* <h2 className="chartHeader">
           {headerText}
         </h2> */}
         {/* <p className="chartSubheader">
           {subHeaderText}
         </p> */}
 
-      <BarChart
-        itemName={country.itemName}
-        units={countryWineData.units}
-        dataYear={countryWineData.dataYear}
-        dataType={dataType}
-        redGrapeData={countryWineData.redGrapeDataWorld}
-        whiteGrapeData={countryWineData.whiteGrapeDataWorld}
-        headerSuffix={headerSuffix}
-        explanationText={explanationText}
-      />
-      <div>
-        <p className="dataSource">
-          Data Source:{" "}
-          <Link
-            href="https://economics.adelaide.edu.au/wine-economics/databases/"
-            className="dataSource"
-          >
-            Wine Economics Research Centre, University of Adelaide
-          </Link>
-        </p>
-      </div>
-      <div className="buttonFooter">
-        <Button link={countryLink} isSecondary="true">Back to {country.itemName} Page</Button>
-        <Button link="/countries/" isSecondary="true">Back to Country Index</Button>
-      </div>
+        <BarChart
+          itemName={country.itemName}
+          units={countryWineData.units}
+          dataYear={countryWineData.dataYear}
+          dataType={dataType}
+          redGrapeData={countryWineData.redGrapeDataWorld}
+          whiteGrapeData={countryWineData.whiteGrapeDataWorld}
+          headerSuffix={headerSuffix}
+          explanationText={explanationText}
+        />
+        <div>
+          <p className="dataSource">
+            Data Source:{" "}
+            <Link
+              href="https://economics.adelaide.edu.au/wine-economics/databases/"
+              className="dataSource"
+            >
+              Wine Economics Research Centre, University of Adelaide
+            </Link>
+          </p>
+        </div>
+        <div className="buttonFooter">
+          <Button link={nationalTopLink} isSecondary="true">
+            Top Grapes of {country.itemName}
+          </Button>
+
+          <Button link={countryLink} isSecondary="true">
+            {country.itemName} Country Page
+          </Button>
+          <Button link="/countries/" isSecondary="true">
+            Back to Country Index
+          </Button>
+        </div>
       </section>
     </>
   );
