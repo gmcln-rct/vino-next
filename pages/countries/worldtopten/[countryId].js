@@ -80,12 +80,11 @@ function CountryWorldTopTenDetailPage() {
           <Button link={nationalTopLink} isSecondary="true">
             Top Grapes of {country.itemName}
           </Button>
-
           <Button link={countryLink} isSecondary="true">
             {country.itemName} Country Page
           </Button>
           <Button link="/countries/" isSecondary="true">
-            Back to Country Index
+            Country Index
           </Button>
         </div>
       </section>
