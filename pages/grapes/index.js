@@ -11,13 +11,13 @@ export default function GrapeIndex({ topGrapes }) {
         <title>Grapes Index - Winography - Wine Data Visualization</title>
         <meta
           name="description"
-          content="Data visualization of grape wine production for all wine-producing countries"
+          content="Data visualizations and information about grape wine production for all wine-producing countries"
         />
       </Head>
       <Masthead
         backgroundImage="/images/site-images/index-masthead-grape.jpg"
         header="Grapes"
-        headerText="Learn about individual grape varietals through our customizable data charts or sections for individual grapes."
+        headerText="Learn about the world's top wine grape varieties through data charts and grape detail pages."
       />
       {/* <h2>Featured Grapes</h2> */}
       <DataList items={topGrapes} headerText="Featured Grapes" />
