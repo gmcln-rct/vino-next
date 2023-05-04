@@ -8,8 +8,13 @@ import { getDataItemById } from "@/data/utils";
 import { COUNTRIES_DATA} from "@/data/country-data";
 import { COUNTRIES_WINE_DATA } from "@/data/country-wine-data-top-grapes-2016";
 
+import { COUNTRIES_RED_WINE_DATA } from "@/data/country-wine-data-red-all-2016";
+import { COUNTRIES_WHITE_WINE_DATA } from "@/data/country-wine-data-white-all-2016";
+
 import BarChart from "@/components/graphs/bar-chart";
 import Button from "@/components/ui/button";
+
+// TOP NATIONAL GRAPES
 
 function CountryTopTenDetailPage() {
   const router = useRouter();
@@ -56,8 +61,8 @@ function CountryTopTenDetailPage() {
         units={countryWineData.units}
         dataYear={countryWineData.dataYear}
         dataType={dataType}
-        redGrapeData={countryWineData.redGrapeDataWorld}
-        whiteGrapeData={countryWineData.whiteGrapeDataWorld}
+        redGrapeData={countryWineData.redGrapeDataNational}
+        whiteGrapeData={countryWineData.whiteGrapeDataNational}
         headerSuffix={headerSuffix}
         explanationText={explanationText}
       />
