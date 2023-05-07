@@ -15,6 +15,7 @@ function AboutPage() {
         Wine Economics Research Centre
       </Link>
       </p>
+      <p>Part of that data set uses grape varietal data was from <Link href="https://www.vivc.de/">Vitis International Variety Catalogue (VIVC)</Link>.</p>
       <p></p>
     </section>
   );
