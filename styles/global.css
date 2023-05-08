@@ -30,6 +30,8 @@ main {
   /* height: 100%; */
   margin: 0;
 
+  background-color: var(--red-8);
+
   /* font-family: 'Lato', sans-serif; */
   font-family: var(--font-open-sans);
 }
@@ -38,13 +40,6 @@ main a {
   font-size: 1.5rem;
   margin: 1rem 0;
 }
-
-
-/* .info .header {
-  color: white;
-  margin: 0;
-} */
-
 
 
 .info {
@@ -161,7 +156,8 @@ main a {
   align-items: center;
 
   margin: 1rem 0 0 0;
-  color: var(--pink-9);
+  /* color: var(--pink-9); */
+  color: var(--grey-1);
 
   font-size: clamp(24px, 4vw, 32px);
   font-weight: bold;
@@ -178,7 +174,7 @@ main a {
   font-display: swap;
   text-align: center;
 
-  color: var(--grey-8);
+  color: var(--grey-3);
 }
 
 .dataSource.light {
@@ -259,7 +255,7 @@ main a {
   font-family: var(--font-lato);
   font-size: clamp(18px, 1.5vw, 24px);
   font-weight: 600;
-  color: var(--grey-9);
+  color: var(--grey-3);
 }
 
 /* MEDIA QUERIES */

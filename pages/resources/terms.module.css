@@ -23,7 +23,8 @@ font-family: var(--font-lato);
   font-size: clamp(24px, 4vw, 32px);
   font-weight: 600;
 
-  color: var(--red-8)
+  /* color: var(--red-8) */
+  color: var(--grey-1)
 }
 
 .termsList {

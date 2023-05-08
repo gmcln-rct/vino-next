@@ -27,9 +27,9 @@
   font-display: swap;
   text-align: center;
 
-  /* color: var(--grey-9); */
+  color: var(--grey-1);
 
-  color: var(--red-9);
+  /* color: var(--red-9); */
 }
 
 .subheader {
@@ -40,7 +40,8 @@
   font-style: italic;
   font-display: swap;
 
-  color: var(--grey-8);
+  /* color: var(--grey-8); */
+  color: var(--grey-3);
 }
 
 .units {
@@ -53,7 +54,7 @@
   font-display: swap;
   text-align: center;
 
-  color: var(--grey-8);
+  color: var(--grey-3);
 }
 .selectrow {
   display: flex;

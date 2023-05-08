@@ -85,7 +85,7 @@ function HistoricDataIndex() {
                 width={100}
                 height={100}
               />
-              <p className="link">Individual Countries Histogram</p>
+              <p className="link">Individual Country Histogram</p>
             </Link>
             <Link
               href="/historic/histogram-comparison-consumption"

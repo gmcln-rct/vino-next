@@ -3,12 +3,16 @@
 .aboutPage {
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-start;
     padding: 3vw 5vw;
+
+    height: 85vh;
     /* color: white; */
-    color: var(--grey-10);
     font-size: clamp(18px, 2vw, 24px);
     text-align: left;
+
+    color: var(--grey-10);
+    background-color: var(--grey-2);
   }
   
   .aboutPage h1 {

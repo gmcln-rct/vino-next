@@ -25,7 +25,7 @@ export default function ResourcesIndex({ topGrapes }) {
         priority={true}
       /> */}
       <Masthead
-        backgroundImage="/images/site-images/resources-bg.jpeg"
+        backgroundImage="/images/site-images/resources-bg.jpg"
         header="Resources"
         headerText="Learn about wine through tools like a searchable wine terms list and a historic timeline of important milestones in the history of wine."
       />
@@ -50,7 +50,7 @@ export default function ResourcesIndex({ topGrapes }) {
               width={100}
               height={100}
             />
-            <p className="link">Terms</p>
+            <p className="link">Wine Terminology</p>
           </Link>
         </div>
         <div className="actions">

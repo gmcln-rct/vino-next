@@ -2,13 +2,13 @@ import Head from "next/head";
 import Script from "next/script";
 
 import Layout from "../components/layout/layout";
-// import HomePage from './index';
-import MainHeader from "../components/layout/main-header";
+import {MainContextProvider} from "@/store/main-context";
 import "../styles/global.css";
 
 function MyApp({ Component, pageProps }) {
   return (
     <>
+    <MainContextProvider>
       <Layout>
         <Head>
           {/* <title>Winography - Wine Data Visualizations</title> */}
@@ -51,17 +51,9 @@ function MyApp({ Component, pageProps }) {
         </Script>
         <Component {...pageProps} />
       </Layout>
+      </MainContextProvider>
     </>
-    // <NotificationContextProvider>
-    // <Layout >
-    //   <Head>
-    //     <title>Winography - Next 202303</title>
-    //     <meta name='description' content='NextJS Events' />
-    //     <meta name='viewport' content='initial-scale=1.0, width=device-width' />
-    //   </Head>
-    //   <Component {...pageProps} />
-    // </Layout>
-    // </NotificationContextProvider>
+
   );
 }
 

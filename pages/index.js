@@ -1,29 +1,43 @@
-import { useState } from "react";
+import { useState, useContext, useEffect } from "react";
 import Link from "next/link";
 import Head from "next/head";
 import Image from "next/image";
 
 import Masthead from "../components/layout/masthead";
 
-import  {COUNTRIES_DATA} from "@/data/country-data";
-import {GRAPES_DATA } from "@/data/grape-data";
+import { COUNTRIES_DATA } from "@/data/country-data";
+import { GRAPES_DATA } from "@/data/grape-data";
+
+import MainContext from "@/store/main-context";
 
 // MAIN HOMEPAGE
 
 function HomePage() {
+  const mainCtx = useContext(MainContext);
+  const isNewVisit = mainCtx.isNewVisit;
   const infoClass = "info alt2";
   const [countryData, setCountryData] = useState(COUNTRIES_DATA);
   const [grapeData, setGrapeData] = useState(GRAPES_DATA);
 
-  const randomGrapeData = Math.floor(Math.random() * grapeData.length);
-  
-  const grapeLink = "/grapes/worldtop/bubble-chart/" + grapeData[randomGrapeData].id;
-  const grapeName = grapeData[randomGrapeData].itemName;
-  
-  const randomCountryData = Math.floor(Math.random() * countryData.length);
-  const countryLink = "/countries/nationaltop/" + countryData[randomCountryData].id;
-  const countryName = countryData[randomCountryData].itemName;
-  
+  let randomGrapeData = Math.floor(Math.random() * grapeData.length);
+  let grapeLink;
+  let grapeName;
+  let randomCountryData;
+  let countryLink;
+  let countryName;
+
+ 
+  if (!grapeLink || !grapeName || isNewVisit) {
+    grapeLink =
+      "/grapes/worldtop/bubble-chart/" + grapeData[randomGrapeData].id;
+    grapeName = grapeData[randomGrapeData].itemName;
+
+    randomCountryData = Math.floor(Math.random() * countryData.length);
+    countryLink = "/countries/nationaltop/" + countryData[randomCountryData].id;
+    countryName = countryData[randomCountryData].itemName;
+  }
+
+
   return (
     <>
       <Head>
@@ -68,10 +82,7 @@ function HomePage() {
             />
             <p className="link">Historic Consumption By Country</p>
           </Link>
-          <Link
-            href={grapeLink}
-            className="action__container center tall"
-          >
+          <Link href={grapeLink} className="action__container center tall">
             <Image
               src="/images/icons/icon-bubblechart.png"
               className="transparent margin-bottom"
@@ -94,10 +105,7 @@ function HomePage() {
             />
             <p className="link">Per Capita Comparative Histogram</p>
           </Link>
-          <Link
-            href={countryLink}
-            className="action__container center tall"
-          >
+          <Link href={countryLink} className="action__container center tall">
             <Image
               src="/images/icons/icon-barchart.png"
               className="transparent margin-bottom"
