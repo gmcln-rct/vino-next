@@ -15,7 +15,7 @@ export default function GrapeIndex({ topGrapes }) {
         />
       </Head>
       <Masthead
-        backgroundImage="/images/site-images/index-masthead-grape.jpg"
+        backgroundImage="/images/site-images/index-masthead-grapes.jpg"
         header="Grapes"
         headerText="Learn about the world's top wine grape varieties through data charts and grape detail pages."
       />
