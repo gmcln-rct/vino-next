@@ -12,6 +12,7 @@ const BarChart = (props) => {
     dataType,
     grapeType,
     units,
+    topType,
     redGrapeData,
     whiteGrapeData,
     headerSuffix,
@@ -167,6 +168,7 @@ const BarChart = (props) => {
   let headerText;
   let subHeaderText;
   let grapeTypeText = selectedGrapeType.toLowerCase();
+  let countryName = itemName === "United States" ? "the " + itemName : itemName;
 
   if (dataType === "grape") {
     headerText = itemName + ": " + explanationText;
@@ -175,15 +177,24 @@ const BarChart = (props) => {
       itemName +
       " grape producing countries,  " +
       dataYear;
+  } else if (topType==="national") {
+    headerText =
+      headerSuffix + selectedGrapeType + " Grapes of " + countryName;
+    subHeaderText =
+      explanationText + countryName +
+      "'s top " +
+      grapeTypeText +
+      " grape varietals, by land area, " +
+      dataYear;
   } else {
     headerText =
-      itemName + ": " + headerSuffix + selectedGrapeType + " Grape Varietals";
+      headerSuffix + selectedGrapeType + " Grapes in " + countryName;
     subHeaderText =
       explanationText +
       " " +
       grapeTypeText +
-      " grape varietals, " +
-      "by land area, " +
+      " grape varietals in " + countryName +
+      ", by land area, " +
       dataYear;
   }
 

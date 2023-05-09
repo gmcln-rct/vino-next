@@ -21,20 +21,16 @@ function CountryTopTenDetailPage() {
   console.log("router", router.query.countryId);
 
   const id = router.query.countryId;
-
   const country = getDataItemById(id, COUNTRIES_DATA);
-
   const countryWineData = getDataItemById(id, COUNTRIES_WINE_DATA);
-
-  // const explanationText = "National Top ";
 
   const dataType = "country";
 
   // const headerText = country.itemName + "'s Most Produced Grape Varieties";
 
 
-  const headerSuffix = "National Top "
-  const explanationText = "Production of top national ";
+  const headerSuffix = "Top "
+  const explanationText = "Production of ";
 
   if (!country || !countryWineData) {
     return (
@@ -62,6 +58,7 @@ function CountryTopTenDetailPage() {
         units={countryWineData.units}
         dataYear={countryWineData.dataYear}
         dataType={dataType}
+        topType="national"
         redGrapeData={countryWineData.redGrapeDataNational}
         whiteGrapeData={countryWineData.whiteGrapeDataNational}
         headerSuffix={headerSuffix}
