@@ -53,7 +53,7 @@ const historicData = HISTORIC_CONSUMPTION_PER_CAPITA;
         />
       </Head>
       <h1 className="indexheader">
-        Histogram: Historic Yearly Wine Consumption, by Volume
+       Historic Per Capita Wine Consumption
       </h1>
       <div className={classes.selectrow}>
         <select

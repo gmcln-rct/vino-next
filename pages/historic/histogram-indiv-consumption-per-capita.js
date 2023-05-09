@@ -37,7 +37,7 @@ function HistogramIndividualConsumptionPerCapitaPage() {
           content="Histogram data visualization by country."
         />
       </Head>
-      <h1 className="indexheader">Histogram: Historic Per Capita Wine Consumption, by Volume</h1>
+      <h1 className="indexheader">Historic Per Capita Wine Consumption, by Volume</h1>
       <div className={classes.selectrow}>
         <select
           value={country1}

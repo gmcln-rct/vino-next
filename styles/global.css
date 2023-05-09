@@ -157,7 +157,8 @@ main a {
 
   margin: 1rem 0 0 0;
   /* color: var(--pink-9); */
-  color: var(--grey-1);
+  /* color: var(--grey-1); */
+  color: #fff;
 
   font-size: clamp(24px, 4vw, 32px);
   font-weight: bold;
@@ -178,7 +179,7 @@ main a {
 }
 
 .dataSource.light {
-  color: var(--grey-3);
+  color: var(--grey-1);
 }
 .dataSource:hover,
 .dataSource:active {
@@ -255,7 +256,7 @@ main a {
   font-family: var(--font-lato);
   font-size: clamp(18px, 1.5vw, 24px);
   font-weight: 600;
-  color: var(--grey-3);
+  color: var(--grey-2);
 }
 
 /* MEDIA QUERIES */

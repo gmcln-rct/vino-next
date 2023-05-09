@@ -52,7 +52,7 @@ function HistogramIndividualPage() {
     <>
       <Head>
         <title>
-          Historic Wine Production - Histogram - Winography - Wine Data
+        Historic Wine Production In Individual Countries - Histogram - Winography - Wine Data
           Visualization
         </title>
         <meta
@@ -60,7 +60,7 @@ function HistogramIndividualPage() {
           content="Histogram data visualization by country."
         />
       </Head>
-      <h1 className="indexheader">Histogram: Historic Yearly Wine Production, by Volume</h1>
+      <h1 className="indexheader">Historic Wine Production in Individual Countries</h1>
       <div className={classes.selectrow}>
         <select
           value={country1}

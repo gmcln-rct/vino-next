@@ -17,14 +17,14 @@ function HistoricDataHistogram() {
     <>
       <Head>
         <title>
-          Historic Wine Production - Stacked Bar - Winography - Wine Data Visualization
+        Historic Wine Production in Top Producing Countries - Stacked Area - Winography - Wine Data Visualization
         </title>
         <meta
           name="description"
           content="Data visualization for all wine-producing countries"
         />
       </Head>
-      <h1 className="indexheader">Stacked Area: Historic Yearly Wine Production, by Volume</h1>
+      <h1 className="indexheader">Historic Wine Production in Top Producing Countries</h1>
 
       <StackedAreaChart  />
       <div> 

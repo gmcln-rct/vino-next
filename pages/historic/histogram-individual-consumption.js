@@ -34,7 +34,7 @@ function HistogramIndividualConsumptionPage() {
     <>
       <Head>
         <title>
-          Historic Wine Consumption - Histogram - Winography - Wine Data
+        Historic Wine Consumption In Individual Countries - Histogram - Winography - Wine Data
           Visualization
         </title>
         <meta
@@ -43,7 +43,7 @@ function HistogramIndividualConsumptionPage() {
         />
       </Head>
       <h1 className="indexheader">
-        Histogram: Historic Yearly Wine Consumption, by Volume
+        Historic Wine Consumption in Individual Countries
       </h1>
       <div className={classes.selectrow}>
         <select

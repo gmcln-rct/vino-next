@@ -64,7 +64,7 @@ const historicData = convertToStackedFormat(HISTORIC_CONSUMPTION_DATA, COUNTRIES
         />
       </Head>
       <h1 className="indexheader">
-        Histogram: Historic Yearly Wine Consumption, by Volume
+       Historic Wine Consumption Comparison
       </h1>
       <div className={classes.selectrow}>
         <select

@@ -49,7 +49,7 @@ function HistogramComparisonPage() {
     <>
       <Head>
         <title>
-          Historic Wine Production - Histogram - Winography - Wine Data
+          Historic Wine Production Comparison - Histogram - Winography - Wine Data
           Visualization
         </title>
         <meta
@@ -58,7 +58,7 @@ function HistogramComparisonPage() {
         />
       </Head>
       <h1 className="indexheader">
-        Histogram: Historic Yearly Wine Production, by Volume
+         Historic Wine Production Comparison
       </h1>
       <div className={classes.selectrow}>
         <select
