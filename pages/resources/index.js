@@ -27,17 +27,9 @@ export default function ResourcesIndex({ topGrapes }) {
       <Masthead
         backgroundImage="/images/site-images/resources-bg.jpg"
         header="Resources"
-        headerText="Learn about wine through tools like a searchable wine terms list and a historic timeline of important milestones in the history of wine."
+        headerText="Learn about wine a wine terminologies list and a historic timeline of important milestones in the history of wine."
       />
-      {/* <section className={classes.resourcesPage}>
 
-        <div className="actions">
-          <Button link="/resources/terms">Wine Terms</Button>
-          <Button link="/resources/wine-history-timeline">
-            Wine History Timeline
-          </Button>
-        </div>
-      </section> */}
       <section className="info">
         <h2 className="header"> Wine Resources</h2>
         <div className="actionsContainer">
