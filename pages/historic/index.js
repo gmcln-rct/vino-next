@@ -24,8 +24,8 @@ function HistoricDataIndex() {
       <>
         <Masthead
           backgroundImage="/images/site-images/index-masthead-historic.jpg"
-          header="Historic Data"
-          headerText="Times change! Learn about how wine production and consumption has evolved from the 19th Century to modern day."
+          header="Wine Through the Ages"
+          headerText="Embark on a historic adventure that reveals the dynamic shifts in wine production and consumption from the 19th century to today's trends."
         />
         <section className="info">
           <h2 className="header"> Historic Production Charts</h2>
