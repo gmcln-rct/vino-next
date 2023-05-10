@@ -50,7 +50,7 @@ function HomePage() {
       <Masthead
         backgroundImage="/images/site-images/homepage-masthead.jpg"
         header="Unleash the Wine Whisperer Within"
-        headerText="Embark on a visual voyage to uncover wine's best-kept secrets through the beauty of data visualization. Dive into fascinating production & consumption history, eclectic grape varieties, and iconic wine regions."
+        headerText="Uncover wine's best-kept secrets through the beauty of data visualization. Dive into fascinating production & consumption history, eclectic grape varieties, and iconic wine regions."
       />
 
       <section className={infoClass}>
