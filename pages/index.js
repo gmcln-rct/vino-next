@@ -49,7 +49,7 @@ function HomePage() {
       </Head>
       <Masthead
         backgroundImage="/images/site-images/homepage-masthead.jpg"
-        header="Unleash the Wine Whisperer Within"
+        header="Unleash Your Inner Wine Geek"
         headerText="Uncover wine's best-kept secrets through the beauty of data visualization. Dive into fascinating production & consumption history, eclectic grape varieties, and iconic wine regions."
       />
 
