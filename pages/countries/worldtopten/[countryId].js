@@ -19,8 +19,8 @@ function CountryWorldTopTenDetailPage() {
 
   const dataType = "country";
 
-  const headerSuffix = "Top Global ";
-  const explanationText = "Production of top global ";
+  const headerSuffix = "Global Top ";
+  const explanationText = "Production of global top ";
 
   if (!country || !countryWineData) {
     return (
