@@ -29,8 +29,8 @@ function CountryIndex() {
       {/* <h1 className="indexheader">Country Index</h1> */}
       <Masthead
         backgroundImage="/images/site-images/index-masthead-countries.jpg"
-        header="Countries"
-        headerText="Learn about wine production around the world, with charts comparing nations and sections for featured countries."
+        header="Wine Without Borders - Countries"
+        headerText="Take a flavorful journey through global wine production. Dive into captivating charts comparing wine-producing nations and uncover the unique highlights of featured countries."
       />
       <section className="info">
         <h2 className="header"> Grape Production Country Comparison</h2>
