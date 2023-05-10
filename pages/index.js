@@ -50,7 +50,7 @@ function HomePage() {
       <Masthead
         backgroundImage="/images/site-images/homepage-masthead.jpg"
         header="Uncork Your Curiosity"
-        headerText="Discover wine's untold stories through data visualizations. Test your wine knowlege on historic production & consumption, grape varieties, wine regions and more."
+        headerText="Discover wine's untold stories through data visualizations. Test your wine knowledge on historic production & consumption, grape varieties, wine regions and more."
       />
 
       <section className={infoClass}>
