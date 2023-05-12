@@ -30,7 +30,7 @@ function CountryIndex() {
       <section className="info">
         <h2 className="header"> Grape Production Country Comparison</h2>
         <p className="subheader">
-          Production of world&apos;s top red and white grape varietals, by
+          Production of the world&apos;s top red and white grape varietals, by
           country.
         </p>
         <div className="actions">

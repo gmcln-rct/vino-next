@@ -24,7 +24,7 @@ export default function ResourcesIndex({ topGrapes }) {
 
       <section className="info">
         <h2 className="header"> Winography Wine Quiz</h2>
-        <h3 className="subheader">Think you're a wine whiz? Prove your grape greatness here.</h3>
+        <h3 className="subheader">Think you&apos;re a wine whiz? Prove your grape greatness here.</h3>
         <div className="actionsContainer">
         <div className="actions">
           <Link href="/quiz/quiz" className="action__container center">
