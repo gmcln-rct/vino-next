@@ -68,7 +68,7 @@
 
 .questionContainer h2 {
   font-size: clamp(24px, 3vw, 28px);
-  color: #96074e;
+  /* color: #96074e; */
 }
 
 .questionContainer p {
@@ -83,6 +83,13 @@
   /* color: var(--grey-10); */
 }
 
+.questionLabel {
+  color: var(--grey-8);
+}
+
+.questionText {
+  color: var(--red-8);
+}
 .instructions {
   font-size: clamp(18px, 2vw, 24px);
   font-weight: 400;

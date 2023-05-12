@@ -13,7 +13,7 @@ import { COUNTRIES_RED_WINE_DATA } from "@/data/country-wine-data-red-all-2016";
 import { COUNTRIES_WHITE_WINE_DATA } from "@/data/country-wine-data-white-all-2016";
 import { HISTORIC_PRODUCTION_DATA } from "@/data/historic-production-data";
 import { HISTORIC_CONSUMPTION_DATA } from "@/data/historic-consumption-data";
-import { COUNTRY_ORIGIN_DATA} from "@/data/country-origin-data";
+import { COUNTRY_ORIGIN_DATA } from "@/data/country-origin-data";
 
 import {
   getRandomCountry,
@@ -37,11 +37,15 @@ const QuizPage = () => {
   const [correctness, setCorrectness] = useState(false);
 
   const [countryRedData, setCountryRedData] = useState(COUNTRIES_RED_WINE_DATA);
-  const [countryWhiteData, setCountryWhiteData] = useState(COUNTRIES_WHITE_WINE_DATA);
-  const [wineHistoryData, setWineHistoryData] = useState(HISTORIC_PRODUCTION_DATA);
+  const [countryWhiteData, setCountryWhiteData] = useState(
+    COUNTRIES_WHITE_WINE_DATA
+  );
+  const [wineHistoryData, setWineHistoryData] = useState(
+    HISTORIC_PRODUCTION_DATA
+  );
 
   const answerIndex = ["A", "B", "C", "D"];
-  
+
   useEffect(() => {
     const countryRed1 = getRandomCountry(countryRedData);
     const countryRed2 = getRandomCountry(countryRedData);
@@ -60,17 +64,29 @@ const QuizPage = () => {
       "white",
       "include"
     );
-    const countryWhiteQuestion2 = createGrapeQuestion(countryWhite2, "white");
+    // const countryWhiteQuestion2 = createGrapeQuestion(countryWhite2, "white");
 
     const wineTermsQuestion = createTermsQuestion(WINE_TERMS);
-    const wineHistoryProductionQuestion = createWineHistoryQuestion(wineHistoryData, "produced");
-    const wineHistoryConsumptionQuestion = createWineHistoryQuestion(HISTORIC_CONSUMPTION_DATA, "consumed");
-    const wineRegionsQuestion1 = generateRegionQuestion(COUNTRIES_DATA, "inCountry");
-    const wineRegionsQuestion2 = generateRegionQuestion(COUNTRIES_DATA, "notInCountry");
+    const wineHistoryProductionQuestion = createWineHistoryQuestion(
+      wineHistoryData,
+      "produced"
+    );
+    const wineHistoryConsumptionQuestion = createWineHistoryQuestion(
+      HISTORIC_CONSUMPTION_DATA,
+      "consumed"
+    );
+    const wineRegionsQuestion1 = generateRegionQuestion(
+      COUNTRIES_DATA,
+      "inCountry"
+    );
+    const wineRegionsQuestion2 = generateRegionQuestion(
+      COUNTRIES_DATA,
+      "notInCountry"
+    );
 
-    const countryOriginQuestion = createGrapeOriginQuestion(COUNTRY_ORIGIN_DATA);
-      const grapeColorQuestion = createGrapeColorQuestion(COUNTRY_ORIGIN_DATA);
-console.log(wineHistoryConsumptionQuestion);
+    const countryOriginQuestion =
+      createGrapeOriginQuestion(COUNTRY_ORIGIN_DATA);
+    const grapeColorQuestion = createGrapeColorQuestion(COUNTRY_ORIGIN_DATA);
 
     setQuizData([
       wineTermsQuestion,
@@ -83,7 +99,7 @@ console.log(wineHistoryConsumptionQuestion);
       wineHistoryConsumptionQuestion,
       countryOriginQuestion,
       wineRegionsQuestion2,
-      countryWhiteQuestion2,
+      // countryWhiteQuestion2,
     ]);
   }, [countryRedData, countryWhiteData, wineHistoryData]);
 
@@ -94,7 +110,6 @@ console.log(wineHistoryConsumptionQuestion);
     const explanation = quizData[currentQuestion].explanation;
     setSelectedAnswer(selectedAnswer);
 
-   
     setExplanationMessage(explanation);
     if (isCorrect) {
       setFeedbackMessage(
@@ -144,38 +159,52 @@ console.log(wineHistoryConsumptionQuestion);
           <p>
             You got {score} out of {quizData.length} questions correct.
           </p>
-          <button onClick={handleRestartButtonClick} className={classes.next}>Take Another Quiz</button>
+          <button onClick={handleRestartButtonClick} className={classes.next}>
+            Take Another Quiz
+          </button>
         </div>
       ) : (
         <div className={classes.questionContainer}>
-          <h2>{quizData[currentQuestion].question}</h2>
-          {selectedAnswer === null ? ( <p className={classes.instructions}>Click on correct answer below.</p>) : (<p></p>)}
+          <h2 className={classes.questionLabel}>Question {currentQuestion + 1} of 10</h2>
+          <h2 className={classes.questionText}>{quizData[currentQuestion].question}</h2>
+          {selectedAnswer === null ? (
+            <p className={classes.instructions}>
+              Click on correct answer below.
+            </p>
+          ) : (
+            <p></p>
+          )}
           {/* // <p className={classes.instructions}>Click on correct answer below.</p> */}
           <div className={classes.answers}>
-          {selectedAnswer === null ? (
-            quizData[currentQuestion].answers.map((answer, index) => (
-              <button
-                key={index}
-                onClick={() => handleAnswerButtonClick(String(index))}
-                className={classes.answer}
-              >
-                <span className={classes.answerLetter}>
-                  {answerIndex[index]}.
-                </span>{" "}
-                {answer}
-              </button>
-            ))
-          ) : (
-            <div className={classes.feedback}>
-              <p className={correctness ? classes.correct : classes.incorrect}>
-                {feedbackMessage}
-              </p>
-              <p className={classes.explanation}>{explanationMessage}</p>
-              <button onClick={handleNextButtonClick} className={classes.next}>
-                Next
-              </button>
-            </div>
-          )}
+            {selectedAnswer === null ? (
+              quizData[currentQuestion].answers.map((answer, index) => (
+                <button
+                  key={index}
+                  onClick={() => handleAnswerButtonClick(String(index))}
+                  className={classes.answer}
+                >
+                  <span className={classes.answerLetter}>
+                    {answerIndex[index]}.
+                  </span>{" "}
+                  {answer}
+                </button>
+              ))
+            ) : (
+              <div className={classes.feedback}>
+                <p
+                  className={correctness ? classes.correct : classes.incorrect}
+                >
+                  {feedbackMessage}
+                </p>
+                <p className={classes.explanation}>{explanationMessage}</p>
+                <button
+                  onClick={handleNextButtonClick}
+                  className={classes.next}
+                >
+                  Next
+                </button>
+              </div>
+            )}
           </div>
         </div>
       )}
@@ -195,5 +224,3 @@ console.log(wineHistoryConsumptionQuestion);
 };
 
 export default QuizPage;
-
-
