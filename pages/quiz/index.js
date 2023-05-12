@@ -18,13 +18,13 @@ export default function ResourcesIndex({ topGrapes }) {
       </Head>
       <Masthead
         backgroundImage="/images/site-images/index-masthead-quiz.jpg"
-        header="Wine Knowledge Quiz"
-        headerText="Learn about wine a wine terminologies list and a historic timeline of important milestones in the history of wine."
+        header="Wine IQ Quiz"
+        headerText="Test Your Vine Virtuosity and Raise Your Wine Wisdom"
       />
 
       <section className="info">
         <h2 className="header"> Winography Wine Quiz</h2>
-        <h3 className="subheader">Are you a wine genius? Click below to find out.</h3>
+        <h3 className="subheader">Think you're a wine whiz? Prove your grape greatness here.</h3>
         <div className="actionsContainer">
         <div className="actions">
           <Link href="/quiz/quiz" className="action__container center">
