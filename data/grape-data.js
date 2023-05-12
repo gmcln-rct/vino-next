@@ -47,7 +47,7 @@ export const GRAPES_DATA = [
     units: "hectares",
     dataYear: 2016,
     description:
-      "Grenache, also known as Garnacha Tinta, is a red wine grape that is widely grown in Spain, France, and Australia. It produces wines with flavors of raspberry, strawberry, and black pepper. It is valued for its ability to produce medium to full-bodied wines with soft tannins and high alcohol content. Grenache is also used to produce rosé wines.",
+      "Grenache is a red wine grape that is widely grown in Spain, France, and Australia. It produces wines with flavors of raspberry, strawberry, and black pepper. It is valued for its ability to produce medium to full-bodied wines with soft tannins and high alcohol content. Grenache is also used to produce rosé wines.",
     altNames: [
       "Cannonau",
       "Garnacha",

@@ -26,7 +26,6 @@ function HomePage() {
   let countryLink;
   let countryName;
 
- 
   if (!grapeLink || !grapeName || isNewVisit) {
     grapeLink =
       "/grapes/worldtop/bubble-chart/" + grapeData[randomGrapeData].id;
@@ -36,7 +35,6 @@ function HomePage() {
     countryLink = "/countries/nationaltop/" + countryData[randomCountryData].id;
     countryName = countryData[randomCountryData].itemName;
   }
-
 
   return (
     <>
@@ -52,7 +50,6 @@ function HomePage() {
         header="Unleash Your Inner Wine Geek"
         headerText="Uncover wine's best-kept secrets through the beauty of data visualization. Dive into fascinating production & consumption history, eclectic grape varieties, and iconic wine regions."
       />
-
       <section className={infoClass}>
         <h2 className="header">Featured Charts</h2>
         <div className="actions">

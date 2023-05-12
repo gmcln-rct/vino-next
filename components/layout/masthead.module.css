@@ -29,7 +29,6 @@
 
   color: var(--white);
   background-color: var(--pink-9-transparent);
-  /* background-color: rgba(111, 15, 71, 0.853); */
 }
 
 .mastheadText {
@@ -49,9 +48,6 @@
     /* padding-top: 50px; */
   }
 
-  /* .mastheadOverlay {
-    width: 100%;    
-  } */
 
   .mastheadTextContainer {
     margin-right: 30%;

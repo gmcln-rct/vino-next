@@ -8,10 +8,7 @@ import { getAllData } from "@/data/utils";
 
 import CountryList from "@/components/countries/country-list";
 
-import { DataList } from "@/components/layout/data-list";
-
 import Masthead from "@/components/layout/masthead";
-
 
 function CountryIndex() {
   const allCountries = getAllData(COUNTRIES_DATA);
@@ -20,13 +17,11 @@ function CountryIndex() {
     <>
       <Head>
         <title>Country Index - Winography - Wine Data Visualization</title>
-        
         <meta
           name="description"
           content="Data visualization of wine production by country for all wine-producing countries"
         />
       </Head>
-      {/* <h1 className="indexheader">Country Index</h1> */}
       <Masthead
         backgroundImage="/images/site-images/index-masthead-countries.jpg"
         header="Wine Without Borders - Countries"
@@ -34,7 +29,10 @@ function CountryIndex() {
       />
       <section className="info">
         <h2 className="header"> Grape Production Country Comparison</h2>
-        <p className="subheader">Production of world&apos;s top red and white grape varietals, by country.</p>
+        <p className="subheader">
+          Production of world&apos;s top red and white grape varietals, by
+          country.
+        </p>
         <div className="actions">
           <Link href={barChartLink} className="action__container center">
             <Image
@@ -62,8 +60,8 @@ function CountryIndex() {
         </div>
       </section>
       <section className="featuredContainer">
-      <h2 className="featuredHeader">Featured Countries</h2>
-      <CountryList items={allCountries} />
+        <h2 className="featuredHeader">Featured Countries</h2>
+        <CountryList items={allCountries} />
       </section>
     </>
   );
