@@ -4,7 +4,7 @@ import { useState, useEffect } from "react";
 
 import classes from "./histogram.module.css";
 
-import HistogramChart from "@/components/graphs/histogram-chart";
+import HistogramChart from "@/components/charts/histogram-chart";
 
 import { HISTORIC_PRODUCTION_STACKED_DATA } from "@/data/historic-production-stacked-data";
 

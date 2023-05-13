@@ -4,7 +4,7 @@ import { useState, useEffect } from "react";
 
 import classes from "./histogram.module.css";
 
-import HistogramComparisonChart from "@/components/graphs/histogram-comparison-chart";
+import HistogramComparisonChart from "@/components/charts/histogram-comparison-chart";
 
 import { HISTORIC_CONSUMPTION_DATA } from "@/data/historic-consumption-data";
 

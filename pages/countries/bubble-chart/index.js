@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import BubbleMultiChart from "@/components/graphs/bubble-multi-chart";
+import BubbleMultiChart from "@/components/charts/bubble-multi-chart";
 
 import { COUNTRIES_RED_WINE_DATA } from "@/data/country-wine-data-red-all-2016";
 import { COUNTRIES_WHITE_WINE_DATA } from "@/data/country-wine-data-white-all-2016";

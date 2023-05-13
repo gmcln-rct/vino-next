@@ -4,7 +4,7 @@ import { useState } from "react";
 
 import GRAPES_RED_TOP_TEN_DATA from "@/data/grape-top-ten-countries-data-2016";
 
-import StackedAreaChart from "@/components/graphs/stacked-area-chart";
+import StackedAreaChart from "@/components/charts/stacked-area-chart";
 import Button from "@/components/ui/button";
 
 function HistoricDataHistogram() {

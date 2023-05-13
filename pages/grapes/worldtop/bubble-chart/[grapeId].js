@@ -10,7 +10,7 @@ import {
   GRAPES_WHITE_TOP_TEN_DATA,
 } from "@/data/grape-top-ten-countries-data-2016";
 
-import BubbleChart from "@/components/graphs/bubble-chart";
+import BubbleChart from "@/components/charts/bubble-chart";
 import Button from "@/components/ui/button";
 
 function GrapeTopCountriesBubblePage() {

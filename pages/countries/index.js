@@ -16,10 +16,10 @@ function CountryIndex() {
   return (
     <>
       <Head>
-        <title>Country Index - Winography - Wine Data Visualization</title>
+        <title>Wine Country Index - Winography - Wine Data Visualization</title>
         <meta
           name="description"
-          content="Data visualization of wine production by country for all wine-producing countries"
+          content="Index of all wine producing countries."
         />
       </Head>
       <Masthead

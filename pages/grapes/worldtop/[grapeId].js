@@ -10,7 +10,7 @@ import {
   GRAPES_WHITE_TOP_TEN_DATA,
 } from "@/data/grape-top-ten-countries-data-2016";
 
-import BarChart from "@/components/graphs/bar-chart";
+import BarChart from "@/components/charts/bar-chart";
 import Button from "@/components/ui/button";
 
 function GrapeTopDetailPage() {

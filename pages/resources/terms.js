@@ -24,22 +24,32 @@ export default function WineTerms() {
   };
 
   return (
-    <section className={classes.termsPage}>
-      <h1 className={classes.header}>Wine Terms</h1>
-      <input
-        type="text"
-        placeholder="Filter wine terms"
-        value={searchTerm}
-        onChange={handleSearch}
-        className={classes.searchInput}
-      />
-      <ul className={classes.termsList}>
-        {filteredTerms.map((term, index) => (
-          <li key={index} className={classes.listItem}>
-            <span className={classes.term}>{term.word}</span> {term.definition}{" "}
-          </li>
-        ))}
-      </ul>
-    </section>
+    <>
+      <Head>
+        <title>Wine Terminologies - Winography - Wine Data Visualization</title>
+        <meta
+          name="description"
+          content="A list of wine terms and their definitions"
+        />
+      </Head>
+      <section className={classes.termsPage}>
+        <h1 className={classes.header}>Wine Terms</h1>
+        <input
+          type="text"
+          placeholder="Filter wine terms"
+          value={searchTerm}
+          onChange={handleSearch}
+          className={classes.searchInput}
+        />
+        <ul className={classes.termsList}>
+          {filteredTerms.map((term, index) => (
+            <li key={index} className={classes.listItem}>
+              <span className={classes.term}>{term.word}</span>{" "}
+              {term.definition}{" "}
+            </li>
+          ))}
+        </ul>
+      </section>
+    </>
   );
 }

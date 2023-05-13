@@ -13,23 +13,14 @@ export default function ResourcesIndex({ topGrapes }) {
         <title>Wine Resources - Winography - Wine Data Visualization</title>
         <meta
           name="description"
-          content="Data visualization of grape wine production for all wine-producing countries"
+          content="Wine resources including wine terminologies and a timeline"
         />
       </Head>
-      {/* <Image
-        src="/images/site-images/resources-bg.jpeg"
-        alt="Wine History Timeline"
-        className={classes.bgImage}
-        width={1280}
-        height={1080}
-        priority={true}
-      /> */}
       <Masthead
         backgroundImage="/images/site-images/resources-bg.jpg"
         header="Resources"
-        headerText="Learn about wine a wine terminologies list and a historic timeline of important milestones in the history of wine."
+        headerText="Learn about wine through wine terminologies and a timeline of important historic milestones."
       />
-
       <section className="info">
         <h2 className="header"> Wine Resources</h2>
         <div className="actionsContainer">

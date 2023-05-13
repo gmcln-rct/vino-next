@@ -11,7 +11,7 @@ import { COUNTRIES_WINE_DATA } from "@/data/country-wine-data-top-grapes-2016";
 import { COUNTRIES_RED_WINE_DATA } from "@/data/country-wine-data-red-all-2016";
 import { COUNTRIES_WHITE_WINE_DATA } from "@/data/country-wine-data-white-all-2016";
 
-import BarChart from "@/components/graphs/bar-chart";
+import BarChart from "@/components/charts/bar-chart";
 import Button from "@/components/ui/button";
 
 // TOP NATIONAL GRAPES

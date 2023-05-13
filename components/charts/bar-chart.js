@@ -3,6 +3,8 @@ import classes from "./bar-chart.module.css";
 
 import * as d3 from "d3";
 
+import { getHeaders } from "@/components/utils/header-utils";
+
 const BarChart = (props) => {
   const svgRef = useRef();
 
@@ -32,7 +34,6 @@ const BarChart = (props) => {
     d3.select(svgRef.current).selectAll("*").remove();
 
     const margin = { top: 20, right: 20, bottom: 50, left: 10 };
-
     const width = 800 - margin.left - margin.right;
     const height = 400 - margin.top - margin.bottom;
 
@@ -165,38 +166,11 @@ const BarChart = (props) => {
     };
   }, [data, dataType, fillColor, units, selectedGrapeType]);
 
-  let headerText;
-  let subHeaderText;
-  let grapeTypeText = selectedGrapeType.toLowerCase();
   let countryName = itemName === "United States" ? "the " + itemName : itemName;
 
-  if (dataType === "grape") {
-    headerText = itemName + ": " + explanationText;
-    subHeaderText =
-      "Winegrape land area used for production, Top " +
-      itemName +
-      " grape producing countries,  " +
-      dataYear;
-  } else if (topType==="national") {
-    headerText =
-      headerSuffix + selectedGrapeType + " Grapes of " + countryName;
-    subHeaderText =
-      explanationText + countryName +
-      "'s top " +
-      grapeTypeText +
-      " grape varietals, by land area, " +
-      dataYear;
-  } else {
-    headerText =
-      headerSuffix + selectedGrapeType + " Grapes in " + countryName;
-    subHeaderText =
-      explanationText +
-      " " +
-      grapeTypeText +
-      " grape varietals in " + countryName +
-      ", by land area, " +
-      dataYear;
-  }
+  const {headerText, subHeaderText } = getHeaders(dataType, itemName, explanationText, dataYear, selectedGrapeType, topType, countryName, headerSuffix);
+  
+  console.log("header: ", headerText);
 
   return (
     <>

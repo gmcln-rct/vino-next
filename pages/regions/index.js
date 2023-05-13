@@ -3,13 +3,13 @@ import Head from "next/head";
 
 import { useState, useEffect } from "react";
 
-import classes from "@/components/graphs/bar-chart.module.css";
+import classes from "@/components/charts/bar-chart.module.css";
 
 import { COUNTRIES_RED_WINE_DATA } from "@/data/country-wine-data-red-all-2016";
 import { COUNTRIES_WHITE_WINE_DATA } from "@/data/country-wine-data-white-all-2016";
 
-// import BarChart from "@/components/graphs/bar-chart";
-import MultiBarChart from "@/components/graphs/bar-multi-chart";
+// import BarChart from "@/components/charts/bar-chart";
+import MultiBarChart from "@/components/charts/bar-multi-chart";
 import Button from "@/components/ui/button";
 
 import { filterCountriesData, getDataItemById } from "@/data/utils";
