@@ -34,17 +34,18 @@ function CountryWorldTopTenDetailPage() {
 
   const countryLink = `/countries/${country.id}`;
   const nationalTopLink = `/countries/nationaltop/${country.id}`;
+  const headDescription = `${country.itemName} production of global top grape varietals bar chart, by land area`;
 
   return (
     <>
       <Head>
         <title>
-          {country.itemName} Production of Top Grape Varieties -
+          {country.itemName} Production of Global Top Grape Varieties -
           Winography - Wine Data Visualization
         </title>
         <meta
           name="description"
-          content="Data visualization for wine grape area production in {country.itemName } for global top 10 grape varietals"
+          content={headDescription}
         />
       </Head>
       <section>

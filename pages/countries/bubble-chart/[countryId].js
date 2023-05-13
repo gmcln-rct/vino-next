@@ -30,6 +30,8 @@ function CountryTopTenDetailPage() {
     );
   }
   const countryLink = `/countries/${country.id}`;
+  const headDescription = `${country.itemName} top national wine grapes production bubble chart, by land area`;
+
   return (
     <>
       <Head>
@@ -39,7 +41,7 @@ function CountryTopTenDetailPage() {
         </title>
         <meta
           name="description"
-          content="Wine data visualization for winegrape area production for top national grape varietals"
+          content={headDescription}
         />
       </Head>
       {/* <BarChart

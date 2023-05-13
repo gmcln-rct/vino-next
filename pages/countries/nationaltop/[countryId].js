@@ -41,6 +41,8 @@ function CountryTopTenDetailPage() {
   }
   const countryLink = `/countries/${country.id}`;
   const globalTopTenLink = `/countries/worldtopten/${country.id}`;
+  const headDescription = `Top national grapes of ${country.itemName} production bar chart, by land area`;
+
   return (
     <>
       <Head>
@@ -50,7 +52,7 @@ function CountryTopTenDetailPage() {
         </title>
         <meta
           name="description"
-          content="Wine data visualization for winegrape area production for top national grape varietals"
+          content={headDescription}
         />
       </Head>
       <BarChart
