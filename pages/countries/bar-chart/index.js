@@ -60,8 +60,6 @@ function CountryGeneralBarChartPage() {
     selectedGrapeType,
   });
 
-  console.log("headerText", headerText);
-  // let subheaderText = "test subheader text";
 
   let subheaderText = generateSubheader({
     dataType: dataType,
@@ -74,11 +72,11 @@ function CountryGeneralBarChartPage() {
     <>
       <Head>
         <title>
-          Countries Bar Chart - Winography - Wine Data Visualization
+          Wine Production By Country - Bar Chart - Winography - Wine Data Visualization
         </title>
         <meta
           name="description"
-          content="Wine data visualization for winegrape area production for top national grape varietals."
+          content="Customizable bar chart of production in wine-producing contries, top national grape varietals, by land area."
         />
       </Head>
       <section className={classes.chart}>
