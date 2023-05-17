@@ -66,10 +66,10 @@ main a {
   /* color: var(--red-7); */
   font-family: "Inter", sans-serif;
   font-size: clamp(24px, 4vw, 32px);
-  font-weight: 600;
+  font-weight: 400;
   font-display: swap;
 
-  letter-spacing: 2px;
+  letter-spacing: 1px;
   text-align: center;
 }
 

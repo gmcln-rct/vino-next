@@ -5,6 +5,8 @@ import { useState, useEffect } from "react";
 
 import classes from "@/components/charts/bar-chart.module.css";
 
+import DataSource from "@/components/layout/data-source";
+
 // import { COUNTRIES_RED_WINE_DATA } from "@/data/country-wine-data-red-all-2016";
 // import { COUNTRIES_WHITE_WINE_DATA } from "@/data/country-wine-data-white-all-2016";
 import { WINE_REGION_PRODUCTION_DATA } from "@/data/region-test-data";
@@ -23,10 +25,9 @@ function RegionalGeneralBarChartPage() {
   const [selectedRegion, setselectedRegion] = useState("burgundy");
   const [selectedGrapeType, setSelectedGrapeType] = useState("red");
 
-//   const countryRedWineData = COUNTRIES_RED_WINE_DATA;
-//   const countryWhiteWineData = COUNTRIES_WHITE_WINE_DATA;
+  //   const countryRedWineData = COUNTRIES_RED_WINE_DATA;
+  //   const countryWhiteWineData = COUNTRIES_WHITE_WINE_DATA;
   const regionData = WINE_REGION_PRODUCTION_DATA;
-
 
   const newData = regionData.find(
     (d) => d.countryId === selectedCountry && d.id === selectedRegion
@@ -52,33 +53,7 @@ function RegionalGeneralBarChartPage() {
   };
   const dataType = "country";
 
-  const headerExplanationText = "National Production: "
-
-  // if (!countryRedWineData || !countryWhiteWineData) {
-  //   return (
-  //     <div className="center">
-  //       <p>Loading...</p>
-  //     </div>
-  //   );
-  // }
-
-  // let headerText = "test header text";
-  //  headerText = generateHeader({
-  //   dataType: dataType,
-  //   itemName: selectedCountry.itemName,
-  //   explanationText: headerExplanationText,
-  //   selectedRegion,
-  // });
-
-  // console.log("headerText", headerText);
-  // let subheaderText = "test subheader text";
-
-  // let subheaderText = generateSubheader({
-  //   dataType: dataType,
-  //   itemName: selectedCountry.itemName,
-  //   selectedRegion,
-  //   dataYear: 2016,
-  // });
+  const headerExplanationText = "National Production: ";
 
   return (
     <>
@@ -88,14 +63,14 @@ function RegionalGeneralBarChartPage() {
         </title>
         <meta
           name="description"
-          content="Wine data visualization for winegrape area production for top national grape varietals."
+          content="Bar charts showing winegrape area production by region."
         />
       </Head>
       <section className={classes.chart}>
         {/* <h2 className={classes.header}>{headerText}</h2>
         <p className={classes.subheader}>{subheaderText}</p> */}
         <div className={classes.selectrow}>
-        <span className={classes.selectLabel}> Select Country: </span>
+          <span className={classes.selectLabel}> Select Country: </span>
 
           <select
             value={selectedCountry}
@@ -137,15 +112,7 @@ function RegionalGeneralBarChartPage() {
           whiteGrapeData={whiteWineData}
         /> */}
 
-        <p className="dataSource">
-          Data Source:{" "}
-          <Link
-            href="https://economics.adelaide.edu.au/wine-economics/databases/"
-            className="dataSource"
-          >
-            Wine Economics Research Centre, University of Adelaide
-          </Link>
-        </p>
+        <DataSource />
       </section>
     </>
   );

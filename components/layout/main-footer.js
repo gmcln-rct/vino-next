@@ -1,4 +1,3 @@
-import Link from 'next/link';
 
 import classes from './main-footer.module.css';
 
@@ -10,7 +9,6 @@ function MainFooter() {
   return (
     <footer className={classes.footer}>
       @{currentYear} Rio Create LLC. 
-        {/* <Link href={dataSource}>Data Source</Link> */}
     </footer>
   );
 }
