@@ -21,7 +21,7 @@ export default function GrapeDetailPage({ grape }) {
         </title>
         <meta
           name="description"
-          content={`Data visualization for ${grape.itemName} wine grape area production.`}
+          content={`${grape.itemName} wine grape production data visualizations.`}
         />
       </Head>
       <Masthead

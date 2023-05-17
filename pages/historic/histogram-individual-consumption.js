@@ -60,18 +60,6 @@ function HistogramIndividualConsumptionPage() {
       </div>
       <HistogramChart data={historicData} country1={country1} />
       <HistoricChartNotes />
-      {/* <div>
-        <p className="dataSource">Note that the starting year for historical data varies by country.</p>
-        <p className="dataSource">
-          Data Source:{" "}
-          <Link
-            href="https://economics.adelaide.edu.au/wine-economics/databases/"
-            className="dataSource" 
-          >
-            Wine Economics Research Centre, University of Adelaide
-          </Link>
-        </p>
-      </div> */}
       <div className="buttonFooter">
         <Button
           link="/historic/histogram-comparison-consumption"

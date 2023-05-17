@@ -4,7 +4,7 @@ import Head from "next/head";
 
 import classes from "./quiz.module.css";
 
-// import Button from "@/components/ui/button";
+import DataSource from "@/components/layout/data-source";
 
 // Import data
 import { QUIZ_DATA } from "@/data/quiz-data";
@@ -226,15 +226,7 @@ const QuizPage = () => {
           </div>
         )}
         <div className={classes.footer}>
-          <p className="dataSource">
-            Data Source:{" "}
-            <Link
-              href="https://economics.adelaide.edu.au/wine-economics/databases/"
-              className="dataSource"
-            >
-              Wine Economics Research Centre, University of Adelaide
-            </Link>
-          </p>
+          <DataSource />
         </div>
       </section>
     </>

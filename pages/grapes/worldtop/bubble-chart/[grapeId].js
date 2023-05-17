@@ -12,6 +12,8 @@ import {
 
 import BubbleChart from "@/components/charts/bubble-chart";
 import Button from "@/components/ui/button";
+import DataSource from "@/components/layout/data-source";
+
 
 function GrapeTopCountriesBubblePage() {
   const router = useRouter();
@@ -73,17 +75,7 @@ function GrapeTopCountriesBubblePage() {
         whiteGrapeData={whiteGrapeWineData.countries}
         explanationText={explanationText}
       />
-      <div>
-        <p className="dataSource">
-          Data Source:{" "}
-          <Link
-            href="https://economics.adelaide.edu.au/wine-economics/databases/"
-            className="dataSource"
-          >
-            Wine Economics Research Centre, University of Adelaide
-          </Link>
-        </p>
-      </div>
+      <DataSource />
       <div className="buttonFooter">
         {/* <Button link={grapeLink} isSecondary="true">
           Back to {grape.itemName} Page

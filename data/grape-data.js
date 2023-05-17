@@ -63,7 +63,6 @@ export const GRAPES_DATA = [
     ],
     link: "https://en.wikipedia.org/wiki/Grenache",
     imageLink: "/images/site-images/masthead-grenache.jpg",
-
     indexImageLink: "/images/site-images/index-images/grape-sm-grenache.jpg",
     isFeatured: false,
     isTop: true,

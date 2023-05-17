@@ -75,7 +75,10 @@ const BubbleChart = (props) => {
       .append("circle")
       .attr("r", 1) // start small
       .attr("fill", (d) => color(d.data.country))
-      .style("padding", "5px");
+      .style("padding", "5px")
+      .on('click', d => {
+        window.open("http://en.wikipedia.org", "_blank")
+    });
 
     circles
       .transition()

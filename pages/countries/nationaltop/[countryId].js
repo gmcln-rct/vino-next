@@ -13,6 +13,8 @@ import { COUNTRIES_WHITE_WINE_DATA } from "@/data/country-wine-data-white-all-20
 
 import BarChart from "@/components/charts/bar-chart";
 import Button from "@/components/ui/button";
+import DataSource from "@/components/layout/data-source";
+
 
 // TOP NATIONAL GRAPES
 
@@ -66,17 +68,7 @@ function CountryTopTenDetailPage() {
         headerSuffix={headerSuffix}
         explanationText={explanationText}
       />
-      <div>
-        <p className="dataSource">
-          Data Source:{" "}
-          <Link
-            href="https://economics.adelaide.edu.au/wine-economics/databases/"
-            className="dataSource"
-          >
-            Wine Economics Research Centre, University of Adelaide
-          </Link>
-        </p>
-      </div>
+      <DataSource />
       <div className="buttonFooter">
         <Button link={globalTopTenLink} isSecondary="false">Global Top Grapes in {country.itemName} </Button>
         <Button link={countryLink} isSecondary="true">{country.itemName} Country Page</Button>

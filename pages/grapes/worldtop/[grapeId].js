@@ -12,6 +12,7 @@ import {
 
 import BarChart from "@/components/charts/bar-chart";
 import Button from "@/components/ui/button";
+import DataSource from "@/components/layout/data-source";
 
 function GrapeTopDetailPage() {
   const router = useRouter();
@@ -71,17 +72,7 @@ function GrapeTopDetailPage() {
         whiteGrapeData={whiteGrapeWineData.countries}
         explanationText={explanationText}
       />
-      <div>
-        <p className="dataSource">
-          Data Source:{" "}
-          <Link
-            href="https://economics.adelaide.edu.au/wine-economics/databases/"
-            className="dataSource"
-          >
-            Wine Economics Research Centre, University of Adelaide
-          </Link>
-        </p>
-      </div>
+      <DataSource />
       <div className="buttonFooter">
         <Button link={bubbleChartLink} isSecondary="false">
           {grape.itemName} Bubble Chart

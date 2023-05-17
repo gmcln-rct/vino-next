@@ -11,6 +11,7 @@ import { COUNTRIES_WINE_DATA } from "@/data/country-wine-data-top-grapes-2016";
 import BarChart from "@/components/charts/bar-chart";
 import BubbleChart from "@/components/charts/bubble-chart";
 import Button from "@/components/ui/button";
+import DataSource from "@/components/layout/data-source";
 
 function CountryTopTenDetailPage() {
   const router = useRouter();
@@ -44,27 +45,8 @@ function CountryTopTenDetailPage() {
           content={headDescription}
         />
       </Head>
-      {/* <BarChart
-        itemName={country.itemName}
-        units={countryWineData.units}
-        dataYear={countryWineData.dataYear}
-        dataType={dataType}
-        redGrapeData={countryWineData.redGrapeDataWorld}
-        whiteGrapeData={countryWineData.whiteGrapeDataWorld}
-        explanationText={explanationText}
-      /> */}
       <BubbleChart />
-      <div>
-        <p className="dataSource">
-          Data Source:{" "}
-          <Link
-            href="https://economics.adelaide.edu.au/wine-economics/databases/"
-            className="dataSource"
-          >
-            Wine Economics Research Centre, University of Adelaide
-          </Link>
-        </p>
-      </div>
+      <DataSource />
       <div className="buttonFooter">
         <Button link={countryLink} isSecondary="true">Back to {country.itemName} Page</Button>
         <Button link="/countries/" isSecondary="true">Back to Country Index</Button>

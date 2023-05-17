@@ -1,0 +1,21 @@
+.dataSource {
+    margin: 1rem 0 0 0;
+  
+    font-family: "Inter", sans-serif;
+    font-size: clamp(14px, 2vw, 18px);
+    font-weight: 400;
+    font-style: italic;
+    font-display: swap;
+    text-align: center;
+  
+    color: var(--grey-3);
+  }
+  
+  .dataSource.light {
+    color: var(--grey-1);
+  }
+  .dataSource:hover,
+  .dataSource:active {
+    color: var(--blue-7);
+    transition: 0.3s;
+  }

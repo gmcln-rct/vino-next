@@ -48,7 +48,7 @@ const Navbar = () => {
                   Data Visualizations
                 </li>
                 <li className={classes.listitem}>
-                  <Link href="/resources">Resources</Link>
+                  <Link href="/learning">Learning</Link>
                 </li>
                 <li className={classes.listitem}>
                   <Link href="/quiz/">Quiz</Link>
@@ -105,9 +105,9 @@ const Navbar = () => {
             onClick={toggleDrawer}
             className={classes.mobileOnly}
             component={Link}
-            href="/resources"
+            href="/learning"
           >
-            <ListItemText primary="Resources" />
+            <ListItemText primary="Wine Learning" />
           </ListItem>
           <ListItem
             button
