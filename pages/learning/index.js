@@ -33,7 +33,7 @@ export default function ResourcesIndex({ topGrapes }) {
               width={100}
               height={100}
             />
-            <p className="link">Wine Terminology</p>
+            <p className="link">Wine Terms</p>
           </Link>
         </div>
         <div className="actions">

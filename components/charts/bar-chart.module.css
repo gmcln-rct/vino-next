@@ -2,6 +2,10 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+
+  max-height: 80vh;
+  max-width: 90vw;
+
 }
 
 .barchart {

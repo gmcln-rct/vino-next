@@ -14,11 +14,7 @@ const Masthead = (props) => {
     countryName,
     moreInfo,
   } = props;
-  // let mastheadBackgroundImage = backgroundImage;
-  // if (!headerText) {
-  //   mastheadBackgroundImage = `/images/site-images/homepage-masthead.jpg`;
-  // }
-  // console.log("wine category: ", wineCategory);
+
   const mastheadBackgroundImage =
     backgroundImage || `/images/site-images/homepage-masthead.jpg`;
 

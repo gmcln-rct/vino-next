@@ -16,10 +16,7 @@ export default function CountryDetailPage({ country }) {
   return (
     <>
       <Head>
-        <title>
-          {country.itemName} Country Wine Production - Winography - Wine Data
-          Visualization
-        </title>
+        <title>{country.itemName} Country Wine Production - Winography - Wine Data Visualization</title>
         <meta
           name="description"
           content={`Data visualization for wine grape area production in ${country.itemName}`}

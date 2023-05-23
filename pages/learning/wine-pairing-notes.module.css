@@ -1,0 +1,70 @@
+.winePairingPage {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  padding: 2vmin 5vmin;
+
+  font-family: var(--font-lato);
+  font-display: swap;
+  letter-spacing: 1px;
+
+  color: var(--white);
+}
+
+.header {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 1rem 0 0 0;
+
+  font-size: clamp(24px, 4vw, 32px);
+  font-weight: 600;
+
+  /* color: var(--red-8) */
+  color: var(--grey-1);
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  margin: 2vmin 0;
+  padding: 2vmin 6vmin;
+
+  font-size: clamp(16px, 4vw, 28px);
+  font-weight: 400;
+  font-display: swap;
+
+  background-color: var(--pink-9);
+  /* box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.2); */
+  -webkit-box-shadow: inset 0px 0px 10px 0px rgba(0, 0, 0, 0.35);
+  -moz-box-shadow: inset 0px 0px 10px 0px rgba(0, 0, 0, 0.35);
+  box-shadow: inset 0px 0px 10px 0px rgba(0, 0, 0, 0.35);
+
+  border-radius: 1vmin;
+}
+
+.listItem {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+
+  margin: 1vmin 0;
+  padding: 0 0 0 0;
+}
+
+.noteHeader {
+    font-weight: 600;
+    color: var(--pink-2);
+}
+
+.description {
+  font-weight: 400;
+  color: var(--white);
+}

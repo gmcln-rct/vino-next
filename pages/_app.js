@@ -11,7 +11,6 @@ function MyApp({ Component, pageProps }) {
     <MainContextProvider>
       <Layout>
         <Head>
-          {/* <title>Winography - Wine Data Visualizations</title> */}
           <meta charSet="UTF-8" />
           <meta
             name="viewport"

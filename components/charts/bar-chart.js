@@ -1,4 +1,4 @@
-import { useEffect, useState, useRef } from "react";
+import { useEffect, useState, useRef, useLayoutEffect } from "react";
 import classes from "./bar-chart.module.css";
 
 import * as d3 from "d3";
@@ -7,6 +7,24 @@ import { getHeaders } from "@/components/utils/header-utils";
 
 const BarChart = (props) => {
   const svgRef = useRef();
+  const containerRef = useRef();
+  const [containerSize, setContainerSize] = useState({ width: 0, height: 0 });
+
+  useEffect(() => {
+    const updateSize = () => {
+      if (containerRef.current) {
+        setContainerSize({
+          width: containerRef.current.offsetWidth,
+          height: Math.min(containerRef.current.offsetHeight, window.innerHeight * 0.8),
+        });
+      }
+    };
+
+    window.addEventListener("resize", updateSize);
+    updateSize();
+
+    return () => window.removeEventListener("resize", updateSize);
+  }, []);
 
   const {
     itemName,
@@ -31,18 +49,23 @@ const BarChart = (props) => {
   const data = selectedData.filter((d) => d.value > 0);
 
   useEffect(() => {
+    if (!containerRef.current || containerSize.width === 0 || containerSize.height === 0) {
+      return;
+    }
+
     d3.select(svgRef.current).selectAll("*").remove();
 
     const margin = { top: 20, right: 20, bottom: 50, left: 10 };
-    const width = 800 - margin.left - margin.right;
-    const height = 400 - margin.top - margin.bottom;
+    // Use width and height from the container size
+    const width = containerSize.width;
+    const height = (containerSize.height) ;
 
     // Set up and position SVG
     const svg = d3
       .select(svgRef.current)
-      .attr("width", width + margin.left + margin.right)
-      .attr("height", height + margin.top + margin.bottom)
-      .attr("viewBox", "0 0 850 500")
+      .attr("width", width)
+      .attr("height", height)
+      .attr("viewBox", `0 0 ${width + margin.left + margin.right} ${height + margin.top + margin.bottom + 100}`)
       .append("g")
       .attr("transform", `translate(${margin.left}, ${margin.top})`);
 
@@ -164,17 +187,15 @@ const BarChart = (props) => {
     return () => {
       tooltip.remove();
     };
-  }, [data, dataType, fillColor, units, selectedGrapeType]);
+  }, [data, dataType, fillColor, units, selectedGrapeType, containerSize.width, containerSize.height]);
 
   let countryName = itemName === "United States" ? "the " + itemName : itemName;
 
   const {headerText, subHeaderText } = getHeaders(dataType, itemName, explanationText, dataYear, selectedGrapeType, topType, countryName, headerSuffix);
   
-  console.log("header: ", headerText);
-
   return (
     <>
-      <section className={classes.chart}>
+      <section className={classes.chart} ref={containerRef}>
         <h2 className={classes.header}>{headerText}</h2>
         <p className={classes.subheader}>{subHeaderText}</p>
         {dataType === "country" && (

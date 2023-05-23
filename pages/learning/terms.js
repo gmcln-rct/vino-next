@@ -1,3 +1,5 @@
+import Head from "next/head";
+
 import { useState } from "react";
 
 import { WINE_TERMS } from "@/data/terms";

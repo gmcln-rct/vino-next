@@ -11,6 +11,7 @@ import { COUNTRIES_WHITE_WINE_DATA } from "@/data/country-wine-data-white-all-20
 // import BarChart from "@/components/charts/bar-chart";
 import MultiBarChart from "@/components/charts/bar-multi-chart";
 import Button from "@/components/ui/button";
+import DataSource from "@/components/layout/data-source";
 
 import { filterCountriesData, getDataItemById } from "@/data/utils";
 import {
@@ -116,15 +117,7 @@ function RegionGeneralBarChartPage() {
           whiteGrapeData={whiteWineData}
         />
 
-        <p className="dataSource">
-          Data Source:{" "}
-          <Link
-            href="https://economics.adelaide.edu.au/wine-economics/databases/"
-            className="dataSource"
-          >
-            Wine Economics Research Centre, University of Adelaide
-          </Link>
-        </p>
+        <DataSource />
       </section>
     </>
   );
