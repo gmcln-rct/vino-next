@@ -1,6 +1,5 @@
-// import React from 'react';
 
-import { useState } from "react";
+import Head from "next/head";
 
 import classes from "./wine-history-timeline.module.css";
 
