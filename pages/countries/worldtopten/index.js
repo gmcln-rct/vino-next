@@ -22,7 +22,7 @@ function CountryWorldTopTenIndex() {
     <div>
       <Head>
         <title>
-          Top 10 Wine Producing Country Index - Winography - Wine Data Visualization
+          Top 10 Wine Producing Country Index - Winography | Learn About Wine Through Data Visualizations
         </title>
         <meta
           name="description"

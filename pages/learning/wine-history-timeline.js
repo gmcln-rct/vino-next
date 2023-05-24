@@ -17,7 +17,7 @@ const WineHistoryTimeline = ({ events }) => {
     <>
       <Head>
         <title>
-          Wine History Timeline - Winography - Wine Data Visualization
+          Wine History Timeline - Winography | Learn About Wine Through Data Visualizations
         </title>
         <meta
           name="description"

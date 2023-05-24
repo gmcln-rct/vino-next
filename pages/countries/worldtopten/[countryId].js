@@ -43,7 +43,7 @@ function CountryWorldTopTenDetailPage() {
       <Head>
         <title>
           {country.itemName} Production of Global Top Grape Varieties -
-          Winography - Wine Data Visualization
+          Winography | Learn About Wine Through Data Visualizations
         </title>
         <meta
           name="description"

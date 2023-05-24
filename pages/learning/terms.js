@@ -28,7 +28,7 @@ export default function WineTerms() {
   return (
     <>
       <Head>
-        <title>Wine Terminologies - Winography - Wine Data Visualization</title>
+        <title>Wine Terminologies - Winography | Learn About Wine Through Data Visualizations</title>
         <meta
           name="description"
           content="A list of wine terms and their definitions"

@@ -59,7 +59,7 @@ function RegionalGeneralBarChartPage() {
     <>
       <Head>
         <title>
-          Countries Bar Chart - Winography - Wine Data Visualization
+          Countries Bar Chart - Winography | Learn About Wine Through Data Visualizations
         </title>
         <meta
           name="description"

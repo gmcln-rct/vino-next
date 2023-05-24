@@ -14,7 +14,7 @@ function HistoricDataIndex() {
     <>
       <Head>
         <title>
-          Historic Wine Production Index - Winography - Wine Data Visualization
+          Historic Wine Production Index - Winography | Learn About Wine Through Data Visualizations
         </title>
         <meta
           name="description"

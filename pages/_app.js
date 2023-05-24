@@ -18,13 +18,13 @@ function MyApp({ Component, pageProps }) {
           />
           <meta name="robots" content="index, follow"></meta>
           <meta
-            name="keywords"
-            content="wine, data visualization, wine education, learning"
+            name="keywords"hs
+            content="wine, data, datasets, data visualization, education, learning, visualizations, charts, graphs, bubble charts, d3"
           />
           <meta name="author" content="Glenn McClanan, Rio Create LLC" />
           <meta
             property="og:title"
-            content="Winography - Wine Data Visualizations"
+            content="Winography | Learn About Wine Through Data Visualizations"
           />
           <meta
             property="og:description"

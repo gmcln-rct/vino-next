@@ -17,7 +17,7 @@ function HistoricDataHistogram() {
     <>
       <Head>
         <title>
-        Historic Wine Production in Top Producing Countries - Stacked Area - Winography - Wine Data Visualization
+        Historic Wine Production in Top Producing Countries - Stacked Area - Winography | Learn About Wine Through Data Visualizations
         </title>
         <meta
           name="description"

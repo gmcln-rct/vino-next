@@ -152,7 +152,7 @@ const QuizPage = () => {
   return (
     <>
       <Head>
-        <title>Wine Quiz - Winography - Wine Data Visualization</title>
+        <title>Wine Quiz - Winography | Learn About Wine Through Data Visualizations</title>
         <meta
           name="description"
           content="Data visualization of grape wine production for all wine-producing countries"

@@ -57,7 +57,7 @@ function GrapeTopCountriesBubblePage() {
       <Head>
         <title>
           Top {grape.itemName} Wine Grape Producing Countries - Bubble Chart -
-          Winography - Wine Data Visualization
+          Winography | Learn About Wine Through Data Visualizations
         </title>
         <meta
           name="description"

@@ -10,7 +10,7 @@ export default function ResourcesIndex({ topGrapes }) {
   return (
     <>
       <Head>
-        <title>Wine Quiz Index - Winography - Wine Data Visualization</title>
+        <title>Wine Quiz Index - Winography | Learn About Wine Through Data Visualizations</title>
         <meta
           name="description"
           content="Data visualization of grape wine production for all wine-producing countries"

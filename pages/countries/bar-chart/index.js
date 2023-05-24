@@ -71,7 +71,7 @@ function CountryGeneralBarChartPage() {
     <>
       <Head>
         <title>
-          Wine Production By Country - Bar Chart - Winography - Wine Data Visualization
+          Wine Production By Country - Bar Chart - Winography | Learn About Wine Through Data Visualizations
         </title>
         <meta
           name="description"

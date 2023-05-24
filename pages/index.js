@@ -39,10 +39,10 @@ function HomePage() {
   return (
     <>
       <Head>
-        <title>Winography - Wine Data Visualizations and Learning</title>
+        <title>Winography | Learn About Wine Through Data Visualizations</title>
         <meta
           name="description"
-          content="Winography - Data visualization, quizzes and other learning tools about wine production and consumption, both historic and present-day"
+          content="Winography | Data visualization, quizzes and other learning tools about wine production and consumption, both historic and present-day"
         />
       </Head>
       <Masthead
