@@ -33,7 +33,7 @@ function HomePage() {
 
     randomCountryData = Math.floor(Math.random() * countryData.length);
     countryLink = "/countries/nationaltop/" + countryData[randomCountryData].id;
-    countryName = countryData[randomCountryData].itemName;
+    countryName = countryData[randomCountryData].itemName === "United States" ? "the United States" : countryData[randomCountryData].itemName;
   }
 
   return (
@@ -42,7 +42,7 @@ function HomePage() {
         <title>Winography | Learn About Wine Through Data Visualizations</title>
         <meta
           name="description"
-          content="Winography | Data visualization, quizzes and other learning tools about wine production and consumption, both historic and present-day"
+          content="Winography | Data visualization, quizzes and other learning tools about wine production and consumption, both historic and present-day. "
         />
       </Head>
       <Masthead
@@ -100,7 +100,7 @@ function HomePage() {
               width={100}
               height={100}
             />
-            <p className="link">Per Capita Comparative Histogram</p>
+            <p className="link">Per Capita Comparison</p>
           </Link>
           <Link href={countryLink} className="action__container center tall">
             <Image
@@ -129,7 +129,7 @@ function HomePage() {
           </Link>
           <Link href="/grapes" className="action__container center">
             <Image
-              src="/images/icons/icon-grapes-sm.png"
+              src="/images/icons/icon-grapes.png"
               className="transparent margin-bottom"
               alt="grapes icon"
               width={150}
