@@ -3,27 +3,23 @@ import classes from "./bar-chart.module.css";
 
 import * as d3 from "d3";
 
-import { getHeaders } from "@/components/utils/header-utils";
 
 const BarChart2 = (props) => {
   const svgRef = useRef();
+  const yAxisLabelRef = useRef();
 
   const {
-    itemName,
-    dataYear,
     dataType,
-    grapeType,
     units,
-    topType,
     redGrapeData,
     whiteGrapeData,
     containerRef,
     containerSize,
+    selectedGrapeType,
   } = props;
 
-  const [selectedGrapeType, setSelectedGrapeType] = useState(
-    grapeType ? grapeType : "Red"
-  );
+  const yAxisLabel = units;
+
   const selectedData =
     selectedGrapeType === "Red" ? redGrapeData : whiteGrapeData;
   const fillColor = selectedGrapeType === "Red" ? "#B03E3E" : "#A19F18";
@@ -46,8 +42,14 @@ const BarChart2 = (props) => {
     const windowWidth = window.innerWidth;
     const windowHeight = window.innerHeight;
     // Use width and height from the container size
-    const width = containerSize.width > windowWidth * 0.7 ? windowWidth * 0.7 : containerSize.width;
-    const height = containerSize.height > windowHeight * 0.7 ? windowHeight * .7 : containerSize.height;
+    const width =
+      containerSize.width > windowWidth * 0.7
+        ? windowWidth * 0.7
+        : containerSize.width;
+    const height =
+      containerSize.height > windowHeight * 0.7
+        ? windowHeight * 0.7
+        : containerSize.height;
 
     // Set up and position SVG
     const svg = d3
@@ -113,6 +115,16 @@ const BarChart2 = (props) => {
       .append("g")
       .call(d3.axisLeft(yScale))
       .attr("font-size", "clamp(14px, 1.5vw, 18px)");
+
+    // Add y-axis label
+    svg
+      .append("text")
+      .attr("class", classes.yAxisLabel)
+      .attr("x", -height / 2)
+      .attr("y", -margin.left-60 )
+      .attr("transform", "rotate(-90)")
+      .style("text-anchor", "middle")
+      .text(yAxisLabel);
 
     // / Bars + Tooltip + Animations
     const bars = svg
@@ -191,20 +203,8 @@ const BarChart2 = (props) => {
     containerSize.height,
   ]);
 
-  let countryName = itemName === "United States" ? "the " + itemName : itemName;
-
   return (
     <>
-      {dataType === "country" && (
-        <select
-          className={classes.selectCss}
-          value={selectedGrapeType}
-          onChange={(event) => setSelectedGrapeType(event.target.value)}
-        >
-          <option value="Red">Red Grapes</option>
-          <option value="White">White Grapes</option>
-        </select>
-      )}
       <div className={classes.barchart}>
         <svg ref={svgRef}></svg>
       </div>

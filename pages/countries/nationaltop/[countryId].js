@@ -1,26 +1,21 @@
-import Link from "next/link";
+import { useState } from "react";
 
 import Head from "next/head";
 
 import { useRouter } from "next/router";
 
 import { getDataItemById } from "@/data/utils";
-import { COUNTRIES_DATA} from "@/data/country-data";
+import { COUNTRIES_DATA } from "@/data/country-data";
 import { COUNTRIES_WINE_DATA } from "@/data/country-wine-data-top-grapes-2016";
 
-import { COUNTRIES_RED_WINE_DATA } from "@/data/country-wine-data-red-all-2016";
-import { COUNTRIES_WHITE_WINE_DATA } from "@/data/country-wine-data-white-all-2016";
-
-import BarChart from "@/components/charts/bar-chart";
 import Button from "@/components/ui/button";
 import DataSource from "@/components/layout/data-source";
 
+import { getHeaders } from "@/components/utils/header-utils";
+
 import ChartWrapper from "@/components/charts/chart-wrapper";
 import ChartHeader from "@/components/charts/chart-header";
-
-import classes from "../../../components/charts/bar-chart.module.css";
-
-
+import ChartSelector from "@/components/charts/chart-selector";
 
 // TOP NATIONAL GRAPES
 
@@ -32,8 +27,9 @@ function CountryTopTenDetailPage() {
   const country = getDataItemById(id, COUNTRIES_DATA);
   const countryWineData = getDataItemById(id, COUNTRIES_WINE_DATA);
 
-  const dataType = "country";
+  const [selectedGrapeType, setSelectedGrapeType] = useState("Red");
 
+  const dataType = "country";
 
   if (!country || !countryWineData) {
     return (
@@ -43,9 +39,27 @@ function CountryTopTenDetailPage() {
     );
   }
 
-  const headerText = country.itemName + "'s Most-Produced Grape Varieties";
-  const subHeaderText = "subheader more";
-  
+  const itemName = country.ItemName;
+  const dataYear = countryWineData.dataYear;
+  const topType = "national";
+  const headerSuffix = "Top ";
+  const explanationText = "Production of ";
+  let countryName =
+    country.itemName === "United States"
+      ? "the " + country.itemName
+      : country.itemName;
+
+  const { headerText, subHeaderText } = getHeaders(
+    dataType,
+    itemName,
+    explanationText,
+    dataYear,
+    selectedGrapeType,
+    topType,
+    countryName,
+    headerSuffix
+  );
+
   const countryLink = `/countries/${country.id}`;
   const globalTopTenLink = `/countries/worldtopten/${country.id}`;
   const headDescription = `Top national grapes of ${country.itemName} production bar chart, by land area`;
@@ -54,29 +68,34 @@ function CountryTopTenDetailPage() {
     <>
       <Head>
         <title>
-        Top Grapes of {country.itemName} - Bar Chart - Winography - Wine Data
+          Top Grapes of {country.itemName} - Bar Chart - Winography - Wine Data
           Visualization
         </title>
-        <meta
-          name="description"
-          content={headDescription}
-        />
+        <meta name="description" content={headDescription} />
       </Head>
-      <ChartHeader
-        headerText={headerText}
-        subHeaderText={subHeaderText}
-        />
+      <ChartHeader headerText={headerText} subHeaderText={subHeaderText} />
+      <ChartSelector
+        selectedGrapeType={selectedGrapeType}
+        setSelectedGrapeType={setSelectedGrapeType}
+      />
       <ChartWrapper
         country={country}
         countryWineData={countryWineData}
+        selectedGrapeType={selectedGrapeType}
         dataType={dataType}
         topType="national"
-        />
+      />
       <DataSource />
       <div className="buttonFooter">
-        <Button link={globalTopTenLink} isSecondary="false">Global Top Grapes in {country.itemName} </Button>
-        <Button link={countryLink} isSecondary="true">{country.itemName} Country Page</Button>
-        <Button link="/countries/" isSecondary="true">Country Index</Button>
+        <Button link={globalTopTenLink} isSecondary="false">
+          Global Top Grapes in {country.itemName}{" "}
+        </Button>
+        <Button link={countryLink} isSecondary="true">
+          {country.itemName} Country Page
+        </Button>
+        <Button link="/countries/" isSecondary="true">
+          Country Index
+        </Button>
       </div>
     </>
   );

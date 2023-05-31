@@ -11,6 +11,7 @@ const ChartWrapper = (props) => {
     country,
     countryWineData,
     dataType,
+    selectedGrapeType
   } = props;
 
   useEffect(() => {
@@ -39,6 +40,7 @@ const ChartWrapper = (props) => {
           topType="national"
           redGrapeData={countryWineData.redGrapeDataNational}
           whiteGrapeData={countryWineData.whiteGrapeDataNational}
+          selectedGrapeType={selectedGrapeType}
           containerRef={containerRef}
           containerSize={containerSize}
         />
