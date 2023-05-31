@@ -7,12 +7,15 @@ import Masthead from "../components/layout/masthead";
 
 import { COUNTRIES_DATA } from "@/data/country-data";
 import { GRAPES_DATA } from "@/data/grape-data";
+import { getTopData } from "@/data/utils";
+
+import DataList from "@/components/layout/data-list";
 
 import MainContext from "@/store/main-context";
 
 // MAIN HOMEPAGE
 
-function HomePage() {
+function HomePage({ topGrapes }) {
   const mainCtx = useContext(MainContext);
   const isNewVisit = mainCtx.isNewVisit;
   const infoClass = "info alt2";
@@ -36,6 +39,8 @@ function HomePage() {
     countryName = countryData[randomCountryData].itemName === "United States" ? "the United States" : countryData[randomCountryData].itemName;
   }
 
+  const barChartLink = "/countries/bar-chart";
+
   return (
     <>
       <Head>
@@ -47,7 +52,7 @@ function HomePage() {
       </Head>
       <Masthead
         backgroundImage="/images/site-images/homepage-masthead.jpg"
-        header="Unleash Your Inner Wine Geek"
+        header="Discover Your Inner Wine Geek"
         headerText="Uncover wine's best-kept secrets through the beauty of data visualization. Dive into fascinating production & consumption history, eclectic grape varieties, and iconic wine regions."
       />
       <section className={infoClass}>
@@ -149,8 +154,33 @@ function HomePage() {
           </Link>
         </section>
       </section>
+      <section className={infoClass}>
+        <h2 className="header"> Grape Production Country Comparison</h2>
+        <p className="subheader">
+          Production of the world&apos;s top grape varietals in top wine-producing countries.
+        </p>
+        <div className="actions">
+          <Link href={barChartLink} className="action__container center">
+            <Image
+              src="/images/icons/icon-barchart.png"
+              className="transparent margin-bottom"
+              alt="grapes icon"
+              width={100}
+              height={100}
+            />
+            <p className="link">Bar Chart</p>
+          </Link>
+        </div>
+      </section>
+      <DataList items={topGrapes} headerText="Featured Grapes" />
     </>
   );
 }
 
 export default HomePage;
+
+export async function getStaticProps() {
+  const topGrapes = getTopData(GRAPES_DATA);
+
+  return { props: { topGrapes } };
+}

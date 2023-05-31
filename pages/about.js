@@ -5,7 +5,7 @@ function AboutPage() {
     <section className="aboutPage">
       <h1>About Winography</h1>
       <p>
-        Our mission is to help wine professionals, enthusiasts and newbies alike, by making the world of wine accessible and fun for everyone through a deeper understanding and appreciation of it.
+        Our mission is to help wine professionals, enthusiasts and newbies alike, by making the world of wine accessible and fun through a deeper understanding and appreciation of wine in its many forms.
       </p>
       <p>The site was was created and designed by New York-based Front End Developer <Link href="https://www.glennmcclanan.com/">Glenn McClanan</Link> using <Link href="https://nextjs.org/">Next.js</Link> and <Link href="https://d3js.org/">D3</Link>.</p>
       <p>

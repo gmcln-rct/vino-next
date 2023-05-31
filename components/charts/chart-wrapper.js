@@ -1,30 +1,49 @@
-import { useEffect, useState, useRef, useLayoutEffect } from "react";
+import { useEffect, useState, useRef } from "react";
 
-const ChartWrapper = ({ events }) => {
+import BarChart2 from "./bar-chart2";
+import classes from "./chart-wrapper.module.css";
 
-    const containerRef = useRef();
-    const [containerSize, setContainerSize] = useState({ width: 0, height: 0 });
+const ChartWrapper = (props) => {
+  const containerRef = useRef();
+  const [containerSize, setContainerSize] = useState({ width: 0, height: 0 });
 
-    useEffect(() => {
-        const updateSize = () => {
-          if (containerRef.current) {
-            setContainerSize({
-              width: containerRef.current.offsetWidth,
-              height: Math.min(containerRef.current.offsetHeight, window.innerHeight * 0.8),
-            });
-          }
-        };
-    
-        window.addEventListener("resize", updateSize);
-        updateSize();
-    
-        return () => window.removeEventListener("resize", updateSize);
-      }, []);
-    return (
-        <section className={classes.chart} ref={containerRef}>
+  const {
+    country,
+    countryWineData,
+    dataType,
+  } = props;
 
-        </section>
-    );
+  useEffect(() => {
+    const updateSize = () => {
+      if (containerRef.current) {
+        setContainerSize({
+          width: containerRef.current.offsetWidth,
+          height: window.innerHeight > 325 ? 325 : window.innerHeight
+        });
+      }
+    };
+
+    window.addEventListener("resize", updateSize);
+    updateSize();
+
+    return () => window.removeEventListener("resize", updateSize);
+  }, []);
+
+  return (
+    <section className={classes.chart} ref={containerRef}>
+        <BarChart2
+          itemName={country.itemName}
+          units={countryWineData.units}
+          dataYear={countryWineData.dataYear}
+          dataType={dataType}
+          topType="national"
+          redGrapeData={countryWineData.redGrapeDataNational}
+          whiteGrapeData={countryWineData.whiteGrapeDataNational}
+          containerRef={containerRef}
+          containerSize={containerSize}
+        />
+    </section>
+  );
 };
 
 export default ChartWrapper;

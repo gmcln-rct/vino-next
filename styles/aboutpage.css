@@ -11,7 +11,7 @@
     font-size: clamp(18px, 2vw, 24px);
     text-align: left;
 
-    color: var(--grey-10);
+    color: var(--grey-8);
     background-color: var(--grey-2);
   }
   

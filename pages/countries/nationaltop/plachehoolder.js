@@ -15,12 +15,6 @@ import BarChart from "@/components/charts/bar-chart";
 import Button from "@/components/ui/button";
 import DataSource from "@/components/layout/data-source";
 
-import ChartWrapper from "@/components/charts/chart-wrapper";
-import ChartHeader from "@/components/charts/chart-header";
-
-import classes from "../../../components/charts/bar-chart.module.css";
-
-
 
 // TOP NATIONAL GRAPES
 
@@ -34,6 +28,11 @@ function CountryTopTenDetailPage() {
 
   const dataType = "country";
 
+  // const headerText = country.itemName + "'s Most Produced Grape Varieties";
+
+
+  const headerSuffix = "Top "
+  const explanationText = "Production of ";
 
   if (!country || !countryWineData) {
     return (
@@ -42,9 +41,6 @@ function CountryTopTenDetailPage() {
       </div>
     );
   }
-
-  const headerText = country.itemName + "'s Most-Produced Grape Varieties";
-  const subHeaderText = "subheader more";
   const countryLink = `/countries/${country.id}`;
   const globalTopTenLink = `/countries/worldtopten/${country.id}`;
   const headDescription = `Top national grapes of ${country.itemName} production bar chart, by land area`;
@@ -61,16 +57,17 @@ function CountryTopTenDetailPage() {
           content={headDescription}
         />
       </Head>
-      <ChartHeader
-        headerText={headerText}
-        subHeaderText={subHeaderText}
-        />
-      <ChartWrapper
-        country={country}
-        countryWineData={countryWineData}
+      <BarChart
+        itemName={country.itemName}
+        units={countryWineData.units}
+        dataYear={countryWineData.dataYear}
         dataType={dataType}
         topType="national"
-        />
+        redGrapeData={countryWineData.redGrapeDataNational}
+        whiteGrapeData={countryWineData.whiteGrapeDataNational}
+        headerSuffix={headerSuffix}
+        explanationText={explanationText}
+      />
       <DataSource />
       <div className="buttonFooter">
         <Button link={globalTopTenLink} isSecondary="false">Global Top Grapes in {country.itemName} </Button>
