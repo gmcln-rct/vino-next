@@ -1,9 +1,10 @@
 import Link from "next/link";
 
 import classes from "./data-source.module.css";
+
 function DataSource() {
   return (
-    <div>
+    <div className={classes.dataSourceContainer}>
       <p className={classes.dataSource}>
         Data Source:{" "}
         <Link

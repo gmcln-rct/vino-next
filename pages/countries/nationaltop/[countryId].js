@@ -45,6 +45,7 @@ function CountryTopTenDetailPage() {
 
   const headerText = country.itemName + "'s Most-Produced Grape Varieties";
   const subHeaderText = "subheader more";
+  
   const countryLink = `/countries/${country.id}`;
   const globalTopTenLink = `/countries/worldtopten/${country.id}`;
   const headDescription = `Top national grapes of ${country.itemName} production bar chart, by land area`;

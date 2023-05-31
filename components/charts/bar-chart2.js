@@ -43,9 +43,10 @@ const BarChart2 = (props) => {
 
     const margin = { top: 20, right: 20, bottom: 50, left: 10 };
 
+    const windowWidth = window.innerWidth;
     const windowHeight = window.innerHeight;
     // Use width and height from the container size
-    const width = containerSize.width;
+    const width = containerSize.width > windowWidth * 0.7 ? windowWidth * 0.7 : containerSize.width;
     const height = containerSize.height > windowHeight * 0.7 ? windowHeight * .7 : containerSize.height;
 
     // Set up and position SVG

@@ -1,21 +1,32 @@
+.dataSourceContainer {
+}
+
 .dataSource {
-    margin: 1rem 0 0 0;
-  
-    font-family: "Inter", sans-serif;
-    font-size: clamp(12px, 1.5vw, 18px);
-    font-weight: 400;
-    font-style: italic;
-    font-display: swap;
-    text-align: center;
-  
-    color: var(--grey-1);
-  }
-  
-  .dataSource.light {
-    color: var(--grey-1);
-  }
-  .dataSource:hover,
-  .dataSource:active {
-    color: var(--blue-7);
-    transition: 0.3s;
-  }
+  margin: 1rem 0 0 0;
+
+  font-family: "Inter", sans-serif;
+  font-size: clamp(12px, 1.5vw, 18px);
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+  text-align: center;
+
+  color: var(--grey-1);
+}
+
+.dataSource.light {
+  color: var(--grey-1);
+}
+.dataSource:hover,
+.dataSource:active {
+  color: var(--blue-7);
+  transition: 0.3s;
+}
+
+/* MEDIA QUERIES */
+
+@media (min-width: 768px) {
+  /* .dataSourceContainer {
+    min-height: 150px;
+  } */
+}
