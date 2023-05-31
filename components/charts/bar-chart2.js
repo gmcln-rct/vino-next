@@ -1,8 +1,7 @@
-import { useEffect, useState, useRef, useLayoutEffect } from "react";
+import { useEffect, useRef, useLayoutEffect } from "react";
 import classes from "./bar-chart.module.css";
 
 import * as d3 from "d3";
-
 
 const BarChart2 = (props) => {
   const svgRef = useRef();
