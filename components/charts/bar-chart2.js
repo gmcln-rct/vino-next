@@ -43,13 +43,15 @@ const BarChart2 = (props) => {
     const windowHeight = window.innerHeight;
     // Use width and height from the container size
     const width =
-      containerSize.width > windowWidth * 0.7
-        ? windowWidth * 0.7
+      containerSize.width > windowWidth * 0.8
+        ? windowWidth * 0.8
         : containerSize.width;
     const height =
       containerSize.height > windowHeight * 0.7
         ? windowHeight * 0.7
         : containerSize.height;
+    const labelMargin = (-margin.left)-85;
+    const viewBoxWidth = windowWidth > 420 ? width + margin.left + margin.right + 100 : width + margin.left + margin.right;
 
     // Set up and position SVG
     const svg = d3
@@ -58,7 +60,7 @@ const BarChart2 = (props) => {
       .attr("height", height)
       .attr(
         "viewBox",
-        `0 0 ${width + margin.left + margin.right} ${
+        `0 0 ${viewBoxWidth} ${
           height + margin.top + margin.bottom + 100
         }`
       )
@@ -83,7 +85,7 @@ const BarChart2 = (props) => {
     // Add X axis
     const xScale = d3
       .scaleBand()
-      .range([0, width + 50])
+      .range([0, width * 1.2])
       .domain(
         data.map((d) => {
           if (dataType === "grape") {
@@ -121,7 +123,7 @@ const BarChart2 = (props) => {
       .append("text")
       .attr("class", classes.yAxisLabel)
       .attr("x", -height / 2)
-      .attr("y", -margin.left-60 )
+      .attr("y", labelMargin )
       .attr("transform", "rotate(-90)")
       .style("text-anchor", "middle")
       .text(yAxisLabel);
