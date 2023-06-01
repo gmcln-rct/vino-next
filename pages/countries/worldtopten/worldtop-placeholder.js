@@ -10,10 +10,6 @@ import BarChart from "@/components/charts/bar-chart";
 import Button from "@/components/ui/button";
 import DataSource from "@/components/layout/data-source";
 
-import ChartWrapper from "@/components/charts/chart-wrapper";
-import ChartHeader from "@/components/charts/chart-header";
-import ChartSelector from "@/components/charts/chart-selector";
-
 
 function CountryWorldTopTenDetailPage() {
   const router = useRouter();
@@ -55,7 +51,12 @@ function CountryWorldTopTenDetailPage() {
         />
       </Head>
       <section>
- 
+        {/* <h2 className="chartHeader">
+          {headerText}
+        </h2> */}
+        {/* <p className="chartSubheader">
+          {subHeaderText}
+        </p> */}
 
         <BarChart
           itemName={country.itemName}

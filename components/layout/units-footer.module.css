@@ -1,0 +1,12 @@
+.units {
+    margin: 1.5vmin 0 1vmin 0;
+  
+    font-family: "Inter", sans-serif;
+    font-size: clamp(14px, 2vw, 18px);
+    font-weight: 400;
+    font-style: italic;
+    font-display: swap;
+    text-align: center;
+  
+    color: var(--grey-2);
+  }

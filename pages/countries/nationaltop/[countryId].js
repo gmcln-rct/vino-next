@@ -10,6 +10,7 @@ import { COUNTRIES_WINE_DATA } from "@/data/country-wine-data-top-grapes-2016";
 
 import Button from "@/components/ui/button";
 import DataSource from "@/components/layout/data-source";
+import UnitsFooter from "@/components/layout/units-footer";
 
 import { getHeaders } from "@/components/utils/header-utils";
 
@@ -85,6 +86,7 @@ function CountryTopTenDetailPage() {
         dataType={dataType}
         topType="national"
       />
+      <UnitFooter units={units} />
       <DataSource />
       <div className="buttonFooter">
         <Button link={globalTopTenLink} isSecondary="false">
