@@ -50,7 +50,7 @@ const BarChart2 = (props) => {
         ? windowHeight * 0.7
         : containerSize.height;
     const labelMargin = (-margin.left)-85;
-    const viewBoxWidth = windowWidth > 420 ? width + margin.left + margin.right + 100 : width + margin.left + margin.right;
+    const viewBoxWidth = windowWidth > 420 ? width + margin.left + margin.right + 200 : width + margin.left + margin.right;
 
     // Set up and position SVG
     const svg = d3
@@ -60,7 +60,7 @@ const BarChart2 = (props) => {
       .attr(
         "viewBox",
         `0 0 ${viewBoxWidth} ${
-          height + margin.top + margin.bottom + 100
+          height + margin.top + margin.bottom + 85
         }`
       )
       .append("g")

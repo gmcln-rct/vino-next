@@ -9,11 +9,12 @@ import { COUNTRIES_WINE_DATA } from "@/data/country-wine-data-top-grapes-2016";
 import BarChart from "@/components/charts/bar-chart";
 import Button from "@/components/ui/button";
 import DataSource from "@/components/layout/data-source";
+import UnitsFooter from "@/components/layout/units-footer";
+
 
 import ChartWrapper from "@/components/charts/chart-wrapper";
 import ChartHeader from "@/components/charts/chart-header";
 import ChartSelector from "@/components/charts/chart-selector";
-
 
 function CountryWorldTopTenDetailPage() {
   const router = useRouter();
@@ -49,14 +50,9 @@ function CountryWorldTopTenDetailPage() {
           {country.itemName} Production of Global Top Grape Varieties -
           Winography | Learn About Wine Through Data Visualizations
         </title>
-        <meta
-          name="description"
-          content={headDescription}
-        />
+        <meta name="description" content={headDescription} />
       </Head>
       <section>
- 
-
         <BarChart
           itemName={country.itemName}
           units={countryWineData.units}
@@ -67,6 +63,7 @@ function CountryWorldTopTenDetailPage() {
           headerSuffix={headerSuffix}
           explanationText={explanationText}
         />
+        <UnitsFooter units="hectares" />
         <DataSource />
         <div className="buttonFooter">
           <Button link={nationalTopLink} isSecondary="false">
