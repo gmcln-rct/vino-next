@@ -60,7 +60,7 @@ const BarChart2 = (props) => {
       .attr(
         "viewBox",
         `0 0 ${viewBoxWidth} ${
-          height + margin.top + margin.bottom + 85
+          height + margin.top + margin.bottom + 100
         }`
       )
       .append("g")

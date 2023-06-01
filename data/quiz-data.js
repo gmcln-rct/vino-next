@@ -146,4 +146,54 @@ export const QUIZ_DATA = [
     explanation:
       "New World is a term used to describe wines from newer wine-producing regions, such as the United States, Australia, and South America, where wine production may be more innovative.",
   },
+  {
+    question:
+      'What is the standard size for a bottle of wine?',
+    questionType: "multiplechoice",
+    answerSelectionType: "single",
+    answers: ["500ml", "750ml","800ml"],
+    correctAnswer: "1",
+    explanation:
+      "Most wine is sold in 750ml bottles.",
+  },
+  {
+    question:
+      'What is the size of a magnum bottle?',
+    questionType: "multiplechoice",
+    answerSelectionType: "single",
+    answers: ["1 liter", "1.25 liters","1.5 liters"],
+    correctAnswer: "2",
+    explanation:
+      "A magnum bottle of wine is the equivalent of 2 standard bottles.",
+  },
+  {
+    question:
+      'Who is the patron saint of winemakers?',
+    questionType: "multiplechoice",
+    answerSelectionType: "single",
+    answers: ["Saint Lawrence", "Saint Honore","Saint Vincent"],
+    correctAnswer: "2",
+    explanation:
+      "Celebrated every January 22, Saint Vincent is the patron saint of winemakers and he symbolizes the solidarity among them.",
+  },
+  {
+    question:
+      'In what country did the phylloxera insect originate?',
+    questionType: "multiplechoice",
+    answerSelectionType: "single",
+    answers: ["United States", "France","Italy"],
+    correctAnswer: "0",
+    explanation:
+      "Grape phylloxera is an insect pest of commercial grapevines, originally native to eastern North America. In the late 19th century the phylloxera epidemic destroyed most of the vineyards in Europe, especially in France.",
+  },
+  {
+    question:
+      'What is the name of the pest that caused the epidemic that destroyed most of the vineyards for wine grapes in Europe in the late 19th century?',
+    questionType: "multiplechoice",
+    answerSelectionType: "single",
+    answers: ["botrytis", "phylloxera","brettanomyces"],
+    correctAnswer: "1",
+    explanation:
+      "In the late 19th century the phylloxera epidemic destroyed most of the vineyards for wine grapes in Europe. It was introduced to Europe when botanists collected specimens of American vines in the 1850s.",
+  },
 ];
