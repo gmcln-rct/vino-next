@@ -86,7 +86,7 @@ function CountryTopTenDetailPage() {
         dataType={dataType}
         topType="national"
       />
-      <UnitFooter units={units} />
+      <UnitsFooter units="hectares" />
       <DataSource />
       <div className="buttonFooter">
         <Button link={globalTopTenLink} isSecondary="false">
