@@ -48,7 +48,7 @@ const BarChart2 = (props) => {
     const height =
       containerSize.height > windowHeight * 0.7
         ? windowHeight * 0.7
-        : containerSize.height;
+        : containerSize.height * 1.2;
     const labelMargin = (-margin.left)-85;
     const viewBoxWidth = windowWidth > 420 ? width + margin.left + margin.right + 200 : width + margin.left + margin.right;
 
