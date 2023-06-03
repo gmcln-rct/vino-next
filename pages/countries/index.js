@@ -24,7 +24,7 @@ function CountryIndex() {
       </Head>
       <Masthead
         backgroundImage="/images/site-images/index-masthead-countries.jpg"
-        header="Wine Without Borders - Countries"
+        header="Wine Without Borders"
         headerText="Take a flavorful journey through global wine production. Dive into captivating charts comparing wine-producing nations and uncover the unique highlights of featured countries."
       />
       <section className="info">
