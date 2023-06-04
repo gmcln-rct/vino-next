@@ -69,8 +69,8 @@ function CountryTopTenDetailPage() {
     <>
       <Head>
         <title>
-          Top Grapes of {country.itemName} - Bar Chart - Winography - Wine Data
-          Visualization
+         { `Top Grapes of ${country.itemName} - Bar Chart - Winography - Wine Data
+          Visualization` }
         </title>
         <meta name="description" content={headDescription} />
       </Head>

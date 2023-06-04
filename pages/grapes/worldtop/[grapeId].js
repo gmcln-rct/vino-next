@@ -54,8 +54,8 @@ function GrapeTopDetailPage() {
     <>
       <Head>
         <title>
-          Top {grape.itemName} Wine Grape Producing Countries - Winography -
-          Wine Data Visualization
+          {`Top ${grape.itemName} Wine Grape Producing Countries - Winography -
+          Wine Data Visualization`}
         </title>
         <meta
           name="description"
