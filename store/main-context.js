@@ -1,30 +1,38 @@
 import { createContext, useState, useEffect } from 'react';
 
-// Uppercase because it's a component
 const MainContext = createContext({});
 
 export function MainContextProvider(props) {
     const [isNewVisit, setIsNewVisit] = useState(false);
-    const currentDate = new Date().toISOString().slice(0,10); // "YYYY-MM-DD"
+    const [sessionStartDate, setSessionStartDate] = useState(undefined);
 
     useEffect(() => {
-        const sessionStartDate = sessionStorage.getItem('sessionStartDate');
-
-        console.log('sessionStartDate ', sessionStartDate);
-        console.log('currentDate.getDate() ', currentDate);
-        console.log('equal? ', currentDate === sessionStartDate);
-        if (currentDate === sessionStartDate) {
-          setIsNewVisit(false);
+      if (!sessionStartDate) {
+            // First visit, store the session start time
+            // sessionStorage.setItem('sessionStartDate', Date.now());
+            setSessionStartDate(Date.now());
+            // console.log('sessionStartDate ', sessionStartDate);
+            setIsNewVisit(true);
         } else {
-          setIsNewVisit(true);
-          sessionStorage.setItem('sessionStartDate', currentDate);
-        }
-    }, [currentDate]);
+            const ONE_HOUR = 60 * 60 * 1000; /* ms */
+            if ((Date.now() - sessionStartDate) > ONE_HOUR) {
+                // If session started more than an hour ago
+                setIsNewVisit(true);
+                setSessionStartDate(Date.now());
 
-    useEffect(() => {
-      console.log('isNewVisit ', isNewVisit);
+                // Update session start time
+                // sessionStorage.setItem('sessionStartDate', Date.now());
+            } else {
+                setIsNewVisit(false);
+            }
+        }
+      }, []);
+      
+      useEffect(() => {
+        console.log('isNewVisit ', isNewVisit);
+        console.log('sessionStartDate ', sessionStartDate);
     }, [isNewVisit]);
-  
+
     const context = {
       isNewVisit,
     };
