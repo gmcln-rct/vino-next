@@ -13,31 +13,57 @@ import DataList from "@/components/layout/data-list";
 
 import MainContext from "@/store/main-context";
 
+export async function getStaticProps() {
+  const topGrapes = getTopData(GRAPES_DATA);
+
+  // generate random data here
+  const randomGrapeIndex = Math.floor(Math.random() * GRAPES_DATA.length);
+  const randomGrape = GRAPES_DATA[randomGrapeIndex];
+
+  const randomCountryIndex = Math.floor(Math.random() * COUNTRIES_DATA.length);
+  const randomCountry = COUNTRIES_DATA[randomCountryIndex];
+
+  return {
+    props: {
+      topGrapes,
+      randomGrape,
+      randomCountry
+    }
+  };
+}
+
 // MAIN HOMEPAGE
 
-function HomePage({ topGrapes }) {
+function HomePage({ topGrapes, randomGrape, randomCountry }) {
   const mainCtx = useContext(MainContext);
   const isNewVisit = mainCtx.isNewVisit;
+
   const infoClass = "info alt2";
-  const [countryData, setCountryData] = useState(COUNTRIES_DATA);
-  const [grapeData, setGrapeData] = useState(GRAPES_DATA);
 
-  let randomGrapeData = Math.floor(Math.random() * grapeData.length);
-  let grapeLink;
-  let grapeName;
-  let randomCountryData;
-  let countryLink;
-  let countryName;
+  // use passed in props instead of generating new data on each render
+  let grapeLink = "/grapes/worldtop/bubble-chart/" + randomGrape.id;
+  let grapeName = randomGrape.itemName;
 
-  if (!grapeLink || !grapeName || isNewVisit) {
-    grapeLink =
-      "/grapes/worldtop/bubble-chart/" + grapeData[randomGrapeData].id;
-    grapeName = grapeData[randomGrapeData].itemName;
+  let countryLink = "/countries/nationaltop/" + randomCountry.id;
+  let countryName = randomCountry.itemName === "United States" ? "the United States" : randomCountry.itemName;
 
-    randomCountryData = Math.floor(Math.random() * countryData.length);
-    countryLink = "/countries/nationaltop/" + countryData[randomCountryData].id;
-    countryName = countryData[randomCountryData].itemName === "United States" ? "the United States" : countryData[randomCountryData].itemName;
-  }
+
+  // let randomGrapeData = Math.floor(Math.random() * grapeData.length);
+  // let grapeLink;
+  // let grapeName;
+  // let randomCountryData;
+  // let countryLink;
+  // let countryName;
+
+  // if (!grapeLink || !grapeName || isNewVisit) {
+  //   grapeLink =
+  //     "/grapes/worldtop/bubble-chart/" + grapeData[randomGrapeData].id;
+  //   grapeName = grapeData[randomGrapeData].itemName;
+
+  //   randomCountryData = Math.floor(Math.random() * countryData.length);
+  //   countryLink = "/countries/nationaltop/" + countryData[randomCountryData].id;
+  //   countryName = countryData[randomCountryData].itemName === "United States" ? "the United States" : countryData[randomCountryData].itemName;
+  // }
 
   const barChartLink = "/countries/bar-chart";
 
@@ -107,7 +133,7 @@ function HomePage({ topGrapes }) {
             />
             <p className="link">Per Capita Comparison</p>
           </Link>
-          <Link href={countryLink} className="action__container center tall">
+          {isNewVisit && <Link href={countryLink} className="action__container center tall">
             <Image
               src="/images/icons/icon-barchart.png"
               className="transparent margin-bottom"
@@ -116,7 +142,7 @@ function HomePage({ topGrapes }) {
               height={100}
             />
             <p className="link">Top Grapes of {countryName}</p>
-          </Link>
+          </Link>}
         </div>
       </section>
       <section className="homePage">
@@ -179,8 +205,8 @@ function HomePage({ topGrapes }) {
 
 export default HomePage;
 
-export async function getStaticProps() {
-  const topGrapes = getTopData(GRAPES_DATA);
+// export async function getStaticProps() {
+//   const topGrapes = getTopData(GRAPES_DATA);
 
-  return { props: { topGrapes } };
-}
+//   return { props: { topGrapes } };
+// }
