@@ -5,13 +5,12 @@ const MainContext = createContext({});
 export function MainContextProvider(props) {
     const [isNewVisit, setIsNewVisit] = useState(false);
     const [sessionStartDate, setSessionStartDate] = useState(undefined);
+    const [topScore, setTopScore] = useState(0);
 
     useEffect(() => {
       if (!sessionStartDate) {
             // First visit, store the session start time
-            // sessionStorage.setItem('sessionStartDate', Date.now());
             setSessionStartDate(Date.now());
-            // console.log('sessionStartDate ', sessionStartDate);
             setIsNewVisit(true);
         } else {
             const ONE_HOUR = 60 * 60 * 1000; /* ms */
@@ -21,7 +20,6 @@ export function MainContextProvider(props) {
                 setSessionStartDate(Date.now());
 
                 // Update session start time
-                // sessionStorage.setItem('sessionStartDate', Date.now());
             } else {
                 setIsNewVisit(false);
             }

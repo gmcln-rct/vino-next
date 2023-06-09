@@ -47,24 +47,6 @@ function HomePage({ topGrapes, randomGrape, randomCountry }) {
   let countryLink = "/countries/nationaltop/" + randomCountry.id;
   let countryName = randomCountry.itemName === "United States" ? "the United States" : randomCountry.itemName;
 
-
-  // let randomGrapeData = Math.floor(Math.random() * grapeData.length);
-  // let grapeLink;
-  // let grapeName;
-  // let randomCountryData;
-  // let countryLink;
-  // let countryName;
-
-  // if (!grapeLink || !grapeName || isNewVisit) {
-  //   grapeLink =
-  //     "/grapes/worldtop/bubble-chart/" + grapeData[randomGrapeData].id;
-  //   grapeName = grapeData[randomGrapeData].itemName;
-
-  //   randomCountryData = Math.floor(Math.random() * countryData.length);
-  //   countryLink = "/countries/nationaltop/" + countryData[randomCountryData].id;
-  //   countryName = countryData[randomCountryData].itemName === "United States" ? "the United States" : countryData[randomCountryData].itemName;
-  // }
-
   const barChartLink = "/countries/bar-chart";
 
   return (
@@ -78,8 +60,8 @@ function HomePage({ topGrapes, randomGrape, randomCountry }) {
       </Head>
       <Masthead
         backgroundImage="/images/site-images/homepage-masthead.jpg"
-        header="Discover Your Inner Wine Geek"
-        headerText="Uncover wine's best-kept secrets through the beauty of data visualization. Dive into fascinating production & consumption history, eclectic grape varieties, and iconic wine regions."
+        header="Discover Wine's Secrets"
+        headerText="Uncover wine's best-kept secrets through data visualization. Dive into fascinating production & consumption history, eclectic grape varieties, and iconic wine regions."
       />
       <section className={infoClass}>
         <h2 className="header">Featured Charts</h2>
