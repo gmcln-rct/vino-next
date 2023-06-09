@@ -1,31 +1,29 @@
 import { createContext, useState, useEffect } from 'react';
 
 // Uppercase because it's a component
-const MainContext = createContext({
-});
-
+const MainContext = createContext({});
 
 export function MainContextProvider(props) {
-    // const [currentDate, setCurrentDate] = useState(new Date().getMonth() + 1) + '/' + new Date().getDate() + '/' + new Date().getFullYear();
     const [isNewVisit, setIsNewVisit] = useState(false);
-  
-    useEffect(() => {
-      const sessionStartDate = sessionStorage.getItem('sessionStartDate');
-    //   console.log('sessionStartDate ', sessionStartDate)
+    const currentDate = new Date().toISOString().slice(0,10); // "YYYY-MM-DD"
 
-        const currentDate = (new Date().getMonth() + 1) + '/' + new Date().getDate() + '/' + new Date().getFullYear();
+    useEffect(() => {
+        const sessionStartDate = sessionStorage.getItem('sessionStartDate');
+
+        console.log('sessionStartDate ', sessionStartDate);
         console.log('currentDate.getDate() ', currentDate);
-        if (currentDate !== sessionStartDate) {
+        console.log('equal? ', currentDate === sessionStartDate);
+        if (currentDate === sessionStartDate) {
+          setIsNewVisit(false);
+        } else {
           setIsNewVisit(true);
-        //   setCurrentDate(currentDate);
           sessionStorage.setItem('sessionStartDate', currentDate);
-      } else {
-        setIsNewVisit(false);
-      }
-    }, []);
-  
-    console.log('isNewVisit ', isNewVisit);
-    // console.log('currentDate ', currentDate)
+        }
+    }, [currentDate]);
+
+    useEffect(() => {
+      console.log('isNewVisit ', isNewVisit);
+    }, [isNewVisit]);
   
     const context = {
       isNewVisit,
