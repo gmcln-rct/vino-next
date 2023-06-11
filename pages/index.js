@@ -13,15 +13,19 @@ import DataList from "@/components/layout/data-list";
 
 import MainContext from "@/store/main-context";
 
-export async function getStaticProps() {
-  const topGrapes = getTopData(GRAPES_DATA);
 
+export async function getStaticProps() {
+
+
+  const topGrapes = getTopData(GRAPES_DATA);
+  // if(isNewVisit) {
   // generate random data here
   const randomGrapeIndex = Math.floor(Math.random() * GRAPES_DATA.length);
   const randomGrape = GRAPES_DATA[randomGrapeIndex];
 
   const randomCountryIndex = Math.floor(Math.random() * COUNTRIES_DATA.length);
   const randomCountry = COUNTRIES_DATA[randomCountryIndex];
+  // };
 
   return {
     props: {
@@ -60,7 +64,7 @@ function HomePage({ topGrapes, randomGrape, randomCountry }) {
       </Head>
       <Masthead
         backgroundImage="/images/site-images/homepage-masthead.jpg"
-        header="Discover Wine's Secrets"
+        header="Discover Wine, One Chart at a Time"
         headerText="Uncover wine's best-kept secrets through data visualization. Dive into fascinating production & consumption history, eclectic grape varieties, and iconic wine regions."
       />
       <section className={infoClass}>
@@ -115,7 +119,7 @@ function HomePage({ topGrapes, randomGrape, randomCountry }) {
             />
             <p className="link">Per Capita Comparison</p>
           </Link>
-          {isNewVisit && <Link href={countryLink} className="action__container center tall">
+          <Link href={countryLink} className="action__container center tall">
             <Image
               src="/images/icons/icon-barchart.png"
               className="transparent margin-bottom"
@@ -124,7 +128,7 @@ function HomePage({ topGrapes, randomGrape, randomCountry }) {
               height={100}
             />
             <p className="link">Top Grapes of {countryName}</p>
-          </Link>}
+          </Link>
         </div>
       </section>
       <section className="homePage">
