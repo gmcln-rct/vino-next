@@ -32,6 +32,7 @@ export function MainContextProvider(props) {
 
     const context = {
       isNewVisit,
+      setIsNewVisit
     };
 
   return (

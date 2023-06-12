@@ -13,10 +13,7 @@ import DataList from "@/components/layout/data-list";
 
 import MainContext from "@/store/main-context";
 
-
 export async function getStaticProps() {
-
-
   const topGrapes = getTopData(GRAPES_DATA);
   // if(isNewVisit) {
   // generate random data here
@@ -25,14 +22,15 @@ export async function getStaticProps() {
 
   const randomCountryIndex = Math.floor(Math.random() * COUNTRIES_DATA.length);
   const randomCountry = COUNTRIES_DATA[randomCountryIndex];
+
   // };
 
   return {
     props: {
       topGrapes,
       randomGrape,
-      randomCountry
-    }
+      randomCountry,
+    },
   };
 }
 
@@ -41,15 +39,22 @@ export async function getStaticProps() {
 function HomePage({ topGrapes, randomGrape, randomCountry }) {
   const mainCtx = useContext(MainContext);
   const isNewVisit = mainCtx.isNewVisit;
+  const setIsNewVisit = mainCtx.setIsNewVisit;
 
   const infoClass = "info alt2";
 
   // use passed in props instead of generating new data on each render
   let grapeLink = "/grapes/worldtop/bubble-chart/" + randomGrape.id;
   let grapeName = randomGrape.itemName;
+  const countryLink = "/countries/nationaltop/" + randomCountry.id;
+  const countryName =
+    randomCountry.itemName === "United States"
+      ? "the United States"
+      : randomCountry.itemName;
 
-  let countryLink = "/countries/nationaltop/" + randomCountry.id;
-  let countryName = randomCountry.itemName === "United States" ? "the United States" : randomCountry.itemName;
+  if (randomCountry) {
+    setIsNewVisit(false);
+  }
 
   const barChartLink = "/countries/bar-chart";
 
@@ -119,16 +124,18 @@ function HomePage({ topGrapes, randomGrape, randomCountry }) {
             />
             <p className="link">Per Capita Comparison</p>
           </Link>
-          <Link href={countryLink} className="action__container center tall">
-            <Image
-              src="/images/icons/icon-barchart.png"
-              className="transparent margin-bottom"
-              alt="Per Capita Wine Consumption Histogram"
-              width={100}
-              height={100}
-            />
-            <p className="link">Top Grapes of {countryName}</p>
-          </Link>
+          {(countryLink && countryName) &&(
+            <Link href={countryLink} className="action__container center tall">
+              <Image
+                src="/images/icons/icon-barchart.png"
+                className="transparent margin-bottom"
+                alt="Per Capita Wine Consumption Histogram"
+                width={100}
+                height={100}
+              />
+              <p className="link">Top Grapes of {countryName}</p>
+            </Link>
+          )}
         </div>
       </section>
       <section className="homePage">
@@ -169,7 +176,8 @@ function HomePage({ topGrapes, randomGrape, randomCountry }) {
       <section className={infoClass}>
         <h2 className="header"> Grape Production Country Comparison</h2>
         <p className="subheader">
-          Production of the world&apos;s top grape varietals in top wine-producing countries.
+          Production of the world&apos;s top grape varietals in top
+          wine-producing countries.
         </p>
         <div className="actions">
           <Link href={barChartLink} className="action__container center">
@@ -191,8 +199,3 @@ function HomePage({ topGrapes, randomGrape, randomCountry }) {
 
 export default HomePage;
 
-// export async function getStaticProps() {
-//   const topGrapes = getTopData(GRAPES_DATA);
-
-//   return { props: { topGrapes } };
-// }

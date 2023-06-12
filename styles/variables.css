@@ -122,4 +122,21 @@
   --pink-9: #800141;
 
   --pink-9-transparent: rgba(128, 1, 65, 0.8);
+
+  /* ALT SHADES */
+
+  /* 846d0a	907c23	9d8a3b	a99954	b5a76c	c2b685	cec59d	dad3b6	e6e2ce	f3f0e7	ffffff */
+  --olive-0: #f3f0e7;
+  --olive-1: #e6e2ce;
+  --olive-2: #dad3b6;
+  --olive-3: #cec59d;
+  --olive-4: #c2b685;
+  --olive-5: #b5a76c;
+  --olive-6: #a99954;
+  --olive-7: #9d8a3b;
+  --olive-8: #907c23;
+  --olive-9: #846D0A;
+
+--new-grey-9: #887177;
+
 }

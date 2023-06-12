@@ -12,7 +12,8 @@
   color: white;
   /* background-color: #656565; */
   /* background-color: #96074e; */
-  background-color: var(--grey-8);
+  /* background-color: var(--grey-8); */
+  background-color: var(--new-grey-9);
   -webkit-box-shadow: inset 0px 0px 28px 0px rgba(0, 0, 0, 0.25);
   -moz-box-shadow: inset 0px 0px 28px 0px rgba(0, 0, 0, 0.25);
   box-shadow: inset 0px 0px 28px 0px rgba(0, 0, 0, 0.25);

@@ -83,7 +83,8 @@ main a {
 
 .alt2 {
   /* background-color: var(--grey-5); */
-  background-color: var(--pink-9);
+  /* background-color: var(--pink-9); */
+  background-color: #4F3E00;
 }
 
 .headline {
