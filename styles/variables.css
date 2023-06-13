@@ -6,7 +6,6 @@
   --font-roboto: "Roboto", sans-serif;
   --font-jost: "Jost", sans-serif;
 
-
   --font-size-1: clamp(14px, 2vw, 18px);
   --font-size-4: clamp(16px, 2vw, 24px);
   --font-size-5: clamp(20px, 3vw, 24px);
@@ -135,8 +134,25 @@
   --olive-6: #a99954;
   --olive-7: #9d8a3b;
   --olive-8: #907c23;
-  --olive-9: #846D0A;
+  --olive-9: #846d0a;
 
---new-grey-9: #887177;
-
+  --new-grey-0: #f3f1f1;
+  --new-grey-1: #e7e3e4;
+  --new-grey-2: #dbd4d6;
+  --new-grey-3: #cfc6c9;
+  --new-grey-4: #c4b8bb;
+  --new-grey-5: #b8aaad;
+  --new-grey-6: #ac9ca0;
+  --new-grey-7: #a08d92;
+  --new-grey-8: #947f85;
+  --new-grey-9: #887177;
+  --new-grey-10: #7a666b;
+  --new-grey-11: #6d5a5f;
+  --new-grey-12: #5f4f53;
+  --new-grey-13: #524447;
+  --new-grey-14: #44393c;
+  --new-grey-15: #362d30;
+  --new-grey-16: #292224;
+  --new-grey-17: #1b1718;
+  --new-grey-18: #0e0b0c;
 }

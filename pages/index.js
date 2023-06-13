@@ -41,7 +41,8 @@ function HomePage({ topGrapes, randomGrape, randomCountry }) {
   const isNewVisit = mainCtx.isNewVisit;
   const setIsNewVisit = mainCtx.setIsNewVisit;
 
-  const infoClass = "info alt2";
+  const infoClass = "info alt";
+  const infoClass2 = "info alt2"
 
   // use passed in props instead of generating new data on each render
   let grapeLink = "/grapes/worldtop/bubble-chart/" + randomGrape.id;
@@ -138,8 +139,8 @@ function HomePage({ topGrapes, randomGrape, randomCountry }) {
           )}
         </div>
       </section>
-      <section className="homePage">
-        <h2 className="homePageHeader">Browse data visualizations:</h2>
+      <section className={infoClass2}>
+        <h2 className="homePageHeader">Data Categories</h2>
         <section className="homePage__links">
           <Link href="/countries" className="action__container center">
             <Image

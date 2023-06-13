@@ -30,7 +30,7 @@ main {
   /* height: 100%; */
   margin: 0;
 
-  background-color: var(--red-8);
+  background-color: var(--pink-9);
 
   /* font-family: 'Lato', sans-serif; */
   font-family: var(--font-open-sans);
@@ -52,7 +52,7 @@ main a {
   padding: 1vmin 0 2vmin 0;
   font-family: var(--font-lato);
 
-  background-color: var(--grey-8);
+  background-color: var(--new-grey-12);
   /* box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.2); */
   -webkit-box-shadow: inset 0px 0px 14px 0px rgba(0, 0, 0, 0.25);
   -moz-box-shadow: inset 0px 0px 14px 0px rgba(0, 0, 0, 0.25);
@@ -65,7 +65,7 @@ main a {
   /* color: var(--red-7); */
   font-family: "Inter", sans-serif;
   font-size: clamp(24px, 4vw, 32px);
-  font-weight: 400;
+  font-weight: 600;
   font-display: swap;
 
   letter-spacing: 1px;
@@ -74,17 +74,17 @@ main a {
 
 .alt {
   /* background-color: var(--grey-5); */
-  background-color: var(--cyan-9);
+  background-color: var(--new-grey-12);
 }
 
 .alt .header {
-  color: var(--cyan-1);
+  color: #fff;
 }
 
 .alt2 {
   /* background-color: var(--grey-5); */
   /* background-color: var(--pink-9); */
-  background-color: #4F3E00;
+  background-color: var(--new-grey-12);
 }
 
 .headline {
