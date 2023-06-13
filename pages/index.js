@@ -73,7 +73,7 @@ function HomePage({ topGrapes, randomGrape, randomCountry }) {
         header="Discover Wine, One Chart at a Time"
         headerText="Uncover wine's best-kept secrets through data visualization. Dive into fascinating production & consumption history, eclectic grape varieties, and iconic wine regions."
       />
-      <section className={infoClass}>
+      <section className={infoClass2}>
         <h2 className="header">Featured Charts</h2>
         <div className="actions">
           <Link
@@ -139,7 +139,7 @@ function HomePage({ topGrapes, randomGrape, randomCountry }) {
           )}
         </div>
       </section>
-      <section className={infoClass2}>
+      <section className={infoClass}>
         <h2 className="homePageHeader">Data Categories</h2>
         <section className="homePage__links">
           <Link href="/countries" className="action__container center">
@@ -174,7 +174,7 @@ function HomePage({ topGrapes, randomGrape, randomCountry }) {
           </Link>
         </section>
       </section>
-      <section className={infoClass}>
+      <section className={infoClass2}>
         <h2 className="header"> Grape Production Country Comparison</h2>
         <p className="subheader">
           Production of the world&apos;s top grape varietals in top

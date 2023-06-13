@@ -17,7 +17,7 @@ export default function ResourcesIndex({ topGrapes }) {
         />
       </Head>
       <Masthead
-        backgroundImage="/images/site-images/resources-bg.jpg"
+        backgroundImage="/images/site-images/index-masthead-learning.jpg"
         header="Wine Learning"
         headerText="Explore wine resources and learn how to enjoy wine through wine pairings."
       />
@@ -25,7 +25,7 @@ export default function ResourcesIndex({ topGrapes }) {
         <h2 className="header">Select a resource:</h2>
         <div className="actionsContainer">
         <div className="actions">
-          <Link href="/learning/terms" className="action__container center">
+          <Link href="/learning/terms" className="action__link center">
             <Image
               src="/images/icons/icon-terms.png"
               className="transparent margin-bottom"
@@ -37,7 +37,7 @@ export default function ResourcesIndex({ topGrapes }) {
           </Link>
         </div>
         <div className="actions">
-          <Link href="/learning/wine-history-timeline" className="action__container center">
+          <Link href="/learning/wine-history-timeline" className="action__link center">
             <Image
               src="/images/icons/icon-timeline.png"
               className="transparent margin-bottom"

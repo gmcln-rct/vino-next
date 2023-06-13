@@ -6,7 +6,7 @@
   gap: 1rem;
   padding: 1rem;
 
-  background: var(--new-grey-7);
+  background: var(--new-grey-12);
   box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3), 0 1px 12px 2px rgba(0, 0, 0, 0.2);
   backdrop-filter: saturate(180%) blur(10px);
 }
