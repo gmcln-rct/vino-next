@@ -27,7 +27,7 @@
   padding: 2vmin 0;
 
   font-family: var(--font-lato);
-  background-color: #6f0f47da;
+  /* background-color: #6f0f47da; */
 }
 .header {
   font-size: clamp(24px, 4vw, 42px);
@@ -47,8 +47,8 @@
   align-items: center;
   justify-content: center;
 
-  width: 100%;
-  min-height: 400px;
+  width: 90%;
+  min-height: 300px;
   /* margin: 1vmin 0; */
   padding: 3vmin 5vmin;
 
@@ -62,6 +62,8 @@
   -webkit-box-shadow: inset 0px 0px 14px 0px rgba(0, 0, 0, 0.3);
   -moz-box-shadow: inset 0px 0px 14px 0px rgba(0, 0, 0, 0.3);
   box-shadow: inset 0px 0px 14px 0px rgba(0, 0, 0, 0.3);
+
+  border-radius: 2rem;
 
   /* border-radius: 10px; */
 }
@@ -223,4 +225,13 @@
 
 .footer {
   margin: 2vmin 0;
+}
+
+
+@media (min-width: 768px) {
+  .questionContainer {
+  
+    width: 60%;
+    min-height: 450px;
+  }
 }
