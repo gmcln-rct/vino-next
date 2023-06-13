@@ -195,7 +195,7 @@ main a {
 
 .featuredContainer {
   width: 100%;
-  background-color: var(--pink-2);
+  background-color: var(--new-grey-7);
 }
 
 .featuredHeader {
@@ -211,7 +211,7 @@ main a {
   font-weight: 600;
   font-display: swap;
 
-  color: var(--pink-9);
+  color: #fff;
 }
 
 .buttonFooter {
