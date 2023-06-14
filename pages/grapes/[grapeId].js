@@ -37,7 +37,7 @@ export default function GrapeDetailPage({ grape }) {
       <section className="info">
         <h2 className="header"> {grape.itemName} Grape Production Data</h2>
         <div className="actions">
-          <Link href={worldTopLink} className="action__container center">
+          <Link href={worldTopLink} className="action__link center">
             <Image
               src="/images/icons/icon-barchart.png"
               className="transparent margin-bottom"
@@ -49,7 +49,7 @@ export default function GrapeDetailPage({ grape }) {
           </Link>
           <Link
             href={worldTopBubbleChartLink}
-            className="action__container center"
+            className="action__link center"
           >
             <Image
               src="/images/icons/icon-bubblechart.png"
