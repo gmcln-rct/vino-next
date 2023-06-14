@@ -27,7 +27,7 @@ export default function ResourcesIndex({ topGrapes }) {
         <h3 className="subheader">Think you&apos;re a wine whiz? Prove your grape greatness by answering 10 questions.</h3>
         <div className="actionsContainer">
         <div className="actions">
-          <Link href="/quiz/quiz" className="action__container center">
+          <Link href="/quiz/quiz" className="action__link center">
             <Image
               src="/images/icons/icon-quiz.png"
               className="transparent margin-bottom"

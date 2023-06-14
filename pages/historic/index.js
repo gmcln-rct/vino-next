@@ -33,7 +33,7 @@ function HistoricDataIndex() {
           <div className="actions">
             <Link
               href="/historic/histogram-individual-production"
-              className="action__container center tall"
+              className="action__link center tall"
             >
               <Image
                 src="/images/icons/icon-histogram-indiv.png"
@@ -46,7 +46,7 @@ function HistoricDataIndex() {
             </Link>
             <Link
               href="/historic/histogram-comparison-production"
-              className="action__container center tall"
+              className="action__link center tall"
             >
               <Image
                 src="/images/icons/icon-histogram-comp.png"
@@ -59,7 +59,7 @@ function HistoricDataIndex() {
             </Link>
             <Link
               href="/historic/stackedarea"
-              className="action__container center tall"
+              className="action__link center tall"
             >
               <Image
                 src="/images/icons/icon-stackedarea.png"
@@ -77,7 +77,7 @@ function HistoricDataIndex() {
           <div className="actions">
             <Link
               href="/historic/histogram-individual-consumption"
-              className="action__container center tall"
+              className="action__link center tall"
             >
               <Image
                 src="/images/icons/icon-histogram-indiv.png"
@@ -90,7 +90,7 @@ function HistoricDataIndex() {
             </Link>
             <Link
               href="/historic/histogram-comparison-consumption"
-              className="action__container center tall"
+              className="action__link center tall"
             >
               <Image
                 src="/images/icons/icon-histogram-comp.png"
@@ -103,7 +103,7 @@ function HistoricDataIndex() {
             </Link>
             <Link
               href="/historic/histogram-indiv-consumption-per-capita"
-              className="action__container center tall"
+              className="action__link center tall"
             >
               <Image
                 src="/images/icons/icon-histogram-indiv.png"
@@ -116,7 +116,7 @@ function HistoricDataIndex() {
             </Link>
             <Link
               href="/historic/histogram-comp-consumption-per-capita"
-              className="action__container center tall"
+              className="action__link center tall"
             >
               <Image
                 src="/images/icons/icon-histogram-comp.png"

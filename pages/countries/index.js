@@ -34,7 +34,7 @@ function CountryIndex() {
           country.
         </p>
         <div className="actions">
-          <Link href={barChartLink} className="action__container center">
+          <Link href={barChartLink} className="action__link center">
             <Image
               src="/images/icons/icon-barchart.png"
               className="transparent margin-bottom"
@@ -46,7 +46,7 @@ function CountryIndex() {
           </Link>
           {/* <Link
             href={worldTopBubbleChartLink}
-            className="action__container center"
+            className="action__link center"
           >
             <Image
               src="/images/icons/icon-bubblechart.png"

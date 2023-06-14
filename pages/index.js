@@ -78,7 +78,7 @@ function HomePage({ topGrapes, randomGrape, randomCountry }) {
         <div className="actions">
           <Link
             href="/countries/bar-chart"
-            className="action__container center tall"
+            className="action__link center tall"
           >
             <Image
               src="/images/icons/icon-barchart.png"
@@ -91,7 +91,7 @@ function HomePage({ topGrapes, randomGrape, randomCountry }) {
           </Link>
           <Link
             href="/historic/histogram-comparison-consumption"
-            className="action__container center tall"
+            className="action__link center tall"
           >
             <Image
               src="/images/icons/icon-histogram-comp.png"
@@ -102,7 +102,7 @@ function HomePage({ topGrapes, randomGrape, randomCountry }) {
             />
             <p className="link">Historic Consumption By Country</p>
           </Link>
-          <Link href={grapeLink} className="action__container center tall">
+          <Link href={grapeLink} className="action__link center tall">
             <Image
               src="/images/icons/icon-bubblechart.png"
               className="transparent margin-bottom"
@@ -114,7 +114,7 @@ function HomePage({ topGrapes, randomGrape, randomCountry }) {
           </Link>
           <Link
             href="/historic/histogram-comp-consumption-per-capita"
-            className="action__container center tall"
+            className="action__link center tall"
           >
             <Image
               src="/images/icons/icon-histogram-comp.png"
@@ -126,7 +126,7 @@ function HomePage({ topGrapes, randomGrape, randomCountry }) {
             <p className="link">Per Capita Comparison</p>
           </Link>
           {(countryLink && countryName) &&(
-            <Link href={countryLink} className="action__container center tall">
+            <Link href={countryLink} className="action__link center tall">
               <Image
                 src="/images/icons/icon-barchart.png"
                 className="transparent margin-bottom"
@@ -142,7 +142,7 @@ function HomePage({ topGrapes, randomGrape, randomCountry }) {
       <section className={infoClass}>
         <h2 className="homePageHeader">Data Categories</h2>
         <section className="homePage__links">
-          <Link href="/countries" className="action__container center">
+          <Link href="/countries" className="action__link center">
             <Image
               src="/images/icons/icon-countries-sm.png"
               className="transparent margin-bottom"
@@ -152,7 +152,7 @@ function HomePage({ topGrapes, randomGrape, randomCountry }) {
             />
             <p className="link">By Country</p>
           </Link>
-          <Link href="/grapes" className="action__container center">
+          <Link href="/grapes" className="action__link center">
             <Image
               src="/images/icons/icon-grapes.png"
               className="transparent margin-bottom"
@@ -162,7 +162,7 @@ function HomePage({ topGrapes, randomGrape, randomCountry }) {
             />
             <p className="link">By Grape</p>
           </Link>
-          <Link href="/historic" className="action__container center">
+          <Link href="/historic" className="action__link center">
             <Image
               src="/images/icons/icon-historic-data-sm.png"
               className="transparent margin-bottom"
@@ -181,7 +181,7 @@ function HomePage({ topGrapes, randomGrape, randomCountry }) {
           wine-producing countries.
         </p>
         <div className="actions">
-          <Link href={barChartLink} className="action__container center">
+          <Link href={barChartLink} className="action__link center">
             <Image
               src="/images/icons/icon-barchart.png"
               className="transparent margin-bottom"
