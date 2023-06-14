@@ -106,17 +106,28 @@
   align-items: flex-start;
 
   max-width: 900px;
+  min-width: 320px;
   padding: 1vmin 2vmin;
+  margin: 1vmin 0;
 
-  color: var(--grey-9);
+  font-size: clamp(18px, 2vw, 24px);
+  /* color: var(--grey-9); */
   /* font-style: italic; */
+  color: #fff;
+  background-color: #0aa18a;
+  border: 1px solid #fff;
+
+  border-radius: 10px;
 
   text-align: start;
 }
 
 .answer:hover {
   color: #0aa18a;
+  background-color: #fff;
+  border: 1px solid #0aa18a;
   cursor: pointer;
+  transition: 0.3s;
 }
 
 .answerLetter {
