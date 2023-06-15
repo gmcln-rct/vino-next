@@ -28,7 +28,7 @@ function HistoricDataIndex() {
           header="Wine Through the Ages"
           headerText="Embark on a historic adventure that reveals the dynamic shifts in wine production and consumption from the 19th century to today's trends."
         />
-        <section className={infoClass}>
+        <section className={infoClass2}>
           <h2 className="header"> Historic Production Charts</h2>
           <div className="actions">
             <Link
@@ -72,7 +72,7 @@ function HistoricDataIndex() {
             </Link>
           </div>
         </section>
-        <section className={infoClass2}>
+        <section className={infoClass}>
           <h2 className="header">Historic Consumption Charts</h2>
           <div className="actions">
             <Link

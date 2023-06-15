@@ -84,8 +84,13 @@ main a {
 .alt2 {
   /* background-color: var(--grey-5); */
   /* background-color: var(--pink-9); */
-  background-color: var(--new-grey-7);
+  background-color: var(--new-grey-2);
 }
+
+.alt2 .header {
+  color: var(--grey-9);
+}
+
 
 .headline {
   text-align: center;
