@@ -1,6 +1,5 @@
 import { useState } from "react";
 
-
 import { useRouter } from "next/router";
 import Head from "next/head";
 import Link from "next/link";
@@ -16,12 +15,11 @@ import UnitsFooter from "@/components/layout/units-footer";
 
 import { getHeaders } from "@/components/utils/header-utils";
 
-
 import ChartWrapper from "@/components/charts/chart-wrapper";
 import ChartHeader from "@/components/charts/chart-header";
 import ChartSelector from "@/components/charts/chart-selector";
 
-// National Top Grapes
+// World Top Grapes
 
 function CountryWorldTopTenDetailPage() {
   const router = useRouter();
@@ -35,8 +33,6 @@ function CountryWorldTopTenDetailPage() {
 
   const dataType = "country";
 
-
-
   if (!country || !countryWineData) {
     return (
       <div className="center">
@@ -47,7 +43,7 @@ function CountryWorldTopTenDetailPage() {
 
   const itemName = country.ItemName;
   const dataYear = countryWineData.dataYear;
-  const topType = "national";
+  const topType = "global";
   const headerSuffix = "Global Top ";
   const explanationText = "Production of global top ";
   let countryName =
@@ -66,9 +62,6 @@ function CountryWorldTopTenDetailPage() {
     headerSuffix
   );
 
-  const flagImage = `/images/flags/flag-${country.id}.svg`;
-  const flagImageAlt = `Flag of ${country.itemName}`;
-
   const countryLink = `/countries/${country.id}`;
   const nationalTopLink = `/countries/nationaltop/${country.id}`;
   const headDescription = `${country.itemName} production of global top grape varietals bar chart, by land area`;
@@ -83,22 +76,18 @@ function CountryWorldTopTenDetailPage() {
         <meta name="description" content={headDescription} />
       </Head>
       <section class="chartSection">
-
-      <ChartHeader headerText={headerText} subHeaderText={subHeaderText} />
-      <ChartSelector
-        selectedGrapeType={selectedGrapeType}
-        setSelectedGrapeType={setSelectedGrapeType}
-      />
-        <BarChart
-          itemName={country.itemName}
-          units={countryWineData.units}
-          dataYear={countryWineData.dataYear}
-          dataType={dataType}
-          redGrapeData={countryWineData.redGrapeDataWorld}
-          whiteGrapeData={countryWineData.whiteGrapeDataWorld}
-          headerSuffix={headerSuffix}
-          explanationText={explanationText}
+        <ChartHeader headerText={headerText} subHeaderText={subHeaderText} />
+        <ChartSelector
+          selectedGrapeType={selectedGrapeType}
+          setSelectedGrapeType={setSelectedGrapeType}
         />
+      <ChartWrapper
+        country={country}
+        countryWineData={countryWineData}
+        selectedGrapeType={selectedGrapeType}
+        dataType={dataType}
+        topType="global"
+      />
         <UnitsFooter units="hectares" />
         <DataSource />
         <div className="buttonFooter">

@@ -18,7 +18,7 @@ import ChartWrapper from "@/components/charts/chart-wrapper";
 import ChartHeader from "@/components/charts/chart-header";
 import ChartSelector from "@/components/charts/chart-selector";
 
-// TOP NATIONAL GRAPES
+//  NATIONAL TOP GRAPES
 
 function CountryTopTenDetailPage() {
   const router = useRouter();
