@@ -81,13 +81,13 @@ function CountryWorldTopTenDetailPage() {
           selectedGrapeType={selectedGrapeType}
           setSelectedGrapeType={setSelectedGrapeType}
         />
-      <ChartWrapper
-        country={country}
-        countryWineData={countryWineData}
-        selectedGrapeType={selectedGrapeType}
-        dataType={dataType}
-        topType="global"
-      />
+        <ChartWrapper
+          country={country}
+          countryWineData={countryWineData}
+          selectedGrapeType={selectedGrapeType}
+          dataType={dataType}
+          topType="global"
+        />
         <UnitsFooter units="hectares" />
         <DataSource />
         <div className="buttonFooter">

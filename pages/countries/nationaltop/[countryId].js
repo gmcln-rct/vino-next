@@ -69,26 +69,26 @@ function CountryTopTenDetailPage() {
     <>
       <Head>
         <title>
-         { `Top Grapes of ${country.itemName} - Bar Chart - Winography - Wine Data
-          Visualization` }
+          {`Top Grapes of ${country.itemName} - Bar Chart - Winography - Wine Data
+          Visualization`}
         </title>
         <meta name="description" content={headDescription} />
       </Head>
       <section class="chartSection">
-      <ChartHeader headerText={headerText} subHeaderText={subHeaderText} />
-      <ChartSelector
-        selectedGrapeType={selectedGrapeType}
-        setSelectedGrapeType={setSelectedGrapeType}
-      />
-      <ChartWrapper
-        country={country}
-        countryWineData={countryWineData}
-        selectedGrapeType={selectedGrapeType}
-        dataType={dataType}
-        topType="national"
-      />
-      <UnitsFooter units="hectares" />
-      <DataSource />
+        <ChartHeader headerText={headerText} subHeaderText={subHeaderText} />
+        <ChartSelector
+          selectedGrapeType={selectedGrapeType}
+          setSelectedGrapeType={setSelectedGrapeType}
+        />
+        <ChartWrapper
+          country={country}
+          countryWineData={countryWineData}
+          selectedGrapeType={selectedGrapeType}
+          dataType={dataType}
+          topType="national"
+        />
+        <UnitsFooter units="hectares" />
+        <DataSource />
       </section>
       <div className="buttonFooter">
         <Button link={globalTopTenLink} isSecondary="false">
