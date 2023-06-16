@@ -1,3 +1,6 @@
+import { useState } from "react";
+
+
 import { useRouter } from "next/router";
 import Head from "next/head";
 import Link from "next/link";
@@ -11,10 +14,14 @@ import Button from "@/components/ui/button";
 import DataSource from "@/components/layout/data-source";
 import UnitsFooter from "@/components/layout/units-footer";
 
+import { getHeaders } from "@/components/utils/header-utils";
+
 
 import ChartWrapper from "@/components/charts/chart-wrapper";
 import ChartHeader from "@/components/charts/chart-header";
 import ChartSelector from "@/components/charts/chart-selector";
+
+// National Top Grapes
 
 function CountryWorldTopTenDetailPage() {
   const router = useRouter();
@@ -24,10 +31,11 @@ function CountryWorldTopTenDetailPage() {
   const country = getDataItemById(id, COUNTRIES_DATA);
   const countryWineData = getDataItemById(id, COUNTRIES_WINE_DATA);
 
+  const [selectedGrapeType, setSelectedGrapeType] = useState("Red");
+
   const dataType = "country";
 
-  const headerSuffix = "Global Top ";
-  const explanationText = "Production of global top ";
+
 
   if (!country || !countryWineData) {
     return (
@@ -36,6 +44,28 @@ function CountryWorldTopTenDetailPage() {
       </div>
     );
   }
+
+  const itemName = country.ItemName;
+  const dataYear = countryWineData.dataYear;
+  const topType = "national";
+  const headerSuffix = "Global Top ";
+  const explanationText = "Production of global top ";
+  let countryName =
+    country.itemName === "United States"
+      ? "the " + country.itemName
+      : country.itemName;
+
+  const { headerText, subHeaderText } = getHeaders(
+    dataType,
+    itemName,
+    explanationText,
+    dataYear,
+    selectedGrapeType,
+    topType,
+    countryName,
+    headerSuffix
+  );
+
   const flagImage = `/images/flags/flag-${country.id}.svg`;
   const flagImageAlt = `Flag of ${country.itemName}`;
 
@@ -52,7 +82,13 @@ function CountryWorldTopTenDetailPage() {
         </title>
         <meta name="description" content={headDescription} />
       </Head>
-      <section>
+      <section class="chartSection">
+
+      <ChartHeader headerText={headerText} subHeaderText={subHeaderText} />
+      <ChartSelector
+        selectedGrapeType={selectedGrapeType}
+        setSelectedGrapeType={setSelectedGrapeType}
+      />
         <BarChart
           itemName={country.itemName}
           units={countryWineData.units}

@@ -139,6 +139,13 @@ main a {
   color: var(--grey-2);
 }
 
+.chartSection {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+}
 .chartfooter {
   display: flex;
   flex-direction: column;

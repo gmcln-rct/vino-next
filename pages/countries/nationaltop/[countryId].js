@@ -74,6 +74,7 @@ function CountryTopTenDetailPage() {
         </title>
         <meta name="description" content={headDescription} />
       </Head>
+      <section class="chartSection">
       <ChartHeader headerText={headerText} subHeaderText={subHeaderText} />
       <ChartSelector
         selectedGrapeType={selectedGrapeType}
@@ -88,6 +89,7 @@ function CountryTopTenDetailPage() {
       />
       <UnitsFooter units="hectares" />
       <DataSource />
+      </section>
       <div className="buttonFooter">
         <Button link={globalTopTenLink} isSecondary="false">
           Global Top Grapes in {country.itemName}{" "}
