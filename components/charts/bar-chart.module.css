@@ -66,9 +66,9 @@
 }
 .selectrow {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: center;
-  align-items: flex-start;
+  align-items: center;
 
   /* width: 30%; */
   margin: 0 0 1em 0;
@@ -77,11 +77,12 @@
 .selectLabel {
   /* vertical-align: middle; */
   /* width: 15vmin; */
-  margin: 0.9vmin 0.6vmin 0 2vmin;
+  margin: 0.9vmin 0.6vmin 1vmin 2vmin;
 
   font-family: var(--font-roboto);
-  font-size: var(--font-size-4);
+  font-size: var(--font-size-5);
   font-weight: 600;
+  text-align: center;
 
   color: var(--pink-1);
   /* color: var(--cyan-9) */
@@ -93,13 +94,13 @@
 
   /* line-height: 1.3; */
   padding: 0.6em 1.4em 0.5em 0.8em;
-  width: 20vmin;
+  width: 50vmin;
   min-width: 200px; /* a must for IE 11 */
   max-width: 100%; /* useful when width is set to anything other than 100% */
   box-sizing: border-box;
   margin: 0 0 1rem 0;
 
-  font-size: var(--font-size-1);
+  font-size: var(--font-size-4);
   font-family: sans-serif;
   font-weight: 700;
   color: #444;
@@ -193,5 +194,33 @@
     /* color: var(--grey-8); */
     color: var(--grey-2);
   }
+  .selectrow {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: flex-start;
+  
+    /* width: 30%; */
+    margin: 0 0 1em 0;
+  }
 
+  .selectLabel {
+    /* vertical-align: middle; */
+    /* width: 15vmin; */
+    margin: 0.9vmin 0.6vmin 1vmin 2vmin;
+  
+    font-family: var(--font-roboto);
+    font-size: var(--font-size-4);
+    font-weight: 600;
+    text-align: center;
+  
+    color: var(--pink-1);
+    /* color: var(--cyan-9) */
+  }
+
+  .selectCss {
+    width: 25vmin;
+    padding: 0.5em 1.4em 0.5em 0.8em;
+
+  }
 }
