@@ -22,7 +22,7 @@ export default function ResourcesIndex({ topGrapes }) {
         headerText="Explore wine resources and learn how to enjoy wine through wine pairings."
       />
       <section className="info">
-        <h2 className="header">Select a resource:</h2>
+        <h2 className="header">Resources</h2>
         <div className="actionsContainer">
         <div className="actions">
           <Link href="/learning/terms" className="action__link center">
