@@ -3,7 +3,7 @@
   
     margin: 1rem 0 0 0;
   
-    font-size: clamp(16px, 4vw, 32px);
+    font-size: clamp(20px, 4vw, 32px);
     font-weight: bold;
     font-display: swap;
     text-align: center;
@@ -14,7 +14,7 @@
   }
   
   .subheader {
-    margin: 0.2vmin 0 1vmin 0;
+    margin: 0.5vmin 0 1.2vmin 0;
   
     font-size: var(--font-size-2);
     font-weight: 400;
