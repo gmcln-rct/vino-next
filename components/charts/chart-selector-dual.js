@@ -1,12 +1,16 @@
 import classes from "./chart-selector.module.css";
 
-const ChartSelectorDual = ({ selectedGrapeType, setSelectedGrapeType }) => {
-  return (
+const ChartSelectorDual = ({ countryData, selectedCountry, setSelectedCountry, selectedGrapeType, setSelectedGrapeType }) => {
+  
+    const COUNTRIES = countryData;
+    return (
     <>
+    { COUNTRIES && <>
+    <span className={classes.selectLabel}> Select Country: </span>
       <select
         value={selectedCountry}
         className={classes.selectCss}
-        onChange={handleCountryChange}
+        onChange={(event) => setSelectedCountry(event.target.value)}
       >
         {COUNTRIES.map((country) => (
           <option key={country.id} value={country.id}>
@@ -14,6 +18,7 @@ const ChartSelectorDual = ({ selectedGrapeType, setSelectedGrapeType }) => {
           </option>
         ))}
       </select>
+      </>}
       <select
         className={classes.selectCss}
         value={selectedGrapeType}

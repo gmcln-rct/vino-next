@@ -1,4 +1,3 @@
-import Link from "next/link";
 import Head from "next/head";
 
 import { useState, useEffect } from "react";
@@ -10,12 +9,16 @@ import { COUNTRIES_WHITE_WINE_DATA } from "@/data/country-wine-data-white-all-20
 
 import MultiBarChart from "@/components/charts/bar-multi-chart";
 import DataSource from "@/components/layout/data-source";
+import ChartSelectorDual from "@/components/charts/chart-selector-dual";
+
 
 import { filterCountriesData, getDataItemById } from "@/data/utils";
 import {
   generateHeader,
   generateSubheader,
 } from "@/components/utils/chart-utils";
+
+// General Country Bar Chart with two dropdowns
 
 function CountryGeneralBarChartPage() {
   const [selectedCountry, setSelectedCountry] = useState("france");
@@ -51,8 +54,7 @@ function CountryGeneralBarChartPage() {
     );
   }
 
-  let headerText = "test header text";
-   headerText = generateHeader({
+  let headerText = generateHeader({
     dataType: dataType,
     itemName: redWineData.itemName,
     explanationText: whiteWineData.itemName + ": ",
@@ -81,6 +83,14 @@ function CountryGeneralBarChartPage() {
       <section className={classes.chart}>
         <h2 className={classes.header}>{headerText}</h2>
         <p className={classes.subheader}>{subheaderText}</p>
+
+        <ChartSelectorDual
+          countryData={COUNTRIES}
+          selectedCountry={selectedCountry}
+          setSelectedCountry={setSelectedCountry}
+          selectedGrapeType={selectedGrapeType}
+          setSelectedGrapeType={setSelectedGrapeType}
+        />
         <div className={classes.selectrow}>
         <span className={classes.selectLabel}> Select Country: </span>
 
