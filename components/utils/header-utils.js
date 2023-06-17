@@ -38,7 +38,7 @@ export function getHeaders(
       countryName +
       ", by land area, " +
       dataYear;
-  }  else {
+  } else {
     headerText = headerSuffix + selectedGrapeType + " Grapes in " + countryName;
     subHeaderText =
       explanationText +
