@@ -38,17 +38,7 @@ function CountryGeneralBarChartPage() {
 
   console.log("itemName", whiteWineData.itemName);
 
-  const handleCountryChange = (event) => {
-    setSelectedCountry(event.target.value);
-  };
-
-  const handleGrapeTypeChange = (event) => {
-    setSelectedGrapeType(event.target.value);
-  };
-
   const dataType = "country";
-
-  // const headerExplanationText = selectedCountry.itemName + " Production: ";
 
   if (!countryRedWineData || !countryWhiteWineData) {
     return (

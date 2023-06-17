@@ -167,7 +167,6 @@ const MultiBarChart = (props) => {
           <svg ref={svgRef}></svg>
         </div>
       </section>
-      <p className={classes.units}>Units in hectares</p>
     </>
   );
 };

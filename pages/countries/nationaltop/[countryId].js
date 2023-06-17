@@ -64,7 +64,8 @@ function CountryTopTenDetailPage() {
   const countryLink = `/countries/${country.id}`;
   const globalTopTenLink = `/countries/worldtopten/${country.id}`;
   const headDescription = `Top national grapes of ${country.itemName} production bar chart, by land area`;
-
+console.log('country', country);
+console.log('countryWineData', countryWineData);
   return (
     <>
       <Head>
