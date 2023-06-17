@@ -4,7 +4,7 @@ const ChartSelectorDual = ({ countryData, selectedCountry, setSelectedCountry, s
   
     const COUNTRIES = countryData;
     return (
-    <>
+        <div className={classes.selectrow}>
     { COUNTRIES && <>
     <span className={classes.selectLabel}> Select Country: </span>
       <select
@@ -19,6 +19,8 @@ const ChartSelectorDual = ({ countryData, selectedCountry, setSelectedCountry, s
         ))}
       </select>
       </>}
+      <span className={classes.selectLabel}> Select Grape: </span>
+
       <select
         className={classes.selectCss}
         value={selectedGrapeType}
@@ -27,7 +29,7 @@ const ChartSelectorDual = ({ countryData, selectedCountry, setSelectedCountry, s
         <option value="Red">Red Grapes</option>
         <option value="White">White Grapes</option>
       </select>
-    </>
+    </div>
   );
 };
 

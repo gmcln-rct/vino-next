@@ -1,3 +1,27 @@
+.selectrow {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  /* width: 30%; */
+  margin: 0 0 1em 0;
+}
+
+.selectLabel {
+  /* vertical-align: middle; */
+  /* width: 15vmin; */
+  margin: 0.9vmin 0.6vmin 1vmin 2vmin;
+
+  font-family: var(--font-roboto);
+  font-size: var(--font-size-5);
+  font-weight: 600;
+  text-align: center;
+
+  color: var(--pink-1);
+  /* color: var(--cyan-9) */
+}
+
 /* class applies to select element itself, not a wrapper element */
 .selectCss {
   display: block;
@@ -75,4 +99,42 @@
 .selectCss:disabled:hover,
 .selectCss[aria-disabled="true"] {
   border-color: #aaa;
+}
+
+/* MEDIA QUERIES */
+/* ********   ------------ ----------   --------     ------           --------   ----    ---- ------------ -----------  --------  ------------ ------------ 
+----------  ************ ************ ********    ********         **********  ****    **** ************ ***********  ********  ************ ************ 
+************ ----         --        --   ----     ----------       ----    ---- ----    ---- ----         ----    ---    ----    ----         ----         
+---  --  --- ************ **        **   ****    ****    ****      ***      *** ****    **** ************ *********      ****    ************ ************ 
+***  **  *** ------------ --        --   ----    ------------      ---   --  -- ----    ---- ------------ ---------      ----    ------------ ------------ 
+---  --  --- ****         **        **   ****    ************      ****   ** ** ************ ****         ****  ****     ****    ****                ***** 
+***  **  *** ------------ ------------ --------  ----    ----       ------ -- - ------------ ------------ ----   ----  --------  ------------ ------------ 
+---      --- ************ **********   ********  ****    ****        ******* ** ************ ************ ****    **** ********  ************ ************ 
+*/
+
+
+@media (min-width: 768px) {
+  .selectrow {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: flex-start;
+    margin: 0 0 1em 0;
+  }
+
+  .selectLabel {
+    margin: 0.9vmin 0.6vmin 1vmin 2vmin;
+
+    font-family: var(--font-roboto);
+    font-size: var(--font-size-4);
+    font-weight: 600;
+    text-align: center;
+
+    color: var(--pink-1);
+  }
+
+  .selectCss {
+    width: 25vmin;
+    padding: 0.5em 1.4em 0.5em 0.8em;
+  }
 }

@@ -10,6 +10,8 @@ import { COUNTRIES_WHITE_WINE_DATA } from "@/data/country-wine-data-white-all-20
 import MultiBarChart from "@/components/charts/bar-multi-chart";
 import DataSource from "@/components/layout/data-source";
 import ChartSelectorDual from "@/components/charts/chart-selector-dual";
+import UnitsFooter from "@/components/layout/units-footer";
+
 
 
 import { filterCountriesData, getDataItemById } from "@/data/utils";
@@ -91,7 +93,7 @@ function CountryGeneralBarChartPage() {
           selectedGrapeType={selectedGrapeType}
           setSelectedGrapeType={setSelectedGrapeType}
         />
-        <div className={classes.selectrow}>
+        {/* <div className={classes.selectrow}>
         <span className={classes.selectLabel}> Select Country: </span>
 
           <select
@@ -114,7 +116,7 @@ function CountryGeneralBarChartPage() {
             <option value="red">Red</option>
             <option value="white">White</option>
           </select>
-        </div>
+        </div> */}
         <MultiBarChart
           itemName={selectedCountry.itemName}
           units={redWineData.units}
@@ -125,6 +127,7 @@ function CountryGeneralBarChartPage() {
           whiteGrapeData={whiteWineData}
         />
 
+        <UnitsFooter units="hectares" />
         <DataSource />
       </section>
     </>
