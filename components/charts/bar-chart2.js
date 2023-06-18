@@ -5,7 +5,7 @@ import * as d3 from "d3";
 
 const BarChart2 = (props) => {
   const svgRef = useRef();
-  const yAxisLabelRef = useRef();
+  // const yAxisLabelRef = useRef();
 
   const {
     dataType,
@@ -49,8 +49,11 @@ const BarChart2 = (props) => {
       containerSize.height > windowHeight * 0.7
         ? windowHeight * 0.7
         : containerSize.height * 1.2;
-    const labelMargin = (-margin.left)-85;
-    const viewBoxWidth = windowWidth > 420 ? width + margin.left + margin.right + 200 : width + margin.left + margin.right;
+    const labelMargin = -margin.left - 85;
+    const viewBoxWidth =
+      windowWidth > 420
+        ? width + margin.left + margin.right + 200
+        : width + margin.left + margin.right;
 
     // Set up and position SVG
     const svg = d3
@@ -59,9 +62,7 @@ const BarChart2 = (props) => {
       .attr("height", height)
       .attr(
         "viewBox",
-        `0 0 ${viewBoxWidth} ${
-          height + margin.top + margin.bottom + 100
-        }`
+        `0 0 ${viewBoxWidth} ${height + margin.top + margin.bottom + 100}`
       )
       .append("g")
       .attr("transform", `translate(${margin.left}, ${margin.top})`);
@@ -122,7 +123,7 @@ const BarChart2 = (props) => {
       .append("text")
       .attr("class", classes.yAxisLabel)
       .attr("x", -height / 2)
-      .attr("y", labelMargin )
+      .attr("y", labelMargin)
       .attr("transform", "rotate(-90)")
       .style("text-anchor", "middle")
       .text(yAxisLabel);

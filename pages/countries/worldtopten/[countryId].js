@@ -1,14 +1,12 @@
 import { useState } from "react";
-
 import { useRouter } from "next/router";
+
 import Head from "next/head";
-import Link from "next/link";
 
 import { getDataItemById } from "@/data/utils";
 import { COUNTRIES_DATA } from "@/data/country-data";
 import { COUNTRIES_WINE_DATA } from "@/data/country-wine-data-top-grapes-2016";
 
-import BarChart from "@/components/charts/bar-chart";
 import Button from "@/components/ui/button";
 import DataSource from "@/components/layout/data-source";
 import UnitsFooter from "@/components/layout/units-footer";
@@ -28,6 +26,8 @@ function CountryWorldTopTenDetailPage() {
 
   const country = getDataItemById(id, COUNTRIES_DATA);
   const countryWineData = getDataItemById(id, COUNTRIES_WINE_DATA);
+  const redGrapeData = countryWineData.redGrapeDataGlobal;
+  const whiteGrapeData = countryWineData.whiteGrapeDataGlobal;
 
   const [selectedGrapeType, setSelectedGrapeType] = useState("Red");
 
@@ -84,13 +84,15 @@ function CountryWorldTopTenDetailPage() {
         <ChartWrapper
           country={country}
           countryWineData={countryWineData}
+          redGrapeData={redGrapeData}
+          whiteGrapeData={whiteGrapeData}
           selectedGrapeType={selectedGrapeType}
           dataType={dataType}
           topType="global"
         />
         <UnitsFooter units="hectares" />
         <DataSource />
-        <div className="buttonFooter">
+        <div class="buttonFooter">
           <Button link={nationalTopLink} isSecondary="false">
             Top Grapes of {country.itemName}
           </Button>

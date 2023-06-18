@@ -7,7 +7,7 @@ const ChartWrapper = (props) => {
   const containerRef = useRef();
   const [containerSize, setContainerSize] = useState({ width: 0, height: 0 });
 
-  const { country, countryWineData, dataType, selectedGrapeType, topType } =
+  const { country, countryWineData, redGrapeData, whiteGrapeData, dataType, selectedGrapeType, topType } =
     props;
 
   useEffect(() => {
@@ -26,6 +26,9 @@ const ChartWrapper = (props) => {
     return () => window.removeEventListener("resize", updateSize);
   }, []);
 
+
+
+
   return (
     <section className={classes.chart} ref={containerRef}>
       <BarChart2
@@ -34,8 +37,8 @@ const ChartWrapper = (props) => {
         dataYear={countryWineData.dataYear}
         dataType={dataType}
         topType={topType}
-        redGrapeData={countryWineData.redGrapeDataNational}
-        whiteGrapeData={countryWineData.whiteGrapeDataNational}
+        redGrapeData={redGrapeData}
+        whiteGrapeData={whiteGrapeData}
         selectedGrapeType={selectedGrapeType}
         containerRef={containerRef}
         containerSize={containerSize}

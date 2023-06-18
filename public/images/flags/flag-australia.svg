@@ -1,1 +1,24 @@
-<?xml version="1.0" encoding="UTF-8"?><svg id="Layer_2" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 800 500"><defs><style>.cls-1{fill:none;}.cls-2{stroke-width:42.67px;}.cls-2,.cls-3,.cls-4,.cls-5{stroke-miterlimit:426.67;}.cls-2,.cls-4{stroke:red;}.cls-6{clip-path:url(#clippath);}.cls-7{fill:#00008b;}.cls-8{fill:#fff;}.cls-3{stroke-width:106.67px;}.cls-3,.cls-5{stroke:#fff;}.cls-4,.cls-5{stroke-width:64px;}.cls-9{clip-path:url(#clippath-1);}</style><clipPath id="clippath"><rect class="cls-1" width="400" height="250"/></clipPath><clipPath id="clippath-1"><path class="cls-1" d="m0,0v125h400v125h0L0,0Zm400,0h-200v250H0L400,0Z"/></clipPath></defs><g id="Layer_1-2"><rect class="cls-7" width="800" height="500"/><g class="cls-6"><path class="cls-5" d="m0,0l400,250m0-250L0,250"/></g><g class="cls-9"><path class="cls-2" d="m0,0l400,250m0-250L0,250"/></g><path class="cls-3" d="m200,0v250M0,125h400"/><path class="cls-4" d="m200,0v250M0,125h400"/><g id="Comwlth"><path id="Star7" class="cls-8" d="m200,300l11.57,44.97,35.34-16.73-20.91,39.34,32.5,24.11-37.65,4.09,5.18,46.79-26.03-34.24-26.03,34.24,5.18-46.79-37.65-4.09,32.5-24.11-20.91-39.34,35.34,16.73,11.57-44.97Z"/></g><g id="_αCrucis"><path id="Star7-2" class="cls-8" d="m600,380.95l5.51,21.41,16.83-7.97-9.96,18.74,15.48,11.48-17.93,1.95,2.47,22.28-12.4-16.3-12.4,16.3,2.47-22.28-17.93-1.95,15.48-11.48-9.96-18.74,16.83,7.97,5.51-21.41Z"/></g><g id="_βCrucis"><path id="Star7-3" class="cls-8" d="m500,183.04l5.51,21.41,16.83-7.97-9.96,18.74,15.48,11.48-17.93,1.95,2.47,22.28-12.4-16.3-12.4,16.3,2.47-22.28-17.93-1.95,15.48-11.48-9.96-18.74,16.83,7.97,5.51-21.41Z"/></g><g id="_γCrucis"><path id="Star7-4" class="cls-8" d="m600,47.62l5.51,21.41,16.83-7.97-9.96,18.74,15.48,11.48-17.93,1.95,2.47,22.28-12.4-16.3-12.4,16.3,2.47-22.28-17.93-1.95,15.48-11.48-9.96-18.74,16.83,7.97,5.51-21.41Z"/></g><g id="_δCrucis"><path id="Star7-5" class="cls-8" d="m688.89,149.7l5.51,21.41,16.83-7.97-9.96,18.74,15.48,11.48-17.93,1.95,2.47,22.28-12.4-16.3-12.4,16.3,2.47-22.28-17.93-1.95,15.48-11.48-9.96-18.74,16.83,7.97,5.51-21.41Z"/></g><g id="_εCrucis"><path id="Star5" class="cls-8" d="m640,250l4.35,13.34,11.5,1.05-8.81,9.3,2.75,13.99-9.8-7.6-9.8,7.6,2.75-13.99-8.81-9.3,11.5-1.05,4.35-13.34Z"/></g></g></svg>
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="1280" height="640" viewBox="0 0 10080 5040">
+<defs>
+<clipPath id="c1"><path d="M0,0H6V3H0z"/></clipPath>
+<clipPath id="c2"><path d="M0,0V1.5H6V3H6zM6,0H3V3H0V3z"/></clipPath>
+<path id="Star7" d="M0,-360 69.421398,-144.155019 281.459334,-224.456329 155.988466,-35.603349 350.974048,80.107536 125.093037,99.758368 156.198146,324.348792 0,160 -156.198146,324.348792 -125.093037,99.758368 -350.974048,80.107536 -155.988466,-35.603349 -281.459334,-224.456329 -69.421398,-144.155019z"/>
+<path id="Star5" d="M0,-210 54.859957,-75.508253 199.721868,-64.893569 88.765275,28.841586 123.434903,169.893569 0,93.333333 -123.434903,169.893569 -88.765275,28.841586 -199.721868,-64.893569 -54.859957,-75.508253z"/>
+</defs>
+<g transform="scale(840)">
+<rect width="12" height="6" fill="#00008b"/>
+<path d="M0,0 6,3M6,0 0,3" stroke="#fff" stroke-width="0.6" clip-path="url(#c1)"/>
+<path d="M0,0 6,3M6,0 0,3" stroke="#f00" stroke-width="0.4" clip-path="url(#c2)"/>
+<path d="M3,0V3M0,1.5H6" stroke="#fff"/>
+<path d="M3,0V3M0,1.5H6" stroke="#f00" stroke-width="0.6"/>
+</g>
+<g fill="#fff">
+<use id="Comwlth" xlink:href="#Star7" transform="translate(2520, 3780) scale(2.1)"/>
+<use id="αCrucis" xlink:href="#Star7" x="7560" y="4200"/>
+<use id="βCrucis" xlink:href="#Star7" x="6300" y="2205"/>
+<use id="γCrucis" xlink:href="#Star7" x="7560" y="840"/>
+<use id="δCrucis" xlink:href="#Star7" x="8680" y="1869"/>
+<use id="εCrucis" xlink:href="#Star5" x="8064" y="2730"/>
+</g>
+</svg>

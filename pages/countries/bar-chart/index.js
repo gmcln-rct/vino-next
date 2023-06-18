@@ -1,9 +1,10 @@
 import Head from "next/head";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, use } from "react";
 
 import classes from "@/components/charts/bar-chart.module.css";
 
+import { COUNTRIES_DATA } from "@/data/country-data";
 import { COUNTRIES_RED_WINE_DATA } from "@/data/country-wine-data-red-all-2016";
 import { COUNTRIES_WHITE_WINE_DATA } from "@/data/country-wine-data-white-all-2016";
 
@@ -13,8 +14,6 @@ import ChartWrapper from "@/components/charts/chart-wrapper";
 import ChartSelectorDual from "@/components/charts/chart-selector-dual";
 import UnitsFooter from "@/components/layout/units-footer";
 import DataSource from "@/components/layout/data-source";
-
-
 
 import { filterCountriesData, getDataItemById } from "@/data/utils";
 import {
@@ -35,8 +34,7 @@ function CountryGeneralBarChartPage() {
   const whiteWineData = getDataItemById(selectedCountry, countryWhiteWineData);
 
   const COUNTRIES = filterCountriesData(countryRedWineData);
-
-  console.log("itemName", whiteWineData.itemName);
+  let country = getDataItemById(selectedCountry, COUNTRIES_DATA);
 
   const dataType = "country";
 
@@ -55,19 +53,30 @@ function CountryGeneralBarChartPage() {
     selectedGrapeType,
   });
 
-
   let subheaderText = generateSubheader({
     dataType: dataType,
     itemName: selectedCountry.itemName,
     selectedGrapeType,
     dataYear: 2016,
   });
+  let countryWineData;
 
+
+
+    if (selectedGrapeType ==="Red") {
+      countryWineData = redWineData;
+    } else {
+      countryWineData = countryWhiteWineData;
+    }
+
+
+  console.log("countryWineData ", countryWineData);
   return (
     <>
       <Head>
         <title>
-          Wine Production By Country - Bar Chart - Winography | Learn About Wine Through Data Visualizations
+          Wine Production By Country - Bar Chart - Winography | Learn About Wine
+          Through Data Visualizations
         </title>
         <meta
           name="description"
@@ -85,30 +94,6 @@ function CountryGeneralBarChartPage() {
           selectedGrapeType={selectedGrapeType}
           setSelectedGrapeType={setSelectedGrapeType}
         />
-        {/* <div className={classes.selectrow}>
-        <span className={classes.selectLabel}> Select Country: </span>
-
-          <select
-            value={selectedCountry}
-            className={classes.selectCss}
-            onChange={handleCountryChange}
-          >
-            {COUNTRIES.map((country) => (
-              <option key={country.id} value={country.id}>
-                {country.itemName}
-              </option>
-            ))}
-          </select>
-          <span className={classes.selectLabel}> Select Grape: </span>
-          <select
-            value={selectedGrapeType}
-            className={classes.selectCss}
-            onChange={handleGrapeTypeChange}
-          >
-            <option value="red">Red</option>
-            <option value="white">White</option>
-          </select>
-        </div> */}
         <MultiBarChart
           itemName={selectedCountry.itemName}
           units={redWineData.units}

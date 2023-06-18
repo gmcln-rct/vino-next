@@ -27,6 +27,8 @@ function CountryTopTenDetailPage() {
   const id = router.query.countryId;
   const country = getDataItemById(id, COUNTRIES_DATA);
   const countryWineData = getDataItemById(id, COUNTRIES_WINE_DATA);
+  const redGrapeData = countryWineData.redGrapeDataNational;
+  const whiteGrapeData = countryWineData.whiteGrapeDataNational;
 
   const [selectedGrapeType, setSelectedGrapeType] = useState("Red");
 
@@ -65,7 +67,6 @@ function CountryTopTenDetailPage() {
   const globalTopTenLink = `/countries/worldtopten/${country.id}`;
   const headDescription = `Top national grapes of ${country.itemName} production bar chart, by land area`;
   console.log("country", country);
-  console.log("countryWineData", countryWineData);
   return (
     <>
       <Head>
@@ -84,6 +85,8 @@ function CountryTopTenDetailPage() {
         <ChartWrapper
           country={country}
           countryWineData={countryWineData}
+          redGrapeData={redGrapeData}
+          whiteGrapeData={whiteGrapeData}
           selectedGrapeType={selectedGrapeType}
           dataType={dataType}
           topType="national"
@@ -91,7 +94,7 @@ function CountryTopTenDetailPage() {
         <UnitsFooter units="hectares" />
         <DataSource />
       </section>
-      <div className="buttonFooter">
+      <div class="buttonFooter">
         <Button link={globalTopTenLink} isSecondary="false">
           Global Top Grapes in {country.itemName}{" "}
         </Button>

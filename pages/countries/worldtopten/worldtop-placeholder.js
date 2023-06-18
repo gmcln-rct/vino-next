@@ -63,8 +63,8 @@ function CountryWorldTopTenDetailPage() {
           units={countryWineData.units}
           dataYear={countryWineData.dataYear}
           dataType={dataType}
-          redGrapeData={countryWineData.redGrapeDataWorld}
-          whiteGrapeData={countryWineData.whiteGrapeDataWorld}
+          redGrapeData={countryWineData.redGrapeDataGlobal}
+          whiteGrapeData={countryWineData.whiteGrapeDataGlobal}
           headerSuffix={headerSuffix}
           explanationText={explanationText}
         />
