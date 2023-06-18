@@ -11,8 +11,8 @@ import { QUIZ_DATA } from "@/data/quiz-data";
 import { WINE_TERMS } from "@/data/terms";
 import { LABELS } from "@/data/labels";
 import { COUNTRIES_DATA } from "@/data/country-data";
-import { COUNTRIES_RED_WINE_DATA } from "@/data/country-wine-data-red-all-2016";
-import { COUNTRIES_WHITE_WINE_DATA } from "@/data/country-wine-data-white-all-2016";
+import { COUNTRIES_RED_GRAPE_DATA } from "@/data/country-wine-data-red-all-2016";
+import { COUNTRIES_WHITE_GRAPE_DATA} from "@/data/country-wine-data-white-all-2016";
 import { HISTORIC_PRODUCTION_DATA } from "@/data/historic-production-data";
 import { HISTORIC_CONSUMPTION_DATA } from "@/data/historic-consumption-data";
 import { COUNTRY_ORIGIN_DATA } from "@/data/country-origin-data";
@@ -38,7 +38,7 @@ const QuizPage = () => {
   const [explanationMessage, setExplanationMessage] = useState("");
   const [correctness, setCorrectness] = useState(false);
 
-  const [countryRedData, setCountryRedData] = useState(COUNTRIES_RED_WINE_DATA);
+  const [countryRedData, setCountryRedData] = useState(COUNTRIES_RED_GRAPE_DATA);
   const [countryWhiteData, setCountryWhiteData] = useState(
     COUNTRIES_WHITE_WINE_DATA
   );

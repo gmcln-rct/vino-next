@@ -5,8 +5,8 @@ import { useState, useEffect } from "react";
 
 import classes from "@/components/charts/bar-chart.module.css";
 
-import { COUNTRIES_RED_WINE_DATA } from "@/data/country-wine-data-red-all-2016";
-import { COUNTRIES_WHITE_WINE_DATA } from "@/data/country-wine-data-white-all-2016";
+import { COUNTRIES_RED_GRAPE_DATA } from "@/data/country-wine-data-red-all-2016";
+import { COUNTRIES_WHITE_GRAPE_DATA} from "@/data/country-wine-data-white-all-2016";
 
 // import BarChart from "@/components/charts/bar-chart";
 import MultiBarChart from "@/components/charts/bar-multi-chart";
@@ -23,7 +23,7 @@ function RegionGeneralBarChartPage() {
   const [selectedCountry, setSelectedCountry] = useState("france");
   const [selectedGrapeType, setSelectedGrapeType] = useState("red");
 
-  const countryRedWineData = COUNTRIES_RED_WINE_DATA;
+  const countryRedWineData = COUNTRIES_RED_GRAPE_DATA;
   const countryWhiteWineData = COUNTRIES_WHITE_WINE_DATA;
 
   const redWineData = getDataItemById(selectedCountry, countryRedWineData);

@@ -5,8 +5,8 @@ import { useState, useEffect, use } from "react";
 import classes from "@/components/charts/bar-chart.module.css";
 
 import { COUNTRIES_DATA } from "@/data/country-data";
-import { COUNTRIES_RED_WINE_DATA } from "@/data/country-wine-data-red-all-2016";
-import { COUNTRIES_WHITE_WINE_DATA } from "@/data/country-wine-data-white-all-2016";
+import { COUNTRIES_RED_GRAPE_DATA } from "@/data/country-wine-data-red-all-2016";
+import { COUNTRIES_WHITE_GRAPE_DATA} from "@/data/country-wine-data-white-all-2016";
 
 import MultiBarChart from "@/components/charts/bar-multi-chart";
 import ChartWrapper from "@/components/charts/chart-wrapper";
@@ -27,18 +27,19 @@ function CountryGeneralBarChartPage() {
   const [selectedCountry, setSelectedCountry] = useState("france");
   const [selectedGrapeType, setSelectedGrapeType] = useState("red");
 
-  const countryRedWineData = COUNTRIES_RED_WINE_DATA;
-  const countryWhiteWineData = COUNTRIES_WHITE_WINE_DATA;
+  const countryRedGrapeData = COUNTRIES_RED_GRAPE_DATA;
+  // const countryWhiteGrapeData = COUNTRIES_WHITE_GRAPE_DATA;
 
-  const redWineData = getDataItemById(selectedCountry, countryRedWineData);
-  const whiteWineData = getDataItemById(selectedCountry, countryWhiteWineData);
+  const redWineData = getDataItemById(selectedCountry, COUNTRIES_RED_GRAPE_DATA);
+  const whiteWineData = getDataItemById(selectedCountry, COUNTRIES_WHITE_GRAPE_DATA);
 
-  const COUNTRIES = filterCountriesData(countryRedWineData);
+  const COUNTRIES = filterCountriesData(countryRedGrapeData);
   let country = getDataItemById(selectedCountry, COUNTRIES_DATA);
+  console.log("country", country);
 
   const dataType = "country";
 
-  if (!countryRedWineData || !countryWhiteWineData) {
+  if (!redWineData || !whiteWineData) {
     return (
       <div className="center">
         <p>Loading...</p>
@@ -49,7 +50,7 @@ function CountryGeneralBarChartPage() {
   let headerText = generateHeader({
     dataType: dataType,
     itemName: redWineData.itemName,
-    explanationText: whiteWineData.itemName + ": ",
+    explanationText: redWineData.itemName + ": ",
     selectedGrapeType,
   });
 
@@ -62,15 +63,6 @@ function CountryGeneralBarChartPage() {
   let countryWineData;
 
 
-
-    if (selectedGrapeType ==="Red") {
-      countryWineData = redWineData;
-    } else {
-      countryWineData = countryWhiteWineData;
-    }
-
-
-  console.log("countryWineData ", countryWineData);
   return (
     <>
       <Head>
@@ -94,7 +86,7 @@ function CountryGeneralBarChartPage() {
           selectedGrapeType={selectedGrapeType}
           setSelectedGrapeType={setSelectedGrapeType}
         />
-        <MultiBarChart
+        {/* <MultiBarChart
           itemName={selectedCountry.itemName}
           units={redWineData.units}
           dataYear={selectedCountry.dataYear}
@@ -102,14 +94,16 @@ function CountryGeneralBarChartPage() {
           grapeType={selectedGrapeType}
           redGrapeData={redWineData}
           whiteGrapeData={whiteWineData}
-        />
-        {/* <ChartWrapper
+        /> */}
+        <ChartWrapper
           country={country}
           countryWineData={countryWineData}
+          redGrapeData={redWineData.grapeData}
+          whiteGrapeData={whiteWineData.grapeData}
           selectedGrapeType={selectedGrapeType}
           dataType={dataType}
           topType="multi"
-        /> */}
+        />
         <UnitsFooter units="hectares" />
         <DataSource />
       </section>

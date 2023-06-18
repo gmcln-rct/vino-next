@@ -26,8 +26,7 @@ function CountryWorldTopTenDetailPage() {
 
   const country = getDataItemById(id, COUNTRIES_DATA);
   const countryWineData = getDataItemById(id, COUNTRIES_WINE_DATA);
-  const redGrapeData = countryWineData.redGrapeDataGlobal;
-  const whiteGrapeData = countryWineData.whiteGrapeDataGlobal;
+
 
   const [selectedGrapeType, setSelectedGrapeType] = useState("Red");
 
@@ -40,7 +39,8 @@ function CountryWorldTopTenDetailPage() {
       </div>
     );
   }
-
+  const redGrapeData = countryWineData.redGrapeDataGlobal;
+  const whiteGrapeData = countryWineData.whiteGrapeDataGlobal;
   const itemName = country.ItemName;
   const dataYear = countryWineData.dataYear;
   const topType = "global";
@@ -75,7 +75,7 @@ function CountryWorldTopTenDetailPage() {
         </title>
         <meta name="description" content={headDescription} />
       </Head>
-      <section class="chartSection">
+      <section className="chartSection">
         <ChartHeader headerText={headerText} subHeaderText={subHeaderText} />
         <ChartSelector
           selectedGrapeType={selectedGrapeType}
@@ -92,7 +92,7 @@ function CountryWorldTopTenDetailPage() {
         />
         <UnitsFooter units="hectares" />
         <DataSource />
-        <div class="buttonFooter">
+        <div className="buttonFooter">
           <Button link={nationalTopLink} isSecondary="false">
             Top Grapes of {country.itemName}
           </Button>

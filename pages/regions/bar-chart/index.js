@@ -7,8 +7,8 @@ import classes from "@/components/charts/bar-chart.module.css";
 
 import DataSource from "@/components/layout/data-source";
 
-// import { COUNTRIES_RED_WINE_DATA } from "@/data/country-wine-data-red-all-2016";
-// import { COUNTRIES_WHITE_WINE_DATA } from "@/data/country-wine-data-white-all-2016";
+// import { COUNTRIES_RED_GRAPE_DATA } from "@/data/country-wine-data-red-all-2016";
+// import { COUNTRIES_WHITE_GRAPE_DATA} from "@/data/country-wine-data-white-all-2016";
 import { WINE_REGION_PRODUCTION_DATA } from "@/data/region-test-data";
 
 // import BarChart from "@/components/charts/bar-chart";
@@ -25,7 +25,7 @@ function RegionalGeneralBarChartPage() {
   const [selectedRegion, setselectedRegion] = useState("burgundy");
   const [selectedGrapeType, setSelectedGrapeType] = useState("red");
 
-  //   const countryRedWineData = COUNTRIES_RED_WINE_DATA;
+  //   const countryRedWineData = COUNTRIES_RED_GRAPE_DATA;
   //   const countryWhiteWineData = COUNTRIES_WHITE_WINE_DATA;
   const regionData = WINE_REGION_PRODUCTION_DATA;
 

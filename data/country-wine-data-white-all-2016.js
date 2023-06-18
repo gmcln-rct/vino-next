@@ -1,4 +1,4 @@
-export const COUNTRIES_WHITE_WINE_DATA = [
+export const COUNTRIES_WHITE_GRAPE_DATA= [
   {
     id: "algeria",
     dataYear: 2016,

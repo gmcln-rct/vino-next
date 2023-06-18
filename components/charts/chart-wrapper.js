@@ -27,14 +27,14 @@ const ChartWrapper = (props) => {
   }, []);
 
 
-
+console.log("redGraperData", redGrapeData);
 
   return (
     <section className={classes.chart} ref={containerRef}>
       <BarChart2
         itemName={country.itemName}
-        units={countryWineData.units}
-        dataYear={countryWineData.dataYear}
+        units={country.units}
+        dataYear={country.dataYear}
         dataType={dataType}
         topType={topType}
         redGrapeData={redGrapeData}

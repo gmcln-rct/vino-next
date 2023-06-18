@@ -1,13 +1,13 @@
 import { useState, useEffect } from "react";
 import BubbleMultiChart from "@/components/charts/bubble-multi-chart";
 
-import { COUNTRIES_RED_WINE_DATA } from "@/data/country-wine-data-red-all-2016";
-import { COUNTRIES_WHITE_WINE_DATA } from "@/data/country-wine-data-white-all-2016";
+import { COUNTRIES_RED_GRAPE_DATA } from "@/data/country-wine-data-red-all-2016";
+import { COUNTRIES_WHITE_GRAPE_DATA} from "@/data/country-wine-data-white-all-2016";
 
 import { getDataItemById } from "@/data/utils";
 
 function CountryBubbleIndex() {
-  const redWineData = COUNTRIES_RED_WINE_DATA;
+  const redWineData = COUNTRIES_RED_GRAPE_DATA;
   const whiteWineData = COUNTRIES_WHITE_WINE_DATA;
 
   const [selectedCountry, setSelectedCountry] = useState("algeria");
@@ -32,13 +32,13 @@ function CountryBubbleIndex() {
     // console.log("in bubble index - data: ", data);
     // console.log("in bubble index - selectedCountry: ", selectedCountry);
     // ? setGrapeData(country.grapeData)
-    // : setGrapeData(COUNTRIES_RED_WINE_DATA);
+    // : setGrapeData(COUNTRIES_RED_GRAPE_DATA);
     const country = getDataItemById(selectedCountry, data);
 
     // console.log("bubblr INDEX - country", country);
     // selectedGrapeType === "Red"
     //   ? setGrapeData(country.grapeData)
-    //   : setGrapeData(COUNTRIES_RED_WINE_DATA);
+    //   : setGrapeData(COUNTRIES_RED_GRAPE_DATA);
     if(country) {
       setGrapeData(country.grapeData);
     }
