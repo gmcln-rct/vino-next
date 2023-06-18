@@ -2,6 +2,7 @@ export const COUNTRIES_WINE_DATA = [
   {
     id: "argentina",
     dataYear: 2016,
+    itemName: "Argentina",
     units: "hectares",
     redGrapeDataWorld: [
       { grape: "Cabernet Sauvignon", value: 15356 },
