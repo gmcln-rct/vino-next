@@ -2,7 +2,7 @@ import Head from "next/head";
 import Link from "next/link";
 import { useState } from "react";
 
-import GRAPES_RED_TOP_TEN_DATA from "@/data/grape-top-ten-countries-data-2016";
+import {GRAPES_RED_TOP_TEN_DATA} from "@/data/grape-top-ten-countries-data-2016";
 
 import StackedAreaChart from "@/components/charts/stacked-area-chart";
 import Button from "@/components/ui/button";
