@@ -8,7 +8,7 @@ import { getDataItemById } from "@/data/utils";
 
 function CountryBubbleIndex() {
   const redWineData = COUNTRIES_RED_GRAPE_DATA;
-  const whiteWineData = COUNTRIES_WHITE_WINE_DATA;
+  const whiteWineData = COUNTRIES_WHITE_GRAPE_DATA;
 
   const [selectedCountry, setSelectedCountry] = useState("algeria");
   const [selectedGrapeType, setSelectedGrapeType] = useState("Red");

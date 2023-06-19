@@ -40,7 +40,7 @@ const QuizPage = () => {
 
   const [countryRedData, setCountryRedData] = useState(COUNTRIES_RED_GRAPE_DATA);
   const [countryWhiteData, setCountryWhiteData] = useState(
-    COUNTRIES_WHITE_WINE_DATA
+    COUNTRIES_WHITE_GRAPE_DATA
   );
   const [wineHistoryData, setWineHistoryData] = useState(
     HISTORIC_PRODUCTION_DATA

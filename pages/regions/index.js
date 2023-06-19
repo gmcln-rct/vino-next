@@ -24,7 +24,7 @@ function RegionGeneralBarChartPage() {
   const [selectedGrapeType, setSelectedGrapeType] = useState("red");
 
   const countryRedWineData = COUNTRIES_RED_GRAPE_DATA;
-  const countryWhiteWineData = COUNTRIES_WHITE_WINE_DATA;
+  const countryWhiteWineData = COUNTRIES_WHITE_GRAPE_DATA;
 
   const redWineData = getDataItemById(selectedCountry, countryRedWineData);
   const whiteWineData = getDataItemById(selectedCountry, countryWhiteWineData);
