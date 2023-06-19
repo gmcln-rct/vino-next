@@ -144,7 +144,7 @@ function HomePage({ topGrapes, randomGrape, randomCountry }) {
         <section className="homePage__links">
           <Link href="/countries" className="action__link center">
             <Image
-              src="/images/icons/icon-countries-sm.png"
+              src="/images/icons/icon-countries.png"
               className="transparent margin-bottom"
               alt="countries icon"
               width={150}
@@ -164,7 +164,7 @@ function HomePage({ topGrapes, randomGrape, randomCountry }) {
           </Link>
           <Link href="/historic" className="action__link center">
             <Image
-              src="/images/icons/icon-historic-data-sm.png"
+              src="/images/icons/icon-historic-data.png"
               className="transparent margin-bottom"
               alt="grapes icon"
               width={150}
