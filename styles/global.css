@@ -88,7 +88,11 @@ main a {
 }
 
 .alt2 .header {
-  color: var(--grey-9);
+  color: var(--pink-9);
+}
+
+.alt2 .subheader {
+  color: var(--grey-8);
 }
 
 
