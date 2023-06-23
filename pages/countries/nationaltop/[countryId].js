@@ -49,10 +49,10 @@ function CountryTopTenDetailPage() {
   const topType = "national";
   const headerSuffix = "Top ";
   const explanationText = "Production of ";
-  // let countryName =
-  //   country.itemName === "United States"
-  //     ? "the " + country.itemName
-  //     : country.itemName;
+  let countryName =
+    country.itemName === "United States"
+      ? "the " + country.itemName
+      : country.itemName;
 
   const { headerText, subHeaderText } = getHeaders(
     dataType,
