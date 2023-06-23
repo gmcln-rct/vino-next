@@ -9,7 +9,7 @@ const ChartSelectorDual = ({ countryData, selectedCountry, setSelectedCountry, s
     <span className={classes.selectLabel}> Select Country: </span>
       <select
         value={selectedCountry}
-        className={classes.selectCss}
+        className={classes.selectDropdown}
         onChange={(event) => setSelectedCountry(event.target.value)}
       >
         {COUNTRIES.map((country) => (
@@ -22,7 +22,7 @@ const ChartSelectorDual = ({ countryData, selectedCountry, setSelectedCountry, s
       <span className={classes.selectLabel}> Select Grape: </span>
 
       <select
-        className={classes.selectCss}
+        className={classes.selectDropdown}
         value={selectedGrapeType}
         onChange={(event) => setSelectedGrapeType(event.target.value)}
       >

@@ -4,7 +4,7 @@ const ChartSelector = ({ selectedGrapeType, setSelectedGrapeType }) => {
     return (
       <>
         <select
-          className={classes.selectCss}
+          className={classes.selectDropdown}
           value={selectedGrapeType}
           onChange={(event) => setSelectedGrapeType(event.target.value)}
         >

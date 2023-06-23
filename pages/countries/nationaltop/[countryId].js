@@ -96,7 +96,7 @@ function CountryTopTenDetailPage() {
         <UnitsFooter units="hectares" />
         <DataSource />
       </section>
-      <div class="buttonFooter">
+      <div className="buttonFooter">
         <Button link={globalTopTenLink} isSecondary="false">
           Global Top Grapes in {country.itemName}{" "}
         </Button>
