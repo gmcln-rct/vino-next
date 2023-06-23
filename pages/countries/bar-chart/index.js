@@ -25,7 +25,7 @@ import {
 
 function CountryGeneralBarChartPage() {
   const [selectedCountry, setSelectedCountry] = useState("france");
-  const [selectedGrapeType, setSelectedGrapeType] = useState("red");
+  const [selectedGrapeType, setSelectedGrapeType] = useState("red");;
 
   const countryRedGrapeData = COUNTRIES_RED_GRAPE_DATA;
   // const countryWhiteGrapeData = COUNTRIES_WHITE_GRAPE_DATA;
@@ -35,7 +35,7 @@ function CountryGeneralBarChartPage() {
 
   const COUNTRIES = filterCountriesData(countryRedGrapeData);
   let country = getDataItemById(selectedCountry, COUNTRIES_DATA);
-  console.log("country", country);
+  console.log("in bar chart index - selectedCountry", selectedCountry);
 
   const dataType = "country";
 
@@ -60,9 +60,10 @@ function CountryGeneralBarChartPage() {
     selectedGrapeType,
     dataYear: 2016,
   });
-  let countryWineData;
+  // let countryWineData;
 
-  console.log("in bar chart index - selectedGrapeType", selectedGrapeType);
+  console.log("in bar chart index - redWineData", redWineData);
+  console.log("in bar chart index - red wine grape data", redWineData.grapeData);
 
   return (
     <>

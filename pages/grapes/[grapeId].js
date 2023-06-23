@@ -10,7 +10,7 @@ export default function GrapeDetailPage({ grape }) {
   const worldTopLink = "/grapes/worldtop/" + grape.id;
   const worldTopBubbleChartLink = "/grapes/worldtop/bubble-chart/" + grape.id;
 
-  const wineCategory = grape.category === "R" ? "Red" : "White";
+  const wineCategory = grape.category === "R" ? "red" : "white";
 
   return (
     <>

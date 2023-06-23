@@ -29,9 +29,9 @@ const BubbleChart = (props) => {
   }
 
   const [selectedGrapeType, setSelectedGrapeType] = useState(
-    grapeType ? grapeType : "Red"
+    grapeType ? grapeType : "red"
   );
-  const data = selectedGrapeType === "Red" ? redGrapeData : whiteGrapeData;
+  const data = selectedGrapeType === "red" ? redGrapeData : whiteGrapeData;
 
   useEffect(() => {
     const svg = d3.select(svgRef.current);

@@ -1,7 +1,7 @@
 import classes from "./chart-selector.module.css";
 
 const ChartSelectorDual = ({ countryData, selectedCountry, setSelectedCountry, selectedGrapeType, setSelectedGrapeType }) => {
-  
+    console.log("in chart selector dual - countryData", countryData);
     const COUNTRIES = countryData;
     return (
         <div className={classes.selectrow}>
@@ -26,8 +26,8 @@ const ChartSelectorDual = ({ countryData, selectedCountry, setSelectedCountry, s
         value={selectedGrapeType}
         onChange={(event) => setSelectedGrapeType(event.target.value)}
       >
-        <option value="Red">Red Grapes</option>
-        <option value="White">White Grapes</option>
+        <option value="red">Red Grapes</option>
+        <option value="white">White Grapes</option>
       </select>
     </div>
   );

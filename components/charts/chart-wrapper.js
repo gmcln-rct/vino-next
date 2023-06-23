@@ -1,6 +1,6 @@
 import { useEffect, useState, useRef } from "react";
 
-import BarChart2 from "./bar-chart2";
+import BarChartTwoValues from "./bar-chart2";
 import classes from "./chart-wrapper.module.css";
 
 const ChartWrapper = (props) => {
@@ -29,7 +29,7 @@ const ChartWrapper = (props) => {
 
   return (
     <section className={classes.chart} ref={containerRef}>
-      <BarChart2
+      <BarChartTwoValues
         itemName={country.itemName}
         units={country.units}
         dataYear={country.dataYear}

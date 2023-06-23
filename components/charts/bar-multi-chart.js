@@ -17,7 +17,7 @@ const MultiBarChart = (props) => {
   } = props;
 
   const [selectedGrapeType, setSelectedGrapeType] = useState(
-    grapeType ? grapeType : "Red"
+    grapeType ? grapeType : "red"
   );
 
   // const dataType = "country";

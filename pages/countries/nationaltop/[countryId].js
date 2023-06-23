@@ -29,7 +29,7 @@ function CountryTopTenDetailPage() {
   const countryWineData = getDataItemById(id, COUNTRIES_WINE_DATA);
 
 
-  const [selectedGrapeType, setSelectedGrapeType] = useState("Red");
+  const [selectedGrapeType, setSelectedGrapeType] = useState("red");
 
   const dataType = "country";
 
@@ -68,6 +68,7 @@ function CountryTopTenDetailPage() {
   const countryLink = `/countries/${country.id}`;
   const globalTopTenLink = `/countries/worldtopten/${country.id}`;
   const headDescription = `Top national grapes of ${country.itemName} production bar chart, by land area`;
+  console.log("in country top ten detail page - grape type", selectedGrapeType);
   
   return (
     <>

@@ -23,9 +23,9 @@ function GrapeTopCountriesBubblePage() {
 
   const grape = getDataItemById(id, GRAPES_DATA);
 
-  let wineCategory = "Red";
+  let wineCategory = "red";
   if (grape) {
-    wineCategory = grape.category === "R" ? "Red" : "White";
+    wineCategory = grape.category === "R" ? "red" : "white";
   }
 
   if (!grape || !grape.id) {
@@ -40,7 +40,7 @@ function GrapeTopCountriesBubblePage() {
   let redGrapeWineData;
   let whiteGrapeWineData;
   // const dataYear = grape.dataYear;
-  if (wineCategory === "Red") {
+  if (wineCategory === "red") {
     redGrapeWineData = getDataItemById(id, GRAPES_RED_TOP_TEN_DATA);
     whiteGrapeWineData = { countries: [] };
   } else {

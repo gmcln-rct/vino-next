@@ -21,7 +21,7 @@ import {
 
 function RegionGeneralBarChartPage() {
   const [selectedCountry, setSelectedCountry] = useState("france");
-  const [selectedGrapeType, setSelectedGrapeType] = useState("red");
+  const [selectedGrapeType, setSelectedGrapeType] = useState("red");;
 
   const countryRedWineData = COUNTRIES_RED_GRAPE_DATA;
   const countryWhiteWineData = COUNTRIES_WHITE_GRAPE_DATA;

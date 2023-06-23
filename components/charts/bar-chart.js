@@ -40,11 +40,11 @@ const BarChart = (props) => {
   } = props;
 
   const [selectedGrapeType, setSelectedGrapeType] = useState(
-    grapeType ? grapeType : "Red"
+    grapeType ? grapeType : "red"
   );
   const selectedData =
-    selectedGrapeType === "Red" ? redGrapeData : whiteGrapeData;
-  const fillColor = selectedGrapeType === "Red" ? "#B03E3E" : "#A19F18";
+    selectedGrapeType === "red" ? redGrapeData : whiteGrapeData;
+  const fillColor = selectedGrapeType === "red" ? "#B03E3E" : "#A19F18";
 
   const data = selectedData.filter((d) => d.value > 0);
 
@@ -204,8 +204,8 @@ const BarChart = (props) => {
             value={selectedGrapeType}
             onChange={(event) => setSelectedGrapeType(event.target.value)}
           >
-            <option value="Red">Red Grapes</option>
-            <option value="White">White Grapes</option>
+            <option value="red">Red Grapes</option>
+            <option value="white">White Grapes</option>
           </select>
         )}
         <div className={classes.barchart}>

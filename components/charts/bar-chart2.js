@@ -3,7 +3,7 @@ import classes from "./bar-chart.module.css";
 
 import * as d3 from "d3";
 
-const BarChart2 = (props) => {
+const BarChartTwoValues = (props) => {
   const svgRef = useRef();
   // const yAxisLabelRef = useRef();
 
@@ -19,10 +19,8 @@ const BarChart2 = (props) => {
 
   const yAxisLabel = units;
 
-  console.log("in bar chart 2 = selectedGrapeType", selectedGrapeType);
-
   const selectedData =
-    selectedGrapeType == "red" ? redGrapeData : whiteGrapeData;
+    selectedGrapeType === "red" ? redGrapeData : whiteGrapeData;
   const fillColor = selectedGrapeType === "red" ? "#B03E3E" : "#A19F18";
 
   const data = selectedData.filter((d) => d.value > 0);
@@ -216,4 +214,4 @@ const BarChart2 = (props) => {
   );
 };
 
-export default BarChart2;
+export default BarChartTwoValues;

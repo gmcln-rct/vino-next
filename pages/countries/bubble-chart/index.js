@@ -11,7 +11,7 @@ function CountryBubbleIndex() {
   const whiteWineData = COUNTRIES_WHITE_GRAPE_DATA;
 
   const [selectedCountry, setSelectedCountry] = useState("algeria");
-  const [selectedGrapeType, setSelectedGrapeType] = useState("Red");
+  const [selectedGrapeType, setSelectedGrapeType] = useState("red");;
   const [grapeData, setGrapeData] = useState();
   const [units, setUnits] = useState("hectares");
 
@@ -27,7 +27,7 @@ function CountryBubbleIndex() {
 
   useEffect(() => {
 
-    const data = selectedGrapeType === "Red" ? redWineData : whiteWineData;
+    const data = selectedGrapeType === "red" ? redWineData : whiteWineData;
 
     // console.log("in bubble index - data: ", data);
     // console.log("in bubble index - selectedCountry: ", selectedCountry);
@@ -36,7 +36,7 @@ function CountryBubbleIndex() {
     const country = getDataItemById(selectedCountry, data);
 
     // console.log("bubblr INDEX - country", country);
-    // selectedGrapeType === "Red"
+    // selectedGrapeType === "red"
     //   ? setGrapeData(country.grapeData)
     //   : setGrapeData(COUNTRIES_RED_GRAPE_DATA);
     if(country) {
@@ -79,8 +79,8 @@ function CountryBubbleIndex() {
           value={selectedGrapeType}
           onChange={(event) => setSelectedGrapeType(event.target.value)}
         >
-          <option value="Red">Red Grapes</option>
-          <option value="White">White Grapes</option>
+          <option value="red">Red Grapes</option>
+          <option value="white">White Grapes</option>
         </select>
       </div>
 

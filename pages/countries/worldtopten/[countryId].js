@@ -28,7 +28,7 @@ function CountryWorldTopTenDetailPage() {
   const countryWineData = getDataItemById(id, COUNTRIES_WINE_DATA);
 
 
-  const [selectedGrapeType, setSelectedGrapeType] = useState("Red");
+  const [selectedGrapeType, setSelectedGrapeType] = useState("red");;
 
   const dataType = "country";
 

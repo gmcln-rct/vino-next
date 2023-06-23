@@ -8,8 +8,8 @@ const ChartSelector = ({ selectedGrapeType, setSelectedGrapeType }) => {
           value={selectedGrapeType}
           onChange={(event) => setSelectedGrapeType(event.target.value)}
         >
-          <option value="Red">Red Grapes</option>
-          <option value="White">White Grapes</option>
+          <option value="red">Red Grapes</option>
+          <option value="white">White Grapes</option>
         </select>
       </>
     );
