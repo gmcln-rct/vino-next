@@ -19,9 +19,11 @@ const BarChart2 = (props) => {
 
   const yAxisLabel = units;
 
+  console.log("in bar chart 2 = selectedGrapeType", selectedGrapeType);
+
   const selectedData =
-    selectedGrapeType === "Red" ? redGrapeData : whiteGrapeData;
-  const fillColor = selectedGrapeType === "Red" ? "#B03E3E" : "#A19F18";
+    selectedGrapeType == "red" ? redGrapeData : whiteGrapeData;
+  const fillColor = selectedGrapeType === "red" ? "#B03E3E" : "#A19F18";
 
   const data = selectedData.filter((d) => d.value > 0);
 

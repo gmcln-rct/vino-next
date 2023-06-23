@@ -62,6 +62,7 @@ function CountryGeneralBarChartPage() {
   });
   let countryWineData;
 
+  console.log("in bar chart index - selectedGrapeType", selectedGrapeType);
 
   return (
     <>
@@ -97,7 +98,6 @@ function CountryGeneralBarChartPage() {
         /> */}
         <ChartWrapper
           country={country}
-          countryWineData={countryWineData}
           redGrapeData={redWineData.grapeData}
           whiteGrapeData={whiteWineData.grapeData}
           selectedGrapeType={selectedGrapeType}

@@ -7,7 +7,7 @@ const ChartWrapper = (props) => {
   const containerRef = useRef();
   const [containerSize, setContainerSize] = useState({ width: 0, height: 0 });
 
-  const { country, countryWineData, redGrapeData, whiteGrapeData, dataType, selectedGrapeType, topType } =
+  const { country, redGrapeData, whiteGrapeData, dataType, selectedGrapeType, topType } =
     props;
 
   useEffect(() => {
@@ -26,8 +26,6 @@ const ChartWrapper = (props) => {
     return () => window.removeEventListener("resize", updateSize);
   }, []);
 
-
-console.log("redGraperData", redGrapeData);
 
   return (
     <section className={classes.chart} ref={containerRef}>
