@@ -28,18 +28,17 @@ function CountryGeneralBarChartPage() {
   const [selectedGrapeType, setSelectedGrapeType] = useState("red");;
 
   const countryRedGrapeData = COUNTRIES_RED_GRAPE_DATA;
-  // const countryWhiteGrapeData = COUNTRIES_WHITE_GRAPE_DATA;
+  const countryWhiteGrapeData = COUNTRIES_WHITE_GRAPE_DATA;
 
-  const redWineData = getDataItemById(selectedCountry, COUNTRIES_RED_GRAPE_DATA);
-  const whiteWineData = getDataItemById(selectedCountry, COUNTRIES_WHITE_GRAPE_DATA);
+  const redGrapeData = getDataItemById(selectedCountry, countryRedGrapeData);
+  const whiteGrapeData = getDataItemById(selectedCountry, COUNTRIES_WHITE_GRAPE_DATA);
 
   const COUNTRIES = filterCountriesData(countryRedGrapeData);
   let country = getDataItemById(selectedCountry, COUNTRIES_DATA);
-  console.log("in bar chart index - selectedCountry", selectedCountry);
 
   const dataType = "country";
 
-  if (!redWineData || !whiteWineData) {
+  if (!redGrapeData || !whiteGrapeData) {
     return (
       <div className="center">
         <p>Loading...</p>
@@ -49,8 +48,8 @@ function CountryGeneralBarChartPage() {
 
   let headerText = generateHeader({
     dataType: dataType,
-    itemName: redWineData.itemName,
-    explanationText: redWineData.itemName + ": ",
+    itemName: redGrapeData.itemName,
+    explanationText: redGrapeData.itemName + ": ",
     selectedGrapeType,
   });
 
@@ -62,8 +61,8 @@ function CountryGeneralBarChartPage() {
   });
   // let countryWineData;
 
-  console.log("in bar chart index - redWineData", redWineData);
-  console.log("in bar chart index - red wine grape data", redWineData.grapeData);
+  console.log("in bar chart index - redGrapeData", redGrapeData);
+  console.log("in bar chart index - red wine grape data", countryRedGrapeData);
 
   return (
     <>
@@ -90,17 +89,17 @@ function CountryGeneralBarChartPage() {
         />
         {/* <MultiBarChart
           itemName={selectedCountry.itemName}
-          units={redWineData.units}
+          units={redGrapeData.units}
           dataYear={selectedCountry.dataYear}
           dataType={dataType}
           grapeType={selectedGrapeType}
-          redGrapeData={redWineData}
-          whiteGrapeData={whiteWineData}
+          redGrapeData={redGrapeData}
+          whiteGrapeData={whiteGrapeData}
         /> */}
         <ChartWrapper
           country={country}
-          redGrapeData={redWineData.grapeData}
-          whiteGrapeData={whiteWineData.grapeData}
+          redGrapeData={redGrapeData.grapeData}
+          whiteGrapeData={whiteGrapeData.grapeData}
           selectedGrapeType={selectedGrapeType}
           dataType={dataType}
           topType="multi"

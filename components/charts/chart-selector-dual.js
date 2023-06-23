@@ -1,7 +1,6 @@
 import classes from "./chart-selector.module.css";
 
 const ChartSelectorDual = ({ countryData, selectedCountry, setSelectedCountry, selectedGrapeType, setSelectedGrapeType }) => {
-    console.log("in chart selector dual - countryData", countryData);
     const COUNTRIES = countryData;
     return (
         <div className={classes.selectrow}>

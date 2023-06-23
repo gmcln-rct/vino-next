@@ -3,7 +3,7 @@ import classes from "./bar-chart.module.css";
 
 import * as d3 from "d3";
 
-const BarChartTwoValues = (props) => {
+const BarChart2 = (props) => {
   const svgRef = useRef();
   // const yAxisLabelRef = useRef();
 
@@ -214,4 +214,4 @@ const BarChartTwoValues = (props) => {
   );
 };
 
-export default BarChartTwoValues;
+export default BarChart2;
