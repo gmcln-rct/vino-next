@@ -108,7 +108,9 @@
 
 
 .select120 {
-  width: 25vmin;
+  width: 20vmin;
+  min-width: 220px; /* a must for IE 11 */
+
 }
 
 .selectRow {
