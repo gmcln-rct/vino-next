@@ -8,7 +8,6 @@ import { COUNTRIES_DATA } from "@/data/country-data";
 import { COUNTRIES_RED_GRAPE_DATA } from "@/data/country-wine-data-red-all-2016";
 import { COUNTRIES_WHITE_GRAPE_DATA} from "@/data/country-wine-data-white-all-2016";
 
-// import MultiBarChart from "@/components/charts/bar-multi-chart";
 import ChartWrapper from "@/components/charts/chart-wrapper";
 
 import ChartSelectorDual from "@/components/charts/chart-selector-dual";

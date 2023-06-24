@@ -9,7 +9,7 @@ import { COUNTRIES_RED_GRAPE_DATA } from "@/data/country-wine-data-red-all-2016"
 import { COUNTRIES_WHITE_GRAPE_DATA} from "@/data/country-wine-data-white-all-2016";
 
 // import BarChart from "@/components/charts/bar-chart";
-import MultiBarChart from "@/components/charts/bar-multi-chart";
+
 import Button from "@/components/ui/button";
 import DataSource from "@/components/layout/data-source";
 
@@ -107,15 +107,6 @@ function RegionGeneralBarChartPage() {
             <option value="white">White</option>
           </select>
         </div>
-        <MultiBarChart
-          itemName={selectedCountry.itemName}
-          units={redWineData.units}
-          dataYear={selectedCountry.dataYear}
-          dataType={dataType}
-          grapeType={selectedGrapeType}
-          redGrapeData={redWineData}
-          whiteGrapeData={whiteWineData}
-        />
 
         <DataSource />
       </section>
