@@ -1,6 +1,6 @@
 import Head from "next/head";
 
-import { useState, useEffect, use } from "react";
+import { useState } from "react";
 
 import classes from "@/components/charts/bar-chart.module.css";
 
@@ -78,6 +78,7 @@ function CountryGeneralBarChartPage() {
         />
       </Head>
       <section className={classes.chart}>
+        <h1 className={classes.title}>Wine Production By Country</h1>
         <h2 className={classes.header}>{headerText}</h2>
         <p className={classes.subheader}>{subheaderText}</p>
 

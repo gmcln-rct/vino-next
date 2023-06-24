@@ -9,7 +9,7 @@ export function generateHeader(props) {
       } else {
         headerText =
         explanationText + " Top " +
-         grapeType + " Grape Varietal Production"
+         grapeType + " Grapes"
       
       }
     // console.log('headerText', headerText)
@@ -30,8 +30,8 @@ export function generateSubheader(props) {
       } else {
         subHeaderText =
         "Production of " +
-        // selectedGrapeType +
-        " grape varietals by country, measured in land area, " +
+        selectedGrapeType +
+        " grape varietals, measured in land area, " +
           // explanationText +
           " " +
           dataYear;
