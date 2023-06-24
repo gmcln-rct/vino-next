@@ -11,9 +11,6 @@ import DataSource from "@/components/layout/data-source";
 // import { COUNTRIES_WHITE_GRAPE_DATA} from "@/data/country-wine-data-white-all-2016";
 import { WINE_REGION_PRODUCTION_DATA } from "@/data/region-test-data";
 
-// import BarChart from "@/components/charts/bar-chart";
-// import MultiBarChart from "@/components/charts/bar-multi-chart";
-
 import { filterCountriesData, getDataItemById } from "@/data/utils";
 import {
   generateHeader,
