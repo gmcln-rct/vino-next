@@ -11,6 +11,7 @@ export function getHeaders(
   let headerText = "";
   let subHeaderText = "";
   let grapeTypeText = selectedGrapeType.toLowerCase();
+  const grapeTypeTextCapitalized = grapeTypeText.charAt(0).toUpperCase() + grapeTypeText.slice(1);
 
   if (dataType === "grape") {
     headerText = itemName + ": " + explanationText;
@@ -20,7 +21,7 @@ export function getHeaders(
       " grape producing countries,  " +
       dataYear;
   } else if (topType === "national") {
-    headerText = headerSuffix + selectedGrapeType + " Grapes of " + countryName;
+    headerText = headerSuffix + grapeTypeTextCapitalized + " Grapes of " + countryName;
     subHeaderText =
       explanationText +
       countryName +
@@ -29,7 +30,7 @@ export function getHeaders(
       " grape varietals, by land area, " +
       dataYear;
   } else if (topType === "global") {
-    headerText = headerSuffix + selectedGrapeType + " Grapes in " + countryName;
+    headerText = headerSuffix + grapeTypeTextCapitalized + " Grapes in " + countryName;
     subHeaderText =
       explanationText +
       " " +
