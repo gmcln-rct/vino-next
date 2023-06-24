@@ -89,15 +89,6 @@ function CountryGeneralBarChartPage() {
           selectedGrapeType={selectedGrapeType}
           setSelectedGrapeType={setSelectedGrapeType}
         />
-        {/* <MultiBarChart
-          itemName={selectedCountry.itemName}
-          units={redGrapeData.units}
-          dataYear={selectedCountry.dataYear}
-          dataType={dataType}
-          grapeType={selectedGrapeType}
-          redGrapeData={redGrapeData}
-          whiteGrapeData={whiteGrapeData}
-        /> */}
         <ChartWrapper
           country={country}
           redGrapeData={redGrapeData.grapeData}
