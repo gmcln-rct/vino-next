@@ -68,8 +68,8 @@ function HistogramComparisonPage() {
           isCountryComparison={isCountryComparison}
           selectedItem1={country1}
           setSelectedItem1={setCountry1}
-          selectedItem2={country1}
-          setSelectedItem2={setCountry1}
+          selectedItem2={country2}
+          setSelectedItem2={setCountry2}
         />
       {/* <div className={classes.selectrow}>
         <select
