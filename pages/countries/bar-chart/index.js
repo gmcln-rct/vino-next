@@ -8,9 +8,8 @@ import { COUNTRIES_DATA } from "@/data/country-data";
 import { COUNTRIES_RED_GRAPE_DATA } from "@/data/country-wine-data-red-all-2016";
 import { COUNTRIES_WHITE_GRAPE_DATA} from "@/data/country-wine-data-white-all-2016";
 
-import ChartWrapper from "@/components/charts/chart-wrapper";
-
 import ChartSelectorDual from "@/components/charts/chart-selector-dual";
+import ChartWrapper from "@/components/charts/chart-wrapper";
 import UnitsFooter from "@/components/layout/units-footer";
 import DataSource from "@/components/layout/data-source";
 
@@ -83,8 +82,8 @@ function CountryGeneralBarChartPage() {
 
         <ChartSelectorDual
           countryData={COUNTRIES}
-          selectedCountry={selectedCountry}
-          setSelectedCountry={setSelectedCountry}
+          selectedItem1={selectedCountry}
+          setSelectedItem1={setSelectedCountry}
           selectedGrapeType={selectedGrapeType}
           setSelectedGrapeType={setSelectedGrapeType}
         />

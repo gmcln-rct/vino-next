@@ -1,15 +1,15 @@
 import classes from "./chart-selector.module.css";
 
-const ChartSelectorDual = ({ countryData, selectedCountry, setSelectedCountry, selectedGrapeType, setSelectedGrapeType }) => {
+const ChartSelectorDual = ({ countryData, selectedItem1, setSelectedItem1, selectedItem2, setSelectedItem2 }) => {
     const COUNTRIES = countryData;
     return (
         <div className={classes.selectrow}>
     { COUNTRIES && <>
     <span className={classes.selectLabel}> Select Country: </span>
       <select
-        value={selectedCountry}
+        value={selectedItem1}
         className={classes.selectDropdown}
-        onChange={(event) => setSelectedCountry(event.target.value)}
+        onChange={(event) => setSelectedItem1(event.target.value)}
       >
         {COUNTRIES.map((country) => (
           <option key={country.id} value={country.id}>
@@ -22,8 +22,8 @@ const ChartSelectorDual = ({ countryData, selectedCountry, setSelectedCountry, s
 
       <select
         className={classes.selectDropdown}
-        value={selectedGrapeType}
-        onChange={(event) => setSelectedGrapeType(event.target.value)}
+        value={selectedItem2}
+        onChange={(event) => setSelectedItem2(event.target.value)}
       >
         <option value="red">Red Grapes</option>
         <option value="white">White Grapes</option>

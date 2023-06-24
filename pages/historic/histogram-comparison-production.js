@@ -10,6 +10,9 @@ import { HISTORIC_PRODUCTION_STACKED_DATA } from "@/data/historic-production-sta
 
 import HistoricChartNotes from "@/components/layout/historic-chart-notes";
 
+import ChartSelectorDual from "@/components/charts/chart-selector-dual";
+import ChartWrapper from "@/components/charts/chart-wrapper";
+
 import Button from "@/components/ui/button";
 
 const COUNTRIES = [
@@ -24,8 +27,6 @@ const COUNTRIES = [
   "Germany",
   "Portugal",
 ];
-
-const YEARS = [2000, 2001, 2002, 2003, 2004, 2005, 2006];
 
 function HistogramComparisonPage() {
   const [country1, setCountry1] = useState(COUNTRIES[0]);
@@ -45,6 +46,8 @@ function HistogramComparisonPage() {
     setCountry2(value === "" ? null : value);
   };
 
+  const isCountryComparison = true;
+
   return (
     <>
       <Head>
@@ -60,7 +63,14 @@ function HistogramComparisonPage() {
       <h1 className="indexheader">
          Historic Wine Production Comparison
       </h1>
-      <div className={classes.selectrow}>
+      <ChartSelectorDual
+          countryData={COUNTRIES}
+          selectedItem1={country1}
+          setSelectedItem1={setCountry1}
+          selectedItem2={country1}
+          setSelectedItem2={setCountry1}
+        />
+      {/* <div className={classes.selectrow}>
         <select
           value={country1}
           className="selectCss select120"
@@ -84,7 +94,7 @@ function HistogramComparisonPage() {
             </option>
           ))}
         </select>
-      </div>
+      </div> */}
       <HistogramComparisonChart
         data={historicData}
         country1={country1}
