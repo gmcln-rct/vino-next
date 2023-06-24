@@ -65,6 +65,7 @@ function HistogramComparisonPage() {
       </h1>
       <ChartSelectorDual
           countryData={COUNTRIES}
+          isCountryComparison={isCountryComparison}
           selectedItem1={country1}
           setSelectedItem1={setCountry1}
           selectedItem2={country1}
