@@ -34,7 +34,7 @@ function CountryGeneralBarChartPage() {
   const whiteGrapeData = getDataItemById(selectedCountry, COUNTRIES_WHITE_GRAPE_DATA);
 
   const COUNTRIES = filterCountriesData(countryRedGrapeData);
-  let country = getDataItemById(selectedCountry, COUNTRIES_DATA);
+  let country = getDataItemById(selectedCountry, COUNTRIES_RED_GRAPE_DATA);
 
   const dataType = "country";
 
@@ -63,6 +63,7 @@ function CountryGeneralBarChartPage() {
 
   console.log("in bar chart index - redGrapeData", redGrapeData);
   console.log("in bar chart index - red wine grape data", countryRedGrapeData);
+  console.log("in bar chart index - country", country);
 
   return (
     <>

@@ -71,7 +71,7 @@ function HomePage({ topGrapes, randomGrape, randomCountry }) {
       <Masthead
         backgroundImage="/images/site-images/homepage-masthead.jpg"
         header="Discover Wine, One Chart at a Time"
-        headerText="Uncover wine's best-kept secrets through data visualization. Dive into fascinating production & consumption history, eclectic grape varieties, and iconic wine regions."
+        headerText="Uncover the magic of wine through data visualizations. Dive into fascinating production & consumption history, eclectic grape varietals, and iconic and lesser-known wine regions."
       />
       <section className={infoClass2}>
         <h2 className="header">Featured Charts</h2>
