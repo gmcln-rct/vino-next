@@ -7,7 +7,7 @@ function HistoricChartNotes() {
   return (
     <div>
       <p className="dataSource">
-        Note that the starting year for historical data varies by country.
+        Note that historical data not available for all years.
       </p>
       <p className="dataSource">
         Data Source:{" "}

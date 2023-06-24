@@ -3,7 +3,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: 30%;
+    /* width: 30%; */
     margin: 0 0 1em 0;
 }
 
@@ -30,5 +30,4 @@
         width: 30%;
         margin: 0 0 1em 0;
     }
-
 }
