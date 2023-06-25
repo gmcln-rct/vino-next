@@ -4,14 +4,10 @@ import classes from "./bubble-chart.module.css";
 
 const BubbleChart = (props) => {
   const {
-    itemName,
-    dataYear,
-    dataType,
     grapeType,
     units,
     redGrapeData,
-    whiteGrapeData,
-    explanationText,
+    whiteGrapeData
   } = props;
 
   const svgRef = useRef();
@@ -75,15 +71,12 @@ const BubbleChart = (props) => {
       .append("circle")
       .attr("r", 1) // start small
       .attr("fill", (d) => color(d.data.country))
-      .style("padding", "5px")
-      .on('click', d => {
-        window.open("http://en.wikipedia.org", "_blank")
-    });
+      .style("padding", "5px");
 
     circles
       .transition()
       .duration(1000) // grow over 1 second
-      .attr("r", (d) => d.r);
+      .attr("r", (d) => d.r * 0.98);
 
     node
       .append("text")

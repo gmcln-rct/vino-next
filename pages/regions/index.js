@@ -8,9 +8,6 @@ import classes from "@/components/charts/bar-chart.module.css";
 import { COUNTRIES_RED_GRAPE_DATA } from "@/data/country-wine-data-red-all-2016";
 import { COUNTRIES_WHITE_GRAPE_DATA} from "@/data/country-wine-data-white-all-2016";
 
-// import BarChart from "@/components/charts/bar-chart";
-
-import Button from "@/components/ui/button";
 import DataSource from "@/components/layout/data-source";
 
 import { filterCountriesData, getDataItemById } from "@/data/utils";
