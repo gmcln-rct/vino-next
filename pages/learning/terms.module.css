@@ -6,7 +6,7 @@
 
   padding: 2vmin 5vmin;
 
-font-family: var(--font-lato);
+  font-family: var(--font-lato);
   font-display: swap;
   letter-spacing: 1px;
 
@@ -24,7 +24,7 @@ font-family: var(--font-lato);
   font-weight: 600;
 
   /* color: var(--red-8) */
-  color: var(--grey-1)
+  color: var(--grey-1);
 }
 
 .termsList {
@@ -40,7 +40,7 @@ font-family: var(--font-lato);
   font-weight: 400;
   font-display: swap;
 
-  background-color: var(--pink-9);
+  background-color: var(--grey-9);
   /* box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.2); */
   -webkit-box-shadow: inset 0px 0px 10px 0px rgba(0, 0, 0, 0.35);
   -moz-box-shadow: inset 0px 0px 10px 0px rgba(0, 0, 0, 0.35);

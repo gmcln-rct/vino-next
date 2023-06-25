@@ -282,7 +282,7 @@ export function createGrapeOriginQuestion(grapes) {
   getRandomizedAnswers(answerOptions, grapes, "country");
 
   return {
-    question: `What is the country of origin of the grape "${grape.grape}"?`,
+    question: `What is the country of origin of the grape ${grape.grape}?`,
     questionType: "multiplechoice",
     answerSelectionType: "single",
     answers: answerOptions,
@@ -296,7 +296,7 @@ export function createGrapeColorQuestion(grapes) {
   const grape = grapes[Math.floor(Math.random() * grapes.length)];
 
   return {
-    question: `Is ${grape.grape} a red or white grape"?`,
+    question: `Is ${grape.grape} a red or white grape?`,
     questionType: "multiplechoice",
     answerSelectionType: "single",
     answers: ["red", "white"],
