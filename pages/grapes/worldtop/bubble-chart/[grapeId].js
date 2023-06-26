@@ -10,7 +10,8 @@ import {
   GRAPES_WHITE_TOP_TEN_DATA,
 } from "@/data/grape-top-ten-countries-data-2016";
 
-import BubbleChart from "@/components/charts/bubble-chart";
+import ChartWrapperBubble from "@/components/charts/chart-wrapper-bubble";
+// import BubbleChart from "@/components/charts/bubble-chart";
 import Button from "@/components/ui/button";
 import DataSource from "@/components/layout/data-source";
 
@@ -65,7 +66,7 @@ function GrapeTopCountriesBubblePage() {
         />
       </Head>
       <h2 className="indexheader">Top {grape.itemName} Producing Countries</h2>
-      <BubbleChart
+      <ChartWrapperBubble
         itemName={grape.itemName}
         units={grape.units}
         dataYear={grape.dataYear}

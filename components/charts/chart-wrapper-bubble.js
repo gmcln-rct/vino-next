@@ -1,13 +1,13 @@
 import { useEffect, useState, useRef } from "react";
 
-import BarChart2 from "./bar-chart2";
+import BubbleChart from "./bubble-chart";
 import classes from "./chart-wrapper.module.css";
 
 const ChartWrapperBubble = (props) => {
   const containerRef = useRef();
   const [containerSize, setContainerSize] = useState({ width: 0, height: 0 });
 
-  const { country, redGrapeData, whiteGrapeData, dataType, selectedGrapeType, topType } =
+  const { itemName, units, dataYear, dataType, redGrapeData,whiteGrapeData, explanationText, topType } =
     props;
 
   useEffect(() => {
@@ -29,17 +29,15 @@ const ChartWrapperBubble = (props) => {
 
   return (
     <section className={classes.chart} ref={containerRef}>
-      <BarChart2
-        itemName={country.itemName}
-        units={country.units}
-        dataYear={country.dataYear}
+      <BubbleChart
+        itemName={itemName}
+        units={units}
+        dataYear={dataYear}
         dataType={dataType}
-        topType={topType}
+        grapeType={grapeType}
         redGrapeData={redGrapeData}
         whiteGrapeData={whiteGrapeData}
-        selectedGrapeType={selectedGrapeType}
-        containerRef={containerRef}
-        containerSize={containerSize}
+        explanationText={explanationText}
       />
     </section>
   );
