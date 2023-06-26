@@ -7,7 +7,7 @@ const ChartWrapperBubble = (props) => {
   const containerRef = useRef();
   const [containerSize, setContainerSize] = useState({ width: 0, height: 0 });
 
-  const { itemName, units, dataYear, dataType, redGrapeData,whiteGrapeData, explanationText, topType } =
+  const { itemName, units, dataYear, dataType, grapeType, redGrapeData,whiteGrapeData, explanationText } =
     props;
 
   useEffect(() => {

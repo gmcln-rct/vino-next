@@ -29,7 +29,7 @@ function GrapeTopCountriesBubblePage() {
     wineCategory = grape.category === "R" ? "red" : "white";
   }
 
-  if (!grape || !grape.id) {
+  if (!grape || !grape.id || !wineCategory) {
     return (
       <div className="center">
         <p>Loading...</p>
@@ -37,7 +37,9 @@ function GrapeTopCountriesBubblePage() {
     );
   }
 
-  console.log("grape", grape);
+
+
+  console.log("wine category", wineCategory);
   let redGrapeWineData;
   let whiteGrapeWineData;
   // const dataYear = grape.dataYear;
