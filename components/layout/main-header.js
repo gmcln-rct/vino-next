@@ -96,7 +96,7 @@ const Navbar = () => {
               component={Link}
               href="/historic"
             >
-              <ListItemText primary="Historic Data" />
+              <ListItemText primary="Historical Data" />
             </ListItem>
           </div>
           <div className={classes.horizontalLine}></div>

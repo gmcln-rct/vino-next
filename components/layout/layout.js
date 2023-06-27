@@ -1,5 +1,3 @@
-// import { Fragment, useContext } from 'react';
-
 import MainHeader from "./main-header";
 import MainFooter from "./main-footer";
 

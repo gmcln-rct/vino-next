@@ -150,7 +150,7 @@ function HomePage({ topGrapes, randomGrape, randomCountry }) {
               width={150}
               height={150}
             />
-            <p className="link">By Country</p>
+            <p className="link">Countries</p>
           </Link>
           <Link href="/grapes" className="action__link center">
             <Image
@@ -160,7 +160,7 @@ function HomePage({ topGrapes, randomGrape, randomCountry }) {
               width={150}
               height={150}
             />
-            <p className="link">By Grape</p>
+            <p className="link">Grapes</p>
           </Link>
           <Link href="/historic" className="action__link center">
             <Image
@@ -170,7 +170,7 @@ function HomePage({ topGrapes, randomGrape, randomCountry }) {
               width={150}
               height={150}
             />
-            <p className="link">Historic Data</p>
+            <p className="link">Historical Data</p>
           </Link>
         </section>
       </section>
