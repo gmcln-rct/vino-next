@@ -19,11 +19,6 @@ const ChartSelectorDual = ({
     selectLabel2 = "Select Country 2: ";
     selectData2 = countryData;
   }
-  console.log("in chart selector dual - countrycompar", isCountryComparison);
-  console.log("in chart selector dual - selectData1", selectData1);
-  console.log("in chart selector dual - selectData2", selectData2);
-  console.log("in chart selector dual - selectitem1", selectedItem1);
-  console.log("in chart selector dual - selectitem2", selectedItem2);
 
   return (
     <div className={classes.selectrow}>

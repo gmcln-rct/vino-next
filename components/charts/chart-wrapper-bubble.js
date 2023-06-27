@@ -15,7 +15,7 @@ const ChartWrapperBubble = (props) => {
       if (containerRef.current) {
         setContainerSize({
           width: containerRef.current.offsetWidth,
-          height: window.innerHeight > 325 ? 325 : window.innerHeight,
+          height: window.innerHeight > 350 ? 350 : window.innerHeight,
         });
       }
     };

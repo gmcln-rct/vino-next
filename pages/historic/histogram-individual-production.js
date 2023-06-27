@@ -33,8 +33,6 @@ function HistogramIndividualPage() {
 
   const historicData = HISTORIC_PRODUCTION_STACKED_DATA;
 
-  console.log("histogram indiv historic data ",  historicData);
-
   // useEffect(() => {
   //   // update country2 if it is the same as country1
   //   if (country2 && country1 === country2) {

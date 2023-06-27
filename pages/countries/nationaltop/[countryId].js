@@ -22,8 +22,6 @@ import ChartSelector from "@/components/charts/chart-selector";
 
 function CountryTopTenDetailPage() {
   const router = useRouter();
-  console.log("router", router.query.countryId);
-
   const id = router.query.countryId;
   const country = getDataItemById(id, COUNTRIES_DATA);
   const countryWineData = getDataItemById(id, COUNTRIES_WINE_DATA);
@@ -41,7 +39,6 @@ function CountryTopTenDetailPage() {
     );
   }
 
-  console.log("countryWineData", countryWineData);
   const redGrapeData = countryWineData.redGrapeDataNational;
   const whiteGrapeData = countryWineData.whiteGrapeDataNational;
   const itemName = country.ItemName;
@@ -68,7 +65,6 @@ function CountryTopTenDetailPage() {
   const countryLink = `/countries/${country.id}`;
   const globalTopTenLink = `/countries/worldtopten/${country.id}`;
   const headDescription = `Top national grapes of ${country.itemName} production bar chart, by land area`;
-  console.log("in country top ten detail page - grape type", selectedGrapeType);
   
   return (
     <>
