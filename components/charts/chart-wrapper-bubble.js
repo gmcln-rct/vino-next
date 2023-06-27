@@ -31,6 +31,7 @@ const ChartWrapperBubble = (props) => {
     <section className={classes.chart} ref={containerRef}>
       <BubbleChart
         itemName={itemName}
+        containerSize={containerSize}
         units={units}
         dataYear={dataYear}
         dataType={dataType}

@@ -1,7 +1,7 @@
 import Link from "next/link";
 import Head from "next/head";
 
-import { useState, useEffect } from "react";
+import { useState } from "react";
 
 import classes from "@/components/charts/bar-chart.module.css";
 
