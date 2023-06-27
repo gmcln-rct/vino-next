@@ -22,18 +22,11 @@ function RegionalGeneralBarChartPage() {
   const [selectedRegion, setselectedRegion] = useState("burgundy");
   const [selectedGrapeType, setSelectedGrapeType] = useState("red");;
 
-  //   const countryRedWineData = COUNTRIES_RED_GRAPE_DATA;
-  //   const countryWhiteWineData = COUNTRIES_WHITE_GRAPE_DATA;
   const regionData = WINE_REGION_PRODUCTION_DATA;
 
   const newData = regionData.find(
     (d) => d.countryId === selectedCountry && d.id === selectedRegion
   );
-
-  console.log("new data ", newData);
-
-  // const redWineData = getDataItemById(selectedCountry, countryRedWineData);
-  // const whiteWineData = getDataItemById(selectedCountry, countryWhiteWineData);
 
   const COUNTRIES = filterCountriesData(regionData);
 

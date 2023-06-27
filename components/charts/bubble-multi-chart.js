@@ -10,7 +10,6 @@ const BubbleMultiChart = (props) => {
   const [selectedCountry, setSelectedCountry] = useState(country);
   const [selectedData, setSelectedData] = useState(grapeData);
 
-  console.log("in bubble - data: ", selectedData);
   const dataTypeText = "Units in hectares";
 
   // Adjust text color based on background color

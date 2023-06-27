@@ -5,7 +5,7 @@ import Head from "next/head";
 import { useRouter } from "next/router";
 
 import { getDataItemById } from "@/data/utils";
-import { COUNTRIES_DATA} from "@/data/country-data";
+import { COUNTRIES_DATA } from "@/data/country-data";
 import { COUNTRIES_WINE_DATA } from "@/data/country-wine-data-top-grapes-2016";
 
 import BubbleChart from "@/components/charts/bubble-chart";
@@ -14,12 +14,8 @@ import DataSource from "@/components/layout/data-source";
 
 function CountryTopTenDetailPage() {
   const router = useRouter();
-  console.log("router", router.query.countryId);
-
   const id = router.query.countryId;
-
   const country = getDataItemById(id, COUNTRIES_DATA);
-
   const countryWineData = getDataItemById(id, COUNTRIES_WINE_DATA);
 
   if (!country || !countryWineData) {
@@ -36,19 +32,20 @@ function CountryTopTenDetailPage() {
     <>
       <Head>
         <title>
-          {country.itemName} Top National Grapes - Bubble Chart - Winography - Wine Data
-          Visualization
+          {country.itemName} Top National Grapes - Bubble Chart - Winography -
+          Wine Data Visualization
         </title>
-        <meta
-          name="description"
-          content={headDescription}
-        />
+        <meta name="description" content={headDescription} />
       </Head>
       <BubbleChart />
       <DataSource />
       <div className="buttonFooter">
-        <Button link={countryLink} isSecondary="true">Back to {country.itemName} Page</Button>
-        <Button link="/countries/" isSecondary="true">Back to Country Index</Button>
+        <Button link={countryLink} isSecondary="true">
+          Back to {country.itemName} Page
+        </Button>
+        <Button link="/countries/" isSecondary="true">
+          Back to Country Index
+        </Button>
       </div>
     </>
   );

@@ -15,7 +15,6 @@ import ChartWrapperBubble from "@/components/charts/chart-wrapper-bubble";
 import Button from "@/components/ui/button";
 import DataSource from "@/components/layout/data-source";
 
-
 function GrapeTopCountriesBubblePage() {
   const router = useRouter();
   const id = router.query.grapeId;
@@ -37,9 +36,6 @@ function GrapeTopCountriesBubblePage() {
     );
   }
 
-
-
-  console.log("wine category", wineCategory);
   let redGrapeWineData;
   let whiteGrapeWineData;
   // const dataYear = grape.dataYear;
@@ -83,7 +79,7 @@ function GrapeTopCountriesBubblePage() {
         {/* <Button link={grapeLink} isSecondary="true">
           Back to {grape.itemName} Page
         </Button> */}
-        <Button link={barChartLink} isSecondary='false'>
+        <Button link={barChartLink} isSecondary="false">
           {grape.itemName} Bar Chart
         </Button>
         <Button link="/grapes/" isSecondary="true">

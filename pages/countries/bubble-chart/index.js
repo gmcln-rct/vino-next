@@ -17,48 +17,19 @@ function CountryBubbleIndex() {
 
   const COUNTRIES = redWineData.map((d) => ({ id: d.id, itemName: d.itemName }));
 
-  // const COUNTRIES = redWineData.map((d) => {d.id, d.itemName});
-// console.log("in bubble index - COUNTRIES: ", COUNTRIES);
-
-  // let filteredData = grapeData.filter(
-  //   (d) =>
-  //     d.id === selectedCountry && d.grapeData.filter((gd) => gd.value !== 0)
-  // );
 
   useEffect(() => {
 
     const data = selectedGrapeType === "red" ? redWineData : whiteWineData;
 
-    // console.log("in bubble index - data: ", data);
-    // console.log("in bubble index - selectedCountry: ", selectedCountry);
-    // ? setGrapeData(country.grapeData)
-    // : setGrapeData(COUNTRIES_RED_GRAPE_DATA);
     const country = getDataItemById(selectedCountry, data);
 
-    // console.log("bubblr INDEX - country", country);
-    // selectedGrapeType === "red"
-    //   ? setGrapeData(country.grapeData)
-    //   : setGrapeData(COUNTRIES_RED_GRAPE_DATA);
     if(country) {
       setGrapeData(country.grapeData);
     }
-    // setGrapeData(country.grapeData);
 
   }, [redWineData, whiteWineData, selectedCountry, selectedGrapeType]);
   
-  // const filteredData = grapeData.filter(
-  //   (d) =>
-  //     d.id === selectedCountry &&
-  //     d.grapeData.some((gd) => gd.value !== 0)
-  // );
-
-  // if (filteredData.length > 0) {
-  //   setGrapeData(filteredData[0].grapeData.filter((d) => d.value !== 0));
-  // }
-  // console.log("selectedCountry 2", selectedCountry);
-  // console.log("selectedGrapeType 2", selectedGrapeType);
-  // console.log("bubble index - grapeData 2", grapeData);
-
   return (
     <>
       <div className="selectRow">

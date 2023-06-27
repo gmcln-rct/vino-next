@@ -9,8 +9,6 @@ export const handleAnswerButtonClick = (
   const explanation = quizData[currentQuestion].explanation;
   let feedbackMessage;
 
-//   console.log("is correct ", isCorrect);
-
   if (isCorrect) {
     feedbackMessage = explanation
       ? `${LABELS.messageForCorrectAnswerWithExplanation} ${explanation}`

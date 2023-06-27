@@ -56,9 +56,6 @@ function RegionGeneralBarChartPage() {
     selectedGrapeType,
   });
 
-  console.log("headerText", headerText);
-  // let subheaderText = "test subheader text";
-
   let subheaderText = generateSubheader({
     dataType: dataType,
     itemName: selectedCountry.itemName,

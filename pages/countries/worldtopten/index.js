@@ -1,17 +1,14 @@
 import Head from "next/head";
 
-import { COUNTRIES_DATA  } from "@/data/country-data";
+import { COUNTRIES_DATA } from "@/data/country-data";
 
 import { getTopData } from "@/data/utils";
 
 import CountriesList from "@/components/countries/country-list";
 
-import { DataList} from "@/components/layout/data-list";
+import { DataList } from "@/components/layout/data-list";
 
 function CountryWorldTopTenIndex() {
-
-  // console.log('countries data: ', allCountries);
-
   if (!COUNTRIES_DATA) {
     return <p>Loading...</p>;
   }
@@ -22,7 +19,8 @@ function CountryWorldTopTenIndex() {
     <div>
       <Head>
         <title>
-          Top 10 Wine Producing Country Index - Winography | Learn About Wine Through Data Visualizations
+          Top 10 Wine Producing Country Index - Winography | Learn About Wine
+          Through Data Visualizations
         </title>
         <meta
           name="description"
