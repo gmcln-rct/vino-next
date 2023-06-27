@@ -13,6 +13,7 @@ import {
 import ChartWrapperBubble from "@/components/charts/chart-wrapper-bubble";
 // import BubbleChart from "@/components/charts/bubble-chart";
 import Button from "@/components/ui/button";
+import UnitsFooter from "@/components/layout/units-footer";
 import DataSource from "@/components/layout/data-source";
 
 function GrapeTopCountriesBubblePage() {
@@ -74,6 +75,7 @@ function GrapeTopCountriesBubblePage() {
         whiteGrapeData={whiteGrapeWineData.countries}
         explanationText={explanationText}
       />
+      <UnitsFooter units={grape.units} />
       <DataSource />
       <div className="buttonFooter">
         {/* <Button link={grapeLink} isSecondary="true">

@@ -1,18 +1,13 @@
 import React, { useEffect, useRef, useState } from "react";
 import * as d3 from "d3";
-import classes from "./bubble-chart.module.css";
+// import classes from "./bubble-chart.module.css";
 
 const BubbleChart = (props) => {
-  const {
-    grapeType,
-    units,
-    redGrapeData,
-    whiteGrapeData
-  } = props;
+  const { containerSize, grapeType, units, redGrapeData, whiteGrapeData } =
+    props;
 
   const svgRef = useRef();
-
-  const dataTypeText = "Units in hectares";
+  console.log("in bubble chart", containerSize.width, containerSize.height);
 
   // Adjust text color based on background color
   function getContrastYIQ(hexcolor) {
@@ -31,8 +26,8 @@ const BubbleChart = (props) => {
   useEffect(() => {
     const svg = d3.select(svgRef.current);
 
-    const width = 580;
-    const height = 580;
+    const width = containerSize.width;
+    const height = containerSize.height;
 
     const color = d3.scaleOrdinal(d3.schemeYlOrRd[5]);
 
@@ -125,12 +120,10 @@ const BubbleChart = (props) => {
     <>
       <svg
         ref={svgRef}
-        width={600}
-        height={600}
-        className={classes.chartMain}
+        width={containerSize.width}
+        height={containerSize.height}
         style={{ display: "block" }}
       />
-      <p className="chartfooter moveUp">{dataTypeText}</p>
     </>
   );
 };
