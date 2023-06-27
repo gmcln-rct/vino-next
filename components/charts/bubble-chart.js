@@ -16,7 +16,6 @@ const BubbleChart = (props) => {
 
   // Adjust text color based on background color
   function getContrastYIQ(hexcolor) {
-    console.log("hexcolor ", hexcolor);
     const red = parseInt(hexcolor.substring(1, 3), 16);
     const green = parseInt(hexcolor.substring(3, 5), 16);
     const blue = parseInt(hexcolor.substring(5, 7), 16);

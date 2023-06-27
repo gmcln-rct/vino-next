@@ -12,7 +12,6 @@ export function generateHeader(props) {
          grapeType + " Grapes"
       
       }
-    // console.log('headerText', headerText)
       return headerText;
 }
 

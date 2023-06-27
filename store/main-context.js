@@ -18,7 +18,6 @@ export function MainContextProvider(props) {
                 // If session started more than an hour ago
                 setIsNewVisit(true);
                 setSessionStartDate(Date.now());
-                console.log('sessionStartDate ', sessionStartDate);
                 // Update session start time
             } else {
                 setIsNewVisit(false);

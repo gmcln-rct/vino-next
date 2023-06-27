@@ -57,11 +57,6 @@ function CountryGeneralBarChartPage() {
     selectedGrapeType,
     dataYear: 2016,
   });
-  // let countryWineData;
-
-  console.log("in bar chart index - redGrapeData", redGrapeData);
-  console.log("in bar chart index - red wine grape data", countryRedGrapeData);
-  console.log("in bar chart index - country", country);
 
   return (
     <>
