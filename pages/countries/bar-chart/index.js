@@ -26,12 +26,13 @@ function CountryGeneralBarChartPage() {
   const [selectedGrapeType, setSelectedGrapeType] = useState("red");;
 
   const countryRedGrapeData = COUNTRIES_RED_GRAPE_DATA;
-  const countryWhiteGrapeData = COUNTRIES_WHITE_GRAPE_DATA;
+  // const countryWhiteGrapeData = COUNTRIES_WHITE_GRAPE_DATA;
 
-  const redGrapeData = getDataItemById(selectedCountry, countryRedGrapeData);
+  const redGrapeData = getDataItemById(selectedCountry,  COUNTRIES_RED_GRAPE_DATA);
   const whiteGrapeData = getDataItemById(selectedCountry, COUNTRIES_WHITE_GRAPE_DATA);
 
   const COUNTRIES = filterCountriesData(countryRedGrapeData);
+  const countriesArray = COUNTRIES.map((country) => country.itemName);
   let country = getDataItemById(selectedCountry, COUNTRIES_RED_GRAPE_DATA);
 
   const dataType = "country";
@@ -76,11 +77,11 @@ function CountryGeneralBarChartPage() {
         <p className={classes.subheader}>{subheaderText}</p>
 
         <ChartSelectorDual
-          countryData={COUNTRIES}
+          countryData={countriesArray}
           selectedItem1={selectedCountry}
           setSelectedItem1={setSelectedCountry}
-          selectedGrapeType={selectedGrapeType}
-          setSelectedGrapeType={setSelectedGrapeType}
+          selectedItem2={selectedGrapeType}
+          setSelectedItem2={setSelectedGrapeType}
         />
         <ChartWrapper
           country={country}

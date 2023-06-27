@@ -41,10 +41,10 @@ function HistogramComparisonPage() {
     }
   }, [country1, country2]);
 
-  const handleCountry2Change = (e) => {
-    const value = e.target.value;
-    setCountry2(value === "" ? null : value);
-  };
+  // const handleCountry2Change = (e) => {
+  //   const value = e.target.value;
+  //   setCountry2(value === "" ? null : value);
+  // };
 
   const isCountryComparison = true;
 

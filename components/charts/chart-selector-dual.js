@@ -9,8 +9,8 @@ const ChartSelectorDual = ({
   setSelectedItem2,
 }) => {
   const COUNTRIES = countryData;
-  let selectLabel1 = "Select Country: ";
-  let selectLabel2 = "Select Grape: ";
+  let selectLabel1 = "Country: ";
+  let selectLabel2 = "Grape Type: ";
   let selectData1 = countryData;
   let selectData2 = ["red", "white"];
 
@@ -38,6 +38,7 @@ const ChartSelectorDual = ({
           </select>
         </>
       )}
+      <>
       <span className={classes.selectLabel}> {selectLabel2} </span>
       <select
         value={selectedItem2}
@@ -46,10 +47,11 @@ const ChartSelectorDual = ({
       >
         {selectData2.map((dataItem2) => (
           <option key={dataItem2} value={dataItem2}>
-            {dataItem2}
+            {dataItem2.charAt(0).toUpperCase() + dataItem2.slice(1)}
           </option>
         ))}
       </select>
+      </>
       {/* <select
         className={classes.selectDropdown}
         value={selectedItem2}
