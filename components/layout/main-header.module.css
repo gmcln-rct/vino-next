@@ -62,7 +62,8 @@
 }
 
 .listitem {
-  padding: 0 2vmin;
+  margin: 1vmin 0;
+  padding: 1vmin 2vmin;
 
   font-size: clamp(24px, 1.5vw, 28px);
 
