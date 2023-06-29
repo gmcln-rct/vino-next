@@ -251,6 +251,22 @@ main a {
   background-color: "red";
 }
 
+.page404 {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  margin: 3vmin 0 0 0;
+  padding: 0 10vw 2vw 10vw;
+
+  font-size: clamp(18px, 4vw, 24px);
+  font-weight: 600;
+  font-display: swap;
+
+  color: var(--grey-2);
+}
+
 /* Flag images */
 .flagImage {
   margin: 2vmin 0 0 0;
