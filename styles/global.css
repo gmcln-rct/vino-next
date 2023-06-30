@@ -264,7 +264,8 @@ main a {
   font-weight: 600;
   font-display: swap;
 
-  color: var(--grey-2);
+  color: var(--grey-2)
+  
 }
 
 /* Flag images */
