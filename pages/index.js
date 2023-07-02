@@ -42,7 +42,7 @@ function HomePage({ topGrapes, randomGrape, randomCountry }) {
   const setIsNewVisit = mainCtx.setIsNewVisit;
 
   const infoClass = "info alt";
-  const infoClass2 = "info alt2"
+  const infoClass2 = "info alt2";
 
   // use passed in props instead of generating new data on each render
   let grapeLink = "/grapes/worldtop/bubble-chart/" + randomGrape.id;
@@ -125,7 +125,7 @@ function HomePage({ topGrapes, randomGrape, randomCountry }) {
             />
             <p className="link">Per Capita Comparison</p>
           </Link>
-          {(countryLink && countryName) &&(
+          {countryLink && countryName && (
             <Link href={countryLink} className="action__link center tall">
               <Image
                 src="/images/icons/icon-barchart.png"
@@ -199,4 +199,3 @@ function HomePage({ topGrapes, randomGrape, randomCountry }) {
 }
 
 export default HomePage;
-
