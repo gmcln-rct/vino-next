@@ -6,7 +6,7 @@ import classes from "@/components/charts/bar-chart.module.css";
 
 import { COUNTRIES_DATA } from "@/data/country-data";
 import { COUNTRIES_RED_GRAPE_DATA } from "@/data/country-wine-data-red-all-2016";
-import { COUNTRIES_WHITE_GRAPE_DATA} from "@/data/country-wine-data-white-all-2016";
+import { COUNTRIES_WHITE_GRAPE_DATA } from "@/data/country-wine-data-white-all-2016";
 
 import ChartSelectorDual from "@/components/charts/chart-selector-dual";
 import ChartWrapper from "@/components/charts/chart-wrapper";
@@ -23,13 +23,19 @@ import {
 
 function CountryGeneralBarChartPage() {
   const [selectedCountry, setSelectedCountry] = useState("france");
-  const [selectedGrapeType, setSelectedGrapeType] = useState("red");;
+  const [selectedGrapeType, setSelectedGrapeType] = useState("red");
 
   const countryRedGrapeData = COUNTRIES_RED_GRAPE_DATA;
   // const countryWhiteGrapeData = COUNTRIES_WHITE_GRAPE_DATA;
 
-  const redGrapeData = getDataItemById(selectedCountry,  COUNTRIES_RED_GRAPE_DATA);
-  const whiteGrapeData = getDataItemById(selectedCountry, COUNTRIES_WHITE_GRAPE_DATA);
+  const redGrapeData = getDataItemById(
+    selectedCountry,
+    COUNTRIES_RED_GRAPE_DATA
+  );
+  const whiteGrapeData = getDataItemById(
+    selectedCountry,
+    COUNTRIES_WHITE_GRAPE_DATA
+  );
 
   const COUNTRIES = filterCountriesData(countryRedGrapeData);
   const countriesArray = COUNTRIES.map((country) => country.itemName);
