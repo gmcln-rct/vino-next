@@ -42,11 +42,11 @@ function CountryGeneralBarChartPage() {
   let country = getDataItemById(selectedCountry, COUNTRIES_RED_GRAPE_DATA);
   const dataType = "country";
 
-  console.log("in bar chart - selectedCountry: ", selectedCountry);
-  console.log("in bar chart - selectedGrapeType: ", selectedGrapeType);
-  console.log("in bar chart - country: ", country);
-  console.log("in bar chart - redGrapeData: ", redGrapeData);
-  console.log("in bar chart - whiteGrapeData: ", whiteGrapeData);
+  // console.log("in bar chart - selectedCountry: ", selectedCountry);
+  // console.log("in bar chart - selectedGrapeType: ", selectedGrapeType);
+  // console.log("in bar chart - country: ", country);
+  // console.log("in bar chart - redGrapeData: ", redGrapeData);
+  // console.log("in bar chart - whiteGrapeData: ", whiteGrapeData);
 
   if (!redGrapeData || !whiteGrapeData) {
     return (
