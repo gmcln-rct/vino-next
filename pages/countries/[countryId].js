@@ -6,7 +6,7 @@ import { COUNTRIES_DATA } from "@/data/country-data";
 import { getDataItemById } from "@/data/utils";
 
 export default function CountryDetailPage({ country }) {
-  const flagImage = `/images/flags/flag-${country.id}.svg`;
+  const flagImage = `/images/flags/flag-${country.id}.png`;
   const flagImageAlt = `Flag of ${country.itemName}`;
   const wineCategory = country.category === "OW" ? "Old World" : "New World";
 
@@ -28,7 +28,7 @@ export default function CountryDetailPage({ country }) {
           src={flagImage}
           alt={flagImageAlt}
           className="flagImage"
-          width={200}
+          width={150}
           height={150}
         />
         <h1 className="header">{country.itemName} Wine Production Data</h1>
