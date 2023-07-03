@@ -73,7 +73,6 @@ main a {
 }
 
 .alt {
-  /* background-color: var(--grey-5); */
   background-color: var(--new-grey-12);
 }
 
@@ -82,13 +81,11 @@ main a {
 }
 
 .alt2 {
-  /* background-color: var(--grey-5); */
-  /* background-color: var(--pink-9); */
-  background-color: var(--new-grey-2);
+  background-color: var(--new-grey-1);
 }
 
 .alt2 .header {
-  color: var(--pink-9);
+  color: var(--pink-8);
 }
 
 .alt2 .subheader {
