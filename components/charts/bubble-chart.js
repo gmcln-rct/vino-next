@@ -89,9 +89,10 @@ const BubbleChart = (props) => {
       .select("body")
       .append("div")
       .style("position", "absolute")
-      .style("background", "white")
-      .style("border", "1px solid black")
-      .style("padding", "5px")
+      .style("color", "#fff")
+      .style("background", "#B8075F")
+      .style("border", "1px solid white")
+      .style("padding", "10px")
       .style("border-radius", "5px")
       .style("font-family", "Open Sans")
       .style("visibility", "hidden");
