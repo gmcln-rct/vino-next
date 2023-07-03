@@ -5,7 +5,7 @@ const MainContext = createContext({});
 export function MainContextProvider(props) {
     const [isNewVisit, setIsNewVisit] = useState(false);
     const [sessionStartDate, setSessionStartDate] = useState(undefined);
-    const [topScore, setTopScore] = useState(0);
+    // const [topScore, setTopScore] = useState(0);
 
     useEffect(() => {
       if (!sessionStartDate) {

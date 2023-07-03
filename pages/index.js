@@ -38,7 +38,7 @@ export async function getStaticProps() {
 
 function HomePage({ topGrapes, randomGrape, randomCountry }) {
   const mainCtx = useContext(MainContext);
-  const isNewVisit = mainCtx.isNewVisit;
+  // const isNewVisit = mainCtx.isNewVisit;
   const setIsNewVisit = mainCtx.setIsNewVisit;
 
   const infoClass = "info alt";
@@ -53,9 +53,9 @@ function HomePage({ topGrapes, randomGrape, randomCountry }) {
       ? "the United States"
       : randomCountry.itemName;
 
-  if (randomCountry) {
-    setIsNewVisit(false);
-  }
+  // if (randomCountry) {
+  //   setIsNewVisit(false);
+  // }
 
   const barChartLink = "/countries/bar-chart";
 
