@@ -31,7 +31,7 @@ const ChartSelectorDual = ({
             onChange={(event) => setSelectedItem1(event.target.value)}
           >
             {selectData1.map((dataItem1) => (
-              <option key={dataItem1} value={dataItem1}>
+              <option key={dataItem1} value={dataItem1.toLowerCase()}>
                 {dataItem1}
               </option>
             ))}
@@ -39,18 +39,18 @@ const ChartSelectorDual = ({
         </>
       )}
       <>
-      <span className={classes.selectLabel}> {selectLabel2} </span>
-      <select
-        value={selectedItem2}
-        className={classes.selectDropdown}
-        onChange={(event) => setSelectedItem2(event.target.value)}
-      >
-        {selectData2.map((dataItem2) => (
-          <option key={dataItem2} value={dataItem2}>
-            {dataItem2.charAt(0).toUpperCase() + dataItem2.slice(1)}
-          </option>
-        ))}
-      </select>
+        <span className={classes.selectLabel}> {selectLabel2} </span>
+        <select
+          value={selectedItem2}
+          className={classes.selectDropdown}
+          onChange={(event) => setSelectedItem2(event.target.value)}
+        >
+          {selectData2.map((dataItem2) => (
+            <option key={dataItem2} value={dataItem2}>
+              {dataItem2.charAt(0).toUpperCase() + dataItem2.slice(1)}
+            </option>
+          ))}
+        </select>
       </>
       {/* <select
         className={classes.selectDropdown}
