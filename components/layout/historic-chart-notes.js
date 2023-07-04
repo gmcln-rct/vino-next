@@ -6,6 +6,9 @@ const dataSourceLink =
 function HistoricChartNotes() {
   return (
     <div>
+            <p className="dataSource">
+        Values in Kiloliters (KL).
+      </p>
       <p className="dataSource">
         Historical data not available for all years.
       </p>

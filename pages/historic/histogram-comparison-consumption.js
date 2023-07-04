@@ -14,20 +14,7 @@ import HistoricChartNotes from "@/components/layout/historic-chart-notes";
 
 import Button from "@/components/ui/button";
 
-// const COUNTRIES = [
-//   "France",
-//   "Italy",
-//   "Spain",
-//   "United States",
-//   "Argentina",
-//   "Australia",
-//   "Chile",
-//   "South Africa",
-//   "Germany",
-//   "Portugal",
-// ];
 const COUNTRIES = [...new Set( HISTORIC_CONSUMPTION_DATA .map(d => d.itemName))];
-
 
 const YEARS = [2000, 2001, 2002, 2003, 2004, 2005, 2006];
 

@@ -40,6 +40,9 @@ const historicData = HISTORIC_CONSUMPTION_PER_CAPITA;
     setCountry2(value === "" ? null : value);
   };
 
+  const dataTypeText = "Annual production in Kiloliters (KL)";
+
+
   return (
     <>
       <Head>
@@ -85,6 +88,7 @@ const historicData = HISTORIC_CONSUMPTION_PER_CAPITA;
         country1={country1}
         country2={country2}
       />
+
       <HistoricChartNotes />
       <div className="buttonFooter">
         <Button link="/historic/histogram-indiv-consumption-per-capita" isSecondary="false">

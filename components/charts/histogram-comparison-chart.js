@@ -1,15 +1,15 @@
 import React, { useRef, useEffect } from "react";
 import * as d3 from "d3";
 
+import classes from "./histogram-chart.module.css"
+
 // DOUBLE HISTOGRAM CHART
 
 const HistogramComparisonChart = ({ data, country1, country2 }) => {
   const svgRef = useRef();
 
-  const dataTypeText = "Annual production in Kiloliters (KL)";
-
   useEffect(() => {
-    const margin = { top: 20, right: 100, bottom: 80, left: 100 };
+    const margin = { top: 20, right: 50, bottom: 80, left: 50 };
     const container = svgRef.current.parentElement;
     const width = container.offsetWidth - margin.left - margin.right;
     const calcHeight = container.offsetHeight - margin.top - margin.bottom;
@@ -165,18 +165,10 @@ const HistogramComparisonChart = ({ data, country1, country2 }) => {
   }, [data, country1, country2]);
 
   return (
-    <div
-      style={{
-        position: "relative",
-        height: "500px",
-        width: "80%",
-        borderRadius: "10px",
-        backgroundColor: "grey",
-      }}
+    <section className={classes.chartWrapper}
     >
-      <svg ref={svgRef} className="chart" width="100%" height="100%"></svg>
-      <p className="chartfooter moveUp">{dataTypeText}</p>
-    </div>
+      <svg ref={svgRef} className={classes.chart}></svg>
+    </section>
   );
 };
 
