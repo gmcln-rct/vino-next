@@ -1,7 +1,9 @@
 import React, { useRef, useEffect } from "react";
 import * as d3 from "d3";
 
-import classes from "./histogram-chart.module.css"
+import classes from "./histogram-chart.module.css";
+
+import { yearsFilter } from "../utils/years-util";
 
 // DOUBLE HISTOGRAM CHART
 
@@ -15,17 +17,16 @@ const HistogramComparisonChart = ({ data, country1, country2 }) => {
     const calcHeight = container.offsetHeight - margin.top - margin.bottom;
     const height = calcHeight > 400 ? 400 : calcHeight;
 
-    const yearsArray = data.filter((d) => d.year.toString().slice(3) === "0").map(d => d.year);
-    let filteredYears;
-    if (width > 768) {
-      filteredYears = yearsArray;
-    } else if (width > 400) {
-      filteredYears = yearsArray.filter((year, index) => (index % 3) === 0 )
-    } else {
-      filteredYears = [yearsArray[0], yearsArray[Math.ceil(yearsArray.length/2)], yearsArray[yearsArray.length-1]]
-    }
-
-    console.log("years array ", filteredYears);
+    let filteredYears = yearsFilter(data, width);
+    // const yearsArray = data.filter((d) => d.year.toString().slice(3) === "0").map(d => d.year);
+    // let filteredYears;
+    // if (width > 768) {
+    //   filteredYears = yearsArray;
+    // } else if (width > 400) {
+    //   filteredYears = yearsArray.filter((year, index) => (index % 3) === 0 )
+    // } else {
+    //   filteredYears = [yearsArray[0], yearsArray[Math.ceil(yearsArray.length/2)], yearsArray[yearsArray.length-1]]
+    // }
 
     const svg = d3
       .select(svgRef.current)
@@ -177,8 +178,7 @@ const HistogramComparisonChart = ({ data, country1, country2 }) => {
   }, [data, country1, country2]);
 
   return (
-    <section className={classes.chartWrapper}
-    >
+    <section className={classes.chartWrapper}>
       <svg ref={svgRef} className={classes.chart}></svg>
     </section>
   );
