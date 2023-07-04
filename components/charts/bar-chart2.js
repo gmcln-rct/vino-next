@@ -42,8 +42,8 @@ const BarChart2 = (props) => {
     const windowHeight = window.innerHeight;
     // Use width and height from the container size
     const width =
-      containerSize.width > windowWidth * 0.8
-        ? windowWidth * 0.8
+      containerSize.width > windowWidth * 0.9
+        ? windowWidth * 0.9
         : containerSize.width;
     const height =
       containerSize.height > windowHeight * 0.7
@@ -54,6 +54,7 @@ const BarChart2 = (props) => {
       windowWidth > 420
         ? width + margin.left + margin.right + 200
         : width + margin.left + margin.right;
+    const viewBoxHeight = height + margin.top + margin.bottom + 150; 
 
     // Set up and position SVG
     const svg = d3
@@ -62,7 +63,7 @@ const BarChart2 = (props) => {
       .attr("height", height)
       .attr(
         "viewBox",
-        `0 0 ${viewBoxWidth} ${height + margin.top + margin.bottom + 100}`
+        `0 0 ${viewBoxWidth} ${viewBoxHeight}`
       )
       .append("g")
       .attr("transform", `translate(${margin.left}, ${margin.top})`);
