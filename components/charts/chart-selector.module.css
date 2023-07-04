@@ -34,7 +34,7 @@
   box-sizing: border-box;
   margin: 0 0 1rem 0;
 
-  font-size: var(--font-size-1);
+  font-size: var(--font-size-3);
   font-family: sans-serif;
   font-weight: 700;
   color: #444;
@@ -78,6 +78,7 @@
 /* Set options to normal weight */
 .selectDropdown option {
   font-weight: normal;
+  font-size: 35px;
 }
 
 /* Support for rtl text, explicit support for Arabic and Hebrew */
