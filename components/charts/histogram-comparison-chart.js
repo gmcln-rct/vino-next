@@ -11,22 +11,14 @@ const HistogramComparisonChart = ({ data, country1, country2 }) => {
   const svgRef = useRef();
 
   useEffect(() => {
-    const margin = { top: 20, right: 50, bottom: 20, left: 50 };
+    const margin = { top: 20, right: 50, bottom: 20, left: 100 };
     const container = svgRef.current.parentElement;
     const width = container.offsetWidth - margin.left - margin.right;
     const calcHeight = container.offsetHeight - margin.top - margin.bottom;
     const height = calcHeight > 400 ? 400 : calcHeight;
 
     let filteredYears = yearsFilter(data, width);
-    // const yearsArray = data.filter((d) => d.year.toString().slice(3) === "0").map(d => d.year);
-    // let filteredYears;
-    // if (width > 768) {
-    //   filteredYears = yearsArray;
-    // } else if (width > 400) {
-    //   filteredYears = yearsArray.filter((year, index) => (index % 3) === 0 )
-    // } else {
-    //   filteredYears = [yearsArray[0], yearsArray[Math.ceil(yearsArray.length/2)], yearsArray[yearsArray.length-1]]
-    // }
+    console.log("data ", data);
 
     const svg = d3
       .select(svgRef.current)

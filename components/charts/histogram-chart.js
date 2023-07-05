@@ -11,7 +11,7 @@ const HistogramChart = ({ data, country1 }) => {
   const svgRef = useRef();
 
   useEffect(() => {
-    const margin = { top: 20, right: 50, bottom: 80, left: 50 };
+    const margin = { top: 20, right: 50, bottom: 80, left: 100 };
     const container = svgRef.current.parentElement;
     const width = container.offsetWidth - margin.left - margin.right;
     const calcHeight = container.offsetHeight - margin.top - margin.bottom;

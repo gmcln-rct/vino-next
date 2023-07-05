@@ -10,3 +10,30 @@ export function yearsFilter(data, width) {
     }
     return filteredYears;
 }
+
+export function valuesTranslator(data,country1,country2,width) {
+
+    let max = 0;
+    data.forEach(item => {
+        for (let key in item) {
+            if (key !== 'year' && item[key] > max) {
+                max = item[key];
+            }
+        }
+    });
+    return max;
+
+
+    let filteredValues;
+    if (width > 768) {
+      filteredValues = valuesArray;
+    } else if (width > 400) {
+      filteredValues = valuesArray.filter((year, index) => (index % 3) === 0 )
+    } else {
+      filteredValues = [valuesArray[0], valuesArray[Math.ceil(valuesArray.length/2)], valuesArray[valuesArray.length-1]]
+    }
+    return filteredValues;
+
+
+
+}
