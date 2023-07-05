@@ -23,6 +23,7 @@ export function valuesTranslator(data,country1,country2,width) {
     });
     return max;
 
+    
 
     let filteredValues;
     if (width > 768) {
