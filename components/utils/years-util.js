@@ -33,12 +33,22 @@ export function valuesTranslator(data, country1, country2, width) {
     filteredValues = valuesArray;
   } else if (width > 400) {
     filteredValues = valuesArray.filter((year, index) => index % 3 === 0);
-  } else {
+  } else { ``
     filteredValues = [
       valuesArray[0],
       valuesArray[Math.ceil(valuesArray.length / 2)],
       valuesArray[valuesArray.length - 1],
     ];
   }
+
+  let newArr = arr.map(num => {
+    if (num >= 1000000) {
+        return (num / 1000000).toFixed(1) + 'M';
+    } else if (num >= 1000) {
+        return (num / 1000).toFixed(1) + 'K';
+    } else {
+        return num.toString();
+    }
+});
   return filteredValues;
 }
