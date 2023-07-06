@@ -4,6 +4,7 @@ const DetailSection = (props) => {
   const { wineCategory, dataType, description, itemLink, moreInfo } = props;
 
   let classification = "";
+  let classificationName = "";
   let moreInfoListLabel = "";
   let moreInfoList = "";
   if (moreInfo && wineCategory) {
@@ -18,6 +19,10 @@ const DetailSection = (props) => {
     } else if (wineCategory === "OW") {
       classification = "Old World";
     }
+    if (classification !== "") {
+      classificationName = classification.charAt(0).toUpperCase() + classification.slice(1);
+    }
+
   } else {
     return (
       <div className="center">
@@ -26,12 +31,14 @@ const DetailSection = (props) => {
     );
   }
 
+
+
   return (
     <section className={classes.container}>
       <div className={classes.Items}>
         {description && <p className={classes.description}>{description}</p>}
         <p className={classes.data}>
-          Classification: <span className="bold">{classification}</span>
+          Grape Classification: <span className="bold">{classificationName}</span>
         </p>
         <p className={classes.data}>
           {moreInfoListLabel}: <span className="bold">{moreInfoList}</span>

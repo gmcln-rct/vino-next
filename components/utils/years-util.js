@@ -17,6 +17,18 @@ export function yearsFilter(data, width) {
   return filteredYears;
 }
 
+function formatNumberArray(arr) {
+  return arr.map(num => {
+      if (num >= 1000000) {
+          return (num / 1000000).toFixed(1) + 'M';
+      } else if (num >= 1000) {
+          return (num / 1000).toFixed(1) + 'K';
+      } else {
+          return num.toString();
+      }
+  });
+}
+
 export function valuesTranslator(data, country1, country2, width) {
   let max = 0;
   data.forEach((item) => {
@@ -41,14 +53,5 @@ export function valuesTranslator(data, country1, country2, width) {
     ];
   }
 
-  let newArr = arr.map(num => {
-    if (num >= 1000000) {
-        return (num / 1000000).toFixed(1) + 'M';
-    } else if (num >= 1000) {
-        return (num / 1000).toFixed(1) + 'K';
-    } else {
-        return num.toString();
-    }
-});
   return filteredValues;
 }
