@@ -4,15 +4,14 @@ import { useState, useEffect } from "react";
 
 import classes from "./histogram.module.css";
 
-import HistogramComparisonChart from "@/components/charts/histogram-comparison-chart";
 
 import { HISTORIC_CONSUMPTION_DATA } from "@/data/historic-consumption-data";
 
-import {convertToStackedFormat} from "@/data/utils";
-
+import HistogramComparisonChart from "@/components/charts/histogram-comparison-chart";
 import HistoricChartNotes from "@/components/layout/historic-chart-notes";
-
 import Button from "@/components/ui/button";
+
+import {convertToStackedFormat} from "@/data/utils";
 
 const COUNTRIES = [...new Set( HISTORIC_CONSUMPTION_DATA .map(d => d.itemName))];
 

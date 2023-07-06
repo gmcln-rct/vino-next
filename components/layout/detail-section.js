@@ -43,8 +43,8 @@ const DetailSection = (props) => {
         <p className={classes.data}>
           {moreInfoListLabel}: <span className="bold">{moreInfoList}</span>
         </p>
-        <a className={classes.link} href={itemLink} target="_blank">
-          Read Wikipedia Page in new tab
+        <a className={classes.link} href={itemLink}>
+          Read Wikipedia Page
         </a>
       </div>
     </section>
