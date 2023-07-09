@@ -21,8 +21,9 @@
 
 .title {
   margin: 1rem 0 0 0;
+  padding: 0 1vmin;
 
-  font-size: clamp(18px, 4vw, 32px);
+  font-size: clamp(24px, 4vw, 36px);
   font-weight: bold;
   font-display: swap;
   text-align: center;
@@ -35,7 +36,7 @@
 
   margin: 0.2rem 0 0 0;
 
-  font-size: clamp(16px, 4vw, 32px);
+  font-size: clamp(18px, 4vw, 36px);
   font-weight: bold;
   font-display: swap;
   text-align: center;
