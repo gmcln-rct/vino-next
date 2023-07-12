@@ -102,7 +102,7 @@ const QuizPage = () => {
       wineRegionsQuestion2,
       countryWhiteQuestion2,
     ]);
-  }, [countryRedData, countryWhiteData, wineHistoryData]);
+  }, [countryRedData, countryWhiteData, wineHistoryData, showResults]);
 
   const handleAnswerButtonClick = (answerIndex) => {
     const selectedAnswer = quizData[currentQuestion].answers[answerIndex];
@@ -188,7 +188,6 @@ const QuizPage = () => {
             ) : (
               <p></p>
             )}
-            {/* // <p className={classes.instructions}>Click on correct answer below.</p> */}
             <div className={classes.answers}>
               {selectedAnswer === null ? (
                 quizData[currentQuestion].answers.map((answer, index) => (
