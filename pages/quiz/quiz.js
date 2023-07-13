@@ -16,6 +16,10 @@ import { HISTORIC_PRODUCTION_DATA } from "@/data/historic-production-data";
 import { HISTORIC_CONSUMPTION_DATA } from "@/data/historic-consumption-data";
 import { COUNTRY_ORIGIN_DATA } from "@/data/country-origin-data";
 
+// Import utils
+
+import { handleAnswerButtonHelper } from "@/components/utils/quiz-utils";
+
 import {
   getRandomCountry,
   createGrapeQuestion,
@@ -105,28 +109,15 @@ const QuizPage = () => {
   }, [countryRedData, countryWhiteData, wineHistoryData, showResults]);
 
   const handleAnswerButtonClick = (answerIndex) => {
-    const selectedAnswer = quizData[currentQuestion].answers[answerIndex];
-    const correctAnswer = quizData[currentQuestion].correctAnswer;
-    const isCorrect = selectedAnswer == correctAnswer;
-    const explanation = quizData[currentQuestion].explanation;
-    setSelectedAnswer(selectedAnswer);
-
-    setExplanationMessage(explanation);
-    if (isCorrect) {
-      setFeedbackMessage(
-        explanation
-          ? `${LABELS.messageForCorrectAnswerWithExplanation}`
-          : LABELS.messageForCorrectAnswer
-      );
-      setCorrectness(true);
-    } else {
-      setFeedbackMessage(
-        explanation
-          ? `${LABELS.messageForIncorrectAnswerWithExplanation}`
-          : LABELS.messageForIncorrectAnswer
-      );
-      setCorrectness(false);
-    }
+    handleAnswerButtonHelper(
+      answerIndex,
+      quizData,
+      currentQuestion,
+      setExplanationMessage,
+      setSelectedAnswer,
+      setFeedbackMessage,
+      setCorrectness
+    );
   };
 
   const handleNextButtonClick = () => {

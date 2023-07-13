@@ -1,25 +1,39 @@
+import { useState, useEffect } from "react";
+
 import { LABELS } from "@/data/labels";
 
-export const handleAnswerButtonClick = (
-  selectedAnswer,
+export const handleAnswerButtonHelper = (
+  answerIndex,
   quizData,
-  currentQuestion
+  currentQuestion,
+  setExplanationMessage,
+  setSelectedAnswer,
+  setFeedbackMessage,
+  setCorrectness,
 ) => {
-  const isCorrect = selectedAnswer === quizData[currentQuestion].correctAnswer;
+  const selectedAnswer = quizData[currentQuestion].answers[answerIndex];
+  const correctAnswer = quizData[currentQuestion].correctAnswer;
+  const isCorrect = selectedAnswer == correctAnswer;
   const explanation = quizData[currentQuestion].explanation;
-  let feedbackMessage;
+
+  setSelectedAnswer(selectedAnswer);
+  setExplanationMessage(explanation);
 
   if (isCorrect) {
-    feedbackMessage = explanation
-      ? `${LABELS.messageForCorrectAnswerWithExplanation} ${explanation}`
-      : LABELS.messageForCorrectAnswer;
+    setFeedbackMessage(
+      explanation
+        ? `${LABELS.messageForCorrectAnswerWithExplanation}`
+        : LABELS.messageForCorrectAnswer
+    );
+    setCorrectness(true);
   } else {
-    feedbackMessage = explanation
-      ? `${LABELS.messageForIncorrectAnswerWithExplanation} ${explanation}`
-      : LABELS.messageForIncorrectAnswer;
+    setFeedbackMessage(
+      explanation
+        ? `${LABELS.messageForIncorrectAnswerWithExplanation}`
+        : LABELS.messageForIncorrectAnswer
+    );
+    setCorrectness(false);
   }
-
-  return feedbackMessage;
 };
 
 export const handleNextButtonClick = (
