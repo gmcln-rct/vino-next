@@ -14,6 +14,11 @@ import BarChart from "@/components/charts/bar-chart";
 import Button from "@/components/ui/button";
 import DataSource from "@/components/layout/data-source";
 
+import ChartWrapper from "@/components/charts/chart-wrapper";
+import ChartHeader from "@/components/charts/chart-header";
+import ChartSelector from "@/components/charts/chart-selector";
+import UnitsFooter from "@/components/layout/units-footer";
+
 function GrapeTopDetailPage() {
   const router = useRouter();
   const id = router.query.grapeId;
@@ -46,6 +51,8 @@ function GrapeTopDetailPage() {
     redGrapeWineData = { countries: [] };
   }
 
+  const headerText = `Top ${grape.itemName} Producing Countries`;
+  const subHeaderText = `Winegrape land area used for production, ${grape.dataYear}`;
   // const dataType = grape.dataType;
   const grapeLink = `/grapes/${grape.id}`;
   const bubbleChartLink = `/grapes/worldtop/bubble-chart/${grape.id}`;
@@ -62,6 +69,9 @@ function GrapeTopDetailPage() {
           content="Wine data visualization for winegrape area production for top national grape varietals"
         />
       </Head>
+      <section className="chartSection">
+      <ChartHeader headerText={headerText} subHeaderText={subHeaderText} />
+
       <BarChart
         itemName={grape.itemName}
         units={grape.units}
@@ -72,6 +82,7 @@ function GrapeTopDetailPage() {
         whiteGrapeData={whiteGrapeWineData.countries}
         explanationText={explanationText}
       />
+      <UnitsFooter units="hectares" />
       <DataSource />
       <div className="buttonFooter">
         <Button link={bubbleChartLink} isSecondary="false">
@@ -81,6 +92,7 @@ function GrapeTopDetailPage() {
           {grape.itemName} Page
         </Button>
       </div>
+      </section>
     </>
   );
 }
