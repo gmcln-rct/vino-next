@@ -10,6 +10,13 @@ const ChartWrapper = (props) => {
   const { country, grape, redGrapeData, whiteGrapeData, dataType, selectedGrapeType, topType } =
     props;
 
+    let dataItem = grape;
+    if (country) {
+      dataItem = country;
+    } else if (grape) {
+      dataItem = grape;
+    }
+
   useEffect(() => {
     const updateSize = () => {
       if (containerRef.current) {
@@ -34,14 +41,13 @@ const ChartWrapper = (props) => {
   //   );
   // }
 console.log("chart wrapper - redgrapedata ", redGrapeData);
-  // if (!country && grape) {
 
   return (
     <section className={classes.chart} ref={containerRef}>
       <BarChart2
-        itemName={country.itemName}
-        units={country.units}
-        dataYear={country.dataYear}
+        itemName={dataItem.itemName}
+        units={dataItem.units}
+        dataYear={dataItem.dataYear}
         dataType={dataType}
         topType={topType}
         redGrapeData={redGrapeData}

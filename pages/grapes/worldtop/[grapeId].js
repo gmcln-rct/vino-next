@@ -1,5 +1,4 @@
 import { useRouter } from "next/router";
-import Link from "next/link";
 import Head from "next/head";
 
 import { getDataItemById } from "@/data/utils";
@@ -53,7 +52,7 @@ function GrapeTopDetailPage() {
 
   const headerText = `Top ${grape.itemName} Producing Countries`;
   const subHeaderText = `Winegrape land area used for production, ${grape.dataYear}`;
-  // const dataType = grape.dataType;
+  const dataType = grape.dataType;
   const grapeLink = `/grapes/${grape.id}`;
   const bubbleChartLink = `/grapes/worldtop/bubble-chart/${grape.id}`;
   console.log("grape ", grape);
@@ -72,7 +71,7 @@ function GrapeTopDetailPage() {
       </Head>
       <section className="chartSection">
         <ChartHeader headerText={headerText} subHeaderText={subHeaderText} />
-        <BarChart
+        {/* <BarChart
         itemName={grape.itemName}
         units={grape.units}
         dataYear={grape.dataYear}
@@ -81,17 +80,15 @@ function GrapeTopDetailPage() {
         redGrapeData={redGrapeWineData.countries}
         whiteGrapeData={whiteGrapeWineData.countries}
         explanationText={explanationText}
-      />
-        {/* <ChartWrapper
-          country={country}
-          grape={grape.id}
-          countryWineData={countryWineData}
-          redGrapeData={redGrapeData}
-          whiteGrapeData={whiteGrapeData}
-          selectedGrapeType={selectedGrapeType}
+      /> */}
+        <ChartWrapper
+          grape={grape}
+          redGrapeData={redGrapeWineData.countries}
+          whiteGrapeData={whiteGrapeWineData.countries}
+          selectedGrapeType={wineCategory}
           dataType={dataType}
           topType="global"
-        /> */}
+        />
         <UnitsFooter units="hectares" />
         <DataSource />
         <div className="buttonFooter">
