@@ -196,8 +196,8 @@ const BarChart = (props) => {
   return (
     <>
       <section className={classes.chart} ref={containerRef}>
-        <h2 className={classes.header}>{headerText}</h2>
-        <p className={classes.subheader}>{subHeaderText}</p>
+        {/* <h2 className={classes.header}>{headerText}</h2>
+        <p className={classes.subheader}>{subHeaderText}</p> */}
         {dataType === "country" && (
           <select
             className={classes.selectCss}
@@ -212,7 +212,7 @@ const BarChart = (props) => {
           <svg ref={svgRef}></svg>
         </div>
       </section>
-      <p className={classes.units}>Units in hectares</p>
+      {/* <p className={classes.units}>Units in hectares</p> */}
     </>
   );
 };
