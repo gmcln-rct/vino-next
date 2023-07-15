@@ -32,7 +32,7 @@
   min-width: 200px; /* a must for IE 11 */
   max-width: 100%; /* useful when width is set to anything other than 100% */
   box-sizing: border-box;
-  margin: 0 0 1rem 0;
+  margin: 0 0 rem 0;
 
   font-size: var(--font-size-3);
   font-family: sans-serif;
@@ -136,7 +136,7 @@
 
   .selectDropdown {
     width: 20vmin;
-    margin: 1vmin 0 0;
+    margin: 1vmin 0 2vmin 0;
     padding: 0.5em 1.4em 0.5em 0.8em;
   }
 }

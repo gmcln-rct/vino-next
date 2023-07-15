@@ -9,13 +9,11 @@ import {
   GRAPES_WHITE_TOP_TEN_DATA,
 } from "@/data/grape-top-ten-countries-data-2016";
 
-import BarChart from "@/components/charts/bar-chart";
 import Button from "@/components/ui/button";
 import DataSource from "@/components/layout/data-source";
 
 import ChartWrapper from "@/components/charts/chart-wrapper";
 import ChartHeader from "@/components/charts/chart-header";
-import ChartSelector from "@/components/charts/chart-selector";
 import UnitsFooter from "@/components/layout/units-footer";
 
 function GrapeTopDetailPage() {
