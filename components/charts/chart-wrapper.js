@@ -7,7 +7,7 @@ const ChartWrapper = (props) => {
   const containerRef = useRef();
   const [containerSize, setContainerSize] = useState({ width: 0, height: 0 });
 
-  const { country, redGrapeData, whiteGrapeData, dataType, selectedGrapeType, topType } =
+  const { country, grape, redGrapeData, whiteGrapeData, dataType, selectedGrapeType, topType } =
     props;
 
   useEffect(() => {
@@ -26,14 +26,14 @@ const ChartWrapper = (props) => {
     return () => window.removeEventListener("resize", updateSize);
   }, []);
 
-  if (!country || !grape) {
-    return (
-      <div className="center">
-        <p>Loading...</p>
-      </div>
-    );
-  }
-
+  // if (!country || !grape) {
+  //   return (
+  //     <div className="center">
+  //       <p>Loading...</p>
+  //     </div>
+  //   );
+  // }
+console.log("chart wrapper - redgrapedata ", redGrapeData);
   // if (!country && grape) {
 
   return (

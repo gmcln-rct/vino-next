@@ -47,6 +47,7 @@ const BarChart = (props) => {
   const fillColor = selectedGrapeType === "red" ? "#B03E3E" : "#A19F18";
 
   const data = selectedData.filter((d) => d.value > 0);
+  console.log("bar chart - data ", data);
 
   useEffect(() => {
     if (!containerRef.current || containerSize.width === 0 || containerSize.height === 0) {
