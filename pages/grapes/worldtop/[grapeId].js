@@ -56,6 +56,7 @@ function GrapeTopDetailPage() {
   // const dataType = grape.dataType;
   const grapeLink = `/grapes/${grape.id}`;
   const bubbleChartLink = `/grapes/worldtop/bubble-chart/${grape.id}`;
+  console.log("grape ", grape);
 
   return (
     <>
@@ -70,9 +71,8 @@ function GrapeTopDetailPage() {
         />
       </Head>
       <section className="chartSection">
-      <ChartHeader headerText={headerText} subHeaderText={subHeaderText} />
-
-      <BarChart
+        <ChartHeader headerText={headerText} subHeaderText={subHeaderText} />
+        <BarChart
         itemName={grape.itemName}
         units={grape.units}
         dataYear={grape.dataYear}
@@ -82,16 +82,26 @@ function GrapeTopDetailPage() {
         whiteGrapeData={whiteGrapeWineData.countries}
         explanationText={explanationText}
       />
-      <UnitsFooter units="hectares" />
-      <DataSource />
-      <div className="buttonFooter">
-        <Button link={bubbleChartLink} isSecondary="false">
-          {grape.itemName} Bubble Chart
-        </Button>
-        <Button link={grapeLink} isSecondary="true">
-          {grape.itemName} Page
-        </Button>
-      </div>
+        {/* <ChartWrapper
+          country={country}
+          grape={grape.id}
+          countryWineData={countryWineData}
+          redGrapeData={redGrapeData}
+          whiteGrapeData={whiteGrapeData}
+          selectedGrapeType={selectedGrapeType}
+          dataType={dataType}
+          topType="global"
+        /> */}
+        <UnitsFooter units="hectares" />
+        <DataSource />
+        <div className="buttonFooter">
+          <Button link={bubbleChartLink} isSecondary="false">
+            {grape.itemName} Bubble Chart
+          </Button>
+          <Button link={grapeLink} isSecondary="true">
+            {grape.itemName} Page
+          </Button>
+        </div>
       </section>
     </>
   );

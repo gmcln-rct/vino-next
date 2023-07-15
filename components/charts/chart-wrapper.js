@@ -26,6 +26,15 @@ const ChartWrapper = (props) => {
     return () => window.removeEventListener("resize", updateSize);
   }, []);
 
+  if (!country || !grape) {
+    return (
+      <div className="center">
+        <p>Loading...</p>
+      </div>
+    );
+  }
+
+  // if (!country && grape) {
 
   return (
     <section className={classes.chart} ref={containerRef}>
