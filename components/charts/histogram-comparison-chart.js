@@ -6,9 +6,9 @@ import classes from "./histogram-chart.module.css";
 import { yearsFilter } from "../utils/years-util";
 
 // DOUBLE HISTOGRAM CHART
-
 const HistogramComparisonChart = ({ data, country1, country2 }) => {
   const svgRef = useRef();
+  const units = "KL"
 
   useEffect(() => {
     const margin = { top: 20, right: 50, bottom: 20, left: 100 };
@@ -18,8 +18,8 @@ const HistogramComparisonChart = ({ data, country1, country2 }) => {
     const height = calcHeight > 400 ? 400 : calcHeight;
 
     let filteredYears = yearsFilter(data, width);
-    console.log('in histogram comparison chart - country1', country1);
-    console.log('in histogram comparison chart - country2', country2);
+    console.log("in histogram comparison chart - country1", country1);
+    console.log("in histogram comparison chart - country2", country2);
 
     const svg = d3
       .select(svgRef.current)
@@ -79,62 +79,71 @@ const HistogramComparisonChart = ({ data, country1, country2 }) => {
       .attr("stroke", "lightgray")
       .attr("stroke-width", 0.5);
 
-      // Tooltip
-const tooltip = d3.select("body").append("div")
-.style("position", "absolute")
-.style("background", "white")
-.style("padding", "8px")
-.style("border-radius", "6px")
-.style("display", "none");
+    // Tooltip
+    const tooltip = d3
+      .select("body")
+      .append("div")
+      .style("position", "absolute")
+      .style("background", "white")
+      .style("color", "white")
+      .style("padding", "8px")
+      .style("border-radius", "6px")
+      .style("transition", "0.5s")
+      .style("font-family", "Open Sans")
+      .style("display", "none");
 
+    // Bars for country 1
+    const bars1 = chart
+      .selectAll(".bar1")
+      .data(data)
+      .enter()
+      .append("rect")
+      .attr("class", "bar1")
+      .attr("x", (d) => x(d.year))
+      .attr("y", (d) => y(d[country1]))
+      .attr("width", x.bandwidth() / 2)
+      .attr("height", (d) => height - y(d[country1]))
+      .attr("fill", d3.interpolate("#fca5a5", "#B82107")(0.2));
 
-   // Bars for country 1
-const bars1 = chart
-.selectAll(".bar1")
-.data(data)
-.enter()
-.append("rect")
-.attr("class", "bar1")
-.attr("x", (d) => x(d.year))
-.attr("y", (d) => y(d[country1]))
-.attr("width", x.bandwidth() / 2)
-.attr("height", (d) => height - y(d[country1]))
-.attr("fill", d3.interpolate("#fca5a5", "#B82107")(0.2));
+  // Tooltip color darker shade than bar color
+    bars1
+      .on("mouseover", (event, d) => {
+        tooltip
+          .style("display", "inline-block")
+          .style("background", "#E39494")
+          .style("left", `${event.pageX}px`)
+          .style("top", `${event.pageY}px`)
+          .html(`<strong>Year: ${d.year}</strong><br>Value: ${d[country1].toLocaleString(
+            "en-US"
+          )} ${units}`);
+      })
+      .on("mouseout", () => tooltip.style("display", "none"));
 
-bars1
-.on("mouseover", (event, d) => {
-    tooltip
-        .style("display", "inline-block")
-        .style("background", "#fca5a5")
-        .style("left", `${event.pageX}px`)
-        .style("top", `${event.pageY}px`)
-        .html(`<strong>Year: ${d.year}</strong><br>Value: ${d[country1]}`);
-})
-.on("mouseout", () => tooltip.style("display", "none"));
+    // Bars for country 2
+    const bars2 = chart
+      .selectAll(".bar2")
+      .data(data)
+      .enter()
+      .append("rect")
+      .attr("class", "bar2")
+      .attr("x", (d) => x(d.year) + x.bandwidth() / 2)
+      .attr("y", (d) => y(d[country2]))
+      .attr("width", x.bandwidth() / 2)
+      .attr("height", (d) => height - y(d[country2]))
+      .attr("fill", d3.interpolate("#008ac5", "#0b1d78")(0.4));
 
-// Bars for country 2
-const bars2 = chart
-.selectAll(".bar2")
-.data(data)
-.enter()
-.append("rect")
-.attr("class", "bar2")
-.attr("x", (d) => x(d.year) + x.bandwidth() / 2)
-.attr("y", (d) => y(d[country2]))
-.attr("width", x.bandwidth() / 2)
-.attr("height", (d) => height - y(d[country2]))
-.attr("fill", d3.interpolate("#008ac5", "#0b1d78")(0.4));
-
-bars2
-.on("mouseover", (event, d) => {
-    tooltip
-        .style("display", "inline-block")
-        .style("background", "#008ac5")
-        .style("left", `${event.pageX}px`)
-        .style("top", `${event.pageY}px`)
-        .html(`<strong>Year: ${d.year}</strong><br>Value: ${d[country2]}`);
-})
-.on("mouseout", () => tooltip.style("display", "none"));
+    bars2
+      .on("mouseover", (event, d) => {
+        tooltip
+          .style("display", "inline-block")
+          .style("background", "#0078AB")
+          .style("left", `${event.pageX}px`)
+          .style("top", `${event.pageY}px`)
+          .html(`<strong>Year: ${d.year}</strong><br>Value: ${d[country2].toLocaleString(
+            "en-US"
+          )} ${units}`);
+      })
+      .on("mouseout", () => tooltip.style("display", "none"));
 
     // Add legend for country 1
     const legend = chart.append("g").attr("transform", "translate(10, 10)");
