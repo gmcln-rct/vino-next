@@ -79,32 +79,62 @@ const HistogramComparisonChart = ({ data, country1, country2 }) => {
       .attr("stroke", "lightgray")
       .attr("stroke-width", 0.5);
 
-    // Bars for country 1
-    const bars1 = chart
-      .selectAll(".bar1")
-      .data(data)
-      .enter()
-      .append("rect")
-      .attr("class", "bar1")
-      .attr("x", (d) => x(d.year))
-      .attr("y", (d) => y(d[country1]))
-      .attr("width", x.bandwidth() / 2)
-      .attr("height", (d) => height - y(d[country1]))
-      .attr("fill", d3.interpolate("#fca5a5", "#B82107")(0.2));
+      // Tooltip
+const tooltip = d3.select("body").append("div")
+.style("position", "absolute")
+.style("background", "white")
+.style("padding", "8px")
+.style("border-radius", "6px")
+.style("display", "none");
 
-    // Bars for country 2
-    const bars2 = chart
-      .selectAll(".bar2")
-      .data(data)
-      .enter()
-      .append("rect")
-      .attr("class", "bar2")
-      .attr("x", (d) => x(d.year) + x.bandwidth() / 2)
-      .attr("y", (d) => y(d[country2]))
-      .attr("width", x.bandwidth() / 2)
-      .attr("height", (d) => height - y(d[country2]))
-      .attr("fill", d3.interpolate("#008ac5", "#0b1d78")(0.4));
-      // .attr("fill", d3.interpolate("#fde68a", "#e6c612")(0.4));
+
+   // Bars for country 1
+const bars1 = chart
+.selectAll(".bar1")
+.data(data)
+.enter()
+.append("rect")
+.attr("class", "bar1")
+.attr("x", (d) => x(d.year))
+.attr("y", (d) => y(d[country1]))
+.attr("width", x.bandwidth() / 2)
+.attr("height", (d) => height - y(d[country1]))
+.attr("fill", d3.interpolate("#fca5a5", "#B82107")(0.2));
+
+bars1
+.on("mouseover", (event, d) => {
+    tooltip
+        .style("display", "inline-block")
+        .style("background", "#fca5a5")
+        .style("left", `${event.pageX}px`)
+        .style("top", `${event.pageY}px`)
+        .html(`<strong>Year: ${d.year}</strong><br>Value: ${d[country1]}`);
+})
+.on("mouseout", () => tooltip.style("display", "none"));
+
+// Bars for country 2
+const bars2 = chart
+.selectAll(".bar2")
+.data(data)
+.enter()
+.append("rect")
+.attr("class", "bar2")
+.attr("x", (d) => x(d.year) + x.bandwidth() / 2)
+.attr("y", (d) => y(d[country2]))
+.attr("width", x.bandwidth() / 2)
+.attr("height", (d) => height - y(d[country2]))
+.attr("fill", d3.interpolate("#008ac5", "#0b1d78")(0.4));
+
+bars2
+.on("mouseover", (event, d) => {
+    tooltip
+        .style("display", "inline-block")
+        .style("background", "#008ac5")
+        .style("left", `${event.pageX}px`)
+        .style("top", `${event.pageY}px`)
+        .html(`<strong>Year: ${d.year}</strong><br>Value: ${d[country2]}`);
+})
+.on("mouseout", () => tooltip.style("display", "none"));
 
     // Add legend for country 1
     const legend = chart.append("g").attr("transform", "translate(10, 10)");

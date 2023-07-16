@@ -18,7 +18,6 @@ import Button from "@/components/ui/button";
 
 import {convertToStackedFormat} from "@/data/utils";
 
-
 // const COUNTRIES = [
 //   "France",
 //   "Italy",
@@ -33,15 +32,11 @@ import {convertToStackedFormat} from "@/data/utils";
 // ];
 
 const COUNTRIES = [...new Set( HISTORIC_PRODUCTION_DATA_EXP.map(d => d.itemName))];
-
-
 function HistogramComparisonPage() {
   const [country1, setCountry1] = useState(COUNTRIES[0]);
   const [country2, setCountry2] = useState(COUNTRIES[1]);
 
-  // const historicData = HISTORIC_PRODUCTION_STACKED_DATA;
   const historicData = convertToStackedFormat(HISTORIC_PRODUCTION_DATA_EXP, COUNTRIES);
-
 
   useEffect(() => {
     // update country2 if it is the same as country1
