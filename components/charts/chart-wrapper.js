@@ -1,6 +1,6 @@
 import { useEffect, useState, useRef } from "react";
 
-import BarChart2 from "./bar-chart2";
+import BarChart from "./bar-chart";
 import classes from "./chart-wrapper.module.css";
 
 const ChartWrapper = (props) => {
@@ -33,18 +33,9 @@ const ChartWrapper = (props) => {
     return () => window.removeEventListener("resize", updateSize);
   }, []);
 
-  // if (!country || !grape) {
-  //   return (
-  //     <div className="center">
-  //       <p>Loading...</p>
-  //     </div>
-  //   );
-  // }
-console.log("chart wrapper - redgrapedata ", redGrapeData);
-
   return (
     <section className={classes.chart} ref={containerRef}>
-      <BarChart2
+      <BarChart
         itemName={dataItem.itemName}
         units={dataItem.units}
         dataYear={dataItem.dataYear}
