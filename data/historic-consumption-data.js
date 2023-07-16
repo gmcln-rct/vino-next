@@ -4,7 +4,7 @@ export const HISTORIC_CONSUMPTION_DATA = [
     itemName: "France",
     continentId: "europe",
     continentName: "Europe",
-    dataType: "consumption",
+    dataType: "production",
     historicData: [
       { year: 1835, value: 2539608 },
       { year: 1836, value: 2774281 },
@@ -197,7 +197,7 @@ export const HISTORIC_CONSUMPTION_DATA = [
     itemName: "Italy",
     continentId: "europe",
     continentName: "Europe",
-    dataType: "consumption",
+    dataType: "production",
     historicData: [
       { year: 1835, value: 0 },
       { year: 1836, value: 0 },
@@ -390,7 +390,7 @@ export const HISTORIC_CONSUMPTION_DATA = [
     itemName: "Portugal",
     continentId: "europe",
     continentName: "Europe",
-    dataType: "consumption",
+    dataType: "production",
     historicData: [
       { year: 1835, value: 0 },
       { year: 1836, value: 0 },
@@ -583,7 +583,7 @@ export const HISTORIC_CONSUMPTION_DATA = [
     itemName: "Spain",
     continentId: "europe",
     continentName: "Europe",
-    dataType: "consumption",
+    dataType: "production",
     historicData: [
       { year: 1835, value: 0 },
       { year: 1836, value: 0 },
@@ -776,7 +776,7 @@ export const HISTORIC_CONSUMPTION_DATA = [
     itemName: "Austria",
     continentId: "europe",
     continentName: "Europe",
-    dataType: "consumption",
+    dataType: "production",
     historicData: [
       { year: 1835, value: 0 },
       { year: 1836, value: 0 },
@@ -969,7 +969,7 @@ export const HISTORIC_CONSUMPTION_DATA = [
     itemName: "Belgian Luxembourg",
     continentId: "europe",
     continentName: "Europe",
-    dataType: "consumption",
+    dataType: "production",
     historicData: [
       { year: 1835, value: 0 },
       { year: 1836, value: 0 },
@@ -1162,7 +1162,7 @@ export const HISTORIC_CONSUMPTION_DATA = [
     itemName: "Denmark",
     continentId: "europe",
     continentName: "Europe",
-    dataType: "consumption",
+    dataType: "production",
     historicData: [
       { year: 1835, value: 0 },
       { year: 1836, value: 0 },
@@ -1355,7 +1355,7 @@ export const HISTORIC_CONSUMPTION_DATA = [
     itemName: "Finland",
     continentId: "europe",
     continentName: "Europe",
-    dataType: "consumption",
+    dataType: "production",
     historicData: [
       { year: 1835, value: 0 },
       { year: 1836, value: 0 },
@@ -1548,7 +1548,7 @@ export const HISTORIC_CONSUMPTION_DATA = [
     itemName: "Germany",
     continentId: "europe",
     continentName: "Europe",
-    dataType: "consumption",
+    dataType: "production",
     historicData: [
       { year: 1835, value: 0 },
       { year: 1836, value: 0 },
@@ -1741,7 +1741,7 @@ export const HISTORIC_CONSUMPTION_DATA = [
     itemName: "Greece",
     continentId: "europe",
     continentName: "Europe",
-    dataType: "consumption",
+    dataType: "production",
     historicData: [
       { year: 1835, value: 0 },
       { year: 1836, value: 0 },
@@ -1934,7 +1934,7 @@ export const HISTORIC_CONSUMPTION_DATA = [
     itemName: "Ireland",
     continentId: "europe",
     continentName: "Europe",
-    dataType: "consumption",
+    dataType: "production",
     historicData: [
       { year: 1835, value: 0 },
       { year: 1836, value: 0 },
@@ -2127,7 +2127,7 @@ export const HISTORIC_CONSUMPTION_DATA = [
     itemName: "Netherlands",
     continentId: "europe",
     continentName: "Europe",
-    dataType: "consumption",
+    dataType: "production",
     historicData: [
       { year: 1835, value: 0 },
       { year: 1836, value: 0 },
@@ -2320,7 +2320,7 @@ export const HISTORIC_CONSUMPTION_DATA = [
     itemName: "Sweden",
     continentId: "europe",
     continentName: "Europe",
-    dataType: "consumption",
+    dataType: "production",
     historicData: [
       { year: 1835, value: 0 },
       { year: 1836, value: 0 },
@@ -2513,7 +2513,7 @@ export const HISTORIC_CONSUMPTION_DATA = [
     itemName: "Switzerland",
     continentId: "europe",
     continentName: "Europe",
-    dataType: "consumption",
+    dataType: "production",
     historicData: [
       { year: 1835, value: 0 },
       { year: 1836, value: 0 },
@@ -2706,7 +2706,7 @@ export const HISTORIC_CONSUMPTION_DATA = [
     itemName: "United Kingdom",
     continentId: "europe",
     continentName: "Europe",
-    dataType: "consumption",
+    dataType: "production",
     historicData: [
       { year: 1835, value: 29186 },
       { year: 1836, value: 30954 },
@@ -2899,7 +2899,7 @@ export const HISTORIC_CONSUMPTION_DATA = [
     itemName: "Bulgaria",
     continentId: "europe",
     continentName: "Europe",
-    dataType: "consumption",
+    dataType: "production",
     historicData: [
       { year: 1835, value: 0 },
       { year: 1836, value: 0 },
@@ -3092,7 +3092,7 @@ export const HISTORIC_CONSUMPTION_DATA = [
     itemName: "Croatia",
     continentId: "europe",
     continentName: "Europe",
-    dataType: "consumption",
+    dataType: "production",
     historicData: [
       { year: 1835, value: 0 },
       { year: 1836, value: 0 },
@@ -3285,7 +3285,7 @@ export const HISTORIC_CONSUMPTION_DATA = [
     itemName: "Georgia",
     continentId: "europe",
     continentName: "Europe",
-    dataType: "consumption",
+    dataType: "production",
     historicData: [
       { year: 1835, value: 0 },
       { year: 1836, value: 0 },
@@ -3478,7 +3478,7 @@ export const HISTORIC_CONSUMPTION_DATA = [
     itemName: "Hungary",
     continentId: "europe",
     continentName: "Europe",
-    dataType: "consumption",
+    dataType: "production",
     historicData: [
       { year: 1835, value: 0 },
       { year: 1836, value: 0 },
@@ -3671,7 +3671,7 @@ export const HISTORIC_CONSUMPTION_DATA = [
     itemName: "Moldova",
     continentId: "europe",
     continentName: "Europe",
-    dataType: "consumption",
+    dataType: "production",
     historicData: [
       { year: 1835, value: 0 },
       { year: 1836, value: 0 },
@@ -3864,7 +3864,7 @@ export const HISTORIC_CONSUMPTION_DATA = [
     itemName: "Romania",
     continentId: "europe",
     continentName: "Europe",
-    dataType: "consumption",
+    dataType: "production",
     historicData: [
       { year: 1835, value: 0 },
       { year: 1836, value: 0 },
@@ -4057,7 +4057,7 @@ export const HISTORIC_CONSUMPTION_DATA = [
     itemName: "Russia",
     continentId: "europe",
     continentName: "Europe",
-    dataType: "consumption",
+    dataType: "production",
     historicData: [
       { year: 1835, value: 0 },
       { year: 1836, value: 0 },
@@ -4250,7 +4250,7 @@ export const HISTORIC_CONSUMPTION_DATA = [
     itemName: "Ukraine",
     continentId: "europe",
     continentName: "Europe",
-    dataType: "consumption",
+    dataType: "production",
     historicData: [
       { year: 1835, value: 0 },
       { year: 1836, value: 0 },
@@ -4443,7 +4443,7 @@ export const HISTORIC_CONSUMPTION_DATA = [
     itemName: "Australia",
     continentId: "oceania",
     continentName: "Oceania",
-    dataType: "consumption",
+    dataType: "production",
     historicData: [
       { year: 1835, value: 0 },
       { year: 1836, value: 0 },
@@ -4636,7 +4636,7 @@ export const HISTORIC_CONSUMPTION_DATA = [
     itemName: "New Zealand",
     continentId: "oceania",
     continentName: "Oceania",
-    dataType: "consumption",
+    dataType: "production",
     historicData: [
       { year: 1835, value: 0 },
       { year: 1836, value: 0 },
@@ -4829,7 +4829,7 @@ export const HISTORIC_CONSUMPTION_DATA = [
     itemName: "Canada",
     continentId: "north-america",
     continentName: "North America",
-    dataType: "consumption",
+    dataType: "production",
     historicData: [
       { year: 1835, value: 0 },
       { year: 1836, value: 0 },
@@ -5022,7 +5022,7 @@ export const HISTORIC_CONSUMPTION_DATA = [
     itemName: "United States",
     continentId: "north-america",
     continentName: "North America",
-    dataType: "consumption",
+    dataType: "production",
     historicData: [
       { year: 1835, value: 0 },
       { year: 1836, value: 0 },
@@ -5215,7 +5215,7 @@ export const HISTORIC_CONSUMPTION_DATA = [
     itemName: "Argentina",
     continentId: "south-america",
     continentName: "South America",
-    dataType: "consumption",
+    dataType: "production",
     historicData: [
       { year: 1835, value: 0 },
       { year: 1836, value: 0 },
@@ -5408,7 +5408,7 @@ export const HISTORIC_CONSUMPTION_DATA = [
     itemName: "Brazil",
     continentId: "south-america",
     continentName: "South America",
-    dataType: "consumption",
+    dataType: "production",
     historicData: [
       { year: 1835, value: 0 },
       { year: 1836, value: 0 },
@@ -5601,7 +5601,7 @@ export const HISTORIC_CONSUMPTION_DATA = [
     itemName: "Chile",
     continentId: "south-america",
     continentName: "South America",
-    dataType: "consumption",
+    dataType: "production",
     historicData: [
       { year: 1835, value: 0 },
       { year: 1836, value: 0 },
@@ -5794,7 +5794,7 @@ export const HISTORIC_CONSUMPTION_DATA = [
     itemName: "Mexico",
     continentId: "north-america",
     continentName: "North America",
-    dataType: "consumption",
+    dataType: "production",
     historicData: [
       { year: 1835, value: 0 },
       { year: 1836, value: 0 },
@@ -5987,7 +5987,7 @@ export const HISTORIC_CONSUMPTION_DATA = [
     itemName: "Uruguay",
     continentId: "south-america",
     continentName: "South America",
-    dataType: "consumption",
+    dataType: "production",
     historicData: [
       { year: 1835, value: 0 },
       { year: 1836, value: 0 },
@@ -6180,7 +6180,7 @@ export const HISTORIC_CONSUMPTION_DATA = [
     itemName: "Algeria",
     continentId: "africa",
     continentName: "Africa",
-    dataType: "consumption",
+    dataType: "production",
     historicData: [
       { year: 1835, value: 0 },
       { year: 1836, value: 0 },
@@ -6373,7 +6373,7 @@ export const HISTORIC_CONSUMPTION_DATA = [
     itemName: "Morocco",
     continentId: "africa",
     continentName: "Africa",
-    dataType: "consumption",
+    dataType: "production",
     historicData: [
       { year: 1835, value: 0 },
       { year: 1836, value: 0 },
@@ -6566,7 +6566,7 @@ export const HISTORIC_CONSUMPTION_DATA = [
     itemName: "South Africa",
     continentId: "africa",
     continentName: "Africa",
-    dataType: "consumption",
+    dataType: "production",
     historicData: [
       { year: 1835, value: 0 },
       { year: 1836, value: 0 },
@@ -6759,7 +6759,7 @@ export const HISTORIC_CONSUMPTION_DATA = [
     itemName: "Tunisia",
     continentId: "africa",
     continentName: "Africa",
-    dataType: "consumption",
+    dataType: "production",
     historicData: [
       { year: 1835, value: 0 },
       { year: 1836, value: 0 },
@@ -6952,7 +6952,7 @@ export const HISTORIC_CONSUMPTION_DATA = [
     itemName: "Turkey",
     continentId: "asia",
     continentName: "Asia",
-    dataType: "consumption",
+    dataType: "production",
     historicData: [
       { year: 1835, value: 0 },
       { year: 1836, value: 0 },

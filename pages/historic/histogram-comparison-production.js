@@ -7,6 +7,7 @@ import classes from "./histogram.module.css";
 import HistogramComparisonChart from "@/components/charts/histogram-comparison-chart";
 
 import { HISTORIC_PRODUCTION_STACKED_DATA } from "@/data/historic-production-stacked-data";
+import { HISTORIC_PRODUCTION_DATA_EXP } from "@/data/historic-production-data-exp";
 
 import HistoricChartNotes from "@/components/layout/historic-chart-notes";
 
@@ -15,24 +16,32 @@ import ChartWrapper from "@/components/charts/chart-wrapper";
 
 import Button from "@/components/ui/button";
 
-const COUNTRIES = [
-  "France",
-  "Italy",
-  "Spain",
-  "United States",
-  "Argentina",
-  "Australia",
-  "Chile",
-  "South Africa",
-  "Germany",
-  "Portugal",
-];
+import {convertToStackedFormat} from "@/data/utils";
+
+
+// const COUNTRIES = [
+//   "France",
+//   "Italy",
+//   "Spain",
+//   "United States",
+//   "Argentina",
+//   "Australia",
+//   "Chile",
+//   "South Africa",
+//   "Germany",
+//   "Portugal",
+// ];
+
+const COUNTRIES = [...new Set( HISTORIC_PRODUCTION_DATA_EXP.map(d => d.itemName))];
+
 
 function HistogramComparisonPage() {
   const [country1, setCountry1] = useState(COUNTRIES[0]);
   const [country2, setCountry2] = useState(COUNTRIES[1]);
 
-  const historicData = HISTORIC_PRODUCTION_STACKED_DATA;
+  // const historicData = HISTORIC_PRODUCTION_STACKED_DATA;
+  const historicData = convertToStackedFormat(HISTORIC_PRODUCTION_DATA_EXP, COUNTRIES);
+
 
   useEffect(() => {
     // update country2 if it is the same as country1
