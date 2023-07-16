@@ -18,7 +18,8 @@ const HistogramComparisonChart = ({ data, country1, country2 }) => {
     const height = calcHeight > 400 ? 400 : calcHeight;
 
     let filteredYears = yearsFilter(data, width);
-    console.log("data ", data);
+    console.log('in histogram comparison chart - country1', country1);
+    console.log('in histogram comparison chart - country2', country2);
 
     const svg = d3
       .select(svgRef.current)

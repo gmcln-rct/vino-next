@@ -7,7 +7,6 @@ const BubbleChart = (props) => {
     props;
 
   const svgRef = useRef();
-  console.log("in bubble chart", containerSize.width, containerSize.height);
 
   // Adjust text color based on background color
   function getContrastYIQ(hexcolor) {

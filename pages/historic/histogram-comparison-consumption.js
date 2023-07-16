@@ -15,8 +15,6 @@ import {convertToStackedFormat} from "@/data/utils";
 
 const COUNTRIES = [...new Set( HISTORIC_CONSUMPTION_DATA .map(d => d.itemName))];
 
-const YEARS = [2000, 2001, 2002, 2003, 2004, 2005, 2006];
-
 function HistogramComparisonConsumptionPage() {
   const [country1, setCountry1] = useState(COUNTRIES[0]);
   const [country2, setCountry2] = useState(COUNTRIES[1]);
@@ -24,6 +22,7 @@ function HistogramComparisonConsumptionPage() {
 //   const historicData = HISTORIC_PRODUCTION_STACKED_DATA;
 
 const historicData = convertToStackedFormat(HISTORIC_CONSUMPTION_DATA, COUNTRIES);
+console.log('in histogram consumption comparison page - historicData', historicData);
 
   useEffect(() => {
     // update country2 if it is the same as country1

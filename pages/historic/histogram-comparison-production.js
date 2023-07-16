@@ -41,10 +41,10 @@ function HistogramComparisonPage() {
     }
   }, [country1, country2]);
 
-  // const handleCountry2Change = (e) => {
-  //   const value = e.target.value;
-  //   setCountry2(value === "" ? null : value);
-  // };
+  const handleCountry2Change = (e) => {
+    const value = e.target.value;
+    setCountry2(value === "" ? null : value);
+  };
 
   const isCountryComparison = true;
 
@@ -63,15 +63,15 @@ function HistogramComparisonPage() {
       <h1 className="indexheader">
          Historic Wine Production Comparison
       </h1>
-      <ChartSelectorDual
+      {/* <ChartSelectorDual
           countryData={COUNTRIES}
           isCountryComparison={isCountryComparison}
           selectedItem1={country1}
           setSelectedItem1={setCountry1}
           selectedItem2={country2}
           setSelectedItem2={setCountry2}
-        />
-      {/* <div className={classes.selectrow}>
+        /> */}
+      <div className={classes.selectrow}>
         <select
           value={country1}
           className="selectCss select120"
@@ -95,7 +95,7 @@ function HistogramComparisonPage() {
             </option>
           ))}
         </select>
-      </div> */}
+      </div>
       <HistogramComparisonChart
         data={historicData}
         country1={country1}
