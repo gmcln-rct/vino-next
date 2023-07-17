@@ -1,4 +1,4 @@
-export const WINE_REGION_PRODUCTION_DATA = [
+export const REGION_PRODUCTION_DATA = [
     {
     id: "burgundy",
     itemName: "Burgundy",
