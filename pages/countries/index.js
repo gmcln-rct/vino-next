@@ -28,7 +28,7 @@ function CountryIndex() {
         headerText="Take a flavorful journey through global wine production. Dive into captivating charts comparing wine-producing nations and uncover the unique highlights of featured countries."
       />
       <section className="info">
-        <h2 className="header"> Grape Production Country Comparison</h2>
+        <h2 className="header"> Grape Production By Country - Comparison</h2>
         <p className="subheader">
           Production of the world&apos;s top red and white grape varietals, by
           country.

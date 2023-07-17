@@ -78,6 +78,7 @@ const BarChart = (props) => {
       .style("background", "#B8075F")
       .style("padding", "10px")
       .style("border-radius", "5px")
+      .style("border", "1px solid #fff")
       .style("text-align", "center")
       .style("transition", "0.5s")
       .style("font-family", "Open Sans")
