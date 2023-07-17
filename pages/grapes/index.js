@@ -1,4 +1,5 @@
 import Head from "next/head";
+
 import { GRAPES_DATA } from "@/data/grape-data";
 import { getTopData } from "@/data/utils";
 import DataList from "@/components/layout/data-list";
@@ -19,7 +20,6 @@ export default function GrapeIndex({ topGrapes }) {
         header="Wine Grapes: A Flavorful Voyage "
         headerText="Explore the world of popular and off-the-beaten-path wine grape varieties with intriguing data charts and insightful grape profiles."
       />
-      {/* <h2>Featured Grapes</h2> */}
       <DataList items={topGrapes} headerText="Featured Grapes" />
     </div>
   );

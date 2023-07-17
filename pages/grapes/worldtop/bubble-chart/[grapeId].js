@@ -19,7 +19,6 @@ function GrapeTopCountriesBubblePage() {
   const id = router.query.grapeId;
 
   const explanationText = "Wine Production By Country";
-
   const grape = getDataItemById(id, GRAPES_DATA);
 
   let wineCategory = "red";
