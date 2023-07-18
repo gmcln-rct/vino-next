@@ -19,9 +19,19 @@ import {
   generateSubheader,
 } from "@/components/utils/chart-utils";
 
-// General Country Bar Chart with Two dropdowns
+// ######                                                   ######                    #####                             
+// #     # ######  ####  #  ####  #    #  ####              #     #   ##   #####     #     # #    #   ##   #####  ##### 
+// #     # #      #    # # #    # ##   # #                  #     #  #  #  #    #    #       #    #  #  #  #    #   #   
+// ######  #####  #      # #    # # #  #  ####     #####    ######  #    # #    #    #       ###### #    # #    #   #   
+// #   #   #      #  ### # #    # #  # #      #             #     # ###### #####     #       #    # ###### #####    #   
+// #    #  #      #    # # #    # #   ## #    #             #     # #    # #   #     #     # #    # #    # #   #    #   
+// #     # ######  ####  #  ####  #    #  ####              ######  #    # #    #     #####  #    # #    # #    #   #   
+                                                                                                                                       
+////////////////////////////////////////////////////////////////
+// General Regions Bar Chart with Three dropdowns
+////////////////////////////////////////////////////////////////
 
-function CountryGeneralBarChartPage() {
+function RegionsBarCartPage() {
   const [selectedCountry, setSelectedCountry] = useState("france");
   const [selectedGrapeType, setSelectedGrapeType] = useState("red");
 
@@ -68,12 +78,12 @@ function CountryGeneralBarChartPage() {
     <>
       <Head>
         <title>
-          Wine Production By Country - Bar Chart - Winography | Learn About Wine
+          Wine Production By Region - Bar Chart - Winography | Learn About Wine
           Through Data Visualizations
         </title>
         <meta
           name="description"
-          content="Customizable bar chart of production in wine-producing countries, top national grape varietals, by land area."
+          content="Customizable bar chart of production in wine-producing regions, top national grape varietals, by land area."
         />
       </Head>
       <section className={classes.chart}>
@@ -88,14 +98,14 @@ function CountryGeneralBarChartPage() {
           selectedItem2={selectedGrapeType}
           setSelectedItem2={setSelectedGrapeType}
         />
-        <ChartWrapper
+        {/* <ChartWrapper
           country={country}
           redGrapeData={redGrapeData.grapeData}
           whiteGrapeData={whiteGrapeData.grapeData}
           selectedGrapeType={selectedGrapeType}
           dataType={dataType}
           topType="multi"
-        />
+        /> */}
         <UnitsFooter units="hectares" />
         <DataSource />
       </section>
@@ -103,4 +113,4 @@ function CountryGeneralBarChartPage() {
   );
 }
 
-export default CountryGeneralBarChartPage;
+export default RegionsBarCartPage;
