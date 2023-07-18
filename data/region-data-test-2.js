@@ -1,10 +1,10 @@
 export const REGION_PRODUCTION_DATA = [
   {
-    countryId: "argentina",
-    countryName: "Argentina",
+    id: "argentina",
+    itemName: "Argentina",
     dataType: "production",
     dataYear: 2016,
-    units: ""hectares"",
+    units: "hectares",
     regions: [
       {
         id: "chilecito",
@@ -653,8 +653,8 @@ export const REGION_PRODUCTION_DATA = [
     ],
   },
   {
-    countryId: "australia",
-    countryName: "Australia",
+    id: "australia",
+    itemName: "Australia",
     dataType: "production",
     dataYear: 2016,
     units: "hectares",
@@ -1058,8 +1058,8 @@ export const REGION_PRODUCTION_DATA = [
     ],
   },
   {
-    countryId: "chile",
-    countryName: "Chile",
+    id: "chile",
+    itemName: "Chile",
     dataType: "production",
     dataYear: 2016,
     units: "hectares",

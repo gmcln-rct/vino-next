@@ -20,14 +20,14 @@ import {
   generateSubheader,
 } from "@/components/utils/chart-utils";
 
-// ######                                                   ######                    #####                             
-// #     # ######  ####  #  ####  #    #  ####              #     #   ##   #####     #     # #    #   ##   #####  ##### 
-// #     # #      #    # # #    # ##   # #                  #     #  #  #  #    #    #       #    #  #  #  #    #   #   
-// ######  #####  #      # #    # # #  #  ####     #####    ######  #    # #    #    #       ###### #    # #    #   #   
-// #   #   #      #  ### # #    # #  # #      #             #     # ###### #####     #       #    # ###### #####    #   
-// #    #  #      #    # # #    # #   ## #    #             #     # #    # #   #     #     # #    # #    # #   #    #   
-// #     # ######  ####  #  ####  #    #  ####              ######  #    # #    #     #####  #    # #    # #    #   #   
-                                                                                                                                       
+//  ______           _                           ______              _____ _                _   
+//  | ___ \         (_)                          | ___ \            /  __ \ |              | |  
+//  | |_/ /___  __ _ _  ___  _ __  ___   ______  | |_/ / __ _ _ __  | /  \/ |__   __ _ _ __| |_ 
+//  |    // _ \/ _` | |/ _ \| '_ \/ __| |______| | ___ \/ _` | '__| | |   | '_ \ / _` | '__| __|
+//  | |\ \  __/ (_| | | (_) | | | \__ \          | |_/ / (_| | |    | \__/\ | | | (_| | |  | |_ 
+//  \_| \_\___|\__, |_|\___/|_| |_|___/          \____/ \__,_|_|     \____/_| |_|\__,_|_|   \__|
+//              __/ |                                                                           
+//                                                                                                                                    
 ////////////////////////////////////////////////////////////////
 // General Regions Bar Chart with Three dropdowns
 ////////////////////////////////////////////////////////////////
@@ -37,6 +37,10 @@ function RegionsBarCartPage() {
   const [selectedGrapeType, setSelectedGrapeType] = useState("red");
 
   console.log("REGION_PRODUCTION_DATA", REGION_PRODUCTION_DATA);
+
+  const COUNTRIES = filterCountriesData(REGION_PRODUCTION_DATA);
+
+  console.log("COUNTRIES", COUNTRIES);
 
 //   const countryRedGrapeData = COUNTRIES_RED_GRAPE_DATA;
   // const countryWhiteGrapeData = COUNTRIES_WHITE_GRAPE_DATA;
