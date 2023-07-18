@@ -542,7 +542,7 @@ export const COUNTRY_ORIGIN_DATA = [
     { countryId: "spain",  originCountry: "Spain",  grapeType: "white", grapeId: "garnacha blanca",  grape: "Garnacha Blanca" },
     { countryId: "spain",  originCountry: "Spain",  grapeType: "red", grapeId: "garnacha peluda",  grape: "Garnacha Peluda" },
     { countryId: "spain",  originCountry: "Spain",  grapeType: "white", grapeId: "garnacha roja (gris)",  grape: "Garnacha Roja (Gris)" },
-    { countryId: "spain",  originCountry: "Spain",  grapeType: "red", grapeId: "garnacha tinta",  grape: "Garnacha Tinta" },
+    { countryId: "spain",  originCountry: "Spain",  grapeType: "red", grapeId: "grenache",  grape: "Grenache" },
     { countryId: "france",  originCountry: "France",  grapeType: "red", grapeId: "garonnet",  grape: "Garonnet" },
     { countryId: "spain",  originCountry: "Spain",  grapeType: "white", grapeId: "garrido fino",  grape: "Garrido Fino" },
     { countryId: "france",  originCountry: "France",  grapeType: "red", grapeId: "gascon",  grape: "Gascon" },
