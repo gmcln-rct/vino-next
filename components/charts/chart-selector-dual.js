@@ -3,6 +3,7 @@ import classes from "./chart-selector.module.css";
 const ChartSelectorDual = ({
   countryData,
   isCountryComparison,
+  isRegionComparison,
   selectedItem1,
   setSelectedItem1,
   selectedItem2,
