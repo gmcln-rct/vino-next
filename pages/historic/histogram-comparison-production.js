@@ -11,7 +11,7 @@ import { HISTORIC_PRODUCTION_DATA_EXP } from "@/data/historic-production-data-ex
 
 import HistoricChartNotes from "@/components/layout/historic-chart-notes";
 
-import ChartSelectorDual from "@/components/charts/chart-selector-dual";
+import ChartSelectorMulti from "@/components/charts/chart-selector-multi";
 import ChartWrapper from "@/components/charts/chart-wrapper";
 
 import Button from "@/components/ui/button";
@@ -67,7 +67,7 @@ function HistogramComparisonPage() {
       <h1 className="indexheader">
          Historic Wine Production Comparison
       </h1>
-      {/* <ChartSelectorDual
+      {/* <ChartSelectorMulti
           countryData={COUNTRIES}
           isCountryComparison={isCountryComparison}
           selectedItem1={country1}

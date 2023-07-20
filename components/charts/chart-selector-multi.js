@@ -1,6 +1,6 @@
 import classes from "./chart-selector.module.css";
 
-const ChartSelectorDual = ({
+const ChartSelectorMulti = ({
   countryData,
   isCountryComparison,
   isRegionComparison,
@@ -8,6 +8,8 @@ const ChartSelectorDual = ({
   setSelectedItem1,
   selectedItem2,
   setSelectedItem2,
+  selectedItem3,
+  setSelectedItem3,
 }) => {
   const COUNTRIES = countryData;
   let selectLabel1 = "Country: ";
@@ -65,4 +67,4 @@ const ChartSelectorDual = ({
   );
 };
 
-export default ChartSelectorDual;
+export default ChartSelectorMulti;

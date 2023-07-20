@@ -9,7 +9,7 @@ import { COUNTRIES_WHITE_GRAPE_DATA } from "@/data/country-wine-data-white-all-2
 
 import {REGION_PRODUCTION_DATA } from "@/data/region-data-test-2";
 
-import ChartSelectorDual from "@/components/charts/chart-selector-dual";
+import ChartSelectorMulti from "@/components/charts/chart-selector-multi";
 import ChartWrapper from "@/components/charts/chart-wrapper";
 import UnitsFooter from "@/components/layout/units-footer";
 import DataSource from "@/components/layout/data-source";
@@ -98,7 +98,7 @@ function RegionsBarCartPage() {
         {/* <h2 className={classes.header}>{headerText}</h2>
         <p className={classes.subheader}>{subheaderText}</p> */}
 
-        {/* <ChartSelectorDual
+        {/* <ChartSelectorMulti
           countryData={countriesArray}
           selectedItem1={selectedCountry}
           setSelectedItem1={setSelectedCountry}
