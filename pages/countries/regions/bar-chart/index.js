@@ -34,6 +34,7 @@ import {
 
 function RegionsBarCartPage() {
   const [selectedCountry, setSelectedCountry] = useState("france");
+  const [selectedRegion, setSelectedRegion] = useState("bordeaux");
   const [selectedGrapeType, setSelectedGrapeType] = useState("red");
 
   console.log("REGION_PRODUCTION_DATA", REGION_PRODUCTION_DATA);
@@ -55,7 +56,7 @@ function RegionsBarCartPage() {
 //   );
 
 //   const COUNTRIES = filterCountriesData(countryRedGrapeData);
-//   const countriesArray = COUNTRIES.map((country) => country.itemName);
+  const countriesArray = COUNTRIES.map((country) => country.itemName);
 //   let country = getDataItemById(selectedCountry, COUNTRIES_RED_GRAPE_DATA);
 //   const dataType = "country";
 
@@ -98,13 +99,16 @@ function RegionsBarCartPage() {
         {/* <h2 className={classes.header}>{headerText}</h2>
         <p className={classes.subheader}>{subheaderText}</p> */}
 
-        {/* <ChartSelectorMulti
+        <ChartSelectorMulti
           countryData={countriesArray}
           selectedItem1={selectedCountry}
           setSelectedItem1={setSelectedCountry}
-          selectedItem2={selectedGrapeType}
-          setSelectedItem2={setSelectedGrapeType}
-        /> */}
+          selectedItem2={selectedRegion}
+          setSelectedItem2={setSelectedRegion}
+          selectedItem3={selectedGrapeType}
+          setSelectedItem3={setSelectedGrapeType}
+          isRegionComparison={true}
+        />
         {/* <ChartWrapper
           country={country}
           redGrapeData={redGrapeData.grapeData}

@@ -16,14 +16,15 @@ const ChartSelectorMulti = ({
   let selectLabel2 = "Grape Type: ";
   let selectData1 = countryData;
   let selectData2 = ["red", "white"];
+  let selectLabel3;
 
   if (isCountryComparison) {
-    selectLabel1 = "Select Country 1: ";
-    selectLabel2 = "Select Country 2: ";
+    selectLabel1 = "Country 1: ";
+    selectLabel2 = " Country 2: ";
     selectData2 = countryData;
   } else if (isRegionComparison) {
-    selectLabel2 = "Select Region: ";
-    selectLabel3 = "Select Grape Type: ";
+    selectLabel2 = "Region: ";
+    selectLabel3 = "Grape Type: ";
   }
 
   return (
@@ -58,6 +59,15 @@ const ChartSelectorMulti = ({
           ))}
         </select>
       </>
+      <span className={classes.selectLabel}> {selectLabel3} </span>
+      <select
+        value={selectedItem3}
+        className={classes.selectDropdown}
+        onChange={(event) => setSelectedItem3(event.target.value)}
+      >
+        <option value="red">Red Grapes</option>
+        <option value="white">White Grapes</option>
+      </select>
       {/* <select
         className={classes.selectDropdown}
         value={selectedItem2}
