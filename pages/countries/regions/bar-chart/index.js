@@ -33,7 +33,7 @@ import {
 ////////////////////////////////////////////////////////////////
 
 function RegionsBarCartPage() {
-  const [selectedCountry, setSelectedCountry] = useState("france");
+  const [selectedCountry, setSelectedCountry] = useState("argentina");
   const [selectedRegion, setSelectedRegion] = useState("bordeaux");
   const [selectedGrapeType, setSelectedGrapeType] = useState("red");
 
@@ -57,6 +57,8 @@ function RegionsBarCartPage() {
 
 //   const COUNTRIES = filterCountriesData(countryRedGrapeData);
   const countriesArray = COUNTRIES.map((country) => country.itemName);
+  const regionsArray = REGION_PRODUCTION_DATA.filter(country => country.id === selectedCountry)[0].regions;
+
 //   let country = getDataItemById(selectedCountry, COUNTRIES_RED_GRAPE_DATA);
 //   const dataType = "country";
 
@@ -81,6 +83,7 @@ function RegionsBarCartPage() {
 //     selectedGrapeType,
 //     dataYear: 2016,
 //   });
+console.log("in regions - countriesARray", countriesArray);
 
   return (
     <>
@@ -108,6 +111,7 @@ function RegionsBarCartPage() {
           selectedItem3={selectedGrapeType}
           setSelectedItem3={setSelectedGrapeType}
           isRegionComparison={true}
+          regionsArray={regionsArray}
         />
         {/* <ChartWrapper
           country={country}

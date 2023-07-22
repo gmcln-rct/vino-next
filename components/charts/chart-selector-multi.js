@@ -2,7 +2,7 @@ import classes from "./chart-selector.module.css";
 
 const ChartSelectorMulti = ({
   countryData,
-  regionData,
+  regionsArray,
   isCountryComparison,
   isRegionComparison,
   selectedItem1,
@@ -73,8 +73,15 @@ const ChartSelectorMulti = ({
             className={classes.selectDropdown}
             onChange={(event) => setSelectedItem3(event.target.value)}
           >
-            <option value="red">Red Grapes</option>
-            <option value="white">White Grapes</option>
+            {regionsArray.map((dataItem3) => (
+              <option
+                key={dataItem3.id}
+                value={dataItem3.id}
+                className={classes.selectOption}
+              >
+                {dataItem3.itemName.charAt(0).toUpperCase() + dataItem3.itemName.slice(1)}
+              </option>
+            ))}
           </select>
         </>
       )}
