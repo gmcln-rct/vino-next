@@ -2,6 +2,7 @@ import classes from "./chart-selector.module.css";
 
 const ChartSelectorMulti = ({
   countryData,
+  regionData,
   isCountryComparison,
   isRegionComparison,
   selectedItem1,
@@ -53,29 +54,30 @@ const ChartSelectorMulti = ({
           onChange={(event) => setSelectedItem2(event.target.value)}
         >
           {selectData2.map((dataItem2) => (
-            <option key={dataItem2} value={dataItem2} className={classes.selectOption}>
+            <option
+              key={dataItem2}
+              value={dataItem2}
+              className={classes.selectOption}
+            >
               {dataItem2.charAt(0).toUpperCase() + dataItem2.slice(1)}
             </option>
           ))}
         </select>
       </>
-      <span className={classes.selectLabel}> {selectLabel3} </span>
-      <select
-        value={selectedItem3}
-        className={classes.selectDropdown}
-        onChange={(event) => setSelectedItem3(event.target.value)}
-      >
-        <option value="red">Red Grapes</option>
-        <option value="white">White Grapes</option>
-      </select>
-      {/* <select
-        className={classes.selectDropdown}
-        value={selectedItem2}
-        onChange={(event) => setSelectedItem2(event.target.value)}
-      >
-        <option value="red">Red Grapes</option>
-        <option value="white">White Grapes</option>
-      </select> */}
+      {/* Selector 3 */}
+      {isRegionComparison && (
+        <>
+          <span className={classes.selectLabel}> {selectLabel3} </span>
+          <select
+            value={selectedItem3}
+            className={classes.selectDropdown}
+            onChange={(event) => setSelectedItem3(event.target.value)}
+          >
+            <option value="red">Red Grapes</option>
+            <option value="white">White Grapes</option>
+          </select>
+        </>
+      )}
     </div>
   );
 };
