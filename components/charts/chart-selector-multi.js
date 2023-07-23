@@ -24,8 +24,8 @@ const ChartSelectorMulti = ({
     selectLabel2 = " Country 2: ";
     selectData2 = countryData;
   } else if (isRegionComparison) {
-    selectLabel2 = "Region: ";
-    selectLabel3 = "Grape Type: ";
+    selectLabel3 = "Region: ";
+
   }
 
   return (
