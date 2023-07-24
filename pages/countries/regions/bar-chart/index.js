@@ -7,7 +7,7 @@ import classes from "@/components/charts/bar-chart.module.css";
 import { COUNTRIES_RED_GRAPE_DATA } from "@/data/country-wine-data-red-all-2016";
 import { COUNTRIES_WHITE_GRAPE_DATA } from "@/data/country-wine-data-white-all-2016";
 
-import {REGION_PRODUCTION_DATA } from "@/data/region-data-test-2";
+import {REGION_PRODUCTION_DATA } from "@/data/region-data";
 
 import ChartSelectorMulti from "@/components/charts/chart-selector-multi";
 import ChartWrapper from "@/components/charts/chart-wrapper";
@@ -46,21 +46,21 @@ function RegionsBarCartPage() {
 //   const countryRedGrapeData = COUNTRIES_RED_GRAPE_DATA;
   // const countryWhiteGrapeData = COUNTRIES_WHITE_GRAPE_DATA;
 
-//   const redGrapeData = getDataItemById(
-//     selectedCountry,
-//     COUNTRIES_RED_GRAPE_DATA
-//   );
-//   const whiteGrapeData = getDataItemById(
-//     selectedCountry,
-//     COUNTRIES_WHITE_GRAPE_DATA
-//   );
+  const redGrapeData = getDataItemById(
+    selectedCountry,
+    COUNTRIES_RED_GRAPE_DATA
+  );
+  const whiteGrapeData = getDataItemById(
+    selectedCountry,
+    COUNTRIES_WHITE_GRAPE_DATA
+  );
 
 //   const COUNTRIES = filterCountriesData(countryRedGrapeData);
   const countriesArray = COUNTRIES.map((country) => country.itemName);
   const regionsArray = REGION_PRODUCTION_DATA.filter(country => country.id === selectedCountry)[0].regions;
 
 //   let country = getDataItemById(selectedCountry, COUNTRIES_RED_GRAPE_DATA);
-//   const dataType = "country";
+  const dataType = "country";
 
 //   if (!redGrapeData || !whiteGrapeData) {
 //     return (
