@@ -17,15 +17,20 @@ const ChartSelectorMulti = ({
   let selectLabel2 = "Grape Type: ";
   let selectData1 = countryData;
   let selectData2 = [{id: "red", itemName: "Red"},{id: "white", itemName: "White"}];
-  let selectLabel3;
+  let selectLabel3 = "Grape Type: ";
+  let selectData3 = [{id: "red", itemName: "Red"},{id: "white", itemName: "White"}];
+  let select2Class = "selectCss select80";
+
 
   if (isCountryComparison) {
     selectLabel1 = "Country 1: ";
     selectLabel2 = " Country 2: ";
     selectData2 = countryData;
   } else if (isRegionComparison) {
-    selectLabel3 = "Region: ";
-
+    selectLabel2 = "Region: ";
+    selectData2 = regionsArray;
+    selectData3 = [{id: "red", itemName: "Red"},{id: "white", itemName: "White"}];
+    select2Class = "selectCss";
   }
 
   return (
@@ -50,7 +55,7 @@ const ChartSelectorMulti = ({
         <span className={classes.selectLabel}> {selectLabel2} </span>
         <select
           value={selectedItem2}
-          className={classes.selectDropdown}
+          className={select2Class}
           onChange={(event) => setSelectedItem2(event.target.value)}
         >
           {selectData2.map((dataItem2) => (
@@ -70,10 +75,11 @@ const ChartSelectorMulti = ({
           <span className={classes.selectLabel}> {selectLabel3} </span>
           <select
             value={selectedItem3}
-            className={classes.selectDropdown}
+            
+            className="selectCss select80"
             onChange={(event) => setSelectedItem3(event.target.value)}
           >
-            {regionsArray.map((dataItem3) => (
+            {selectData3.map((dataItem3) => (
               <option
                 key={dataItem3.id}
                 value={dataItem3.id}

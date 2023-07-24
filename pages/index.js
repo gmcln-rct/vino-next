@@ -87,7 +87,7 @@ function HomePage({ topGrapes, randomGrape, randomCountry }) {
               width={100}
               height={100}
             />
-            <p className="link">Production By Country</p>
+            <p className="link">Production by Country</p>
           </Link>
           <Link
             href="/historic/histogram-comparison-consumption"
@@ -100,7 +100,7 @@ function HomePage({ topGrapes, randomGrape, randomCountry }) {
               width={100}
               height={100}
             />
-            <p className="link">Historic Consumption By Country</p>
+            <p className="link">Historic Consumption by Country</p>
           </Link>
           <Link href={grapeLink} className="action__link center tall">
             <Image
@@ -113,17 +113,17 @@ function HomePage({ topGrapes, randomGrape, randomCountry }) {
             <p className="link">{grapeName} Production</p>
           </Link>
           <Link
-            href="/historic/histogram-comp-consumption-per-capita"
+            href="/historic/histogram-comparison-production"
             className="action__link center tall"
           >
             <Image
               src="/images/icons/icon-histogram-comp.png"
               className="transparent margin-bottom"
-              alt="Per Capita Wine Consumption Histogram"
+              alt="Per Capita Wine Production Histogram"
               width={100}
               height={100}
             />
-            <p className="link">Per Capita Comparison</p>
+            <p className="link">Production by Country Comparison</p>
           </Link>
           {countryLink && countryName && (
             <Link href={countryLink} className="action__link center tall">

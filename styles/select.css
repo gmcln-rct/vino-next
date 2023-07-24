@@ -88,6 +88,11 @@
   min-width: 250px; /* a must for IE 11 */
 }
 
+.select80 {
+  width: 10vmin;
+  min-width: 100px; /* a must for IE 11 */
+}
+
 .selectRow {
   display: flex;
   flex-direction: column;

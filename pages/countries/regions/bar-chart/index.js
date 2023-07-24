@@ -98,9 +98,7 @@ console.log("in regions - countriesARray", countriesArray);
         />
       </Head>
       <section className={classes.chart}>
-        <h1 className={classes.title}>Wine Production By Country</h1>
-        {/* <h2 className={classes.header}>{headerText}</h2>
-        <p className={classes.subheader}>{subheaderText}</p> */}
+        <h1 className={classes.title}>Wine Production By Region</h1>
 
         <ChartSelectorMulti
           countryData={countriesArray}
