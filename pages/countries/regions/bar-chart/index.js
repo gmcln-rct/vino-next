@@ -101,8 +101,8 @@ function RegionsBarCartPage() {
         <ChartWrapper
           country={country}
           region={regionData}
-          redGrapeData={redGrapeData.grapeData}
-          whiteGrapeData={whiteGrapeData.grapeData}
+          redGrapeData={redGrapeData}
+          whiteGrapeData={whiteGrapeData}
           selectedGrapeType={selectedGrapeType}
           dataType={dataType}
           topType="multi"

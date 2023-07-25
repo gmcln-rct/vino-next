@@ -58,6 +58,7 @@ function HomePage({ topGrapes, randomGrape, randomCountry }) {
   // }
 
   const barChartLink = "/countries/bar-chart";
+  const regionalChartLink = "countries/regions/bar-chart";
 
   return (
     <>
@@ -76,7 +77,7 @@ function HomePage({ topGrapes, randomGrape, randomCountry }) {
       <section className={infoClass2}>
         <h2 className="header">Featured Charts</h2>
         <div className="actions">
-          <Link
+          {/* <Link
             href="/countries/bar-chart"
             className="action__link center tall"
           >
@@ -88,7 +89,7 @@ function HomePage({ topGrapes, randomGrape, randomCountry }) {
               height={100}
             />
             <p className="link">Production by Country</p>
-          </Link>
+          </Link> */}
           <Link
             href="/historic/histogram-comparison-consumption"
             className="action__link center tall"
@@ -175,13 +176,12 @@ function HomePage({ topGrapes, randomGrape, randomCountry }) {
         </section>
       </section>
       <section className={infoClass2}>
-        <h2 className="header"> Grape Production Country Comparison</h2>
+        <h2 className="header"> Wine Grape Production Comparison</h2>
         <p className="subheader">
-          Production of the world&apos;s top grape varietals in top
-          wine-producing countries.
+          Production of top grape varietals by country or region.
         </p>
         <div className="actions">
-          <Link href={barChartLink} className="action__link center">
+          <Link href={barChartLink} className="action__link center tall">
             <Image
               src="/images/icons/icon-barchart.png"
               className="transparent margin-bottom"
@@ -189,7 +189,17 @@ function HomePage({ topGrapes, randomGrape, randomCountry }) {
               width={100}
               height={100}
             />
-            <p className="link">Bar Chart</p>
+            <p className="link">Production by Country</p>
+          </Link>
+          <Link href={regionalChartLink} className="action__link center tall">
+            <Image
+              src="/images/icons/icon-barchart.png"
+              className="transparent margin-bottom"
+              alt="grapes icon"
+              width={100}
+              height={100}
+            />
+            <p className="link">Production by Region</p>
           </Link>
         </div>
       </section>
