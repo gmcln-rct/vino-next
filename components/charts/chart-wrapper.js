@@ -15,6 +15,10 @@ const ChartWrapper = (props) => {
       dataItem = country;
     } else if (grape) {
       dataItem = grape;
+    } else if (region) {
+      dataItem = region;
+      dataItem.dataYear=country.dataYear;
+      dataItem.units = country.units;
     }
 
   useEffect(() => {

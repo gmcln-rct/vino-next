@@ -7,7 +7,7 @@ import classes from "@/components/charts/bar-chart.module.css";
 import { COUNTRIES_RED_GRAPE_DATA } from "@/data/country-wine-data-red-all-2016";
 import { COUNTRIES_WHITE_GRAPE_DATA } from "@/data/country-wine-data-white-all-2016";
 
-import {REGION_PRODUCTION_DATA } from "@/data/region-data";
+import { REGION_PRODUCTION_DATA } from "@/data/region-data";
 
 import ChartSelectorMulti from "@/components/charts/chart-selector-multi";
 import ChartWrapper from "@/components/charts/chart-wrapper";
@@ -20,70 +20,57 @@ import {
   generateSubheader,
 } from "@/components/utils/chart-utils";
 
-//  ______           _                           ______              _____ _                _   
-//  | ___ \         (_)                          | ___ \            /  __ \ |              | |  
-//  | |_/ /___  __ _ _  ___  _ __  ___   ______  | |_/ / __ _ _ __  | /  \/ |__   __ _ _ __| |_ 
+//  ______           _                           ______              _____ _                _
+//  | ___ \         (_)                          | ___ \            /  __ \ |              | |
+//  | |_/ /___  __ _ _  ___  _ __  ___   ______  | |_/ / __ _ _ __  | /  \/ |__   __ _ _ __| |_
 //  |    // _ \/ _` | |/ _ \| '_ \/ __| |______| | ___ \/ _` | '__| | |   | '_ \ / _` | '__| __|
-//  | |\ \  __/ (_| | | (_) | | | \__ \          | |_/ / (_| | |    | \__/\ | | | (_| | |  | |_ 
+//  | |\ \  __/ (_| | | (_) | | | \__ \          | |_/ / (_| | |    | \__/\ | | | (_| | |  | |_
 //  \_| \_\___|\__, |_|\___/|_| |_|___/          \____/ \__,_|_|     \____/_| |_|\__,_|_|   \__|
-//              __/ |                                                                           
-//                                                                                                                                    
+//              __/ |
+//
 ////////////////////////////////////////////////////////////////
 // General Regions Bar Chart with Three dropdowns
 ////////////////////////////////////////////////////////////////
 
 function RegionsBarCartPage() {
-  const [selectedCountry, setSelectedCountry] = useState("argentina");
+  const [selectedCountry, setSelectedCountry] = useState("france");
   const [selectedRegion, setSelectedRegion] = useState("bordeaux");
   const [selectedGrapeType, setSelectedGrapeType] = useState("red");
 
-  console.log("REGION_PRODUCTION_DATA", REGION_PRODUCTION_DATA);
+  // console.log("REGION_PRODUCTION_DATA", REGION_PRODUCTION_DATA);
 
   const COUNTRIES = filterCountriesData(REGION_PRODUCTION_DATA);
 
-  console.log("COUNTRIES", COUNTRIES);
-
-//   const countryRedGrapeData = COUNTRIES_RED_GRAPE_DATA;
-  // const countryWhiteGrapeData = COUNTRIES_WHITE_GRAPE_DATA;
-
-  const redGrapeData = getDataItemById(
-    selectedCountry,
-    COUNTRIES_RED_GRAPE_DATA
-  );
-  const whiteGrapeData = getDataItemById(
-    selectedCountry,
-    COUNTRIES_WHITE_GRAPE_DATA
-  );
-
-//   const COUNTRIES = filterCountriesData(countryRedGrapeData);
+  //   const COUNTRIES = filterCountriesData(countryRedGrapeData);
   const countriesArray = COUNTRIES.map((country) => country.itemName);
-  const regionsArray = REGION_PRODUCTION_DATA.filter(country => country.id === selectedCountry)[0].regions;
+  const regionsArray = REGION_PRODUCTION_DATA.filter(
+    (country) => country.id === selectedCountry
+  )[0].regions;
 
-//   let country = getDataItemById(selectedCountry, COUNTRIES_RED_GRAPE_DATA);
+  // const redGrapeData = getDataItemById(
+  //   selectedRegion,
+  //   regionsArray
+  // );
+  // const whiteGrapeData = getDataItemById(
+  //   selectedCountry,
+  //   COUNTRIES_WHITE_GRAPE_DATA
+  // );
+  const regionData = getDataItemById(selectedRegion, regionsArray);
+
+  let country = getDataItemById(selectedCountry, REGION_PRODUCTION_DATA);
+  // console.log("country", country);
   const dataType = "country";
 
-//   if (!redGrapeData || !whiteGrapeData) {
-//     return (
-//       <div className="center">
-//         <p>Loading...</p>
-//       </div>
-//     );
-//   }
+  if (!regionData) {
+    return (
+      <div className="center">
+        <p>Loading...</p>
+      </div>
+    );
+  }
 
-//   let headerText = generateHeader({
-//     dataType: dataType,
-//     itemName: redGrapeData.itemName,
-//     explanationText: redGrapeData.itemName + ": ",
-//     selectedGrapeType,
-//   });
-
-//   let subheaderText = generateSubheader({
-//     dataType: dataType,
-//     itemName: selectedCountry.itemName,
-//     selectedGrapeType,
-//     dataYear: 2016,
-//   });
-console.log("in regions - countriesARray", countriesArray);
+  const redGrapeData = regionData.redGrapeData;
+  const whiteGrapeData = regionData.whiteGrapeData;
 
   return (
     <>
@@ -111,16 +98,17 @@ console.log("in regions - countriesARray", countriesArray);
           isRegionComparison={true}
           regionsArray={regionsArray}
         />
-        {/* <ChartWrapper
+        <ChartWrapper
           country={country}
+          region={regionData}
           redGrapeData={redGrapeData.grapeData}
           whiteGrapeData={whiteGrapeData.grapeData}
           selectedGrapeType={selectedGrapeType}
           dataType={dataType}
           topType="multi"
-        /> */}
-        {/* <UnitsFooter units="hectares" />
-        <DataSource /> */}
+        />
+        <UnitsFooter units={country.dataYear} />
+        <DataSource />
       </section>
     </>
   );
