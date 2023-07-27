@@ -1,6 +1,6 @@
 import Head from "next/head";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 import classes from "@/components/charts/bar-chart.module.css";
 
@@ -32,45 +32,51 @@ import {
 // General Regions Bar Chart with Three dropdowns
 ////////////////////////////////////////////////////////////////
 
-function RegionsBarCartPage() {
+function RegionsBarChartPage() {
   const [selectedCountry, setSelectedCountry] = useState("france");
   const [selectedRegion, setSelectedRegion] = useState("bordeaux");
   const [selectedGrapeType, setSelectedGrapeType] = useState("red");
 
-  // console.log("REGION_PRODUCTION_DATA", REGION_PRODUCTION_DATA);
-
   const COUNTRIES = filterCountriesData(REGION_PRODUCTION_DATA);
-
-  //   const COUNTRIES = filterCountriesData(countryRedGrapeData);
   const countriesArray = COUNTRIES.map((country) => country.itemName);
-  const regionsArray = REGION_PRODUCTION_DATA.filter(
-    (country) => country.id === selectedCountry
-  )[0].regions;
+  
+  const [regionsArray, setRegionsArray] = useState([]);
+  const [regionData, setRegionData] = useState();
+  const [redGrapeData, setRedGrapeData] = useState();
+  const [whiteGrapeData, setWhiteGrapeData] = useState();
+  const [country, setCountry] = useState();
+  const [dataType, setDataType] = useState("region");
 
-  // const redGrapeData = getDataItemById(
-  //   selectedRegion,
-  //   regionsArray
-  // );
-  // const whiteGrapeData = getDataItemById(
-  //   selectedCountry,
-  //   COUNTRIES_WHITE_GRAPE_DATA
-  // );
-  const regionData = getDataItemById(selectedRegion, regionsArray);
 
-  let country = getDataItemById(selectedCountry, REGION_PRODUCTION_DATA);
-  // console.log("country", country);
-  const dataType = "country";
+  useEffect(() => {
+    const countryData = getDataItemById(selectedCountry, REGION_PRODUCTION_DATA);
+    setCountry(countryData);
+    
+    const regions = REGION_PRODUCTION_DATA.filter(
+      (country) => country.id === selectedCountry
+    )[0]?.regions;
+    setRegionsArray(regions || []);
+    
+    const newRegionData = getDataItemById(selectedRegion, regions);
+    setRegionData(newRegionData);
+    
+    if (newRegionData) {
+      setRedGrapeData(newRegionData.redGrapeData);
+      setWhiteGrapeData(newRegionData.whiteGrapeData);
+    } else {
+      setRedGrapeData(undefined);
+      setWhiteGrapeData(undefined);
+    }
+  }, [selectedCountry]);
 
-  if (!regionData) {
+  console.log("regionData", regionData)
+  if (!regionData || !redGrapeData) {
     return (
       <div className="center">
         <p>Loading...</p>
       </div>
     );
   }
-
-  const redGrapeData = regionData.redGrapeData;
-  const whiteGrapeData = regionData.whiteGrapeData;
 
   return (
     <>
@@ -107,11 +113,11 @@ function RegionsBarCartPage() {
           dataType={dataType}
           topType="multi"
         />
-        <UnitsFooter units={country.dataYear} />
+        <UnitsFooter units={country.units} />
         <DataSource />
       </section>
     </>
   );
 }
 
-export default RegionsBarCartPage;
+export default RegionsBarChartPage;
