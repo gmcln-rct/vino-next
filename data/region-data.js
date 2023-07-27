@@ -5,6 +5,7 @@ export const REGION_PRODUCTION_DATA = [
     dataType: "production",
     dataYear: 2016,
     units: "hectares",
+    featuredRegionId: "junín-mendoza",
     regions: [
       {
         id: "chilecito",
@@ -658,6 +659,7 @@ export const REGION_PRODUCTION_DATA = [
     dataType: "production",
     dataYear: 2016,
     units: "hectares",
+    featuredRegionId: "barossa-valley",
     regions: [
       {
         id: "barossa-valley",
@@ -1063,6 +1065,7 @@ export const REGION_PRODUCTION_DATA = [
     dataType: "production",
     dataYear: 2016,
     units: "hectares",
+    featuredRegionId: "del-bio-bio",
     regions: [
       {
         id: "del-bio-bio",
@@ -1282,6 +1285,7 @@ export const REGION_PRODUCTION_DATA = [
     dataType: "production",
     dataYear: 2016,
     units: "hectares",
+    featuredRegionId: "bordeaux",
     regions: [
       {
         id: "alsace",

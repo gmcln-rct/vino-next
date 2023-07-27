@@ -51,12 +51,16 @@ function RegionsBarChartPage() {
   useEffect(() => {
     const countryData = getDataItemById(selectedCountry, REGION_PRODUCTION_DATA);
     setCountry(countryData);
+    console.log("countryData", countryData);
     
     const regions = REGION_PRODUCTION_DATA.filter(
       (country) => country.id === selectedCountry
     )[0]?.regions;
+    console.log("regions ", regions);
     setRegionsArray(regions || []);
-    
+
+    setSelectedRegion(countryData.featuredRegionId);
+    setSelectedGrapeType("red");
     const newRegionData = getDataItemById(selectedRegion, regions);
     setRegionData(newRegionData);
     
@@ -69,8 +73,8 @@ function RegionsBarChartPage() {
     }
   }, [selectedCountry]);
 
-  console.log("regionData", regionData)
-  if (!regionData || !redGrapeData) {
+  // console.log("regionData", regionData)
+  if (!regionData) {
     return (
       <div className="center">
         <p>Loading...</p>
