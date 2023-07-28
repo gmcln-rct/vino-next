@@ -53,24 +53,25 @@ function RegionsBarChartPage() {
     setCountry(countryData);
     console.log("countryData", countryData);
     
-    const regions = REGION_PRODUCTION_DATA.filter(
-      (country) => country.id === selectedCountry
-    )[0]?.regions;
-    console.log("regions ", regions);
+    const regions = countryData.regions;
     setRegionsArray(regions || []);
-
     setSelectedRegion(countryData.featuredRegionId);
     setSelectedGrapeType("red");
+    console.log("selected regions ", selectedRegion);
+  
+
     const newRegionData = getDataItemById(selectedRegion, regions);
-    setRegionData(newRegionData);
+    // setRegionData(newRegionData);
+    //   setRedGrapeData(newRegionData.redGrapeData);
+    // setWhiteGrapeData(newRegionData.whiteGrapeData);
     
-    if (newRegionData) {
-      setRedGrapeData(newRegionData.redGrapeData);
-      setWhiteGrapeData(newRegionData.whiteGrapeData);
-    } else {
-      setRedGrapeData(undefined);
-      setWhiteGrapeData(undefined);
-    }
+    // if (newRegionData) {
+      setRedGrapeData(regionsArray.redGrapeData);
+      setWhiteGrapeData(regionsArray.whiteGrapeData);
+    // } 
+
+    console.log("newRegionData", newRegionData);
+
   }, [selectedCountry]);
 
   // console.log("regionData", regionData)
