@@ -34,7 +34,7 @@ import {
 
 function RegionsBarChartPage() {
   const [selectedCountry, setSelectedCountry] = useState("france");
-  const [selectedRegion, setSelectedRegion] = useState("bordeaux");
+  const [selectedRegionId, setSelectedRegionId] = useState("bordeaux");
   const [selectedGrapeType, setSelectedGrapeType] = useState("red");
 
   const COUNTRIES = filterCountriesData(REGION_PRODUCTION_DATA);
@@ -51,30 +51,29 @@ function RegionsBarChartPage() {
   useEffect(() => {
     const countryData = getDataItemById(selectedCountry, REGION_PRODUCTION_DATA);
     setCountry(countryData);
-    console.log("countryData", countryData);
     
     const regions = countryData.regions;
-    setRegionsArray(regions || []);
-    setSelectedRegion(countryData.featuredRegionId);
+    setRegionsArray(regions);
+    setSelectedRegionId(countryData.featuredRegionId);
     setSelectedGrapeType("red");
-    console.log("selected regions ", selectedRegion);
-  
-
-    const newRegionData = getDataItemById(selectedRegion, regions);
-    // setRegionData(newRegionData);
+    // console.log("selectedRegionId", selectedRegionId);
+    const selectedRegionData = regionsArray.find((region) => region.id === selectedRegionId);
+    console.log("newRegionData", selectedRegionData);
+    
+    // const newRegionData = getDataItemById(selectedRegion, regions);
+    setRegionData(selectedRegionData);
+    console.log("regionData", regionData);
     //   setRedGrapeData(newRegionData.redGrapeData);
     // setWhiteGrapeData(newRegionData.whiteGrapeData);
     
-    // if (newRegionData) {
-      setRedGrapeData(regionsArray.redGrapeData);
-      setWhiteGrapeData(regionsArray.whiteGrapeData);
-    // } 
+    if (regionData) {
+      setRedGrapeData(regionData.redGrapeData);
+      setWhiteGrapeData(regionData.whiteGrapeData);
+    } 
 
-    console.log("newRegionData", newRegionData);
 
   }, [selectedCountry]);
 
-  // console.log("regionData", regionData)
   if (!regionData) {
     return (
       <div className="center">
@@ -102,8 +101,8 @@ function RegionsBarChartPage() {
           countryData={countriesArray}
           selectedItem1={selectedCountry}
           setSelectedItem1={setSelectedCountry}
-          selectedItem2={selectedRegion}
-          setSelectedItem2={setSelectedRegion}
+          selectedItem2={selectedRegionId}
+          setSelectedItem2={setSelectedRegionId}
           selectedItem3={selectedGrapeType}
           setSelectedItem3={setSelectedGrapeType}
           isRegionComparison={true}
