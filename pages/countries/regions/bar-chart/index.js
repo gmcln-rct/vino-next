@@ -40,39 +40,33 @@ function RegionsBarChartPage() {
   const COUNTRIES = filterCountriesData(REGION_PRODUCTION_DATA);
   const countriesArray = COUNTRIES.map((country) => country.itemName);
   
-  const [allRegionsArray, setAllRegionsArray] = useState([]);
-  const [regionData, setRegionData] = useState();
-  const [redGrapeData, setRedGrapeData] = useState();
-  const [whiteGrapeData, setWhiteGrapeData] = useState();
-  const [country, setCountry] = useState();
-  const [dataType, setDataType] = useState("region");
+  // const [allRegionsArray, setAllRegionsArray] = useState([]);
+  // const [regionData, setRegionData] = useState();
+  // const [redGrapeData, setRedGrapeData] = useState();
+  // const [whiteGrapeData, setWhiteGrapeData] = useState();
+  // const [country, setCountry] = useState();
+  // const [dataType, setDataType] = useState("region");
+
+  let selectedRegionData;
 
 
   useEffect(() => {
     const countryData = getDataItemById(selectedCountry, REGION_PRODUCTION_DATA);
-    setCountry(countryData);
+    // setCountry(countryData);
     
-    const regions = countryData.regions;
-    setAllRegionsArray(regions);
-    setSelectedRegionId(countryData.featuredRegionId);
-    setSelectedGrapeType("red");
-    // console.log("selectedRegionId", selectedRegionId);
-    const selectedRegionData = allRegionsArray.find((region) => region.id === selectedRegionId);
-    console.log("newRegionData", selectedRegionData);
+    const regions = countryData?.regions;
+    const selectedRegionId = countryData?.featuredRegionId;
+    selectedRegionData = regions.find((region) => region.id === selectedRegionId);
     
     // const newRegionData = getDataItemById(selectedRegion, regions);
-    setRegionData(selectedRegionData);
-    console.log("regionData", regionData);
+    // setRegionData(selectedRegionData);
+    console.log("selectedRegionData", selectedRegionData);
     //   setRedGrapeData(newRegionData.redGrapeData);
     // setWhiteGrapeData(newRegionData.whiteGrapeData);
     
-    if (regionData) {
-      setRedGrapeData(regionData.redGrapeData);
-      setWhiteGrapeData(regionData.whiteGrapeData);
-    } 
   }, [selectedCountry]);
 
-  if (!regionData) {
+  if (!selectedRegionData) {
     return (
       <div className="center">
         <p>Loading...</p>
@@ -104,13 +98,13 @@ function RegionsBarChartPage() {
           selectedItem3={selectedGrapeType}
           setSelectedItem3={setSelectedGrapeType}
           isRegionComparison={true}
-          regionsArray={regionsArray}
+          regionsArray={allRegionsArray}
         />
         <ChartWrapper
           country={country}
-          region={regionData}
-          redGrapeData={redGrapeData}
-          whiteGrapeData={whiteGrapeData}
+          region={selectedRegionData}
+          redGrapeData={selectedRegionData.redGrapeData}
+          whiteGrapeData={selectedRegionData.whiteGrapeData}
           selectedGrapeType={selectedGrapeType}
           dataType={dataType}
           topType="multi"
