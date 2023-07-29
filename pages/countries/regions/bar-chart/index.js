@@ -40,18 +40,17 @@ function RegionsBarChartPage() {
   const COUNTRIES = filterCountriesData(REGION_PRODUCTION_DATA);
   const countriesArray = COUNTRIES.map((country) => country.itemName);
   
-  // const [allRegionsArray, setAllRegionsArray] = useState([]);
-  // const [regionData, setRegionData] = useState();
-  // const [redGrapeData, setRedGrapeData] = useState();
-  // const [whiteGrapeData, setWhiteGrapeData] = useState();
-  // const [country, setCountry] = useState();
-  // const [dataType, setDataType] = useState("region");
-
   let selectedRegionData;
-
+  let regionsArray;
+  // let country;
+  let countryData;
 
   useEffect(() => {
     const countryData = getDataItemById(selectedCountry, REGION_PRODUCTION_DATA);
+    country = countryData;
+    regionsArray = countryData.regions.map((region) => {
+      return { id: region.id, itemName: region.itemName };
+    });
     // setCountry(countryData);
     
     const regions = countryData?.regions;
@@ -60,19 +59,19 @@ function RegionsBarChartPage() {
     
     // const newRegionData = getDataItemById(selectedRegion, regions);
     // setRegionData(selectedRegionData);
-    console.log("selectedRegionData", selectedRegionData);
     //   setRedGrapeData(newRegionData.redGrapeData);
     // setWhiteGrapeData(newRegionData.whiteGrapeData);
     
-  }, [selectedCountry]);
-
-  if (!selectedRegionData) {
-    return (
-      <div className="center">
-        <p>Loading...</p>
-      </div>
-    );
-  }
+  }, []);
+  
+  // if (!selectedRegionData) {
+  //   return (
+  //     <div className="center">
+  //       <p>Loading...</p>
+  //     </div>
+  //   );
+  // }
+  console.log("selectedRegionData", selectedRegionData);
 
   return (
     <>
@@ -98,9 +97,9 @@ function RegionsBarChartPage() {
           selectedItem3={selectedGrapeType}
           setSelectedItem3={setSelectedGrapeType}
           isRegionComparison={true}
-          regionsArray={allRegionsArray}
+          regionsArray={regionsArray}
         />
-        <ChartWrapper
+        {/* <ChartWrapper
           country={country}
           region={selectedRegionData}
           redGrapeData={selectedRegionData.redGrapeData}
@@ -108,8 +107,8 @@ function RegionsBarChartPage() {
           selectedGrapeType={selectedGrapeType}
           dataType={dataType}
           topType="multi"
-        />
-        <UnitsFooter units={country.units} />
+        /> */}
+        {countryData && (<UnitsFooter units={countryData.units} />)}
         <DataSource />
       </section>
     </>
