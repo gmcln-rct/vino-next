@@ -39,39 +39,39 @@ function RegionsBarChartPage() {
 
   const COUNTRIES = filterCountriesData(REGION_PRODUCTION_DATA);
   const countriesArray = COUNTRIES.map((country) => country.itemName);
-  
-  let selectedRegionData;
-  // let regionsArray;
-  // // let country;
-  // let countryData;
 
-  const countryData = getDataItemById(selectedCountry, REGION_PRODUCTION_DATA);
-  // country = countryData;
-  const regionsArray = countryData.regions.map((region) => {
-    return { id: region.id, itemName: region.itemName };
-  });
+  const [regionData, setRegionData] = useState();
+  const [regionsArray, setRegionsArray] = useState([]);
+  const [country, setCountry] = useState();
+
   useEffect(() => {
-    // setCountry(countryData);
-    
-    const regions = countryData?.regions;
-    setSelectedRegionId(countryData?.featuredRegionId);
-     selectedRegionData = regions.find((region) => region.id === selectedRegionId);
-    
-    // const newRegionData = getDataItemById(selectedRegion, regions);
-    // setRegionData(selectedRegionData);
-    //   setRedGrapeData(newRegionData.redGrapeData);
-    // setWhiteGrapeData(newRegionData.whiteGrapeData);
-    console.log("selectedRegionData", selectedRegionData);
+    const countryData = getDataItemById(selectedCountry, REGION_PRODUCTION_DATA);
+    setCountry(countryData);
 
-  }, [countryData, selectedRegionId]);
-  
-  // if (!selectedRegionData) {
-  //   return (
-  //     <div className="center">
-  //       <p>Loading...</p>
-  //     </div>
-  //   );
-  // }
+    const regions = countryData.regions;
+    setRegionsArray(regions);
+
+    const featuredRegion = regions.find((region) => region.id === countryData.featuredRegionId);
+
+    if (selectedRegionId !== countryData.featuredRegionId) {
+      setSelectedRegionId(countryData.featuredRegionId);
+      setRegionData(featuredRegion);
+    } else {
+      const selectedRegionData = regions.find((region) => region.id === selectedRegionId);
+      setRegionData(selectedRegionData);
+    }
+
+    setSelectedGrapeType("red");
+
+  }, [selectedCountry, selectedRegionId]);
+
+  if (!regionData) {
+    return (
+      <div className="center">
+        <p>Loading...</p>
+      </div>
+    );
+  }
 
   return (
     <>
@@ -99,21 +99,16 @@ function RegionsBarChartPage() {
           isRegionComparison={true}
           regionsArray={regionsArray}
         />
-        {!selectedRegionData && (
-          <div className="center">
-            <p>Loading...</p>
-            </div>
-            )}
-        {selectedRegionData && (<ChartWrapper
-          country={countryData}
-          region={selectedRegionData}
-          redGrapeData={selectedRegionData.redGrapeData}
-          whiteGrapeData={selectedRegionData.whiteGrapeData}
+        <ChartWrapper
+          country={country}
+          region={regionData}
+          redGrapeData={regionData.redGrapeData}
+          whiteGrapeData={regionData.whiteGrapeData}
           selectedGrapeType={selectedGrapeType}
-          dataType={dataType}
+          dataType="region"
           topType="multi"
-        />)}
-        {countryData && (<UnitsFooter units={countryData.units} />)}
+        />
+        <UnitsFooter units={country.units} />
         <DataSource />
       </section>
     </>
