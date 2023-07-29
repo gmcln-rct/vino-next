@@ -40,7 +40,7 @@ function RegionsBarChartPage() {
   const COUNTRIES = filterCountriesData(REGION_PRODUCTION_DATA);
   const countriesArray = COUNTRIES.map((country) => country.itemName);
   
-  const [regionsArray, setRegionsArray] = useState([]);
+  const [allRegionsArray, setAllRegionsArray] = useState([]);
   const [regionData, setRegionData] = useState();
   const [redGrapeData, setRedGrapeData] = useState();
   const [whiteGrapeData, setWhiteGrapeData] = useState();
@@ -53,11 +53,11 @@ function RegionsBarChartPage() {
     setCountry(countryData);
     
     const regions = countryData.regions;
-    setRegionsArray(regions);
+    setAllRegionsArray(regions);
     setSelectedRegionId(countryData.featuredRegionId);
     setSelectedGrapeType("red");
     // console.log("selectedRegionId", selectedRegionId);
-    const selectedRegionData = regionsArray.find((region) => region.id === selectedRegionId);
+    const selectedRegionData = allRegionsArray.find((region) => region.id === selectedRegionId);
     console.log("newRegionData", selectedRegionData);
     
     // const newRegionData = getDataItemById(selectedRegion, regions);
