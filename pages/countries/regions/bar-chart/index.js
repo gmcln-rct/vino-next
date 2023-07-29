@@ -70,8 +70,6 @@ function RegionsBarChartPage() {
       setRedGrapeData(regionData.redGrapeData);
       setWhiteGrapeData(regionData.whiteGrapeData);
     } 
-
-
   }, [selectedCountry]);
 
   if (!regionData) {
