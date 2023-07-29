@@ -41,28 +41,29 @@ function RegionsBarChartPage() {
   const countriesArray = COUNTRIES.map((country) => country.itemName);
   
   let selectedRegionData;
-  let regionsArray;
-  // let country;
-  let countryData;
+  // let regionsArray;
+  // // let country;
+  // let countryData;
 
+  const countryData = getDataItemById(selectedCountry, REGION_PRODUCTION_DATA);
+  // country = countryData;
+  const regionsArray = countryData.regions.map((region) => {
+    return { id: region.id, itemName: region.itemName };
+  });
   useEffect(() => {
-    const countryData = getDataItemById(selectedCountry, REGION_PRODUCTION_DATA);
-    country = countryData;
-    regionsArray = countryData.regions.map((region) => {
-      return { id: region.id, itemName: region.itemName };
-    });
     // setCountry(countryData);
     
     const regions = countryData?.regions;
-    const selectedRegionId = countryData?.featuredRegionId;
-    selectedRegionData = regions.find((region) => region.id === selectedRegionId);
+    setSelectedRegionId(countryData?.featuredRegionId);
+     selectedRegionData = regions.find((region) => region.id === selectedRegionId);
     
     // const newRegionData = getDataItemById(selectedRegion, regions);
     // setRegionData(selectedRegionData);
     //   setRedGrapeData(newRegionData.redGrapeData);
     // setWhiteGrapeData(newRegionData.whiteGrapeData);
-    
-  }, []);
+    console.log("selectedRegionData", selectedRegionData);
+
+  }, [countryData, selectedRegionId]);
   
   // if (!selectedRegionData) {
   //   return (
@@ -71,7 +72,6 @@ function RegionsBarChartPage() {
   //     </div>
   //   );
   // }
-  console.log("selectedRegionData", selectedRegionData);
 
   return (
     <>
@@ -99,15 +99,20 @@ function RegionsBarChartPage() {
           isRegionComparison={true}
           regionsArray={regionsArray}
         />
-        {/* <ChartWrapper
-          country={country}
+        {!selectedRegionData && (
+          <div className="center">
+            <p>Loading...</p>
+            </div>
+            )}
+        {selectedRegionData && (<ChartWrapper
+          country={countryData}
           region={selectedRegionData}
           redGrapeData={selectedRegionData.redGrapeData}
           whiteGrapeData={selectedRegionData.whiteGrapeData}
           selectedGrapeType={selectedGrapeType}
           dataType={dataType}
           topType="multi"
-        /> */}
+        />)}
         {countryData && (<UnitsFooter units={countryData.units} />)}
         <DataSource />
       </section>
