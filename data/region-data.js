@@ -1060,6 +1060,166 @@ export const REGION_PRODUCTION_DATA = [
     ],
   },
   {
+    id: "brazil",
+    itemName: "Brazil",
+    dataType: "production",
+    dataYear: 2016,
+    units: "hectares",
+    featuredRegionId: "south-central",
+    regions: [
+      {
+        id: "north-central",
+        itemName: "North Central",
+        redGrapeData: [
+          {
+            grapeId: "cabernet-sauvignon",
+            grape: "Cabernet Sauvignon",
+            value: 780,
+          },
+          { grapeId: "merlot", grape: "Merlot", value: 242 },
+          { grapeId: "syrah", grape: "Syrah", value: 0 },
+          { grapeId: "pinot-noir", grape: "Pinot Noir", value: 0 },
+          { grapeId: "cabernet-franc", grape: "Cabernet Franc", value: 0 },
+        ],
+        whiteGrapeData: [
+          { grapeId: "chardonnay", grape: "Chardonnay", value: 224 },
+          {
+            grapeId: "trebbiano-toscano",
+            grape: "Trebbiano Toscano",
+            value: 0,
+          },
+          { grapeId: "sauvignon-blanc", grape: "Sauvignon Blanc", value: 0 },
+          { grapeId: "gewürztraminer", grape: "Gewürztraminer", value: 6 },
+        ],
+      },
+      {
+        id: "northeast",
+        itemName: "Northeast",
+        redGrapeData: [
+          {
+            grapeId: "cabernet-sauvignon",
+            grape: "Cabernet Sauvignon",
+            value: 246,
+          },
+          { grapeId: "merlot", grape: "Merlot", value: 351 },
+          { grapeId: "syrah", grape: "Syrah", value: 0 },
+          { grapeId: "pinot-noir", grape: "Pinot Noir", value: 11 },
+          { grapeId: "cabernet-franc", grape: "Cabernet Franc", value: 38 },
+        ],
+        whiteGrapeData: [
+          { grapeId: "chardonnay", grape: "Chardonnay", value: 1087 },
+          {
+            grapeId: "trebbiano-toscano",
+            grape: "Trebbiano Toscano",
+            value: 244,
+          },
+          { grapeId: "sauvignon-blanc", grape: "Sauvignon Blanc", value: 104 },
+          { grapeId: "gewürztraminer", grape: "Gewürztraminer", value: 233 },
+        ],
+      },
+      {
+        id: "northwest",
+        itemName: "Northwest",
+        redGrapeData: [
+          {
+            grapeId: "cabernet-sauvignon",
+            grape: "Cabernet Sauvignon",
+            value: 1104,
+          },
+          { grapeId: "merlot", grape: "Merlot", value: 765 },
+          { grapeId: "syrah", grape: "Syrah", value: 11 },
+          { grapeId: "pinot-noir", grape: "Pinot Noir", value: 175 },
+          { grapeId: "cabernet-franc", grape: "Cabernet Franc", value: 28 },
+        ],
+        whiteGrapeData: [
+          { grapeId: "chardonnay", grape: "Chardonnay", value: 175 },
+          {
+            grapeId: "trebbiano-toscano",
+            grape: "Trebbiano Toscano",
+            value: 0,
+          },
+          { grapeId: "sauvignon-blanc", grape: "Sauvignon Blanc", value: 61 },
+          { grapeId: "gewürztraminer", grape: "Gewürztraminer", value: 42 },
+        ],
+      },
+      {
+        id: "south-central",
+        itemName: "South Central",
+        redGrapeData: [
+          {
+            grapeId: "cabernet-sauvignon",
+            grape: "Cabernet Sauvignon",
+            value: 3594,
+          },
+          { grapeId: "merlot", grape: "Merlot", value: 5103 },
+          { grapeId: "syrah", grape: "Syrah", value: 520 },
+          { grapeId: "pinot-noir", grape: "Pinot Noir", value: 0 },
+          { grapeId: "cabernet-franc", grape: "Cabernet Franc", value: 174 },
+        ],
+        whiteGrapeData: [
+          { grapeId: "chardonnay", grape: "Chardonnay", value: 461 },
+          {
+            grapeId: "trebbiano-toscano",
+            grape: "Trebbiano Toscano",
+            value: 0,
+          },
+          { grapeId: "sauvignon-blanc", grape: "Sauvignon Blanc", value: 190 },
+          { grapeId: "gewürztraminer", grape: "Gewürztraminer", value: 67 },
+        ],
+      },
+      {
+        id: "southeast",
+        itemName: "Southeast",
+        redGrapeData: [
+          {
+            grapeId: "cabernet-sauvignon",
+            grape: "Cabernet Sauvignon",
+            value: 3164,
+          },
+          { grapeId: "merlot", grape: "Merlot", value: 3264 },
+          { grapeId: "syrah", grape: "Syrah", value: 243 },
+          { grapeId: "pinot-noir", grape: "Pinot Noir", value: 156 },
+          { grapeId: "cabernet-franc", grape: "Cabernet Franc", value: 0 },
+        ],
+        whiteGrapeData: [
+          { grapeId: "chardonnay", grape: "Chardonnay", value: 1125 },
+          {
+            grapeId: "trebbiano-toscano",
+            grape: "Trebbiano Toscano",
+            value: 494,
+          },
+          { grapeId: "sauvignon-blanc", grape: "Sauvignon Blanc", value: 282 },
+          { grapeId: "gewürztraminer", grape: "Gewürztraminer", value: 242 },
+        ],
+      },
+      {
+        id: "southwest",
+        itemName: "Southwest",
+        redGrapeData: [
+          {
+            grapeId: "cabernet-sauvignon",
+            grape: "Cabernet Sauvignon",
+            value: 440,
+          },
+          { grapeId: "merlot", grape: "Merlot", value: 325 },
+          { grapeId: "syrah", grape: "Syrah", value: 30 },
+          { grapeId: "pinot-noir", grape: "Pinot Noir", value: 0 },
+          { grapeId: "cabernet-franc", grape: "Cabernet Franc", value: 0 },
+        ],
+        whiteGrapeData: [
+          { grapeId: "chardonnay", grape: "Chardonnay", value: 14 },
+          {
+            grapeId: "trebbiano-toscano",
+            grape: "Trebbiano Toscano",
+            value: 0,
+          },
+          { grapeId: "sauvignon-blanc", grape: "Sauvignon Blanc", value: 0 },
+          { grapeId: "gewürztraminer", grape: "Gewürztraminer", value: 0 },
+        ],
+      },
+    ],
+  },
+  {
     id: "chile",
     itemName: "Chile",
     dataType: "production",

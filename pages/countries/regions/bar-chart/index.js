@@ -4,9 +4,6 @@ import { useEffect, useState } from "react";
 
 import classes from "@/components/charts/bar-chart.module.css";
 
-import { COUNTRIES_RED_GRAPE_DATA } from "@/data/country-wine-data-red-all-2016";
-import { COUNTRIES_WHITE_GRAPE_DATA } from "@/data/country-wine-data-white-all-2016";
-
 import { REGION_PRODUCTION_DATA } from "@/data/region-data";
 
 import ChartSelectorMulti from "@/components/charts/chart-selector-multi";
@@ -15,10 +12,6 @@ import UnitsFooter from "@/components/layout/units-footer";
 import DataSource from "@/components/layout/data-source";
 
 import { filterCountriesData, getDataItemById } from "@/data/utils";
-import {
-  generateHeader,
-  generateSubheader,
-} from "@/components/utils/chart-utils";
 
 //  ______           _                           ______              _____ _                _
 //  | ___ \         (_)                          | ___ \            /  __ \ |              | |
