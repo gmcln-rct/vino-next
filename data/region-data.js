@@ -1151,18 +1151,13 @@ export const REGION_PRODUCTION_DATA = [
             grape: "Cabernet Sauvignon",
             value: 3594,
           },
+          {grapeId: "isabella", grape: "Isabella", value: 11664},
           { grapeId: "merlot", grape: "Merlot", value: 5103 },
           { grapeId: "syrah", grape: "Syrah", value: 520 },
-          { grapeId: "pinot-noir", grape: "Pinot Noir", value: 0 },
           { grapeId: "cabernet-franc", grape: "Cabernet Franc", value: 174 },
         ],
         whiteGrapeData: [
           { grapeId: "chardonnay", grape: "Chardonnay", value: 461 },
-          {
-            grapeId: "trebbiano-toscano",
-            grape: "Trebbiano Toscano",
-            value: 0,
-          },
           { grapeId: "sauvignon-blanc", grape: "Sauvignon Blanc", value: 190 },
           { grapeId: "gewürztraminer", grape: "Gewürztraminer", value: 67 },
         ],
@@ -1179,7 +1174,6 @@ export const REGION_PRODUCTION_DATA = [
           { grapeId: "merlot", grape: "Merlot", value: 3264 },
           { grapeId: "syrah", grape: "Syrah", value: 243 },
           { grapeId: "pinot-noir", grape: "Pinot Noir", value: 156 },
-          { grapeId: "cabernet-franc", grape: "Cabernet Franc", value: 0 },
         ],
         whiteGrapeData: [
           { grapeId: "chardonnay", grape: "Chardonnay", value: 1125 },
@@ -1208,13 +1202,6 @@ export const REGION_PRODUCTION_DATA = [
         ],
         whiteGrapeData: [
           { grapeId: "chardonnay", grape: "Chardonnay", value: 14 },
-          {
-            grapeId: "trebbiano-toscano",
-            grape: "Trebbiano Toscano",
-            value: 0,
-          },
-          { grapeId: "sauvignon-blanc", grape: "Sauvignon Blanc", value: 0 },
-          { grapeId: "gewürztraminer", grape: "Gewürztraminer", value: 0 },
         ],
       },
     ],
@@ -1322,7 +1309,6 @@ export const REGION_PRODUCTION_DATA = [
           },
           { grapeId: "merlot", grape: "Merlot", value: 1137 },
           { grapeId: "carmenère", grape: "Carmenère", value: 892 },
-          { grapeId: "listán-prieto", grape: "Listán Prieto", value: 0 },
           { grapeId: "syrah", grape: "Syrah", value: 1179 },
           {
             grapeId: "alicante-henri-bouschet",
@@ -1346,11 +1332,6 @@ export const REGION_PRODUCTION_DATA = [
           },
           { grapeId: "sémillon", grape: "Sémillon", value: 24 },
           { grapeId: "viognier", grape: "Viognier", value: 24 },
-          {
-            grapeId: "torrontés-riojano",
-            grape: "Torrontés Riojano",
-            value: 0,
-          },
         ],
       },
       {
