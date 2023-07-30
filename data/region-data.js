@@ -3529,4 +3529,47 @@ export const REGION_PRODUCTION_DATA = [
       },
     ],
   },
+  {
+    id: "mexico",
+    itemName: "Mexico",
+    dataType: "production",
+    dataYear: 2016,
+    units: "hectares",
+    featuredRegionId: "baja-california",
+    regions: [
+      {
+        id: "aguascalientes",
+        itemName: "Aguascalientes",
+        redGrapeData: [{ grapeId: "mazuelo", grape: "Mazuelo", value: 375 }],
+        whiteGrapeData: [
+          {
+            grapeId: "muscat-blanc-à-petits-grains",
+            grape: "Muscat Blanc à Petits Grains",
+            value: 125,
+          },
+        ],
+      },
+      {
+        id: "baja-california",
+        itemName: "Baja California",
+        redGrapeData: [
+          {
+            grapeId: "cabernet-sauvignon",
+            grape: "Cabernet Sauvignon",
+            value: 688,
+          },
+          { grapeId: "merlot", grape: "Merlot", value: 344 },
+          { grapeId: "tempranillo", grape: "Tempranillo", value: 229 },
+          { grapeId: "nebbiolo", grape: "Nebbiolo", value: 180 },
+          { grapeId: "garnacha-tinta", grape: "Garnacha Tinta", value: 140 },
+          { grapeId: "durif", grape: "Durif", value: 133 },
+          { grapeId: "syrah", grape: "Syrah", value: 130 },
+        ],
+        whiteGrapeData: [
+          { grapeId: "chenin-blanc", grape: "Chenin Blanc", value: 275 },
+          { grapeId: "sauvignon-blanc", grape: "Sauvignon Blanc", value: 120 },
+        ],
+      },
+    ],
+  },
 ];
