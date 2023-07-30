@@ -79,7 +79,10 @@ function RegionsBarChartPage() {
         />
       </Head>
       <section className={classes.chart}>
-        <h1 className={classes.title}>Wine Production By Region</h1>
+        <h1 className={classes.header}>Wine Production By Region</h1>
+        <h2 className={classes.subheader}>
+         Production of world top 100 wine grapes in regions of {country.itemName}
+         </h2>
 
         <ChartSelectorMulti
           countryData={countriesArray}
