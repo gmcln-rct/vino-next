@@ -54,7 +54,7 @@ function RegionsBarChartPage() {
       (region) => region.id === selectedCountry
     );
 
-    console.log("regionData: ", newRegionData);
+    // console.log("regionData: ", newRegionData);
 
     const regions = countryData.regions;
     setRegionsArray(regions);
@@ -70,7 +70,7 @@ function RegionsBarChartPage() {
     );
     setCountry(countryData);
     setRegionData(selectedRegionData);
-    setRegionsArray(selectedCountryRegionsArray);
+    setRegionsArray([...selectedCountryRegionsArray]);
     console.log("selectedCountryRegionsArray: ", regionsArray);
 
   }, [selectedCountry]);
