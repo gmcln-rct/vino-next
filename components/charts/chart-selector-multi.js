@@ -35,6 +35,27 @@ const ChartSelectorMulti = ({
 
   return (
     <div className={classes.selectrow}>
+      {/* {
+        COUNTRIES && (
+          <>
+          <span className={classes.selectLabel}> {selectLabel1} </span>
+          <select
+            value={selectedItem1}
+            className={classes.selectDropdown}
+            onChange={(event) => setSelectedItem1(event.target.value)}
+          >
+            {selectData1.map((dataItem1) => (
+              <option
+                key={dataItem1.id}
+                value={dataItem1.id}
+                className={classes.selectOption}
+              >
+                {dataItem1.itemName.charAt(0).toUpperCase() + dataItem1.itemName.slice(1)}
+              </option>
+            ))}
+          </select>
+        </>)
+      } */}
       {COUNTRIES && (
         <>
           <span className={classes.selectLabel}> {selectLabel1} </span>

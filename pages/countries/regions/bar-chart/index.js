@@ -1,6 +1,6 @@
+import { useState, useEffect } from "react";
 import Head from "next/head";
 
-import { useEffect, useState } from "react";
 
 import classes from "@/components/charts/bar-chart.module.css";
 
@@ -12,6 +12,8 @@ import UnitsFooter from "@/components/layout/units-footer";
 import DataSource from "@/components/layout/data-source";
 
 import { filterCountriesData, getDataItemById } from "@/data/utils";
+
+
 
 //  ______           _                           ______              _____ _                _
 //  | ___ \         (_)                          | ___ \            /  __ \ |              | |
@@ -25,6 +27,8 @@ import { filterCountriesData, getDataItemById } from "@/data/utils";
 // General Regions Bar Chart with Three dropdowns
 ////////////////////////////////////////////////////////////////
 
+
+
 function RegionsBarChartPage() {
   const [selectedCountry, setSelectedCountry] = useState("france");
   const [selectedRegionId, setSelectedRegionId] = useState("bordeaux");
@@ -33,30 +37,43 @@ function RegionsBarChartPage() {
   const COUNTRIES = filterCountriesData(REGION_PRODUCTION_DATA);
   const countriesArray = COUNTRIES.map((country) => country.itemName);
 
-  const [regionData, setRegionData] = useState();
-  const [regionsArray, setRegionsArray] = useState([]);
   const [country, setCountry] = useState();
 
+  const [regionData, setRegionData] = useState();
+
+  const [regionsArray, setRegionsArray] = useState([]);
+  // const [country, setCountry] = useState();
+
   useEffect(() => {
-    const countryData = getDataItemById(selectedCountry, REGION_PRODUCTION_DATA);
-    setCountry(countryData);
+    const countryData = getDataItemById(
+      selectedCountry,
+      REGION_PRODUCTION_DATA
+    );
+   // console.log("countryData: ", countryData);
+    const newRegionData = countryData.regions.find(
+      (region) => region.id === selectedCountry
+    );
+
+    console.log("regionData: ", newRegionData);
 
     const regions = countryData.regions;
     setRegionsArray(regions);
 
-    const featuredRegion = regions.find((region) => region.id === countryData.featuredRegionId);
+    const selectedCountryRegionsArray = regions.map((region) => {
+      return {
+        id: region.id,
+        itemName: region.itemName,
+      }
+    });
+    const selectedRegionData = regions.find(
+      (region) => region.id === countryData.featuredRegionId
+    );
+    setCountry(countryData);
+    setRegionData(selectedRegionData);
+    setRegionsArray(selectedCountryRegionsArray);
+    console.log("selectedCountryRegionsArray: ", regionsArray);
 
-    if (selectedRegionId !== countryData.featuredRegionId) {
-      setSelectedRegionId(countryData.featuredRegionId);
-      setRegionData(featuredRegion);
-    } else {
-      const selectedRegionData = regions.find((region) => region.id === selectedRegionId);
-      setRegionData(selectedRegionData);
-    }
-
-    setSelectedGrapeType("red");
-
-  }, [selectedCountry, selectedRegionId]);
+  }, [selectedCountry]);
 
   if (!regionData) {
     return (
@@ -81,8 +98,9 @@ function RegionsBarChartPage() {
       <section className={classes.chart}>
         <h1 className={classes.header}>Wine Production By Region</h1>
         <h2 className={classes.subheader}>
-         Production of world top 100 wine grapes in regions of {country.itemName}
-         </h2>
+          Production of world top 100 wine grapes in regions of{" "}
+          {country.itemName}
+        </h2>
 
         <ChartSelectorMulti
           countryData={countriesArray}
