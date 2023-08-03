@@ -32,7 +32,7 @@ const ChartSelectorMulti = ({
     selectData3 = [{id: "red", itemName: "Red"},{id: "white", itemName: "White"}];
     select2Class = "selectCss";
   }
-
+console.log("selectItem2", selectedItem2);
   return (
     <div className={classes.selectrow}>
       {/* {

@@ -49,10 +49,6 @@ function RegionsBarChartPage() {
       selectedCountry,
       REGION_PRODUCTION_DATA
     );
-   // console.log("countryData: ", countryData);
-    const newRegionData = countryData.regions.find(
-      (region) => region.id === selectedCountry
-    );
 
     // console.log("regionData: ", newRegionData);
 
@@ -70,7 +66,7 @@ function RegionsBarChartPage() {
     setCountry(countryData);
     setRegionData(selectedRegionData);
     setRegionsArray([...selectedCountryRegionsArray]);
-    console.log("selectedCountryRegionsArray: ", regionsArray);
+    // console.log("selectedCountryRegionsArray: ", regionsArray);
   }, [selectedCountry]);
 
   useEffect(() => {
@@ -78,28 +74,16 @@ function RegionsBarChartPage() {
       selectedCountry,
       REGION_PRODUCTION_DATA
     );
-    const newRegionData = countryData.regions.find(
-      (region) => region.id === selectedCountry
-    );
-
-    // console.log("regionData: ", newRegionData);
-
-    const regions = countryData.regions;
-
-    const selectedCountryRegionsArray = regions.map((region) => {
-      return {
-        id: region.id,
-        itemName: region.itemName,
+      if (selectedRegionId) {
+        const selectedRegionData = countryData.regions.find(
+          (region) => region.id === selectedRegionId
+        );
+        console.log("selectedRegionId: ", selectedRegionId);
+     
+        setRegionData(selectedRegionData);
       }
-    });
-    const selectedRegionData = regions.find(
-      (region) => region.id === countryData.featuredRegionId
-    );
-    setCountry(countryData);
-    setRegionData(selectedRegionData);
-    setRegionsArray([...selectedCountryRegionsArray]);
-    console.log("selectedCountryRegionsArray: ", regionsArray);
 
+      // console.log("selectedRegionData: ", selectedRegionData);
   }, [selectedRegionId]);
 
   if (!regionData) {
