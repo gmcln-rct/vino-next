@@ -27,31 +27,23 @@ import { filterCountriesData, getDataItemById } from "@/data/utils";
 // General Regions Bar Chart with Three dropdowns
 ////////////////////////////////////////////////////////////////
 
-
-
 function RegionsBarChartPage() {
   const [selectedCountry, setSelectedCountry] = useState("france");
   const [selectedRegionId, setSelectedRegionId] = useState("bordeaux");
   const [selectedGrapeType, setSelectedGrapeType] = useState("red");
 
+  const [country, setCountry] = useState(); 
+  const [regionData, setRegionData] = useState();
+  const [regionsArray, setRegionsArray] = useState([]);
+
   const COUNTRIES = filterCountriesData(REGION_PRODUCTION_DATA);
   const countriesArray = COUNTRIES.map((country) => country.itemName);
-
-  const [country, setCountry] = useState();
-  // const [selectedCountryName, setSelectedCountryName] = useState("France");
-
-  const [regionData, setRegionData] = useState();
-
-  const [regionsArray, setRegionsArray] = useState([]);
-  // const [country, setCountry] = useState();
 
   useEffect(() => {
     const countryData = getDataItemById(
       selectedCountry,
       REGION_PRODUCTION_DATA
     );
-
-    // console.log("regionData: ", newRegionData);
 
     const regions = countryData.regions;
 
@@ -107,10 +99,9 @@ function RegionsBarChartPage() {
         />
       </Head>
       <section className={classes.chart}>
-        <h1 className={classes.header}>Wine Production By Region</h1>
+        <h1 className={classes.header}>Wine Production By Region:  {country.itemName}</h1>
         <h2 className={classes.subheader}>
-          Production of world top 100 wine grapes in regions of{" "}
-          {country.itemName}
+          Production of world top 100 wine grapes in individual regions.
         </h2>
         <ChartSelectorMulti
           countryData={countriesArray}
