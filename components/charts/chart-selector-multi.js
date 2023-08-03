@@ -16,11 +16,16 @@ const ChartSelectorMulti = ({
   let selectLabel1 = "Country: ";
   let selectLabel2 = "Grape Type: ";
   let selectData1 = countryData;
-  let selectData2 = [{id: "red", itemName: "Red"},{id: "white", itemName: "White"}];
+  let selectData2 = [
+    { id: "red", itemName: "Red" },
+    { id: "white", itemName: "White" },
+  ];
   let selectLabel3 = "Grape Type: ";
-  let selectData3 = [{id: "red", itemName: "Red"},{id: "white", itemName: "White"}];
+  let selectData3 = [
+    { id: "red", itemName: "Red" },
+    { id: "white", itemName: "White" },
+  ];
   let select2Class = "selectCss select80";
-
 
   if (isCountryComparison) {
     selectLabel1 = "Country 1: ";
@@ -29,10 +34,12 @@ const ChartSelectorMulti = ({
   } else if (isRegionComparison) {
     selectLabel2 = "Region: ";
     selectData2 = regionsArray;
-    selectData3 = [{id: "red", itemName: "Red"},{id: "white", itemName: "White"}];
+    selectData3 = [
+      { id: "red", itemName: "Red" },
+      { id: "white", itemName: "White" },
+    ];
     select2Class = "selectCss";
   }
-console.log("selectItem2", selectedItem2);
   return (
     <div className={classes.selectrow}>
       {/* {
@@ -85,7 +92,8 @@ console.log("selectItem2", selectedItem2);
               value={dataItem2.id}
               className={classes.selectOption}
             >
-              {dataItem2.itemName.charAt(0).toUpperCase() + dataItem2.itemName.slice(1)}
+              {dataItem2.itemName.charAt(0).toUpperCase() +
+                dataItem2.itemName.slice(1)}
             </option>
           ))}
         </select>
@@ -96,7 +104,6 @@ console.log("selectItem2", selectedItem2);
           <span className={classes.selectLabel}> {selectLabel3} </span>
           <select
             value={selectedItem3}
-            
             className="selectCss select80"
             onChange={(event) => setSelectedItem3(event.target.value)}
           >
@@ -106,7 +113,8 @@ console.log("selectItem2", selectedItem2);
                 value={dataItem3.id}
                 className={classes.selectOption}
               >
-                {dataItem3.itemName.charAt(0).toUpperCase() + dataItem3.itemName.slice(1)}
+                {dataItem3.itemName.charAt(0).toUpperCase() +
+                  dataItem3.itemName.slice(1)}
               </option>
             ))}
           </select>

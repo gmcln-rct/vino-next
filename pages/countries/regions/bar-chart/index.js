@@ -66,7 +66,6 @@ function RegionsBarChartPage() {
     setCountry(countryData);
     setRegionData(selectedRegionData);
     setRegionsArray([...selectedCountryRegionsArray]);
-    // console.log("selectedCountryRegionsArray: ", regionsArray);
   }, [selectedCountry]);
 
   useEffect(() => {
@@ -83,7 +82,6 @@ function RegionsBarChartPage() {
         setRegionData(selectedRegionData);
       }
 
-      // console.log("selectedRegionData: ", selectedRegionData);
   }, [selectedRegionId]);
 
   if (!regionData) {
