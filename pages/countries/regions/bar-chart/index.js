@@ -90,8 +90,7 @@ function RegionsBarChartPage() {
     <>
       <Head>
         <title>
-          Wine Production By Region - Bar Chart - Winography | Learn About Wine
-          Through Data Visualizations
+          Wine Production By Region - Bar Chart - Winography | Learn About Wine Through Data Visualizations
         </title>
         <meta
           name="description"
@@ -99,7 +98,7 @@ function RegionsBarChartPage() {
         />
       </Head>
       <section className={classes.chart}>
-        <h1 className={classes.header}>Wine Production By Region:  {country.itemName}</h1>
+        <h1 className={classes.header}>Wine Production By Region: {country.itemName}</h1>
         <h2 className={classes.subheader}>
           Production of world top 100 wine grapes in individual regions.
         </h2>
