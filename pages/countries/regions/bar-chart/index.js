@@ -38,6 +38,7 @@ function RegionsBarChartPage() {
   const countriesArray = COUNTRIES.map((country) => country.itemName);
 
   const [country, setCountry] = useState();
+  // const [selectedCountryName, setSelectedCountryName] = useState("France");
 
   const [regionData, setRegionData] = useState();
 
@@ -63,6 +64,7 @@ function RegionsBarChartPage() {
     const selectedRegionData = regions.find(
       (region) => region.id === countryData.featuredRegionId
     );
+
     setCountry(countryData);
     setRegionData(selectedRegionData);
     setRegionsArray([...selectedCountryRegionsArray]);
@@ -110,7 +112,6 @@ function RegionsBarChartPage() {
           Production of world top 100 wine grapes in regions of{" "}
           {country.itemName}
         </h2>
-
         <ChartSelectorMulti
           countryData={countriesArray}
           selectedItem1={selectedCountry}
