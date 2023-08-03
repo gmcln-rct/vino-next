@@ -132,6 +132,7 @@ function RegionsBarChartPage() {
           topType="multi"
         />
         <UnitsFooter units={country.units} />
+        <p className="dataSource">Note that the above chart covers the top 100 most produced wine grapes worldwide. Regional varietals are not included in this chart.</p>
         <DataSource />
       </section>
     </>
