@@ -1,7 +1,6 @@
-import {useState } from "react";
+import {GRAPE_TOP_100_ORIGINS} from "@/data/grape-top-100-origins";
 
-import GRAPE_TOP_100_ORIGINS from "@/data/grape-top-100-origins";
-
+import classes from "./top-wine-grapes.module.css";
 
 function RegionsTop100GrapesPage() {
 
@@ -10,13 +9,30 @@ function RegionsTop100GrapesPage() {
             id: grape.id,
             itemName: grape.itemName,
             countryOriginName: grape.countryOriginName,
+            description: grape.description,
         }
     });
 
 
     return (
-        <section>
-            <h1>Regions Top 100 Grapes</h1>
+        <section className={classes.listSection}>
+            <h1 className={classes.listTitle}>Top 100 Grapes</h1>
+            <h2>A list of the 100 most-produced grapes globally, by land area. </h2>
+            <ul>
+                {grapeList.map((grape, index) => (
+                    <li className={classes.listItem} key={grape.id}>
+                        <div className={classes.listNumber}>
+                            <span>#{index +1}</span>
+                        </div>
+                        <div className={classes.listItemDetails}>
+                        <h3>Grape: {grape.itemName}    Country of Origin: {grape.countryOriginName}</h3>
+
+                        <p>{grape.description}</p>
+
+                        </div>
+                    </li>
+                ))}
+            </ul>
         </section>
     );
 }
