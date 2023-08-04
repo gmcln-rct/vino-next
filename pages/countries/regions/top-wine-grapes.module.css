@@ -6,10 +6,10 @@
 
     width: 80%;
     margin: 4vmin 5vmin;
-    padding: 2vmin 0;
+    padding: 2vmin 5vmin;
 
     list-style: none;
-    background-color: var(--olive-9);
+    background-color: rgba(50,50,50,0.6);
     border-radius: 2vmin;
 }
 
@@ -42,7 +42,7 @@
     flex-direction: row;
     align-content: center;
 
-    margin: 1vmin 0;
+    margin: 1.5vmin 0;
     padding: 2vmin;
 
     border-radius: 2vmin;
@@ -74,4 +74,13 @@
 
     font-size: clamp(16px, 1.5vw, 22px);
 
+}
+
+.listItemDetails p, .listItemDetails h3, .listItemDetails h4 {
+    font-weight: 600;
+}
+
+.listRed {
+    font-weight: 600;
+    color: var(--red-8);
 }
