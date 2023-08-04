@@ -17,7 +17,7 @@ function RegionsTop100GrapesPage() {
     return (
         <section className={classes.listSection}>
             <h1 className={classes.listTitle}>Top 100 Grapes</h1>
-            <h2>A list of the 100 most-produced grapes globally, by land area. </h2>
+            <h2 className={classes.listSubTitle}>A list of the 100 most-produced grapes globally, by land area. </h2>
             <ul>
                 {grapeList.map((grape, index) => (
                     <li className={classes.listItem} key={grape.id}>
@@ -25,9 +25,11 @@ function RegionsTop100GrapesPage() {
                             <span>#{index +1}</span>
                         </div>
                         <div className={classes.listItemDetails}>
-                        <h3>Grape: {grape.itemName}    Country of Origin: {grape.countryOriginName}</h3>
+                        <h3>Grape: {grape.itemName}</h3>
+                        <h4>Country of Origin: {grape.countryOriginName}
+                            </h4>    
 
-                        <p>{grape.description}</p>
+                        <p>Description: {grape.description}</p>
 
                         </div>
                     </li>

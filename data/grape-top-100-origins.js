@@ -6,7 +6,7 @@ export const GRAPE_TOP_100_ORIGINS = [
     countryOriginId: "france",
     countryOriginName: "France",
     description:
-      "Cabernet Sauvignon: Full-bodied red grape with black fruit flavors and savory undertones.",
+      "Full-bodied red grape with black fruit flavors and savory undertones.",
   },
   {
     id: "tempranillo",
@@ -15,7 +15,7 @@ export const GRAPE_TOP_100_ORIGINS = [
     countryOriginId: "spain",
     countryOriginName: "Spain",
     description:
-      "Tempranillo: Spanish red grape known for flavors of plum, tobacco, and leather.",
+      "Spanish red grape known for flavors of plum, tobacco, and leather.",
   },
   {
     id: "merlot",
@@ -24,7 +24,7 @@ export const GRAPE_TOP_100_ORIGINS = [
     countryOriginId: "france",
     countryOriginName: "France",
     description:
-      "Merlot: Medium to full-bodied red grape with black cherry and herbal notes.",
+      "Medium to full-bodied red grape with black cherry and herbal notes.",
   },
   {
     id: "syrah",
@@ -33,7 +33,7 @@ export const GRAPE_TOP_100_ORIGINS = [
     countryOriginId: "france",
     countryOriginName: "France",
     description:
-      "Syrah: Dark-skinned red grape producing bold, spicy, and full-bodied wines.",
+      "Dark-skinned red grape producing bold, spicy, and full-bodied wines.",
   },
   {
     id: "garnacha-tinta",
@@ -42,7 +42,7 @@ export const GRAPE_TOP_100_ORIGINS = [
     countryOriginId: "spain",
     countryOriginName: "Spain",
     description:
-      "Garnacha Tinta: Spanish red grape with spicy, berry flavors and soft tannins.",
+      "Spanish red grape with spicy, berry flavors and soft tannins.",
   },
   {
     id: "pinot-noir",
@@ -51,7 +51,7 @@ export const GRAPE_TOP_100_ORIGINS = [
     countryOriginId: "france",
     countryOriginName: "France",
     description:
-      "Pinot Noir: Thin-skinned red grape producing light-bodied wines with red fruit flavors.",
+      "Thin-skinned red grape producing light-bodied wines with red fruit flavors.",
   },
   {
     id: "sangiovese",
@@ -60,7 +60,7 @@ export const GRAPE_TOP_100_ORIGINS = [
     countryOriginId: "italy",
     countryOriginName: "Italy",
     description:
-      "Sangiovese: Italian red grape producing wines with cherry, leather, and earthy flavors.",
+      "Italian red grape producing wines with cherry, leather, and earthy flavors.",
   },
   {
     id: "bobal",
@@ -69,7 +69,7 @@ export const GRAPE_TOP_100_ORIGINS = [
     countryOriginId: "spain",
     countryOriginName: "Spain",
     description:
-      "Bobal: High-acid Spanish red grape with intense cherry and raspberry flavors.",
+      "High-acid Spanish red grape with intense cherry and raspberry flavors.",
   },
   {
     id: "monastrell",
@@ -78,7 +78,7 @@ export const GRAPE_TOP_100_ORIGINS = [
     countryOriginId: "spain",
     countryOriginName: "Spain",
     description:
-      "Monastrell: Spanish red grape producing rich, full-bodied wines with black fruit and spice flavors.",
+      "Spanish red grape producing rich, full-bodied wines with black fruit and spice flavors.",
   },
   {
     id: "malbec",
@@ -87,7 +87,7 @@ export const GRAPE_TOP_100_ORIGINS = [
     countryOriginId: "france",
     countryOriginName: "France",
     description:
-      "Côt: French red grape also known as Malbec, with black fruit, pepper, and violet notes.",
+      "French red grape also known as Malbec, with black fruit, pepper, and violet notes.",
   },
   {
     id: "cabernet-franc",
@@ -96,7 +96,7 @@ export const GRAPE_TOP_100_ORIGINS = [
     countryOriginId: "france",
     countryOriginName: "France",
     description:
-      "Cabernet Franc: Medium-bodied red grape with red fruit, bell pepper, and herbal flavors.",
+      "Medium-bodied red grape with red fruit, bell pepper, and herbal flavors.",
   },
   {
     id: "mazuelo",
@@ -105,7 +105,7 @@ export const GRAPE_TOP_100_ORIGINS = [
     countryOriginId: "spain",
     countryOriginName: "Spain",
     description:
-      "Mazuelo: Spanish red grape, also known as Carignan, offering high acidity and tannin.",
+      "Spanish red grape, also known as Carignan, offering high acidity and tannin.",
   },
   {
     id: "alicante-henri-bouschet",
@@ -114,7 +114,7 @@ export const GRAPE_TOP_100_ORIGINS = [
     countryOriginId: "france",
     countryOriginName: "France",
     description:
-      "Alicante Henri Bouschet: French red grape, known for deep color and fruit-forward flavor.",
+      "French red grape, known for deep color and fruit-forward flavor.",
   },
   {
     id: "montepulciano",
@@ -123,7 +123,7 @@ export const GRAPE_TOP_100_ORIGINS = [
     countryOriginId: "italy",
     countryOriginName: "Italy",
     description:
-      "Montepulciano: Italian red grape producing full-bodied wines with dark fruit and spice flavors.",
+      "Italian red grape producing full-bodied wines with dark fruit and spice flavors.",
   },
   {
     id: "tribidrag",
@@ -132,7 +132,7 @@ export const GRAPE_TOP_100_ORIGINS = [
     countryOriginId: "croatia",
     countryOriginName: "Croatia",
     description:
-      "Tribidrag: Ancient red grape, also known as Zinfandel, known for its bold, fruity characteristics.",
+      "Ancient red grape, also known as Zinfandel, known for its bold, fruity characteristics.",
   },
   {
     id: "gamay-noir",
@@ -141,7 +141,7 @@ export const GRAPE_TOP_100_ORIGINS = [
     countryOriginId: "france",
     countryOriginName: "France",
     description:
-      "Gamay Noir: French red grape known for light-bodied, red fruit-driven wines.",
+      "French red grape known for light-bodied, red fruit-driven wines.",
   },
   {
     id: "douce-noire",
@@ -150,7 +150,7 @@ export const GRAPE_TOP_100_ORIGINS = [
     countryOriginId: "france",
     countryOriginName: "France",
     description:
-      "Douce Noire: A French red grape, also known as Bonarda, offering fruity, fresh wines.",
+      "A French red grape, also known as Bonarda, offering fruity, fresh wines.",
   },
   {
     id: "cinsaut",
@@ -159,7 +159,7 @@ export const GRAPE_TOP_100_ORIGINS = [
     countryOriginId: "france",
     countryOriginName: "France",
     description:
-      "Cinsaut: Red grape known for producing light, fruity wines with strawberry notes.",
+      "Red grape known for producing light, fruity wines with strawberry notes.",
   },
   {
     id: "barbera",
@@ -168,7 +168,7 @@ export const GRAPE_TOP_100_ORIGINS = [
     countryOriginId: "italy",
     countryOriginName: "Italy",
     description:
-      "Barbera: Italian red grape producing wines with high acidity, low tannins, and red fruit flavors.",
+      "Italian red grape producing wines with high acidity, low tannins, and red fruit flavors.",
   },
   {
     id: "criolla-grande",
@@ -176,8 +176,7 @@ export const GRAPE_TOP_100_ORIGINS = [
     grapeType: "red",
     countryOriginId: "argentina",
     countryOriginName: "Argentina",
-    description:
-      "Criolla Grande: Argentine red grape known for producing light, fruity wines.",
+    description: "Argentine red grape known for producing light, fruity wines.",
   },
   {
     id: "pinot-meunier",
@@ -186,7 +185,7 @@ export const GRAPE_TOP_100_ORIGINS = [
     countryOriginId: "france",
     countryOriginName: "France",
     description:
-      "Pinot Meunier: Red grape used in Champagne production, adding fruitiness and floral notes.",
+      "Red grape used in Champagne production, adding fruitiness and floral notes.",
   },
   {
     id: "nero-d'avola",
@@ -195,7 +194,7 @@ export const GRAPE_TOP_100_ORIGINS = [
     countryOriginId: "italy",
     countryOriginName: "Italy",
     description:
-      "Nero d'Avola: Sicilian red grape producing full-bodied wines with dark fruit and spice flavors.",
+      "Sicilian red grape producing full-bodied wines with dark fruit and spice flavors.",
   },
   {
     id: "touriga-franca",
@@ -204,7 +203,7 @@ export const GRAPE_TOP_100_ORIGINS = [
     countryOriginId: "portugal",
     countryOriginName: "Portugal",
     description:
-      "Touriga Franca: Portuguese red grape contributing to the blend of Port wines.",
+      "Portuguese red grape contributing to the blend of Port wines.",
   },
   {
     id: "castelão",
@@ -213,7 +212,7 @@ export const GRAPE_TOP_100_ORIGINS = [
     countryOriginId: "portugal",
     countryOriginName: "Portugal",
     description:
-      "Castelão: Versatile Portuguese red grape known for its rich, fruity flavor.",
+      "Versatile Portuguese red grape known for its rich, fruity flavor.",
   },
   {
     id: "blaufränkisch",
@@ -222,7 +221,7 @@ export const GRAPE_TOP_100_ORIGINS = [
     countryOriginId: "austria",
     countryOriginName: "Austria",
     description:
-      "Blaufränkisch: Austrian red grape offering wines with dark fruit and peppery flavors.",
+      "Austrian red grape offering wines with dark fruit and peppery flavors.",
   },
   {
     id: "touriga-nacional",
@@ -231,7 +230,7 @@ export const GRAPE_TOP_100_ORIGINS = [
     countryOriginId: "portugal",
     countryOriginName: "Portugal",
     description:
-      "Touriga Nacional: Portuguese red grape known for its dark fruit flavors and strong tannins.",
+      "Portuguese red grape known for its dark fruit flavors and strong tannins.",
   },
   {
     id: "negroamaro",
@@ -240,7 +239,7 @@ export const GRAPE_TOP_100_ORIGINS = [
     countryOriginId: "italy",
     countryOriginName: "Italy",
     description:
-      "Negroamaro: Southern Italian red grape known for its dark berry, earthy flavors.",
+      "Southern Italian red grape known for its dark berry, earthy flavors.",
   },
   {
     id: "carmenère",
@@ -249,7 +248,7 @@ export const GRAPE_TOP_100_ORIGINS = [
     countryOriginId: "france",
     countryOriginName: "France",
     description:
-      "Carmenère: Chilean red grape known for its red fruit, spice, and herbaceous flavors.",
+      "Chilean red grape known for its red fruit, spice, and herbaceous flavors.",
   },
   {
     id: "mencía",
@@ -258,7 +257,7 @@ export const GRAPE_TOP_100_ORIGINS = [
     countryOriginId: "spain",
     countryOriginName: "Spain",
     description:
-      "Mencía: Spanish red grape producing wines with floral, red fruit, and mineral flavors.",
+      "Spanish red grape producing wines with floral, red fruit, and mineral flavors.",
   },
   {
     id: "trincadeira",
@@ -267,7 +266,7 @@ export const GRAPE_TOP_100_ORIGINS = [
     countryOriginId: "portugal",
     countryOriginName: "Portugal",
     description:
-      "Trincadeira: Portuguese red grape known for its black fruit flavors and high tannins.",
+      "Portuguese red grape known for its black fruit flavors and high tannins.",
   },
   {
     id: "listán-prieto",
@@ -276,7 +275,7 @@ export const GRAPE_TOP_100_ORIGINS = [
     countryOriginId: "spain",
     countryOriginName: "Spain",
     description:
-      "Listán Prieto: Canary Island red grape known for producing light, fruity wines.",
+      "Canary Island red grape known for producing light, fruity wines.",
   },
   {
     id: "aglianico",
@@ -285,7 +284,7 @@ export const GRAPE_TOP_100_ORIGINS = [
     countryOriginId: "italy",
     countryOriginName: "Italy",
     description:
-      "Aglianico: Southern Italian red grape producing rich, full-bodied wines with tannic structure.",
+      "Southern Italian red grape producing rich, full-bodied wines with tannic structure.",
   },
   {
     id: "concord",
@@ -294,7 +293,7 @@ export const GRAPE_TOP_100_ORIGINS = [
     countryOriginId: "united-states",
     countryOriginName: "United States",
     description:
-      "Concord: American grape variety known for its sweet, grape jelly-like flavor.",
+      "American grape variety known for its sweet, grape jelly-like flavor.",
   },
   {
     id: "zweigelt",
@@ -303,7 +302,7 @@ export const GRAPE_TOP_100_ORIGINS = [
     countryOriginId: "austria",
     countryOriginName: "Austria",
     description:
-      "Zweigelt: Austrian red grape offering wines with cherry, spice, and sometimes smokey notes.",
+      "Austrian red grape offering wines with cherry, spice, and sometimes smokey notes.",
   },
   {
     id: "nebbiolo",
@@ -312,7 +311,7 @@ export const GRAPE_TOP_100_ORIGINS = [
     countryOriginId: "italy",
     countryOriginName: "Italy",
     description:
-      "Nebbiolo: Italian red grape known for its high tannin, acidity, and complex flavor profile.",
+      "Italian red grape known for its high tannin, acidity, and complex flavor profile.",
   },
   {
     id: "dornfelder",
@@ -321,7 +320,7 @@ export const GRAPE_TOP_100_ORIGINS = [
     countryOriginId: "germany",
     countryOriginName: "Germany",
     description:
-      "Dornfelder: German red grape producing wines with dark fruit and gentle spice flavors.",
+      "German red grape producing wines with dark fruit and gentle spice flavors.",
   },
   {
     id: "petit-verdot",
@@ -329,8 +328,7 @@ export const GRAPE_TOP_100_ORIGINS = [
     grapeType: "red",
     countryOriginId: "france",
     countryOriginName: "France",
-    description:
-      "Petit Verdot: French red grape adding depth and color in Bordeaux blends.",
+    description: "French red grape adding depth and color in Bordeaux blends.",
   },
   {
     id: "pinotage",
@@ -339,7 +337,7 @@ export const GRAPE_TOP_100_ORIGINS = [
     countryOriginId: "south-africa",
     countryOriginName: "South Africa",
     description:
-      "Pinotage: South African red grape offering bold, smoky, and dark fruit flavors.",
+      "South African red grape offering bold, smoky, and dark fruit flavors.",
   },
   {
     id: "baga",
@@ -348,7 +346,7 @@ export const GRAPE_TOP_100_ORIGINS = [
     countryOriginId: "portugal",
     countryOriginName: "Portugal",
     description:
-      "Baga: Portuguese red grape known for high acidity and tannin, often aged for a long time.",
+      "Portuguese red grape known for high acidity and tannin, often aged for a long time.",
   },
   {
     id: "corvina-veronese",
@@ -356,8 +354,7 @@ export const GRAPE_TOP_100_ORIGINS = [
     grapeType: "red",
     countryOriginId: "italy",
     countryOriginName: "Italy",
-    description:
-      "Corvina Veronese: Italian red grape used in Amarone and Valpolicella blends.",
+    description: "Italian red grape used in Amarone and Valpolicella blends.",
   },
   {
     id: "lambrusco-salamino",
@@ -366,7 +363,7 @@ export const GRAPE_TOP_100_ORIGINS = [
     countryOriginId: "italy",
     countryOriginName: "Italy",
     description:
-      "Lambrusco Salamino: Italian red grape known for sparkling wines with berry and floral notes.",
+      "Italian red grape known for sparkling wines with berry and floral notes.",
   },
   {
     id: "isabella",
@@ -374,8 +371,7 @@ export const GRAPE_TOP_100_ORIGINS = [
     grapeType: "red",
     countryOriginId: "united-states",
     countryOriginName: "United States",
-    description:
-      "Isabella: American hybrid grape known for its strong, musky flavors.",
+    description: "American hybrid grape known for its strong, musky flavors.",
   },
   {
     id: "bonarda-piemontese",
@@ -383,8 +379,7 @@ export const GRAPE_TOP_100_ORIGINS = [
     grapeType: "red",
     countryOriginId: "italy",
     countryOriginName: "Italy",
-    description:
-      "Bonarda Piemontese: Italian red grape producing light-bodied, fruity wines.",
+    description: "Italian red grape producing light-bodied, fruity wines.",
   },
   {
     id: "lambrusco-maestri",
@@ -393,7 +388,7 @@ export const GRAPE_TOP_100_ORIGINS = [
     countryOriginId: "italy",
     countryOriginName: "Italy",
     description:
-      "Lambrusco Maestri: Italian red grape used to make semi-sparkling wines with plum and cherry notes.",
+      "Italian red grape used to make semi-sparkling wines with plum and cherry notes.",
   },
   {
     id: "blauer-portugieser",
@@ -401,8 +396,7 @@ export const GRAPE_TOP_100_ORIGINS = [
     grapeType: "red",
     countryOriginId: "austria",
     countryOriginName: "Austria",
-    description:
-      "Blauer Portugieser: Austrian red grape producing light-bodied, fruity wines.",
+    description: "Austrian red grape producing light-bodied, fruity wines.",
   },
   {
     id: "tannat",
@@ -411,7 +405,7 @@ export const GRAPE_TOP_100_ORIGINS = [
     countryOriginId: "france",
     countryOriginName: "France",
     description:
-      "Tannat: French red grape known for its bold flavor, high tannin, and dark color.",
+      "French red grape known for its bold flavor, high tannin, and dark color.",
   },
   {
     id: "tinto-velasco",
@@ -420,7 +414,7 @@ export const GRAPE_TOP_100_ORIGINS = [
     countryOriginId: "spain",
     countryOriginName: "Spain",
     description:
-      "Tinto Velasco: Spanish red grape offering wine with cherry, licorice, and leather notes.",
+      "Spanish red grape offering wine with cherry, licorice, and leather notes.",
   },
   {
     id: "ruby-cabernet",
@@ -429,7 +423,7 @@ export const GRAPE_TOP_100_ORIGINS = [
     countryOriginId: "united-states",
     countryOriginName: "United States",
     description:
-      "Ruby Cabernet: Californian red grape known for producing rich wines with dark fruit and green pepper notes.",
+      "Californian red grape known for producing rich wines with dark fruit and green pepper notes.",
   },
   {
     id: "caladoc",
@@ -438,7 +432,7 @@ export const GRAPE_TOP_100_ORIGINS = [
     countryOriginId: "france",
     countryOriginName: "France",
     description:
-      "Caladoc: French red grape producing fruity wines with cherry and blackberry flavors.",
+      "French red grape producing fruity wines with cherry and blackberry flavors.",
   },
   {
     id: "tinta-barroca",
@@ -446,8 +440,7 @@ export const GRAPE_TOP_100_ORIGINS = [
     grapeType: "red",
     countryOriginId: "portugal",
     countryOriginName: "Portugal",
-    description:
-      "Tinta Barroca: Portuguese red grape contributing to Port wine blends.",
+    description: "Portuguese red grape contributing to Port wine blends.",
   },
   {
     id: "rubired",
@@ -456,7 +449,7 @@ export const GRAPE_TOP_100_ORIGINS = [
     countryOriginId: "united-states",
     countryOriginName: "United States",
     description:
-      "Rubired: American hybrid red grape used primarily for blending and color.",
+      "American hybrid red grape used primarily for blending and color.",
   },
   {
     id: "durif",
@@ -465,7 +458,7 @@ export const GRAPE_TOP_100_ORIGINS = [
     countryOriginId: "france",
     countryOriginName: "France",
     description:
-      "Durif: French red grape, known as Petite Sirah in US, producing bold, tannic wines.",
+      "French red grape, known as Petite Sirah in US, producing bold, tannic wines.",
   },
   {
     id: "marufo",
@@ -474,7 +467,7 @@ export const GRAPE_TOP_100_ORIGINS = [
     countryOriginId: "portugal",
     countryOriginName: "Portugal",
     description:
-      "Marufo: Portuguese red grape known for its light-bodied wines with red fruit flavors.",
+      "Portuguese red grape known for its light-bodied wines with red fruit flavors.",
   },
   {
     id: "gaglioppo",
@@ -483,7 +476,7 @@ export const GRAPE_TOP_100_ORIGINS = [
     countryOriginId: "italy",
     countryOriginName: "Italy",
     description:
-      "Gaglioppo: Southern Italian red grape producing wines with earthy, red fruit flavors.",
+      "Southern Italian red grape producing wines with earthy, red fruit flavors.",
   },
   {
     id: "dolcetto",
@@ -492,7 +485,7 @@ export const GRAPE_TOP_100_ORIGINS = [
     countryOriginId: "italy",
     countryOriginName: "Italy",
     description:
-      "Dolcetto: Italian red grape known for producing light, fruity wines with moderate tannins.",
+      "Italian red grape known for producing light, fruity wines with moderate tannins.",
   },
   {
     id: "pinot-gris",
@@ -501,7 +494,7 @@ export const GRAPE_TOP_100_ORIGINS = [
     countryOriginId: "france",
     countryOriginName: "France",
     description:
-      "Pinot Gris: Mutated Pinot Noir grape producing white wines with fresh fruit and spice flavors.",
+      "Mutated Pinot Noir grape producing white wines with fresh fruit and spice flavors.",
   },
   {
     id: "cereza",
@@ -509,8 +502,7 @@ export const GRAPE_TOP_100_ORIGINS = [
     grapeType: "white",
     countryOriginId: "argentina",
     countryOriginName: "Argentina",
-    description:
-      "Cereza: Argentine white grape producing light, neutral wines.",
+    description: "Argentine white grape producing light, neutral wines.",
   },
   {
     id: "airén",
@@ -519,7 +511,7 @@ export const GRAPE_TOP_100_ORIGINS = [
     countryOriginId: "spain",
     countryOriginName: "Spain",
     description:
-      "Airén: Spanish white grape known for light, dry, and mildly flavored wines.",
+      "Spanish white grape known for light, dry, and mildly flavored wines.",
   },
   {
     id: "chardonnay",
@@ -528,7 +520,7 @@ export const GRAPE_TOP_100_ORIGINS = [
     countryOriginId: "france",
     countryOriginName: "France",
     description:
-      "Chardonnay: Full-bodied white grape known for its buttery, oaky, and citrus flavors.",
+      "Full-bodied white grape known for its buttery, oaky, and citrus flavors.",
   },
   {
     id: "trebbiano-toscano",
@@ -537,7 +529,7 @@ export const GRAPE_TOP_100_ORIGINS = [
     countryOriginId: "italy",
     countryOriginName: "Italy",
     description:
-      "Trebbiano Toscano: Italian white grape producing light, crisp wines with floral notes.",
+      "Italian white grape producing light, crisp wines with floral notes.",
   },
   {
     id: "sauvignon-blanc",
@@ -546,7 +538,7 @@ export const GRAPE_TOP_100_ORIGINS = [
     countryOriginId: "france",
     countryOriginName: "France",
     description:
-      "Sauvignon Blanc: Crisp white grape known for its grassy, green fruit, and citrus flavors.",
+      "Crisp white grape known for its grassy, green fruit, and citrus flavors.",
   },
   {
     id: "riesling",
@@ -555,7 +547,7 @@ export const GRAPE_TOP_100_ORIGINS = [
     countryOriginId: "germany",
     countryOriginName: "Germany",
     description:
-      "Riesling: German white grape offering high-acidity wines with apple, stone fruit, and mineral flavors.",
+      "German white grape offering high-acidity wines with apple, stone fruit, and mineral flavors.",
   },
   {
     id: "macabeo",
@@ -564,7 +556,7 @@ export const GRAPE_TOP_100_ORIGINS = [
     countryOriginId: "spain",
     countryOriginName: "Spain",
     description:
-      "Macabeo: Spanish white grape producing light, slightly acidic wines with floral notes.",
+      "Spanish white grape producing light, slightly acidic wines with floral notes.",
   },
   {
     id: "cayetana-blanca",
@@ -573,7 +565,7 @@ export const GRAPE_TOP_100_ORIGINS = [
     countryOriginId: "spain",
     countryOriginName: "Spain",
     description:
-      "Cayetana Blanca: Spanish white grape known for light, neutral, and slightly floral wines.",
+      "Spanish white grape known for light, neutral, and slightly floral wines.",
   },
   {
     id: "chenin-blanc",
@@ -582,7 +574,7 @@ export const GRAPE_TOP_100_ORIGINS = [
     countryOriginId: "france",
     countryOriginName: "France",
     description:
-      "Chenin Blanc: French white grape producing wines from dry to sweet, with high acidity and honeyed flavors.",
+      "French white grape producing wines from dry to sweet, with high acidity and honeyed flavors.",
   },
   {
     id: "colombard",
@@ -591,7 +583,7 @@ export const GRAPE_TOP_100_ORIGINS = [
     countryOriginId: "france",
     countryOriginName: "France",
     description:
-      "Colombard: French white grape producing light, refreshing wines with high acidity.",
+      "French white grape producing light, refreshing wines with high acidity.",
   },
   {
     id: "catarratto-bianco",
@@ -600,7 +592,7 @@ export const GRAPE_TOP_100_ORIGINS = [
     countryOriginId: "italy",
     countryOriginName: "Italy",
     description:
-      "Catarratto Bianco: Sicilian white grape known for producing full-bodied wines with citrus notes.",
+      "Sicilian white grape known for producing full-bodied wines with citrus notes.",
   },
   {
     id: "muscat-blanc-à-petits-grains",
@@ -609,7 +601,7 @@ export const GRAPE_TOP_100_ORIGINS = [
     countryOriginId: "greece",
     countryOriginName: "Greece",
     description:
-      "Muscat Blanc à Petits Grains: French white grape used in dessert wines, offering floral and grapey flavors.",
+      "French white grape used in dessert wines, offering floral and grapey flavors.",
   },
   {
     id: "muscat-of-alexandria",
@@ -618,7 +610,7 @@ export const GRAPE_TOP_100_ORIGINS = [
     countryOriginId: "greece",
     countryOriginName: "Greece",
     description:
-      "Muscat of Alexandria: Ancient white grape known for sweet wines with floral and tropical fruit flavors.",
+      "Ancient white grape known for sweet wines with floral and tropical fruit flavors.",
   },
   {
     id: "palomino-fino",
@@ -627,7 +619,7 @@ export const GRAPE_TOP_100_ORIGINS = [
     countryOriginId: "spain",
     countryOriginName: "Spain",
     description:
-      "Palomino Fino: Spanish white grape used for making Sherry, with nutty, rich flavors.",
+      "Spanish white grape used for making Sherry, with nutty, rich flavors.",
   },
   {
     id: "prosecco",
@@ -636,7 +628,7 @@ export const GRAPE_TOP_100_ORIGINS = [
     countryOriginId: "italy",
     countryOriginName: "Italy",
     description:
-      "Prosecco: Italian white grape used for sparkling wines, with apple, pear, and floral flavors.",
+      "Italian white grape used for sparkling wines, with apple, pear, and floral flavors.",
   },
   {
     id: "trebbiano-romagnolo",
@@ -645,7 +637,7 @@ export const GRAPE_TOP_100_ORIGINS = [
     countryOriginId: "italy",
     countryOriginName: "Italy",
     description:
-      "Trebbiano Romagnolo: Italian white grape producing light, neutral wines with high acidity.",
+      "Italian white grape producing light, neutral wines with high acidity.",
   },
   {
     id: "sémillon",
@@ -654,7 +646,7 @@ export const GRAPE_TOP_100_ORIGINS = [
     countryOriginId: "france",
     countryOriginName: "France",
     description:
-      "Sémillon: French white grape producing full-bodied wines with honeyed, nutty flavors.",
+      "French white grape producing full-bodied wines with honeyed, nutty flavors.",
   },
   {
     id: "verdejo",
@@ -663,7 +655,7 @@ export const GRAPE_TOP_100_ORIGINS = [
     countryOriginId: "spain",
     countryOriginName: "Spain",
     description:
-      "Verdejo: Spanish white grape known for its aromatic, fresh, and slightly bitter wines.",
+      "Spanish white grape known for its aromatic, fresh, and slightly bitter wines.",
   },
   {
     id: "müller-thurgau",
@@ -672,7 +664,7 @@ export const GRAPE_TOP_100_ORIGINS = [
     countryOriginId: "germany",
     countryOriginName: "Germany",
     description:
-      "Müller-Thurgau: German white grape producing off-dry wines with floral and fruit flavors.",
+      "German white grape producing off-dry wines with floral and fruit flavors.",
   },
   {
     id: "grüner-veltliner",
@@ -681,7 +673,7 @@ export const GRAPE_TOP_100_ORIGINS = [
     countryOriginId: "austria",
     countryOriginName: "Austria",
     description:
-      "Grüner Veltliner: Austrian white grape known for its peppery, green fruit flavors.",
+      "Austrian white grape known for its peppery, green fruit flavors.",
   },
   {
     id: "viognier",
@@ -690,7 +682,7 @@ export const GRAPE_TOP_100_ORIGINS = [
     countryOriginId: "france",
     countryOriginName: "France",
     description:
-      "Viognier: French white grape producing full-bodied wines with floral and stone fruit flavors.",
+      "French white grape producing full-bodied wines with floral and stone fruit flavors.",
   },
   {
     id: "pedro-giménez",
@@ -699,7 +691,7 @@ export const GRAPE_TOP_100_ORIGINS = [
     countryOriginId: "argentina",
     countryOriginName: "Argentina",
     description:
-      "Pedro Giménez: Argentine white grape producing sweet wines with honey and dried fruit flavors.",
+      "Argentine white grape producing sweet wines with honey and dried fruit flavors.",
   },
   {
     id: "fernão-pires",
@@ -708,7 +700,7 @@ export const GRAPE_TOP_100_ORIGINS = [
     countryOriginId: "portugal",
     countryOriginName: "Portugal",
     description:
-      "Fernão Pires: Portuguese white grape offering wines with floral, citrus, and sometimes tropical notes.",
+      "Portuguese white grape offering wines with floral, citrus, and sometimes tropical notes.",
   },
   {
     id: "vermentino",
@@ -717,7 +709,7 @@ export const GRAPE_TOP_100_ORIGINS = [
     countryOriginId: "italy",
     countryOriginName: "Italy",
     description:
-      "Vermentino: Italian white grape producing light-bodied wines with citrus and green apple flavors.",
+      "Italian white grape producing light-bodied wines with citrus and green apple flavors.",
   },
   {
     id: "pinot-blanc",
@@ -726,7 +718,7 @@ export const GRAPE_TOP_100_ORIGINS = [
     countryOriginId: "france",
     countryOriginName: "France",
     description:
-      "Pinot Blanc: French white grape producing light, crisp wines with apple and floral notes.",
+      "French white grape producing light, crisp wines with apple and floral notes.",
   },
   {
     id: "malvasia-bianca-di-candia",
@@ -735,7 +727,7 @@ export const GRAPE_TOP_100_ORIGINS = [
     countryOriginId: "italy",
     countryOriginName: "Italy",
     description:
-      "Malvasia Bianca di Candia: Italian white grape known for sweet wines with apricot and honey flavors.",
+      "Italian white grape known for sweet wines with apricot and honey flavors.",
   },
   {
     id: "graševina",
@@ -744,7 +736,7 @@ export const GRAPE_TOP_100_ORIGINS = [
     countryOriginId: "croatia",
     countryOriginName: "Croatia",
     description:
-      "Graševina: Croatian white grape producing wines with apple, pear, and floral notes.",
+      "Croatian white grape producing wines with apple, pear, and floral notes.",
   },
   {
     id: "melon",
@@ -753,7 +745,7 @@ export const GRAPE_TOP_100_ORIGINS = [
     countryOriginId: "france",
     countryOriginName: "France",
     description:
-      "Melon: French white grape, known as Melon de Bourgogne, used for Muscadet wines.",
+      "French white grape, known as Melon de Bourgogne, used for Muscadet wines.",
   },
   {
     id: "torrontés-riojano",
@@ -762,7 +754,7 @@ export const GRAPE_TOP_100_ORIGINS = [
     countryOriginId: "argentina",
     countryOriginName: "Argentina",
     description:
-      "Torrontés Riojano: Argentine white grape producing aromatic wines with floral and peach flavors.",
+      "Argentine white grape producing aromatic wines with floral and peach flavors.",
   },
   {
     id: "pedro-ximénez",
@@ -771,7 +763,7 @@ export const GRAPE_TOP_100_ORIGINS = [
     countryOriginId: "spain",
     countryOriginName: "Spain",
     description:
-      "Pedro Ximénez: Spanish white grape used for sweet Sherry with intense fig and molasses flavors.",
+      "Spanish white grape used for sweet Sherry with intense fig and molasses flavors.",
   },
   {
     id: "gewürztraminer",
@@ -780,7 +772,7 @@ export const GRAPE_TOP_100_ORIGINS = [
     countryOriginId: "germany",
     countryOriginName: "Germany",
     description:
-      "Gewürztraminer: Aromatic white grape offering wines with lychee, rose, and spice flavors.",
+      "Aromatic white grape offering wines with lychee, rose, and spice flavors.",
   },
   {
     id: "garganega",
@@ -789,7 +781,7 @@ export const GRAPE_TOP_100_ORIGINS = [
     countryOriginId: "italy",
     countryOriginName: "Italy",
     description:
-      "Garganega: Italian white grape used in Soave wines, with almond, citrus, and herbal flavors.",
+      "Italian white grape used in Soave wines, with almond, citrus, and herbal flavors.",
   },
   {
     id: "xarello",
@@ -798,7 +790,7 @@ export const GRAPE_TOP_100_ORIGINS = [
     countryOriginId: "spain",
     countryOriginName: "Spain",
     description:
-      "Xarello: Spanish white grape used in Cava production, known for its rich, apple and pear flavors.",
+      "Spanish white grape used in Cava production, known for its rich, apple and pear flavors.",
   },
   {
     id: "alvarinho",
@@ -807,7 +799,7 @@ export const GRAPE_TOP_100_ORIGINS = [
     countryOriginId: "portugal",
     countryOriginName: "Portugal",
     description:
-      "Alvarinho: Portuguese white grape producing high-acidity wines with citrus and peach flavors.",
+      "Portuguese white grape producing high-acidity wines with citrus and peach flavors.",
   },
   {
     id: "muscat-blanc-à-petits-grains-(g)",
@@ -815,8 +807,7 @@ export const GRAPE_TOP_100_ORIGINS = [
     grapeType: "white",
     countryOriginId: "greece",
     countryOriginName: "Greece",
-    description:
-      "Muscat Blanc à Petits Grains (G): A golden variant of Muscat producing sweet, floral wines.",
+    description: "A golden variant of Muscat producing sweet, floral wines.",
   },
   {
     id: "garnacha-blanca",
@@ -825,7 +816,7 @@ export const GRAPE_TOP_100_ORIGINS = [
     countryOriginId: "spain",
     countryOriginName: "Spain",
     description:
-      "Garnacha Blanca: Spanish white grape producing full-bodied wines with green fruit and herb flavors.",
+      "Spanish white grape producing full-bodied wines with green fruit and herb flavors.",
   },
   {
     id: "grillo",
@@ -834,7 +825,7 @@ export const GRAPE_TOP_100_ORIGINS = [
     countryOriginId: "italy",
     countryOriginName: "Italy",
     description:
-      "Grillo: Sicilian white grape known for its citrus, peach, and sometimes spicy flavors.",
+      "Sicilian white grape known for its citrus, peach, and sometimes spicy flavors.",
   },
   {
     id: "parellada",
@@ -843,7 +834,7 @@ export const GRAPE_TOP_100_ORIGINS = [
     countryOriginId: "spain",
     countryOriginName: "Spain",
     description:
-      "Parellada: Spanish white grape used in Cava production, known for its light, floral, and slightly citrusy wines.",
+      "Spanish white grape used in Cava production, known for its light, floral, and slightly citrusy wines.",
   },
   {
     id: "síria",
@@ -852,7 +843,7 @@ export const GRAPE_TOP_100_ORIGINS = [
     countryOriginId: "portugal",
     countryOriginName: "Portugal",
     description:
-      "Síria: Portuguese white grape producing light, fresh wines with floral and citrus flavors.",
+      "Portuguese white grape producing light, fresh wines with floral and citrus flavors.",
   },
   {
     id: "silvaner",
@@ -861,7 +852,7 @@ export const GRAPE_TOP_100_ORIGINS = [
     countryOriginId: "austria",
     countryOriginName: "Austria",
     description:
-      "Silvaner: German white grape producing dry, full-bodied wines with apple and herbal notes.",
+      "German white grape producing dry, full-bodied wines with apple and herbal notes.",
   },
   {
     id: "arinto-de-bucelas",
@@ -870,7 +861,7 @@ export const GRAPE_TOP_100_ORIGINS = [
     countryOriginId: "portugal",
     countryOriginName: "Portugal",
     description:
-      "Arinto de Bucelas: Portuguese white grape known for high acidity wines with lemon and apple flavors.",
+      "Portuguese white grape known for high acidity wines with lemon and apple flavors.",
   },
   {
     id: "chelva",
@@ -879,7 +870,7 @@ export const GRAPE_TOP_100_ORIGINS = [
     countryOriginId: "spain",
     countryOriginName: "Spain",
     description:
-      "Chelva: Spanish white grape offering wines with light, fresh, and slightly herbal flavors.",
+      "Spanish white grape offering wines with light, fresh, and slightly herbal flavors.",
   },
   {
     id: "bianca",
@@ -888,7 +879,7 @@ export const GRAPE_TOP_100_ORIGINS = [
     countryOriginId: "hungary",
     countryOriginName: "Hungary",
     description:
-      "Bianca: Hungarian white grape producing wines with citrus, apple, and floral notes.",
+      "Hungarian white grape producing wines with citrus, apple, and floral notes.",
   },
   {
     id: "inzolia",
@@ -897,7 +888,7 @@ export const GRAPE_TOP_100_ORIGINS = [
     countryOriginId: "italy",
     countryOriginName: "Italy",
     description:
-      "Inzolia: Sicilian white grape known for its nutty, citrus, and floral flavor.",
+      "Sicilian white grape known for its nutty, citrus, and floral flavor.",
   },
   {
     id: "loureiro",
@@ -906,15 +897,6 @@ export const GRAPE_TOP_100_ORIGINS = [
     countryOriginId: "portugal",
     countryOriginName: "Portugal",
     description:
-      "Loureiro: Portuguese white grape known for aromatic, high-acidity wines with floral and citrus flavors.",
-  },
-  {
-    id: "verdicchio-bianco",
-    itemName: "Verdicchio Bianco",
-    grapeType: "white",
-    countryOriginId: "italy",
-    countryOriginName: "Italy",
-    description:
-      "Verdicchio Bianco: Italian white grape producing wines with citrus, almond, and mineral flavors.",
+      "Portuguese white grape known for aromatic, high-acidity wines with floral and citrus flavors.",
   },
 ];

@@ -3,11 +3,14 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
+
     width: 80%;
-    margin: 2vmin 3vmin;
-    padding: 0;
+    margin: 4vmin 5vmin;
+    padding: 2vmin 0;
+
     list-style: none;
-    background-color: var(--new-grey-8);
+    background-color: var(--olive-9);
+    border-radius: 2vmin;
 }
 
 .listTitle {
@@ -20,6 +23,18 @@
     font-size: clamp(24px, 4vw, 32px);
     font-weight: 600;
     color: white;
+}
+
+.listSubTitle {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0 0 1rem 0;
+  
+    font-size: clamp(16px, 2vw, 24px);
+    font-weight: 400;
+    color: var(--new-grey-1);
 }
 
 .listItem {
@@ -35,9 +50,19 @@
 }
 
 .listNumber {
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
     margin: 0 2vmin 0 0;
     padding: 0 2vmin 0 0;
+
+    font-family: var(--font-lato);
     font-size: clamp(32px, 4vw, 48px);
+    font-weight: 400;
+
+    color: var(--new-grey-12);
     border-right: 1px solid var(--new-grey-6);
 }
 
