@@ -9,7 +9,7 @@ function RegionsTop100GrapesPage() {
       itemName: grape.itemName,
       countryOriginName: grape.countryOriginName,
       description: grape.description,
-      grapeType: grape.grapeType === "white" ? grape.grapeType[0].toUpperCase() + grape.grapeType.slice(1) :grape.grapeType[0].toUpperCase() + grape.grapeType.slice(1) + "    ",
+      grapeType: grape.grapeType === "white" ? grape.grapeType[0].toUpperCase() + grape.grapeType.slice(1) : grape.grapeType[0].toUpperCase() + grape.grapeType.slice(1) + "    ",
     };
   });
 
@@ -25,7 +25,7 @@ function RegionsTop100GrapesPage() {
             <div className={classes.listNumber}>
               <span>#{index + 1}</span>
             </div>
-            <div className={classes.listItemGrapeContainer}> <span className={grape.grapeType === 'red' ? `${classes.listItemGrape} ${classes.red}` : `${classes.listItemGrape} ${classes.white}`}>{grape.grapeType}</span> </div>
+            <div className={classes.listItemGrapeContainer}> <span className={grape.grapeType === 'Red    ' ? `${classes.listItemGrape} ${classes.red}` : `${classes.listItemGrape} ${classes.white}`}>{grape.grapeType}</span> </div>
             <div className={classes.listItemDetails}>
               <h3>Grape: <span className={classes.listRed}>{grape.itemName}</span></h3>
               <h4>Country of Origin: <span className={classes.listRed}>{grape.countryOriginName}</span></h4>
