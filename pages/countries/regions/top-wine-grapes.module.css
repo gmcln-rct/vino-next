@@ -98,19 +98,19 @@
   height: 75px;
   /* margin: 2vmin; */
   padding: 1.5vmin 0;
-  color: white;
-  background-color: var(--red-8);
+  /* color: white;
+  background-color: var(--red-8); */
   border-radius: 100%;
 }
 
 
-.listItemGrape .red {
+.Red {
     color: white;
     background-color: var(--red-8);
 }
 
-.listItemGrape .white {
-    color: var(--new-grey-12);
+.White {
+    color: purple;
     background-color: var(--new-grey-2);
 }
 
