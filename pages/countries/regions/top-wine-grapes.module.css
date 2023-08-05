@@ -1,100 +1,109 @@
 .listSection {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 
-    width: 80%;
-    margin: 4vmin 5vmin;
-    padding: 2vmin 5vmin;
+  width: 80%;
+  margin: 4vmin 5vmin;
+  padding: 2vmin 5vmin;
 
-    list-style: none;
-    background-color: rgba(100,100,100,0.6);
-    border-radius: 2vmin;
+  list-style: none;
+  background-color: rgba(100, 100, 100, 0.6);
+  border-radius: 2vmin;
 }
 
 .listHeader {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    margin: 1rem 0 0 0;
-  
-    font-size: clamp(24px, 4vw, 36px);
-    font-weight: 700;
-    color: var(--pink-3);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 1rem 0 0 0;
+
+  font-size: clamp(24px, 4vw, 36px);
+  font-weight: 700;
+  color: var(--pink-3);
 }
 
 .listSubheader {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    margin: 0 0 1rem 0;
-  
-    font-size: clamp(16px, 2vw, 24px);
-    font-weight: 400;
-    color: var(--new-grey-1);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 0 0 1rem 0;
+
+  font-size: clamp(16px, 2vw, 24px);
+  font-weight: 400;
+  color: var(--new-grey-1);
 }
 
 .listItem {
-    display: flex;
-    flex-direction: row;
-    align-content: center;
+  display: flex;
+  flex-direction: row;
+  align-content: center;
 
-    margin: 1.5vmin 0;
-    padding: 2vmin;
+  margin: 1.5vmin 0;
+  padding: 2vmin;
 
-    border-radius: 2vmin;
-    background-color: #fff;
+  border-radius: 2vmin;
+  background-color: #fff;
 }
 
 .listNumber {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+  margin: 0 2vmin 0 0;
+  padding: 0 2vmin 0 0;
 
-    margin: 0 2vmin 0 0;
-    padding: 0 2vmin 0 0;
+  font-family: var(--font-lato);
+  font-size: clamp(32px, 4vw, 48px);
+  font-weight: 400;
 
-    font-family: var(--font-lato);
-    font-size: clamp(32px, 4vw, 48px);
-    font-weight: 400;
-
-    color: var(--new-grey-12);
-    border-right: 1px solid var(--new-grey-6);
+  color: var(--new-grey-12);
+  border-right: 1px solid var(--new-grey-6);
 }
 
 .listItemDetails {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: flex-start;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
 
-    font-size: clamp(16px, 1.5vw, 22px);
-
+  font-size: clamp(16px, 1.5vw, 22px);
 }
 
-.listItemDetails p, .listItemDetails h3, .listItemDetails h4 {
-    font-weight: 600;
+.listItemDetails p,
+.listItemDetails h3,
+.listItemDetails h4 {
+  font-weight: 600;
 }
+.listItemGrapeContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 
+  margin: 0 2vmin 0 0;
+  padding: 0 2vmin 0 0;
+  border-right: 1px solid var(--new-grey-6);
+}
 .listItemGrape {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
 
-    width: 75px;
-    /* margin: 2vmin;
-    padding: 1vmin; */
-    background-color: var(--red-8);
-    border-radius: 100%;
+  width: 75px;
+  height: 75px;
+  /* margin: 2vmin; */
+  padding: 1.5vmin 0;
+  color: white;
+  background-color: var(--red-8);
+  border-radius: 100%;
 }
 
 .listRed {
-    font-weight: 600;
-    color: var(--red-8);
+  font-weight: 600;
+  color: var(--red-8);
 }
-

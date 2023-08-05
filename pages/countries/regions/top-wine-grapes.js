@@ -9,7 +9,7 @@ function RegionsTop100GrapesPage() {
       itemName: grape.itemName,
       countryOriginName: grape.countryOriginName,
       description: grape.description,
-      grapeType: grape.grapeType === "white" ? grape.grapeType[0].toUpperCase() + grape.grapeType.slice(1) :grape.grapeType[0].toUpperCase() + grape.grapeType.slice(1) + "  ",
+      grapeType: grape.grapeType === "white" ? grape.grapeType[0].toUpperCase() + grape.grapeType.slice(1) :grape.grapeType[0].toUpperCase() + grape.grapeType.slice(1) + "    ",
     };
   });
 
@@ -25,13 +25,14 @@ function RegionsTop100GrapesPage() {
             <div className={classes.listNumber}>
               <span>#{index + 1}</span>
             </div>
+            <div className={classes.listItemGrapeContainer}> <span className={classes.listItemGrape}>{grape.grapeType}</span> </div>
             <div className={classes.listItemDetails}>
               <h3>Grape: <span className={classes.listRed}>{grape.itemName}</span></h3>
               <h4>Country of Origin: <span className={classes.listRed}>{grape.countryOriginName}</span></h4>
 
               <p>Description: <span className={classes.listRed}>{grape.description}</span></p>
             </div>
-            <div className={classes.listItemGrape}>{grape.grapeType} </div>
+
           </li>
         ))}
       </ul>
