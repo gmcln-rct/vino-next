@@ -9,7 +9,7 @@
     padding: 2vmin 5vmin;
 
     list-style: none;
-    background-color: rgba(50,50,50,0.6);
+    background-color: rgba(100,100,100,0.6);
     border-radius: 2vmin;
 }
 
@@ -20,7 +20,7 @@
     align-items: center;
     margin: 1rem 0 0 0;
   
-    font-size: clamp(24px, 4vw, 32px);
+    font-size: clamp(24px, 4vw, 36px);
     font-weight: 600;
     color: white;
 }

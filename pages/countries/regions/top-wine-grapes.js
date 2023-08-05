@@ -14,9 +14,9 @@ function RegionsTop100GrapesPage() {
 
   return (
     <section className={classes.listSection}>
-      <h1 className={classes.listTitle}>Top 100 Grapes</h1>
+      <h1 className={classes.listTitle}>Top 100 Grapes List</h1>
       <h2 className={classes.listSubTitle}>
-        A list of the 100 most-produced grapes worldwide, by land area.{" "}
+        The most-produced wine grapes worldwide, by land area.
       </h2>
       <ul>
         {grapeList.map((grape, index) => (
