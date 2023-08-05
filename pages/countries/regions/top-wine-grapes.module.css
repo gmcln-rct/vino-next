@@ -104,12 +104,12 @@
 }
 
 
-.Red {
-    color: white;
+.red {
+    color: blue;
     background-color: var(--red-8);
 }
 
-.White {
+.white {
     color: purple;
     background-color: var(--new-grey-2);
 }
