@@ -84,3 +84,9 @@
     font-weight: 600;
     color: var(--red-8);
 }
+
+.listNote, .listNote a {
+    font-size: clamp(14px, 1.5vw, 18px);
+    font-weight: 400;
+    color: var(--new-grey-15);
+}
