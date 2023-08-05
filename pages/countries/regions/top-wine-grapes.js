@@ -25,7 +25,7 @@ function RegionsTop100GrapesPage() {
             <div className={classes.listNumber}>
               <span>#{index + 1}</span>
             </div>
-            <div className={classes.listItemGrapeContainer}> <span className={classes.listItemGrape}>{grape.grapeType}</span> </div>
+            <div className={classes.listItemGrapeContainer}> <span className={`${classes.listItemGrape} ${grape.grapeType}`}>{grape.grapeType}</span> </div>
             <div className={classes.listItemDetails}>
               <h3>Grape: <span className={classes.listRed}>{grape.itemName}</span></h3>
               <h4>Country of Origin: <span className={classes.listRed}>{grape.countryOriginName}</span></h4>

@@ -103,6 +103,17 @@
   border-radius: 100%;
 }
 
+
+.listItemGrape .red {
+    color: white;
+    background-color: var(--red-8);
+}
+
+.listItemGrape .white {
+    color: var(--new-grey-12);
+    background-color: var(--new-grey-2);
+}
+
 .listRed {
   font-weight: 600;
   color: var(--red-8);
