@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import Head from "next/head";
+import Link from "next/link";
 
 
 import classes from "@/components/charts/bar-chart.module.css";
@@ -123,7 +124,8 @@ function RegionsBarChartPage() {
           topType="multi"
         />
         <UnitsFooter units={country.units} />
-        <p className={classes.note}>Note that the above chart covers the <a href="../top-wine-grapes.js">top 100 most produced wine grapes</a> worldwide. Regional varietals are not included in this chart.</p>
+        <p className={classes.note}>Note that the above chart covers the <Link href="./top-wine-grapes">top 100 most produced wine grapes </Link>
+          worldwide. Regional varietals are not included in this chart.</p>
         <DataSource />
       </section>
     </>

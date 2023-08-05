@@ -13,7 +13,7 @@
     border-radius: 2vmin;
 }
 
-.listTitle {
+.listHeader {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -21,11 +21,11 @@
     margin: 1rem 0 0 0;
   
     font-size: clamp(24px, 4vw, 36px);
-    font-weight: 600;
-    color: white;
+    font-weight: 700;
+    color: var(--pink-3);
 }
 
-.listSubTitle {
+.listSubheader {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -80,13 +80,21 @@
     font-weight: 600;
 }
 
+.listItemGrape {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+
+    width: 75px;
+    /* margin: 2vmin;
+    padding: 1vmin; */
+    background-color: var(--red-8);
+    border-radius: 100%;
+}
+
 .listRed {
     font-weight: 600;
     color: var(--red-8);
 }
 
-.listNote, .listNote a {
-    font-size: clamp(14px, 1.5vw, 18px);
-    font-weight: 400;
-    color: var(--new-grey-15);
-}
