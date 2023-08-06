@@ -55,12 +55,10 @@ function RegionsTop100GrapesPage() {
             <div className={classes.listItemDetails}>
               {grape.hasLink ? (
                 <h3 className={classes.listItemName}>
-                <Link href={`/grapes/${grape.id}`}>
-                  {" "}
-                   {grape.itemName}
-                </Link></h3>
+                  <Link href={`/grapes/${grape.id}`}> {grape.itemName}</Link>
+                </h3>
               ) : (
-                <h3> {grape.itemName}</h3>
+                <h3 className={classes.listItemName}> {grape.itemName}</h3>
               )}
               {/* <h3>Grape: <span className={classes.listRed}>{grape.itemName}</span></h3> */}
               <h4>

@@ -5,7 +5,7 @@ export const GRAPE_TOP_100_ORIGINS = [
     { id: "airen", itemName: "Airén", grapeType: "white", countryOriginId: "spain", countryOriginName: "Spain", description: "Spanish white grape known for light, dry, and mildly flavored wines."},
     { id: "chardonnay", itemName: "Chardonnay", grapeType: "white", countryOriginId: "france", countryOriginName: "France", description: "Full-bodied white grape known for its buttery, oaky, and citrus flavors."},
     { id: "syrah", itemName: "Syrah", grapeType: "red", countryOriginId: "france", countryOriginName: "France", description: "Dark-skinned red grape producing bold, spicy, and full-bodied wines."},
-    { id: "garnacha-tinta", itemName: "Garnacha Tinta", grapeType: "red", countryOriginId: "spain", countryOriginName: "Spain", description: "Spanish red grape with spicy, berry flavors and soft tannins."},
+    { id: "grenache", itemName: "Grenache", grapeType: "red", countryOriginId: "spain", countryOriginName: "Spain", description: "Spanish red grape with spicy, berry flavors and soft tannins."},
     { id: "trebbiano-toscano", itemName: "Trebbiano Toscano", grapeType: "white", countryOriginId: "italy", countryOriginName: "Italy", description: "Italian white grape producing light, crisp wines with floral notes."},
     { id: "sauvignon-blanc", itemName: "Sauvignon Blanc", grapeType: "white", countryOriginId: "france", countryOriginName: "France", description: "Crisp white grape known for its grassy, green fruit, and citrus flavors."},
     { id: "pinot-noir", itemName: "Pinot Noir", grapeType: "red", countryOriginId: "france", countryOriginName: "France", description: "Thin-skinned red grape producing light-bodied wines with red fruit flavors."},
