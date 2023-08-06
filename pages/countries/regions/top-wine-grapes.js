@@ -1,15 +1,30 @@
-import { GRAPE_TOP_100_ORIGINS } from "@/data/grape-top-100-origins";
+import Link from "next/link";
 
+import { GRAPE_TOP_100_ORIGINS } from "@/data/grape-top-100-origins";
+import { GRAPES_DATA } from "../../../data/grape-data";
 import classes from "./top-wine-grapes.module.css";
 
 function RegionsTop100GrapesPage() {
+  console.log(
+    "grape data from top-wine-grapes.js: ",
+    GRAPES_DATA.filter((grape) => grape.id === "cabernet-franc")
+  );
+
+  const grapeData = GRAPES_DATA;
+
   const grapeList = GRAPE_TOP_100_ORIGINS.map((grape) => {
     return {
       id: grape.id,
       itemName: grape.itemName,
       countryOriginName: grape.countryOriginName,
       description: grape.description,
-      grapeType: grape.grapeType === "white" ? grape.grapeType[0].toUpperCase() + grape.grapeType.slice(1) : grape.grapeType[0].toUpperCase() + grape.grapeType.slice(1) + "    ",
+      hasLink: grapeData.find((grapeItem) => grapeItem.id === grape.id),
+      grapeType:
+        grape.grapeType === "white"
+          ? grape.grapeType[0].toUpperCase() + grape.grapeType.slice(1)
+          : grape.grapeType[0].toUpperCase() +
+            grape.grapeType.slice(1) +
+            "    ",
     };
   });
 
@@ -25,14 +40,41 @@ function RegionsTop100GrapesPage() {
             <div className={classes.listNumber}>
               <span>#{index + 1}</span>
             </div>
-            <div className={classes.listItemGrapeContainer}> <span className={grape.grapeType === 'Red    ' ? `${classes.listItemGrape} ${classes.red}` : `${classes.listItemGrape} ${classes.white}`}>{grape.grapeType}</span> </div>
-            <div className={classes.listItemDetails}>
-              <h3>Grape: <span className={classes.listRed}>{grape.itemName}</span></h3>
-              <h4>Country of Origin: <span className={classes.listRed}>{grape.countryOriginName}</span></h4>
-
-              <p>Description: <span className={classes.listRed}>{grape.description}</span></p>
+            <div className={classes.listItemGrapeContainer}>
+              {" "}
+              <span
+                className={
+                  grape.grapeType === "Red    "
+                    ? `${classes.listItemGrape} ${classes.red}`
+                    : `${classes.listItemGrape} ${classes.white}`
+                }
+              >
+                {grape.grapeType}
+              </span>{" "}
             </div>
+            <div className={classes.listItemDetails}>
+              {grape.hasLink ? (
+                <h3 className={classes.listItemName}>
+                <Link href={`/grapes/${grape.id}`}>
+                  {" "}
+                   {grape.itemName}
+                </Link></h3>
+              ) : (
+                <h3> {grape.itemName}</h3>
+              )}
+              {/* <h3>Grape: <span className={classes.listRed}>{grape.itemName}</span></h3> */}
+              <h4>
+                Country of Origin:{" "}
+                <span className={classes.listRed}>
+                  {grape.countryOriginName}
+                </span>
+              </h4>
 
+              <p>
+                Description:{" "}
+                <span className={classes.listRed}>{grape.description}</span>
+              </p>
+            </div>
           </li>
         ))}
       </ul>

@@ -2,7 +2,7 @@ export const GRAPE_TOP_100_ORIGINS = [
     { id: "cabernet-sauvignon", itemName: "Cabernet Sauvignon", grapeType: "red", countryOriginId: "france", countryOriginName: "France", description: "Full-bodied red grape with black fruit flavors and savory undertones."},
     { id: "tempranillo", itemName: "Tempranillo", grapeType: "red", countryOriginId: "spain", countryOriginName: "Spain", description: "Spanish red grape known for flavors of plum, tobacco, and leather."},
     { id: "merlot", itemName: "Merlot", grapeType: "red", countryOriginId: "france", countryOriginName: "France", description: "Medium to full-bodied red grape with black cherry and herbal notes."},
-    { id: "airén", itemName: "Airén", grapeType: "white", countryOriginId: "spain", countryOriginName: "Spain", description: "Spanish white grape known for light, dry, and mildly flavored wines."},
+    { id: "airen", itemName: "Airén", grapeType: "white", countryOriginId: "spain", countryOriginName: "Spain", description: "Spanish white grape known for light, dry, and mildly flavored wines."},
     { id: "chardonnay", itemName: "Chardonnay", grapeType: "white", countryOriginId: "france", countryOriginName: "France", description: "Full-bodied white grape known for its buttery, oaky, and citrus flavors."},
     { id: "syrah", itemName: "Syrah", grapeType: "red", countryOriginId: "france", countryOriginName: "France", description: "Dark-skinned red grape producing bold, spicy, and full-bodied wines."},
     { id: "garnacha-tinta", itemName: "Garnacha Tinta", grapeType: "red", countryOriginId: "spain", countryOriginName: "Spain", description: "Spanish red grape with spicy, berry flavors and soft tannins."},
