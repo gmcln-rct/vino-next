@@ -29,6 +29,16 @@ function RegionsTop100GrapesPage() {
   });
 
   return (
+    <>
+    <Head>
+    <title>
+      Top 100 Wine Grapes - Production - Winography | Learn About Wine Through Data Visualizations
+    </title>
+    <meta
+      name="description"
+      content="Customizable bar chart of production in wine-producing regions, top national grape varietals, by land area."
+    />
+  </Head>
     <section className={classes.listSection}>
       <h1 className={classes.listHeader}>Top 100 Grapes List</h1>
       <h2 className={classes.listSubheader}>
@@ -77,6 +87,7 @@ function RegionsTop100GrapesPage() {
         ))}
       </ul>
     </section>
+    </>
   );
 }
 
