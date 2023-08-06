@@ -9,7 +9,7 @@
   padding: 2vmin 5vmin;
 
   list-style: none;
-  background-color: rgba(100, 100, 100, 0.6);
+  background-color: rgba(100, 100, 100, 0.9);
   border-radius: 2vmin;
 }
 
@@ -22,7 +22,7 @@
 
   font-size: clamp(24px, 4vw, 36px);
   font-weight: 700;
-  color: var(--pink-3);
+  color: var(--red-4);
 }
 
 .listSubheader {
