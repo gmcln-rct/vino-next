@@ -58,28 +58,29 @@
 
 .redGrapeColor {
   color: white;
-  background-color: var(--pink-8);
+  background-color: var(--red-8);
   border: 1px solid #fff;
 }
 
 .redGrapeColor:hover {
-  color: var(--pink-8);
+  color: var(--red-8);
   background-color: var(--white);
   border: 1px solid #fff;
   transition: 0.3s;
 }
 
 .whiteGrapeColor {
-  color: var(--grey-9);
-  /* background-color: var(--red-3); */
-  background-color: var(--olive-1);
+  color: #fff;
+  background-color: var(--olive-6);
+
   border: 1px solid white;
 }
 
 .whiteGrapeColor:hover {
-  color: var(--olive-2);
-  background-color: var(--grey-9);
-  border: 1px solid var(--olive-1);
+  color: var(--olive-6);
+  background-color: #fff;
+
+  border: 1px solid var(--olive-6);
   transition: 0.3s;
 }
 

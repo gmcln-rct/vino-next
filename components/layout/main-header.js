@@ -82,6 +82,13 @@ const Navbar = () => {
               <ListItemText primary="Countries" />
             </ListItem>
             <ListItem
+              onClick={toggleDrawer}
+              component={Link}
+              href="/countries/regions/bar-chart/"
+            >
+              <ListItemText primary="Regions" />
+            </ListItem>
+            <ListItem
               button
               onClick={toggleDrawer}
               component={Link}

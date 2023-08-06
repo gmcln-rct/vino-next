@@ -1,3 +1,4 @@
+import Head from "next/head";
 import Link from "next/link";
 
 import { GRAPE_TOP_100_ORIGINS } from "@/data/grape-top-100-origins";
