@@ -12,10 +12,17 @@ const ChartSelectorMulti = ({
   selectedItem3,
   setSelectedItem3,
 }) => {
+
+  const countryObject = countryData.map((country) => {
+    return {
+      id: country.replace(" ", "-").toLowerCase(),
+      itemName: country,
+    };
+  });
   const COUNTRIES = countryData;
   let selectLabel1 = "Country: ";
   let selectLabel2 = "Grape Type: ";
-  let selectData1 = countryData;
+  let selectData1 = countryObject;
   let selectData2 = [
     { id: "red", itemName: "Red" },
     { id: "white", itemName: "White" },
@@ -42,7 +49,7 @@ const ChartSelectorMulti = ({
   }
   return (
     <div className={classes.selectrow}>
-      {/* {
+      {
         COUNTRIES && (
           <>
           <span className={classes.selectLabel}> {selectLabel1} </span>
@@ -62,8 +69,8 @@ const ChartSelectorMulti = ({
             ))}
           </select>
         </>)
-      } */}
-      {COUNTRIES && (
+      }
+      {/* {COUNTRIES && (
         <>
           <span className={classes.selectLabel}> {selectLabel1} </span>
           <select
@@ -72,13 +79,13 @@ const ChartSelectorMulti = ({
             onChange={(event) => setSelectedItem1(event.target.value)}
           >
             {selectData1.map((dataItem1) => (
-              <option key={dataItem1} value={dataItem1.toLowerCase()}>
-                {dataItem1}
+              <option key={dataItem1.id} value={dataItem1.id}>
+                {dataItem1.itemName}
               </option>
             ))}
           </select>
         </>
-      )}
+      )} */}
       <>
         <span className={classes.selectLabel}> {selectLabel2} </span>
         <select
@@ -92,8 +99,7 @@ const ChartSelectorMulti = ({
               value={dataItem2.id}
               className={classes.selectOption}
             >
-              {dataItem2.itemName.charAt(0).toUpperCase() +
-                dataItem2.itemName.slice(1)}
+              {dataItem2.itemName}
             </option>
           ))}
         </select>
