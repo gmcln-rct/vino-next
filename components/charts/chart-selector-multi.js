@@ -12,7 +12,6 @@ const ChartSelectorMulti = ({
   selectedItem3,
   setSelectedItem3,
 }) => {
-
   // Need countryObject to be an array of objects with id and itemName properties, since some countries have space in them
   const countryObject = countryData.map((country) => {
     return {
@@ -51,9 +50,8 @@ const ChartSelectorMulti = ({
   }
   return (
     <div className={classes.selectrow}>
-      {
-        COUNTRIES && (
-          <>
+      {COUNTRIES && (
+        <>
           <span className={classes.selectLabel}> {selectLabel1} </span>
           <select
             value={selectedItem1}
@@ -66,12 +64,13 @@ const ChartSelectorMulti = ({
                 value={dataItem1.id}
                 className={classes.selectOption}
               >
-                {dataItem1.itemName.charAt(0).toUpperCase() + dataItem1.itemName.slice(1)}
+                {dataItem1.itemName.charAt(0).toUpperCase() +
+                  dataItem1.itemName.slice(1)}
               </option>
             ))}
           </select>
-        </>)
-      }
+        </>
+      )}
       {/* {COUNTRIES && (
         <>
           <span className={classes.selectLabel}> {selectLabel1} </span>

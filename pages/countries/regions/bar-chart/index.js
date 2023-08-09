@@ -2,7 +2,6 @@ import { useState, useEffect } from "react";
 import Head from "next/head";
 import Link from "next/link";
 
-
 import classes from "@/components/charts/bar-chart.module.css";
 
 import { REGION_PRODUCTION_DATA } from "@/data/region-data";
@@ -13,8 +12,6 @@ import UnitsFooter from "@/components/layout/units-footer";
 import DataSource from "@/components/layout/data-source";
 
 import { filterCountriesData, getDataItemById } from "@/data/utils";
-
-
 
 //  ______           _                           ______              _____ _                _
 //  | ___ \         (_)                          | ___ \            /  __ \ |              | |
@@ -33,7 +30,7 @@ function RegionsBarChartPage() {
   const [selectedRegionId, setSelectedRegionId] = useState("bordeaux");
   const [selectedGrapeType, setSelectedGrapeType] = useState("red");
 
-  const [country, setCountry] = useState(); 
+  const [country, setCountry] = useState();
   const [regionData, setRegionData] = useState();
   const [regionsArray, setRegionsArray] = useState([]);
 
@@ -54,7 +51,7 @@ function RegionsBarChartPage() {
       return {
         id: region.id,
         itemName: region.itemName,
-      }
+      };
     });
     const selectedRegionData = regions.find(
       (region) => region.id === countryData.featuredRegionId
@@ -70,15 +67,14 @@ function RegionsBarChartPage() {
       selectedCountry,
       REGION_PRODUCTION_DATA
     );
-      if (selectedRegionId) {
-        const selectedRegionData = countryData.regions.find(
-          (region) => region.id === selectedRegionId
-        );
-        // console.log("selectedRegionId: ", selectedRegionId);
-     
-        setRegionData(selectedRegionData);
-      }
+    if (selectedRegionId) {
+      const selectedRegionData = countryData.regions.find(
+        (region) => region.id === selectedRegionId
+      );
+      // console.log("selectedRegionId: ", selectedRegionId);
 
+      setRegionData(selectedRegionData);
+    }
   }, [selectedRegionId]);
 
   if (!regionData) {
@@ -93,7 +89,8 @@ function RegionsBarChartPage() {
     <>
       <Head>
         <title>
-          Wine Grape Production By Region - Bar Chart - Winography | Learn About Wine Through Data Visualizations
+          Wine Grape Production By Region - Bar Chart - Winography | Learn About
+          Wine Through Data Visualizations
         </title>
         <meta
           name="description"
@@ -101,7 +98,9 @@ function RegionsBarChartPage() {
         />
       </Head>
       <section className={classes.chart}>
-        <h1 className={classes.header}>Grape Production By Region: {country.itemName}</h1>
+        <h1 className={classes.header}>
+          Grape Production By Region: {country.itemName}
+        </h1>
         <h2 className={classes.subheader}>
           Production of world top 100 wine grapes in individual regions.
         </h2>
@@ -126,8 +125,13 @@ function RegionsBarChartPage() {
           topType="multi"
         />
         <UnitsFooter units={country.units} />
-        <p className={classes.note}>Note that the above chart covers the <Link href="./top-wine-grapes">top 100 most produced wine grapes </Link>
-          worldwide. Regional varietals are not included in this chart.</p>
+        <p className={classes.note}>
+          Note that the above chart covers the{" "}
+          <Link href="./top-wine-grapes">
+            top 100 most produced wine grapes{" "}
+          </Link>
+          worldwide. Regional varietals are not included in this chart.
+        </p>
         <DataSource />
       </section>
     </>

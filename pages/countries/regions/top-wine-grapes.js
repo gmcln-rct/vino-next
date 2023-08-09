@@ -31,63 +31,64 @@ function RegionsTop100GrapesPage() {
 
   return (
     <>
-    <Head>
-    <title>
-      Top 100 Wine Grapes - Production - Winography | Learn About Wine Through Data Visualizations
-    </title>
-    <meta
-      name="description"
-      content="Customizable bar chart of production in wine-producing regions, top national grape varietals, by land area."
-    />
-  </Head>
-    <section className={classes.listSection}>
-      <h1 className={classes.listHeader}>Top 100 Grapes List</h1>
-      <h2 className={classes.listSubheader}>
-        The most-produced wine grapes worldwide, by land area.
-      </h2>
-      <ul>
-        {grapeList.map((grape, index) => (
-          <li className={classes.listItem} key={grape.id}>
-            <div className={classes.listNumber}>
-              <span>#{index + 1}</span>
-            </div>
-            <div className={classes.listItemGrapeContainer}>
-              {" "}
-              <span
-                className={
-                  grape.grapeType === "Red    "
-                    ? `${classes.listItemGrape} ${classes.red}`
-                    : `${classes.listItemGrape} ${classes.white}`
-                }
-              >
-                {grape.grapeType}
-              </span>{" "}
-            </div>
-            <div className={classes.listItemDetails}>
-              {grape.hasLink ? (
-                <h3 className={classes.listItemName}>
-                  <Link href={`/grapes/${grape.id}`}> {grape.itemName}</Link>
-                </h3>
-              ) : (
-                <h3 className={classes.listItemName}> {grape.itemName}</h3>
-              )}
-              {/* <h3>Grape: <span className={classes.listRed}>{grape.itemName}</span></h3> */}
-              <h4>
-                Country of Origin:{" "}
-                <span className={classes.listRed}>
-                  {grape.countryOriginName}
-                </span>
-              </h4>
+      <Head>
+        <title>
+          Top 100 Wine Grapes - Production - Winography | Learn About Wine
+          Through Data Visualizations
+        </title>
+        <meta
+          name="description"
+          content="Customizable bar chart of production in wine-producing regions, top national grape varietals, by land area."
+        />
+      </Head>
+      <section className={classes.listSection}>
+        <h1 className={classes.listHeader}>Top 100 Grapes List</h1>
+        <h2 className={classes.listSubheader}>
+          The most-produced wine grapes worldwide, by land area.
+        </h2>
+        <ul>
+          {grapeList.map((grape, index) => (
+            <li className={classes.listItem} key={grape.id}>
+              <div className={classes.listNumber}>
+                <span>#{index + 1}</span>
+              </div>
+              <div className={classes.listItemGrapeContainer}>
+                {" "}
+                <span
+                  className={
+                    grape.grapeType === "Red    "
+                      ? `${classes.listItemGrape} ${classes.red}`
+                      : `${classes.listItemGrape} ${classes.white}`
+                  }
+                >
+                  {grape.grapeType}
+                </span>{" "}
+              </div>
+              <div className={classes.listItemDetails}>
+                {grape.hasLink ? (
+                  <h3 className={classes.listItemName}>
+                    <Link href={`/grapes/${grape.id}`}> {grape.itemName}</Link>
+                  </h3>
+                ) : (
+                  <h3 className={classes.listItemName}> {grape.itemName}</h3>
+                )}
+                {/* <h3>Grape: <span className={classes.listRed}>{grape.itemName}</span></h3> */}
+                <h4>
+                  Country of Origin:{" "}
+                  <span className={classes.listRed}>
+                    {grape.countryOriginName}
+                  </span>
+                </h4>
 
-              <p>
-                Description:{" "}
-                <span className={classes.listRed}>{grape.description}</span>
-              </p>
-            </div>
-          </li>
-        ))}
-      </ul>
-    </section>
+                <p>
+                  Description:{" "}
+                  <span className={classes.listRed}>{grape.description}</span>
+                </p>
+              </div>
+            </li>
+          ))}
+        </ul>
+      </section>
     </>
   );
 }
