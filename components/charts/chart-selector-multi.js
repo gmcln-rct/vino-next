@@ -50,7 +50,7 @@ const ChartSelectorMulti = ({
   }
   return (
     <div className={classes.selectrow}>
-      {COUNTRIES && (
+      {/* {COUNTRIES && (
         <>
           <span className={classes.selectLabel}> {selectLabel1} </span>
           <select
@@ -70,8 +70,8 @@ const ChartSelectorMulti = ({
             ))}
           </select>
         </>
-      )}
-      {/* {COUNTRIES && (
+      )} */}
+      {COUNTRIES && (
         <>
           <span className={classes.selectLabel}> {selectLabel1} </span>
           <select
@@ -86,7 +86,7 @@ const ChartSelectorMulti = ({
             ))}
           </select>
         </>
-      )} */}
+      )}
       <>
         <span className={classes.selectLabel}> {selectLabel2} </span>
         <select
