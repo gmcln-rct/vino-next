@@ -20,7 +20,7 @@ const ChartSelectorMulti = ({
     };
   });
 
-  const COUNTRIES = countryData;
+  const COUNTRIES = countryObject;
   let selectLabel1 = "Country: ";
   let selectLabel2 = "Grape Type: ";
   let selectData1 = countryObject;
