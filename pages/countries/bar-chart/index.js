@@ -48,7 +48,12 @@ function CountryGeneralBarChartPage() {
   );
 
   const COUNTRIES = filterCountriesData(countryRedGrapeData);
-  const countriesArray = COUNTRIES.map((country) => country.itemName);
+  const countriesArray = COUNTRIES.map((country) => {
+    return {
+      id: country.id,
+      itemName: country.itemName,
+    }
+    });
   let country = getDataItemById(selectedCountry, COUNTRIES_RED_GRAPE_DATA);
   const dataType = "country";
 

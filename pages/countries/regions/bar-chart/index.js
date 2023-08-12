@@ -37,7 +37,7 @@ function RegionsBarChartPage() {
   const COUNTRIES = filterCountriesData(REGION_PRODUCTION_DATA);
   const countriesArray = COUNTRIES.map((country) => country.itemName);
 
-  console.log("selectedCountry: ", COUNTRIES);
+  console.log("countries array: ", COUNTRIES);
 
   useEffect(() => {
     const countryData = getDataItemById(
@@ -57,7 +57,7 @@ function RegionsBarChartPage() {
       (region) => region.id === countryData.featuredRegionId
     );
       console.log("selectedRegionData: ", selectedRegionData);
-      console.log('selected Region Data', selectedRegionData);
+      console.log('selected Region ARray', selectedCountryRegionsArray);
     setCountry(countryData);
     setRegionData(selectedRegionData);
     setRegionsArray([...selectedCountryRegionsArray]);
@@ -106,7 +106,7 @@ function RegionsBarChartPage() {
           Production of world top 100 wine grapes in individual regions.
         </h2>
         <ChartSelectorMulti
-          countryData={countriesArray}
+          countryData={COUNTRIES}
           selectedItem1={selectedCountry}
           setSelectedItem1={setSelectedCountry}
           selectedItem2={selectedRegionId}
