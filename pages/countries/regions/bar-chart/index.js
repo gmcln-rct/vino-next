@@ -57,6 +57,7 @@ function RegionsBarChartPage() {
       (region) => region.id === countryData.featuredRegionId
     );
       console.log("selectedRegionData: ", selectedRegionData);
+      console.log('selected Region Data', selectedRegionData);
     setCountry(countryData);
     setRegionData(selectedRegionData);
     setRegionsArray([...selectedCountryRegionsArray]);
