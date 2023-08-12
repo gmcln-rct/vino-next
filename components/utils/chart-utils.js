@@ -28,7 +28,7 @@ export function generateSubheader(props) {
           dataYear;
       } else {
         subHeaderText =
-        "Production of " +
+        "Production of national top " +
         selectedGrapeType +
         " grape varietals, measured in land area, " +
           // explanationText +
