@@ -45,12 +45,12 @@ export function convertToStackedFormat(data, countries) {
   years.forEach(year => {
     const stackedYearData = { year };
 
-    // Loop through each country and get the corresponding wine  value for the current year
+    // Loop through each country and get the corresponding wine consumption value for the current year
     countryNames.forEach(countryName => {
       const countryData = data.find(cd => cd.itemName === countryName);
-      const wineData = countryData.historicData.find(hd => hd.year === year)?.value;
-      if (wineData !== undefined && wineData !== 0) {
-        stackedYearData[countryName] = wineData;
+      const wineConsumption = countryData.historicData.find(hd => hd.year === year)?.value;
+      if (wineConsumption !== undefined && wineConsumption !== 0) {
+        stackedYearData[countryName] = wineConsumption;
       }
     });
 

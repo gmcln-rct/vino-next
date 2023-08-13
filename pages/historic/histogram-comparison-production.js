@@ -10,25 +10,10 @@ import { HISTORIC_PRODUCTION_DATA_EXP } from "@/data/historic-production-data-ex
 
 import HistoricChartNotes from "@/components/layout/historic-chart-notes";
 
-// import ChartSelectorMulti from "@/components/charts/chart-selector-multi";
-// import ChartWrapper from "@/components/charts/chart-wrapper";
-
 import Button from "@/components/ui/button";
 
 import {convertToStackedFormat} from "@/data/utils";
 
-// const COUNTRIES = [
-//   "France",
-//   "Italy",
-//   "Spain",
-//   "United States",
-//   "Argentina",
-//   "Australia",
-//   "Chile",
-//   "South Africa",
-//   "Germany",
-//   "Portugal",
-// ];
 
 const COUNTRIES = [...new Set( HISTORIC_PRODUCTION_DATA_EXP.map(d => d.itemName))];
 function HistogramComparisonPage() {
@@ -49,6 +34,8 @@ function HistogramComparisonPage() {
         return country;
       }
     });
+    // alphabetize
+    filteredCountries.sort((a, b) => (a.itemName > b.itemName) ? 1 : -1);
     return filteredCountries;
   };
 
