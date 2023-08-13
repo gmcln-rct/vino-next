@@ -6,13 +6,12 @@ import classes from "./histogram.module.css";
 
 import HistogramComparisonChart from "@/components/charts/histogram-comparison-chart";
 
-import { HISTORIC_PRODUCTION_STACKED_DATA } from "@/data/historic-production-stacked-data";
 import { HISTORIC_PRODUCTION_DATA_EXP } from "@/data/historic-production-data-exp";
 
 import HistoricChartNotes from "@/components/layout/historic-chart-notes";
 
-import ChartSelectorMulti from "@/components/charts/chart-selector-multi";
-import ChartWrapper from "@/components/charts/chart-wrapper";
+// import ChartSelectorMulti from "@/components/charts/chart-selector-multi";
+// import ChartWrapper from "@/components/charts/chart-wrapper";
 
 import Button from "@/components/ui/button";
 
@@ -36,7 +35,27 @@ function HistogramComparisonPage() {
   const [country1, setCountry1] = useState(COUNTRIES[0]);
   const [country2, setCountry2] = useState(COUNTRIES[1]);
 
+  function checkAllValuesZero(countryData) {
+    const historicData = countryData.historicData;
+
+    const hasAllZeroValues = historicData.every(item => item.value === 0);
+    return hasAllZeroValues;
+  }
+
+  function filterEmptyValues(countriesData) {
+    const filteredCountries = countriesData.map((country) => {
+      const hasAllZeroValues = checkAllValuesZero(country);
+      if (!hasAllZeroValues) {
+        return country;
+      }
+    });
+    return filteredCountries;
+  };
+
+console.log("filtered countries ", filterEmptyValues(HISTORIC_PRODUCTION_DATA_EXP));
+
   const historicData = convertToStackedFormat(HISTORIC_PRODUCTION_DATA_EXP, COUNTRIES);
+  console.log("historicData: ", HISTORIC_PRODUCTION_DATA_EXP);
 
   useEffect(() => {
     // update country2 if it is the same as country1
@@ -67,14 +86,7 @@ function HistogramComparisonPage() {
       <h1 className="indexheader">
          Historic Wine Production Comparison
       </h1>
-      {/* <ChartSelectorMulti
-          countryData={COUNTRIES}
-          isCountryComparison={isCountryComparison}
-          selectedItem1={country1}
-          setSelectedItem1={setCountry1}
-          selectedItem2={country2}
-          setSelectedItem2={setCountry2}
-        /> */}
+      {/* Does not use multi selector */}
       <div className={classes.selectrow}>
         <select
           value={country1}
