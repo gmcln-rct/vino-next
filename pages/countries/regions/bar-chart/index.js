@@ -35,7 +35,7 @@ function RegionsBarChartPage() {
   const [regionsArray, setRegionsArray] = useState([]);
 
   const COUNTRIES = filterCountriesData(REGION_PRODUCTION_DATA);
-  const countriesArray = COUNTRIES.map((country) => country.itemName);
+  // const countriesArray = COUNTRIES.map((country) => country.itemName);
 
   console.log("countries array: ", COUNTRIES);
 
