@@ -72,7 +72,6 @@ function RegionsBarChartPage() {
       const selectedRegionData = countryData.regions.find(
         (region) => region.id === selectedRegionId
       );
-      // console.log("selectedRegionId: ", selectedRegionId);
 
       setRegionData(selectedRegionData);
     }
