@@ -99,7 +99,7 @@ function RegionsBarChartPage() {
       </Head>
       <section className={classes.chart}>
         <h1 className={classes.header}>
-          Grape Production By Region: {country.itemName}
+          Grape Production By Region: <span className="yellow">{country.itemName}</span>
         </h1>
         <h2 className={classes.subheader}>
           Production of world top 100 wine grapes, by country and region.
