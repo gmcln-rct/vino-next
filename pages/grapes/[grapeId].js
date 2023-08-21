@@ -47,10 +47,7 @@ export default function GrapeDetailPage({ grape }) {
             />
             <p className="link">Bar Chart</p>
           </Link>
-          <Link
-            href={worldTopBubbleChartLink}
-            className="action__link center"
-          >
+          <Link href={worldTopBubbleChartLink} className="action__link center">
             <Image
               src="/images/icons/icon-bubblechart.png"
               className="transparent margin-bottom"

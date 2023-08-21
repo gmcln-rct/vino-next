@@ -9,7 +9,10 @@ export default function GrapeIndex({ topGrapes }) {
   return (
     <div>
       <Head>
-        <title>Grapes Index - Winography | Learn About Wine Through Data Visualizations</title>
+        <title>
+          Grapes Index - Winography | Learn About Wine Through Data
+          Visualizations
+        </title>
         <meta
           name="description"
           content="Data visualizations and information about grape wine production for all wine-producing countries"
