@@ -1,18 +1,13 @@
 
 /* Variables */
 .timeline {
-  /* --title-background: #3d9e67; */
-  /* --background-color: #faf8eb; */
   --content-background-color: var(--pink-9);
   --content-background-color-2: var(--red-2);
-  /* --content-background-gradient: #56BC83; */
   --time-color: #fff;
   --text-color: #fff;
   --text-color-2: var(--red-9);
   --content-width: 450px;
 }
-
-
 
 /* Timeline styles */
 .timeline {
@@ -39,7 +34,7 @@
 
 
 .timeline ul {
-  background: var(--background-color);
+  background: var(#fff);
   padding: 50px 0;
 }
 
