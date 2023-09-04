@@ -5,6 +5,7 @@ import classes from "./wine-history-timeline.module.css";
 
 import { WINE_HISTORY_TIMELINE_DATA } from "@/data/wine-history-timeline.data";
 
+// Create random key for each list item
 function randomKey(year) {
   return year + Math.random();
 }
