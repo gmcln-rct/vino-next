@@ -130,7 +130,7 @@ function RegionsBarChartPage() {
           <Link href="./top-wine-grapes">
             top 100 most produced wine grapes{" "}
           </Link>
-          worldwide. Regional varietals are not included in this chart.
+          worldwide. National top varietals are not included in this chart.
         </p>
         <DataSource />
       </section>
