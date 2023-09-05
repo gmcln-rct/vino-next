@@ -34,7 +34,7 @@
 .header {
   /* color: #a1360a; */
 
-  margin: 0.2rem 0 0 0;
+  margin: .8rem 0 0 0;
 
   font-size: clamp(18px, 4vw, 36px);
   font-weight: bold;
