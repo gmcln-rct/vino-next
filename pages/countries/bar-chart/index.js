@@ -36,7 +36,7 @@ function CountryGeneralBarChartPage() {
   const [selectedGrapeType, setSelectedGrapeType] = useState("red");
 
   const countryRedGrapeData = COUNTRIES_RED_GRAPE_DATA;
-  // const countryWhiteGrapeData = COUNTRIES_WHITE_GRAPE_DATA;
+   // const countryWhiteGrapeData = COUNTRIES_WHITE_GRAPE_DATA;
 
   const redGrapeData = getDataItemById(
     selectedCountry,
@@ -65,12 +65,13 @@ function CountryGeneralBarChartPage() {
     );
   }
 
-  let headerText = generateHeader({
-    dataType: dataType,
-    itemName: redGrapeData.itemName,
-    explanationText: redGrapeData.itemName + ": ",
-    selectedGrapeType,
-  });
+  // let headerText = generateHeader({
+  //   dataType: dataType,
+  //   itemName: redGrapeData.itemName,
+  //   explanationText: redGrapeData.itemName + ": ",
+  //   selectedGrapeType,
+  // });
+  let countryName = country.itemName
 
   let subheaderText = generateSubheader({
     dataType: dataType,
@@ -92,8 +93,7 @@ function CountryGeneralBarChartPage() {
         />
       </Head>
       <section className={classes.chart}>
-        <h1 className={classes.title}>Wine Production By Country</h1>
-        <h2 className={classes.header}>{headerText}</h2>
+        <h1 className={classes.title}>Production By Country: <span className={classes.header}>{countryName}</span></h1>
         <p className={classes.subheader}>{subheaderText}</p>
 
         <ChartSelectorMulti
