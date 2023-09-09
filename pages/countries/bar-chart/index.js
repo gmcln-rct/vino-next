@@ -93,7 +93,7 @@ function CountryGeneralBarChartPage() {
         />
       </Head>
       <section className={classes.chart}>
-        <h1 className={classes.title}>Production By Country: <span className={classes.header}>{countryName}</span></h1>
+        <h1 className={classes.title}>Production By Country: <span className="yellow">{countryName}</span></h1>
         <p className={classes.subheader}>{subheaderText}</p>
 
         <ChartSelectorMulti
