@@ -32,8 +32,6 @@
 }
 
 .header {
-  /* color: #a1360a; */
-
   margin: .8rem 0 0 0;
 
   font-size: clamp(18px, 4vw, 36px);
@@ -97,8 +95,6 @@
 }
 
 .selectLabel {
-  /* vertical-align: middle; */
-  /* width: 15vmin; */
   margin: 0.9vmin 0.6vmin 1vmin 2vmin;
 
   font-family: var(--font-roboto);
@@ -107,7 +103,6 @@
   text-align: center;
 
   color: var(--pink-1);
-  /* color: var(--cyan-9) */
 }
 
 /* class applies to select element itself, not a wrapper element */
@@ -156,7 +151,6 @@
 /* Focus style */
 .selectCss:focus {
   border-color: #aaa;
-  /* It'd be nice to use -webkit-focus-ring-color here but it doesn't work on box-shadow */
   box-shadow: 0 0 1px 3px rgba(59, 153, 252, 0.7);
   box-shadow: 0 0 0 3px -moz-mac-focusring;
   color: #222;
