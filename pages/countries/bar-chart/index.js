@@ -4,7 +4,6 @@ import { useState } from "react";
 
 import classes from "@/components/charts/bar-chart.module.css";
 
-import { COUNTRIES_DATA } from "@/data/country-data";
 import { COUNTRIES_RED_GRAPE_DATA } from "@/data/country-wine-data-red-all-2016";
 import { COUNTRIES_WHITE_GRAPE_DATA } from "@/data/country-wine-data-white-all-2016";
 
@@ -36,7 +35,6 @@ function CountryGeneralBarChartPage() {
   const [selectedGrapeType, setSelectedGrapeType] = useState("red");
 
   const countryRedGrapeData = COUNTRIES_RED_GRAPE_DATA;
-   // const countryWhiteGrapeData = COUNTRIES_WHITE_GRAPE_DATA;
 
   const redGrapeData = getDataItemById(
     selectedCountry,
