@@ -14,7 +14,6 @@ import DataSource from "@/components/layout/data-source";
 
 import { filterCountriesData, getDataItemById } from "@/data/utils";
 import {
-  generateHeader,
   generateSubheader,
 } from "@/components/utils/chart-utils";
 
@@ -63,12 +62,6 @@ function CountryGeneralBarChartPage() {
     );
   }
 
-  // let headerText = generateHeader({
-  //   dataType: dataType,
-  //   itemName: redGrapeData.itemName,
-  //   explanationText: redGrapeData.itemName + ": ",
-  //   selectedGrapeType,
-  // });
   let countryName = country.itemName
 
   let subheaderText = generateSubheader({
@@ -93,7 +86,6 @@ function CountryGeneralBarChartPage() {
       <section className={classes.chart}>
         <h1 className={classes.title}>Production By Country: <span className="yellow">{countryName}</span></h1>
         <p className={classes.subheader}>{subheaderText}</p>
-
         <ChartSelectorMulti
           countryData={countriesArray}
           selectedItem1={selectedCountry}
