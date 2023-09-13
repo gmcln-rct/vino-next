@@ -13,18 +13,16 @@ import UnitsFooter from "@/components/layout/units-footer";
 import DataSource from "@/components/layout/data-source";
 
 import { filterCountriesData, getDataItemById } from "@/data/utils";
-import {
-  generateSubheader,
-} from "@/components/utils/chart-utils";
+import { generateSubheader } from "@/components/utils/chart-utils";
 
-//   _____                   _        _                     ______              _____ _                _   
-//  /  __ \                 | |      (_)                    | ___ \            /  __ \ |              | |  
-//  | /  \/ ___  _   _ _ __ | |_ _ __ _  ___  ___   ______  | |_/ / __ _ _ __  | /  \/ |__   __ _ _ __| |_ 
+//   _____                   _        _                     ______              _____ _                _
+//  /  __ \                 | |      (_)                    | ___ \            /  __ \ |              | |
+//  | /  \/ ___  _   _ _ __ | |_ _ __ _  ___  ___   ______  | |_/ / __ _ _ __  | /  \/ |__   __ _ _ __| |_
 //  | |    / _ \| | | | '_ \| __| '__| |/ _ \/ __| |______| | ___ \/ _` | '__| | |   | '_ \ / _` | '__| __|
-//  | \__/\ (_) | |_| | | | | |_| |  | |  __/\__ \          | |_/ / (_| | |    | \__/\ | | | (_| | |  | |_ 
+//  | \__/\ (_) | |_| | | | | |_| |  | |  __/\__ \          | |_/ / (_| | |    | \__/\ | | | (_| | |  | |_
 //   \____/\___/ \__,_|_| |_|\__|_|  |_|\___||___/          \____/ \__,_|_|     \____/_| |_|\__,_|_|   \__|
-//     
-                                                                                                    
+//
+
 ////////////////////////////////////////////////////////////////
 // General Country Bar Chart with Two dropdowns
 ////////////////////////////////////////////////////////////////
@@ -49,8 +47,8 @@ function CountryGeneralBarChartPage() {
     return {
       id: country.id,
       itemName: country.itemName,
-    }
-    });
+    };
+  });
   let country = getDataItemById(selectedCountry, COUNTRIES_RED_GRAPE_DATA);
   const dataType = "country";
 
@@ -62,7 +60,7 @@ function CountryGeneralBarChartPage() {
     );
   }
 
-  let countryName = country.itemName
+  let countryName = country.itemName;
 
   let subheaderText = generateSubheader({
     dataType: dataType,
@@ -84,7 +82,9 @@ function CountryGeneralBarChartPage() {
         />
       </Head>
       <section className={classes.chart}>
-        <h1 className={classes.title}>Production By Country: <span className="yellow">{countryName}</span></h1>
+        <h1 className={classes.title}>
+          Production By Country: <span className="yellow">{countryName}</span>
+        </h1>
         <p className={classes.subheader}>{subheaderText}</p>
         <ChartSelectorMulti
           countryData={countriesArray}

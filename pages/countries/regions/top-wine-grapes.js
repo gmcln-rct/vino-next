@@ -72,14 +72,12 @@ function RegionsTop100GrapesPage() {
                 ) : (
                   <h3 className={classes.listItemName}> {grape.itemName}</h3>
                 )}
-                {/* <h3>Grape: <span className={classes.listRed}>{grape.itemName}</span></h3> */}
                 <h4>
                   Country of Origin:{" "}
                   <span className={classes.listRed}>
                     {grape.countryOriginName}
                   </span>
                 </h4>
-
                 <p>
                   Description:{" "}
                   <span className={classes.listRed}>{grape.description}</span>

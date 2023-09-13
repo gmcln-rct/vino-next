@@ -43,7 +43,7 @@ function RegionsBarChartPage() {
     );
 
     const regions = countryData.regions;
-      console.log("countryData: ", countryData);
+    console.log("countryData: ", countryData);
     const selectedCountryRegionsArray = regions.map((region) => {
       return {
         id: region.id,
@@ -53,8 +53,8 @@ function RegionsBarChartPage() {
     const selectedRegionData = regions.find(
       (region) => region.id === countryData.featuredRegionId
     );
-      console.log("selectedRegionData: ", selectedRegionData);
-      console.log('selected Region ARray', selectedCountryRegionsArray);
+    console.log("selectedRegionData: ", selectedRegionData);
+    console.log("selected Region ARray", selectedCountryRegionsArray);
     setCountry(countryData);
     setRegionData(selectedRegionData);
     setRegionsArray([...selectedCountryRegionsArray]);
@@ -96,7 +96,8 @@ function RegionsBarChartPage() {
       </Head>
       <section className={classes.chart}>
         <h1 className={classes.header}>
-          Grape Production By Region: <span className="yellow">{country.itemName}</span>
+          Grape Production By Region:{" "}
+          <span className="yellow">{country.itemName}</span>
         </h1>
         <h2 className={classes.subheader}>
           Production of world top 100 wine grapes, by country and region.
