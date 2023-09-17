@@ -3798,6 +3798,8 @@ export const REGION_PRODUCTION_DATA = [
           { grapeId: "touriga-nacional", grape: "Touriga Nacional", value: 97 },
           { grapeId: "trincadeira", grape: "Trincadeira", value: 44 },
           { grapeId: "tinta-barroca", grape: "Tinta Barroca", value: 32 },
+        ],
+        whiteGrapeData: [
           {
             grapeId: "muscat-blanc-à-petits-grains",
             grape: "Muscat Blanc à Petits Grains",
@@ -3846,6 +3848,8 @@ export const REGION_PRODUCTION_DATA = [
           { grapeId: "caladoc", grape: "Caladoc", value: 1645 },
           { grapeId: "tinta-barroca", grape: "Tinta Barroca", value: 904 },
           { grapeId: "marufo", grape: "Marufo", value: 1056 },
+        ],
+        whiteGrapeData: [
           { grapeId: "chardonnay", grape: "Chardonnay", value: 251 },
           {
             grapeId: "muscat-blanc-à-petits-grains",
@@ -3896,6 +3900,8 @@ export const REGION_PRODUCTION_DATA = [
           { grapeId: "baga", grape: "Baga", value: 9 },
           { grapeId: "caladoc", grape: "Caladoc", value: 229 },
           { grapeId: "tinta-barroca", grape: "Tinta Barroca", value: 7 },
+        ],
+        whiteGrapeData: [
           {
             grapeId: "muscat-blanc-à-petits-grains",
             grape: "Muscat Blanc à Petits Grains",
@@ -3945,6 +3951,8 @@ export const REGION_PRODUCTION_DATA = [
           { grapeId: "baga", grape: "Baga", value: 784 },
           { grapeId: "tinta-barroca", grape: "Tinta Barroca", value: 3748 },
           { grapeId: "marufo", grape: "Marufo", value: 2256 },
+        ],
+        whiteGrapeData: [
           { grapeId: "chardonnay", grape: "Chardonnay", value: 196 },
           {
             grapeId: "muscat-blanc-à-petits-grains",
