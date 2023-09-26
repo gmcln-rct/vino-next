@@ -108,7 +108,7 @@ const BarChart = (props) => {
       .append("g")
       .attr("transform", `translate(0, ${height})`)
       .call(d3.axisBottom(xScale))
-      .attr("font-size", "clamp(14px, 1.5vw, 18px)")
+      .attr("font-size", "clamp(18px, 1.5vw, 24px)")
       .selectAll("text")
       .attr("transform", "rotate(-45)")
       .style("text-anchor", "end");
