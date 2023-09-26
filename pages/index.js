@@ -74,34 +74,21 @@ function HomePage({ topGrapes, randomGrape, randomCountry }) {
         header="Discover Wine, One Chart at a Time"
         headerText="Uncover the magic of wine through data visualizations. Dive into fascinating production & consumption history, eclectic grape varietals, and iconic and lesser-known wine regions."
       />
-      <section className={infoClass2}>
+      <section className={infoClass}>
         <h2 className="header">Featured Charts</h2>
         <div className="actions">
-          {/* <Link
-            href="/countries/bar-chart"
-            className="action__link center tall"
-          >
-            <Image
-              src="/images/icons/icon-barchart.png"
-              className="transparent margin-bottom"
-              alt="grapes icon"
-              width={100}
-              height={100}
-            />
-            <p className="link">Production by Country</p>
-          </Link> */}
-          <Link
-            href="/historic/histogram-comparison-consumption"
+        <Link
+            href="/historic/histogram-comparison-production"
             className="action__link center tall"
           >
             <Image
               src="/images/icons/icon-histogram-comp.png"
               className="transparent margin-bottom"
-              alt="Wine Consumption Nation Comparison Histogram"
+              alt="Per Capita Wine Production Histogram"
               width={100}
               height={100}
             />
-            <p className="link">Historic Consumption by Country</p>
+            <p className="link">Historic Production by Country</p>
           </Link>
           <Link href={grapeLink} className="action__link center tall">
             <Image
@@ -113,18 +100,15 @@ function HomePage({ topGrapes, randomGrape, randomCountry }) {
             />
             <p className="link">{grapeName} Production</p>
           </Link>
-          <Link
-            href="/historic/histogram-comparison-production"
-            className="action__link center tall"
-          >
+          <Link href={regionalChartLink} className="action__link center tall">
             <Image
-              src="/images/icons/icon-histogram-comp.png"
+              src="/images/icons/icon-barchart.png"
               className="transparent margin-bottom"
-              alt="Per Capita Wine Production Histogram"
+              alt="grapes icon"
               width={100}
               height={100}
             />
-            <p className="link">Production by Country Comparison</p>
+            <p className="link">Production by Region</p>
           </Link>
           {countryLink && countryName && (
             <Link href={countryLink} className="action__link center tall">
@@ -140,8 +124,8 @@ function HomePage({ topGrapes, randomGrape, randomCountry }) {
           )}
         </div>
       </section>
-      <section className={infoClass}>
-        <h2 className="homePageHeader">Data Categories</h2>
+      <section className={infoClass2}>
+        <h2 className="header">Data Categories</h2>
         <section className="homePage__links">
           <Link href="/countries" className="action__link center">
             <Image
@@ -175,7 +159,7 @@ function HomePage({ topGrapes, randomGrape, randomCountry }) {
           </Link>
         </section>
       </section>
-      <section className={infoClass2}>
+      {/* <section className={infoClass2}>
         <h2 className="header"> Wine Grape Production Comparison</h2>
         <p className="subheader">
           Production of top grape varietals by country or region.
@@ -202,7 +186,7 @@ function HomePage({ topGrapes, randomGrape, randomCountry }) {
             <p className="link">Production by Region</p>
           </Link>
         </div>
-      </section>
+      </section> */}
       <DataList items={topGrapes} headerText="Featured Grapes" />
     </>
   );
