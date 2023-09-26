@@ -186,6 +186,7 @@
 
 .yAxisLabel {
   color: red;
+  font-style: bold;
 }
 
 /* MEDIA QUERIES */

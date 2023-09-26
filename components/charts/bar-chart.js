@@ -5,7 +5,6 @@ import * as d3 from "d3";
 
 const BarChart = (props) => {
   const svgRef = useRef();
-  // const yAxisLabelRef = useRef();
 
   const {
     dataType,
@@ -123,11 +122,11 @@ const BarChart = (props) => {
     // Add y-axis label
     svg
       .append("text")
-      .attr("class", classes.yAxisLabel)
       .attr("x", -height / 2)
       .attr("y", labelMargin)
       .attr("transform", "rotate(-90)")
       .style("text-anchor", "middle")
+      .attr("font-size", "clamp(22px, 1.5vw, 24px)")
       .text(yAxisLabel);
 
     // / Bars + Tooltip + Animations
