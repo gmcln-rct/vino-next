@@ -1,4 +1,4 @@
-import { useEffect, useRef, useLayoutEffect } from "react";
+import { useEffect, useRef } from "react";
 import classes from "./bar-chart.module.css";
 
 import * as d3 from "d3";
