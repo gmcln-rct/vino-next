@@ -100,7 +100,7 @@ function RegionsBarChartPage() {
           <span className="yellow">{country.itemName}</span>
         </h1>
         <h2 className={classes.subheader}>
-          Production of world top 100 wine grapes, by country and region.
+          Production of world top 100 wine grapes, by region.
         </h2>
         <ChartSelectorMulti
           countryData={COUNTRIES}

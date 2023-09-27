@@ -25,7 +25,7 @@ const ChartWrapper = (props) => {
     const updateSize = () => {
       if (containerRef.current) {
         setContainerSize({
-          width: containerRef.current.offsetWidth,
+          width: containerRef.current.offsetWidth > 420 ? containerRef.current.offsetWidth - 150 : 320,
           height: window.innerHeight > 325 ? 325 : window.innerHeight,
         });
       }
