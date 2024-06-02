@@ -24,12 +24,15 @@
 .mastheadTextContainer {
   margin-right: 5%;
   margin-top: 2vmin;
-  /* padding: 2vw 2vw 2vw 4vw; */
+  padding: 2vw 2vw 2vw 4vw;
+  
 
   text-align: left;
 
   color: var(--white);
   background-color: var(--pink-9-transparent);
+
+  border-radius: 5px;
 }
 
 .mastheadText {
@@ -64,6 +67,6 @@
   .mastheadTextContainer {
     margin-right: 30%;
     margin-top: 5vmin;
-    padding: 2vw 2vw 2vw 4vw;
+    padding: 2vw;
   }
 }
