@@ -24,7 +24,7 @@ const MyApp: React.FC<AppProps> = ({ Component, pageProps }) => {
             <meta name="robots" content="index, follow"></meta>
             <meta
               name="keywords"
-              content="wine, data visualization, education, learning, charts, graphs, bubble charts, d3"
+              content="wine, production, data visualization, education, learning, charts, graphs, bubble charts, d3"
             />
             <meta name="author" content="Glenn McClanan, Rio Create LLC" />
             <meta
@@ -48,12 +48,6 @@ const MyApp: React.FC<AppProps> = ({ Component, pageProps }) => {
             id="google-analytics"
             strategy="afterInteractive"
           />
-          {/* <Script id="google-analytics-2" strategy="afterInteractive">
-            {`window.dataLayer = window.dataLayer || []; function gtag()
-                {dataLayer.push(arguments)}
-                gtag('js', new Date()); gtag('config', 'G-X1PYJEHQHJ');
-            `}
-          </Script> */}
           <Component {...pageProps} />
         </Layout>
       </MainContextProvider>
