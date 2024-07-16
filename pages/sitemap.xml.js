@@ -1,78 +1,105 @@
-export default function sitemap() {
+import { getServerSideSitemap } from "next-sitemap";
 
-    const baseUrl = 'https://winography.net/';
-    return [
-      {
-        url: baseUrl,
-        lastModified: new Date(),
-        changeFrequency: 'montly',
-        priority: 1,
-      },
-      {
-        url: `${baseUrl}/countries`,
-        lastModified: new Date(),
-        changeFrequency: 'monthly',
-        priority: 0.6,
-      },
-    {
-        url: `${baseUrl}/grapes`,
-        lastModified: new Date(),
-        changeFrequency: 'monthly',
-        priority: 0.8,
-    },
-    {
-        url: `${baseUrl}/historic`,
-        lastModified: new Date(),
-        changeFrequency: 'monthly',
-        priority: 0.8,
-    },
-    {
-        url: `${baseUrl}/quiz`,
-        lastModified: new Date(),
-        changeFrequency: 'monthly',
-        priority: 0.6,
-    },
-    {
-        url: `${baseUrl}/learning`,
-        lastModified: new Date(),
-        changeFrequency: 'monthly',
-        priority: 0.6,
-    },
-    {
-        url: `${baseUrl}/about`,
-        lastModified: new Date(),
-        changeFrequency: 'monthly',
-        priority: 0.2,
-    },
-    {
-        url: `${baseUrl}/countries/bar-chart`,
-        lastModified: new Date(),
-        changeFrequency: 'monthly',
-        priority: 0.6,
-    },
-    {
-        url: `${baseUrl}/grapes/bar-chart`,
-        lastModified: new Date(),
-        changeFrequency: 'monthly',
-        priority: 0.6,
-    },
-    {
-        url: `${baseUrl}/historic/histogram-individual-production`,
-        lastModified: new Date(),
-        changeFrequency: 'monthly',
-        priority: 0.3
-    },
-    {
-        url: `${baseUrl}/historic/histogram-comparison-production`,
-        lastModified: new Date(),
-        changeFrequency: 'monthly',
-        priority: 0.3
-    },
-    {
-        url: `${baseUrl}/historic/stackedarea`,
-        lastModified: new Date(),
-        changeFrequency: 'monthly',
-        priority: 0.3
-    },
-    ]
+export default function Sitemap() {
+    return null;
   }
+  
+  export async function getServerSideProps({ res }) {
+    const baseUrl = 'https://winography.net';
+  
+  const pages = [
+    {
+      loc: baseUrl,
+      lastmod: new Date().toISOString(),
+      changefreq: "monthly",
+      priority: 1,
+    },
+    {
+      url: `countries`,
+      lastModified: new Date(),
+      changeFrequency: "monthly",
+      priority: 0.8,
+    },
+    {
+      url: `grapes`,
+      lastModified: new Date(),
+      changeFrequency: "monthly",
+      priority: 0.8,
+    },
+    {
+      url: `historic`,
+      lastModified: new Date(),
+      changeFrequency: "monthly",
+      priority: 0.8,
+    },
+    {
+      url: `quiz`,
+      lastModified: new Date(),
+      changeFrequency: "monthly",
+      priority: 0.6,
+    },
+    {
+      url: `learning`,
+      lastModified: new Date(),
+      changeFrequency: "monthly",
+      priority: 0.6,
+    },
+    {
+      url: `about`,
+      lastModified: new Date(),
+      changeFrequency: "monthly",
+      priority: 0.2,
+    },
+    {
+      url: `countries/bar-chart`,
+      lastModified: new Date(),
+      changeFrequency: "monthly",
+      priority: 0.6,
+    },
+    {
+      url: `grapes/bar-chart`,
+      lastModified: new Date(),
+      changeFrequency: "monthly",
+      priority: 0.6,
+    },
+    {
+      url: `historic/histogram-individual-production`,
+      lastModified: new Date(),
+      changeFrequency: "monthly",
+      priority: 0.3,
+    },
+    {
+      url: `historic/histogram-comparison-production`,
+      lastModified: new Date(),
+      changeFrequency: "monthly",
+      priority: 0.3,
+    },
+    {
+      url: `historic/stackedarea`,
+      lastModified: new Date(),
+      changeFrequency: "monthly",
+      priority: 0.3,
+    },
+  ];
+
+  const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
+  <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+    ${pages.map(page => `
+      <url>
+        <loc>${baseUrl}${page.url ? `/${page.url}` : ''}</loc>
+        <lastmod>${new Date().toISOString()}</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>${page.priority}</priority>
+      </url>
+    `).join('')}
+  </urlset>
+`;
+
+res.setHeader('Content-Type', 'text/xml');
+res.write(sitemap);
+res.end();
+
+return {
+  props: {},
+};
+}
