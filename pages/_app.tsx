@@ -24,7 +24,7 @@ const MyApp: React.FC<AppProps> = ({ Component, pageProps }) => {
             <meta name="robots" content="index, follow"></meta>
             <meta
               name="keywords"
-              content="wine, winemaking, viticulture, grape varieties, data visualization, wine grapes, wine facts, wine statistics, production, consumption, data visualization, oenology, learning, charts, graphs, bubble charts, d3"
+              content="wine, winemaking, viticulture, grape varieties, data visualization, wine grapes, wine facts, wine statistics, wine knowledge, production, consumption, oenology, learning, charts, graphs, bubble charts, d3"
             />
             <meta name="author" content="Glenn McClanan, Rio Create LLC" />
             <meta
@@ -33,7 +33,7 @@ const MyApp: React.FC<AppProps> = ({ Component, pageProps }) => {
             />
             <meta
               property="og:description"
-              content="Wine data visualizations for wine education and learning"
+              content="Wine data visualizations about grapes, countries and history. Wine quizzes to test your wine knowledge."
             />
             <meta property="og:type" content="website" />
             <meta
