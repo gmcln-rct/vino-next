@@ -53,31 +53,31 @@ export default function Sitemap() {
     {
       url: `countries/bar-chart`,
       lastModified: new Date(),
-      changeFrequency: "monthly",
+      changeFrequency: "yearly",
       priority: 0.6,
     },
     {
       url: `grapes/bar-chart`,
       lastModified: new Date(),
-      changeFrequency: "monthly",
+      changeFrequency: "yearly",
       priority: 0.6,
     },
     {
       url: `historic/histogram-individual-production`,
       lastModified: new Date(),
-      changeFrequency: "monthly",
+      changeFrequency: "yearly",
       priority: 0.3,
     },
     {
       url: `historic/histogram-comparison-production`,
       lastModified: new Date(),
-      changeFrequency: "monthly",
+      changeFrequency: "yearly",
       priority: 0.3,
     },
     {
       url: `historic/stackedarea`,
       lastModified: new Date(),
-      changeFrequency: "monthly",
+      changeFrequency: "yearly",
       priority: 0.3,
     },
   ];

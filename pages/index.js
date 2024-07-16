@@ -38,8 +38,6 @@ export async function getStaticProps() {
 
 function HomePage({ topGrapes, randomGrape, randomCountry }) {
   const mainCtx = useContext(MainContext);
-  // const isNewVisit = mainCtx.isNewVisit;
-  const setIsNewVisit = mainCtx.setIsNewVisit;
 
   const infoClass = "info alt";
   const infoClass2 = "info alt2";
@@ -52,10 +50,6 @@ function HomePage({ topGrapes, randomGrape, randomCountry }) {
     randomCountry.itemName === "United States"
       ? "the United States"
       : randomCountry.itemName;
-
-  // if (randomCountry) {
-  //   setIsNewVisit(false);
-  // }
 
   const barChartLink = "/countries/bar-chart";
   const regionalChartLink = "countries/regions/bar-chart";
@@ -159,34 +153,6 @@ function HomePage({ topGrapes, randomGrape, randomCountry }) {
           </Link>
         </section>
       </section>
-      {/* <section className={infoClass2}>
-        <h2 className="header"> Wine Grape Production Comparison</h2>
-        <p className="subheader">
-          Production of top grape varietals by country or region.
-        </p>
-        <div className="actions">
-          <Link href={barChartLink} className="action__link center tall">
-            <Image
-              src="/images/icons/icon-barchart.png"
-              className="transparent margin-bottom"
-              alt="grapes icon"
-              width={100}
-              height={100}
-            />
-            <p className="link">Production by Country</p>
-          </Link>
-          <Link href={regionalChartLink} className="action__link center tall">
-            <Image
-              src="/images/icons/icon-barchart.png"
-              className="transparent margin-bottom"
-              alt="grapes icon"
-              width={100}
-              height={100}
-            />
-            <p className="link">Production by Region</p>
-          </Link>
-        </div>
-      </section> */}
       <DataList items={topGrapes} headerText="Featured Grapes" />
     </>
   );
