@@ -24,7 +24,7 @@ const MyApp: React.FC<AppProps> = ({ Component, pageProps }) => {
             <meta name="robots" content="index, follow"></meta>
             <meta
               name="keywords"
-              content="wine, production, data visualization, education, learning, charts, graphs, bubble charts, d3"
+              content="wine, winemaking, viticulture, grape varieties, data visualization, wine grapes, wine facts, wine statistics, production, consumption, data visualization, oenology, learning, charts, graphs, bubble charts, d3"
             />
             <meta name="author" content="Glenn McClanan, Rio Create LLC" />
             <meta
