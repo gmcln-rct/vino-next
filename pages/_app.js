@@ -1,4 +1,3 @@
-import { AppProps } from 'next/app';
 import Head from "next/head";
 import Script from "next/script";
 
@@ -6,7 +5,7 @@ import Layout from "../components/layout/layout";
 import { MainContextProvider } from "@/store/main-context";
 import "../styles/global.css";
 
-const MyApp: React.FC<AppProps> = ({ Component, pageProps }) => {
+function MyApp({ Component, pageProps }) {
   return (
     <>
       <MainContextProvider>

@@ -1,18 +1,10 @@
 [build]
   command = "npm run build"
-  publish = "out"
+  publish = ".next"
   
 [build.environment]
-  NODE_VERSION = "18.19.0"
+  NODE_VERSION = "18"
   
-[[plugins]]
-  package = "@netlify/plugin-lighthouse"
-  
-  [plugins.inputs.settings]
-    output_path = "reports"
-    
-  [plugins.inputs.thresholds]
-    performance = 0.8
-    accessibility = 0.9
-    best-practices = 0.9
-    seo = 0.9
+# Remove Lighthouse plugin temporarily due to Node.js compatibility issues
+# [[plugins]]
+#   package = "@netlify/plugin-lighthouse"
