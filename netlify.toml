@@ -1,0 +1,18 @@
+[build]
+  command = "npm run build"
+  publish = "out"
+  
+[build.environment]
+  NODE_VERSION = "18.19.0"
+  
+[[plugins]]
+  package = "@netlify/plugin-lighthouse"
+  
+  [plugins.inputs.settings]
+    output_path = "reports"
+    
+  [plugins.inputs.thresholds]
+    performance = 0.8
+    accessibility = 0.9
+    best-practices = 0.9
+    seo = 0.9
