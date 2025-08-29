@@ -62,6 +62,7 @@ function HomePage({ topGrapes, randomGrape, randomCountry }) {
           name="description"
           content="Winography | Data visualization, quizzes and other learning tools about wine production and consumption, both historic and present-day. "
         />
+        <link rel="canonical" href="https://winography.net/" />
       </Head>
       <Masthead
         backgroundImage="/images/site-images/homepage-masthead.jpg"

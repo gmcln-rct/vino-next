@@ -15,69 +15,69 @@ export default function Sitemap() {
       priority: 1,
     },
     {
-      url: `countries`,
-      lastModified: new Date(),
-      changeFrequency: "monthly",
+      loc: `${baseUrl}/countries`,
+      lastmod: new Date().toISOString(),
+      changefreq: "monthly",
       priority: 0.8,
     },
     {
-      url: `grapes`,
-      lastModified: new Date(),
-      changeFrequency: "monthly",
+      loc: `${baseUrl}/grapes`,
+      lastmod: new Date().toISOString(),
+      changefreq: "monthly",
       priority: 0.8,
     },
     {
-      url: `historic`,
-      lastModified: new Date(),
-      changeFrequency: "monthly",
+      loc: `${baseUrl}/historic`,
+      lastmod: new Date().toISOString(),
+      changefreq: "monthly",
       priority: 0.8,
     },
     {
-      url: `quiz`,
-      lastModified: new Date(),
-      changeFrequency: "monthly",
+      loc: `${baseUrl}/quiz`,
+      lastmod: new Date().toISOString(),
+      changefreq: "monthly",
       priority: 0.6,
     },
     {
-      url: `learning`,
-      lastModified: new Date(),
-      changeFrequency: "monthly",
+      loc: `${baseUrl}/learning`,
+      lastmod: new Date().toISOString(),
+      changefreq: "monthly",
       priority: 0.6,
     },
     {
-      url: `about`,
-      lastModified: new Date(),
-      changeFrequency: "monthly",
+      loc: `${baseUrl}/about`,
+      lastmod: new Date().toISOString(),
+      changefreq: "monthly",
       priority: 0.2,
     },
     {
-      url: `countries/bar-chart`,
-      lastModified: new Date(),
-      changeFrequency: "yearly",
+      loc: `${baseUrl}/countries/bar-chart`,
+      lastmod: new Date().toISOString(),
+      changefreq: "yearly",
       priority: 0.6,
     },
     {
-      url: `grapes/bar-chart`,
-      lastModified: new Date(),
-      changeFrequency: "yearly",
+      loc: `${baseUrl}/grapes/bar-chart`,
+      lastmod: new Date().toISOString(),
+      changefreq: "yearly",
       priority: 0.6,
     },
     {
-      url: `historic/histogram-individual-production`,
-      lastModified: new Date(),
-      changeFrequency: "yearly",
+      loc: `${baseUrl}/historic/histogram-individual-production`,
+      lastmod: new Date().toISOString(),
+      changefreq: "yearly",
       priority: 0.3,
     },
     {
-      url: `historic/histogram-comparison-production`,
-      lastModified: new Date(),
-      changeFrequency: "yearly",
+      loc: `${baseUrl}/historic/histogram-comparison-production`,
+      lastmod: new Date().toISOString(),
+      changefreq: "yearly",
       priority: 0.3,
     },
     {
-      url: `historic/stackedarea`,
-      lastModified: new Date(),
-      changeFrequency: "yearly",
+      loc: `${baseUrl}/historic/stackedarea`,
+      lastmod: new Date().toISOString(),
+      changefreq: "yearly",
       priority: 0.3,
     },
   ];
@@ -86,9 +86,9 @@ export default function Sitemap() {
   <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     ${pages.map(page => `
       <url>
-        <loc>${baseUrl}${page.url ? `/${page.url}` : ''}</loc>
-        <lastmod>${new Date().toISOString()}</lastmod>
-        <changefreq>monthly</changefreq>
+        <loc>${page.loc}</loc>
+        <lastmod>${page.lastmod}</lastmod>
+        <changefreq>${page.changefreq}</changefreq>
         <priority>${page.priority}</priority>
       </url>
     `).join('')}

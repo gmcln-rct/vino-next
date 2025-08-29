@@ -21,6 +21,7 @@ export default function CountryDetailPage({ country }) {
           name="description"
           content={`Data visualization for wine grape area production in ${country.itemName}`}
         />
+        <link rel="canonical" href={`https://winography.net/countries/${country.id}`} />
       </Head>
 
       <section className="info">

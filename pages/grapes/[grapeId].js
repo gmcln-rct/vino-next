@@ -23,6 +23,7 @@ export default function GrapeDetailPage({ grape }) {
           name="description"
           content={`${grape.itemName} wine grape production data visualizations.`}
         />
+        <link rel="canonical" href={`https://winography.net/grapes/${grape.id}`} />
       </Head>
       <Masthead
         backgroundImage={grape.imageLink}

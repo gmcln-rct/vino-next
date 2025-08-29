@@ -23,10 +23,15 @@ const MyApp: React.FC<AppProps> = ({ Component, pageProps }) => {
             />
             <meta name="robots" content="index, follow"></meta>
             <meta
+              name="description"
+              content="Wine data visualizations about grapes, countries and history. Wine quizzes to test your wine knowledge."
+            />
+            <meta
               name="keywords"
               content="wine, winemaking, viticulture, grape varieties, data visualization, wine grapes, wine facts, wine statistics, wine knowledge, historic wine data, production, consumption, oenology, learning, charts, graphs, bubble charts, d3"
             />
             <meta name="author" content="Glenn McClanan, Rio Create LLC" />
+            <link rel="canonical" href="https://winography.net/" />
             <meta
               property="og:title"
               content="Winography | Learn About Wine Through Data Visualizations"
@@ -41,13 +46,24 @@ const MyApp: React.FC<AppProps> = ({ Component, pageProps }) => {
               content="https://winography.net/images/site-images/homepage-masthead.jpg"
             />
             <meta property="og:url" content="https://winography.net" />
+            <meta name="twitter:card" content="summary_large_image" />
+            <meta name="twitter:title" content="Winography | Learn About Wine Through Data Visualizations" />
+            <meta name="twitter:description" content="Wine data visualizations about grapes, countries and history. Wine quizzes to test your wine knowledge." />
+            <meta name="twitter:image" content="https://winography.net/images/site-images/homepage-masthead.jpg" />
           </Head>
-          {/* <Script src="https://www.googletagmanager.com/gtag/js?id=G-8Z3Z3Z3Z3Z3" id="google-analytics" strategy="afterInteractive" /> */}
           <Script
             src="https://www.googletagmanager.com/gtag/js?id=G-X1PYJEHQHJ"
             id="google-analytics"
             strategy="afterInteractive"
           />
+          <Script id="google-analytics-config" strategy="afterInteractive">
+            {`
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());
+              gtag('config', 'G-X1PYJEHQHJ');
+            `}
+          </Script>
           <Component {...pageProps} />
         </Layout>
       </MainContextProvider>
