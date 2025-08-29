@@ -50,6 +50,30 @@ const MyApp: React.FC<AppProps> = ({ Component, pageProps }) => {
             <meta name="twitter:title" content="Winography | Learn About Wine Through Data Visualizations" />
             <meta name="twitter:description" content="Wine data visualizations about grapes, countries and history. Wine quizzes to test your wine knowledge." />
             <meta name="twitter:image" content="https://winography.net/images/site-images/homepage-masthead.jpg" />
+            <script
+              type="application/ld+json"
+              dangerouslySetInnerHTML={{
+                __html: JSON.stringify({
+                  "@context": "https://schema.org",
+                  "@type": "Organization",
+                  "name": "Winography",
+                  "description": "Wine data visualizations about grapes, countries and history. Wine quizzes to test your wine knowledge.",
+                  "url": "https://winography.net",
+                  "logo": "https://winography.net/images/site-images/homepage-masthead.jpg",
+                  "sameAs": [],
+                  "contactPoint": {
+                    "@type": "ContactPoint",
+                    "contactType": "customer service",
+                    "email": "info@winography.net"
+                  },
+                  "founder": {
+                    "@type": "Person",
+                    "name": "Glenn McClanan"
+                  },
+                  "publishingPrinciples": "https://winography.net/about"
+                })
+              }}
+            />
           </Head>
           <Script
             src="https://www.googletagmanager.com/gtag/js?id=G-X1PYJEHQHJ"

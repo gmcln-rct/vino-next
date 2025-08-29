@@ -63,6 +63,39 @@ function HomePage({ topGrapes, randomGrape, randomCountry }) {
           content="Winography | Data visualization, quizzes and other learning tools about wine production and consumption, both historic and present-day. "
         />
         <link rel="canonical" href="https://winography.net/" />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "WebSite",
+              "name": "Winography",
+              "description": "Data visualization, quizzes and other learning tools about wine production and consumption, both historic and present-day.",
+              "url": "https://winography.net/",
+              "potentialAction": {
+                "@type": "SearchAction",
+                "target": "https://winography.net/?search={search_term_string}",
+                "query-input": "required name=search_term_string"
+              },
+              "mainEntity": {
+                "@type": "Dataset",
+                "@id": "https://winography.net/#dataset",
+                "name": "Global Wine Production and Consumption Data",
+                "description": "Comprehensive dataset featuring wine grape varieties, country production statistics, and historical wine data",
+                "keywords": ["wine", "viticulture", "grape varieties", "wine production", "wine consumption", "data visualization"],
+                "creator": {
+                  "@type": "Organization",
+                  "name": "Winography"
+                },
+                "distribution": {
+                  "@type": "DataDownload",
+                  "encodingFormat": "application/json",
+                  "contentUrl": "https://winography.net/"
+                }
+              }
+            })
+          }}
+        />
       </Head>
       <Masthead
         backgroundImage="/images/site-images/homepage-masthead.jpg"
