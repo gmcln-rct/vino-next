@@ -1,0 +1,7 @@
+[build]
+  command = "npm run build"
+  publish = "out"
+
+# Use Ubuntu 22.04 LTS (Jammy) instead of deprecated Ubuntu 20.04 (Focal)
+[context.production.environment]
+  NETLIFY_BUILD_IMAGE = "jammy"
