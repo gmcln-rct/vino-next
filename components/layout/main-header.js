@@ -1,6 +1,6 @@
 import { useState } from "react";
 import Link from "next/link";
-// import Image from "next/image";
+import Image from "next/image";
 // import { CSSTransition } from "react-transition-group";
 import classes from "./main-header.module.css";
 import {
@@ -37,6 +37,13 @@ const Navbar = () => {
         <Toolbar className={classes.navContainer}>
           <div className={classes.brand}>
             <Link href="/">
+              <Image 
+                src="/images/2025-winography-logo-1.png" 
+                alt="Winography logo" 
+                width={40} 
+                height={40}
+                className={classes.logo}
+              />
               Winography
             </Link>
           </div>

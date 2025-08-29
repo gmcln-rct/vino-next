@@ -36,13 +36,16 @@ export default function WineTerms() {
       </Head>
       <section className={classes.termsPage}>
         <h1 className={classes.header}>Wine Terms</h1>
-        <input
-          type="text"
-          placeholder="Filter wine terms"
-          value={searchTerm}
-          onChange={handleSearch}
-          className={classes.searchInput}
-        />
+        <div className={classes.searchContainer}>
+          <label className={classes.searchLabel}>Search</label>
+          <input
+            type="text"
+            placeholder="Filter wine terms"
+            value={searchTerm}
+            onChange={handleSearch}
+            className={classes.searchInput}
+          />
+        </div>
         <ul className={classes.termsList}>
           {filteredTerms.map((term, index) => (
             <li key={index} className={classes.listItem}>

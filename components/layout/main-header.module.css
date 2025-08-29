@@ -21,6 +21,18 @@
   color: #a10101;
 }
 
+.brand a {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  text-decoration: none;
+  color: inherit;
+}
+
+.logo {
+  flex-shrink: 0;
+}
+
 .sitebeta {
   position: relative;
   top: -10px;
