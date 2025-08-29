@@ -27,6 +27,5 @@
     "react-transition-group": "^4.4.5",
     "sass": "^1.91.0",
     "topojson-client": "^3.1.0"
-  },
-  "devDependencies": {}
+  }
 }
