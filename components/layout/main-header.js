@@ -37,7 +37,7 @@ const Navbar = () => {
         <Toolbar className={classes.navContainer}>
           <div className={classes.brand}>
             <Link href="/">
-              Winography <span className={classes.sitebeta}>Alpha</span>
+              Winography
             </Link>
           </div>
           <div>

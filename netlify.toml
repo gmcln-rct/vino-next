@@ -3,8 +3,17 @@
   publish = ".next"
   
 [build.environment]
-  NODE_VERSION = "18"
+  NODE_VERSION = "18.19.1"
+  NPM_CONFIG_NODE_VERSION = "18.19.1"
   
-# Remove Lighthouse plugin temporarily due to Node.js compatibility issues
-# [[plugins]]
-#   package = "@netlify/plugin-lighthouse"
+[[plugins]]
+  package = "@netlify/plugin-lighthouse"
+  
+  [plugins.inputs.settings]
+    output_path = "reports"
+    
+  [plugins.inputs.thresholds]
+    performance = 0.8
+    accessibility = 0.9
+    best-practices = 0.9
+    seo = 0.9
