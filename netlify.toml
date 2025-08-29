@@ -1,6 +1,6 @@
 [build]
   command = "npm run build"
-  publish = "out"
+  publish = "next"
 
 # Use Ubuntu 22.04 LTS (Jammy) instead of deprecated Ubuntu 20.04 (Focal)
 [context.production.environment]
