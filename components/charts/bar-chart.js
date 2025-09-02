@@ -49,10 +49,7 @@ const BarChart = (props) => {
         ? windowHeight * 0.7
         : containerSize.height * 1.2;
     const labelMargin = -margin.left - 85;
-    const viewBoxWidth =
-      windowWidth > 420
-        ? width + margin.left + margin.right + 200
-        : width + margin.left + margin.right;
+    const viewBoxWidth = width + margin.left + margin.right;
     const viewBoxHeight = height + margin.top + margin.bottom + 150; 
 
     // Set up and position SVG
@@ -86,7 +83,7 @@ const BarChart = (props) => {
     // Add X axis
     const xScale = d3
       .scaleBand()
-      .range([0, width * 1.2])
+      .range([0, width])
       .domain(
         data.map((d) => {
           if (dataType === "grape") {
