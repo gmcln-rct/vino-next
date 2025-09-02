@@ -70,7 +70,7 @@ const ChartSelectorMulti = ({
           </select>
         </>
       )} */}
-      {countryData && (
+      {countryData && !isRegionComparison && (
         <>
           <span className={classes.selectLabel}> {selectLabel1} </span>
           <select

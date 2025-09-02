@@ -13,7 +13,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 1vmin 0 0 0;
+  padding: 1vmin 0 10px 0;
   /* padding: 0 2vmin 1vmin 2vmin; */
   background-color: var(--white);
   border-radius: 10px;
