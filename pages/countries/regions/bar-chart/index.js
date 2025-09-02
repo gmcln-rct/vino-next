@@ -26,13 +26,15 @@ import { filterCountriesData, getDataItemById } from "@/data/utils";
 ////////////////////////////////////////////////////////////////////////////////////////
 
 function RegionsBarChartPage() {
-  const selectedCountry = "france"; // Fixed to France for regions view
+  const [selectedCountry, setSelectedCountry] = useState("france");
   const [selectedRegionId, setSelectedRegionId] = useState("bordeaux");
   const [selectedGrapeType, setSelectedGrapeType] = useState("red");
 
   const [country, setCountry] = useState();
   const [regionData, setRegionData] = useState();
   const [regionsArray, setRegionsArray] = useState([]);
+
+  const COUNTRIES = filterCountriesData(REGION_PRODUCTION_DATA);
 
   useEffect(() => {
     const countryData = getDataItemById(
@@ -97,10 +99,10 @@ function RegionsBarChartPage() {
           Grape Production By Region:{" "}
           <span className="yellow">{country.itemName}</span>
         </h1>
-        <h2 className={classes.subheader}>
-          Production of world top 100 wine grapes, by region.
-        </h2>
         <ChartSelectorMulti
+          countryData={COUNTRIES}
+          selectedItem1={selectedCountry}
+          setSelectedItem1={setSelectedCountry}
           selectedItem2={selectedRegionId}
           setSelectedItem2={setSelectedRegionId}
           selectedItem3={selectedGrapeType}
