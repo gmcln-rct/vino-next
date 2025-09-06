@@ -35,10 +35,15 @@ const BarChart = (props) => {
 
     d3.select(svgRef.current).selectAll("*").remove();
 
-    const margin = { top: 20, right: 20, bottom: 50, left: 10 };
-
     const windowWidth = window.innerWidth;
     const windowHeight = window.innerHeight;
+    
+    const margin = { 
+      top: 20, 
+      right: 20, 
+      bottom: 50, 
+      left: windowWidth <= 768 ? 80 : 10 // Increase left margin on mobile for Y-axis label
+    };
     // Use width and height from the container size
     const width =
       containerSize.width > windowWidth * 0.9
@@ -48,7 +53,7 @@ const BarChart = (props) => {
       containerSize.height > windowHeight * 0.7
         ? windowHeight * 0.7
         : containerSize.height * 1.2;
-    const labelMargin = -margin.left - 85;
+    const labelMargin = windowWidth <= 768 ? -75 : -margin.left - 85;
     const viewBoxWidth = width + margin.left + margin.right;
     const viewBoxHeight = height + margin.top + margin.bottom + 150; 
 
