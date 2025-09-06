@@ -1,0 +1,15 @@
+User-agent: *
+Allow: /
+
+# Block access to internal API routes
+Disallow: /api/
+
+# Block access to admin or private areas if any exist
+Disallow: /_next/
+Disallow: /static/
+
+# Allow all search engine bots to access the sitemap
+Sitemap: https://winography.net/sitemap.xml
+
+# Crawl delay to be respectful of server resources
+Crawl-delay: 1
