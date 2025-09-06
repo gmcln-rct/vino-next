@@ -30,15 +30,8 @@ export function getHeaders(
       " grape varietals, by land area, " +
       dataYear;
   } else if (topType === "global") {
-    headerText = headerSuffix + grapeTypeTextCapitalized + " Grapes in " + countryName;
-    subHeaderText =
-      explanationText +
-      " " +
-      grapeTypeText +
-      " grape varietals in " +
-      countryName +
-      ", by land area, " +
-      dataYear;
+    headerText = "Production of Top International " + grapeTypeTextCapitalized + " Grapes in " + countryName;
+    subHeaderText = "";
   } else {
     headerText = headerSuffix + selectedGrapeType + " Grapes in " + countryName;
     subHeaderText =

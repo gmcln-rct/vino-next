@@ -100,7 +100,7 @@ function CountryWorldTopTenDetailPage() {
           dataType={dataType}
           topType="global"
         />
-        <UnitsFooter units="hectares" />
+        <UnitsFooter units="hectares" dataYear={dataYear} isGlobalChart={true} />
         <DataSource />
         <div className="buttonFooter">
           <Button link={nationalTopLink} isSecondary="false">
