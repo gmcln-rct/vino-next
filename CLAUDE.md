@@ -48,8 +48,8 @@ This project requires specific Node.js and npm versions as defined in package.js
 - `/public/images/` - Static assets including flags, icons, and masthead images
 
 ### Key Technologies
-- **Next.js 13.2.4** with Pages Router (not App Router)
-- **React 18.2.0** with functional components and hooks
+- **Next.js 15.5.7** with Pages Router (not App Router)
+- **React 18.3.1** with functional components and hooks (compatible with MUI v5)
 - **JavaScript** (not TypeScript) - despite having jsconfig.json, this is a JS codebase
 - **D3.js v7.9.0** for data visualizations and chart rendering
 - **Material-UI (@mui/material) v5** for UI components
