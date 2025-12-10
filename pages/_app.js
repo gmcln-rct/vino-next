@@ -16,10 +16,6 @@ function MyApp({ Component, pageProps }) {
               name="viewport"
               content="width=device-width, initial-scale=1.0"
             />
-            <meta
-              name="lang"
-              content="en"
-            />
             <meta name="robots" content="index, follow"></meta>
             <meta
               name="description"

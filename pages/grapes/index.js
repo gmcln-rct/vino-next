@@ -9,14 +9,17 @@ export default function GrapeIndex({ topGrapes }) {
   return (
     <div>
       <Head>
-        <title>
-          Grapes Index - Winography | Learn About Wine Through Data
-          Visualizations
-        </title>
+        <title>Wine Grapes Index | Winography</title>
         <meta
           name="description"
-          content="Data visualizations and information about grape wine production for all wine-producing countries"
+          content="Discover 100+ wine grape varieties with interactive production data. Explore Cabernet Sauvignon, Merlot, Chardonnay, Pinot Noir, and more with global charts and regional insights."
         />
+        <link rel="canonical" href="https://winography.net/grapes/" />
+        <meta property="og:title" content="Wine Grapes Index | Winography" />
+        <meta property="og:description" content="Discover 100+ wine grape varieties with interactive production data and global charts." />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://winography.net/grapes/" />
+        <meta property="og:image" content="https://winography.net/images/site-images/index-masthead-grapes.jpg" />
       </Head>
       <Masthead
         backgroundImage="/images/site-images/index-masthead-grapes.jpg"

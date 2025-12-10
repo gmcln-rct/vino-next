@@ -59,4 +59,3 @@ export function convertToStackedFormat(data, countries) {
 
   return stackedData;
 }
-

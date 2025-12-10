@@ -16,11 +16,17 @@ function CountryIndex() {
   return (
     <>
       <Head>
-        <title>Wine Country Index - Winography | Learn About Wine Through Data Visualizations</title>
+        <title>Wine Countries Index | Winography</title>
         <meta
           name="description"
-          content="Index of all wine producing countries, with links to charts comoparing production and consumption by country."
+          content="Explore wine production data from 40+ countries with interactive charts. Compare grape varieties, production volumes, and consumption trends across Old World and New World wine regions."
         />
+        <link rel="canonical" href="https://winography.net/countries/" />
+        <meta property="og:title" content="Wine Countries Index | Winography" />
+        <meta property="og:description" content="Explore wine production data from 40+ countries with interactive charts comparing grape varieties and regional trends." />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://winography.net/countries/" />
+        <meta property="og:image" content="https://winography.net/images/site-images/index-masthead-countries.jpg" />
       </Head>
       <Masthead
         backgroundImage="/images/site-images/index-masthead-countries.jpg"
