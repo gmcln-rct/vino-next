@@ -2,21 +2,18 @@ import React from "react";
 import classes from "./masthead.module.css";
 import DetailSection from "./detail-section";
 
-const Masthead = (props) => {
-  const {
-    header,
-    headerText,
-    backgroundImage,
-    dataType,
-    wineCategory,
-    itemLink,
-    description,
-    countryName,
-    moreInfo,
-  } = props;
-
-  const mastheadBackgroundImage =
-    backgroundImage || `/images/site-images/homepage-masthead.jpg`;
+const Masthead = ({
+  header,
+  headerText = "Default Header Text",
+  backgroundImage = `/images/site-images/homepage-masthead.jpg`,
+  dataType,
+  wineCategory,
+  itemLink,
+  description,
+  countryName,
+  moreInfo,
+}) => {
+  const mastheadBackgroundImage = backgroundImage;
 
   return (
     <div
@@ -46,11 +43,6 @@ const Masthead = (props) => {
       </div>
     </div>
   );
-};
-
-Masthead.defaultProps = {
-  backgroundImage: `/images/homepage-masthead.jpg`,
-  headerText: "Default Header Text",
 };
 
 export default Masthead;

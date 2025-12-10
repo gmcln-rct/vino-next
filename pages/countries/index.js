@@ -44,7 +44,7 @@ function CountryIndex() {
             <Image
               src="/images/icons/icon-barchart.png"
               className="transparent margin-bottom"
-              alt="grapes icon"
+              alt="Bar chart icon for grape production comparison across countries"
               width={100}
               height={100}
             />

@@ -112,7 +112,7 @@ function HomePage({ topGrapes, randomGrape, randomCountry }) {
             <Image
               src="/images/icons/icon-histogram-comp.png"
               className="transparent margin-bottom"
-              alt="Per Capita Wine Production Histogram"
+              alt="Histogram chart icon showing historic wine production comparison by country"
               width={100}
               height={100}
             />
@@ -122,7 +122,7 @@ function HomePage({ topGrapes, randomGrape, randomCountry }) {
             <Image
               src="/images/icons/icon-bubblechart.png"
               className="transparent margin-bottom"
-              alt="Per Capita Wine Consumption Histogram"
+              alt={`Bubble chart icon for ${grapeName} grape production data visualization`}
               width={100}
               height={100}
             />
@@ -132,7 +132,7 @@ function HomePage({ topGrapes, randomGrape, randomCountry }) {
             <Image
               src="/images/icons/icon-barchart.png"
               className="transparent margin-bottom"
-              alt="grapes icon"
+              alt="Bar chart icon for wine production by region data"
               width={100}
               height={100}
             />
@@ -143,7 +143,7 @@ function HomePage({ topGrapes, randomGrape, randomCountry }) {
               <Image
                 src="/images/icons/icon-barchart.png"
                 className="transparent margin-bottom"
-                alt="Per Capita Wine Consumption Histogram"
+                alt={`Bar chart icon showing top wine grapes of ${countryName}`}
                 width={100}
                 height={100}
               />
@@ -159,7 +159,7 @@ function HomePage({ topGrapes, randomGrape, randomCountry }) {
             <Image
               src="/images/icons/icon-countries.png"
               className="transparent margin-bottom"
-              alt="countries icon"
+              alt="World map icon representing wine producing countries data"
               width={150}
               height={150}
             />
@@ -169,7 +169,7 @@ function HomePage({ topGrapes, randomGrape, randomCountry }) {
             <Image
               src="/images/icons/icon-grapes.png"
               className="transparent margin-bottom"
-              alt="grapes icon"
+              alt="Wine grapes icon for grape varieties and production data"
               width={150}
               height={150}
             />
@@ -179,7 +179,7 @@ function HomePage({ topGrapes, randomGrape, randomCountry }) {
             <Image
               src="/images/icons/icon-historic-data.png"
               className="transparent margin-bottom"
-              alt="grapes icon"
+              alt="Historical timeline icon for wine production and consumption trends"
               width={150}
               height={150}
             />
